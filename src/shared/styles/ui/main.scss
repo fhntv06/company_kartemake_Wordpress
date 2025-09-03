@@ -2,12 +2,14 @@
 @use "../variables/colors" as colors;
 @use "../variables/mixins" as mixins;
 
+$offset: offsets.$middle;
+
 main {
   @include mixins.add-opacity-load();
 }
 hr {
   height: 2px;
-  width: calc(100% - offsets.$middle);
+  width: calc(100% - $offset);
   margin: 0 auto;
   border: 1px solid colors.$c4;
   border-radius: 1px;
