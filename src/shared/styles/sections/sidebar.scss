@@ -1,0 +1,41 @@
+@use "../variables/offsets" as offsets;
+
+.sidebar {
+  width: 20%;
+}
+.sidebar__title {
+  margin-bottom: offsets.$extra-small;
+  padding-bottom: offsets.$extra-small;
+  border-bottom: 1px solid var(--gray);
+}
+.sidebar__nav {
+  position: sticky;
+  top: 120px;
+
+  ul {
+    list-style: none;
+  }
+  a {
+    color: #aaa;
+    text-decoration: none;
+    transition: var(--transition);
+    display: block;
+    padding: 8px 0;
+    position: relative;
+  }
+  a:hover,
+  a.active {
+    color: var(--accent-red);
+  }
+  a.active::before {
+    content: '';
+    position: absolute;
+    left: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent-red);
+    border-radius: 50%;
+  }
+}

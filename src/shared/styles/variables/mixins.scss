@@ -63,6 +63,7 @@
     ($max-font-size - $min-font-size) *
     ((100vw - $min-screen-width * 1px) / ($max-screen-width - $min-screen-width))
   );
+  line-height: 1.5;
 }
 // Миксин для генерации классов
 @mixin generate-color-classes($colors) {

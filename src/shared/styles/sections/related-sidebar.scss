@@ -1,0 +1,49 @@
+@use '../variables/offsets' as offsets;
+
+.related-sidebar {
+  width: 30%;
+}
+.related-projects {
+  position: sticky;
+  top: 120px;
+  display: flex;
+  flex-direction: column;
+
+  .related-sidebar__title {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--gray);
+  }
+}
+.related-project {
+  color: var(--dark-text);
+  transition: var(--transition);
+
+  & + .related-project {
+    margin-top: offsets.$small;
+  }
+  &:hover {
+    transform: translateX(10px);
+    color: var(--accent-red);
+  }
+  .related-project__description {
+    font-size: 14px;
+    color: #aaa;
+  }
+  .related-project__title {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+}
+
+body.light-theme .related-project
+
+[data-theme="dark"] {
+  .related-project {
+    color: var(--light-text);
+
+    p {
+      color: #666;
+    }
+  }
+}

@@ -13,9 +13,8 @@ header {
   width: 100%;
   padding: offsets.$extra-small offsets.$small;
   background-color: rgba(245,245,245,.8);
+  backdrop-filter: blur(4px);
   border-bottom: 1px solid #ddd;
-
-  backdrop-filter: blur(10px);
   transition: var(--transition);
 
   @include mixins.add-opacity-load();
@@ -51,7 +50,7 @@ header {
   font-weight: 600;
 }
 
-body.dark-theme {
+[data-theme="dark"] {
   header {
     background-color: rgba(10,10,10,.8);
     border-bottom: 1px solid var(--gray);

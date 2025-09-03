@@ -1,0 +1,20 @@
+/* Основное содержимое */
+.project-hero-image {
+  width: 100%;
+  height: 600px;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  margin-bottom: 80px;
+  position: relative;
+}
+
+.project-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.project-hero-image:hover img {
+  transform: scale(1.05);
+}

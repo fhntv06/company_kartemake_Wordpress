@@ -41,6 +41,14 @@ h4, .h4 {
       var(--max-screen-width)
   );
 }
+h5, .h5 {
+  @include mixins.responsive-font(
+    var(--min-h5-font-size),
+    var(--max-h5-font-size),
+    var(--min-screen-width),
+    var(--max-screen-width)
+  );
+}
 p, .p {
     @include mixins.responsive-font(
       var(--min-p-font-size),
