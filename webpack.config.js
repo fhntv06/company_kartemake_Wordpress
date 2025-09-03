@@ -1,5 +1,25 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const glob = require('glob');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+// Функция для получения всех HTML-файлов из pages
+function getPageEntries() {
+  const pages = glob.sync('./src/pages/*.html')
+
+  return pages.map(page => {
+    const name = path.basename(page, '.html')
+    const route = page.replace('./src/pages', '').replace('.html', '')
+
+    return {
+      name,
+      path: page,
+      route: route === '/index' ? '/' : route
+    }
+  })
+}
+
+const pages = getPageEntries()
 
 module.exports = {
   entry: './src/index.js',
@@ -10,6 +30,10 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.html$/,
+        loader: 'html-loader'
+      },
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -29,17 +53,11 @@ module.exports = {
         ],
       },
       {
-        test: /\.css$/i,
+        test: /\.css$/,
         use: [
-          'style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              importLoaders: 1,
-            },
-          },
-          'postcss-loader',
-        ],
+          MiniCssExtractPlugin.loader,
+          'css-loader'
+        ]
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
@@ -48,13 +66,29 @@ module.exports = {
     ],
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: './src/pages/index.html',
+    new MiniCssExtractPlugin({
+      filename: '[name].[contenthash].css'
     }),
+    // Динамически создаем плагины для всех страниц
+    ...pages.map(page => new HtmlWebpackPlugin({
+      template: page.path,
+      filename: `${page.name}.html`,
+      chunks: ['main', 'styles'], // подключаем скрипты и стили ко всем страницам
+      inject: 'body' // гарантируем вставку в body
+    }))
   ],
   devServer: {
     static: './build',
     port: 3000,
+    historyApiFallback: {
+      rewrites: [
+        // Автоматически создаем rewrite правила для всех страниц
+        ...pages.map(page => ({
+          from: new RegExp(`^${page.route}$`),
+          to: `/${page.name}.html`
+        }))
+      ]
+    },
     open: true,
     hot: true,
   },
