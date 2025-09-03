@@ -1,0 +1,38 @@
+@use "../variables/offsets" as offsets;
+
+.nav-links {
+  display: flex;
+  gap: offsets.$small;
+
+  a {
+    position: relative;
+    color: var(--dark-text);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+
+    &:hover {
+      color: var(--accent-red);
+
+      &::after {
+        width: 100%;
+      }
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--accent-red);
+      transition: var(--transition);
+    }
+  }
+}
+
+body.dark-theme {
+  .nav-links a {
+    color: var(--light-text);
+  }
+}

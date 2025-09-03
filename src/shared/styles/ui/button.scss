@@ -1,0 +1,24 @@
+@use "../variables/colors" as colors;
+@use "../variables/mixins" as mixins;
+
+button, .button {
+  @include mixins.rippleAnimation();
+
+  &.cta-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    color: white;
+    border-radius: 30px;
+    background-color: var(--accent-red);
+    font-weight: 600;
+    transition: var(--transition);
+    cursor: pointer;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(255, 46, 46, 0.3);
+    }
+  }
+}

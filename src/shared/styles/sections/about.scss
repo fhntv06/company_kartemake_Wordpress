@@ -1,0 +1,29 @@
+.about {
+  z-index: 1;
+  position: relative;
+  background-color: #fff;
+  overflow: hidden;
+}
+.about-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 80px;
+}
+.about-text {
+  width: 45%;
+
+  h2 {
+    font-size: 42px;
+    margin-bottom: 24px;
+  }
+  p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #aaa;
+  }
+}
+[data-theme="dark"] {
+  .about-text p {
+    color: #666;
+  }
+}

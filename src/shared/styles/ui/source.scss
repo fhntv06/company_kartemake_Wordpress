@@ -1,0 +1,36 @@
+@use "../variables/colors" as colors;
+
+a, .link {
+  position: relative;
+  color: var(--dark-text);
+  transition: var(--transition);
+
+  &:hover {
+    color: var(--accent-red);
+    transform: translateY(-3px);
+  }
+  text-decoration: none;
+}
+a::after, .link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent-red);
+  transition: var(--transition);
+}
+a:hover::after, .link:hover::after {
+  width: 100%;
+}
+
+// DARK THEME
+[data-theme="dark"] {
+  a, .link {
+    color: colors.$light;
+  }
+  a::after, .link::after {
+    background-color: colors.$light;
+  }
+}

@@ -1,0 +1,28 @@
+@use "../variables/colors" as colors;
+
+.theme-toggle, .language-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  padding: 8px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  color: var(--dark-text);
+  transition: var(--transition);
+
+  &:hover {
+    background-color: var(--accent-red);
+    border-color: var(--accent-red);
+  }
+}
+
+body.dark-theme {
+  .theme-toggle,
+  .language-toggle {
+    color: var(--light-text);
+    border: 1px solid var(--gray);
+  }
+}
+

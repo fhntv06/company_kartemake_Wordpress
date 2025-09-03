@@ -1,0 +1,14 @@
+@use "../variables/offsets" as offsets;
+@use "../variables/colors" as colors;
+@use "../variables/mixins" as mixins;
+
+main {
+  @include mixins.add-opacity-load();
+}
+hr {
+  height: 2px;
+  width: calc(100% - offsets.$middle);
+  margin: 0 auto;
+  border: 1px solid colors.$c4;
+  border-radius: 1px;
+}

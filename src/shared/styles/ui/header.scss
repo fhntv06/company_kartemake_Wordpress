@@ -1,0 +1,65 @@
+@use "../variables/colors" as colors;
+@use "../variables/mixins" as mixins;
+@use "../variables/offsets" as offsets;
+
+header {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: offsets.$extra-small offsets.$small;
+  background-color: rgba(245,245,245,.8);
+  border-bottom: 1px solid #ddd;
+
+  backdrop-filter: blur(10px);
+  transition: var(--transition);
+
+  @include mixins.add-opacity-load();
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--dark-text);
+  text-decoration: none;
+
+  &:hover {
+    transform: none;
+
+    &:after {
+      display: none;
+    }
+  }
+}
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: offsets.$extra-small;
+}
+.social-links {
+  display: flex;
+  gap: offsets.$extra-small;
+}
+.phone {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+body.dark-theme {
+  header {
+    background-color: rgba(10,10,10,.8);
+    border-bottom: 1px solid var(--gray);
+  }
+  .logo {
+    color: var(--light-text);
+  }
+  .social-links a {
+    color: var(--light-text);
+  }
+}

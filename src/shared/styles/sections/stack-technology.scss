@@ -1,0 +1,101 @@
+@use '../variables/offsets' as offsets;
+
+.stack-technology {
+  background-color: #fff;
+}
+.stack-categories {
+  display: flex;
+  flex-direction: column;
+  gap: offsets.$small;
+  //width: calc(100% + offsets.$small * 4);
+  //margin-left: -64px;
+
+  .stack-category {
+    text-align: center;
+
+    &:nth-child(odd) {
+     .scrolling-list {
+       animation-direction: reverse;
+     }
+    }
+
+    & + .stack-category {
+      margin-top: offsets.$middle;
+    }
+    h4 {
+      margin-bottom: offsets.$small;
+      text-align: center;
+    }
+  }
+}
+.scrolling-items {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: offsets.$small;
+  padding: offsets.$extra-small 0;
+  overflow: hidden;
+}
+.stack-item {
+  display: flex;
+  align-items: center;
+  gap: offsets.$extra-small;
+  width: max-content;
+  padding: 12px offsets.$extra-small;
+  border-radius: var(--border-radius);
+  height: max-content;
+  background-color: var(--light-bg);
+  box-shadow: 0 0 10px rgba(255,255,255,.1);
+  justify-content: space-between;
+
+  .stack-icon {
+    font-size: 30px;
+  }
+  .stack-name {
+    font-size: 30px;
+    font-weight: 500;
+  }
+
+  &:hover {
+    background-color: rgba(255,46,46,.02);
+    box-shadow: inset 0 0 10px rgba(0,0,0,.1);
+
+    // icons
+    .fa-html5 {
+      color: #F16529;
+    }
+    .fa-css3-alt {
+      color: #2965f1;
+    }
+    .fa-sass {
+      color: #cc6699;
+    }
+    .fa-bootstrap {
+      color: #563d7c;
+    }
+    .fa-js {
+      color: #f0db4f;
+    }
+    .fa-react {
+      color: #61DBFB;
+    }
+    .fa-node-js {
+      color: #3c873a;
+    }
+    .fa-python {
+      color: #ffd343;
+    }
+    .fa-php {
+      color: #8993be;
+    }
+    .fa-database {
+      color: #00758F;
+    }
+  }
+}
+
+[data-theme="dark"] {
+  .stack-technology {
+    background-color: var(--darker-bg);
+  }
+}

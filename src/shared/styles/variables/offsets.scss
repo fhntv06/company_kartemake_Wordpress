@@ -1,0 +1,8 @@
+@use 'sass:math';
+
+$middle: 64px;
+
+$large: calc($middle * 2px);
+$extra-large: calc($large * 2px);
+$small: math.div($middle, 2);
+$extra-small: math.div($small, 2);

@@ -1,0 +1,81 @@
+@use './basics';
+@use './variables/colors' as colors;
+@use './variables/mixins' as mixins;
+@use "ui" as ui;
+@use "./sections" as sections;
+
+:root {
+    --dark-card: #1e1e1e;
+    --dark-bg: #0a0a0a;
+    --light-bg: #f5f5f5;
+    --darker-bg: #050505;
+    --light-text: #f5f5f5;
+    --dark-text: #0a0a0a;
+    --accent-red: #ff2e2e;
+    --accent-yellow: #ffd600;
+    --gray: #2a2a2a;
+    --light-gray: #3a3a3a;
+    --border-radius: 12px;
+    --transition: all .3s ease;
+
+    --min-h1-font-size: 60;
+    --max-h1-font-size: 72;
+    --min-h2-font-size: 48;
+    --max-h2-font-size: 60;
+    --min-h3-font-size: 36;
+    --max-h3-font-size: 48;
+    --min-h4-font-size: 24;
+    --max-h4-font-size: 32;
+    --min-p-font-size: 16;
+    --max-p-font-size: 20;
+    --min-screen-width: 320;
+    --max-screen-width: 1920;
+    --star-color-light: #111;
+    --star-color-dark: whitesmoke;
+}
+
+[data-theme="light"] {
+    --star-color: var(--star-color-light);
+    --color: var(--dark-text);
+    --bg-color: var(--light-bg);
+}
+
+[data-theme="dark"] {
+    --star-color: var(--star-color-dark);
+    --color: var(--light-text);
+    --bg-color: var(--dark-bg);
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+::-webkit-scrollbar-track-piece  {
+    background-color: #C2D2E4;
+}
+::-webkit-scrollbar-thumb:vertical,
+::-webkit-scrollbar-thumb:horizontal {
+    background-color: var(--accent-red);
+}
+// common styles
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    //cursor: none;
+
+
+}
+body, html {
+    background-color: var(--bg-color);
+    color: var(--color);
+    //cursor: none;
+}
+
+button, input, textarea {
+    border: none;
+    outline: none;
+    background-color: unset;
+    cursor: pointer;
+}
