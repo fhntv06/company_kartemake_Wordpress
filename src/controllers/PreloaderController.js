@@ -3,6 +3,8 @@ export class PreloaderController {
     this.preloader = document.querySelector('.preloader')
     this.body = document.body
 
+    if (!this.preloader) return
+
     this.init()
   }
 

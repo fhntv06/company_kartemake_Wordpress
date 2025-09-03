@@ -3,7 +3,6 @@ import { AnimationNumbers } from './AnimationNumbers.js'
 import { CubeWithWorkItemsController } from './CubeWithWorkItemsController.js'
 import { CursorController } from './CursorController.js'
 import { HeaderController } from './HeaderController.js'
-import { MarqueeController } from './MarqueeController.js'
 import { ModalController } from './ModalController.js'
 import { PreloaderController } from './PreloaderController.js'
 import { RippleEffectController } from './RippleEffectController.js'
@@ -19,7 +18,6 @@ export class EntryPointApp {
       CursorController,
       HeaderController,
       ModalController,
-      MarqueeController,
       PreloaderController,
       RippleEffectController,
       StarfieldController,
@@ -32,8 +30,11 @@ export class EntryPointApp {
     console.log('Main initialized')
 
     this.controllers.forEach(controller => {
-      console.log('Initializing controller:', controller.name)
-      new controller()
+      if (!controller) console.error("Is controller ", controller, " not define!")
+      else {
+        console.log('Initializing controller:', controller.name)
+        new controller()
+      }
     })
   }
 }

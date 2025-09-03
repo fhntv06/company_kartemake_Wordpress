@@ -1,6 +1,9 @@
 export class HeaderController {
   constructor() {
     this.header = document.querySelector('.header')
+
+    if (!this.header) return
+
     this.themeBtn = document.querySelector('.header__theme-switch')
     this.langBtn = document.getElementById('lang-switch')
 

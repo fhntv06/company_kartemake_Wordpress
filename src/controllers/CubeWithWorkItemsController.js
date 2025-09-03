@@ -2,6 +2,9 @@ export class CubeWithWorkItemsController {
   constructor() {
     // Интерактивность для карточек работ
     this.container = document.getElementById('last-works')
+
+    if (!this.container) return
+
     this.workCards = this.container.querySelectorAll('.work-item')
     this.worksCube = this.container.querySelector('.works-cube')
     this.worksVisual = this.container.querySelector('.works-visual')

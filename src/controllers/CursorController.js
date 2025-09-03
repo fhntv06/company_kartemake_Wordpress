@@ -2,6 +2,8 @@ export class CursorController {
   constructor() {
     this.cursor = document.getElementById('custom-cursor')
 
+    if (!this.cursor) return
+
     if (window.innerWidth > 768) this.init()
   }
 

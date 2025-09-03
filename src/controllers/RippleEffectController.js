@@ -2,6 +2,8 @@ export class RippleEffectController {
   constructor() {
     this.btns = Array.from(document.querySelectorAll(".button, button"))
 
+    if (!this.btns.length) return
+
     this.init()
   }
 
@@ -9,9 +11,6 @@ export class RippleEffectController {
     this.btns.forEach(btn => btn.addEventListener('click', (e) => this.createRipple(e)))
   }
   createRipple = (e) => {
-    console.log(e)
-
-
     // Create span element
     let ripple = document.createElement("span")
 
@@ -25,6 +24,6 @@ export class RippleEffectController {
     ripple.style.left = `${e.offsetX}px`
     ripple.style.top = `${e.offsetY}px`
 
-    // ripple.addEventListener('animationend', () => ripple.remove())
+    ripple.addEventListener('animationend', () => ripple.remove())
   }
 }

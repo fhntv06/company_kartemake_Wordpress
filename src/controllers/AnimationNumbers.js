@@ -2,6 +2,8 @@ export class AnimationNumbers {
   constructor() {
     this.animateValues = Array.from(document.querySelectorAll('.animate-value'))
 
+    if (!this.animateValues.length) return
+
     this.init()
   }
   init = () => {

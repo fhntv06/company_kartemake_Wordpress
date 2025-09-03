@@ -3,7 +3,11 @@ export class ModalController {
     // Видео модальное окно
     this.showreel = document.getElementById('showreel')
     this.videoModal = document.getElementById('video-modal')
-    this.closeModal = document.querySelector('.close-modal')
+    this.closeModal = document.getElementById('close-modal')
+
+
+
+    if (!this.videoModal || !this.showreel || !this.closeModal) return
 
     this.init()
   }

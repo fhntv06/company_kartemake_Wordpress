@@ -1,8 +1,11 @@
 export class StarfieldController {
-  constructor(canvasId = 'stars-canvas', starCount = 500) {
-    this.canvas = document.getElementById(canvasId)
+  constructor() {
+    this.canvas = document.getElementById('stars-canvas')
+
+    if (!this.canvas) return
+
     this.ctx = this.canvas.getContext('2d')
-    this.starCount = starCount
+    this.starCount = 500
     this.stars = []
     this.theme = localStorage.getItem('theme') || 'light'
     this.animationId = null
