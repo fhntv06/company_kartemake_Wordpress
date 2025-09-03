@@ -1,40 +1,49 @@
 export class PreloaderController {
   constructor() {
-    this.preloader = document.querySelector('.preloader');
-    this.text = document.querySelector('.preloader__text');
-    this.stroke = document.querySelector('.preloader__stroke');
-    this.body = document.body;
-    this.init();
+    this.preloader = document.querySelector('.preloader')
+    this.body = document.body
+
+    this.init()
   }
 
   init = () => {
-    if (!this.preloader) return;
-    this.lockScroll();
-    window.addEventListener('load', this.onLoad);
+    if (!this.preloader) return
+    this.lockScroll()
+    window.addEventListener('DOMContentLoaded', this.onLoad)
   }
 
   lockScroll = () => {
-    this.body.classList.add('preloader-lock');
+    this.body.classList.add('preloader-lock')
   }
 
   unlockScroll = () => {
-    this.body.classList.remove('preloader-lock');
+    this.body.classList.remove('preloader-lock')
   }
 
   onLoad = () => {
     // Запуск анимации SVG
-    this.stroke.style.animationPlayState = 'running';
-    setTimeout(() => {
-      this.text.classList.add('preloader__text--active');
-      setTimeout(this.hidePreloader, 700);
-    }, 2000); // после завершения dash
-  }
+    const timer = setTimeout(() => {
+      const timerInner = setTimeout(() => {
+        this.exitPreloaderAnimation()
 
+        clearTimeout(timerInner)
+      }, 700)
+
+      clearTimeout(timer)
+    }, 2000) // после завершения dash
+  }
+  exitPreloaderAnimation= () => {
+    this.hidePreloader()
+    Array.from(document.querySelectorAll('header , main, footer')).forEach(el => el.style.opacity = '1')
+  }
   hidePreloader = () => {
-    this.preloader.classList.add('preloader--hidden');
-    setTimeout(() => {
-      this.preloader.remove();
-      this.unlockScroll();
-    }, 1000); // время transition
+    this.preloader.classList.add('preloader--hidden')
+
+    const timer = setTimeout(() => {
+      this.preloader.remove()
+      this.unlockScroll()
+
+      clearTimeout(timer)
+    }, 1000) // время transition
   }
 }

@@ -1,4 +1,4 @@
-import './shared/styles/main.scss'
+import './shared/styles/index.scss'
 import { EntryPointApp } from './controllers/main.js'
 
 new EntryPointApp()
