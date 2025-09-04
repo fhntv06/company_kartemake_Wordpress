@@ -2,7 +2,7 @@
 
 .form-container {
   width: 100%;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 .form-header {
@@ -55,9 +55,14 @@
   font-size: 14px;
   color: var(--accent-red);
 }
-textarea.form-input {
-  min-height: 150px;
-  resize: vertical;
+textarea {
+  &.form-input {
+    min-height: 150px;
+    resize: vertical;
+  }
+  .form-label {
+    top: 21px;
+  }
 }
 .form-button {
   grid-column: 1 / -1;

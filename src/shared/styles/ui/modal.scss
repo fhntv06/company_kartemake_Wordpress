@@ -1,3 +1,5 @@
+@use "../variables/offsets" as offsets;
+
 .modal {
   position: fixed;
   top: 0;
@@ -22,13 +24,25 @@
     }
   }
 }
+.modal-header {
+  margin-bottom: offsets.$middle;
+  color: var(--light-text);
+}
 .modal-content {
   width: 80%;
   max-width: 1200px;
   border-radius: var(--border-radius);
   overflow: hidden;
   transform: scale(.8);
-  transition: transform 0.5s ease;
+  transition: transform .5s ease;
+
+  .form-input {
+    background-color: var(--light-bg);
+  }
+  .form-label {
+    border-radius: var(--border-radius);
+    background-color: var(--light-bg);
+  }
 }
 .modal-video {
   width: 100%;
@@ -43,4 +57,13 @@
   font-size: 30px;
   cursor: pointer;
   z-index: 2001;
+}
+
+[data-theme="dark"] {
+  .modal-header {
+    color: var(--light-text);
+  }
+  .form-input {
+    color: var(--dark-text);
+  }
 }
