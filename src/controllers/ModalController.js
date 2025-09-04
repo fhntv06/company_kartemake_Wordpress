@@ -1,27 +1,29 @@
 export class ModalController {
   constructor() {
-    // Видео модальное окно
-    this.showreel = document.getElementById('showreel')
-    this.videoModal = document.getElementById('video-modal')
-    this.closeModal = document.getElementById('close-modal')
+    // Модальное окно
+    this.modals = Array.from(document.querySelectorAll('.modal'))
 
-
-
-    if (!this.videoModal || !this.showreel || !this.closeModal) return
+    if (!this.modals.length) return
 
     this.init()
   }
   init = () => {
-    this.showreel.addEventListener('click', () => {
-      this.videoModal.classList.add('active')
+    this.openModalButtons = Array.from(document.querySelectorAll('[data-open-modal]'))
+    this.openModalButtons.forEach(button => {
+      button.addEventListener('click', (e) => {
+        document.getElementById(e.currentTarget.dataset.openModal).classList.add('active')
+      })
     })
-    this.closeModal.addEventListener('click', () => {
-      this.videoModal.classList.remove('active')
-    })
-    this.videoModal.addEventListener('click', (e) => {
-      if (e.target === this.videoModal) {
-        this.videoModal.classList.remove('active')
-      }
+    this.modals.forEach((modal) => {
+      modal.querySelector('.close-modal').addEventListener('click', () => {
+        modal.classList.remove('active')
+      })
+
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.classList.remove('active')
+        }
+      })
     })
   }
 }
