@@ -5,10 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KARTECH - Создание и поддержка сайтов</title>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../shared/assets/font-awesome.css">
   <link rel="shortcut icon" href="../../public/images/logotypes/logo-dark.ico" type="image/x-icon">
-
-<!--  <link rel="stylesheet" href="/shared/assets/font-awesome.css">-->
 </head>
 <body>
   <header>
@@ -49,7 +47,7 @@
         <i class="fas fa-chevron-down"></i>
       </button>
 
-      <button class="cta-button">
+      <button class="cta-button" data-open-modal="form">
         Начать проект
         <i class="fas fa-arrow-right"></i>
       </button>
@@ -148,8 +146,8 @@
 
     <!-- How We Make It Section -->
     <section id="how-make-it" class="how-make-it">
-      <div class="showreel" id="showreel" style="background-image: url('https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80');">
-        <button class="play-button">
+      <div class="showreel" style="background-image: url('https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80');">
+        <button class="play-button" data-open-modal="showreel">
           <i class="fas fa-play"></i>
         </button>
       </div>
@@ -350,8 +348,64 @@
     </div>
   </footer>
 
+  <!-- modal form -->
+  <div id="form" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Хотите чтобы мы решили <span class="color-accept-red">ваш кейс</span>?</h3>
+        <p>Оставьте заявку и наш специалист свяжется с вами для обсуждения деталей вашего проекта</p>
+      </div>
+
+      <!-- Секция с формой -->
+      <div class="form-container">
+        <div class="form-header">
+
+        </div>
+
+        <form class="contact-form" id="project-form">
+          <div class="form-group">
+            <input type="text" class="form-input" id="name" placeholder=" " required>
+            <label for="name" class="form-label">Имя</label>
+          </div>
+
+          <div class="form-group">
+            <input type="text" class="form-input" id="company" placeholder=" ">
+            <label for="company" class="form-label">Название компании</label>
+          </div>
+
+          <div class="form-group">
+            <input type="email" class="form-input" id="email" placeholder=" ">
+            <label for="email" class="form-label">Email</label>
+          </div>
+
+          <div class="form-group">
+            <input type="tel" class="form-input" id="phone" placeholder=" " required>
+            <label for="phone" class="form-label">Телефон</label>
+          </div>
+
+          <div class="form-group full-width">
+            <textarea class="form-input" id="message" placeholder=" " required></textarea>
+            <label for="message" class="form-label">Расскажите о вашем проекте</label>
+          </div>
+
+          <div class="form-button">
+            <button type="submit" class="cta-button">
+              Отправить
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+
+          <p class="form-notice">Нажимая на кнопку, вы соглашаетесь с политикой конфиденциальности</p>
+        </form>
+      </div>
+    </div>
+    <div id="close-modal" class="close-modal">
+      <i class="fas fa-times"></i>
+    </div>
+  </div>
+
   <!-- modal -->
-  <div id="video-modal" class="modal">
+  <div id="showreel" class="modal">
     <div class="modal-content">
       <iframe class="modal-video" src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0" allowfullscreen></iframe>
     </div>
