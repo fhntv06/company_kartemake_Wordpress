@@ -1,7 +1,9 @@
+@use "../variables/offsets" as offsets;
+
 .stats {
   display: flex;
   justify-content: space-around;
-  margin-top: 60px;
+  margin: offsets.$middle 0;
 }
 .stat-item {
   text-align: center;

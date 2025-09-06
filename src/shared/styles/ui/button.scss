@@ -2,23 +2,56 @@
 @use "../variables/mixins" as mixins;
 
 button, .button {
+  padding: 12px 24px;
+  font-weight: 600;
+  border-radius: 30px;
+  color: var(--light-text);
+  transition: var(--transition);
+
+  &:hover {
+    box-shadow: 0 10px 20px rgba(255,46,46,.3);
+    color: var(--light-text);
+    transform: translateY(-3px);
+  }
+
   @include mixins.rippleAnimation();
 
+  &--primary {
+    background-color: var(--bg-color);
+
+    &:hover {
+      background-color: var(--accent-red);
+      color: var(--color);
+      transform: translateY(-2px);
+    }
+  }
+  &--accent {
+    background-color: var(--accent-red);
+
+    &:hover {
+      background-color: rgba(var(--accent-red), 10%);
+      color: var(--dark-text);
+    }
+  }
   &.cta-button {
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 12px 24px;
-    color: white;
-    border-radius: 30px;
     background-color: var(--accent-red);
-    font-weight: 600;
     transition: var(--transition);
     cursor: pointer;
+  }
+  &--outline {
+    background-color: transparent;
+    color: var(--accent-red);
+    border: 2px solid var(--accent-red);
 
     &:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(255, 46, 46, 0.3);
+      background-color: var(--accent-red);
     }
+  }
+  &--large {
+    padding: 16px 40px;
+    font-size: 1.1rem;
   }
 }

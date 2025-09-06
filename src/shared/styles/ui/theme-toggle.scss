@@ -1,6 +1,7 @@
 @use "../variables/colors" as colors;
 
-.theme-toggle, .language-toggle {
+.theme-toggle,
+.language-toggle {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -17,12 +18,13 @@
     border-color: var(--accent-red);
   }
 }
-
-body.dark-theme {
+.language-toggle {
+  text-transform: uppercase;
+}
+[data-theme="dark"] {
   .theme-toggle,
   .language-toggle {
     color: var(--light-text);
     border: 1px solid var(--gray);
   }
 }
-
