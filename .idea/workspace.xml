@@ -13,9 +13,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
-        <option value="HTML File" />
         <option value="CSS File" />
+        <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -31,31 +31,39 @@
   &quot;associatedIndex&quot;: 1
 }</component>
   <component name="ProjectId" id="2z2X4tiQeVnxM9i5C4vJKgRfZkC" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+    <ConfirmationsSetting value="2" id="Remove" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "JavaScript Debug.index.html.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "front-end",
-    "last_opened_file_path": "C:/Users/CifronPro/projects/work/React, Next/dashboard-payment-card",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;JavaScript Debug.blog.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.index.html.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;front-end&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/CifronPro/projects/work/landing-kartech.site/src/controllers&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2024.2.3\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\CifronPro\projects\work\landing-kartech.site\src\controllers" />
       <recent name="C:\Users\CifronPro\projects\work\PROFI\landing" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\CifronPro\projects\work\landing-kartech.site\src\shared\styles\ui" />
       <recent name="C:\Users\CifronPro\projects\work\landing-kartech.site\src\pages" />
       <recent name="C:\Users\CifronPro\projects\work\landing-kartech.site\src\shared" />
       <recent name="C:\Users\CifronPro\projects\work\PROFI\landing\images\icons" />
@@ -84,6 +92,9 @@
       <workItem from="1756613070378" duration="2031000" />
       <workItem from="1756617101938" duration="72000" />
       <workItem from="1756617191226" duration="2290000" />
+      <workItem from="1756956939600" duration="7706000" />
+      <workItem from="1757047682826" duration="17566000" />
+      <workItem from="1757157316720" duration="11501000" />
     </task>
     <servers />
   </component>
