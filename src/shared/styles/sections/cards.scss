@@ -1,0 +1,7 @@
+@use '../variables/offsets' as offsets;
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: offsets.$small;
+}
