@@ -2,8 +2,6 @@
 @use "../variables/mixins" as mixins;
 @use "../variables/offsets" as offsets;
 
-$offset: offsets.$middle;
-
 .container {
   width: 100%;
   max-width: 1600px;
@@ -13,7 +11,11 @@ $offset: offsets.$middle;
 section, .section {
   width: 100%;
   margin: 0 auto;
-  padding: calc($offset * 2) offsets.$small;
+  padding: offsets.$middle offsets.$small;
+
+  &:first-child {
+    padding-top: calc(offsets.$middle * 2);
+  }
 }
 .section__title {
   position: relative;

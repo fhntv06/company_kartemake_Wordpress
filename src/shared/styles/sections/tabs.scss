@@ -1,0 +1,43 @@
+@use "../variables/offsets" as offsets;
+
+.tabs-nav {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: offsets.$small;
+}
+.tab-btn {
+  padding: offsets.$extra-small offsets.$small;
+  background: var(--bg-color);
+  color: var(--color);
+  border: 1px solid var(--gray);
+  border-radius: var(--border-radius);
+
+  &.active,
+  &:hover {
+    color: var(--light-text);
+    background-color: var(--accent-red);
+    border-color: var(--accent-red);
+  }
+}
+.tab-panel {
+  display: none;
+  animation: fadeIn .5s ease forwards;
+
+  &.active {
+    display: block;
+  }
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+[data-theme="dark"] {
+  .tab-btn {
+    &.active,
+    &:hover {
+      color: var(--dark-text);
+    }
+  }
+}

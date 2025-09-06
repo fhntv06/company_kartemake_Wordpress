@@ -1,0 +1,46 @@
+@use "../variables/offsets" as offsets;
+
+.hero-support {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255,46,46,.1) 0%, transparent 70%);
+    pointer-events: none;
+  }
+}
+.hero__container {
+  height: calc(100vh - offsets.$middle * 2);
+  text-align: center;
+}
+.hero-support__container {
+  z-index: 2;
+  position: relative;
+  text-align: center;
+}
+.hero-support__title {
+  margin-bottom: offsets.$middle;
+  line-height: 1.2;
+}
+.hero-support__subtitle {
+  font-size: 1.2rem;
+  color: var(--gray-text);
+  max-width: 700px;
+  margin: 0 auto 50px;
+}
+.hero-support__stats {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-bottom: 50px;
+}
