@@ -9,52 +9,59 @@
   <link rel="stylesheet" href="../shared/assets/font-awesome.css">
   <link rel="shortcut icon" href="../../public/images/logotypes/logo-dark.ico" type="image/x-icon">
 </head>
-<body>
-  <header>
-    <a href="#" class="logo">
-      <span class="h2">K</span>
-      <span class="h2">·</span>
-      <span class="h3 color-accept-red">ART</span>
-      <span class="h2">·</span>
-      <span class="h4">TECH</span>
-    </a>
+<body data-controller="custom-cursor modal preloader ripple-effect starfield theme">
+  <header class="header" data-controller="header">
+  <a href="#" class="logo">
+    <span class="h2">K</span>
+    <span class="h2">·</span>
+    <span class="h3 color-accept-red">ART</span>
+    <span class="h2">·</span>
+    <span class="h4">TECH</span>
+  </a>
 
-    <nav class="nav-links">
-      <a href="#about">О нас</a>
-      <a href="#how-make-it">Процесс</a>
-      <a href="#last-works">Работы</a>
-      <a href="#stack-technology">Технологии</a>
-      <a href="#faq">FAQ</a>
-    </nav>
+  <nav class="nav-links">
+    <a href="#about">О нас</a>
+    <a href="#how-make-it">Процесс</a>
+    <a href="#last-works">Работы</a>
+    <a href="#stack-technology">Технологии</a>
+    <a href="#faq">FAQ</a>
+  </nav>
 
-    <div class="header-controls">
-      <div class="social-links">
-        <a href="#"><i class="fab fa-behance"></i></a>
-        <a href="#"><i class="fab fa-dribbble"></i></a>
-        <a href="#"><i class="fab fa-github"></i></a>
-      </div>
-
-      <div class="phone">
-        <i class="fas fa-phone"></i>
-        <span>+7 (999) 123-45-67</span>
-      </div>
-
-      <button id="theme-toggle" class="theme-toggle">
-        <i class="fas fa-moon"></i>
-      </button>
-
-      <button class="language-toggle">
-        <span>RU</span>
-        <i class="fas fa-chevron-down"></i>
-      </button>
-
-      <button class="cta-button" data-open-modal="form">
-        Начать проект
-        <i class="fas fa-arrow-right"></i>
-      </button>
+  <div class="header-controls">
+    <div class="social-links">
+      <a href="#"><i class="fab fa-behance"></i></a>
+      <a href="#"><i class="fab fa-dribbble"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
     </div>
-  </header>
 
+    <div class="phone">
+      <i class="fas fa-phone"></i>
+      <span>+7 (999) 123-45-67</span>
+    </div>
+
+    <button
+            class="theme-toggle"
+            data-controller-theme="item"
+    >
+      <i class="fas fa-moon"></i>
+    </button>
+
+    <button class="language-toggle" data-controller="lang" data-controller-ripple-effect="item">
+      <span data-controller-lang="item">RU</span>
+      <i class="fas fa-chevron-down"></i>
+    </button>
+
+    <button
+      class="cta-button"
+      data-controller-modal-open="form"
+      data-controller-modal-func="open"
+      data-controller-ripple-effect="item"
+    >
+      Начать проект
+      <i class="fas fa-arrow-right"></i>
+    </button>
+  </div>
+</header>
   <main>
     <!-- Детали проекта -->
     <section class="project-detail">
@@ -303,7 +310,7 @@
           </div>
 
           <div class="form-button">
-            <button type="submit" class="cta-button">
+            <button class="cta-button" type="submit" data-controller-ripple-effect="item">
               Отправить
               <i class="fas fa-arrow-right"></i>
             </button>
@@ -325,14 +332,19 @@
       </div>
 
       <div class="footer-cta">
-        <button class="cta-button">
+        <button
+          class="cta-button"
+          data-controller-modal-open="form"
+          data-controller-modal-func="open"
+          data-controller-ripple-effect="item"
+        >
           Начать проект
           <i class="fas fa-arrow-right"></i>
         </button>
       </div>
     </div>
     <div class="footer-bottom">
-      <div class="copyright">KARTTECH © 2023. Все права защищены.</div>
+      <div class="copyright">KARTECH © 2023. Все права защищены.</div>
     </div>
   </footer>
 
@@ -406,9 +418,9 @@
     <div class="line line-5"></div>
   </div>
   <!-- custom-cursor -->
-  <div id="custom-cursor" class="custom-cursor"></div>
+  <div id="custom-cursor" class="custom-cursor" data-controller-custom-cursor="item"></div>
   <!-- preloader -->
-  <div class="preloader">
+  <div class="preloader" data-controller-preloader="item">
     <div class="preloader__container">
       <svg id="preloader-svg" class="preloader__svg" width="1280" height="600" viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
         <defs>
@@ -532,6 +544,6 @@
     </div>
   </div>
   <!-- stars-container -->
-  <canvas id="stars-canvas"></canvas>
+  <canvas id="stars-canvas" data-controller-starfield="item"></canvas>
 </body>
 </html>

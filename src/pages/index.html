@@ -8,8 +8,8 @@
   <link rel="stylesheet" href="../shared/assets/font-awesome.css">
   <link rel="shortcut icon" href="../../public/images/logotypes/logo-dark.ico" type="image/x-icon">
 </head>
-<body>
-  <header>
+<body data-controller="custom-cursor modal preloader ripple-effect starfield theme">
+  <header class="header" data-controller="header">
     <a href="#" class="logo">
       <span class="h2">K</span>
       <span class="h2">·</span>
@@ -38,16 +38,28 @@
         <span>+7 (999) 123-45-67</span>
       </div>
 
-      <button id="theme-toggle" class="theme-toggle">
+      <button
+        class="theme-toggle"
+        data-controller-theme="item"
+      >
         <i class="fas fa-moon"></i>
       </button>
 
-      <button class="language-toggle">
-        <span>RU</span>
+      <button
+        class="language-toggle"
+        data-controller="lang"
+        data-controller-ripple-effect="item"
+      >
+        <span data-controller-lang="item">RU</span>
         <i class="fas fa-chevron-down"></i>
       </button>
 
-      <button class="cta-button" data-open-modal="form">
+      <button
+        class="cta-button"
+        data-controller-modal-open="form"
+        data-controller-modal-func="open"
+        data-controller-ripple-effect="item"
+      >
         Начать проект
         <i class="fas fa-arrow-right"></i>
       </button>
@@ -70,7 +82,12 @@
             KARTECH - это синтез искусства и технологий.
             Мы создаем цифровые продукты, которые выделяются на фоне конкурентов и решают реальные бизнес-задачи.
           </p>
-          <button class="cta-button">
+          <button
+            class="cta-button"
+            data-controller-modal-open="form"
+            data-controller-modal-func="open"
+            data-controller-ripple-effect="item"
+          >
             Начать проект
             <i class="fas fa-arrow-right"></i>
           </button>
@@ -125,19 +142,17 @@
 
         <div class="divider"></div>
 
-        <div class="stats">
+        <div class="stats" data-controller="animation-numbers">
           <div class="stat-item">
-            <div class="stat-number animate-value" data-postfix="+">20</div>
+            <div class="stat-number" data-postfix="+" data-controller-animation-numbers="item">20</div>
             <div class="stat-label">Всего проектов</div>
           </div>
-
           <div class="stat-item">
-            <div class="stat-number animate-value" data-postfix="+">10</div>
+            <div class="stat-number" data-postfix="+" data-controller-animation-numbers="item">10</div>
             <div class="stat-label">Лет работы</div>
           </div>
-
           <div class="stat-item">
-            <div class="stat-number animate-value" data-prefix=">">250</div>
+            <div class="stat-number" data-prefix=">" data-controller-animation-numbers="item">250</div>
             <div class="stat-label">Довольных клиентов</div>
           </div>
         </div>
@@ -147,44 +162,49 @@
     <!-- How We Make It Section -->
     <section id="how-make-it" class="how-make-it">
       <div class="showreel" style="background-image: url('https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80');">
-        <button class="play-button" data-open-modal="showreel">
+        <button
+          class="play-button"
+          data-controller-modal-open="showreel"
+          data-controller-modal-func="open"
+          data-controller-ripple-effect="item"
+        >
           <i class="fas fa-play"></i>
         </button>
       </div>
     </section>
 
     <!-- Last Works Section -->
-    <section id="last-works" class="last-works">
+    <section class="last-works" data-controller="cube-with-work">
       <div class="container">
         <h3 class="section__title">Последние работы</h3>
         <div class="works-container">
           <div class="works-list">
-            <a href="#" class="work-item">
+            <a href="#" class="work-item" data-controller-cube-with-work="item">
               <h3 class="work-title">Корпоративный сайт для TechInnovations</h3>
               <p class="work-description">Разработали современный корпоративный сайт с системой управления контентом и интеграцией CRM.</p>
               <p class="work-link">Подробнее <i class="fas fa-arrow-right"></i></p>
             </a>
-            <a href="#" class="work-item">
+            <a href="#" class="work-item" data-controller-cube-with-work="item">
               <h3 class="work-title">Мобильное приложение для FitLife</h3>
               <p class="work-description">Создали кроссплатформенное приложение для фитнес-трекинга с синхронизацией данных и персонализированными тренировками.</p>
               <p class="work-link">Подробнее <i class="fas fa-arrow-right"></i></p>
             </a>
-            <a href="#" class="work-item">
+            <a href="#" class="work-item" data-controller-cube-with-work="item">
               <h3 class="work-title">Интернет-магазин для UrbanStyle</h3>
               <p class="work-description">Реализовали полнофункциональный интернет-магазин с системой рекомендаций и интеграцией с платформами маркетплейсов.</p>
               <p class="work-link">Подробнее <i class="fas fa-arrow-right"></i></p>
             </a>
-            <a href="#" class="work-item">
+            <a href="#" class="work-item" data-controller-cube-with-work="item">
               <h3 class="work-title">Корпоративный сайт для TechInnovations</h3>
               <p class="work-description">Разработали современный корпоративный сайт с системой управления контентом и интеграцией CRM.</p>
               <p class="work-link">Подробнее <i class="fas fa-arrow-right"></i></p>
             </a>
-            <a href="#" class="work-item">
+            <a href="#" class="work-item" data-controller-cube-with-work="item">
               <h3 class="work-title">Мобильное приложение для FitLife</h3>
               <p class="work-description">Создали кроссплатформенное приложение для фитнес-трекинга с синхронизацией данных и персонализированными тренировками.</p>
               <p class="work-link">Подробнее <i class="fas fa-arrow-right"></i></p>
             </a>
-            <a href="#" class="work-item">
+            <a href="#" class="work-item" data-controller-cube-with-work="item">
               <h3 class="work-title">Интернет-магазин для UrbanStyle</h3>
               <p class="work-description">Реализовали полнофункциональный интернет-магазин с системой рекомендаций и интеграцией с платформами маркетплейсов.</p>
               <p class="work-link">Подробнее <i class="fas fa-arrow-right"></i></p>
@@ -211,7 +231,7 @@
     </section>
 
     <!-- Stack Technology Section -->
-    <section id="stack-technology" class="stack-technology">
+    <section class="stack-technology">
       <div class="container">
         <div class="section__title">
           <h3>Наш <span class="color-accept-red">стек</span> технологий</h3>
@@ -282,43 +302,43 @@
     </section>
 
     <!-- FAQ Section -->
-    <section id="faq" class="faq">
+    <section class="faq">
       <div class="container">
         <h3 class="section__title">Часто задаваемые вопросы</h3>
-        <div class="faq-container">
-          <div class="faq-item">
-            <div class="faq-question">
-              <p>Какой срок разработки типового проекта?</p>
-              <span class="faq-icon"><i class="fas fa-plus"></i></span>
+        <div class="accordion-container" data-controller="accordion">
+          <div class="accordion-item" data-controller-accordion="item">
+            <div class="accordion-question">
+              <h5>Какой срок разработки типового проекта?</h5>
+              <span class="accordion-icon"><i class="fas fa-plus"></i></span>
             </div>
-            <div class="faq-answer">
+            <div class="accordion-answer">
               <p>Срок разработки зависит от сложности проекта. Простой лендинг может быть готов за 2-3 недели, тогда как сложное корпоративное решение может занять от 3 до 6 месяцев. После обсуждения вашего проекта мы предоставим точные сроки.</p>
             </div>
           </div>
-          <div class="faq-item">
-            <div class="faq-question">
-              <p>Предоставляете ли вы техническую поддержку после запуска?</p>
-              <span class="faq-icon"><i class="fas fa-plus"></i></span>
+          <div class="accordion-item" data-controller-accordion="item">
+            <div class="accordion-question">
+              <h5>Предоставляете ли вы техническую поддержку после запуска?</h5>
+              <span class="accordion-icon"><i class="fas fa-plus"></i></span>
             </div>
-            <div class="faq-answer">
+            <div class="accordion-answer">
               <p>Да, мы предлагаем различные пакеты технической поддержки после запуска проекта. Это может включать регулярное обновление контента, мониторинг безопасности, техническое обслуживание и оперативную помощь при возникновении проблем.</p>
             </div>
           </div>
-          <div class="faq-item">
-            <div class="faq-question">
-              <p>Работаете ли вы с стартапами?</p>
-              <span class="faq-icon"><i class="fas fa-plus"></i></span>
+          <div class="accordion-item" data-controller-accordion="item">
+            <div class="accordion-question">
+              <h5>Работаете ли вы с стартапами?</h5>
+              <span class="accordion-icon"><i class="fas fa-plus"></i></span>
             </div>
-            <div class="faq-answer">
+            <div class="accordion-answer">
               <p>Конечно! Мы с удовольствием работаем со стартапами и предлагаем специальные условия для новых бизнесов. Наши специалисты могут помочь не только с технической реализацией, но и с консультациями по продукту и пользовательскому опыту.</p>
             </div>
           </div>
-          <div class="faq-item">
-            <div class="faq-question">
-              <p>Как происходит процесс согласования этапов работы?</p>
-              <span class="faq-icon"><i class="fas fa-plus"></i></span>
+          <div class="accordion-item" data-controller-accordion="item">
+            <div class="accordion-question">
+              <h5>Как происходит процесс согласования этапов работы?</h5>
+              <span class="accordion-icon"><i class="fas fa-plus"></i></span>
             </div>
-            <div class="faq-answer">
+            <div class="accordion-answer">
               <p>Мы работаем по agile-методологии с регулярными демонстрациями результатов. После завершения каждого этапа мы предоставляем доступ к тестовой версии продукта, собираем обратную связь и вносим необходимые корректировки перед переходом к следующему этапу.</p>
             </div>
           </div>
@@ -337,14 +357,19 @@
       </div>
 
       <div class="footer-cta">
-        <button class="cta-button">
+        <button
+          class="cta-button"
+          data-controller-modal-open="form"
+          data-controller-modal-func="open"
+          data-controller-ripple-effect="item"
+        >
           Начать проект
           <i class="fas fa-arrow-right"></i>
         </button>
       </div>
     </div>
     <div class="footer-bottom">
-      <div class="copyright">KARTTECH © 2023. Все права защищены.</div>
+      <div class="copyright">KARTECH © 2023. Все права защищены.</div>
     </div>
   </footer>
 
@@ -389,7 +414,11 @@
           </div>
 
           <div class="form-button">
-            <button type="submit" class="cta-button">
+            <button
+              class="cta-button"
+              type="submit"
+              data-controller-ripple-effect="item"
+            >
               Отправить
               <i class="fas fa-arrow-right"></i>
             </button>
@@ -409,7 +438,7 @@
     <div class="modal-content">
       <iframe class="modal-video" src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0" allowfullscreen></iframe>
     </div>
-    <div id="close-modal" class="close-modal">
+    <div class="close-modal">
       <i class="fas fa-times"></i>
     </div>
   </div>
@@ -422,9 +451,9 @@
     <div class="line line-5"></div>
   </div>
   <!-- custom-cursor -->
-  <div id="custom-cursor" class="custom-cursor"></div>
+  <div id="custom-cursor" class="custom-cursor" data-controller-custom-cursor="item"></div>
   <!-- preloader -->
-  <div class="preloader">
+  <div class="preloader" data-controller-preloader="item">
     <div class="preloader__container">
       <svg id="preloader-svg" class="preloader__svg" width="1280" height="600" viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
         <defs>
@@ -548,6 +577,6 @@
     </div>
   </div>
   <!-- stars-container -->
-  <canvas id="stars-canvas"></canvas>
+  <canvas id="stars-canvas" data-controller-starfield="item"></canvas>
 </body>
 </html>
