@@ -1,16 +1,13 @@
 export class AccordionController {
-  constructor() {
-    this.faqItems = document.querySelectorAll('.faq-item');
-
-    if (!this.faqItems.length) return
+  constructor(controllerName, container) {
+    this.items = container.querySelectorAll(`[data-controller-${controllerName}="item"]`)
 
     this.init()
   }
   init = () => {
-    // FAQ аккордеон
-    this.faqItems.forEach(item => {
+    this.items.forEach(item => {
       item.addEventListener('click', () => {
-        item.classList.toggle('active');
+        item.classList.toggle('active')
       })
     })
   }

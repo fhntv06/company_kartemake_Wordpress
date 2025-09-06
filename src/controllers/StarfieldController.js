@@ -1,9 +1,6 @@
 export class StarfieldController {
-  constructor() {
-    this.canvas = document.getElementById('stars-canvas')
-
-    if (!this.canvas) return
-
+  constructor(controllerName, container) {
+    this.canvas = container.querySelector(`[data-controller-${controllerName}="item"]`)
     this.ctx = this.canvas.getContext('2d')
     this.starCount = 500
     this.stars = []
@@ -12,7 +9,6 @@ export class StarfieldController {
 
     this.init()
   }
-
   init = () => {
     this.setupCanvas()
     this.createStars()
@@ -23,7 +19,6 @@ export class StarfieldController {
       this.drawStars()
     })
   }
-
   setupCanvas = () => {
     this.resizeCanvas()
     window.addEventListener('resize', () => {
@@ -31,12 +26,10 @@ export class StarfieldController {
       this.createStars()
     })
   }
-
   resizeCanvas = () => {
     this.canvas.width = window.innerWidth
     this.canvas.height = window.innerHeight
   }
-
   createStars = () => {
     this.stars = []
 
@@ -52,7 +45,6 @@ export class StarfieldController {
       })
     }
   }
-
   getStarColor = () => {
     // red
     return 'rgba(255, 46, 46, {opacity})'
@@ -62,7 +54,6 @@ export class StarfieldController {
     //   ? 'rgba(17, 17, 17, {opacity})'
     //   : 'rgba(245, 245, 245, {opacity})'
   }
-
   drawStars = () => {
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height)
 
@@ -89,25 +80,21 @@ export class StarfieldController {
       }
     })
   }
-
   animate = () => {
     this.drawStars()
     this.animationId = requestAnimationFrame(() => this.animate())
   }
-
   startAnimation = () => {
     if (this.animationId) {
       cancelAnimationFrame(this.animationId)
     }
     this.animate()
   }
-
   // Публичные методы для управления
   setStarCount(count) {
     this.starCount = count
     this.createStars()
   }
-
   destroy = () => {
     if (this.animationId) {
       cancelAnimationFrame(this.animationId)

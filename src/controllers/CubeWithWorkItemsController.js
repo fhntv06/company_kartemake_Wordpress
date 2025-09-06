@@ -1,18 +1,15 @@
 export class CubeWithWorkItemsController {
-  constructor() {
+  constructor(controllerName, container) {
     // Интерактивность для карточек работ
-    this.container = document.getElementById('last-works')
+    this.items = container.querySelectorAll(`[data-controller-${controllerName}="item"]`)
 
-    if (!this.container) return
-
-    this.workCards = this.container.querySelectorAll('.work-item')
-    this.worksCube = this.container.querySelector('.works-cube')
-    this.worksVisual = this.container.querySelector('.works-visual')
+    this.worksCube = container.querySelector('.works-cube')
+    this.worksVisual = container.querySelector('.works-visual')
 
     this.init()
   }
   init = () => {
-    this.workCards.forEach((card, index) => {
+    this.items.forEach((card, index) => {
       card.addEventListener('mouseenter', () => {
         this.worksVisual.style.opacity = '1'
         this.worksCube.style.transform = `rotateX(${-15 + index * 10}deg) rotateY(${30 + index * 30}deg)`;

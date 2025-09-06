@@ -1,30 +1,29 @@
 export class ThemeController {
-  constructor() {
-    this.themeToggleButton = document.getElementById('theme-toggle')
+  constructor(controllerName, container) {
+    this.themeToggleButton = container.querySelector(`[data-controller-${controllerName}="item"]`)
 
-    if (!this.themeToggleButton) return
+    this.init()
+  }
+  init = () => {
+    this.setTheme()
 
-    this.theme = localStorage.getItem('theme') || 'light'
-    this.applyTheme(this.theme)
-    this.setupEventListeners()
-  }
-  applyTheme = (theme) => {
-    document.body.setAttribute('data-theme', theme)
-    localStorage.setItem('theme', theme)
-  }
-  toggleTheme = () => {
-    this.theme = this.theme === 'light' ? 'dark' : 'light'
-    this.applyTheme(this.theme)
-  }
-  setupEventListeners = () => {
     const eventThemeToggle = new Event('themeToggle')
 
-    if (this.themeToggleButton) {
-      this.themeToggleButton.addEventListener('click', () => {
-        this.toggleTheme()
+    this.themeToggleButton.addEventListener('click', () => {
+      const newTheme = this.getTheme() === 'light' ? 'dark' : 'light'
 
-        window.dispatchEvent(eventThemeToggle)
-      })
-    }
+      this.setTheme(newTheme)
+
+      window.dispatchEvent(eventThemeToggle)
+    })
+  }
+  getTheme = () => {
+    return localStorage.getItem('theme') || 'light'
+  }
+  setTheme = (newTheme = '') => {
+    const theme = !newTheme ? this.getTheme() : newTheme
+
+    document.body.setAttribute('data-theme', theme)
+    localStorage.setItem('theme', theme)
   }
 }

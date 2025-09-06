@@ -1,20 +1,17 @@
 export class CursorController {
-  constructor() {
-    this.cursor = document.getElementById('custom-cursor')
-
-    if (!this.cursor) return
+  constructor(controllerName, container) {
+    this.items = container.querySelectorAll(`[data-controller-${controllerName}="item"]`)
 
     if (window.innerWidth > 768) this.init()
   }
 
   init() {
-    this.cursor.className = 'custom-cursor'
-    document.body.appendChild(this.cursor)
-
-    document.addEventListener('mousemove', this.setCursorPosition)
+    this.items.forEach((item) => {
+      document.addEventListener('mousemove', (e) => this.setCursorPosition(e, item))
+    })
   }
-  setCursorPosition = (e) => {
-    this.cursor.style.left = e.clientX + 'px'
-    this.cursor.style.top = e.clientY + 'px'
+  setCursorPosition = (e, item) => {
+    item.style.left = e.clientX + 'px'
+    item.style.top = e.clientY + 'px'
   }
 }

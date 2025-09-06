@@ -1,8 +1,6 @@
 export class AnimationNumbers {
-  constructor() {
-    this.animateValues = Array.from(document.querySelectorAll('.animate-value'))
-
-    if (!this.animateValues.length) return
+  constructor(controllerName, container) {
+    this.animateValues = Array.from(container.querySelectorAll(`[data-controller-${controllerName}="item"]`))
 
     this.init()
   }

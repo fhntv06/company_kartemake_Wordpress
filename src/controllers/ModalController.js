@@ -1,29 +1,35 @@
 export class ModalController {
-  constructor() {
-    // Модальное окно
-    this.modals = Array.from(document.querySelectorAll('.modal'))
-
-    if (!this.modals.length) return
+  constructor(controllerName, container) {
+    this.container = container
+    this.modal = null
+    this.closeBtn = this.container.querySelector('.close-modal')
+    this.openModalButtons = Array.from(document.querySelectorAll(`[data-controller-${controllerName}-func="open"]`))
 
     this.init()
   }
   init = () => {
-    this.openModalButtons = Array.from(document.querySelectorAll('[data-open-modal]'))
-    this.openModalButtons.forEach(button => {
-      button.addEventListener('click', (e) => {
-        document.getElementById(e.currentTarget.dataset.openModal).classList.add('active')
-      })
-    })
-    this.modals.forEach((modal) => {
-      modal.querySelector('.close-modal').addEventListener('click', () => {
-        modal.classList.remove('active')
-      })
+    if (this.openModalButtons.length) {
+      this.openModalButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+          this.modal = document.getElementById(e.currentTarget.dataset.controllerModalOpen)
 
-      modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-          modal.classList.remove('active')
-        }
+          if (this.modal) {
+            this.modal.addEventListener('click', this.hideModal)
+            this.modal.classList.add('active')
+          } else console.error(`Don't element with attribute data-controller-modal-open="${e.currentTarget.dataset.controllerModalOpen}" in `, this.container)
+        })
       })
-    })
+    } else console.error(`Don't element with attribute data-controller-modal-func="open" in `, this.container)
+
+    if (this.closeBtn) {
+      this.closeBtn.addEventListener('click', () => {
+        this.container.classList.remove('active')
+      })
+    } else console.error(`Don't element with class="close-modal" in `, this.container)
+  }
+  hideModal = (e) => {
+    if (e.target === this.modal) {
+      this.modal.classList.remove('active')
+    }
   }
 }
