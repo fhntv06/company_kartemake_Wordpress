@@ -1,12 +1,17 @@
 import { AccordionController } from './AccordionController.js'
-import { AnimationNumbers } from './AnimationNumbers.js'
+import { AnchorController } from './AnchorController.js'
+import { AnimationNumbersController } from './AnimationNumbersController.js'
+import { CalculatorController } from './CalculatorController.js'
 import { CubeWithWorkItemsController } from './CubeWithWorkItemsController.js'
+import { FormController } from './FormController.js'
 import { CursorController } from './CursorController.js'
 import { HeaderController } from './HeaderController.js'
+import { InteractiveCardEffectController } from './InteractiveCardEffectController.js'
 import { LangController } from './LangController.js'
 import { ModalController } from './ModalController.js'
 import { PreloaderController } from './PreloaderController.js'
 import { RippleEffectController } from './RippleEffectController.js'
+import { SidebarAnchorController } from './SidebarAnchorController.js'
 import { StarfieldController } from './StarfieldController.js'
 import { TabsController } from './TabsController'
 import { ThemeController } from './ThemeController.js'
@@ -17,14 +22,19 @@ export class EntryPointApp {
 
     this.controllersExperimental = {
       accordion: AccordionController,
-      'animation-numbers': AnimationNumbers,
+      anchor: AnchorController,
+      'animation-numbers': AnimationNumbersController,
+      'calculator': CalculatorController,
       'cube-with-work': CubeWithWorkItemsController,
+      'form': FormController,
       'custom-cursor': CursorController,
       header: HeaderController,
+      'interactive-card-effect': InteractiveCardEffectController,
       lang: LangController,
       modal: ModalController,
       preloader: PreloaderController,
       'ripple-effect': RippleEffectController,
+      'sidebar-anchor': SidebarAnchorController,
       starfield: StarfieldController,
       tabs: TabsController,
       theme: ThemeController,

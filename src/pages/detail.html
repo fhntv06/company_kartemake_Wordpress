@@ -6,18 +6,17 @@
 
   <title>TechInnovations - Детальный обзор проекта | KARTECH</title>
 
-  <link rel="stylesheet" href="../shared/assets/font-awesome.css">
   <link rel="shortcut icon" href="../../public/images/logotypes/logo-dark.ico" type="image/x-icon">
 </head>
 <body data-controller="custom-cursor modal preloader ripple-effect starfield theme">
   <header class="header" data-controller="header">
-  <a href="#" class="logo">
-    <span class="h2">K</span>
-    <span class="h2">·</span>
-    <span class="h3 color-accept-red">ART</span>
-    <span class="h2">·</span>
-    <span class="h4">TECH</span>
-  </a>
+    <a href="#" class="logo">
+      <span class="font-size-h2">K</span>
+      <span class="font-size-h2">·</span>
+      <span class="font-size-h3 color-accept-red">ART</span>
+      <span class="font-size-h2">·</span>
+      <span class="font-size-h4">TECH</span>
+    </a>
 
   <nav class="nav-links">
     <a href="#about">О нас</a>
@@ -283,7 +282,7 @@
           <h3>Хотите чтобы мы решили <span class="color-accept-red">ваш кейс</span>?</h3>
           <p>Оставьте заявку и наш специалист свяжется с вами для обсуждения деталей вашего проекта</p>
         </div>
-        <form class="contact-form">
+        <form class="contact-form" data-controller="form">
           <div class="form-group">
             <input type="text" class="form-input" name="name" id="name-project-form" placeholder=" " required>
             <label for="name-project-form" class="form-label">Имя</label>
@@ -358,7 +357,7 @@
 
       <!-- Секция с формой -->
       <div class="form-container">
-        <form class="contact-form">
+        <form class="contact-form" data-controller="form">
             <div class="form-group">
               <input type="text" class="form-input" id="name" name="name" placeholder=" " required>
               <label for="name" class="form-label">Имя</label>

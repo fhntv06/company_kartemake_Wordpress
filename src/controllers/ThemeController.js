@@ -1,6 +1,12 @@
 export class ThemeController {
   constructor(controllerName, container) {
+    this.container = container
     this.themeToggleButton = container.querySelector(`[data-controller-${controllerName}="item"]`)
+
+    if (!this.themeToggleButton) {
+      console.error(`Don't element for change theme with attribute data-controller-${controllerName}="item" `, this.container)
+      return
+    }
 
     this.init()
   }

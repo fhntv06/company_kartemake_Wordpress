@@ -5,25 +5,154 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KARTECH - Создание и поддержка сайтов</title>
 
-  <link rel="stylesheet" href="../shared/assets/font-awesome.css">
   <link rel="shortcut icon" href="../../public/images/logotypes/logo-dark.ico" type="image/x-icon">
 </head>
-<body data-controller="custom-cursor modal preloader ripple-effect starfield theme">
+<body id="smoothScrollContainer" data-controller="custom-cursor modal preloader ripple-effect starfield theme anchor sidebar-anchor">
+  <style>
+    /* Бургер меню */
+    .burger-menu {
+      display: none;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 30px;
+      height: 25px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      z-index: 1001;
+    }
+
+    .burger-menu span {
+      width: 30px;
+      height: 3px;
+      background: #ffffff;
+      border-radius: 3px;
+      transition: all 0.3s ease;
+      position: relative;
+      transform-origin: center;
+    }
+
+    .burger-menu.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .burger-menu.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .burger-menu.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    /* Sidebar Styles */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      right: -300px;
+      width: 300px;
+      height: 100vh;
+      background-color: #1a1a1a;
+      z-index: 999;
+      padding: 80px 30px 30px;
+      transition: all 0.4s ease;
+      box-shadow: -5px 0 25px rgba(0, 0, 0, 0.5);
+      overflow-y: auto;
+    }
+
+    .sidebar.open {
+      right: 0;
+    }
+
+    .sidebar-nav {
+      list-style: none;
+    }
+
+    .sidebar-nav li {
+      margin-bottom: 15px;
+    }
+
+    .sidebar-nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 500;
+      display: block;
+      padding: 10px 15px;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .sidebar-nav a:hover {
+      color: #ff3b30;
+      background-color: rgba(255, 59, 48, 0.1);
+    }
+
+    .sidebar-nav a.active {
+      color: #ffcc00;
+      background-color: rgba(255, 204, 0, 0.1);
+    }
+
+    .sidebar-nav a.active::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 4px;
+      height: 70%;
+      background-color: #ffcc00;
+      border-radius: 0 2px 2px 0;
+    }
+
+    .sidebar-social {
+      margin-top: 30px;
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+    }
+    .sidebar-social a {
+      color: #b0b0b0;
+      font-size: 20px;
+      transition: all 0.3s ease;
+    }
+    .sidebar-social a:hover {
+      color: #ffcc00;
+    }
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: 998;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.4s ease;
+    }
+    .overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+  </style>
+
   <header class="header" data-controller="header">
-    <a href="#" class="logo">
-      <span class="h2">K</span>
-      <span class="h2">·</span>
-      <span class="h3 color-accept-red">ART</span>
-      <span class="h2">·</span>
-      <span class="h4">TECH</span>
+    <a href="/" class="logo">
+      <span class="font-size-h2">K</span>
+      <span class="font-size-h2">·</span>
+      <span class="font-size-h3 color-accept-red">ART</span>
+      <span class="font-size-h2">·</span>
+      <span class="font-size-h4">TECH</span>
     </a>
 
     <nav class="nav-links">
-      <a href="#about">О нас</a>
-      <a href="#how-make-it">Процесс</a>
-      <a href="#last-works">Работы</a>
-      <a href="#stack-technology">Технологии</a>
-      <a href="#faq">FAQ</a>
+      <a href="services.html">Услуги</a>
+      <a href="projects.html">Проекты</a>
+      <a href="about.html">Компания</a>
+      <a href="blog.html">Блог</a>
+      <a href="contacts.html">Контакты</a>
     </nav>
 
     <div class="header-controls">
@@ -66,7 +195,6 @@
     </div>
   </header>
   <main>
-    <!-- Hero Section -->
     <section id="hero" class="hero">
       <div class="container hero-content">
         <div class="hero-text">
@@ -103,6 +231,11 @@
             <div class="device-screen">K · <span class="color-accept-red">ART</span> · TECH</div>
           </div>
         </div>
+      </div>
+
+      <div class="scroll-hint color-accept-red font-weight-bold">
+        Листайте вниз
+        <i class="fas fa-arrow-down"></i>
       </div>
     </section>
 
@@ -373,6 +506,34 @@
     </div>
   </footer>
 
+  <!-- Overlay для затемнения фона -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="#home" class="active">Главная</a></li>
+        <li><a href="#about">О компании</a></li>
+        <li><a href="#services">Услуги</a></li>
+        <li><a href="#portfolio">Портфолио</a></li>
+        <li><a href="#contact">Контакты</a></li>
+      </ul>
+    </nav>
+
+    <div class="sidebar-social">
+      <a href="#"><i class="fab fa-vk"></i></a>
+      <a href="#"><i class="fab fa-telegram"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
+    </div>
+  </aside>
+
+  <button class="burger-menu" id="burgerMenu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
   <!-- modal form -->
   <div id="form" class="modal">
     <div class="modal-content">
@@ -387,7 +548,7 @@
 
         </div>
 
-        <form class="contact-form" id="project-form">
+        <form class="contact-form" data-controller="form">
           <div class="form-group">
             <input type="text" class="form-input" id="name" placeholder=" " required>
             <label for="name" class="form-label">Имя</label>
@@ -432,7 +593,6 @@
       <i class="fas fa-times"></i>
     </div>
   </div>
-
   <!-- modal -->
   <div id="showreel" class="modal">
     <div class="modal-content">
@@ -578,5 +738,10 @@
   </div>
   <!-- stars-container -->
   <canvas id="stars-canvas" data-controller-starfield="item"></canvas>
+  <!-- scroll-progress -->
+  <div class="scroll-progress color-accept-red" id="scrollProgress"></div>
+
+  <!-- back-to-top -->
+  <a href="#hero" class="to-top" data-controller-anchor="item">↑</a>
 </body>
 </html>

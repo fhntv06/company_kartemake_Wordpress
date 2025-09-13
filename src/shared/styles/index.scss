@@ -1,21 +1,31 @@
-@use './basics';
+@use './variables/fonts' as fonts;
 @use './variables/colors' as colors;
 @use './variables/mixins' as mixins;
 @use "ui" as ui;
 @use "./sections" as sections;
+@use "./fonts/font-awesome" as font-awesome;
 
 :root {
+    --shadow: 0 10px 20px rgba(255, 46, 46, 0.3);
+
+    --card-bg: #151515;
+    --card-border: #2a2a2a;
     --dark-card: #1e1e1e;
+
     --dark-bg: #0a0a0a;
     --light-bg: #f5f5f5;
     --darker-bg: #050505;
+
     --light-text: #f5f5f5;
     --gray-text: #666;
     --dark-text: #0a0a0a;
+
     --accent-red: #ff2e2e;
     --accent-yellow: #ffd600;
+
     --gray: #2a2a2a;
     --light-gray: #3a3a3a;
+
     --border-radius: 12px;
     --transition: all .3s ease;
 

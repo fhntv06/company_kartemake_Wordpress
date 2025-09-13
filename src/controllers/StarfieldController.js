@@ -1,6 +1,13 @@
 export class StarfieldController {
   constructor(controllerName, container) {
+    this.container = container
     this.canvas = container.querySelector(`[data-controller-${controllerName}="item"]`)
+
+    if (!this.canvas) {
+      console.error(`Don't canvas for starfield effect with attribute data-controller-${controllerName}="item" `, this.container)
+      return
+    }
+
     this.ctx = this.canvas.getContext('2d')
     this.starCount = 500
     this.stars = []

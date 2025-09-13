@@ -5,6 +5,10 @@
 $offset: offsets.$middle;
 
 main {
+  h1 {
+    margin-bottom: offsets.$middle;
+  }
+
   @include mixins.add-opacity-load();
 }
 hr {

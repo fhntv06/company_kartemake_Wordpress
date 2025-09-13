@@ -1,0 +1,99 @@
+@use "../variables/offsets" as offsets;
+
+.service-card {
+  grid-column: 1/-1;
+  position: relative;
+  display: flex;
+  padding: offsets.$extra-small offsets.$small;
+  background-color: var(--bg-color);
+  border: 1px solid var(--accent-red);
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+  color: var(--color);
+  overflow: hidden;
+
+  &:hover {
+    box-shadow: 0 15px 40px rgba(0,0,0,.2);
+    transform: translateY(-5px);
+
+    &::before {
+      width: 0;
+      opacity: 0;
+    }
+    .service-details {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .service-link {
+      opacity: 1;
+      transform: translateX(-5px);
+    }
+  }
+  &::before {
+    content: '';
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30%;
+    height: 100%;
+    background: linear-gradient(to right, var(--bg-color), rgba(255,46,46,.2));
+    transition: var(--transition);
+  }
+
+  .service-content {
+    flex: 1;
+    position: relative;
+    z-index: 2;
+  }
+  .service-title,
+  .service-description {
+    margin-bottom: offsets.$extra-small;
+  }
+  .service-description {
+    color: var(--gray-text);
+    max-width: 70%;
+  }
+  .service-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
+  }
+  .service-feature {
+    background: rgba(255, 46, 46, 0.1);
+    color: var(--accent-red);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  .service-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    min-width: 180px;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: var(--transition);
+  }
+  .service-price {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--accent-red);
+    margin-bottom: 10px;
+  }
+  .service-time {
+    color: var(--gray-text);
+  }
+  .service-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--accent-red);
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: var(--transition);
+  }
+}

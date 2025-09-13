@@ -2,7 +2,6 @@
 
 .services-support {
   position: relative;
-  background-color: #fff;
   overflow: hidden;
 
   &::before {
@@ -59,11 +58,5 @@
   .price {
     font-weight: 700;
     color: var(--accent-red);
-  }
-}
-
-[data-theme="dark"] {
-  .services-support {
-    background-color: var(--dark-bg);
   }
 }

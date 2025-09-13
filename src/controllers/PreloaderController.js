@@ -1,6 +1,12 @@
 export class PreloaderController {
   constructor(controllerName, container) {
+    this.container = container
     this.preloader = container.querySelector(`[data-controller-${controllerName}="item"]`)
+
+    if (!this.preloader) {
+      console.error(`Don't preloader with attribute data-controller-${controllerName}="item" in `, this.container)
+      return
+    }
 
     this.init()
   }

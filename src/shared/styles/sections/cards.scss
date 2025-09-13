@@ -5,3 +5,58 @@
   grid-template-columns: repeat(12, 1fr);
   gap: offsets.$small;
 }
+.vertical-card {
+  grid-column: span 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: offsets.$extra-small;
+  min-height: 250px;
+  background-color: var(--card-bg);
+  padding: offsets.$small;
+  border-radius: var(--border-radius);
+  color: var(--bg-color);
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid var(--card-border);
+  transition: var(--transition);
+
+  &:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-red);
+    box-shadow: var(--shadow);
+  }
+  img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+  }
+  .link {
+    color: var(--accent-red);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition);
+
+    &:hover {
+      color: var(--accent-yellow);
+      gap: 12px;
+    }
+  }
+  .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 46, 46, 0.1);
+    color: var(--accent-red);
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+  }
+}
+
+[data-theme="dark"] {
+  .value-icon {
+    color: var(--accent-yellow);
+  }
+}

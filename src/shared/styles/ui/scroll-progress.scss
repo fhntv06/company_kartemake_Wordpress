@@ -1,0 +1,31 @@
+.scroll-progress {
+  z-index: 1001;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background: linear-gradient(to right, #ff3b30, #ffcc00);
+}
+.scroll-hint {
+  z-index: 999;
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 1;
+  animation: bounce 2s infinite;
+  transition: opacity .5s ease-in;
+
+  &.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s ease-out;
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {transform: translateY(0) translateX(-50%);}
+  40% {transform: translateY(-20px) translateX(-50%);}
+  60% {transform: translateY(-10px) translateX(-50%);}
+}

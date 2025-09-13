@@ -9,7 +9,7 @@ button, .button {
   transition: var(--transition);
 
   &:hover {
-    box-shadow: 0 10px 20px rgba(255,46,46,.3);
+    box-shadow: var(--shadow);
     color: var(--light-text);
     transform: translateY(-3px);
   }

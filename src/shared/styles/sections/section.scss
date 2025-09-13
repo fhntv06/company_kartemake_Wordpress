@@ -16,6 +16,9 @@ section, .section {
   &:first-child {
     padding-top: calc(offsets.$middle * 2);
   }
+  &:nth-child(even) {
+    background-color: #fff;
+  }
 }
 .section__title {
   position: relative;
@@ -30,5 +33,13 @@ section, .section {
     height: 4px;
     background-color: var(--accent-red);
     border-radius: 2px;
+  }
+}
+
+[data-theme="dark"] {
+  section, .section {
+    &:nth-child(even) {
+      background-color: transparent;
+    }
   }
 }

@@ -6,66 +6,65 @@
 
   <title>Техническая поддержка | KARTECH</title>
 
-  <link rel="stylesheet" href="../shared/assets/font-awesome.css">
   <link rel="shortcut icon" href="../../public/images/logotypes/logo-dark.ico" type="image/x-icon">
 </head>
 <body data-controller="custom-cursor modal preloader ripple-effect starfield theme">
   <header class="header" data-controller="header">
-  <a href="#" class="logo">
-    <span class="h2">K</span>
-    <span class="h2">·</span>
-    <span class="h3 color-accept-red">ART</span>
-    <span class="h2">·</span>
-    <span class="h4">TECH</span>
-  </a>
+    <a href="#" class="logo">
+      <span class="font-size-h2">K</span>
+      <span class="font-size-h2">·</span>
+      <span class="font-size-h3 color-accept-red">ART</span>
+      <span class="font-size-h2">·</span>
+      <span class="font-size-h4">TECH</span>
+    </a>
 
-  <nav class="nav-links">
-    <a href="#about">О нас</a>
-    <a href="#how-make-it">Процесс</a>
-    <a href="#last-works">Работы</a>
-    <a href="#stack-technology">Технологии</a>
-    <a href="#faq">FAQ</a>
-  </nav>
+    <nav class="nav-links">
+      <a href="#about">О нас</a>
+      <a href="#how-make-it">Процесс</a>
+      <a href="#last-works">Работы</a>
+      <a href="#stack-technology">Технологии</a>
+      <a href="#faq">FAQ</a>
+    </nav>
 
-  <div class="header-controls">
-    <div class="social-links">
-      <a href="#"><i class="fab fa-behance"></i></a>
-      <a href="#"><i class="fab fa-dribbble"></i></a>
-      <a href="#"><i class="fab fa-github"></i></a>
+    <div class="header-controls">
+      <div class="social-links">
+        <a href="#"><i class="fab fa-behance"></i></a>
+        <a href="#"><i class="fab fa-dribbble"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+      </div>
+
+      <div class="phone">
+        <i class="fas fa-phone"></i>
+        <span>+7 (999) 123-45-67</span>
+      </div>
+
+      <button
+        class="theme-toggle"
+        data-controller-theme="item"
+      >
+        <i class="fas fa-moon"></i>
+      </button>
+
+      <button class="language-toggle" data-controller="lang" data-controller-ripple-effect="item">
+        <span data-controller-lang="item">RU</span>
+        <i class="fas fa-chevron-down"></i>
+      </button>
+
+      <button
+        class="cta-button"
+        data-controller-modal-open="form"
+        data-controller-modal-func="open"
+        data-controller-ripple-effect="item"
+      >
+        Начать проект
+        <i class="fas fa-arrow-right"></i>
+      </button>
     </div>
-
-    <div class="phone">
-      <i class="fas fa-phone"></i>
-      <span>+7 (999) 123-45-67</span>
-    </div>
-
-    <button
-            class="theme-toggle"
-            data-controller-theme="item"
-    >
-      <i class="fas fa-moon"></i>
-    </button>
-
-    <button class="language-toggle" data-controller="lang" data-controller-ripple-effect="item">
-      <span data-controller-lang="item">RU</span>
-      <i class="fas fa-chevron-down"></i>
-    </button>
-
-    <button
-      class="cta-button"
-      data-controller-modal-open="form"
-      data-controller-modal-func="open"
-      data-controller-ripple-effect="item"
-    >
-      Начать проект
-      <i class="fas fa-arrow-right"></i>
-    </button>
-  </div>
-</header>
+  </header>
   <main>
     <section class="hero-support">
       <div class="container hero__container">
-        <h1 class="hero-support__title">Техническая <span class="color-accept-red">поддержка</span></h1>
+        <h1>Техническая <span class="color-accept-red">поддержка</span></h1>
         <p class="hero-support__subtitle">Ваш цифровой продукт работает безупречно, пока вы сосредоточены на своем бизнесе. Мы обеспечиваем надежность, безопасность и развитие.</p>
 
         <div class="divider"></div>
@@ -87,7 +86,8 @@
 
         <div class="divider"></div>
 
-        <button class="button button--large button--accent"
+        <button
+          class="button button--large button--accent"
           data-controller-modal-open="form"
           data-controller-modal-func="open"
         >
@@ -363,7 +363,7 @@
 
         </div>
 
-        <form class="contact-form" id="project-form">
+        <form class="contact-form" data-controller="form">
           <div class="form-group">
             <input type="text" class="form-input" id="name" placeholder=" " required>
             <label for="name" class="form-label">Имя</label>
