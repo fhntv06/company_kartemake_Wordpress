@@ -1,4 +1,5 @@
 @use "../variables/offsets" as offsets;
+@use "../variables/media" as media;
 
 .sidebar {
   width: 20%;
@@ -10,7 +11,7 @@
 }
 .sidebar__nav {
   position: sticky;
-  top: 120px;
+  top: 160px;
 
   ul {
     list-style: none;
@@ -37,5 +38,10 @@
     height: 8px;
     background-color: var(--accent-red);
     border-radius: 50%;
+  }
+}
+@media (max-width: media.$middle) {
+  .sidebar__nav {
+    top: 200px;
   }
 }
