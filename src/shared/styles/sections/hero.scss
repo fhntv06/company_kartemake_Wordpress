@@ -1,6 +1,8 @@
 @use "../variables/offsets" as offsets;
+@use "../variables/media" as media;
 
 .hero {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -99,5 +101,25 @@
 body.dark-theme {
   .hero-text p {
     color: #666;
+  }
+}
+
+@media (max-width: media.$middle) {
+  .hero-text {
+    z-index: 1;
+    width: 80%;
+  }
+  .hero-devices {
+    position: absolute;
+    top: calc(offsets.$middle * 3);
+    right: offsets.$middle;
+  }
+}
+@media (max-width: media.$extra-small) {
+  .hero-text {
+    width: 100%;
+  }
+  .hero-devices {
+    display: none;
   }
 }
