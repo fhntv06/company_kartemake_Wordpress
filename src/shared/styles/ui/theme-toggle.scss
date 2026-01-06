@@ -1,4 +1,5 @@
 @use "../variables/colors" as colors;
+@use "../variables/media" as media;
 
 .theme-toggle,
 .language-toggle {
@@ -26,5 +27,13 @@
   .language-toggle {
     color: var(--light-text);
     border: 1px solid var(--gray);
+  }
+}
+@media (max-width: media.$extra-small) {
+  .header {
+    .theme-toggle,
+    .language-toggle {
+      display: none;
+    }
   }
 }
