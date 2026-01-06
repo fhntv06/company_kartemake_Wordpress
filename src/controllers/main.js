@@ -1,6 +1,7 @@
 import { AccordionController } from './AccordionController.js'
 import { AnchorController } from './AnchorController.js'
 import { AnimationNumbersController } from './AnimationNumbersController.js'
+import { BurgerMenuController } from './BurgerMenuController.js'
 import { CalculatorController } from './CalculatorController.js'
 import { CubeWithWorkItemsController } from './CubeWithWorkItemsController.js'
 import { FormController } from './FormController.js'
@@ -40,6 +41,10 @@ export class EntryPointApp {
       theme: ThemeController,
     }
 
+    this.controllersMustExecuted = {
+      'burger-menu': BurgerMenuController,
+    }
+
     this.connect()
   }
   connect = () => {
@@ -60,6 +65,15 @@ export class EntryPointApp {
         this.initializeEntityController(controllerAttr, container)
       }
     })
+
+    // must controllers
+    for (const controllerName in this.controllersMustExecuted) {
+      const entityController = this.controllersMustExecuted[controllerName]
+
+      if (!this.controllersMustExecuted[controllerName]) console.error("Is controller ", controllerName, " not define!")
+      console.log('Initializing controller:', entityController.name)
+      new entityController(controllerName, document.body)
+    }
   }
   initializeEntityController = (controllerName, container) => {
     if (!this.controllersExperimental[controllerName]) console.error("Is controller ", controllerName, " not define!")
