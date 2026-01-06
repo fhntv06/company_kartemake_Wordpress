@@ -1,35 +1,12 @@
 export class SidebarAnchorController {
-  constructor() {
+  constructor(controllerName, container) {
     this.init()
   }
   init = () => {
-    const sections = document.querySelectorAll('section[href^="#"]')
-    const burgerMenu = document.getElementById('burgerMenu');
-    const sidebar = document.getElementById('sidebar');
-    const overlay = document.getElementById('overlay');
-    const sidebarLinks = document.querySelectorAll('.sidebar-nav a');
-
-    // Открытие/закрытие sidebar
-    burgerMenu.addEventListener('click', function() {
-      sidebar.classList.toggle('open')
-      overlay.classList.toggle('active')
-      burgerMenu.classList.toggle('active')
-
-      // Блокировка скролла при открытом sidebar
-      if (sidebar.classList.contains('open')) {
-        document.body.style.overflow = 'hidden'
-      } else {
-        document.body.style.overflow = 'auto'
-      }
-    })
-
-    // Закрытие sidebar при клике на overlay
-    overlay.addEventListener('click', function() {
-      sidebar.classList.remove('open');
-      overlay.classList.remove('active');
-      burgerMenu.classList.remove('active');
-      document.body.style.overflow = 'auto';
-    });
+    const header = document.querySelector('.header');
+    const headerHeight = header ? header.offsetHeight : 0;
+    const sections = document.querySelectorAll('[data-id]')
+    const sidebarLinks = document.querySelectorAll('.sidebar__nav a');
 
     // Плавная прокрутка при клике на ссылки в sidebar
     sidebarLinks.forEach(link => {
@@ -37,18 +14,17 @@ export class SidebarAnchorController {
         e.preventDefault();
 
         const targetId = this.getAttribute('href');
-        const targetSection = document.querySelector(targetId);
+
+        console.log(targetId)
+
+        const targetSection = document.querySelector(`[data-id="${targetId.substring(1)}"]`);
+
+        console.log(targetSection)
 
         if (targetSection) {
-          // Закрываем sidebar после выбора пункта
-          sidebar.classList.remove('open');
-          overlay.classList.remove('active');
-          burgerMenu.classList.remove('active');
-          document.body.style.overflow = 'auto';
-
           // Плавная прокрутка к секции
           window.scrollTo({
-            top: targetSection.offsetTop,
+            top: targetSection.offsetTop - headerHeight - 60,
             behavior: 'smooth'
           });
         }
@@ -60,10 +36,9 @@ export class SidebarAnchorController {
 
       sections.forEach(section => {
         const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
 
-        if (pageYOffset >= sectionTop - 200) {
-          current = section.getAttribute('id');
+        if (pageYOffset >= sectionTop - headerHeight - 60) {
+          current = section.dataset.id;
         }
       });
 
