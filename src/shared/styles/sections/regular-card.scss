@@ -1,3 +1,6 @@
+@use "../variables/colors" as colors;
+@use "../variables/media" as media;
+
 .regular-card {
   grid-column: span 4;
   position: relative;
@@ -70,6 +73,10 @@
   color: #aaa;
   flex-grow: 1;
 }
+.regular-meta,
+.regular-description {
+  color: colors.$light-black;
+}
 .regular-tags {
   display: flex;
   flex-wrap: wrap;
@@ -117,5 +124,11 @@
 [data-theme="dark"] {
   .regular-card {
     background-color: var(--darker-bg);
+  }
+}
+
+@media (max-width: media.$middle) {
+  .regular-card {
+    grid-column: span 6;
   }
 }
