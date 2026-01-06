@@ -1,4 +1,6 @@
 @use '../variables/offsets' as offsets;
+@use '../variables/colors' as colors;
+@use '../variables/media' as media;
 
 .cards-grid {
   display: grid;
@@ -13,10 +15,9 @@
   justify-content: space-between;
   gap: offsets.$extra-small;
   min-height: 250px;
-  background-color: var(--card-bg);
+  background-color: colors.$light;
   padding: offsets.$small;
   border-radius: var(--border-radius);
-  color: var(--bg-color);
   text-align: center;
   cursor: pointer;
   border: 1px solid var(--card-border);
@@ -56,7 +57,28 @@
 }
 
 [data-theme="dark"] {
+  .vertical-card {
+    background-color: var(--card-bg);
+  }
   .value-icon {
     color: var(--accent-yellow);
+  }
+}
+
+@media (max-width: media.$lower-middle) {
+  .cards-grid {
+    column-gap: offsets.$extra-small;
+  }
+  .vertical-card {
+    grid-column: span 6;
+    padding: offsets.$extra-small;
+  }
+}
+@media (max-width: media.$extra-small) {
+  .cards-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .vertical-card {
+    grid-column: 1/-1;
   }
 }
