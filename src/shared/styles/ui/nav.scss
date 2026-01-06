@@ -13,13 +13,6 @@
     font-weight: 500;
     transition: var(--transition);
 
-    &:hover {
-      color: var(--accent-red);
-
-      &::after {
-        width: 100%;
-      }
-    }
     &::after {
       content: '';
       position: absolute;

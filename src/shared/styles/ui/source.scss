@@ -15,14 +15,19 @@ a, .link {
     background-color: var(--accent-red);
     transition: var(--transition);
   }
-  &:hover {
-    color: var(--accent-red);
+  &:hover,
+  &.active {
+    color: var(--accent-red) !important;
     transform: translateY(-3px);
 
     &::after {
       width: 100%;
     }
   }
+  &.active {
+    pointer-events: none;
+  }
+
   text-decoration: none;
 
   &.to-top {
