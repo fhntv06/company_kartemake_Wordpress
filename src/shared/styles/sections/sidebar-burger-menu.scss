@@ -14,11 +14,11 @@
   background-color: #1a1a1a;
   padding: 80px 30px 30px;
   transition: all 0.4s ease;
-  box-shadow: -5px 0 25px rgba(0, 0, 0, 0.5);
   overflow-y: auto;
 
   &.open {
     right: 0;
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.5);
   }
 
   a, button:not(.cta-button) {
