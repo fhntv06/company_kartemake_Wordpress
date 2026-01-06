@@ -26,6 +26,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="SOFT" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -39,25 +40,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;JavaScript Debug.blog.html.executor&quot;: &quot;Run&quot;,
-    &quot;JavaScript Debug.index.html.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;front-end&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/CifronPro/projects/work/landing-kartech.site/src/controllers&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.Mappings&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2024.2.3\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "JavaScript Debug.blog.html.executor": "Run",
+    "JavaScript Debug.index.html.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "front-end",
+    "last_opened_file_path": "C:/Users/CifronPro/projects/work/landing-kartech.site/src/controllers",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.start.executor": "Run",
+    "settings.editor.selected.configurable": "project.propVCSSupport.Mappings",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2024.2.3\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "GitStage.ChangesTree.GroupingKeys": [
+      "directory",
+      "module",
+      "repository"
+    ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\CifronPro\projects\work\landing-kartech.site\src\controllers" />
@@ -70,6 +79,23 @@
       <recent name="C:\Users\CifronPro\projects\work\landing-kartech.site\src\shared" />
       <recent name="C:\Users\CifronPro\projects\work\PROFI\landing\images\icons" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -103,7 +129,67 @@
       <workItem from="1757497764379" duration="1102000" />
       <workItem from="1757578095422" duration="22812000" />
       <workItem from="1757738759264" duration="8365000" />
+      <workItem from="1762007788274" duration="1211000" />
+      <workItem from="1763626744838" duration="2904000" />
+      <workItem from="1767687202193" duration="13176000" />
     </task>
+    <task id="LOCAL-00001" summary="fix / error removing class 'active' in modal controller">
+      <option name="closed" value="true" />
+      <created>1767696098236</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1767696098236</updated>
+    </task>
+    <task id="LOCAL-00002" summary="create burger menu controller">
+      <option name="closed" value="true" />
+      <created>1767703381086</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1767703381086</updated>
+    </task>
+    <task id="LOCAL-00003" summary="refactor sidebar anchor controller">
+      <option name="closed" value="true" />
+      <created>1767706822164</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1767706822164</updated>
+    </task>
+    <task id="LOCAL-00004" summary="refactor sidebar anchor controller">
+      <option name="closed" value="true" />
+      <created>1767706854032</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1767706854032</updated>
+    </task>
+    <task id="LOCAL-00005" summary="refactor main.js / create object controllers Must Executed">
+      <option name="closed" value="true" />
+      <created>1767706875948</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1767706875948</updated>
+    </task>
+    <task id="LOCAL-00006" summary="refactor burger menu and sidebar burger menu in main page">
+      <option name="closed" value="true" />
+      <created>1767706958951</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1767706958951</updated>
+    </task>
+    <task id="LOCAL-00007" summary="create burger menu and sidebar burger menu in detail blog page">
+      <option name="closed" value="true" />
+      <created>1767706972555</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1767706972555</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -119,5 +205,14 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fix / error removing class 'active' in modal controller" />
+    <MESSAGE value="create burger menu controller" />
+    <MESSAGE value="refactor sidebar anchor controller" />
+    <MESSAGE value="refactor main.js / create object controllers Must Executed" />
+    <MESSAGE value="refactor burger menu and sidebar burger menu in main page" />
+    <MESSAGE value="create burger menu and sidebar burger menu in detail blog page" />
+    <option name="LAST_COMMIT_MESSAGE" value="create burger menu and sidebar burger menu in detail blog page" />
   </component>
 </project>
