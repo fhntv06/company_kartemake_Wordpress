@@ -36,6 +36,7 @@ button, .button {
   &.cta-button {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 8px;
     background-color: var(--accent-red);
     transition: var(--transition);
