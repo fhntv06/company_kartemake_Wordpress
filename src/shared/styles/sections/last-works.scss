@@ -1,4 +1,5 @@
 @use '../variables/offsets' as offsets;
+@use '../variables/media' as media;
 
 .works-container {
   display: flex;
@@ -8,6 +9,7 @@
   display: flex;
   flex: 4;
   gap: offsets.$small;
+  padding-bottom: offsets.$extra-small;
   overflow-x: scroll;
 }
 .work-item {
@@ -94,6 +96,32 @@
   .work-item {
     &:before {
       background: linear-gradient(90deg, transparent, rgba(255,255,255,.1), transparent);
+    }
+  }
+}
+
+@media (max-width: media.$lower-middle) {
+  .works-container {
+    flex-direction: column;
+    row-gap: offsets.$middle;
+  }
+  .work-item {
+    flex-basis: 45%;
+
+    &:hover {
+      flex-basis: 45%;
+    }
+  }
+}
+@media (max-width: media.$extra-small) {
+  .works-visual {
+    display: none;
+  }
+  .work-item {
+    flex-basis: 100%;
+
+    &:hover {
+      flex-basis: 100%;
     }
   }
 }
