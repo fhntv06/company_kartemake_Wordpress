@@ -13,7 +13,7 @@
   <a href="/" class="logo">
     <span class="font-size-h2">K</span>
     <span class="font-size-h2">·</span>
-    <span class="font-size-h3 color-accept-red">ART</span>
+    <span class="font-size-h3 color-accent-red">ART</span>
     <span class="font-size-h2">·</span>
     <span class="font-size-h4">TECH</span>
   </a>
@@ -22,7 +22,9 @@
     <a href="services.html">Услуги</a>
     <a href="projects.html">Проекты</a>
     <a href="about.html">Компания</a>
-    <a href="blog.html">Блог</a>
+    <a class="active" href="blog.html">Блог</a>
+    <a href="calculator.html">Калькулятор сметы</a>
+    <a href="support.html">Техническая поддержка</a>
     <a href="contacts.html">Контакты</a>
   </nav>
 
@@ -74,320 +76,322 @@
   <main>
     <!-- Навигация -->
     <section class="blog-navigation">
-      <a href="index.html" class="back-link">
-        <i class="fas fa-arrow-left"></i>
-        <span>Назад на главную</span>
-      </a>
+      <div class="container">
+        <a href="index.html" class="back-link">
+          <i class="fas fa-arrow-left"></i>
+          <span>Назад на главную</span>
+        </a>
 
-      <div class="breadcrumbs">
-        <a href="index.html">Главная</a>
-        <span>/</span>
-        <span>Блог проектов</span>
-      </div>
+        <div class="breadcrumbs">
+          <a href="index.html">Главная</a>
+          <span>/</span>
+          <span>Блог проектов</span>
+        </div>
 
-      <div class="project-meta">
-        <i class="far fa-file-alt"></i>
-        <span>Всего публикаций: <span>24</span></span>
-      </div>
+        <div class="project-meta">
+          <i class="far fa-file-alt"></i>
+          <span>Всего публикаций: <span>24</span></span>
+        </div>
 
-      <div class="cards-grid">
-        <!-- Главная карточка -->
-        <article class="featured-card">
-          <div class="featured-image">
-            <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="TechInnovations">
-          </div>
-
-          <div class="featured-content">
-            <div class="featured-meta">
-              <div class="featured-meta__item">
-                <i class="far fa-clock"></i>
-                <span>8 мин</span>
-              </div>
-              <div class="featured-meta__item">
-                <i class="far fa-eye"></i>
-                <span>1,245</span>
-              </div>
-              <div class="featured-meta__item">
-                <i class="far fa-calendar"></i>
-                <span>15 окт 2023</span>
-              </div>
+        <div class="cards-grid">
+          <!-- Главная карточка -->
+          <article class="featured-card">
+            <div class="featured-image">
+              <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="TechInnovations">
             </div>
 
-            <h2 class="featured-title">
-              <a href="/detail.html">Корпоративный сайт для TechInnovations</a>
-            </h2>
+            <div class="featured-content">
+              <div class="featured-meta">
+                <div class="featured-meta__item">
+                  <i class="far fa-clock"></i>
+                  <span>8 мин</span>
+                </div>
+                <div class="featured-meta__item">
+                  <i class="far fa-eye"></i>
+                  <span>1,245</span>
+                </div>
+                <div class="featured-meta__item">
+                  <i class="far fa-calendar"></i>
+                  <span>15 окт 2026</span>
+                </div>
+              </div>
 
-            <p class="featured-description">
-              Современный адаптивный сайт с системой управления контентом и интеграцией CRM.
-              Проект включал полный цикл работ: от исследования и проектирования до разработки и запуска.
-            </p>
+              <h2 class="featured-title">
+                <a href="/detail.html">Корпоративный сайт для TechInnovations</a>
+              </h2>
 
-            <div class="featured-tags">
-              <a href="#" class="featured-tag">Веб-разработка</a>
-              <a href="#" class="featured-tag">UI/UX дизайн</a>
-              <a href="#" class="featured-tag">Корпоративные сайты</a>
+              <p class="featured-description">
+                Современный адаптивный сайт с системой управления контентом и интеграцией CRM.
+                Проект включал полный цикл работ: от исследования и проектирования до разработки и запуска.
+              </p>
+
+              <div class="featured-tags">
+                <a href="#" class="featured-tag">Веб-разработка</a>
+                <a href="#" class="featured-tag">UI/UX дизайн</a>
+                <a href="#" class="featured-tag">Корпоративные сайты</a>
+              </div>
+
+              <p class="featured-link">
+                <a href="detail.html">Читать подробнее</a>
+                <i class="fas fa-arrow-right"></i>
+              </p>
+            </div>
+          </article>
+
+          <!-- Обычные карточки -->
+          <article class="regular-card">
+            <div class="regular-image">
+              <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="TechInnovations">
             </div>
 
-            <p class="featured-link">
-              <a href="detail.html">Читать подробнее</a>
-              <i class="fas fa-arrow-right"></i>
-            </p>
-          </div>
-        </article>
+            <div class="regular-content">
+              <div class="regular-meta">
+                <div class="regular-meta__item">
+                  <i class="far fa-clock"></i>
+                  <span>8 мин</span>
+                </div>
+                <div class="regular-meta__item">
+                  <i class="far fa-eye"></i>
+                  <span>1,245</span>
+                </div>
+                <div class="regular-meta__item">
+                  <i class="far fa-calendar"></i>
+                  <span>15 окт 2026</span>
+                </div>
+              </div>
 
-        <!-- Обычные карточки -->
-        <article class="regular-card">
-          <div class="regular-image">
-            <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="TechInnovations">
-          </div>
+              <h2 class="regular-title">
+                <a href="detail.html">Корпоративный сайт для TechInnovations</a>
+              </h2>
 
-          <div class="regular-content">
-            <div class="regular-meta">
-              <div class="regular-meta__item">
-                <i class="far fa-clock"></i>
-                <span>8 мин</span>
+              <p class="regular-description">
+                Современный адаптивный сайт с системой управления контентом и интеграцией CRM.
+                Проект включал полный цикл работ: от исследования и проектирования до разработки и запуска.
+              </p>
+
+              <div class="regular-tags">
+                <a href="#" class="regular-tag">Веб-разработка</a>
+                <a href="#" class="regular-tag">UI/UX дизайн</a>
+                <a href="#" class="regular-tag">Корпоративные сайты</a>
               </div>
-              <div class="regular-meta__item">
-                <i class="far fa-eye"></i>
-                <span>1,245</span>
-              </div>
-              <div class="regular-meta__item">
-                <i class="far fa-calendar"></i>
-                <span>15 окт 2023</span>
-              </div>
+
+              <a href="detail.html" class="regular-link">
+                <span class="read-more-text">Читать подробнее</span>
+                <i class="fas fa-arrow-right read-more-arrow"></i>
+              </a>
+            </div>
+          </article>
+          <article class="regular-card">
+            <div class="regular-image">
+              <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="TechInnovations">
             </div>
 
-            <h2 class="regular-title">
-              <a href="detail.html">Корпоративный сайт для TechInnovations</a>
-            </h2>
+            <div class="regular-content">
+              <div class="regular-meta">
+                <div class="regular-meta__item">
+                  <i class="far fa-clock"></i>
+                  <span>8 мин</span>
+                </div>
+                <div class="regular-meta__item">
+                  <i class="far fa-eye"></i>
+                  <span>1,245</span>
+                </div>
+                <div class="regular-meta__item">
+                  <i class="far fa-calendar"></i>
+                  <span>15 окт 2026</span>
+                </div>
+              </div>
 
-            <p class="regular-description">
-              Современный адаптивный сайт с системой управления контентом и интеграцией CRM.
-              Проект включал полный цикл работ: от исследования и проектирования до разработки и запуска.
-            </p>
+              <h2 class="regular-title">
+                <a href="detail.html">Корпоративный сайт для TechInnovations</a>
+              </h2>
 
-            <div class="regular-tags">
-              <a href="#" class="regular-tag">Веб-разработка</a>
-              <a href="#" class="regular-tag">UI/UX дизайн</a>
-              <a href="#" class="regular-tag">Корпоративные сайты</a>
+              <p class="regular-description">
+                Современный адаптивный сайт с системой управления контентом и интеграцией CRM.
+                Проект включал полный цикл работ: от исследования и проектирования до разработки и запуска.
+              </p>
+
+              <div class="regular-tags">
+                <a href="#" class="regular-tag">Веб-разработка</a>
+                <a href="#" class="regular-tag">UI/UX дизайн</a>
+                <a href="#" class="regular-tag">Корпоративные сайты</a>
+              </div>
+
+              <a href="detail.html" class="regular-link">
+                <span class="read-more-text">Читать подробнее</span>
+                <i class="fas fa-arrow-right read-more-arrow"></i>
+              </a>
+            </div>
+          </article>
+          <article class="regular-card">
+            <div class="regular-image">
+              <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="TechInnovations">
             </div>
 
-            <a href="detail.html" class="regular-link">
-              <span class="read-more-text">Читать подробнее</span>
-              <i class="fas fa-arrow-right read-more-arrow"></i>
-            </a>
-          </div>
-        </article>
-        <article class="regular-card">
-          <div class="regular-image">
-            <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="TechInnovations">
-          </div>
+            <div class="regular-content">
+              <div class="regular-meta">
+                <div class="regular-meta__item">
+                  <i class="far fa-clock"></i>
+                  <span>8 мин</span>
+                </div>
+                <div class="regular-meta__item">
+                  <i class="far fa-eye"></i>
+                  <span>1,245</span>
+                </div>
+                <div class="regular-meta__item">
+                  <i class="far fa-calendar"></i>
+                  <span>15 окт 2026</span>
+                </div>
+              </div>
 
-          <div class="regular-content">
-            <div class="regular-meta">
-              <div class="regular-meta__item">
-                <i class="far fa-clock"></i>
-                <span>8 мин</span>
+              <h2 class="regular-title">
+                <a href="detail.html">Корпоративный сайт для TechInnovations</a>
+              </h2>
+
+              <p class="regular-description">
+                Современный адаптивный сайт с системой управления контентом и интеграцией CRM.
+                Проект включал полный цикл работ: от исследования и проектирования до разработки и запуска.
+              </p>
+
+              <div class="regular-tags">
+                <a href="#" class="regular-tag">Веб-разработка</a>
+                <a href="#" class="regular-tag">UI/UX дизайн</a>
+                <a href="#" class="regular-tag">Корпоративные сайты</a>
               </div>
-              <div class="regular-meta__item">
-                <i class="far fa-eye"></i>
-                <span>1,245</span>
-              </div>
-              <div class="regular-meta__item">
-                <i class="far fa-calendar"></i>
-                <span>15 окт 2023</span>
-              </div>
+
+              <a href="detail.html" class="regular-link">
+                <span class="read-more-text">Читать подробнее</span>
+                <i class="fas fa-arrow-right read-more-arrow"></i>
+              </a>
+            </div>
+          </article>
+          <article class="regular-card">
+            <div class="regular-image">
+              <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="TechInnovations">
             </div>
 
-            <h2 class="regular-title">
-              <a href="detail.html">Корпоративный сайт для TechInnovations</a>
-            </h2>
+            <div class="regular-content">
+              <div class="regular-meta">
+                <div class="regular-meta__item">
+                  <i class="far fa-clock"></i>
+                  <span>8 мин</span>
+                </div>
+                <div class="regular-meta__item">
+                  <i class="far fa-eye"></i>
+                  <span>1,245</span>
+                </div>
+                <div class="regular-meta__item">
+                  <i class="far fa-calendar"></i>
+                  <span>15 окт 2026</span>
+                </div>
+              </div>
 
-            <p class="regular-description">
-              Современный адаптивный сайт с системой управления контентом и интеграцией CRM.
-              Проект включал полный цикл работ: от исследования и проектирования до разработки и запуска.
-            </p>
+              <h2 class="regular-title">
+                <a href="detail.html">Корпоративный сайт для TechInnovations</a>
+              </h2>
 
-            <div class="regular-tags">
-              <a href="#" class="regular-tag">Веб-разработка</a>
-              <a href="#" class="regular-tag">UI/UX дизайн</a>
-              <a href="#" class="regular-tag">Корпоративные сайты</a>
+              <p class="regular-description">
+                Современный адаптивный сайт с системой управления контентом и интеграцией CRM.
+                Проект включал полный цикл работ: от исследования и проектирования до разработки и запуска.
+              </p>
+
+              <div class="regular-tags">
+                <a href="#" class="regular-tag">Веб-разработка</a>
+                <a href="#" class="regular-tag">UI/UX дизайн</a>
+                <a href="#" class="regular-tag">Корпоративные сайты</a>
+              </div>
+
+              <a href="detail.html" class="regular-link">
+                <span class="read-more-text">Читать подробнее</span>
+                <i class="fas fa-arrow-right read-more-arrow"></i>
+              </a>
+            </div>
+          </article>
+          <article class="regular-card">
+            <div class="regular-image">
+              <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="TechInnovations">
             </div>
 
-            <a href="detail.html" class="regular-link">
-              <span class="read-more-text">Читать подробнее</span>
-              <i class="fas fa-arrow-right read-more-arrow"></i>
-            </a>
-          </div>
-        </article>
-        <article class="regular-card">
-          <div class="regular-image">
-            <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="TechInnovations">
-          </div>
+            <div class="regular-content">
+              <div class="regular-meta">
+                <div class="regular-meta__item">
+                  <i class="far fa-clock"></i>
+                  <span>8 мин</span>
+                </div>
+                <div class="regular-meta__item">
+                  <i class="far fa-eye"></i>
+                  <span>1,245</span>
+                </div>
+                <div class="regular-meta__item">
+                  <i class="far fa-calendar"></i>
+                  <span>15 окт 2026</span>
+                </div>
+              </div>
 
-          <div class="regular-content">
-            <div class="regular-meta">
-              <div class="regular-meta__item">
-                <i class="far fa-clock"></i>
-                <span>8 мин</span>
+              <h2 class="regular-title">
+                <a href="detail.html">Корпоративный сайт для TechInnovations</a>
+              </h2>
+
+              <p class="regular-description">
+                Современный адаптивный сайт с системой управления контентом и интеграцией CRM.
+                Проект включал полный цикл работ: от исследования и проектирования до разработки и запуска.
+              </p>
+
+              <div class="regular-tags">
+                <a href="#" class="regular-tag">Веб-разработка</a>
+                <a href="#" class="regular-tag">UI/UX дизайн</a>
+                <a href="#" class="regular-tag">Корпоративные сайты</a>
               </div>
-              <div class="regular-meta__item">
-                <i class="far fa-eye"></i>
-                <span>1,245</span>
-              </div>
-              <div class="regular-meta__item">
-                <i class="far fa-calendar"></i>
-                <span>15 окт 2023</span>
-              </div>
+
+              <a href="detail.html" class="regular-link">
+                <span class="read-more-text">Читать подробнее</span>
+                <i class="fas fa-arrow-right read-more-arrow"></i>
+              </a>
+            </div>
+          </article>
+          <article class="regular-card">
+            <div class="regular-image">
+              <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="TechInnovations">
             </div>
 
-            <h2 class="regular-title">
-              <a href="detail.html">Корпоративный сайт для TechInnovations</a>
-            </h2>
+            <div class="regular-content">
+              <div class="regular-meta">
+                <div class="regular-meta__item">
+                  <i class="far fa-clock"></i>
+                  <span>8 мин</span>
+                </div>
+                <div class="regular-meta__item">
+                  <i class="far fa-eye"></i>
+                  <span>1,245</span>
+                </div>
+                <div class="regular-meta__item">
+                  <i class="far fa-calendar"></i>
+                  <span>15 окт 2026</span>
+                </div>
+              </div>
 
-            <p class="regular-description">
-              Современный адаптивный сайт с системой управления контентом и интеграцией CRM.
-              Проект включал полный цикл работ: от исследования и проектирования до разработки и запуска.
-            </p>
+              <h2 class="regular-title">
+                <a href="detail.html">Корпоративный сайт для TechInnovations</a>
+              </h2>
 
-            <div class="regular-tags">
-              <a href="#" class="regular-tag">Веб-разработка</a>
-              <a href="#" class="regular-tag">UI/UX дизайн</a>
-              <a href="#" class="regular-tag">Корпоративные сайты</a>
+              <p class="regular-description">
+                Современный адаптивный сайт с системой управления контентом и интеграцией CRM.
+                Проект включал полный цикл работ: от исследования и проектирования до разработки и запуска.
+              </p>
+
+              <div class="regular-tags">
+                <a href="#" class="regular-tag">Веб-разработка</a>
+                <a href="#" class="regular-tag">UI/UX дизайн</a>
+                <a href="#" class="regular-tag">Корпоративные сайты</a>
+              </div>
+
+              <a href="detail.html" class="regular-link">
+                <span class="read-more-text">Читать подробнее</span>
+                <i class="fas fa-arrow-right read-more-arrow"></i>
+              </a>
             </div>
-
-            <a href="detail.html" class="regular-link">
-              <span class="read-more-text">Читать подробнее</span>
-              <i class="fas fa-arrow-right read-more-arrow"></i>
-            </a>
-          </div>
-        </article>
-        <article class="regular-card">
-          <div class="regular-image">
-            <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="TechInnovations">
-          </div>
-
-          <div class="regular-content">
-            <div class="regular-meta">
-              <div class="regular-meta__item">
-                <i class="far fa-clock"></i>
-                <span>8 мин</span>
-              </div>
-              <div class="regular-meta__item">
-                <i class="far fa-eye"></i>
-                <span>1,245</span>
-              </div>
-              <div class="regular-meta__item">
-                <i class="far fa-calendar"></i>
-                <span>15 окт 2023</span>
-              </div>
-            </div>
-
-            <h2 class="regular-title">
-              <a href="detail.html">Корпоративный сайт для TechInnovations</a>
-            </h2>
-
-            <p class="regular-description">
-              Современный адаптивный сайт с системой управления контентом и интеграцией CRM.
-              Проект включал полный цикл работ: от исследования и проектирования до разработки и запуска.
-            </p>
-
-            <div class="regular-tags">
-              <a href="#" class="regular-tag">Веб-разработка</a>
-              <a href="#" class="regular-tag">UI/UX дизайн</a>
-              <a href="#" class="regular-tag">Корпоративные сайты</a>
-            </div>
-
-            <a href="detail.html" class="regular-link">
-              <span class="read-more-text">Читать подробнее</span>
-              <i class="fas fa-arrow-right read-more-arrow"></i>
-            </a>
-          </div>
-        </article>
-        <article class="regular-card">
-          <div class="regular-image">
-            <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="TechInnovations">
-          </div>
-
-          <div class="regular-content">
-            <div class="regular-meta">
-              <div class="regular-meta__item">
-                <i class="far fa-clock"></i>
-                <span>8 мин</span>
-              </div>
-              <div class="regular-meta__item">
-                <i class="far fa-eye"></i>
-                <span>1,245</span>
-              </div>
-              <div class="regular-meta__item">
-                <i class="far fa-calendar"></i>
-                <span>15 окт 2023</span>
-              </div>
-            </div>
-
-            <h2 class="regular-title">
-              <a href="detail.html">Корпоративный сайт для TechInnovations</a>
-            </h2>
-
-            <p class="regular-description">
-              Современный адаптивный сайт с системой управления контентом и интеграцией CRM.
-              Проект включал полный цикл работ: от исследования и проектирования до разработки и запуска.
-            </p>
-
-            <div class="regular-tags">
-              <a href="#" class="regular-tag">Веб-разработка</a>
-              <a href="#" class="regular-tag">UI/UX дизайн</a>
-              <a href="#" class="regular-tag">Корпоративные сайты</a>
-            </div>
-
-            <a href="detail.html" class="regular-link">
-              <span class="read-more-text">Читать подробнее</span>
-              <i class="fas fa-arrow-right read-more-arrow"></i>
-            </a>
-          </div>
-        </article>
-        <article class="regular-card">
-          <div class="regular-image">
-            <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="TechInnovations">
-          </div>
-
-          <div class="regular-content">
-            <div class="regular-meta">
-              <div class="regular-meta__item">
-                <i class="far fa-clock"></i>
-                <span>8 мин</span>
-              </div>
-              <div class="regular-meta__item">
-                <i class="far fa-eye"></i>
-                <span>1,245</span>
-              </div>
-              <div class="regular-meta__item">
-                <i class="far fa-calendar"></i>
-                <span>15 окт 2023</span>
-              </div>
-            </div>
-
-            <h2 class="regular-title">
-              <a href="detail.html">Корпоративный сайт для TechInnovations</a>
-            </h2>
-
-            <p class="regular-description">
-              Современный адаптивный сайт с системой управления контентом и интеграцией CRM.
-              Проект включал полный цикл работ: от исследования и проектирования до разработки и запуска.
-            </p>
-
-            <div class="regular-tags">
-              <a href="#" class="regular-tag">Веб-разработка</a>
-              <a href="#" class="regular-tag">UI/UX дизайн</a>
-              <a href="#" class="regular-tag">Корпоративные сайты</a>
-            </div>
-
-            <a href="detail.html" class="regular-link">
-              <span class="read-more-text">Читать подробнее</span>
-              <i class="fas fa-arrow-right read-more-arrow"></i>
-            </a>
-          </div>
-        </article>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -405,9 +409,9 @@
 
     <!-- Секция с формой -->
     <section class="project-form">
-      <div class="form-container">
+      <div class="container form-container">
         <div class="form-header">
-          <h3>Хотите чтобы мы решили <span class="color-accept-red">ваш кейс</span>?</h3>
+          <h3>Хотите чтобы мы решили <span class="color-accent-red">ваш кейс</span>?</h3>
           <p>Оставьте заявку и наш специалист свяжется с вами для обсуждения деталей вашего проекта</p>
         </div>
         <form class="contact-form" data-controller="form">
@@ -451,7 +455,7 @@
   <footer>
     <div class="footer-content">
       <div class="footer-logo color-whitesmoke">
-        <span>K</span>·<span class="color-accept-red">ART</span>·<span>TECH</span>
+        <span>K</span>·<span class="color-accent-red">ART</span>·<span>TECH</span>
       </div>
 
       <div class="footer-info">
@@ -471,7 +475,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <div class="copyright">KARTECH © 2023. Все права защищены.</div>
+      <div class="copyright">KARTECH © 2026. Все права защищены.</div>
     </div>
   </footer>
 
@@ -485,7 +489,9 @@
         <li><a href="services.html">Услуги</a></li>
         <li><a href="projects.html">Проекты</a></li>
         <li><a href="about.html">Компания</a></li>
-        <li><a href="blog.html">Блог</a></li>
+        <li><a class="active" href="blog.html">Блог</a></li>
+        <li><a href="calculator.html">Калькулятор сметы</a></li>
+        <li><a href="support.html">Техническая поддержка</a></li>
         <li><a href="contacts.html">Контакты</a></li>
       </ul>
     </nav>
@@ -524,7 +530,7 @@
   <div id="form" class="modal">
     <div class="modal-content">
       <div class="modal-header">
-        <h3>Хотите чтобы мы решили <span class="color-accept-red">ваш кейс</span>?</h3>
+        <h3>Хотите чтобы мы решили <span class="color-accent-red">ваш кейс</span>?</h3>
         <p>Оставьте заявку и наш специалист свяжется с вами для обсуждения деталей вашего проекта</p>
       </div>
 

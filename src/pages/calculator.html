@@ -12,18 +12,20 @@
   <a href="/" class="logo">
     <span class="font-size-h2">K</span>
     <span class="font-size-h2">·</span>
-    <span class="font-size-h3 color-accept-red">ART</span>
+    <span class="font-size-h3 color-accent-red">ART</span>
     <span class="font-size-h2">·</span>
     <span class="font-size-h4">TECH</span>
   </a>
 
   <nav class="nav-links">
-    <a href="services.html">Услуги</a>
-    <a href="projects.html">Проекты</a>
-    <a href="about.html">Компания</a>
-    <a href="blog.html">Блог</a>
-    <a href="contacts.html">Контакты</a>
-  </nav>
+      <a href="services.html">Услуги</a>
+      <a href="projects.html">Проекты</a>
+      <a href="about.html">Компания</a>
+      <a href="blog.html">Блог</a>
+      <a class="active" href="calculator.html">Калькулятор сметы</a>
+      <a href="support.html">Техническая поддержка</a>
+      <a href="contacts.html">Контакты</a>
+    </nav>
 
   <div class="header-controls">
     <div class="social-links">
@@ -73,9 +75,9 @@
   <main>
     <section class="hero-support">
       <div class="container hero__container">
-        <h1>Калькулятор <span class="color-accept-red">сметы</span> проекта</h1>
-        <p>Рассчитайте приблизительную стоимость вашего проекта с помощью нашего <span class="color-accept-red">калькулятора</span>.</p>
-        <p>Выберите нужные опции и сразу увидите <span class="color-accept-red">итоговую цену</span>.</p>
+        <h1>Калькулятор <span class="color-accent-red">сметы</span> проекта</h1>
+        <p>Рассчитайте приблизительную стоимость вашего проекта с помощью нашего <span class="color-accent-red">калькулятора</span>.</p>
+        <p>Выберите нужные опции и сразу увидите <span class="color-accent-red">итоговую цену</span>.</p>
 
         <div class="divider"></div>
 
@@ -101,14 +103,14 @@
 
     <section class="calculator" data-controller="calculator">
       <div class="container">
-        <h2 class="section__title">Рассчитайте стоимость <span class="color-accept-red">проекта</span></h2>
-        <p class="section-description">Выберите необходимые компоненты для вашего проекта, и мы рассчитаем приблизительную стоимость разработки.</p>
+        <h2 class="section__title">Рассчитайте стоимость <span class="color-accent-red">проекта</span></h2>
+        <p class="section__description">Выберите необходимые компоненты для вашего проекта, и мы рассчитаем приблизительную стоимость разработки.</p>
 
         <div class="calculator-grid">
           <div class="calculator-options">
             <!-- Bitrix License Options -->
             <div class="option-group" data-controller-calculator="item">
-              <h4 class="option-title"><i class="fas fa-cube"></i> Лицензии «1С-Битрикс: Управление сайтом»</h4>
+              <h4 class="option-title color-accent-red"><i class="fas fa-cube"></i> Лицензии «1С-Битрикс: Управление сайтом»</h4>
               <div class="option-items">
                 <div class="option-item" data-price="0">
                   <div class="option-info">
@@ -143,7 +145,7 @@
 
             <!-- Hosting Options -->
             <div class="option-group" data-controller-calculator="item">
-              <h4 class="option-title"><i class="fas fa-server"></i> Хостинг (год)</h4>
+              <h4 class="option-title color-accent-red"><i class="fas fa-server"></i> Хостинг (год)</h4>
               <div class="option-items">
                 <div class="option-item" data-price="0">
                   <div class="option-info">
@@ -178,7 +180,7 @@
 
             <!-- Design Options -->
             <div class="option-group" data-controller-calculator="item">
-              <h4 class="option-title"><i class="fas fa-paint-brush"></i> Дизайн</h4>
+              <h4 class="option-title color-accent-red"><i class="fas fa-paint-brush"></i> Дизайн</h4>
               <div class="option-items">
                 <div class="option-item" data-price="0">
                   <div class="option-info">
@@ -213,7 +215,7 @@
 
             <!-- Functionality Options -->
             <div class="option-group" data-controller-calculator="item">
-              <h4 class="option-title"><i class="fas fa-cogs"></i> Функционал</h4>
+              <h4 class="option-title color-accent-red"><i class="fas fa-cogs"></i> Функционал</h4>
               <div class="option-items">
                 <div class="option-item" data-price="30000">
                   <div class="option-info">
@@ -247,8 +249,8 @@
             </div>
 
             <!-- Additional Components -->
-            <div class="option-group" data-controller-calculator="item">
-              <h4 class="option-title"><i class="fas fa-puzzle-piece"></i> Дополнительные компоненты</h4>
+            <div class="option-group" data-controller-calculator="item" data-type="multiply">
+              <h4 class="option-title color-accent-red"><i class="fas fa-puzzle-piece"></i> Дополнительные компоненты</h4>
               <div class="option-items">
                 <div class="option-item checkbox-option" data-price="15000">
                   <div class="option-info">
@@ -283,7 +285,7 @@
           </div>
 
           <div class="calculator-summary">
-            <h3 class="summary-title">Итоговая&nbsp;«смета</h3>
+            <h3 class="summary-title color-accent-red">Итоговая&nbsp;«смета</h3>
             <div class="summary-items">
               <div class="summary-item">
                 <p><b>Лицензии&nbsp;«1С-Битрикс: Управление&nbsp;«сайтом»</b>:</p>
@@ -303,10 +305,10 @@
               </div>
               <div class="summary-item">
                 <p><b>Дополнительные компоненты</b>:</p>
-                <p><span class="summary-price">0</span> ₽</p>
+                <p><span class="summary-price" data-controller-calculator-item="price-total">0</span> ₽</p>
               </div>
             </div>
-            <div class="summary-total">
+            <div class="summary-total color-accent-red">
               <p class="font-size-h4 font-weight-bold">Итого:</p>
               <p><span id="total-price" class="font-size-h4 font-weight-bold">0</span> ₽</p>
             </div>
@@ -327,7 +329,7 @@
   <footer>
     <div class="footer-content">
       <div class="footer-logo color-whitesmoke">
-        <span>K</span>·<span class="color-accept-red">ART</span>·<span>TECH</span>
+        <span>K</span>·<span class="color-accent-red">ART</span>·<span>TECH</span>
       </div>
 
       <div class="footer-info">
@@ -347,7 +349,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <div class="copyright">KARTECH © 2023. Все права защищены.</div>
+      <div class="copyright">KARTECH © 2026. Все права защищены.</div>
     </div>
   </footer>
 
@@ -362,6 +364,8 @@
         <li><a href="projects.html">Проекты</a></li>
         <li><a href="about.html">Компания</a></li>
         <li><a href="blog.html">Блог</a></li>
+        <li><a class="active" href="calculator.html">Калькулятор сметы</a></li>
+        <li><a href="support.html">Техническая поддержка</a></li>
         <li><a href="contacts.html">Контакты</a></li>
       </ul>
     </nav>
@@ -400,7 +404,7 @@
   <div id="form" class="modal">
     <div class="modal-content">
       <div class="modal-header">
-        <h3>Хотите чтобы мы расчитали <span class="color-accept-red">смету вашему проекту</span>?</h3>
+        <h3>Хотите чтобы мы расчитали <span class="color-accent-red">смету вашему проекту</span>?</h3>
         <p>Оставьте заявку и наш специалист свяжется с вами для обсуждения деталей вашего проекта</p>
       </div>
 

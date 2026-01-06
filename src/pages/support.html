@@ -10,20 +10,22 @@
 </head>
 <body data-controller="custom-cursor modal preloader ripple-effect starfield theme">
   <header class="header" data-controller="header">
-    <a href="#" class="logo">
+    <a href="/" class="logo">
       <span class="font-size-h2">K</span>
       <span class="font-size-h2">·</span>
-      <span class="font-size-h3 color-accept-red">ART</span>
+      <span class="font-size-h3 color-accent-red">ART</span>
       <span class="font-size-h2">·</span>
       <span class="font-size-h4">TECH</span>
     </a>
 
     <nav class="nav-links">
-      <a href="#about">О нас</a>
-      <a href="#how-make-it">Процесс</a>
-      <a href="#last-works">Работы</a>
-      <a href="#stack-technology">Технологии</a>
-      <a href="#faq">FAQ</a>
+      <a href="services.html">Услуги</a>
+      <a href="projects.html">Проекты</a>
+      <a href="about.html">Компания</a>
+      <a href="blog.html">Блог</a>
+      <a href="calculator.html">Калькулятор сметы</a>
+      <a class="active" href="support.html">Техническая поддержка</a>
+      <a href="contacts.html">Контакты</a>
     </nav>
 
     <div class="header-controls">
@@ -39,32 +41,42 @@
       </div>
 
       <button
-        class="theme-toggle"
-        data-controller-theme="item"
+              class="theme-toggle"
+              data-controller-theme="item"
       >
         <i class="fas fa-moon"></i>
       </button>
 
-      <button class="language-toggle" data-controller="lang" data-controller-ripple-effect="item">
+      <button
+              class="language-toggle"
+              data-controller="lang"
+              data-controller-ripple-effect="item"
+      >
         <span data-controller-lang="item">RU</span>
         <i class="fas fa-chevron-down"></i>
       </button>
 
       <button
-        class="cta-button"
-        data-controller-modal-open="form"
-        data-controller-modal-func="open"
-        data-controller-ripple-effect="item"
+              class="cta-button"
+              data-controller-modal-open="form"
+              data-controller-modal-func="open"
+              data-controller-ripple-effect="item"
       >
         Начать проект
         <i class="fas fa-arrow-right"></i>
+      </button>
+
+      <button class="burger-menu" id="burgerMenu">
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
     </div>
   </header>
   <main>
     <section class="hero-support">
       <div class="container hero__container">
-        <h1>Техническая <span class="color-accept-red">поддержка</span></h1>
+        <h1>Техническая <span class="color-accent-red">поддержка</span></h1>
         <p class="hero-support__subtitle">Ваш цифровой продукт работает безупречно, пока вы сосредоточены на своем бизнесе. Мы обеспечиваем надежность, безопасность и развитие.</p>
 
         <div class="divider"></div>
@@ -98,8 +110,8 @@
 
     <section class="about-support">
       <div class="container">
-        <h3 class="section__title">Что получит <span class="color-accept-red">клиент?</span></h3>
-        <p class="section-description">Мы выходим за рамки простого «чиним поломки». Наша поддержка — это стратегическое партнерство для роста вашего продукта.</p>
+        <h3 class="section__title">Что получит <span class="color-accent-red">клиент?</span></h3>
+        <p class="section__description">Мы выходим за рамки простого «чиним поломки». Наша поддержка — это стратегическое партнерство для роста вашего продукта.</p>
 
         <div class="benefits-grid">
           <div class="benefit-card">
@@ -128,8 +140,8 @@
 
     <section class="services-support">
       <div class="container">
-        <h3 class="section__title">Услуги <span class="color-accept-red">поддержки</span></h3>
-        <p class="section-description">Комплексный подход к сопровождению вашего цифрового продукта.</p>
+        <h3 class="section__title">Услуги <span class="color-accent-red">поддержки</span></h3>
+        <p class="section__description">Комплексный подход к сопровождению вашего цифрового продукта.</p>
 
         <div class="services-support-tabs" data-controller="tabs">
           <div class="tabs-nav">
@@ -264,7 +276,7 @@
 
     <section class="faq">
       <div class="container">
-        <h3 class="section__title">Частые <span class="color-accept-red">вопросы</span></h3>
+        <h3 class="section__title">Частые <span class="color-accent-red">вопросы</span></h3>
 
         <div class="accordion-container" data-controller="accordion">
           <div class="accordion-item" data-controller-accordion="item">
@@ -325,7 +337,7 @@
   <footer>
     <div class="footer-content">
       <div class="footer-logo color-whitesmoke">
-        <span>K</span>·<span class="color-accept-red">ART</span>·<span>TECH</span>
+        <span>K</span>·<span class="color-accent-red">ART</span>·<span>TECH</span>
       </div>
 
       <div class="footer-info">
@@ -345,15 +357,65 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <div class="copyright">KARTECH © 2023. Все права защищены.</div>
+      <div class="copyright">KARTECH © 2026. Все права защищены.</div>
     </div>
   </footer>
+
+  <!-- Overlay для затемнения фона -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Sidebar burger menu -->
+  <aside class="sidebar-burger-menu" id="sidebar-burger-menu">
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="services.html">Услуги</a></li>
+        <li><a href="projects.html">Проекты</a></li>
+        <li><a href="about.html">Компания</a></li>
+        <li><a href="blog.html">Блог</a></li>
+        <li><a href="calculator.html">Калькулятор сметы</a></li>
+        <li><a class="active" href="support.html">Техническая поддержка</a></li>
+        <li><a href="contacts.html">Контакты</a></li>
+      </ul>
+    </nav>
+
+    <button
+            class="cta-button"
+            data-controller-modal-open="form"
+            data-controller-modal-func="open"
+            data-controller-ripple-effect="item"
+    >
+      Начать проект
+      <i class="fas fa-arrow-right"></i>
+    </button>
+
+    <div class="sidebar-social">
+      <button
+              class="theme-toggle"
+              data-controller-theme="item"
+      >
+        <i class="fas fa-moon"></i>
+      </button>
+      <button
+              class="language-toggle"
+              data-controller="lang"
+              data-controller-ripple-effect="item"
+      >
+        <span data-controller-lang="item">RU</span>
+        <i class="fas fa-chevron-down"></i>
+      </button>
+    </div>
+    <div class="sidebar-social">
+      <a href="#"><i class="fab fa-vk"></i></a>
+      <a href="#"><i class="fab fa-telegram"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
+    </div>
+  </aside>
 
   <!-- modal form -->
   <div id="form" class="modal">
     <div class="modal-content">
       <div class="modal-header">
-        <h3>Хотите обсудить техническую <span class="color-accept-red">поддержку</span>?</h3>
+        <h3>Хотите обсудить техническую <span class="color-accent-red">поддержку</span>?</h3>
         <p>Оставьте заявку и наш специалист свяжется с вами для обсуждения технической поддержкой</p>
       </div>
 

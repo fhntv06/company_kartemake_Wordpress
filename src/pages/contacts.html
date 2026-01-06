@@ -9,74 +9,76 @@
 </head>
 <body data-controller="custom-cursor modal preloader ripple-effect starfield theme">
   <header class="header" data-controller="header">
-  <a href="/" class="logo">
-    <span class="font-size-h2">K</span>
-    <span class="font-size-h2">·</span>
-    <span class="font-size-h3 color-accept-red">ART</span>
-    <span class="font-size-h2">·</span>
-    <span class="font-size-h4">TECH</span>
-  </a>
+    <a href="/" class="logo">
+      <span class="font-size-h2">K</span>
+      <span class="font-size-h2">·</span>
+      <span class="font-size-h3 color-accent-red">ART</span>
+      <span class="font-size-h2">·</span>
+      <span class="font-size-h4">TECH</span>
+    </a>
 
-  <nav class="nav-links">
-    <a href="services.html">Услуги</a>
-    <a href="projects.html">Проекты</a>
-    <a href="about.html">Компания</a>
-    <a href="blog.html">Блог</a>
-    <a href="contacts.html">Контакты</a>
-  </nav>
+    <nav class="nav-links">
+        <a href="services.html">Услуги</a>
+        <a href="projects.html">Проекты</a>
+        <a href="about.html">Компания</a>
+        <a href="blog.html">Блог</a>
+        <a href="calculator.html">Калькулятор сметы</a>
+        <a href="support.html">Техническая поддержка</a>
+        <a class="active" href="contacts.html">Контакты</a>
+      </nav>
 
-  <div class="header-controls">
-    <div class="social-links">
-      <a href="#"><i class="fab fa-behance"></i></a>
-      <a href="#"><i class="fab fa-dribbble"></i></a>
-      <a href="#"><i class="fab fa-github"></i></a>
+    <div class="header-controls">
+      <div class="social-links">
+        <a href="#"><i class="fab fa-behance"></i></a>
+        <a href="#"><i class="fab fa-dribbble"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+      </div>
+
+      <div class="phone">
+        <i class="fas fa-phone"></i>
+        <span>+7 (999) 123-45-67</span>
+      </div>
+
+      <button
+              class="theme-toggle"
+              data-controller-theme="item"
+      >
+        <i class="fas fa-moon"></i>
+      </button>
+
+      <button
+              class="language-toggle"
+              data-controller="lang"
+              data-controller-ripple-effect="item"
+      >
+        <span data-controller-lang="item">RU</span>
+        <i class="fas fa-chevron-down"></i>
+      </button>
+
+      <button
+              class="cta-button"
+              data-controller-modal-open="form"
+              data-controller-modal-func="open"
+              data-controller-ripple-effect="item"
+      >
+        Начать проект
+        <i class="fas fa-arrow-right"></i>
+      </button>
+
+      <button class="burger-menu" id="burgerMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
-
-    <div class="phone">
-      <i class="fas fa-phone"></i>
-      <span>+7 (999) 123-45-67</span>
-    </div>
-
-    <button
-            class="theme-toggle"
-            data-controller-theme="item"
-    >
-      <i class="fas fa-moon"></i>
-    </button>
-
-    <button
-            class="language-toggle"
-            data-controller="lang"
-            data-controller-ripple-effect="item"
-    >
-      <span data-controller-lang="item">RU</span>
-      <i class="fas fa-chevron-down"></i>
-    </button>
-
-    <button
-            class="cta-button"
-            data-controller-modal-open="form"
-            data-controller-modal-func="open"
-            data-controller-ripple-effect="item"
-    >
-      Начать проект
-      <i class="fas fa-arrow-right"></i>
-    </button>
-
-    <button class="burger-menu" id="burgerMenu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </div>
-</header>
+  </header>
   <main>
     <section class="hero-support">
       <div class="container hero__container">
-        <h1>Наши <span class="color-accept-red">контакты</span></h1>
+        <h1>Наши <span class="color-accent-red">контакты</span></h1>
         <p>
           <span class="font-size-h3">
-          K · <span class="color-accept-red">ART</span> · TECH
+          K · <span class="color-accent-red">ART</span> · TECH
           </span> <span>— создаем цифровые продукты на стыке креатива и инноваций. Свяжитесь с нами для обсуждения вашего проекта.</span>
         </p>
 
@@ -103,8 +105,8 @@
 
     <section>
       <div class="container">
-        <h2 class="section-title">Свяжитесь с <span class="color-accept-red">нами</span></h2>
-        <p class="section-description">Мы всегда готовы ответить на ваши вопросы и обсудить возможности сотрудничества.</p>
+        <h2 class="section__title">Свяжитесь с <span class="color-accent-red">нами</span></h2>
+        <p class="section__description">Мы всегда готовы ответить на ваши вопросы и обсудить возможности сотрудничества.</p>
 
         <div class="cards-grid">
           <!-- Address Card -->
@@ -177,9 +179,9 @@
 
     <!-- Секция с формой -->
     <section class="project-form">
-      <div class="form-container">
+      <div class="form-container container">
         <div class="form-header">
-          <h3>Хотите чтобы мы решили <span class="color-accept-red">ваш кейс</span>?</h3>
+          <h3>Хотите чтобы мы решили <span class="color-accent-red">ваш кейс</span>?</h3>
           <p>Оставьте заявку и наш специалист свяжется с вами для обсуждения деталей вашего проекта</p>
         </div>
         <form class="contact-form" data-controller="form">
@@ -223,7 +225,7 @@
   <footer>
     <div class="footer-content">
       <div class="footer-logo color-whitesmoke">
-        <span>K</span>·<span class="color-accept-red">ART</span>·<span>TECH</span>
+        <span>K</span>·<span class="color-accent-red">ART</span>·<span>TECH</span>
       </div>
 
       <div class="footer-info">
@@ -243,7 +245,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <div class="copyright">KARTECH © 2023. Все права защищены.</div>
+      <div class="copyright">KARTECH © 2026. Все права защищены.</div>
     </div>
   </footer>
 
@@ -258,7 +260,9 @@
         <li><a href="projects.html">Проекты</a></li>
         <li><a href="about.html">Компания</a></li>
         <li><a href="blog.html">Блог</a></li>
-        <li><a href="contacts.html">Контакты</a></li>
+        <li><a href="calculator.html">Калькулятор сметы</a></li>
+        <li><a href="support.html">Техническая поддержка</a></li>
+        <li><a class="active" href="contacts.html">Контакты</a></li>
       </ul>
     </nav>
 
@@ -296,7 +300,7 @@
   <div id="form" class="modal">
     <div class="modal-content">
       <div class="modal-header">
-        <h3>Хотите обсудить <span class="color-accept-red">услуги</span>?</h3>
+        <h3>Хотите обсудить <span class="color-accent-red">услуги</span>?</h3>
         <p>Оставьте заявку и наш специалист свяжется с вами для обсуждения услуги или работы</p>
       </div>
 

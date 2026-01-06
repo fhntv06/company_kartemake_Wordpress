@@ -12,7 +12,7 @@
   <a href="/" class="logo">
     <span class="font-size-h2">K</span>
     <span class="font-size-h2">·</span>
-    <span class="font-size-h3 color-accept-red">ART</span>
+    <span class="font-size-h3 color-accent-red">ART</span>
     <span class="font-size-h2">·</span>
     <span class="font-size-h4">TECH</span>
   </a>
@@ -20,8 +20,10 @@
   <nav class="nav-links">
     <a href="services.html">Услуги</a>
     <a href="projects.html">Проекты</a>
-    <a href="about.html">Компания</a>
+    <a class="active" href="about.html">Компания</a>
     <a href="blog.html">Блог</a>
+    <a href="calculator.html">Калькулятор сметы</a>
+    <a href="support.html">Техническая поддержка</a>
     <a href="contacts.html">Контакты</a>
   </nav>
 
@@ -129,12 +131,14 @@
 
   <section class="team">
     <div class="container">
-      <h2 class="section__title">Наша <span class="color-accept-red">команда</span></h2>
+      <h2 class="section__title">Наша <span class="color-accent-red">команда</span></h2>
       <div class="cards-grid">
         <div class="vertical-card" data-controller-interactive-card-effect="item">
-          <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Основатель">
+          <figure>
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Основатель">
+            <figcaption>Основатель & CEO</figcaption>
+          </figure>
           <h4 class="title">Дмитрий Петров</h4>
-          <p class="color-accept-red">Основатель & CEO</p>
           <p>Стратег и visioner с 10-летним опытом в digital-индустрии.</p>
           <a href="mailto:info@kartech.ru" class="link">
             <span>Написать нам</span>
@@ -142,9 +146,12 @@
           </a>
         </div>
         <div class="vertical-card" data-controller-interactive-card-effect="item">
-          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Арт-директор">
+          <figure>
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Арт-директор">
+            <figcaption>Арт-директор</figcaption>
+          </figure>
+
           <h4 class="title">Екатерина Смирнова</h4>
-          <p class="color-accept-red">Арт-директор</p>
           <p>Талантливый дизайнер с уникальным чувством стиля и эстетики.</p>
           <a href="mailto:info@kartech.ru" class="link">
             <span>Написать нам</span>
@@ -152,9 +159,11 @@
           </a>
         </div>
         <div class="vertical-card" data-controller-interactive-card-effect="item">
-          <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Основатель">
+          <figure>
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Основатель">
+            <figcaption>Технический директор</figcaption>
+          </figure>
           <h4 class="title">Дмитрий Петров</h4>
-          <p class="color-accept-red">Технический директор</p>
           <p>Гуру программирования и архитектуры цифровых продуктов</p>
           <a href="mailto:info@kartech.ru" class="link">
             <span>Написать нам</span>
@@ -169,7 +178,7 @@
 <footer>
   <div class="footer-content">
     <div class="footer-logo color-whitesmoke">
-      <span>K</span>·<span class="color-accept-red">ART</span>·<span>TECH</span>
+      <span>K</span>·<span class="color-accent-red">ART</span>·<span>TECH</span>
     </div>
 
     <div class="footer-info">
@@ -189,7 +198,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <div class="copyright">KARTECH © 2023. Все права защищены.</div>
+    <div class="copyright">KARTECH © 2026. Все права защищены.</div>
   </div>
 </footer>
 
@@ -202,8 +211,10 @@
     <ul class="sidebar-nav">
       <li><a href="services.html">Услуги</a></li>
       <li><a href="projects.html">Проекты</a></li>
-      <li><a href="about.html">Компания</a></li>
+      <li><a class="active" href="about.html">Компания</a></li>
       <li><a href="blog.html">Блог</a></li>
+      <li><a href="calculator.html">Калькулятор сметы</a></li>
+      <li><a href="support.html">Техническая поддержка</a></li>
       <li><a href="contacts.html">Контакты</a></li>
     </ul>
   </nav>
@@ -242,7 +253,7 @@
 <div id="form" class="modal">
   <div class="modal-content">
     <div class="modal-header">
-      <h3>Хотите чтобы мы решили <span class="color-accept-red">ваш кейс</span>?</h3>
+      <h3>Хотите чтобы мы решили <span class="color-accent-red">ваш кейс</span>?</h3>
       <p>Оставьте заявку и наш специалист свяжется с вами для обсуждения деталей вашего проекта</p>
     </div>
 
