@@ -2,7 +2,8 @@
 
 $middle: 64px;
 
-$large: calc($middle * 2px);
-$extra-large: calc($large * 2px);
-$small: math.div($middle, 2);
-$extra-small: math.div($small, 2);
+$large: calc($middle * 2px); // 128px
+$extra-large: calc($large * 2px); // 256px
+$small: math.div($middle, 2); // 32px
+$lower-small: math.div($small, 1.5); // ~21px
+$extra-small: math.div($small, 2); // 16px
