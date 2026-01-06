@@ -1,11 +1,12 @@
 @use '../variables/offsets' as offsets;
+@use "../variables/media" as media;
 
 .related-sidebar {
   width: 30%;
 }
 .related-projects {
   position: sticky;
-  top: 120px;
+  top: 160px;
   display: flex;
   flex-direction: column;
 
@@ -45,5 +46,11 @@ body.light-theme .related-project
     p {
       color: #666;
     }
+  }
+}
+
+@media (max-width: media.$middle) {
+  .related-projects {
+    top: 200px;
   }
 }
