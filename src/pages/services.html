@@ -9,57 +9,67 @@
 </head>
 <body data-controller="custom-cursor modal preloader ripple-effect starfield theme">
   <header class="header" data-controller="header">
-    <a href="#" class="logo">
-      <span class="font-size-h2">K</span>
-      <span class="font-size-h2">·</span>
-      <span class="font-size-h3 color-accept-red">ART</span>
-      <span class="font-size-h2">·</span>
-      <span class="font-size-h4">TECH</span>
-    </a>
+  <a href="/" class="logo">
+    <span class="font-size-h2">K</span>
+    <span class="font-size-h2">·</span>
+    <span class="font-size-h3 color-accept-red">ART</span>
+    <span class="font-size-h2">·</span>
+    <span class="font-size-h4">TECH</span>
+  </a>
 
-    <nav class="nav-links">
-      <a href="#about">О нас</a>
-      <a href="#how-make-it">Процесс</a>
-      <a href="#last-works">Работы</a>
-      <a href="#stack-technology">Технологии</a>
-      <a href="#faq">FAQ</a>
-    </nav>
+  <nav class="nav-links">
+    <a href="services.html">Услуги</a>
+    <a href="projects.html">Проекты</a>
+    <a href="about.html">Компания</a>
+    <a href="blog.html">Блог</a>
+    <a href="contacts.html">Контакты</a>
+  </nav>
 
-    <div class="header-controls">
-      <div class="social-links">
-        <a href="#"><i class="fab fa-behance"></i></a>
-        <a href="#"><i class="fab fa-dribbble"></i></a>
-        <a href="#"><i class="fab fa-github"></i></a>
-      </div>
-
-      <div class="phone">
-        <i class="fas fa-phone"></i>
-        <span>+7 (999) 123-45-67</span>
-      </div>
-
-      <button
-        class="theme-toggle"
-        data-controller-theme="item"
-      >
-        <i class="fas fa-moon"></i>
-      </button>
-
-      <button class="language-toggle" data-controller="lang" data-controller-ripple-effect="item">
-        <span data-controller-lang="item">RU</span>
-        <i class="fas fa-chevron-down"></i>
-      </button>
-
-      <button
-        class="cta-button"
-        data-controller-modal-open="form"
-        data-controller-modal-func="open"
-        data-controller-ripple-effect="item"
-      >
-        Начать проект
-        <i class="fas fa-arrow-right"></i>
-      </button>
+  <div class="header-controls">
+    <div class="social-links">
+      <a href="#"><i class="fab fa-behance"></i></a>
+      <a href="#"><i class="fab fa-dribbble"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
     </div>
-  </header>
+
+    <div class="phone">
+      <i class="fas fa-phone"></i>
+      <span>+7 (999) 123-45-67</span>
+    </div>
+
+    <button
+            class="theme-toggle"
+            data-controller-theme="item"
+    >
+      <i class="fas fa-moon"></i>
+    </button>
+
+    <button
+            class="language-toggle"
+            data-controller="lang"
+            data-controller-ripple-effect="item"
+    >
+      <span data-controller-lang="item">RU</span>
+      <i class="fas fa-chevron-down"></i>
+    </button>
+
+    <button
+            class="cta-button"
+            data-controller-modal-open="form"
+            data-controller-modal-func="open"
+            data-controller-ripple-effect="item"
+    >
+      Начать проект
+      <i class="fas fa-arrow-right"></i>
+    </button>
+
+    <button class="burger-menu" id="burgerMenu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
   <main>
     <section class="hero-support">
       <div class="container hero__container">
@@ -199,6 +209,51 @@
       <div class="copyright">KARTECH © 2023. Все права защищены.</div>
     </div>
   </footer>
+
+  <!-- Overlay для затемнения фона -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Sidebar burger menu -->
+  <aside class="sidebar-burger-menu" id="sidebar-burger-menu">
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="services.html">Услуги</a></li>
+        <li><a href="projects.html">Проекты</a></li>
+        <li><a href="about.html">Компания</a></li>
+        <li><a href="blog.html">Блог</a></li>
+        <li><a href="contacts.html">Контакты</a></li>
+      </ul>
+    </nav>
+
+    <button
+            class="cta-button"
+            data-controller-modal-open="form"
+            data-controller-modal-func="open"
+            data-controller-ripple-effect="item"
+    >
+      Начать проект
+      <i class="fas fa-arrow-right"></i>
+    </button>
+
+    <div class="sidebar-social">
+      <button class="theme-toggle" data-controller-theme="item">
+        <i class="fas fa-moon"></i>
+      </button>
+      <button
+              class="language-toggle"
+              data-controller="lang"
+              data-controller-ripple-effect="item"
+      >
+        <span data-controller-lang="item">RU</span>
+        <i class="fas fa-chevron-down"></i>
+      </button>
+    </div>
+    <div class="sidebar-social">
+      <a href="#"><i class="fab fa-vk"></i></a>
+      <a href="#"><i class="fab fa-telegram"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
+    </div>
+  </aside>
 
   <!-- modal form -->
   <div id="form" class="modal">

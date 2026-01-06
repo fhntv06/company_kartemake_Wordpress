@@ -8,9 +8,9 @@
 
   <link rel="shortcut icon" href="../../public/images/logotypes/logo-dark.ico" type="image/x-icon">
 </head>
-<body data-controller="custom-cursor modal preloader ripple-effect starfield theme">
+<body data-controller="custom-cursor modal preloader ripple-effect starfield theme sidebar-anchor">
   <header class="header" data-controller="header">
-    <a href="#" class="logo">
+    <a href="/" class="logo">
       <span class="font-size-h2">K</span>
       <span class="font-size-h2">·</span>
       <span class="font-size-h3 color-accept-red">ART</span>
@@ -18,249 +18,261 @@
       <span class="font-size-h4">TECH</span>
     </a>
 
-  <nav class="nav-links">
-    <a href="#about">О нас</a>
-    <a href="#how-make-it">Процесс</a>
-    <a href="#last-works">Работы</a>
-    <a href="#stack-technology">Технологии</a>
-    <a href="#faq">FAQ</a>
-  </nav>
+    <nav class="nav-links">
+      <a href="services.html">Услуги</a>
+      <a href="projects.html">Проекты</a>
+      <a href="about.html">Компания</a>
+      <a href="blog.html">Блог</a>
+      <a href="contacts.html">Контакты</a>
+    </nav>
 
-  <div class="header-controls">
-    <div class="social-links">
-      <a href="#"><i class="fab fa-behance"></i></a>
-      <a href="#"><i class="fab fa-dribbble"></i></a>
-      <a href="#"><i class="fab fa-github"></i></a>
+    <div class="header-controls">
+      <div class="social-links">
+        <a href="#"><i class="fab fa-behance"></i></a>
+        <a href="#"><i class="fab fa-dribbble"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+      </div>
+
+      <div class="phone">
+        <i class="fas fa-phone"></i>
+        <span>+7 (999) 123-45-67</span>
+      </div>
+
+      <button
+        class="theme-toggle"
+        data-controller-theme="item"
+      >
+        <i class="fas fa-moon"></i>
+      </button>
+
+      <button
+        class="language-toggle"
+        data-controller="lang"
+        data-controller-ripple-effect="item"
+      >
+        <span data-controller-lang="item">RU</span>
+        <i class="fas fa-chevron-down"></i>
+      </button>
+
+      <button
+        class="cta-button"
+        data-controller-modal-open="form"
+        data-controller-modal-func="open"
+        data-controller-ripple-effect="item"
+      >
+        Начать проект
+        <i class="fas fa-arrow-right"></i>
+      </button>
+
+      <button class="burger-menu" id="burgerMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
-
-    <div class="phone">
-      <i class="fas fa-phone"></i>
-      <span>+7 (999) 123-45-67</span>
-    </div>
-
-    <button
-            class="theme-toggle"
-            data-controller-theme="item"
-    >
-      <i class="fas fa-moon"></i>
-    </button>
-
-    <button class="language-toggle" data-controller="lang" data-controller-ripple-effect="item">
-      <span data-controller-lang="item">RU</span>
-      <i class="fas fa-chevron-down"></i>
-    </button>
-
-    <button
-      class="cta-button"
-      data-controller-modal-open="form"
-      data-controller-modal-func="open"
-      data-controller-ripple-effect="item"
-    >
-      Начать проект
-      <i class="fas fa-arrow-right"></i>
-    </button>
-  </div>
-</header>
+  </header>
   <main>
     <!-- Детали проекта -->
     <section class="project-detail">
-      <a href="index.html#last-works" class="back-link">
-        <i class="fas fa-arrow-left"></i>
-        <span>Назад к работам</span>
-      </a>
+      <div class="container">
+        <a href="index.html#last-works" class="back-link">
+          <i class="fas fa-arrow-left"></i>
+          <span>Назад к работам</span>
+        </a>
 
-      <div class="breadcrumbs">
-        <a href="index.html">Главная</a>
-        <span>/</span>
-        <a href="index.html#last-works">Проекты</a>
-        <span>/</span>
-        <span>Корпоративный сайт для TechInnovations</span>
-      </div>
-
-      <h1 class="project-title">Корпоративный сайт для <span>TechInnovations</span></h1>
-
-      <div class="project-meta">
-        <div>
-          <i class="far fa-clock"></i>
-          <span>Время чтения: 8 минут</span>
-        </div>
-        <div>
-          <i class="far fa-eye"></i>
-          <span>1,245 просмотров</span>
-        </div>
-        <div>
-          <i class="far fa-calendar"></i>
-          <span>15 октября 2023</span>
-        </div>
-      </div>
-
-      <div class="project-tags">
-        <a href="#" class="project-tag">Веб-разработка</a>
-        <a href="#" class="project-tag">UI/UX дизайн</a>
-        <a href="#" class="project-tag">Корпоративные сайты</a>
-        <a href="#" class="project-tag">React</a>
-        <a href="#" class="project-tag">Node.js</a>
-      </div>
-
-      <div class="project-summary">
-        <p class="project-description">
-          Современный адаптивный корпоративный сайт с системой управления контентом и интеграцией CRM.
-          Проект включал полный цикл работ: от исследования и проектирования до разработки и запуска.
-        </p>
-
-        <div class="project-author">
-          <div class="author-avatar">
-            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Автор">
-          </div>
-          <div class="author-info">
-            <h4>Иван Иванов</h4>
-            <p>Lead Designer</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="project-hero-image">
-        <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="TechInnovations">
-      </div>
-
-      <div class="project-content">
-        <div class="sidebar">
-          <nav class="sidebar__nav">
-            <h4 class="sidebar__title">Содержание</h4>
-            <ul>
-              <li><a href="#challenge" class="active">Задача</a></li>
-              <li><a href="#research">Исследование</a></li>
-              <li><a href="#solution">Решение</a></li>
-              <li><a href="#design">Дизайн</a></li>
-              <li><a href="#development">Разработка</a></li>
-              <li><a href="#result">Результат</a></li>
-            </ul>
-          </nav>
+        <div class="breadcrumbs">
+          <a href="index.html">Главная</a>
+          <span>/</span>
+          <a href="index.html#last-works">Проекты</a>
+          <span>/</span>
+          <span>Корпоративный сайт для TechInnovations</span>
         </div>
 
-        <div class="content-main">
-          <div id="challenge" class="content-section">
-            <h4 class="content-section__title">Задача</h4>
-            <p>TechInnovations — rapidly growing tech company specializing in AI solutions. Their old website was outdated, not mobile-friendly, and didn't reflect their innovative approach. The main goals were:</p>
+        <h1 class="project-title">Корпоративный сайт для <span>TechInnovations</span></h1>
 
-            <div class="content-image">
-              <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Старый сайт">
-            </div>
-
-            <ul>
-              <li>Create a modern, responsive design that works perfectly on all devices</li>
-              <li>Implement a CMS for easy content updates by the marketing team</li>
-              <li>Integrate with their existing CRM system</li>
-              <li>Improve page loading speed and overall performance</li>
-              <li>Increase conversion rates for lead generation</li>
-            </ul>
+        <div class="project-meta">
+          <div>
+            <i class="far fa-clock"></i>
+            <span>Время чтения: 8 минут</span>
           </div>
-
-          <div id="research" class="content-section">
-            <h4 class="content-section__title">Исследование</h4>
-            <p>We began with extensive research to understand the target audience, market trends, and competitors. Our process included:</p>
-
-            <div class="content-highlight">
-              <p>"Understanding user needs is the foundation of any successful digital product. We spent two weeks conducting interviews and analyzing data before designing anything."</p>
-            </div>
-
-            <p>We created user personas based on our research to guide the design process. The primary personas included technical decision-makers, C-level executives, and potential employees interested in company culture.</p>
+          <div>
+            <i class="far fa-eye"></i>
+            <span>1,245 просмотров</span>
           </div>
-
-          <div class="content-section">
-            <div class="showreel" style="background-image: url('https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80');">
-              <button class="play-button" data-open-modal="showreel">
-                <i class="fas fa-play"></i>
-              </button>
-            </div>
-          </div>
-
-          <div id="solution" class="content-section">
-            <h4 class="content-section__title">Решение</h4>
-            <p>Based on our research, we developed a comprehensive solution that addressed all client requirements while providing an exceptional user experience.</p>
-
-            <div class="content-image">
-              <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Wireframes">
-            </div>
-
-            <p>Key features of our solution included:</p>
-            <ul>
-              <li>A fully responsive design that adapts seamlessly to all screen sizes</li>
-              <li>A custom CMS built on WordPress for easy content management</li>
-              <li>CRM integration that automatically syncs contact form submissions</li>
-              <li>Performance optimization resulting in 2x faster loading times</li>
-              <li>Clear call-to-actions throughout the site to improve conversion rates</li>
-            </ul>
-          </div>
-
-          <div id="design" class="content-section">
-            <h4 class="content-section__title">Дизайн</h4>
-            <p>We created a clean, modern design that reflects TechInnovations' innovative spirit while maintaining professionalism. The design system included:</p>
-
-            <div class="content-image">
-              <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Дизайн система">
-            </div>
-
-            <p>The color palette was based on TechInnovations' brand colors with additional accents to create visual interest. We used a combination of Roboto and Montserrat fonts for optimal readability and modern aesthetic.</p>
-          </div>
-
-          <div id="development" class="content-section">
-            <h4 class="content-section__title">Разработка</h4>
-            <p>The development process followed agile methodology with two-week sprints. We used modern technologies to ensure scalability and maintainability:</p>
-
-            <div class="content-highlight">
-              <p>"We chose React for the frontend for its component-based architecture and excellent performance. The backend was built with Node.js and Express for maximum flexibility."</p>
-            </div>
-
-            <p>Key technical aspects included:</p>
-            <ul>
-              <li>Component-based architecture for reusable code</li>
-              <li>RESTful API for communication between frontend and backend</li>
-              <li>Cloud hosting with automatic scaling</li>
-              <li>Continuous integration and deployment pipeline</li>
-              <li>Comprehensive testing suite</li>
-            </ul>
-          </div>
-
-          <div id="result" class="content-section">
-            <h4 class="content-section__title">Результат</h4>
-            <p>The new website launched successfully and has already shown significant improvements in key metrics:</p>
-
-            <div class="content-image">
-              <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Результаты">
-            </div>
-
-            <ul>
-              <li>40% increase in organic traffic</li>
-              <li>75% improvement in mobile performance scores</li>
-              <li>2x faster loading times</li>
-              <li>50% more lead generation form submissions</li>
-              <li>Positive feedback from existing clients and prospects</li>
-            </ul>
-
-            <p>The client is thrilled with the results and has already seen a return on investment through increased leads and improved brand perception.</p>
+          <div>
+            <i class="far fa-calendar"></i>
+            <span>15 октября 2023</span>
           </div>
         </div>
 
-        <div class="related-sidebar">
-          <div class="related-projects">
-            <h4 class="sidebar__title">Похожие проекты</h4>
-            <a href="#" class="related-project">
-              <h5 class="related-project__title">Мобильное приложение для FitLife</h5>
-              <p class="related-project__description">Приложение для отслеживания активности и питания</p>
-            </a>
-            <a href="#" class="related-project">
-              <h5 class="related-project__title">Интернет-магазин для UrbanStyle</h5>
-              <p class="related-project__description">Платформа электронной коммерции с системой аналитики</p>
-            </a>
-            <a href="#" class="related-project">
-              <h5 class="related-project__title">Корпоративный портал для FinanceGroup</h5>
-              <p class="related-project__description">Внутренняя система управления бизнес-процессами</p>
-            </a>
-            <a href="#" class="related-project">
-              <h5 class="related-project__title">Лендинг для стартапа TechLaunch</h5>
-              <p class="related-project__description">Целевая страница для привлечения первых пользователей</p>
-            </a>
+        <div class="project-tags">
+          <a href="#" class="project-tag">Веб-разработка</a>
+          <a href="#" class="project-tag">UI/UX дизайн</a>
+          <a href="#" class="project-tag">Корпоративные сайты</a>
+          <a href="#" class="project-tag">React</a>
+          <a href="#" class="project-tag">Node.js</a>
+        </div>
+
+        <div class="project-summary">
+          <p class="project-description">
+            Современный адаптивный корпоративный сайт с системой управления контентом и интеграцией CRM.
+            Проект включал полный цикл работ: от исследования и проектирования до разработки и запуска.
+          </p>
+
+          <div class="project-author">
+            <div class="author-avatar">
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Автор">
+            </div>
+            <div class="author-info">
+              <h4>Иван Иванов</h4>
+              <p>Lead Designer</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-hero-image">
+          <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="TechInnovations">
+        </div>
+
+        <div class="project-content">
+          <div class="sidebar">
+            <nav class="sidebar__nav">
+              <h4 class="sidebar__title">Содержание</h4>
+              <ul>
+                <li><a href="#challenge" class="active">Задача</a></li>
+                <li><a href="#research">Исследование</a></li>
+                <li><a href="#solution">Решение</a></li>
+                <li><a href="#design">Дизайн</a></li>
+                <li><a href="#development">Разработка</a></li>
+                <li><a href="#result">Результат</a></li>
+              </ul>
+            </nav>
+          </div>
+
+          <div class="content-main">
+            <div data-id="challenge" class="content-section">
+              <h4 class="content-section__title">Задача</h4>
+              <p>TechInnovations — rapidly growing tech company specializing in AI solutions. Their old website was outdated, not mobile-friendly, and didn't reflect their innovative approach. The main goals were:</p>
+
+              <div class="content-image">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Старый сайт">
+              </div>
+
+              <ul>
+                <li>Create a modern, responsive design that works perfectly on all devices</li>
+                <li>Implement a CMS for easy content updates by the marketing team</li>
+                <li>Integrate with their existing CRM system</li>
+                <li>Improve page loading speed and overall performance</li>
+                <li>Increase conversion rates for lead generation</li>
+              </ul>
+            </div>
+
+            <div data-id="research" class="content-section">
+              <h4 class="content-section__title">Исследование</h4>
+              <p>We began with extensive research to understand the target audience, market trends, and competitors. Our process included:</p>
+
+              <div class="content-highlight">
+                <p>"Understanding user needs is the foundation of any successful digital product. We spent two weeks conducting interviews and analyzing data before designing anything."</p>
+              </div>
+
+              <p>We created user personas based on our research to guide the design process. The primary personas included technical decision-makers, C-level executives, and potential employees interested in company culture.</p>
+            </div>
+
+            <div class="content-section">
+              <div class="showreel" style="background-image: url('https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80');">
+                <button class="play-button" data-open-modal="showreel">
+                  <i class="fas fa-play"></i>
+                </button>
+              </div>
+            </div>
+
+            <div data-id="solution" class="content-section">
+              <h4 class="content-section__title">Решение</h4>
+              <p>Based on our research, we developed a comprehensive solution that addressed all client requirements while providing an exceptional user experience.</p>
+
+              <div class="content-image">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Wireframes">
+              </div>
+
+              <p>Key features of our solution included:</p>
+              <ul>
+                <li>A fully responsive design that adapts seamlessly to all screen sizes</li>
+                <li>A custom CMS built on WordPress for easy content management</li>
+                <li>CRM integration that automatically syncs contact form submissions</li>
+                <li>Performance optimization resulting in 2x faster loading times</li>
+                <li>Clear call-to-actions throughout the site to improve conversion rates</li>
+              </ul>
+            </div>
+
+            <div data-id="design" class="content-section">
+              <h4 class="content-section__title">Дизайн</h4>
+              <p>We created a clean, modern design that reflects TechInnovations' innovative spirit while maintaining professionalism. The design system included:</p>
+
+              <div class="content-image">
+                <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Дизайн система">
+              </div>
+
+              <p>The color palette was based on TechInnovations' brand colors with additional accents to create visual interest. We used a combination of Roboto and Montserrat fonts for optimal readability and modern aesthetic.</p>
+            </div>
+
+            <div data-id="development" class="content-section">
+              <h4 class="content-section__title">Разработка</h4>
+              <p>The development process followed agile methodology with two-week sprints. We used modern technologies to ensure scalability and maintainability:</p>
+
+              <div class="content-highlight">
+                <p>"We chose React for the frontend for its component-based architecture and excellent performance. The backend was built with Node.js and Express for maximum flexibility."</p>
+              </div>
+
+              <p>Key technical aspects included:</p>
+              <ul>
+                <li>Component-based architecture for reusable code</li>
+                <li>RESTful API for communication between frontend and backend</li>
+                <li>Cloud hosting with automatic scaling</li>
+                <li>Continuous integration and deployment pipeline</li>
+                <li>Comprehensive testing suite</li>
+              </ul>
+            </div>
+
+            <div data-id="result" class="content-section">
+              <h4 class="content-section__title">Результат</h4>
+              <p>The new website launched successfully and has already shown significant improvements in key metrics:</p>
+
+              <div class="content-image">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Результаты">
+              </div>
+
+              <ul>
+                <li>40% increase in organic traffic</li>
+                <li>75% improvement in mobile performance scores</li>
+                <li>2x faster loading times</li>
+                <li>50% more lead generation form submissions</li>
+                <li>Positive feedback from existing clients and prospects</li>
+              </ul>
+
+              <p>The client is thrilled with the results and has already seen a return on investment through increased leads and improved brand perception.</p>
+            </div>
+          </div>
+
+          <div class="related-sidebar">
+            <div class="related-projects">
+              <h4 class="sidebar__title">Похожие проекты</h4>
+              <a href="#" class="related-project">
+                <h5 class="related-project__title">Мобильное приложение для FitLife</h5>
+                <p class="related-project__description">Приложение для отслеживания активности и питания</p>
+              </a>
+              <a href="#" class="related-project">
+                <h5 class="related-project__title">Интернет-магазин для UrbanStyle</h5>
+                <p class="related-project__description">Платформа электронной коммерции с системой аналитики</p>
+              </a>
+              <a href="#" class="related-project">
+                <h5 class="related-project__title">Корпоративный портал для FinanceGroup</h5>
+                <p class="related-project__description">Внутренняя система управления бизнес-процессами</p>
+              </a>
+              <a href="#" class="related-project">
+                <h5 class="related-project__title">Лендинг для стартапа TechLaunch</h5>
+                <p class="related-project__description">Целевая страница для привлечения первых пользователей</p>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -346,6 +358,51 @@
       <div class="copyright">KARTECH © 2023. Все права защищены.</div>
     </div>
   </footer>
+
+  <!-- Overlay для затемнения фона -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Sidebar burger menu -->
+  <aside class="sidebar-burger-menu" id="sidebar-burger-menu">
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="services.html">Услуги</a></li>
+        <li><a href="projects.html">Проекты</a></li>
+        <li><a href="about.html">Компания</a></li>
+        <li><a href="blog.html">Блог</a></li>
+        <li><a href="contacts.html">Контакты</a></li>
+      </ul>
+    </nav>
+
+    <button
+      class="cta-button"
+      data-controller-modal-open="form"
+      data-controller-modal-func="open"
+      data-controller-ripple-effect="item"
+    >
+      Начать проект
+      <i class="fas fa-arrow-right"></i>
+    </button>
+
+    <div class="sidebar-social">
+      <button class="theme-toggle" data-controller-theme="item">
+        <i class="fas fa-moon"></i>
+      </button>
+      <button
+        class="language-toggle"
+        data-controller="lang"
+        data-controller-ripple-effect="item"
+      >
+        <span data-controller-lang="item">RU</span>
+        <i class="fas fa-chevron-down"></i>
+      </button>
+    </div>
+    <div class="sidebar-social">
+      <a href="#"><i class="fab fa-vk"></i></a>
+      <a href="#"><i class="fab fa-telegram"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
+    </div>
+  </aside>
 
   <!-- Modal form -->
   <div id="form" class="modal">
