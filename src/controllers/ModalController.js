@@ -7,13 +7,11 @@ export class ModalController {
 
     if (!this.openModalButtons.length) {
       console.error(`Don't element for open modal with attribute data-controller-modal-func="open" in `, this.container)
-      return
     } else if (!this.closeBtn) {
       console.error(`Don't element with class="close-modal" in `, this.container)
-      return
+    } else {
+      this.init()
     }
-
-    this.init()
   }
   init = () => {
     this.openModalButtons.forEach(button => {
@@ -27,7 +25,7 @@ export class ModalController {
       })
     })
     this.closeBtn.addEventListener('click', () => {
-      this.container.classList.remove('active')
+      this.modal.classList.remove('active')
     })
   }
   hideModal = (e) => {
