@@ -1,0 +1,55 @@
+@use "../variables/offsets" as offsets;
+@use "../variables/colors" as colors;
+
+.sidebar-burger-menu {
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  right: -300px;
+  display: flex;
+  flex-direction: column;
+  row-gap: offsets.$small;
+  width: 300px;
+  height: 100vh;
+  background-color: #1a1a1a;
+  padding: 80px 30px 30px;
+  transition: all 0.4s ease;
+  box-shadow: -5px 0 25px rgba(0, 0, 0, 0.5);
+  overflow-y: auto;
+
+  &.open {
+    right: 0;
+  }
+
+  a, button:not(.cta-button) {
+    color: #b0b0b0;
+  }
+  .sidebar-nav {
+    list-style: none;
+
+    li {
+      margin-bottom: 15px;
+    }
+
+    a {
+      color: colors.$white;
+      font-weight: 500;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+  }
+
+  .sidebar-social {
+    display: flex;
+    gap: 15px;
+
+    a {
+      font-size: 20px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        color: #ffcc00;
+      }
+    }
+  }
+}
