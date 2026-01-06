@@ -1,9 +1,9 @@
 @use 'sass:math';
 
-$middle: 64px;
+$middle: math.div(64px, 1); // 64px
 
-$large: calc($middle * 2px); // 128px
-$extra-large: calc($large * 2px); // 256px
+$large: math.div($middle, 0.5); // 128px
+$extra-large: math.div($large, 0.5); // 256px
 $small: math.div($middle, 2); // 32px
 $lower-small: math.div($small, 1.5); // ~21px
 $extra-small: math.div($small, 2); // 16px

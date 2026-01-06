@@ -14,10 +14,10 @@ $c3: #45b7d1;
 $c4: #ffd93d;
 $c5: #6c5ce7;
 
-$accept-red: #ff2e2e;
+$accent-red: #ff2e2e;
 
 @include mixins.generate-color-classes((
   'c1': $c1, 'c2': $c2, 'c3': $c3, 'c4': $c4,
   'c5': $c5, 'dark': $dark, 'light-black': $light-black, 'blue': $blue,
-  'accept-red': $accept-red, 'whitesmoke': $light
+  'accent-red': $accent-red, 'whitesmoke': $light
 ));
