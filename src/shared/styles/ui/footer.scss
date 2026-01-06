@@ -1,10 +1,11 @@
 @use "../variables/colors" as colors;
 @use "../variables/offsets" as offsets;
 @use "../variables/mixins" as mixins;
+@use "../variables/media" as media;
 
 footer {
   background-color: var(--darker-bg);
-  padding: 60px 40px 30px;
+  padding: offsets.$extra-small offsets.$small;
   border-top: 1px solid var(--gray);
 
   @include mixins.add-opacity-load();
@@ -16,10 +17,12 @@ footer {
   margin-bottom: 40px;
 }
 .footer-logo {
+  order: 1;
   font-weight: 700;
   font-size: 24px;
 }
 .footer-info {
+  order: 2;
   display: flex;
   align-items: center;
   gap: 30px;
@@ -37,8 +40,12 @@ footer {
   color: #aaa;
   font-size: 14px;
 }
-.footer-cta .cta-button {
-  margin-left: auto;
+.footer-cta {
+  order: 3;
+
+  .cta-button {
+    margin-left: auto;
+  }
 }
 .footer-bottom {
   text-align: center;
@@ -46,4 +53,22 @@ footer {
   border-top: 1px solid var(--gray);
   color: #666;
   font-size: 14px;
+}
+
+@media (max-width: media.$lower-middle) {
+  .footer-content {
+    flex-wrap: wrap;
+    gap: offsets.$lower-small;
+  }
+}
+@media (max-width: media.$extra-small) {
+  footer {
+    padding: offsets.$extra-small;
+  }
+  .footer-info {
+    order: 3;
+  }
+  .footer-cta {
+    order: 2;
+  }
 }
