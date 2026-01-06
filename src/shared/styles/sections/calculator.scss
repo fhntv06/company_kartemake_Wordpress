@@ -1,21 +1,31 @@
 @use '../variables/offsets' as offsets;
+@use '../variables/media' as media;
 
+.calculator-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: offsets.$small;
+}
+.calculator-options {
+  display: flex;
+  flex-direction: column;
+  gap: offsets.$extra-small;
+}
+.calculator-summary {
+  position: sticky;
+  top: offsets.$large;
+  background-color: var(--bg-color);
+  border: 1px solid var(--card-border);
+  border-radius: var(--border-radius);
+  padding: offsets.$extra-small;
+  height: fit-content;
+}
 .calculator {
-  .calculator-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: offsets.$small;
-  }
-  .calculator-options {
-    display: flex;
-    flex-direction: column;
-    gap: offsets.$extra-small;
-  }
   .option-group {
     background-color: var(--bg-color);
     border: 1px solid var(--dark-bg);
     border-radius: var(--border-radius);
-    padding: offsets.$small;
+    padding: offsets.$extra-small;
     transition: var(--transition);
 
     &:hover {
@@ -27,7 +37,6 @@
     display: flex;
     align-items: center;
     margin-bottom: offsets.$small;
-    color: var(--accent-red);
 
     i {
       margin-right: 8px;
@@ -69,15 +78,7 @@
     font-weight: 700;
     color: var(--accent-red);
   }
-  .calculator-summary {
-    position: sticky;
-    top: calc(offsets.$middle * 2);
-    background-color: var(--bg-color);
-    border: 1px solid var(--card-border);
-    border-radius: var(--border-radius);
-    padding: offsets.$extra-small;
-    height: fit-content;
-  }
+
   .summary-title {
     margin-bottom: offsets.$small;
     text-align: center;
@@ -117,7 +118,6 @@
     display: flex;
     justify-content: space-between;
     margin: offsets.$small 0;
-    color: var(--accent-red);
   }
   .summary-note {
     margin-top: 20px;
@@ -146,5 +146,17 @@
     .summary-total {
       color: var(--accent-yellow);
     }
+  }
+}
+
+@media (max-width: media.$lower-middle) {
+  .calculator-grid {
+    gap: offsets.$lower-small;
+  }
+}
+@media (max-width: media.$extra-small) {
+  .calculator-grid {
+    grid-template-columns: 1fr;
+    gap: offsets.$extra-small;
   }
 }
