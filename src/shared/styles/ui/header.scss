@@ -1,9 +1,11 @@
 @use "../variables/colors" as colors;
 @use "../variables/mixins" as mixins;
 @use "../variables/offsets" as offsets;
+@use "../variables/media" as media;
+@use "../variables/fonts" as fonts;
 
 header {
-  z-index: 1000;
+  z-index: 100;
   position: fixed;
   top: 0;
   left: 0;
@@ -12,14 +14,15 @@ header {
   align-items: center;
   width: 100%;
   padding: offsets.$extra-small offsets.$small;
+  row-gap: offsets.$small;
   background-color: rgba(245,245,245,.8);
   backdrop-filter: blur(4px);
   border-bottom: 1px solid #ddd;
-  transition: var(--transition);
 
   @include mixins.add-opacity-load();
 }
 .logo {
+  order: 1;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -35,6 +38,7 @@ header {
   }
 }
 .header-controls {
+  order: 3;
   display: flex;
   align-items: center;
   gap: offsets.$extra-small;
@@ -60,5 +64,39 @@ header {
   }
   .social-links a {
     color: var(--light-text);
+  }
+}
+
+@media (max-width: media.$middle) {
+  .header {
+    flex-wrap: wrap;
+  }
+  .header-controls {
+    order: 2;
+  }
+}
+@media (max-width: media.$lower-middle) {
+  .social-links,
+  .phone {
+    display: none;
+  }
+}
+@media (max-width: media.$extra-small) {
+  .header .cta-button {
+    display: none;
+  }
+  .header {
+    padding: offsets.$extra-small;
+  }
+  .logo {
+    .font-size-h2 {
+      font-size: fonts.$h3;
+    }
+    .font-size-h3 {
+      font-size: fonts.$h4;
+    }
+    .font-size-h4 {
+      font-size: fonts.$p;
+    }
   }
 }
