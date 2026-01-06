@@ -1,4 +1,5 @@
 @use '../variables/offsets' as offsets;
+@use '../variables/media' as media;
 
 .form-container {
   width: 100%;
@@ -60,7 +61,7 @@ textarea {
     min-height: 150px;
     resize: vertical;
   }
-  .form-label {
+  & + .form-label {
     top: 21px;
   }
 }
@@ -90,5 +91,11 @@ textarea {
   }
   .form-label {
     background-color: var(--dark-text);
+  }
+}
+
+@media (max-width: media.$extra-small) {
+  .contact-form {
+    grid-template-columns: 1fr;
   }
 }
