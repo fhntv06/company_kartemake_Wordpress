@@ -1,17 +1,16 @@
 export class CursorController {
   constructor(controllerName, container) {
-    this.items = container.querySelectorAll(`[data-controller-${controllerName}="item"]`)
+    this.item = container.querySelector(`[data-controller-${controllerName}="item"]`)
 
     if (window.innerWidth > 768) this.init()
+    else this.item.remove()
   }
 
   init() {
-    this.items.forEach((item) => {
-      document.addEventListener('mousemove', (e) => this.setCursorPosition(e, item))
-    })
+    document.addEventListener('mousemove', (e) => this.setCursorPosition(e))
   }
-  setCursorPosition = (e, item) => {
-    item.style.left = e.clientX + 'px'
-    item.style.top = e.clientY + 'px'
+  setCursorPosition = (e) => {
+    this.item.style.left = e.clientX + 'px'
+    this.item.style.top = e.clientY + 'px'
   }
 }
