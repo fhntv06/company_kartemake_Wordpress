@@ -34,6 +34,11 @@
     }
   }
 }
+[data-theme="dark"] {
+  .burger-menu span {
+    background-color: colors.$light;
+  }
+}
 
 @media (max-width: media.$extra-small) {
   .burger-menu {
