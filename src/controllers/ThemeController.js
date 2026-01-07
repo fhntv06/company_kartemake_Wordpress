@@ -1,9 +1,9 @@
 export class ThemeController {
   constructor(controllerName, container) {
     this.container = container
-    this.themeToggleButton = container.querySelector(`[data-controller-${controllerName}="item"]`)
+    this.themeToggleButtons = Array.from(container.querySelectorAll(`[data-controller-${controllerName}="item"]`))
 
-    if (!this.themeToggleButton) {
+    if (!this.themeToggleButtons.length) {
       console.error(`Don't element for change theme with attribute data-controller-${controllerName}="item" `, this.container)
       return
     }
@@ -15,12 +15,14 @@ export class ThemeController {
 
     const eventThemeToggle = new Event('themeToggle')
 
-    this.themeToggleButton.addEventListener('click', () => {
-      const newTheme = this.getTheme() === 'light' ? 'dark' : 'light'
+    this.themeToggleButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const newTheme = this.getTheme() === 'light' ? 'dark' : 'light'
 
-      this.setTheme(newTheme)
+        this.setTheme(newTheme)
 
-      window.dispatchEvent(eventThemeToggle)
+        window.dispatchEvent(eventThemeToggle)
+      })
     })
   }
   getTheme = () => {
