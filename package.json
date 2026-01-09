@@ -23,7 +23,7 @@
   "bugs": {
     "url": "https://github.com/fhntv06/company-kartech-site/issues"
   },
-  "homepage": "https://github.com/fhntv06/company-kartech-site#readme",
+  "homepage": "https://fhntv06.github.io/company_kartech-site_Wordpress",
   "devDependencies": {
     "@babel/core": "^7.28.3",
     "@babel/preset-env": "^7.28.3",
