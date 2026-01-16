@@ -99,3 +99,51 @@ textarea {
     grid-template-columns: 1fr;
   }
 }
+
+/* Стили для ошибок формы */
+.form-group.error .form-input {
+  border-color: var(--accent-red) !important;
+}
+
+.error-message {
+  color: var(--accent-red);
+  font-size: 12px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.success-message {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Анимация для сообщений */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Стили для загрузки кнопки */
+button[type="submit"]:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.fa-spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Стили для select с ошибкой */
+select.error {
+  border-color: var(--accent-red) !important;
+}
+
+/* Стили для чекбокса с ошибкой */
+.checkbox-group.error {
+  color: var(--accent-red);
+}

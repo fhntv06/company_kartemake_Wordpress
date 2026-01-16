@@ -49,8 +49,10 @@
   transition: var(--transition);
   border: 1px solid transparent;
 
-  &:hover {
+  &:hover,
+  &.active {
     border-color: var(--accent-red);
+    transform: none;
 
     &::after {
       display: none;
@@ -58,6 +60,6 @@
   }
   &.active {
     background-color: var(--accent-red);
-    color: white;
+    color: var(--light-text) !important;
   }
 }
