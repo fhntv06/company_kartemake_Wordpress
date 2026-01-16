@@ -3,11 +3,13 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [front-end]
+  workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write    # Нужно для создания окружения
   pages: write
   id-token: write
+  deployments: write # Для управления деплоями
 
 concurrency:
   group: "pages"
