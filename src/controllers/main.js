@@ -13,6 +13,7 @@ import { ModalController } from './ModalController.js'
 import { PreloaderController } from './PreloaderController.js'
 import { RippleEffectController } from './RippleEffectController.js'
 import { SidebarAnchorController } from './SidebarAnchorController.js'
+import { SpecialistWidgetController } from './SpecialistWidgetController.js'
 import { StarfieldController } from './StarfieldController.js'
 import { TabsController } from './TabsController'
 import { ThemeController } from './ThemeController.js'
@@ -36,6 +37,7 @@ export class EntryPointApp {
       preloader: PreloaderController,
       'ripple-effect': RippleEffectController,
       'sidebar-anchor': SidebarAnchorController,
+      'specialist-widget': SpecialistWidgetController,
       starfield: StarfieldController,
       tabs: TabsController,
       theme: ThemeController,

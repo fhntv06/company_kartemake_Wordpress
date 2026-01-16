@@ -1,0 +1,422 @@
+/* Стили для виджета */
+#specialistWidget {
+  position: fixed;
+  bottom: 100px;
+  right: 30px;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .widget-circle {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    transition: transform 0.3s ease;
+  }
+
+  .widget-circle:hover {
+    transform: scale(1.05);
+  }
+
+  .widget-pulse {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+    animation: pulse 2s infinite;
+    opacity: 0.6;
+    z-index: -1;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      opacity: 0.6;
+    }
+    70% {
+      transform: scale(1.2);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 0;
+    }
+  }
+
+  .widget-modal {
+    position: absolute;
+    bottom: 90px;
+    right: 0;
+    width: 400px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    display: none;
+    overflow: hidden;
+  }
+
+  .widget-modal.active {
+    display: block;
+  }
+
+  .widget-header {
+    background: linear-gradient(135deg, #2c3e50, #4a6491);
+    color: white;
+    padding: 20px;
+    position: relative;
+  }
+
+  .widget-header h4 {
+    margin: 0 0 5px 0;
+    font-size: 1.2rem;
+  }
+
+  .widget-header p {
+    margin: 0;
+    opacity: 0.8;
+    font-size: 0.9rem;
+  }
+
+  .widget-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+  }
+
+  .widget-steps {
+    padding: 20px;
+  }
+
+  .widget-step {
+    display: none;
+  }
+
+  .widget-step.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .task-options, .complexity-options {
+    display: grid;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .task-option, .complexity-option, .specialist-option {
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    background: white;
+    text-align: left;
+    cursor: pointer;
+    color: #aaa;
+    transition: all 0.2s ease;
+  }
+
+  .task-option:hover, .complexity-option:hover {
+    border-color: #4ecdc4;
+    background: #f8f9fa;
+  }
+
+  .task-option.active, .complexity-option.active, .specialist-option.active {
+    border-color: #ff6b6b;
+    background: linear-gradient(to right, rgba(255, 107, 107, 0.1), rgba(78, 205, 196, 0.1));
+  }
+
+  .task-option:not(.active):hover,
+  .complexity-option:not(.active):hover,
+  .specialist-option:not(.active):hover {
+    border-color: #ff6b6b;
+  }
+
+  /* Анимация для привлечения внимания к обязательному выбору */
+  @keyframes pulse-border {
+    0% { border-color: #e0e0e0; }
+    50% { border-color: #ff6b6b; }
+    100% { border-color: #e0e0e0; }
+  }
+
+  .widget-step:has(.task-option:not(.active)) .task-options,
+  .widget-step:has(.complexity-option:not(.active)) .complexity-options,
+  .widget-step:has(.specialist-option:not(.active)) .specialist-options {
+    animation: pulse-border 2s infinite;
+  }
+
+  .complexity-option span {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+
+  .complexity-option small {
+    color: #666;
+    font-size: 0.85rem;
+  }
+
+  .hours-input {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+  }
+
+  .hours-input label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+
+  .hours-input input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 16px;
+  }
+
+  .specialist-option {
+    margin-bottom: 10px;
+  }
+
+  .specialist-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .specialist-header h6 {
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  .specialist-rate {
+    font-weight: 600;
+    color: #ff6b6b;
+  }
+
+  .calculation-result h5 {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .price-comparison {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+
+  .price-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .price-item:last-child {
+    border-bottom: none;
+  }
+
+  .price-label {
+    font-weight: 500;
+  }
+
+  .price-value {
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+
+  .junior .price-value {
+    color: #45b7d1;
+  }
+
+  .middle .price-value {
+    color: #4ecdc4;
+  }
+
+  .senior .price-value {
+    color: #ff6b6b;
+  }
+
+  .widget-note {
+    background: linear-gradient(to right, rgba(255, 107, 107, 0.1), rgba(78, 205, 196, 0.1));
+    border-left: 4px solid #ff6b6b;
+    padding: 12px;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+  }
+
+  .widget-note i {
+    color: #ff6b6b;
+    margin-right: 8px;
+  }
+
+  .widget-cta {
+    display: grid;
+    gap: 10px;
+  }
+
+  .btn-primary, .btn-outline, .btn-prev, .btn-next {
+    padding: 12px 20px;
+    border-radius: 6px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+    color: white;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+  }
+
+  .btn-outline {
+    background: white;
+    border: 2px solid #4ecdc4;
+    color: #4ecdc4;
+  }
+
+  .btn-outline:hover {
+    background: #f8f9fa;
+  }
+
+  .widget-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-top: 1px solid #e0e0e0;
+    background: #f8f9fa;
+  }
+
+  .btn-prev, .btn-next {
+    background: none;
+    border: 2px solid #e0e0e0;
+    color: #666;
+    min-width: 80px;
+  }
+
+  /* Стиль для неактивной кнопки "Далее" */
+  .btn-next:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: #e0e0e0;
+    border-color: #e0e0e0;
+    color: #666;
+  }
+
+  .btn-next:disabled:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .btn-prev:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .widget-progress {
+    display: flex;
+    gap: 8px;
+  }
+
+  .progress-step {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #e0e0e0;
+  }
+
+  .progress-step.active {
+    background: #ff6b6b;
+  }
+
+  textarea.task-other {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    margin-top: 10px;
+    min-height: 80px;
+    font-family: inherit;
+  }
+
+  .widget-error {
+    padding: 12px 16px;
+    margin: 15px 20px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    display: none;
+  }
+
+  .widget-error.error {
+    background-color: rgba(255, 107, 107, 0.1);
+    border-left: 4px solid #ff6b6b;
+    color: #ff6b6b;
+  }
+
+  .widget-error.success {
+    background-color: rgba(78, 205, 196, 0.1);
+    border-left: 4px solid #4ecdc4;
+    color: #4ecdc4;
+  }
+
+  .widget-error.info {
+    background-color: rgba(69, 183, 209, 0.1);
+    border-left: 4px solid #45b7d1;
+    color: #45b7d1;
+  }
+
+}
