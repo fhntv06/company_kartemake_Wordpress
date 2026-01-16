@@ -1,3 +1,14 @@
+Вот обновленный HTML, где все тексты приведены в соответствие с концепцией компании KArtech (технический отдел на аутсорсе, фокус на B2B, веб-инфраструктуре и поддержке).
+
+Основные изменения:
+1.  **Герой-секция:** Текст теперь отражает позиционирование как внешнего технического отдела.
+2.  **Список услуг:** Полностью переработан. Убраны "Мобильная разработка" и "Дизайн и брендинг", так как они не соответствуют концепции. Добавлены и детализированы услуги, описанные в ТЗ: Веб-разработка/Разработка под CMS, Техническая миграция, Техподдержка и инфраструктура, Аудит и консалтинг.
+3.  **Описания и фичи:** Все формулировки изменены, чтобы говорить на языке B2B-клиента, решать его "боли" (технический долг, нет своего IT-отдела, нужна поддержка), и подчеркивать ключевые преимущества KArtech (команда вместо одного человека, фиксированная стоимость).
+4.  **Футер:** Скорректирован для единообразия.
+5.  **Модальное окно:** Текст уточнен для контекста технических услуг.
+6.  **Статистика:** Изменена на "4 услуги", что соответствует новому списку.
+
+```html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -8,7 +19,7 @@
   <link rel="shortcut icon" href="../../public/images/logotypes/logo-dark.ico" type="image/x-icon">
 </head>
 <body data-controller="custom-cursor modal preloader ripple-effect starfield theme">
-  <header class="header" data-controller="header">
+<header class="header" data-controller="header">
   <a href="/" class="logo">
     <span class="font-size-h2">K</span>
     <span class="font-size-h2">·</span>
@@ -19,11 +30,11 @@
 
   <nav class="nav-links">
       <a class="active" href="services.html">Услуги</a>
-      <a href="projects.html">Проекты</a>
-      <a href="about.html">Компания</a>
-      <a href="blog.html">Блог</a>
-      <a href="calculator.html">Калькулятор сметы</a>
-      <a href="support.html">Техническая поддержка</a>
+      <a href="projects.html">Кейсы</a>
+      <a href="about.html">Команда</a>
+      <a href="blog.html">Технический блог</a>
+      <a href="calculator.html">Калькулятор работ</a>
+      <a href="support.html">Техподдержка</a>
       <a href="contacts.html">Контакты</a>
     </nav>
 
@@ -61,7 +72,7 @@
             data-controller-modal-func="open"
             data-controller-ripple-effect="item"
     >
-      Начать проект
+      Обсудить проект
       <i class="fas fa-arrow-right"></i>
     </button>
 
@@ -72,387 +83,388 @@
     </button>
   </div>
 </header>
-  <main>
-    <section class="hero-support">
-      <div class="container hero__container">
-        <h1>Наши <span class="color-accent-red">услуги</span></h1>
-        <p><span class="font-size-h3">K · <span class="color-accent-red">ART</span> · TECH</span> — создаем цифровые продукты на стыке креатива и инноваций. От идеи до реализации и поддержки.</p>
+<main>
+  <section class="hero-support">
+    <div class="container hero__container">
+      <h1>Ваш внешний <span class="color-accent-red">технический отдел</span></h1>
+      <p><span class="font-size-h3">K · <span class="color-accent-red">ART</span> · TECH</span> — не агентство. Мы ваш партнер по веб-инфраструктуре: берем на себя технический долг, поддержку и развитие digital-продуктов, чтобы вы могли сосредоточиться на своем бизнесе.</p>
 
-        <div class="divider"></div>
+      <div class="divider"></div>
 
-        <div class="stats" data-controller="animation-numbers">
-          <div class="stat-item">
-            <div class="stat-number" data-controller-animation-numbers="item">5</div>
-            <div class="stat-label">Услуг</div>
-          </div>
-        </div>
-
-        <div class="divider"></div>
-
-        <button
-          class="button button--large button--accent"
-          data-controller-modal-open="form"
-          data-controller-modal-func="open"
-        >
-          Обсудить услугу
-        </button>
-      </div>
-    </section>
-
-    <section class="services">
-      <div class="container">
-        <h2 class="section__title">Что мы <span class="color-accent-red">предлагаем</span></h2>
-        <p class="section__description">Полный цикл разработки digital-продуктов: от концепции и дизайна до реализации и технической поддержки.</p>
-
-        <div class="cards-grid">
-          <a href="#" class="service-card">
-            <div class="service-content">
-              <h3 class="service-title">Веб-разработка</h3>
-              <p class="service-description">Создаем современные, быстрые и адаптивные веб-сайты и веб-приложения, которые решают бизнес-задачи и привлекают клиентов.</p>
-              <div class="service-features">
-                <span class="service-feature">Корпоративные сайты</span>
-                <span class="service-feature">Интернет-магазины</span>
-                <span class="service-feature">Веб-приложения</span>
-                <span class="service-feature">Landing pages</span>
-              </div>
-              <p class="service-link">
-                <i class="fas fa-arrow-left"></i> Подробнее
-              </p>
-            </div>
-            <div class="service-details">
-              <div class="service-price">от 150 000 ₽</div>
-              <div class="service-time">Срок: от 4 недель</div>
-            </div>
-          </a>
-          <div class="service-card">
-            <div class="service-content">
-              <h3 class="service-title">Мобильная разработка</h3>
-              <p class="service-description">Разрабатываем нативные и кроссплатформенные мобильные приложения для iOS и Android, которые нравятся пользователям.</p>
-              <div class="service-features">
-                <span class="service-feature">iOS приложения</span>
-                <span class="service-feature">Android приложения</span>
-                <span class="service-feature">React Native</span>
-                <span class="service-feature">UI/UX дизайн</span>
-              </div>
-              <a href="#" class="service-link">
-                <i class="fas fa-arrow-left"></i> Подробнее
-              </a>
-            </div>
-            <div class="service-details">
-              <div class="service-price">от 250 000 ₽</div>
-              <div class="service-time">Срок: от 6 недель</div>
-            </div>
-          </div>
-          <div class="service-card">
-            <div class="service-content">
-              <h3 class="service-title">Дизайн и брендинг</h3>
-              <p class="service-description">Создаем уникальный визуальный стиль, который выделяет ваш бренд и делает его узнаваемым на рынке.</p>
-              <div class="service-features">
-                <span class="service-feature">Логотипы</span>
-                <span class="service-feature">Фирменный стиль</span>
-                <span class="service-feature">UI/UX дизайн</span>
-                <span class="service-feature">Брендбуки</span>
-              </div>
-              <a href="#" class="service-link">
-                <i class="fas fa-arrow-left"></i> Подробнее
-              </a>
-            </div>
-            <div class="service-details">
-              <div class="service-price">от 80 000 ₽</div>
-              <div class="service-time">Срок: от 2 недель</div>
-            </div>
-          </div>
-          <div class="service-card">
-            <div class="service-content">
-              <h3 class="service-title">Техническая поддержка</h3>
-              <p class="service-description">Обеспечиваем бесперебойную работу ваших digital-продуктов, оперативно решаем проблемы и вносим необходимые обновления.</p>
-              <div class="service-features">
-                <span class="service-feature">Мониторинг</span>
-                <span class="service-feature">Обновления</span>
-                <span class="service-feature">Резервное копирование</span>
-                <span class="service-feature">Консультации</span>
-              </div>
-              <a href="#" class="service-link">
-                <i class="fas fa-arrow-left"></i> Подробнее
-              </a>
-            </div>
-            <div class="service-details">
-              <div class="service-price">от 15 000 ₽/мес</div>
-              <div class="service-time">Подписка</div>
-            </div>
-          </div>
+      <div class="stats" data-controller="animation-numbers">
+        <div class="stat-item">
+          <div class="stat-number" data-controller-animation-numbers="item">4</div>
+          <div class="stat-label">Направления</div>
         </div>
       </div>
-    </section>
-  </main>
-  <footer>
-    <div class="footer-content">
-      <div class="footer-logo color-whitesmoke">
-        <span>K</span>·<span class="color-accent-red">ART</span>·<span>TECH</span>
-      </div>
 
-      <div class="footer-info">
-        <p>Создаем цифровые продукты на стыке креатива и инноваций</p>
-      </div>
+      <div class="divider"></div>
 
-      <div class="footer-cta">
-        <button
-                class="cta-button"
-                data-controller-modal-open="form"
-                data-controller-modal-func="open"
-                data-controller-ripple-effect="item"
-        >
-          Начать проект
-          <i class="fas fa-arrow-right"></i>
-        </button>
+      <button
+              class="button button--large button--accent"
+              data-controller-modal-open="form"
+              data-controller-modal-func="open"
+      >
+        Получить консультацию
+      </button>
+    </div>
+  </section>
+
+  <section class="services">
+    <div class="container">
+      <h2 class="section__title">Комплекс технических <span class="color-accent-red">решений</span></h2>
+      <p class="section__description">Полный спектр услуг для поддержки и развития вашей цифровой инфраструктуры. От разовой разработки до ежемесячного абонентского обслуживания.</p>
+
+      <div class="cards-grid">
+        <a href="#" class="service-card">
+          <div class="service-content">
+            <h3 class="service-title">Веб-разработка & CMS</h3>
+            <p class="service-description">Создаем и глубоко кастомизируем корпоративные сайты, интернет-магазины и веб-приложения на 1С-Битрикс и WordPress, включая сложные интеграции.</p>
+            <div class="service-features">
+              <span class="service-feature">1С-Битрикс</span>
+              <span class="service-feature">WordPress</span>
+              <span class="service-feature">Интернет-магазины</span>
+              <span class="service-feature">Интеграции (CRM, ERP)</span>
+            </div>
+            <p class="service-link">
+              <i class="fas fa-arrow-left"></i> Подробнее
+            </p>
+          </div>
+          <div class="service-details">
+            <div class="service-price">от 200 000 ₽</div>
+            <div class="service-time">Проектная работа</div>
+          </div>
+        </a>
+        <div class="service-card">
+          <div class="service-content">
+            <h3 class="service-title">Техническая миграция и модернизация</h3>
+            <p class="service-description">Переносим сайты с устаревших платформ, оптимизируем legacy-код и обновляем технологии для повышения безопасности, скорости и стабильности.</p>
+            <div class="service-features">
+              <span class="service-feature">Перенос сайтов</span>
+              <span class="service-feature">Рефакторинг кода</span>
+              <span class="service-feature">Обновление стеков</span>
+              <span class="service-feature">Оптимизация</span>
+            </div>
+            <a href="#" class="service-link">
+              <i class="fas fa-arrow-left"></i> Подробнее
+            </a>
+          </div>
+          <div class="service-details">
+            <div class="service-price">от 120 000 ₽</div>
+            <div class="service-time">Срок: от 3 недель</div>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-content">
+            <h3 class="service-title">Техподдержка & Инфраструктура</h3>
+            <p class="service-description">Полное абонентское обслуживание: мониторинг, исправление ошибок, резервное копирование, работа с хостингом и безопасностью. Ваш сайт — под надежным контролем.</p>
+            <div class="service-features">
+              <span class="service-feature">Исправление багов</span>
+              <span class="service-feature">Настройка серверов</span>
+              <span class="service-feature">Резервное копирование</span>
+              <span class="service-feature">Доработки</span>
+            </div>
+            <a href="#" class="service-link">
+              <i class="fas fa-arrow-left"></i> Подробнее
+            </a>
+          </div>
+          <div class="service-details">
+            <div class="service-price">от 25 000 ₽/мес</div>
+            <div class="service-time">Абонентская плата</div>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-content">
+            <h3 class="service-title">Аудит и консалтинг</h3>
+            <p class="service-description">Профессиональная оценка текущего состояния вашего digital-продукта: безопасность, производительность, архитектура. Даем четкий план действий по улучшению.</p>
+            <div class="service-features">
+              <span class="service-feature">Аудит безопасности</span>
+              <span class="service-feature">Аудит скорости</span>
+              <span class="service-feature">Технический консалтинг</span>
+              <span class="service-feature">Выбор технологий</span>
+            </div>
+            <a href="#" class="service-link">
+              <i class="fas fa-arrow-left"></i> Подробнее
+            </a>
+          </div>
+          <div class="service-details">
+            <div class="service-price">от 50 000 ₽</div>
+            <div class="service-time">Разовый аудит</div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="footer-bottom">
-      <div class="copyright">KARTECH © 2026. Все права защищены.</div>
+  </section>
+</main>
+<footer>
+  <div class="footer-content">
+    <div class="footer-logo color-whitesmoke">
+      <span>K</span>·<span class="color-accent-red">ART</span>·<span>TECH</span>
     </div>
-  </footer>
 
-  <!-- Overlay для затемнения фона -->
-  <div class="overlay" id="overlay"></div>
+    <div class="footer-info">
+      <p>Ваш внешний технический отдел. Поддержка и развитие digital-продуктов на аутсорсе.</p>
+    </div>
+
+    <div class="footer-cta">
+      <button
+              class="cta-button"
+              data-controller-modal-open="form"
+              data-controller-modal-func="open"
+              data-controller-ripple-effect="item"
+      >
+        Обсудить проект
+        <i class="fas fa-arrow-right"></i>
+      </button>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="copyright">KARTECH © 2026. Все права защищены.</div>
+  </div>
+</footer>
+
+<!-- Overlay для затемнения фона -->
+<div class="overlay" id="overlay"></div>
 
   <!-- Sidebar burger menu -->
   <aside class="sidebar-burger-menu" id="sidebar-burger-menu">
     <nav>
       <ul class="sidebar-nav">
         <li><a class="active" href="services.html">Услуги</a></li>
-        <li><a href="projects.html">Проекты</a></li>
-        <li><a href="about.html">Компания</a></li>
-        <li><a href="blog.html">Блог</a></li>
-        <li><a href="calculator.html">Калькулятор сметы</a></li>
-        <li><a href="support.html">Техническая поддержка</a></li>
+        <li><a href="projects.html">Кейсы</a></li>
+        <li><a href="about.html">Команда</a></li>
+        <li><a href="blog.html">Технический блог</a></li>
+        <li><a href="calculator.html">Калькулятор работ</a></li>
+        <li><a href="support.html">Техподдержка</a></li>
         <li><a href="contacts.html">Контакты</a></li>
       </ul>
     </nav>
 
+  <button
+          class="cta-button"
+          data-controller-modal-open="form"
+          data-controller-modal-func="open"
+          data-controller-ripple-effect="item"
+  >
+    Обсудить проект
+    <i class="fas fa-arrow-right"></i>
+  </button>
+
+  <div class="sidebar-social">
+    <button class="theme-toggle" data-controller-theme="item">
+      <i class="fas fa-moon"></i>
+    </button>
     <button
-            class="cta-button"
-            data-controller-modal-open="form"
-            data-controller-modal-func="open"
+            class="language-toggle"
+            data-controller="lang"
             data-controller-ripple-effect="item"
     >
-      Начать проект
-      <i class="fas fa-arrow-right"></i>
+      <span data-controller-lang="item">RU</span>
+      <i class="fas fa-chevron-down"></i>
     </button>
+  </div>
+  <div class="sidebar-social">
+    <a href="#"><i class="fab fa-vk"></i></a>
+    <a href="#"><i class="fab fa-telegram"></i></a>
+    <a href="#"><i class="fab fa-github"></i></a>
+  </div>
+</aside>
 
-    <div class="sidebar-social">
-      <button class="theme-toggle" data-controller-theme="item">
-        <i class="fas fa-moon"></i>
-      </button>
-      <button
-              class="language-toggle"
-              data-controller="lang"
-              data-controller-ripple-effect="item"
-      >
-        <span data-controller-lang="item">RU</span>
-        <i class="fas fa-chevron-down"></i>
-      </button>
+<!-- modal form -->
+<div id="form" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3>Обсудим вашу <span class="color-accent-red">техническую задачу</span>?</h3>
+      <p>Опишите проблему или проект. Мы оценим её и предложим решение: разовую работу или абонентское обслуживание.</p>
     </div>
-    <div class="sidebar-social">
-      <a href="#"><i class="fab fa-vk"></i></a>
-      <a href="#"><i class="fab fa-telegram"></i></a>
-      <a href="#"><i class="fab fa-github"></i></a>
-    </div>
-  </aside>
 
-  <!-- modal form -->
-  <div id="form" class="modal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3>Хотите обсудить <span class="color-accent-red">услуги</span>?</h3>
-        <p>Оставьте заявку и наш специалист свяжется с вами для обсуждения услуги или работы</p>
+    <!-- Секция с формой -->
+    <div class="form-container">
+      <div class="form-header">
+
       </div>
 
-      <!-- Секция с формой -->
-      <div class="form-container">
-        <div class="form-header">
-
+      <form class="contact-form" data-controller="form">
+        <div class="form-group">
+          <input type="text" class="form-input" id="name" placeholder=" " required>
+          <label for="name" class="form-label">Имя</label>
         </div>
 
-        <form class="contact-form" data-controller="form">
-          <div class="form-group">
-            <input type="text" class="form-input" id="name" placeholder=" " required>
-            <label for="name" class="form-label">Имя</label>
-          </div>
+        <div class="form-group">
+          <input type="text" class="form-input" id="company" placeholder=" ">
+          <label for="company" class="form-label">Название компании</label>
+        </div>
 
-          <div class="form-group">
-            <input type="text" class="form-input" id="company" placeholder=" ">
-            <label for="company" class="form-label">Название компании</label>
-          </div>
+        <div class="form-group">
+          <input type="email" class="form-input" id="email" placeholder=" ">
+          <label for="email" class="form-label">Email</label>
+        </div>
 
-          <div class="form-group">
-            <input type="email" class="form-input" id="email" placeholder=" ">
-            <label for="email" class="form-label">Email</label>
-          </div>
+        <div class="form-group">
+          <input type="tel" class="form-input" id="phone" placeholder=" " required>
+          <label for="phone" class="form-label">Телефон</label>
+        </div>
 
-          <div class="form-group">
-            <input type="tel" class="form-input" id="phone" placeholder=" " required>
-            <label for="phone" class="form-label">Телефон</label>
-          </div>
+        <div class="form-group full-width">
+          <textarea class="form-input" id="message" placeholder=" " required></textarea>
+          <label for="message" class="form-label">Опишите ваш проект, проблему или задачу</label>
+        </div>
 
-          <div class="form-group full-width">
-            <textarea class="form-input" id="message" placeholder=" " required></textarea>
-            <label for="message" class="form-label">Расскажите о вашем проекте</label>
-          </div>
+        <div class="form-button">
+          <button
+                  class="cta-button"
+                  type="submit"
+                  data-controller-ripple-effect="item"
+          >
+            Отправить заявку
+            <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
 
-          <div class="form-button">
-            <button
-                    class="cta-button"
-                    type="submit"
-                    data-controller-ripple-effect="item"
-            >
-              Отправить
-              <i class="fas fa-arrow-right"></i>
-            </button>
-          </div>
-
-          <p class="form-notice">Нажимая на кнопку, вы соглашаетесь с политикой конфиденциальности</p>
-        </form>
-      </div>
-    </div>
-    <div id="close-modal" class="close-modal">
-      <i class="fas fa-times"></i>
+        <p class="form-notice">Нажимая на кнопку, вы соглашаетесь с политикой конфиденциальности</p>
+      </form>
     </div>
   </div>
-  <!-- decoration lines -->
-  <div class="lines">
-    <div class="line line-1"></div>
-    <div class="line line-2"></div>
-    <div class="line line-3"></div>
-    <div class="line line-4"></div>
-    <div class="line line-5"></div>
+  <div id="close-modal" class="close-modal">
+    <i class="fas fa-times"></i>
   </div>
-  <!-- custom-cursor -->
-  <div id="custom-cursor" class="custom-cursor" data-controller-custom-cursor="item"></div>
-  <!-- preloader -->
-  <div class="preloader" data-controller-preloader="item">
-    <div class="preloader__container">
-      <svg id="preloader-svg" class="preloader__svg" width="1280" height="600" viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <!-- Multiple gradients for complex animation -->
-          <linearGradient id="mainGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#ff6b6b">
-              <animate attributeName="offset" values="-2;2" dur="3s" repeatCount="indefinite"/>
-            </stop>
-            <stop offset="33%" stop-color="#4ecdc4">
-              <animate attributeName="offset" values="-1;3" dur="3s" repeatCount="indefinite"/>
-            </stop>
-            <stop offset="66%" stop-color="#45b7d1">
-              <animate attributeName="offset" values="0;4" dur="3s" repeatCount="indefinite"/>
-            </stop>
-            <stop offset="100%" stop-color="#ff6b6b">
-              <animate attributeName="offset" values="1;5" dur="3s" repeatCount="indefinite"/>
-            </stop>
-          </linearGradient>
+</div>
+<!-- decoration lines -->
+<div class="lines">
+  <div class="line line-1"></div>
+  <div class="line line-2"></div>
+  <div class="line line-3"></div>
+  <div class="line line-4"></div>
+  <div class="line line-5"></div>
+</div>
+<!-- custom-cursor -->
+<div id="custom-cursor" class="custom-cursor" data-controller-custom-cursor="item"></div>
+<!-- preloader -->
+<div class="preloader" data-controller-preloader="item">
+  <div class="preloader__container">
+    <svg id="preloader-svg" class="preloader__svg" width="1280" height="600" viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <!-- Multiple gradients for complex animation -->
+        <linearGradient id="mainGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#ff6b6b">
+            <animate attributeName="offset" values="-2;2" dur="3s" repeatCount="indefinite"/>
+          </stop>
+          <stop offset="33%" stop-color="#4ecdc4">
+            <animate attributeName="offset" values="-1;3" dur="3s" repeatCount="indefinite"/>
+          </stop>
+          <stop offset="66%" stop-color="#45b7d1">
+            <animate attributeName="offset" values="0;4" dur="3s" repeatCount="indefinite"/>
+          </stop>
+          <stop offset="100%" stop-color="#ff6b6b">
+            <animate attributeName="offset" values="1;5" dur="3s" repeatCount="indefinite"/>
+          </stop>
+        </linearGradient>
 
-          <linearGradient id="secondaryGradient" x1="100%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="#ffd93d">
-              <animate attributeName="offset" values="0;1" dur="2.5s" repeatCount="indefinite"/>
-            </stop>
-            <stop offset="50%" stop-color="#6c5ce7">
-              <animate attributeName="offset" values="0.5;1.5" dur="2.5s" repeatCount="indefinite"/>
-            </stop>
-            <stop offset="100%" stop-color="#ffd93d">
-              <animate attributeName="offset" values="1;2" dur="2.5s" repeatCount="indefinite"/>
-            </stop>
-          </linearGradient>
+        <linearGradient id="secondaryGradient" x1="100%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#ffd93d">
+            <animate attributeName="offset" values="0;1" dur="2.5s" repeatCount="indefinite"/>
+          </stop>
+          <stop offset="50%" stop-color="#6c5ce7">
+            <animate attributeName="offset" values="0.5;1.5" dur="2.5s" repeatCount="indefinite"/>
+          </stop>
+          <stop offset="100%" stop-color="#ffd93d">
+            <animate attributeName="offset" values="1;2" dur="2.5s" repeatCount="indefinite"/>
+          </stop>
+        </linearGradient>
 
-          <!-- Glow effects -->
-          <filter id="pulseGlow" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
-            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -8" result="glow"/>
-            <feComposite in="SourceGraphic" in2="glow" operator="over"/>
-          </filter>
+        <!-- Glow effects -->
+        <filter id="pulseGlow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -8" result="glow"/>
+          <feComposite in="SourceGraphic" in2="glow" operator="over"/>
+        </filter>
 
-          <filter id="strongGlow" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur"/>
-            <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 30 -7"/>
-          </filter>
+        <filter id="strongGlow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur"/>
+          <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 30 -7"/>
+        </filter>
 
-          <!-- Pattern for background effect -->
-          <pattern id="grid" patternUnits="userSpaceOnUse" width="50" height="50">
-            <path d="M 0 0 L 50 0 50 50 0 50 Z" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
-          </pattern>
-        </defs>
+        <!-- Pattern for background effect -->
+        <pattern id="grid" patternUnits="userSpaceOnUse" width="50" height="50">
+          <path d="M 0 0 L 50 0 50 50 0 50 Z" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+        </pattern>
+      </defs>
 
-        <!-- Background grid -->
-        <rect width="100%" height="100%" fill="url(#grid)" opacity="0.5"/>
+      <!-- Background grid -->
+      <rect width="100%" height="100%" fill="url(#grid)" opacity="0.5"/>
 
-        <!-- Base white text (subtle) -->
-        <text x="400" y="150" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="80" fill="rgba(255,255,255,0.1)" opacity="0.5">
+      <!-- Base white text (subtle) -->
+      <text x="400" y="150" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="80" fill="rgba(255,255,255,0.1)" opacity="0.5">
+        KARTECH
+      </text>
+
+      <!-- Main animated stroke -->
+      <text x="400" y="150" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="80" fill="none" stroke="url(#mainGradient)" stroke-width="2" stroke-dasharray="1000" stroke-dashoffset="1000">
+        KARTECH
+        <animate attributeName="stroke-dashoffset" values="1000;0;1000" dur="4s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-width" values="2;3;2" dur="2s" repeatCount="indefinite"/>
+      </text>
+
+      <!-- Secondary stroke (reverse direction) -->
+      <text x="400" y="150" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="80" fill="none" stroke="url(#secondaryGradient)" stroke-width="1" stroke-dasharray="800" stroke-dashoffset="800" opacity="0.7">
+        KARTECH
+        <animate attributeName="stroke-dashoffset" values="800;1600;800" dur="3.5s" repeatCount="indefinite"/>
+      </text>
+
+      <!-- Pulsating glow effect -->
+      <text x="400" y="150" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="80" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="4" opacity="0">
+        KARTECH
+        <animate attributeName="opacity" values="0;0.5;0" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-width" values="4;8;4" dur="2s" repeatCount="indefinite"/>
+      </text>
+
+      <!-- Individual letter animations -->
+      <g class="letter-pulses" opacity="0.8">
+        <text x="400" y="150" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="80" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1">
           KARTECH
+          <animate attributeName="stroke-width" values="1;2;1" dur="1.5s" repeatCount="indefinite"/>
         </text>
+      </g>
 
-        <!-- Main animated stroke -->
-        <text x="400" y="150" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="80" fill="none" stroke="url(#mainGradient)" stroke-width="2" stroke-dasharray="1000" stroke-dashoffset="1000">
-          KARTECH
-          <animate attributeName="stroke-dashoffset" values="1000;0;1000" dur="4s" repeatCount="indefinite"/>
-          <animate attributeName="stroke-width" values="2;3;2" dur="2s" repeatCount="indefinite"/>
-        </text>
+      <!-- Floating particles -->
+      <g class="particles" opacity="0.6">
+        <circle cx="100" cy="100" r="2" fill="#ff6b6b">
+          <animate attributeName="cx" values="100;500;100" dur="8s" repeatCount="indefinite"/>
+          <animate attributeName="cy" values="100;200;100" dur="6s" repeatCount="indefinite"/>
+          <animate attributeName="r" values="2;4;2" dur="3s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="700" cy="200" r="3" fill="#4ecdc4">
+          <animate attributeName="cx" values="700;300;700" dur="7s" repeatCount="indefinite"/>
+          <animate attributeName="cy" values="200;100;200" dur="5s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="300" cy="250" r="2.5" fill="#45b7d1">
+          <animate attributeName="cx" values="300;600;300" dur="9s" repeatCount="indefinite"/>
+          <animate attributeName="cy" values="250;150;250" dur="4s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="100" cy="100" r="2" fill="#ffd93d">
+          <animate attributeName="cx" values="200;350;150" dur="8s" repeatCount="indefinite"/>
+          <animate attributeName="cy" values="50;600;150" dur="6s" repeatCount="indefinite"/>
+          <animate attributeName="r" values="2;4;2" dur="3s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="700" cy="200" r="3" fill="#6c5ce7">
+          <animate attributeName="cx" values="600;450;750" dur="7s" repeatCount="indefinite"/>
+          <animate attributeName="cy" values="10;150;200" dur="5s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="300" cy="250" r="2.5" fill="#4ecdc4">
+          <animate attributeName="cx" values="700;600;100" dur="9s" repeatCount="indefinite"/>
+          <animate attributeName="cy" values="650;150;350" dur="4s" repeatCount="indefinite"/>
+        </circle>
+      </g>
 
-        <!-- Secondary stroke (reverse direction) -->
-        <text x="400" y="150" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="80" fill="none" stroke="url(#secondaryGradient)" stroke-width="1" stroke-dasharray="800" stroke-dashoffset="800" opacity="0.7">
-          KARTECH
-          <animate attributeName="stroke-dashoffset" values="800;1600;800" dur="3.5s" repeatCount="indefinite"/>
-        </text>
-
-        <!-- Pulsating glow effect -->
-        <text x="400" y="150" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="80" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="4" opacity="0">
-          KARTECH
-          <animate attributeName="opacity" values="0;0.5;0" dur="2s" repeatCount="indefinite"/>
-          <animate attributeName="stroke-width" values="4;8;4" dur="2s" repeatCount="indefinite"/>
-        </text>
-
-        <!-- Individual letter animations -->
-        <g class="letter-pulses" opacity="0.8">
-          <text x="400" y="150" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="80" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1">
-            KARTECH
-            <animate attributeName="stroke-width" values="1;2;1" dur="1.5s" repeatCount="indefinite"/>
-          </text>
-        </g>
-
-        <!-- Floating particles -->
-        <g class="particles" opacity="0.6">
-          <circle cx="100" cy="100" r="2" fill="#ff6b6b">
-            <animate attributeName="cx" values="100;500;100" dur="8s" repeatCount="indefinite"/>
-            <animate attributeName="cy" values="100;200;100" dur="6s" repeatCount="indefinite"/>
-            <animate attributeName="r" values="2;4;2" dur="3s" repeatCount="indefinite"/>
-          </circle>
-          <circle cx="700" cy="200" r="3" fill="#4ecdc4">
-            <animate attributeName="cx" values="700;300;700" dur="7s" repeatCount="indefinite"/>
-            <animate attributeName="cy" values="200;100;200" dur="5s" repeatCount="indefinite"/>
-          </circle>
-          <circle cx="300" cy="250" r="2.5" fill="#45b7d1">
-            <animate attributeName="cx" values="300;600;300" dur="9s" repeatCount="indefinite"/>
-            <animate attributeName="cy" values="250;150;250" dur="4s" repeatCount="indefinite"/>
-          </circle>
-          <circle cx="100" cy="100" r="2" fill="#ffd93d">
-            <animate attributeName="cx" values="200;350;150" dur="8s" repeatCount="indefinite"/>
-            <animate attributeName="cy" values="50;600;150" dur="6s" repeatCount="indefinite"/>
-            <animate attributeName="r" values="2;4;2" dur="3s" repeatCount="indefinite"/>
-          </circle>
-          <circle cx="700" cy="200" r="3" fill="#6c5ce7">
-            <animate attributeName="cx" values="600;450;750" dur="7s" repeatCount="indefinite"/>
-            <animate attributeName="cy" values="10;150;200" dur="5s" repeatCount="indefinite"/>
-          </circle>
-          <circle cx="300" cy="250" r="2.5" fill="#4ecdc4">
-            <animate attributeName="cx" values="700;600;100" dur="9s" repeatCount="indefinite"/>
-            <animate attributeName="cy" values="650;150;350" dur="4s" repeatCount="indefinite"/>
-          </circle>
-        </g>
-
-        <!-- Final white text (hidden until load) -->
-        <text x="400" y="150" text-anchor="middle" class="final-text" font-family="Arial Black, sans-serif" font-size="80" fill="white" filter="url(#strongGlow)" opacity="0">
-          KARTECH
-        </text>
-      </svg>
-    </div>
+      <!-- Final white text (hidden until load) -->
+      <text x="400" y="150" text-anchor="middle" class="final-text" font-family="Arial Black, sans-serif" font-size="80" fill="white" filter="url(#strongGlow)" opacity="0">
+        KARTECH
+      </text>
+    </svg>
   </div>
-  <!-- stars-container -->
-  <canvas id="stars-canvas" data-controller-starfield="item"></canvas>
+</div>
+<!-- stars-container -->
+<canvas id="stars-canvas" data-controller-starfield="item"></canvas>
 </body>
 </html>
+```

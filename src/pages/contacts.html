@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Контакты | KARTECH</title>
+  <title>Контакты технической поддержки | Связь с командой KARTECH</title>
 
   <link rel="shortcut icon" href="../../public/images/logotypes/logo-dark.ico" type="image/x-icon">
 </head>
@@ -18,20 +18,20 @@
     </a>
 
     <nav class="nav-links">
-        <a href="services.html">Услуги</a>
-        <a href="projects.html">Проекты</a>
-        <a href="about.html">Компания</a>
-        <a href="blog.html">Блог</a>
-        <a href="calculator.html">Калькулятор сметы</a>
-        <a href="support.html">Техническая поддержка</a>
-        <a class="active" href="contacts.html">Контакты</a>
-      </nav>
+      <a href="services.html">Услуги</a>
+      <a href="projects.html">Кейсы</a>
+      <a href="about.html">Команда</a>
+      <a href="blog.html">Технический блог</a>
+      <a href="calculator.html">Калькулятор работ</a>
+      <a href="support.html">Техподдержка</a>
+      <a class="active" href="contacts.html">Контакты</a>
+    </nav>
 
     <div class="header-controls">
       <div class="social-links">
-        <a href="#"><i class="fab fa-behance"></i></a>
-        <a href="#"><i class="fab fa-dribbble"></i></a>
         <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-stack-overflow"></i></a>
+        <a href="#"><i class="fab fa-telegram"></i></a>
       </div>
 
       <div class="phone">
@@ -61,7 +61,7 @@
               data-controller-modal-func="open"
               data-controller-ripple-effect="item"
       >
-        Начать проект
+        Обсудить задачу
         <i class="fas fa-arrow-right"></i>
       </button>
 
@@ -77,47 +77,66 @@
       <div class="container hero__container">
         <h1>Наши <span class="color-accent-red">контакты</span></h1>
         <p>
-          <span class="font-size-h3">
-          K · <span class="color-accent-red">ART</span> · TECH
-          </span> <span>— создаем цифровые продукты на стыке креатива и инноваций. Свяжитесь с нами для обсуждения вашего проекта.</span>
+            <span class="font-size-h3">
+            K · <span class="color-accent-red">ART</span> · TECH
+            </span> <span>— ваш технический партнер на аутсорсе. Свяжитесь с нами для обсуждения поддержки, разработки или аудита ваших digital-продуктов.</span>
         </p>
 
         <div class="divider"></div>
 
         <div class="stats" data-controller="animation-numbers">
           <div class="stat-item">
-            <div class="stat-number" data-controller-animation-numbers="item">5</div>
-            <div class="stat-label">Услуг</div>
+            <div class="stat-number" data-postfix="%" data-controller-animation-numbers="item">99.9</div>
+            <div class="stat-label">Аптайм проектов</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-postfix="ч" data-controller-animation-numbers="item">2</div>
+            <div class="stat-label">Среднее время реакции на запрос</div>
           </div>
         </div>
 
         <div class="divider"></div>
 
         <button
-          class="button button--large button--accent"
-          data-controller-modal-open="form"
-          data-controller-modal-func="open"
+                class="button button--large button--accent"
+                data-controller-modal-open="form"
+                data-controller-modal-func="open"
         >
-          Обсудить услугу
+          Описать техническую задачу
         </button>
       </div>
     </section>
 
     <section>
       <div class="container">
-        <h2 class="section__title">Свяжитесь с <span class="color-accent-red">нами</span></h2>
-        <p class="section__description">Мы всегда готовы ответить на ваши вопросы и обсудить возможности сотрудничества.</p>
+        <h2 class="section__title">Как с нами <span class="color-accent-red">связаться</span></h2>
+        <p class="section__description">Мы работаем удаленно по всей России. Выберите удобный способ связи для обсуждения технических вопросов.</p>
 
         <div class="cards-grid">
-          <!-- Address Card -->
+          <!-- Support Card -->
           <div class="vertical-card">
             <div class="icon">
-              <i class="fas fa-map-marker-alt font-size-h5"></i>
+              <i class="fas fa-headset font-size-h5"></i>
             </div>
-            <h4 class="title">Адрес</h4>
-            <p class="description">г. Москва, ул. Тверская, д. 18, офис 305</p>
-            <a href="#" class="link">
-              <span>Открыть в картах</span>
+            <h4 class="title">Техническая поддержка</h4>
+            <p class="description">support@kartech.ru</p>
+            <p class="description-small">Для срочных запросов и технических проблем</p>
+            <a href="mailto:support@kartech.ru" class="link">
+              <span>Написать в поддержку</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <!-- Projects Card -->
+          <div class="vertical-card">
+            <div class="icon">
+              <i class="fas fa-project-diagram font-size-h5"></i>
+            </div>
+            <h4 class="title">Новые проекты</h4>
+            <p class="description">hello@kartech.ru</p>
+            <p class="description-small">Для обсуждения разработки, миграции, аудита</p>
+            <a href="mailto:hello@kartech.ru" class="link">
+              <span>Обсудить проект</span>
               <i class="fas fa-arrow-right"></i>
             </a>
           </div>
@@ -128,22 +147,10 @@
               <i class="fas fa-phone font-size-h5"></i>
             </div>
             <h4 class="title">Телефон</h4>
-            <p class="vertical-card__description">+7 (495) 123-45-67</p>
-            <a href="tel:+74951234567" class="link">
-              <span>Позвонить нам</span>
-              <i class="fas fa-arrow-right"></i>
-            </a>
-          </div>
-
-          <!-- Email Card -->
-          <div class="vertical-card">
-            <div class="icon">
-              <i class="fas fa-envelope font-size-h5"></i>
-            </div>
-            <h4 class="title">Email</h4>
-            <p class="description">info@kartech.ru</p>
-            <a href="mailto:info@kartech.ru" class="link">
-              <span>Написать нам</span>
+            <p class="vertical-card__description">+7 (999) 123-45-67</p>
+            <p class="description-small">Пн-Пт, 9:00-18:00 по московскому времени</p>
+            <a href="tel:+79991234567" class="link">
+              <span>Позвонить</span>
               <i class="fas fa-arrow-right"></i>
             </a>
           </div>
@@ -154,9 +161,10 @@
               <i class="fas fa-clock font-size-h5"></i>
             </div>
             <h4 class="title">Режим работы</h4>
-            <p class="description">Пн-Пт: 9:00 - 18:00<br>Сб-Вс: выходной</p>
-            <a href="#" class="contact-link">
-              <span>Записаться на встречу</span>
+            <p class="description">Пн-Пт: 9:00 - 18:00 (МСК)</p>
+            <p class="description-small">Техподдержка: 24/7 для клиентов на абонентском обслуживании</p>
+            <a href="support.html" class="link">
+              <span>Узнать об SLA</span>
               <i class="fas fa-arrow-right"></i>
             </a>
           </div>
@@ -168,10 +176,20 @@
       <div class="container">
         <div class="map-container">
           <div class="map-placeholder">
-            <i class="fas fa-map-marked-alt font-size-h3"></i>
-            <span>Интерактивная карта</span>
-            <div class="map-point" style="top: 45%; left: 48%;"></div>
-            <div class="map-label">KARTECH Office</div>
+            <i class="fas fa-network-wired font-size-h3"></i>
+            <span>Распределенная команда по всей России</span>
+            <div class="map-point" style="top: 30%; left: 40%;">
+              <div class="point-label">Москва<br>Менеджмент</div>
+            </div>
+            <div class="map-point" style="top: 45%; left: 55%;">
+              <div class="point-label">Санкт-Петербург<br>Разработка</div>
+            </div>
+            <div class="map-point" style="top: 60%; left: 65%;">
+              <div class="point-label">Новосибирск<br>DevOps</div>
+            </div>
+            <div class="map-point" style="top: 50%; left: 35%;">
+              <div class="point-label">Екатеринбург<br>Поддержка</div>
+            </div>
           </div>
         </div>
       </div>
@@ -181,8 +199,8 @@
     <section class="project-form">
       <div class="form-container container">
         <div class="form-header">
-          <h3>Хотите чтобы мы решили <span class="color-accent-red">ваш кейс</span>?</h3>
-          <p>Оставьте заявку и наш специалист свяжется с вами для обсуждения деталей вашего проекта</p>
+          <h3>Есть техническая задача? <span class="color-accent-red">Опишите её</span></h3>
+          <p>Расскажите о проблеме или задаче — мы проведем бесплатный аудит и предложим решение в течение 24 часов</p>
         </div>
         <form class="contact-form" data-controller="form">
           <div class="form-group">
@@ -196,7 +214,7 @@
           </div>
 
           <div class="form-group">
-            <input type="email" class="form-input" name="emai" id="email-project-form" placeholder=" ">
+            <input type="email" class="form-input" name="email" id="email-project-form" placeholder=" ">
             <label for="email-project-form" class="form-label">Email</label>
           </div>
 
@@ -206,18 +224,38 @@
           </div>
 
           <div class="form-group full-width">
-            <textarea class="form-input" name="message" id="message-project-form" placeholder=" " required></textarea>
-            <label for="message-project-form" class="form-label">Расскажите о вашем проекте</label>
+            <textarea class="form-input" name="message" id="message-project-form" placeholder=" " required rows="4"></textarea>
+            <label for="message-project-form" class="form-label">Опишите вашу техническую задачу или проблему</label>
+          </div>
+
+          <div class="form-group">
+            <select class="form-input" name="type" id="type-project-form">
+              <option value="">Выберите тип задачи</option>
+              <option value="support">Техническая поддержка сайта</option>
+              <option value="development">Разработка/доработка</option>
+              <option value="migration">Миграция/модернизация</option>
+              <option value="audit">Аудит безопасности/производительности</option>
+              <option value="consulting">Консультация</option>
+              <option value="other">Другое</option>
+            </select>
+            <label for="type-project-form" class="form-label">Тип задачи</label>
+          </div>
+
+          <div class="form-group">
+            <div class="checkbox-group">
+              <input type="checkbox" id="urgent-project-form" name="urgent">
+              <label for="urgent-project-form" class="checkbox-label">Срочная задача (ответ в течение 2 часов)</label>
+            </div>
           </div>
 
           <div class="form-button">
             <button type="submit" class="cta-button" data-controller-ripple-effect="item">
-              Отправить
+              Отправить задачу
               <i class="fas fa-arrow-right"></i>
             </button>
           </div>
 
-          <p class="form-notice">Нажимая на кнопку, вы соглашаетесь с политикой конфиденциальности</p>
+          <p class="form-notice">Нажимая на кнопку, вы соглашаетесь с политикой конфиденциальности. Мы ответим в течение 24 часов.</p>
         </form>
       </div>
     </section>
@@ -229,7 +267,7 @@
       </div>
 
       <div class="footer-info">
-        <p>Создаем цифровые продукты на стыке креатива и инноваций</p>
+        <p>Ваш внешний технический отдел. Поддержка и развитие digital-продуктов</p>
       </div>
 
       <div class="footer-cta">
@@ -239,13 +277,13 @@
                 data-controller-modal-func="open"
                 data-controller-ripple-effect="item"
         >
-          Начать проект
+          Обсудить задачу
           <i class="fas fa-arrow-right"></i>
         </button>
       </div>
     </div>
     <div class="footer-bottom">
-      <div class="copyright">KARTECH © 2026. Все права защищены.</div>
+      <div class="copyright">KARTECH © 2026. Ваш партнер по веб-инфраструктуре.</div>
     </div>
   </footer>
 
@@ -257,11 +295,11 @@
     <nav>
       <ul class="sidebar-nav">
         <li><a href="services.html">Услуги</a></li>
-        <li><a href="projects.html">Проекты</a></li>
-        <li><a href="about.html">Компания</a></li>
-        <li><a href="blog.html">Блог</a></li>
-        <li><a href="calculator.html">Калькулятор сметы</a></li>
-        <li><a href="support.html">Техническая поддержка</a></li>
+        <li><a href="projects.html">Кейсы</a></li>
+        <li><a href="about.html">Команда</a></li>
+        <li><a href="blog.html">Технический блог</a></li>
+        <li><a href="calculator.html">Калькулятор работ</a></li>
+        <li><a href="support.html">Техподдержка</a></li>
         <li><a class="active" href="contacts.html">Контакты</a></li>
       </ul>
     </nav>
@@ -272,7 +310,7 @@
             data-controller-modal-func="open"
             data-controller-ripple-effect="item"
     >
-      Начать проект
+      Обсудить задачу
       <i class="fas fa-arrow-right"></i>
     </button>
 
@@ -290,9 +328,9 @@
       </button>
     </div>
     <div class="sidebar-social">
-      <a href="#"><i class="fab fa-vk"></i></a>
-      <a href="#"><i class="fab fa-telegram"></i></a>
       <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-stack-overflow"></i></a>
+      <a href="#"><i class="fab fa-telegram"></i></a>
     </div>
   </aside>
 
@@ -300,49 +338,54 @@
   <div id="form" class="modal">
     <div class="modal-content">
       <div class="modal-header">
-        <h3>Хотите обсудить <span class="color-accent-red">услуги</span>?</h3>
-        <p>Оставьте заявку и наш специалист свяжется с вами для обсуждения услуги или работы</p>
+        <h3>Описать техническую задачу</h3>
+        <p>Опишите проблему или задачу — мы предложим решение и расценки в течение 24 часов</p>
       </div>
 
       <!-- Секция с формой -->
       <div class="form-container">
-        <div class="form-header">
-
-        </div>
-
         <form class="contact-form" data-controller="form">
           <div class="form-group">
-            <input type="text" class="form-input" id="name" placeholder=" " required>
+            <input type="text" class="form-input" name="name" id="name" placeholder=" " required>
             <label for="name" class="form-label">Имя</label>
           </div>
 
           <div class="form-group">
-            <input type="text" class="form-input" id="company" placeholder=" ">
+            <input type="text" class="form-input" name="company" id="company" placeholder=" ">
             <label for="company" class="form-label">Название компании</label>
           </div>
 
           <div class="form-group">
-            <input type="email" class="form-input" id="email" placeholder=" ">
+            <input type="email" class="form-input" name="email" id="email" placeholder=" ">
             <label for="email" class="form-label">Email</label>
           </div>
 
           <div class="form-group">
-            <input type="tel" class="form-input" id="phone" placeholder=" " required>
+            <input type="tel" class="form-input" name="phone" id="phone" placeholder=" " required>
             <label for="phone" class="form-label">Телефон</label>
           </div>
 
           <div class="form-group full-width">
-            <textarea class="form-input" id="message" placeholder=" " required></textarea>
-            <label for="message" class="form-label">Расскажите о вашем проекте</label>
+            <textarea class="form-input" name="message" id="message" placeholder=" " required rows="4"></textarea>
+            <label for="message" class="form-label">Опишите вашу техническую задачу или проблему</label>
+          </div>
+
+          <div class="form-group">
+            <select class="form-input" name="type" id="type">
+              <option value="">Выберите тип задачи</option>
+              <option value="support">Техническая поддержка сайта</option>
+              <option value="development">Разработка/доработка</option>
+              <option value="migration">Миграция/модернизация</option>
+              <option value="audit">Аудит безопасности/производительности</option>
+              <option value="consulting">Консультация</option>
+              <option value="other">Другое</option>
+            </select>
+            <label for="type" class="form-label">Тип задачи</label>
           </div>
 
           <div class="form-button">
-            <button
-                    class="cta-button"
-                    type="submit"
-                    data-controller-ripple-effect="item"
-            >
-              Отправить
+            <button type="submit" class="cta-button" data-controller-ripple-effect="item">
+              Отправить задачу
               <i class="fas fa-arrow-right"></i>
             </button>
           </div>
@@ -491,5 +534,5 @@
   </div>
   <!-- stars-container -->
   <canvas id="stars-canvas" data-controller-starfield="item"></canvas>
-</body>
-</html>
+  </body>
+  </html>

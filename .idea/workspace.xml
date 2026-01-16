@@ -22,7 +22,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="feature/change-texts-and-correct-pages" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -54,6 +54,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "npm.build.executor": "Run",
     "npm.start.executor": "Run",
     "settings.editor.selected.configurable": "project.propVCSSupport.Mappings",
     "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2024.2.3\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
@@ -80,7 +81,17 @@
       <recent name="C:\Users\CifronPro\projects\work\PROFI\landing\images\icons" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.build">
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -93,6 +104,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.build" />
+        <item itemvalue="npm.start" />
+        <item itemvalue="npm.start" />
+        <item itemvalue="npm.build" />
         <item itemvalue="npm.start" />
       </list>
     </recent_temporary>
@@ -131,47 +146,10 @@
       <workItem from="1757738759264" duration="8365000" />
       <workItem from="1762007788274" duration="1211000" />
       <workItem from="1763626744838" duration="2904000" />
-      <workItem from="1767687202193" duration="13176000" />
-    </task>
-    <task id="LOCAL-00001" summary="fix / error removing class 'active' in modal controller">
-      <option name="closed" value="true" />
-      <created>1767696098236</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1767696098236</updated>
-    </task>
-    <task id="LOCAL-00002" summary="create burger menu controller">
-      <option name="closed" value="true" />
-      <created>1767703381086</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1767703381086</updated>
-    </task>
-    <task id="LOCAL-00003" summary="refactor sidebar anchor controller">
-      <option name="closed" value="true" />
-      <created>1767706822164</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1767706822164</updated>
-    </task>
-    <task id="LOCAL-00004" summary="refactor sidebar anchor controller">
-      <option name="closed" value="true" />
-      <created>1767706854032</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1767706854032</updated>
-    </task>
-    <task id="LOCAL-00005" summary="refactor main.js / create object controllers Must Executed">
-      <option name="closed" value="true" />
-      <created>1767706875948</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1767706875948</updated>
+      <workItem from="1767687202193" duration="32713000" />
+      <workItem from="1767938428324" duration="2886000" />
+      <workItem from="1768031383076" duration="9130000" />
+      <workItem from="1768319757375" duration="1991000" />
     </task>
     <task id="LOCAL-00006" summary="refactor burger menu and sidebar burger menu in main page">
       <option name="closed" value="true" />
@@ -189,30 +167,452 @@
       <option name="project" value="LOCAL" />
       <updated>1767706972555</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="update header, burger menu for all pages">
+      <option name="closed" value="true" />
+      <created>1767707670812</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1767707670812</updated>
+    </task>
+    <task id="LOCAL-00009" summary="create styles for burger-menu">
+      <option name="closed" value="true" />
+      <created>1767707698623</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1767707698623</updated>
+    </task>
+    <task id="LOCAL-00010" summary="create styles for sidebar burger menu">
+      <option name="closed" value="true" />
+      <created>1767707714076</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1767707714076</updated>
+    </task>
+    <task id="LOCAL-00011" summary="refactor entry point import styles for sections and ui, create files index">
+      <option name="closed" value="true" />
+      <created>1767707751317</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1767707751318</updated>
+    </task>
+    <task id="LOCAL-00012" summary="create var file for media">
+      <option name="closed" value="true" />
+      <created>1767707765211</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1767707765211</updated>
+    </task>
+    <task id="LOCAL-00013" summary="added media for hero section">
+      <option name="closed" value="true" />
+      <created>1767707788649</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1767707788649</updated>
+    </task>
+    <task id="LOCAL-00014" summary="added media for related-sidebar section">
+      <option name="closed" value="true" />
+      <created>1767707800159</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1767707800159</updated>
+    </task>
+    <task id="LOCAL-00015" summary="added media for sidebar section">
+      <option name="closed" value="true" />
+      <created>1767707818166</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1767707818166</updated>
+    </task>
+    <task id="LOCAL-00016" summary="correct position items in cta-button">
+      <option name="closed" value="true" />
+      <created>1767707841727</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1767707841727</updated>
+    </task>
+    <task id="LOCAL-00017" summary="added media in header ui">
+      <option name="closed" value="true" />
+      <created>1767707866171</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1767707866171</updated>
+    </task>
+    <task id="LOCAL-00018" summary="added styles for overlay block">
+      <option name="closed" value="true" />
+      <created>1767707888349</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1767707888349</updated>
+    </task>
+    <task id="LOCAL-00019" summary="added media for nav links ui">
+      <option name="closed" value="true" />
+      <created>1767707909437</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1767707909437</updated>
+    </task>
+    <task id="LOCAL-00020" summary="correct z index for scroll-hint">
+      <option name="closed" value="true" />
+      <created>1767707932892</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1767707932892</updated>
+    </task>
+    <task id="LOCAL-00021" summary="added media for theme-toggle items">
+      <option name="closed" value="true" />
+      <created>1767707952444</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1767707952444</updated>
+    </task>
+    <task id="LOCAL-00022" summary="refactor offsets vars">
+      <option name="closed" value="true" />
+      <created>1767707971479</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1767707971479</updated>
+    </task>
+    <task id="LOCAL-00023" summary="changes in .idea">
+      <option name="closed" value="true" />
+      <created>1767707996794</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1767707996794</updated>
+    </task>
+    <task id="LOCAL-00024" summary="correct imports sections and ui">
+      <option name="closed" value="true" />
+      <created>1767708071144</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1767708071144</updated>
+    </task>
+    <task id="LOCAL-00025" summary="correct root index styles file">
+      <option name="closed" value="true" />
+      <created>1767708089253</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1767708089253</updated>
+    </task>
+    <task id="LOCAL-00026" summary="correct for work CalculatorController">
+      <option name="closed" value="true" />
+      <created>1767714426931</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1767714426931</updated>
+    </task>
+    <task id="LOCAL-00027" summary="correct all pages: changes links, some changes">
+      <option name="closed" value="true" />
+      <created>1767715369703</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1767715369703</updated>
+    </task>
+    <task id="LOCAL-00028" summary="added media in about section">
+      <option name="closed" value="true" />
+      <created>1767715401477</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1767715401477</updated>
+    </task>
+    <task id="LOCAL-00029" summary="added media in calculator section">
+      <option name="closed" value="true" />
+      <created>1767715417910</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1767715417910</updated>
+    </task>
+    <task id="LOCAL-00030" summary="added media in cards section">
+      <option name="closed" value="true" />
+      <created>1767715433373</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1767715433373</updated>
+    </task>
+    <task id="LOCAL-00031" summary="added media in feature-card section">
+      <option name="closed" value="true" />
+      <created>1767715448612</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1767715448612</updated>
+    </task>
+    <task id="LOCAL-00032" summary="added media in last-work section">
+      <option name="closed" value="true" />
+      <created>1767715460509</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1767715460509</updated>
+    </task>
+    <task id="LOCAL-00033" summary="added media in regular-card section">
+      <option name="closed" value="true" />
+      <created>1767715471263</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1767715471263</updated>
+    </task>
+    <task id="LOCAL-00034" summary="added media in main section styles file">
+      <option name="closed" value="true" />
+      <created>1767715485982</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1767715485982</updated>
+    </task>
+    <task id="LOCAL-00035" summary="added media in service-card section">
+      <option name="closed" value="true" />
+      <created>1767715501752</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1767715501752</updated>
+    </task>
+    <task id="LOCAL-00036" summary="added media in services-support section">
+      <option name="closed" value="true" />
+      <created>1767715513449</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1767715513449</updated>
+    </task>
+    <task id="LOCAL-00037" summary="correct box-shadow in sidebar-burger-menu">
+      <option name="closed" value="true" />
+      <created>1767715559389</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1767715559389</updated>
+    </task>
+    <task id="LOCAL-00038" summary="correct figure ui">
+      <option name="closed" value="true" />
+      <created>1767715572861</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1767715572861</updated>
+    </task>
+    <task id="LOCAL-00039" summary="added media in footer ui">
+      <option name="closed" value="true" />
+      <created>1767715587410</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1767715587410</updated>
+    </task>
+    <task id="LOCAL-00040" summary="added media in form ui">
+      <option name="closed" value="true" />
+      <created>1767715600149</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1767715600150</updated>
+    </task>
+    <task id="LOCAL-00041" summary="correct active styles for accent link">
+      <option name="closed" value="true" />
+      <created>1767715638263</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1767715638263</updated>
+    </task>
+    <task id="LOCAL-00042" summary="correct variables files: colors and offsets">
+      <option name="closed" value="true" />
+      <created>1767715715637</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1767715715637</updated>
+    </task>
+    <task id="LOCAL-00043" summary="refactor theme controller">
+      <option name="closed" value="true" />
+      <created>1767779904743</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1767779904743</updated>
+    </task>
+    <task id="LOCAL-00044" summary="refactor cursor controller">
+      <option name="closed" value="true" />
+      <created>1767779911902</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1767779911902</updated>
+    </task>
+    <task id="LOCAL-00045" summary="correct burger menu for theme dark">
+      <option name="closed" value="true" />
+      <created>1767779933875</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1767779933875</updated>
+    </task>
+    <task id="LOCAL-00046" summary="correct symbols">
+      <option name="closed" value="true" />
+      <created>1767782967210</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1767782967210</updated>
+    </task>
+    <task id="LOCAL-00047" summary="build">
+      <option name="closed" value="true" />
+      <created>1767783039652</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1767783039652</updated>
+    </task>
+    <task id="LOCAL-00048" summary="create workflow">
+      <option name="closed" value="true" />
+      <created>1767783976676</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1767783976676</updated>
+    </task>
+    <task id="LOCAL-00049" summary="create logo.svg">
+      <option name="closed" value="true" />
+      <created>1767939363042</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1767939363042</updated>
+    </task>
+    <task id="LOCAL-00050" summary="create logo.svg">
+      <option name="closed" value="true" />
+      <created>1767939385634</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1767939385635</updated>
+    </task>
+    <task id="LOCAL-00051" summary="correct play-button in detail page">
+      <option name="closed" value="true" />
+      <created>1767939407446</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1767939407446</updated>
+    </task>
+    <task id="LOCAL-00052" summary="change props homepage in package.json">
+      <option name="closed" value="true" />
+      <created>1767940764659</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1767940764659</updated>
+    </task>
+    <task id="LOCAL-00053" summary="change workflow">
+      <option name="closed" value="true" />
+      <created>1767940777250</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1767940777250</updated>
+    </task>
+    <task id="LOCAL-00054" summary="change texts and correct pages for new target project">
+      <option name="closed" value="true" />
+      <created>1768557816395</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1768557816395</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="HEAD" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix / error removing class 'active' in modal controller" />
-    <MESSAGE value="create burger menu controller" />
-    <MESSAGE value="refactor sidebar anchor controller" />
-    <MESSAGE value="refactor main.js / create object controllers Must Executed" />
-    <MESSAGE value="refactor burger menu and sidebar burger menu in main page" />
-    <MESSAGE value="create burger menu and sidebar burger menu in detail blog page" />
-    <option name="LAST_COMMIT_MESSAGE" value="create burger menu and sidebar burger menu in detail blog page" />
+    <MESSAGE value="added media in calculator section" />
+    <MESSAGE value="added media in cards section" />
+    <MESSAGE value="added media in feature-card section" />
+    <MESSAGE value="added media in last-work section" />
+    <MESSAGE value="added media in regular-card section" />
+    <MESSAGE value="added media in main section styles file" />
+    <MESSAGE value="added media in service-card section" />
+    <MESSAGE value="added media in services-support section" />
+    <MESSAGE value="correct box-shadow in sidebar-burger-menu" />
+    <MESSAGE value="correct figure ui" />
+    <MESSAGE value="added media in footer ui" />
+    <MESSAGE value="added media in form ui" />
+    <MESSAGE value="correct active styles for accent link" />
+    <MESSAGE value="correct variables files: colors and offsets" />
+    <MESSAGE value="refactor theme controller" />
+    <MESSAGE value="refactor cursor controller" />
+    <MESSAGE value="correct burger menu for theme dark" />
+    <MESSAGE value="correct symbols" />
+    <MESSAGE value="build" />
+    <MESSAGE value="create workflow" />
+    <MESSAGE value="create logo.svg" />
+    <MESSAGE value="correct play-button in detail page" />
+    <MESSAGE value="change props homepage in package.json" />
+    <MESSAGE value="change workflow" />
+    <MESSAGE value="change texts and correct pages for new target project" />
+    <option name="LAST_COMMIT_MESSAGE" value="change texts and correct pages for new target project" />
   </component>
 </project>
