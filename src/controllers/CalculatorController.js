@@ -3,79 +3,126 @@ export class CalculatorController {
     this.classNameSelected = 'selected'
     this.container = container
     this.groups = Array.from(container.querySelectorAll(`[data-controller-${controllerName}="item"]`))
-    this.itemsPriceTotal = Array.from(container.querySelectorAll(`[data-controller-${controllerName}-item="price-total"]`))
 
-    this.checkboxOptions = Array.from(document.querySelectorAll('.checkbox-option'))
-    this.totalElement = document.getElementById('total-price')
+    this.projectPriceElement = document.getElementById('project-price')
+    this.monthlyPriceElement = document.getElementById('monthly-price')
+    this.yearlyPriceElement = document.getElementById('yearly-price')
 
     this.init()
   }
-  universalUpdatePrice = (container, index) => {
+
+  universalUpdatePrice = (container) => {
     const options = Array.from(container.querySelectorAll('.option-item'))
 
     if (container.dataset.type === 'multiply') {
       // Множественный выбор: клик toggles selected
       options.forEach((option) => {
         option.addEventListener('click', () => {
-          option.classList.toggle('selected');
-
-          // Суммируем цены всех selected в группе
-          const selected = Array.from(container.querySelectorAll(`.${this.classNameSelected}`));
-          const totalPrice = selected.reduce((sum, sel) => sum + parseInt(sel.dataset.price || 0), 0);
-          const priceTotal = this.itemsPriceTotal[index];
-          priceTotal.textContent = this.formatPrice(totalPrice);
-          priceTotal.dataset.price = totalPrice;
-
-          this.animateValue(priceTotal);
-          this.updateTotal();
-        });
-      });
+          option.classList.toggle('selected')
+          this.updateTotals()
+        })
+      })
     } else {
+      // Единичный выбор
       options.forEach((option) => {
         option.addEventListener('click', () => {
-          // меняется для обычных и checkbox
-          const optionPrice = container.querySelector(`.${this.classNameSelected}`)
-          optionPrice.classList.remove('selected')
+          // Находим все опции в этой группе и снимаем выделение
+          const selectedOptions = container.querySelectorAll(`.${this.classNameSelected}`)
+          selectedOptions.forEach(selected => selected.classList.remove('selected'))
 
+          // Выделяем текущую опцию
           option.classList.add('selected')
 
-          const price = option.dataset.price
-          const priceTotal = this.itemsPriceTotal[index]
-
-          priceTotal.textContent = this.formatPrice(price)
-          priceTotal.dataset.price = price
-
-          this.animateValue(priceTotal)
-          this.updateTotal()
+          this.updateTotals()
         })
       })
     }
   }
+
   init = () => {
-    this.groups.forEach((group, index) => {
-      this.universalUpdatePrice(group, index)
+    this.groups.forEach((group) => {
+      this.universalUpdatePrice(group)
     })
 
-    this.updateTotal()
+    this.updateTotals()
   }
-  updateAdditionalOptions = () => {
-    const additionalTotalR = Array.from(document.querySelectorAll('#additional-components .option-item.selected')).reduce((sum, item) => (sum += parseInt(item.dataset.price)), 0)
-    const additionalPriceTotal = document.getElementById('additional-price-total')
 
-    additionalPriceTotal.textContent = this.formatPrice(additionalTotalR)
-    this.animateValue(additionalPriceTotal)
-  }
-  updateTotal = () => {
-    const total = this.itemsPriceTotal.reduce((sum, item) => (sum += parseInt(item.dataset.price || 0)), 0)
+  updateTotals = () => {
+    let projectTotal = 0
+    let monthlyTotal = 0
+    let yearlyTotal = 0
 
-    this.totalElement.textContent = this.formatPrice(total)
-    this.animateValue(this.totalElement)
+    // Проходим по всем группам
+    this.groups.forEach((group) => {
+      const selectedOptions = Array.from(group.querySelectorAll(`.${this.classNameSelected}`))
+
+      // Обрабатываем каждую выбранную опцию
+      selectedOptions.forEach((option) => {
+        const price = parseInt(option.dataset.price || 0)
+        const priceText = option.querySelector('.option-price').textContent
+
+        // Определяем тип стоимости по тексту цены и классу группы
+        if (priceText.includes('/мес')) {
+          monthlyTotal += price
+        } else if (priceText.includes('/год')) {
+          yearlyTotal += price
+        } else {
+          // Это разовая стоимость (проект)
+          projectTotal += price
+        }
+      })
+    })
+
+    // Обновляем все итоговые элементы
+    if (this.projectPriceElement) {
+      this.projectPriceElement.textContent = this.formatPrice(projectTotal)
+      this.animateValue(this.projectPriceElement)
+    }
+
+    if (this.monthlyPriceElement) {
+      this.monthlyPriceElement.textContent = this.formatPrice(monthlyTotal)
+      this.animateValue(this.monthlyPriceElement)
+    }
+
+    if (this.yearlyPriceElement) {
+      // Годовая стоимость = проект + (ежемесячная * 12) + годовая
+      const yearlySum = projectTotal + (monthlyTotal * 12) + yearlyTotal
+      this.yearlyPriceElement.textContent = this.formatPrice(yearlySum)
+      this.animateValue(this.yearlyPriceElement)
+    }
   }
-  animateValue = (element) =>  {
+
+  animateValue = (element) => {
     element.classList.add('price-changing')
     element.addEventListener('animationend', () => element.classList.remove('price-changing'))
   }
-  formatPrice = (price) =>  {
+
+  formatPrice = (price) => {
     return parseInt(price).toLocaleString('ru-RU')
+  }
+
+  saveEstimate = () => {
+    const estimateData = {
+      projectTotal: this.projectPriceElement ? this.projectPriceElement.textContent : '0',
+      monthlyTotal: this.monthlyPriceElement ? this.monthlyPriceElement.textContent : '0',
+      yearlyTotal: this.yearlyPriceElement ? this.yearlyPriceElement.textContent : '0',
+      timestamp: new Date().toISOString()
+    }
+
+    // Можно сохранить в localStorage или отправить на сервер
+    localStorage.setItem('kartech_estimate', JSON.stringify(estimateData))
+
+    // Создаем ссылку для скачивания
+    const dataStr = JSON.stringify(estimateData, null, 2)
+    const dataBlob = new Blob([dataStr], { type: 'application/json' })
+    const url = URL.createObjectURL(dataBlob)
+
+    const a = document.createElement('a')
+    a.href = url
+    a.download = `kartech-estimate-${new Date().toISOString().split('T')[0]}.json`
+    document.body.appendChild(a)
+    a.click()
+    document.body.removeChild(a)
+    URL.revokeObjectURL(url)
   }
 }
