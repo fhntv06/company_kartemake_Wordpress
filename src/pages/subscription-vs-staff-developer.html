@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Абонентское обслуживание: экономия 40% vs штатный программист | Технический блог KARTEMAKE</title>
+
+  <link rel="shortcut icon" href="../../public/images/logotypes/logo-dark.ico" type="image/x-icon">
+</head>
+<body data-controller="custom-cursor modal preloader ripple-effect starfield theme sidebar-anchor">
+<header class="header" data-controller="header">
+  <a href="/" class="logo">
+    <span class="font-size-h2">K</span>
+    <span class="font-size-h2">·</span>
+    <span class="font-size-h3 color-accent-red">ART</span>
+    <span class="font-size-h2">·</span>
+    <span class="font-size-h4">MAKE</span>
+  </a>
+
+  <nav class="nav-links">
+    <a href="services.html">Услуги</a>
+    <a class="active" href="blog.html">Технический блог</a>
+    <a href="support.html">Техподдержка</a>
+    <a href="contacts.html">Контакты</a>
+  </nav>
+
+  <div class="header-controls">
+    <div class="social-links">
+      <a href="https://github.com/fhntv06" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://t.me/KArtech76" target="_blank"><i class="fab fa-telegram"></i></a>
+      <a href="https://vk.com/k.artem76" target="_blank"><i class="fab fa-vk"></i></a>
+    </div>
+
+    <div class="phone">
+      <i class="fas fa-phone"></i>
+      <span>+7 (908) 946-14-83</span>
+    </div>
+
+    <button
+            class="theme-toggle"
+            data-controller-theme="item"
+    >
+      <i class="fas fa-moon"></i>
+    </button>
+
+    <!--
+    <button
+      class="language-toggle"
+      data-controller="lang"
+      data-controller-ripple-effect="item"
+    >
+      <span data-controller-lang="item">RU</span>
+      <i class="fas fa-chevron-down"></i>
+    </button>
+    -->
+
+    <button
+            class="cta-button"
+            data-controller-modal-open="form"
+            data-controller-modal-func="open"
+            data-controller-ripple-effect="item"
+    >
+      Обсудить задачу
+      <i class="fas fa-arrow-right"></i>
+    </button>
+
+    <button class="burger-menu" id="burgerMenu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+<main>
+  <section class="project-detail">
+    <div class="container">
+      <a href="blog.html" class="back-link">
+        <i class="fas fa-arrow-left"></i>
+        <span>Назад к блогу</span>
+      </a>
+
+      <div class="breadcrumbs">
+        <a href="index.html">Главная</a>
+        <span>/</span>
+        <a href="blog.html">Технический блог</a>
+        <span>/</span>
+        <span>Абонентское обслуживание</span>
+      </div>
+
+      <h1 class="project-title">Абонентское обслуживание: почему это дешевле штатного программиста</h1>
+
+      <div class="project-meta">
+        <div>
+          <i class="far fa-clock"></i>
+          <span>Время чтения: 6 минут</span>
+        </div>
+        <div>
+          <i class="far fa-eye"></i>
+          <span>2,104 просмотров</span>
+        </div>
+        <div>
+          <i class="far fa-calendar"></i>
+          <span>25 октября 2026</span>
+        </div>
+      </div>
+
+      <div class="project-tags">
+        <a href="#" class="project-tag">Абонентское обслуживание</a>
+        <a href="#" class="project-tag">B2B</a>
+        <a href="#" class="project-tag">Экономика IT</a>
+        <a href="#" class="project-tag">Аутсорс</a>
+      </div>
+
+      <div class="project-summary">
+        <p class="project-description">
+          Сравниваем модель фиксированной абонентской платы против найма штатного разработчика.
+          Реальные цифры и кейсы из практики: как малый бизнес экономит до 40% на IT-расходах.
+        </p>
+
+        <div class="project-author">
+          <div class="author-avatar">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Екатерина, Руководитель проектов">
+          </div>
+          <div class="author-info">
+            <h4>Екатерина</h4>
+            <p>Руководитель проектов, финансовый аналитик</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-hero-image">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Абонентское обслуживание">
+      </div>
+
+      <div class="project-content">
+        <div class="sidebar">
+          <nav class="sidebar__nav">
+            <h4 class="sidebar__title">Содержание</h4>
+            <ul>
+              <li><a href="#challenge" class="active">Скрытые расходы штатного сотрудника</a></li>
+              <li><a href="#model">Модель абонентского обслуживания</a></li>
+              <li><a href="#comparison">Сравнение затрат</a></li>
+              <li><a href="#benefits">Преимущества и риски</a></li>
+              <li><a href="#cases">Реальные кейсы клиентов</a></li>
+              <li><a href="#conclusion">Выводы и рекомендации</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="content-main">
+          <div data-id="challenge" class="content-section">
+            <h4 class="content-section__title">Скрытые расходы штатного сотрудника</h4>
+            <p>Многие предприниматели считают, что нанять штатного программиста — самый простой способ решить технические задачи бизнеса. Однако реальная стоимость такого решения часто оказывается значительно выше ожидаемой.</p>
+
+            <div class="content-highlight">
+              <p>"Средняя стоимость штатного разработчика в России составляет 150 000–250 000 ₽ в месяц. Но это лишь верхушка айсберга."</p>
+            </div>
+
+            <p>Какие скрытые расходы несет работодатель:</p>
+
+            <ul>
+              <li><strong>Социальные отчисления</strong> — НДФЛ, пенсионные и страховые взносы увеличивают реальные затраты на 30-40%</li>
+              <li><strong>Оборудование и ПО</strong> — рабочий ноутбук, лицензии на профессиональные инструменты</li>
+              <li><strong>Обучение и повышение квалификации</strong> — курсы, конференции, профессиональная литература</li>
+              <li><strong>Больничные и отпуска</strong> — оплачиваемые дни, когда сотрудник не работает</li>
+              <li><strong>Риск увольнения</strong> — затраты на поиск, адаптацию и обучение нового специалиста</li>
+              <li><strong>Управленческие затраты</strong> — время руководителя на постановку задач и контроль</li>
+            </ul>
+
+            <div class="content-image">
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Скрытые расходы">
+            </div>
+          </div>
+
+          <div data-id="model" class="content-section">
+            <h4 class="content-section__title">Модель абонентского обслуживания</h4>
+            <p>Абонентское обслуживание — это модель, при которой вы платите фиксированную сумму в месяц за комплексную техническую поддержку вашего digital-продукта. Что входит в тариф:</p>
+
+            <div class="integration-list">
+              <div class="integration-item">
+                <h5><i class="fas fa-check-circle color-accent-red"></i> Фиксированная стоимость</h5>
+                <p>Предсказуемый бюджет без скрытых платежей и неожиданных расходов</p>
+              </div>
+              <div class="integration-item">
+                <h5><i class="fas fa-users color-accent-red"></i> Команда специалистов</h5>
+                <p>Доступ к fullstack-разработчикам, DevOps-инженерам и тестировщикам</p>
+              </div>
+              <div class="integration-item">
+                <h5><i class="fas fa-clock color-accent-red"></i> 24/7 мониторинг</h5>
+                <p>Круглосуточный контроль работоспособности вашего сайта или приложения</p>
+              </div>
+              <div class="integration-item">
+                <h5><i class="fas fa-tasks color-accent-red"></i> Выделенный пул часов</h5>
+                <p>Фиксированное количество часов на доработки и развитие функционала</p>
+              </div>
+              <div class="integration-item">
+                <h5><i class="fas fa-shield-alt color-accent-red"></i> Гарантии качества</h5>
+                <p>Соглашение об уровне сервиса (SLA) с четкими KPI и ответственностью</p>
+              </div>
+              <div class="integration-item">
+                <h5><i class="fas fa-chart-line color-accent-red"></i> Отчетность</h5>
+                <p>Ежемесячные отчеты о проделанной работе, затраченных часах и достигнутых результатах</p>
+              </div>
+            </div>
+          </div>
+
+          <div data-id="comparison" class="content-section">
+            <h4 class="content-section__title">Сравнение затрат</h4>
+            <p>Давайте рассмотрим реальные цифры для бизнеса среднего размера:</p>
+
+            <div class="content-highlight">
+              <p><strong>Штатный разработчик (middle):</strong></p>
+              <ul>
+                <li>Зарплата: 180 000 ₽</li>
+                <li>Налоги и взносы: ~54 000 ₽ (30%)</li>
+                <li>Оборудование и ПО: ~10 000 ₽</li>
+                <li>Обучение: ~5 000 ₽</li>
+                <li><strong>Итого: ~249 000 ₽/месяц</strong></li>
+              </ul>
+            </div>
+
+            <div class="content-highlight success">
+              <p><strong>Абонентское обслуживание KARTEMAKE:</strong></p>
+              <ul>
+                <li>Тариф "Бизнес": 50 000 ₽</li>
+                <li>До 15 часов доработок в месяц</li>
+                <li>Полная поддержка инфраструктуры</li>
+                <li>Команда из 3+ специалистов</li>
+                <li><strong>Итого: 50 000 ₽/месяц</strong></li>
+              </ul>
+            </div>
+
+            <p><strong>Экономия: 199 000 ₽ в месяц или 2 388 000 ₽ в год</strong> — это 80% от стоимости штатного сотрудника!</p>
+
+            <div class="content-highlight warning">
+              <p><strong>Важно:</strong> Один штатный разработчик никогда не заменит целую команду. Вы получаете не одного человека, а полноценный IT-отдел с процессами, экспертизой и гарантиями.</p>
+            </div>
+          </div>
+
+          <div data-id="benefits" class="content-section">
+            <h4 class="content-section__title">Преимущества и риски</h4>
+
+            <div class="content-image">
+              <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Преимущества аутсорса">
+            </div>
+
+            <h5>Преимущества абонентского обслуживания:</h5>
+            <ul>
+              <li><strong>Предсказуемый бюджет</strong> — вы точно знаете, сколько потратите на IT в этом месяце</li>
+              <li><strong>Доступ к экспертизе</strong> — команда с опытом в разных технологиях и проектах</li>
+              <li><strong>Быстрая заменяемость</strong> — если специалист выбывает, мы мгновенно находим замену</li>
+              <li><strong>Масштабируемость</strong> — можно легко расширить или сократить объем поддержки</li>
+              <li><strong>Отсутствие HR-забот</strong> — мы берем на себя все кадровые вопросы</li>
+            </ul>
+
+            <h5>Возможные риски и как мы их решаем:</h5>
+            <ul>
+              <li><strong>Потеря контроля?</strong> — Ежемесячные отчеты и прозрачная система задач</li>
+              <li><strong>Проблемы с безопасностью?</strong> — Подписываем NDA и работаем по защищенным каналам</li>
+              <li><strong>Долгая реакция?</strong> — SLA гарантирует время реакции от 2 часов</li>
+              <li><strong>Некачественная работа?</strong> — Двойной контроль качества (QA + Code Review)</li>
+            </ul>
+          </div>
+
+          <div data-id="cases" class="content-section">
+            <h4 class="content-section__title">Реальные кейсы клиентов</h4>
+
+            <div class="integration-item">
+              <h5><i class="fas fa-store color-accent-red"></i> Интернет-магазин (средний бизнес)</h5>
+              <p>До перехода: штатный разработчик за 200 000 ₽ + фрилансеры для срочных задач (еще 50 000 ₽). После: тариф "Бизнес" за 50 000 ₽. <strong>Экономия 200 000 ₽/мес.</strong> Скорость решения задач выросла в 3 раза.</p>
+            </div>
+
+            <div class="integration-item">
+              <h5><i class="fas fa-building color-accent-red"></i> Производственный холдинг</h5>
+              <p>До перехода: 3 штатных разработчика (600 000 ₽ + налоги). После: партнерский тариф за 100 000 ₽. <strong>Экономия более 500 000 ₽/мес.</strong> Получили DevOps-инженера, которого не могли нанять 6 месяцев.</p>
+            </div>
+
+            <div class="integration-item">
+              <h5><i class="fas fa-handshake color-accent-red"></i> Digital-агентство</h5>
+              <p>До перехода: 2 разработчика в штате (350 000 ₽ + налоги). После: абонентское обслуживание за 75 000 ₽. <strong>Экономия 250 000 ₽/мес.</strong> Смогли сосредоточиться на стратегии и продажах.</p>
+            </div>
+          </div>
+
+          <div data-id="conclusion" class="content-section">
+            <h4 class="content-section__title">Выводы и рекомендации</h4>
+
+            <div class="content-highlight success">
+              <p><strong>Кому подходит абонентское обслуживание:</strong></p>
+              <ul>
+                <li>Бизнесу с действующим сайтом, который требует постоянной поддержки</li>
+                <li>Компаниям, которые планируют развивать свои digital-продукты, но не хотят нанимать штат</li>
+                <li>Агентствам и студиям, которым нужен надежный технический партнер</li>
+                <li>Стартапам, которые хотят сосредоточиться на бизнесе, а не на технологиях</li>
+              </ul>
+            </div>
+
+            <p><strong>Рекомендация:</strong> начните с пробного периода. Мы предлагаем первый месяц со скидкой 50%, чтобы вы могли оценить качество и процессы. За это время вы увидите:</p>
+            <ul>
+              <li>Насколько быстро мы решаем задачи</li>
+              <li>Качество нашей работы</li>
+              <li>Прозрачность процессов и отчетности</li>
+              <li>Реальную экономию по сравнению со штатным сотрудником</li>
+            </ul>
+          </div>
+          <div class="content-section">
+            <h4>Нужна миграция или техническая поддержка ваших проектов?</h4>
+            <p>Мы можем провести бесплатный аудит вашей текущей инфраструктуры и предложить план миграции или оптимизации.</p>
+            <button
+                    class="button button--accent cta-button"
+                    data-controller-modal-open="form"
+                    data-controller-modal-func="open"
+                    data-controller-ripple-effect="item"
+            >
+              Заказать аудит
+            </button>
+          </div>
+        </div>
+
+        <div class="related-sidebar">
+          <div class="related-projects">
+            <h4 class="sidebar__title">Похожие кейсы</h4>
+            <a href="migration-bitrix-50-sites.html" class="related-project">
+              <h5 class="related-project__title">Миграция 50+ сайтов на 1С-Битрикс без простоя бизнеса</h5>
+              <p class="related-project__description">Организация процесса миграции, автоматизация переноса данных</p>
+              <span class="related-project__meta">12 мин · 2,345 просмотров</span>
+            </a>
+            <a href="refactoring-legacy-code.html" class="related-project">
+              <h5 class="related-project__title">Рефакторинг legacy-кода: ускорение сайта в 3 раза</h5>
+              <p class="related-project__description">Работа с 10-летним кодом интернет-магазина, оптимизация производительности</p>
+              <span class="related-project__meta">8 мин · 1,856 просмотров</span>
+            </a>
+            <a href="tech-partner-for-agencies.html" class="related-project">
+              <h5 class="related-project__title">Технический партнер для digital-агентств: кейс совместной работы</h5>
+              <p class="related-project__description">Как агентство передало нам техническую часть 20+ проектов</p>
+              <span class="related-project__meta">5 мин · 1,623 просмотра</span>
+            </a>
+            <a href="mvp-development-6-weeks.html" class="related-project">
+              <h5 class="related-project__title">Разработка MVP за 6 недель: технологический стек и архитектура</h5>
+              <p class="related-project__description">Выбор технологий, CI/CD, мониторинг и масштабирование</p>
+              <span class="related-project__meta">9 мин · 1,478 просмотров</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-form">
+    <div class="form-container">
+      <div class="form-header">
+        <h3>Хотите рассчитать экономию для вашего бизнеса? <span class="color-accent-red">Получите консультацию</span></h3>
+        <p>Мы проведем бесплатный аудит вашей текущей IT-инфраструктуры и подберем оптимальный тариф поддержки</p>
+      </div>
+      <form class="contact-form" data-controller="form">
+        <div class="form-group">
+          <input type="text" class="form-input" name="name" id="name-project-form" placeholder=" " required>
+          <label for="name-project-form" class="form-label">Имя</label>
+        </div>
+
+        <div class="form-group">
+          <input type="text" class="form-input" name="company" id="company-project-form" placeholder=" ">
+          <label for="company-project-form" class="form-label">Название компании</label>
+        </div>
+
+        <div class="form-group">
+          <input type="email" class="form-input" name="email" id="email-project-form" placeholder=" ">
+          <label for="email-project-form" class="form-label">Email</label>
+        </div>
+
+        <div class="form-group">
+          <input type="tel" class="form-input" name="phone" id="phone-project-form" placeholder=" " required>
+          <label for="phone-project-form" class="form-label">Телефон</label>
+        </div>
+
+        <div class="form-group full-width">
+          <textarea class="form-input" name="message" id="message-project-form" placeholder=" " required rows="4"></textarea>
+          <label for="message-project-form" class="form-label">Расскажите о вашем проекте: сколько сейчас тратите на IT-поддержку?</label>
+        </div>
+
+        <div class="form-button">
+          <button class="cta-button" type="submit" data-controller-ripple-effect="item">
+            Получить консультацию
+            <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+
+        <p class="form-notice">Нажимая на кнопку, вы соглашаетесь с политикой конфиденциальности. Мы ответим в течение 24 часов.</p>
+      </form>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="footer-content">
+    <div class="footer-logo color-whitesmoke">
+      <span>K</span>·<span class="color-accent-red">ART</span>·<span>MAKE</span>
+    </div>
+
+    <div class="footer-info">
+      <p>Ваш внешний технический отдел. Поддержка и развитие digital-продуктов</p>
+    </div>
+
+    <div class="footer-cta">
+      <button
+              class="cta-button"
+              data-controller-modal-open="form"
+              data-controller-modal-func="open"
+              data-controller-ripple-effect="item"
+      >
+        Обсудить задачу
+        <i class="fas fa-arrow-right"></i>
+      </button>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="copyright">KARTEMAKE © 2026. Ваш партнер по веб-инфраструктуре.</div>
+  </div>
+</footer>
+
+<!-- Overlay для затемнения фона -->
+<div class="overlay" id="overlay"></div>
+
+<!-- Sidebar burger menu -->
+<aside class="sidebar-burger-menu" id="sidebar-burger-menu">
+  <nav>
+    <ul class="sidebar-nav">
+      <li><a href="services.html">Услуги</a></li>
+      <li><a class="active" href="blog.html">Технический блог</a></li>
+      <li><a href="support.html">Техподдержка</a></li>
+      <li><a href="contacts.html">Контакты</a></li>
+    </ul>
+  </nav>
+
+  <button
+          class="cta-button"
+          data-controller-modal-open="form"
+          data-controller-modal-func="open"
+          data-controller-ripple-effect="item"
+  >
+    Обсудить задачу
+    <i class="fas fa-arrow-right"></i>
+  </button>
+
+  <div class="sidebar-social">
+    <button class="theme-toggle" data-controller-theme="item">
+      <i class="fas fa-moon"></i>
+    </button>
+    <!--
+    <button
+      class="language-toggle"
+      data-controller="lang"
+      data-controller-ripple-effect="item"
+    >
+      <span data-controller-lang="item">RU</span>
+      <i class="fas fa-chevron-down"></i>
+    </button>
+    -->
+  </div>
+  <div class="sidebar-social">
+    <a href="https://github.com/fhntv06" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="https://t.me/KArtech76" target="_blank"><i class="fab fa-telegram"></i></a>
+    <a href="https://vk.com/k.artem76" target="_blank"><i class="fab fa-vk"></i></a>
+  </div>
+</aside>
+
+<!-- Modal form -->
+<div id="form" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3>Обсудить техническую задачу</h3>
+      <p>Опишите проблему или задачу — мы проведем бесплатный аудит и предложим решение</p>
+    </div>
+
+    <div class="form-container">
+      <form class="contact-form" data-controller="form">
+        <div class="form-group">
+          <input type="text" class="form-input" id="name" name="name" placeholder=" " required>
+          <label for="name" class="form-label">Имя</label>
+        </div>
+
+        <div class="form-group">
+          <input type="text" class="form-input" id="company" name="company" placeholder=" ">
+          <label for="company" class="form-label">Название компании</label>
+        </div>
+
+        <div class="form-group">
+          <input type="email" class="form-input" id="email" name="email" placeholder=" ">
+          <label for="email" class="form-label">Email</label>
+        </div>
+
+        <div class="form-group">
+          <input type="tel" class="form-input" id="phone" name="phone" placeholder=" " required>
+          <label for="phone" class="form-label">Телефон</label>
+        </div>
+
+        <div class="form-group full-width">
+          <textarea class="form-input" id="message" name="message" placeholder=" " required rows="4"></textarea>
+          <label for="message" class="form-label">Опишите вашу техническую задачу или проблему</label>
+        </div>
+
+        <div class="form-group">
+          <select class="form-input" name="type" id="type">
+            <option value="">Выберите тип задачи</option>
+            <option value="support">Техническая поддержка сайта</option>
+            <option value="development">Разработка/доработка</option>
+            <option value="migration">Миграция/модернизация</option>
+            <option value="audit">Аудит безопасности/производительности</option>
+            <option value="consulting">Консультация</option>
+            <option value="other">Другое</option>
+          </select>
+          <label for="type" class="form-label">Тип задачи</label>
+        </div>
+
+        <div class="form-button">
+          <button type="submit" class="cta-button">
+            Отправить задачу
+            <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+
+        <p class="form-notice">Нажимая на кнопку, вы соглашаетесь с политикой конфиденциальности</p>
+      </form>
+    </div>
+  </div>
+  <div id="close-modal" class="close-modal">
+    <i class="fas fa-times"></i>
+  </div>
+</div>
+
+<!-- modal showreel закомментирован -->
+<!--
+<div id="showreel" class="modal">
+  <div class="modal-content">
+    <iframe class="modal-video" src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0" allowfullscreen></iframe>
+  </div>
+  <div class="close-modal">
+    <i class="fas fa-times"></i>
+  </div>
+</div>
+-->
+<!-- decoration lines -->
+<div class="lines">
+  <div class="line line-1"></div>
+  <div class="line line-2"></div>
+  <div class="line line-3"></div>
+  <div class="line line-4"></div>
+  <div class="line line-5"></div>
+</div>
+<!-- custom-cursor -->
+<div id="custom-cursor" class="custom-cursor" data-controller-custom-cursor="item"></div>
+<!-- preloader -->
+<div class="preloader" data-controller-preloader="item">
+  <div class="preloader__container">
+    <svg id="preloader-svg" class="preloader__svg" width="1280" height="600" viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="mainGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#ff6b6b">
+            <animate attributeName="offset" values="-2;2" dur="3s" repeatCount="indefinite"/>
+          </stop>
+          <stop offset="33%" stop-color="#4ecdc4">
+            <animate attributeName="offset" values="-1;3" dur="3s" repeatCount="indefinite"/>
+          </stop>
+          <stop offset="66%" stop-color="#45b7d1">
+            <animate attributeName="offset" values="0;4" dur="3s" repeatCount="indefinite"/>
+          </stop>
+          <stop offset="100%" stop-color="#ff6b6b">
+            <animate attributeName="offset" values="1;5" dur="3s" repeatCount="indefinite"/>
+          </stop>
+        </linearGradient>
+
+        <linearGradient id="secondaryGradient" x1="100%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#ffd93d">
+            <animate attributeName="offset" values="0;1" dur="2.5s" repeatCount="indefinite"/>
+          </stop>
+          <stop offset="50%" stop-color="#6c5ce7">
+            <animate attributeName="offset" values="0.5;1.5" dur="2.5s" repeatCount="indefinite"/>
+          </stop>
+          <stop offset="100%" stop-color="#ffd93d">
+            <animate attributeName="offset" values="1;2" dur="2.5s" repeatCount="indefinite"/>
+          </stop>
+        </linearGradient>
+
+        <filter id="pulseGlow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -8" result="glow"/>
+          <feComposite in="SourceGraphic" in2="glow" operator="over"/>
+        </filter>
+
+        <filter id="strongGlow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur"/>
+          <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 30 -7"/>
+        </filter>
+
+        <pattern id="grid" patternUnits="userSpaceOnUse" width="50" height="50">
+          <path d="M 0 0 L 50 0 50 50 0 50 Z" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+        </pattern>
+      </defs>
+
+      <rect width="100%" height="100%" fill="url(#grid)" opacity="0.5"/>
+
+      <text x="400" y="150" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="80" fill="rgba(255,255,255,0.1)" opacity="0.5">
+        KARTEMAKE
+      </text>
+
+      <text x="400" y="150" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="80" fill="none" stroke="url(#mainGradient)" stroke-width="2" stroke-dasharray="1000" stroke-dashoffset="1000">
+        KARTEMAKE
+        <animate attributeName="stroke-dashoffset" values="1000;0;1000" dur="4s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-width" values="2;3;2" dur="2s" repeatCount="indefinite"/>
+      </text>
+
+      <text x="400" y="150" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="80" fill="none" stroke="url(#secondaryGradient)" stroke-width="1" stroke-dasharray="800" stroke-dashoffset="800" opacity="0.7">
+        KARTEMAKE
+        <animate attributeName="stroke-dashoffset" values="800;1600;800" dur="3.5s" repeatCount="indefinite"/>
+      </text>
+
+      <text x="400" y="150" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="80" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="4" opacity="0">
+        KARTEMAKE
+        <animate attributeName="opacity" values="0;0.5;0" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-width" values="4;8;4" dur="2s" repeatCount="indefinite"/>
+      </text>
+
+      <g class="letter-pulses" opacity="0.8">
+        <text x="400" y="150" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="80" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1">
+          KARTEMAKE
+          <animate attributeName="stroke-width" values="1;2;1" dur="1.5s" repeatCount="indefinite"/>
+        </text>
+      </g>
+
+      <g class="particles" opacity="0.6">
+        <circle cx="100" cy="100" r="2" fill="#ff6b6b">
+          <animate attributeName="cx" values="100;500;100" dur="8s" repeatCount="indefinite"/>
+          <animate attributeName="cy" values="100;200;100" dur="6s" repeatCount="indefinite"/>
+          <animate attributeName="r" values="2;4;2" dur="3s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="700" cy="200" r="3" fill="#4ecdc4">
+          <animate attributeName="cx" values="700;300;700" dur="7s" repeatCount="indefinite"/>
+          <animate attributeName="cy" values="200;100;200" dur="5s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="300" cy="250" r="2.5" fill="#45b7d1">
+          <animate attributeName="cx" values="300;600;300" dur="9s" repeatCount="indefinite"/>
+          <animate attributeName="cy" values="250;150;250" dur="4s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="100" cy="100" r="2" fill="#ffd93d">
+          <animate attributeName="cx" values="200;350;150" dur="8s" repeatCount="indefinite"/>
+          <animate attributeName="cy" values="50;600;150" dur="6s" repeatCount="indefinite"/>
+          <animate attributeName="r" values="2;4;2" dur="3s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="700" cy="200" r="3" fill="#6c5ce7">
+          <animate attributeName="cx" values="600;450;750" dur="7s" repeatCount="indefinite"/>
+          <animate attributeName="cy" values="10;150;200" dur="5s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="300" cy="250" r="2.5" fill="#4ecdc4">
+          <animate attributeName="cx" values="700;600;100" dur="9s" repeatCount="indefinite"/>
+          <animate attributeName="cy" values="650;150;350" dur="4s" repeatCount="indefinite"/>
+        </circle>
+      </g>
+
+      <text x="400" y="150" text-anchor="middle" class="final-text" font-family="Arial Black, sans-serif" font-size="80" fill="white" filter="url(#strongGlow)" opacity="0">
+        KARTEMAKE
+      </text>
+    </svg>
+  </div>
+</div>
+<!-- stars-container -->
+<canvas id="stars-canvas" data-controller-starfield="item"></canvas>
+</body>
+</html>

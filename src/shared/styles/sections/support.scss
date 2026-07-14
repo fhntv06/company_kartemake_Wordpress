@@ -1,12 +1,18 @@
 @use "../variables/offsets" as offsets;
+@use "../variables/media" as media;
 
+.support {
+  .stats-particle {
+    display: none;
+    margin: 0 auto offsets.$middle;
+  }
+}
 .hero-support {
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100dvh;
 
   &::before {
     content: '';
@@ -21,7 +27,6 @@
 }
 .hero__container {
   height: calc(100vh - offsets.$middle * 2);
-  text-align: center;
 }
 .hero-support__container {
   z-index: 2;
@@ -39,4 +44,19 @@
   justify-content: center;
   gap: 60px;
   margin-bottom: 50px;
+}
+
+.services {
+  .stats-particle {
+    display: none;
+    margin: 0 auto offsets.$middle;
+  }
+}
+
+@media (max-width: media.$lower-middle) {
+  .support {
+    .stats-particle {
+      display: flex;
+    }
+  }
 }

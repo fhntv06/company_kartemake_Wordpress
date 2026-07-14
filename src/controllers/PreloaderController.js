@@ -35,6 +35,8 @@ export class PreloaderController {
     this.hidePreloader()
     Array.from(document.querySelectorAll('header , main, footer'))
       .forEach((el) => el.style.opacity = '1')
+
+    document.dispatchEvent(new Event('exit-preloader', { bubbles: false }))
   }
   hidePreloader = () => {
     this.preloader.classList.add('preloader--hidden')

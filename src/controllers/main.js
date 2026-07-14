@@ -1,6 +1,7 @@
 import { AccordionController } from './AccordionController.js'
 import { AnchorController } from './AnchorController.js'
 import { AnimationNumbersController } from './AnimationNumbersController.js'
+import { BlobClusterController  } from './BlobClusterController.js'
 import { BurgerMenuController } from './BurgerMenuController.js'
 import { CalculatorController } from './CalculatorController.js'
 import { CubeWithWorkItemsController } from './CubeWithWorkItemsController.js'
@@ -10,8 +11,10 @@ import { HeaderController } from './HeaderController.js'
 import { InteractiveCardEffectController } from './InteractiveCardEffectController.js'
 import { LangController } from './LangController.js'
 import { ModalController } from './ModalController.js'
+import { PhysicsContainerController } from './PhysicsContainerController.js'
 import { PreloaderController } from './PreloaderController.js'
 import { RippleEffectController } from './RippleEffectController.js'
+import { ScrollProgressController } from './ScrollProgressController.js'
 import { SidebarAnchorController } from './SidebarAnchorController.js'
 import { SpecialistWidgetController } from './SpecialistWidgetController.js'
 import { StarfieldController } from './StarfieldController.js'
@@ -20,12 +23,16 @@ import { ThemeController } from './ThemeController.js'
 
 export class EntryPointApp {
   constructor() {
-    this.controllerReplaceChar = ' '
-
-    this.controllersExperimental = {
+    this.controllerBeforeLoad = {
+      starfield: StarfieldController,
+      preloader: PreloaderController,
+    }
+    this.controllers = {
       accordion: AccordionController,
       anchor: AnchorController,
       'animation-numbers': AnimationNumbersController,
+      'blob-cluster': BlobClusterController,
+      'burger-menu': BurgerMenuController,
       'calculator': CalculatorController,
       'cube-with-work': CubeWithWorkItemsController,
       'form': FormController,
@@ -34,57 +41,61 @@ export class EntryPointApp {
       'interactive-card-effect': InteractiveCardEffectController,
       lang: LangController,
       modal: ModalController,
-      preloader: PreloaderController,
+      'physics-container': PhysicsContainerController,
       'ripple-effect': RippleEffectController,
+      'scroll-progress': ScrollProgressController,
       'sidebar-anchor': SidebarAnchorController,
       'specialist-widget': SpecialistWidgetController,
-      starfield: StarfieldController,
       tabs: TabsController,
       theme: ThemeController,
-    }
-
-    this.controllersMustExecuted = {
-      'burger-menu': BurgerMenuController,
     }
 
     this.connect()
   }
   connect = () => {
-    console.log('Main initialized')
+    document.addEventListener('exit-preloader', this.loadControllers)
+    this.beforeLoadControllers()
+    // this.loadControllers()
+  }
+  beforeLoadControllers = () => {
+    try {
+      for (const controllerName in this.controllerBeforeLoad) {
+        const entityController = this.controllerBeforeLoad[controllerName]
 
-    const controllerContainers = Array.from(document.querySelectorAll(`[data-controller]`))
-
-    controllerContainers.forEach((container) => {
-      const controllerAttr = container.dataset.controller // custom-cursor modal
-
-      if (controllerAttr.includes(this.controllerReplaceChar)) {
-        controllerAttr.split(this.controllerReplaceChar)
-          .forEach((controllerName) => {
-            this.initializeEntityController(controllerName, container)
-          }
-        )
-      } else {
-        this.initializeEntityController(controllerAttr, container)
+        if (!entityController) console.error("Is controller ", controllerName, " not define!")
+        console.log('Initializing controller:', entityController.name)
+        new entityController(controllerName, document.body)
       }
-    })
 
-    // must controllers
-    for (const controllerName in this.controllersMustExecuted) {
-      const entityController = this.controllersMustExecuted[controllerName]
+      console.log('Before load controllers initialized!')
+    } catch (e) {
+      console.error(`Before load controllers failed! Error: ${e}`)
+    }
+  }
+  loadControllers = () => {
+    try {
+      for (const controllerName in this.controllers) {
+        const controllerContainers = Array.from(document.querySelectorAll(`[data-controller~="${controllerName}"]`))
 
-      if (!this.controllersMustExecuted[controllerName]) console.error("Is controller ", controllerName, " not define!")
-      console.log('Initializing controller:', entityController.name)
-      new entityController(controllerName, document.body)
+        controllerContainers.forEach((container) => {
+          this.initializeEntityController(controllerName, container)
+        })
+      }
+
+      console.log('Main controllers initialized!')
+    } catch (e) {
+      console.error(`Main controllers failed! Error: ${e}`)
     }
   }
   initializeEntityController = (controllerName, container) => {
-    if (!this.controllersExperimental[controllerName]) console.error("Is controller ", controllerName, " not define!")
-    else {
-      const entityController = this.controllersExperimental[controllerName]
+    const entityController = this.controllers[controllerName]
 
-      console.log('Initializing controller:', entityController.name)
-
+    try {
       new entityController(controllerName, container)
+      console.log('Initializing controller is success:', entityController.name)
+    } catch (e) {
+      console.error('Initializing controller is failed:', entityController.name)
+      console.error(`Error init ${entityController.name}:`, e)
     }
   }
 }

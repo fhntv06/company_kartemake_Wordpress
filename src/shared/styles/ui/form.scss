@@ -27,7 +27,7 @@
 }
 .form-input {
   width: 100%;
-  padding: 18px 20px;
+  padding: offsets.$extra-small;
   color: var(--dark-text);
   background-color: rgba(245,245,245,.8);
   border: 1px solid var(--gray);
@@ -40,21 +40,20 @@
 }
 .form-label {
   position: absolute;
-  top: 50%;
-  left: 20px;
+  top: calc(22px - 10px);
+  left: 12px;
   padding: 0 8px;
   background-color: var(--light-text);
   color: var(--gray-text);
-  transform: translateY(-50%);
   pointer-events: none;
   transition: top .3s ease, left .3s ease;
 }
 .form-input:focus ~ .form-label,
 .form-input:not(:placeholder-shown) ~ .form-label {
   top: 0;
-  left: 12px;
   font-size: 14px;
   color: var(--accent-red);
+  transform: translateY(-50%);
 }
 textarea {
   &.form-input {
@@ -97,6 +96,13 @@ textarea {
 @media (max-width: media.$extra-small) {
   .contact-form {
     grid-template-columns: 1fr;
+    gap: offsets.$extra-small;
+  }
+  .form-input {
+    padding: calc(offsets.$extra-small / 2);
+  }
+  .form-label {
+    top: calc(22px - 17px);
   }
 }
 

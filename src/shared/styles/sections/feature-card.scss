@@ -13,6 +13,16 @@
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(0,0,0,.4);
 
+    .featured-title {
+      a {
+        color: var(--accent-red);
+
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+
     .featured-image img {
       transform: scale(1.05);
     }
@@ -63,7 +73,6 @@
   }
 }
 .featured-title {
-  font-size: 32px;
   margin-bottom: 20px;
   line-height: 1.2;
 
@@ -72,8 +81,6 @@
   }
 }
 .featured-description {
-  font-size: 18px;
-  line-height: 1.6;
   margin-bottom: offsets.$small;
 }
 .featured-description,

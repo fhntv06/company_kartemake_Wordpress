@@ -59,4 +59,8 @@
 body.preloader-lock {
   overflow: hidden !important;
   height: 100vh;
+
+  > *:not(.preloader, #stars-canvas){
+    opacity: 0;
+  }
 }

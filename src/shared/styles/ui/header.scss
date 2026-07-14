@@ -14,19 +14,21 @@ header {
   align-items: center;
   width: 100%;
   padding: offsets.$extra-small offsets.$small;
-  row-gap: offsets.$small;
   background-color: rgba(245,245,245,.8);
   backdrop-filter: blur(4px);
   border-bottom: 1px solid #ddd;
 
   @include mixins.add-opacity-load();
+
+  .logo {
+    order: 1;
+    color: var(--dark-text);
+  }
 }
 .logo {
-  order: 1;
   display: flex;
   align-items: center;
   gap: 10px;
-  color: var(--dark-text);
   text-decoration: none;
 
   &:hover {

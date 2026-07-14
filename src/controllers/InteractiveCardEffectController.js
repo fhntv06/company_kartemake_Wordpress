@@ -7,8 +7,7 @@ export class InteractiveCardEffectController {
   init= () => {
     this.items.forEach((card) => {
       card.addEventListener('mousemove', this.eventMouseMoveHandler)
-
-      card.addEventListener('mouseleave', eventMouseLeaveHandler)
+      card.addEventListener('mouseleave', this.eventMouseLeaveHandler)
     })
   }
   eventMouseMoveHandler = (e) => {

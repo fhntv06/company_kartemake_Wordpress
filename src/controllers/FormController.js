@@ -104,7 +104,7 @@ export class FormController {
 
       case 'message':
         isValid = this.validateMessage(value);
-        errorMessage = 'Описание задачи не должно быть пустым';
+        errorMessage = 'Опишите задачу подробнее!';
         break;
 
       case 'type':

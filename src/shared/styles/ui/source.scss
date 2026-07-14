@@ -17,7 +17,7 @@ a, .link {
   }
   &:hover,
   &.active {
-    color: var(--accent-red) !important;
+    color: var(--accent-red);
     transform: translateY(-3px);
 
     &::after {
@@ -48,13 +48,15 @@ a, .link {
     box-shadow: 0 2px 10px rgba(255, 59, 48, 0.5);
     opacity: 0;
     pointer-events: none;
-    transition: opacity .3s ease-in,
-    background-color .3s ease-in,
-    transform .3s ease-in;
+    transition:
+      opacity .3s ease-out,
+      background-color .3s ease-in,
+      transform .3s ease-in;
 
     &.visible {
       opacity: 1;
       pointer-events: auto;
+      transition: opacity .3s ease-out;
     }
     &:after {
       display: none;

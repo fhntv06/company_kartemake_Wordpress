@@ -2,36 +2,31 @@ export class AnchorController {
   constructor(controllerName, container) {
     this.items = Array.from(container.querySelectorAll(`[data-controller-${controllerName}="item"]`))
 
+    if (!this.items.length) {
+        throw new Error(`No have controller items in ${controllerName}`)
+    }
+
+    this.scrollHintText = document.getElementById('scroll-hint')
     this.duration = 1000 // продолжительность анимации в мс
 
     this.init()
-    this.initBackButton()
   }
   init = () => {
     this.items.forEach((link) => link.addEventListener('click', this.anchorHandler))
-  }
-  initBackButton = () => {
-    const backToTopButton = document.querySelector('.to-top');
-    const scrollHintText = document.querySelector('.scroll-hint');
 
-    backToTopButton.addEventListener('click', this.anchorHandler)
-
-    window.addEventListener('scroll', function() {
-      if (window.pageYOffset > 300) {
-        backToTopButton.classList.add('visible')
-        scrollHintText.classList.add('hidden')
-      } else {
-        backToTopButton.classList.remove('visible')
-        scrollHintText.classList.remove('hidden')
-      }
-    })
+    const scrollHintText = this.scrollHintText
+    if (scrollHintText) {
+      window.addEventListener('scroll', function() {
+        (window.pageYOffset > 300)
+          ? scrollHintText.classList.add('hidden')
+          : scrollHintText.classList.remove('hidden')
+      })
+    }
   }
   anchorHandler = (e) => {
     e.preventDefault()
 
     const targetId = e.currentTarget.getAttribute('href')
-    let targetScroll = 0
-    let currentScroll = 0
 
     if (targetId === '#') return
 

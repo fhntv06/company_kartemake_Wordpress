@@ -22,7 +22,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="feature/change-texts-and-correct-pages" />
+        <entry key="$PROJECT_DIR$" value="build" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -40,48 +40,54 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "JavaScript Debug.blog.html.executor": "Run",
-    "JavaScript Debug.index.html.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "front-end",
-    "last_opened_file_path": "C:/Users/CifronPro/projects/work/landing-kartech.site/src/controllers",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.build.executor": "Run",
-    "npm.start.executor": "Run",
-    "settings.editor.selected.configurable": "project.propVCSSupport.Mappings",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2024.2.3\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;JavaScript Debug.blog.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.index.html.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.highlight.mappings&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.highlight.symlinks&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.date&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.permissions&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.size&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;front-end&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/CifronPro/projects/work/landing-kartech.site/src&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.build.executor&quot;: &quot;Run&quot;,
+    &quot;npm.start.executor&quot;: &quot;Run&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.Mappings&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2024.2.3\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "GitStage.ChangesTree.GroupingKeys": [
-      "directory",
-      "module",
-      "repository"
+  &quot;keyToStringList&quot;: {
+    &quot;GitStage.ChangesTree.GroupingKeys&quot;: [
+      &quot;directory&quot;,
+      &quot;module&quot;,
+      &quot;repository&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\CifronPro\projects\work\landing-kartech.site\src" />
       <recent name="C:\Users\CifronPro\projects\work\landing-kartech.site\src\controllers" />
       <recent name="C:\Users\CifronPro\projects\work\PROFI\landing" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\CifronPro\projects\work\landing-kartech.site\src\controllers" />
+      <recent name="C:\Users\CifronPro\projects\work\landing-kartech.site\src\pages" />
+      <recent name="C:\Users\CifronPro\projects\work\landing-kartech.site\src\pages\blog" />
       <recent name="C:\Users\CifronPro\projects\work\landing-kartech.site\src\shared\styles\fonts" />
       <recent name="C:\Users\CifronPro\projects\work\landing-kartech.site\src\shared\styles\ui" />
-      <recent name="C:\Users\CifronPro\projects\work\landing-kartech.site\src\pages" />
-      <recent name="C:\Users\CifronPro\projects\work\landing-kartech.site\src\shared" />
-      <recent name="C:\Users\CifronPro\projects\work\PROFI\landing\images\icons" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.build">
+  <component name="RunManager" selected="npm.start">
     <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -104,11 +110,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.build" />
-        <item itemvalue="npm.start" />
         <item itemvalue="npm.start" />
         <item itemvalue="npm.build" />
         <item itemvalue="npm.start" />
+        <item itemvalue="npm.build" />
+        <item itemvalue="npm.build" />
       </list>
     </recent_temporary>
   </component>
@@ -150,14 +156,9 @@
       <workItem from="1767938428324" duration="2886000" />
       <workItem from="1768031383076" duration="9130000" />
       <workItem from="1768319757375" duration="1991000" />
-    </task>
-    <task id="LOCAL-00006" summary="refactor burger menu and sidebar burger menu in main page">
-      <option name="closed" value="true" />
-      <created>1767706958951</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1767706958951</updated>
+      <workItem from="1768565361694" duration="3030000" />
+      <workItem from="1782463789382" duration="34964000" />
+      <workItem from="1784006490373" duration="14947000" />
     </task>
     <task id="LOCAL-00007" summary="create burger menu and sidebar burger menu in detail blog page">
       <option name="closed" value="true" />
@@ -543,7 +544,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768557816395</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="update workflow">
+      <option name="closed" value="true" />
+      <created>1768567281211</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1768567281212</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -588,7 +597,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added media in calculator section" />
     <MESSAGE value="added media in cards section" />
     <MESSAGE value="added media in feature-card section" />
     <MESSAGE value="added media in last-work section" />
@@ -613,6 +621,7 @@
     <MESSAGE value="change props homepage in package.json" />
     <MESSAGE value="change workflow" />
     <MESSAGE value="change texts and correct pages for new target project" />
-    <option name="LAST_COMMIT_MESSAGE" value="change texts and correct pages for new target project" />
+    <MESSAGE value="update workflow" />
+    <option name="LAST_COMMIT_MESSAGE" value="update workflow" />
   </component>
 </project>

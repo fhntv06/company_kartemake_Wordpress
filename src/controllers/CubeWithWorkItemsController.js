@@ -3,8 +3,19 @@ export class CubeWithWorkItemsController {
     // Интерактивность для карточек работ
     this.items = container.querySelectorAll(`[data-controller-${controllerName}="item"]`)
 
+    if (!this.items.length) {
+      throw new Error(`Don't have items in controller: ${controllerName}`)
+    }
+
     this.worksCube = container.querySelector('.works-cube')
     this.worksVisual = container.querySelector('.works-visual')
+
+    if (!this.worksCube) {
+      throw new Error(`Don't have worksCube element in controller: ${controllerName}`)
+    }
+    if (!this.worksVisual) {
+      throw new Error(`Don't have worksVisual element in controller: ${controllerName}`)
+    }
 
     this.init()
   }

@@ -55,10 +55,7 @@
   color: var(--text-light);
 }
 .work-description {
-  color: var(--gray);
-  font-size: 14px;
-  margin-bottom: 15px;
-  line-height: 1.6;
+  margin-bottom: offsets.$extra-small;
 }
 .work-link {
   color: var(--primary-color);

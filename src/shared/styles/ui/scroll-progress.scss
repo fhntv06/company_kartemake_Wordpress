@@ -6,9 +6,10 @@
   width: 0;
   height: 4px;
   background: linear-gradient(to right, #ff3b30, #ffcc00);
+  transition: width .3s ease-in;
 }
 .scroll-hint {
-  position: fixed;
+  position: absolute;
   bottom: 30px;
   left: 50%;
   transform: translateX(-50%);

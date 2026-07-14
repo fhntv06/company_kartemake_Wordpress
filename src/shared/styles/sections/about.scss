@@ -6,15 +6,17 @@
   position: relative;
   background-color: #fff;
   overflow: hidden;
+  --wave-x: 50%;
+  --wave-y: 50%;
 }
 .about-top {
   display: flex;
   justify-content: space-between;
-  column-gap: offsets.$small;
   margin-bottom: offsets.$middle;
+  gap: offsets.$small;
 }
 .about-text {
-  width: 45%;
+  flex: 2;
 
   h2 {
     font-size: 42px;
@@ -23,7 +25,6 @@
   p {
     font-size: 18px;
     line-height: 1.6;
-    color: #aaa;
 
     & + p {
       margin-top: offsets.$extra-small;
@@ -35,12 +36,7 @@
   }
 }
 .about-image {
-  max-width: 50%;
-}
-[data-theme="dark"] {
-  .about-text p {
-    color: #666;
-  }
+  flex: 1;
 }
 
 @media (max-width: media.$lower-middle) {

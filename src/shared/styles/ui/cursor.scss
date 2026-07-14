@@ -1,4 +1,7 @@
-.custom-cursor {
+@use "../variables/offsets" as offsets;
+@use "../variables/media" as media;
+
+#custom-cursor {
   z-index: 100000;
   position: fixed;
   left: 0;
@@ -16,4 +19,9 @@
     mix-blend-mode 0.2s;
   background-color: #fff;
   mix-blend-mode: difference;
+}
+@media (max-width: media.$extra-small) {
+  #custom-cursor {
+    display: none;
+  }
 }

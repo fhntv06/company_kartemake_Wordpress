@@ -1,53 +1,39 @@
-Вот обновленный HTML, где все тексты приведены в соответствие с концепцией компании KArtech (технический отдел на аутсорсе, фокус на B2B, веб-инфраструктуре и поддержке).
-
-Основные изменения:
-1.  **Герой-секция:** Текст теперь отражает позиционирование как внешнего технического отдела.
-2.  **Список услуг:** Полностью переработан. Убраны "Мобильная разработка" и "Дизайн и брендинг", так как они не соответствуют концепции. Добавлены и детализированы услуги, описанные в ТЗ: Веб-разработка/Разработка под CMS, Техническая миграция, Техподдержка и инфраструктура, Аудит и консалтинг.
-3.  **Описания и фичи:** Все формулировки изменены, чтобы говорить на языке B2B-клиента, решать его "боли" (технический долг, нет своего IT-отдела, нужна поддержка), и подчеркивать ключевые преимущества KArtech (команда вместо одного человека, фиксированная стоимость).
-4.  **Футер:** Скорректирован для единообразия.
-5.  **Модальное окно:** Текст уточнен для контекста технических услуг.
-6.  **Статистика:** Изменена на "4 услуги", что соответствует новому списку.
-
-```html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Услуги | KARTECH</title>
+  <title>Услуги | KARTEMAKE</title>
 
   <link rel="shortcut icon" href="../../public/images/logotypes/logo-dark.ico" type="image/x-icon">
 </head>
-<body data-controller="custom-cursor modal preloader ripple-effect starfield theme">
+<body data-controller="custom-cursor modal preloader ripple-effect starfield theme anchor scroll-progress burger-menu">
 <header class="header" data-controller="header">
   <a href="/" class="logo">
-    <span class="font-size-h2">K</span>
-    <span class="font-size-h2">·</span>
-    <span class="font-size-h3 color-accent-red">ART</span>
-    <span class="font-size-h2">·</span>
-    <span class="font-size-h4">TECH</span>
+    <span class="font-size-h3">K</span>
+    <span class="font-size-h3">·</span>
+    <span class="font-size-h4 color-accent-red">ART</span>
+    <span class="font-size-h3">·</span>
+    <span class="font-size-h5">MAKE</span>
   </a>
 
   <nav class="nav-links">
-      <a class="active" href="services.html">Услуги</a>
-      <a href="projects.html">Кейсы</a>
-      <a href="about.html">Команда</a>
-      <a href="blog.html">Технический блог</a>
-      <a href="calculator.html">Калькулятор работ</a>
-      <a href="support.html">Техподдержка</a>
-      <a href="contacts.html">Контакты</a>
-    </nav>
+    <a class="active" href="services.html">Услуги</a>
+    <a href="blog.html">Технический блог</a>
+    <a href="support.html">Техподдержка</a>
+    <a href="contacts.html">Контакты</a>
+  </nav>
 
   <div class="header-controls">
     <div class="social-links">
-      <a href="#"><i class="fab fa-behance"></i></a>
-      <a href="#"><i class="fab fa-dribbble"></i></a>
-      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="https://github.com/fhntv06" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://t.me/KArtech76" target="_blank"><i class="fab fa-telegram"></i></a>
+      <a href="https://vk.com/k.artem76" target="_blank"><i class="fab fa-vk"></i></a>
     </div>
 
     <div class="phone">
       <i class="fas fa-phone"></i>
-      <span>+7 (999) 123-45-67</span>
+      <span>+7 (908) 946-14-83</span>
     </div>
 
     <button
@@ -57,14 +43,16 @@
       <i class="fas fa-moon"></i>
     </button>
 
+    <!--
     <button
-            class="language-toggle"
-            data-controller="lang"
-            data-controller-ripple-effect="item"
+      class="language-toggle"
+      data-controller="lang"
+      data-controller-ripple-effect="item"
     >
       <span data-controller-lang="item">RU</span>
       <i class="fas fa-chevron-down"></i>
     </button>
+    -->
 
     <button
             class="cta-button"
@@ -76,7 +64,7 @@
       <i class="fas fa-arrow-right"></i>
     </button>
 
-    <button class="burger-menu" id="burgerMenu">
+    <button class="burger-menu" id="burgerMenu" data-controller-burger-menu="item">
       <span></span>
       <span></span>
       <span></span>
@@ -84,29 +72,61 @@
   </div>
 </header>
 <main>
-  <section class="hero-support">
-    <div class="container hero__container">
-      <h1>Ваш внешний <span class="color-accent-red">технический отдел</span></h1>
-      <p><span class="font-size-h3">K · <span class="color-accent-red">ART</span> · TECH</span> — не агентство. Мы ваш партнер по веб-инфраструктуре: берем на себя технический долг, поддержку и развитие digital-продуктов, чтобы вы могли сосредоточиться на своем бизнесе.</p>
+  <section id="hero" class="hero">
+    <div class="container">
+      <h1>Технические услуги <span class="color-accent-red">под ключ</span></h1>
+      <div class="hero-content">
+        <div class="hero-text">
+          <h4>Всё для вашей веб-инфраструктуры</h4>
+          <p>Разработка, миграция, аудит и абонентское обслуживание — полный цикл технической поддержки.</p>
+          <button
+                  class="button button--large button--accent"
+                  data-controller-modal-open="form"
+                  data-controller-modal-func="open"
+          >
+            Получить консультацию <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
 
-      <div class="divider"></div>
-
-      <div class="stats" data-controller="animation-numbers">
-        <div class="stat-item">
-          <div class="stat-number" data-controller-animation-numbers="item">4</div>
-          <div class="stat-label">Направления</div>
+        <div class="hero-stats-particle stats-particle">
+          <div class="stat-item-particle">
+            <span class="particle" style="--tx: -30px; --ty: -40px;"></span>
+            <span class="particle" style="--tx: 30px; --ty: -35px;"></span>
+            <span class="particle" style="--tx: -20px; --ty: 40px;"></span>
+            <span class="stat-icon-particle"><i class="fas fa-code"></i></span>
+            <div class="stat-number-particle font-size-h3 font-weight-bold">12+</div>
+            <div class="stat-label-particle">Проектов</div>
+          </div>
+          <div class="stat-item-particle">
+            <span class="particle" style="--tx: -35px; --ty: -30px;"></span>
+            <span class="particle" style="--tx: 25px; --ty: -45px;"></span>
+            <span class="particle" style="--tx: -25px; --ty: 35px;"></span>
+            <span class="stat-icon-particle"><i class="fas fa-users"></i></span>
+            <div class="stat-number-particle font-size-h3 font-weight-bold">24+</div>
+            <div class="stat-label-particle">Специалистов</div>
+          </div>
+          <div class="stat-item-particle">
+            <span class="particle" style="--tx: -28px; --ty: -38px;"></span>
+            <span class="particle" style="--tx: 32px; --ty: -32px;"></span>
+            <span class="particle" style="--tx: -22px; --ty: 38px;"></span>
+            <span class="stat-icon-particle"><i class="fas fa-rocket"></i></span>
+            <div class="stat-number-particle font-size-h3 font-weight-bold">98%</div>
+            <div class="stat-label-particle">Довольных клиентов</div>
+          </div>
+          <div class="stat-item-particle">
+            <span class="particle" style="--tx: -32px; --ty: -42px;"></span>
+            <span class="particle" style="--tx: 28px; --ty: -38px;"></span>
+            <span class="particle" style="--tx: -18px; --ty: 42px;"></span>
+            <span class="stat-icon-particle"><i class="fas fa-clock"></i></span>
+            <div class="stat-number-particle font-size-h3 font-weight-bold">7+</div>
+            <div class="stat-label-particle">Лет на рынке</div>
+          </div>
         </div>
       </div>
-
-      <div class="divider"></div>
-
-      <button
-              class="button button--large button--accent"
-              data-controller-modal-open="form"
-              data-controller-modal-func="open"
-      >
-        Получить консультацию
-      </button>
+    </div>
+    <div id="scroll-hint" class="scroll-hint color-accent-red font-weight-bold">
+      Листайте вниз
+      <i class="fas fa-arrow-down"></i>
     </div>
   </section>
 
@@ -115,8 +135,43 @@
       <h2 class="section__title">Комплекс технических <span class="color-accent-red">решений</span></h2>
       <p class="section__description">Полный спектр услуг для поддержки и развития вашей цифровой инфраструктуры. От разовой разработки до ежемесячного абонентского обслуживания.</p>
 
+      <div class="stats-particle">
+        <div class="stat-item-particle">
+          <span class="particle" style="--tx: -30px; --ty: -40px;"></span>
+          <span class="particle" style="--tx: 30px; --ty: -35px;"></span>
+          <span class="particle" style="--tx: -20px; --ty: 40px;"></span>
+          <span class="stat-icon-particle"><i class="fas fa-code"></i></span>
+          <div class="stat-number-particle font-size-h3 font-weight-bold">12+</div>
+          <div class="stat-label-particle">Проектов</div>
+        </div>
+        <div class="stat-item-particle">
+          <span class="particle" style="--tx: -35px; --ty: -30px;"></span>
+          <span class="particle" style="--tx: 25px; --ty: -45px;"></span>
+          <span class="particle" style="--tx: -25px; --ty: 35px;"></span>
+          <span class="stat-icon-particle"><i class="fas fa-users"></i></span>
+          <div class="stat-number-particle font-size-h3 font-weight-bold">24+</div>
+          <div class="stat-label-particle">Специалистов</div>
+        </div>
+        <div class="stat-item-particle">
+          <span class="particle" style="--tx: -28px; --ty: -38px;"></span>
+          <span class="particle" style="--tx: 32px; --ty: -32px;"></span>
+          <span class="particle" style="--tx: -22px; --ty: 38px;"></span>
+          <span class="stat-icon-particle"><i class="fas fa-rocket"></i></span>
+          <div class="stat-number-particle font-size-h3 font-weight-bold">98%</div>
+          <div class="stat-label-particle">Довольных клиентов</div>
+        </div>
+        <div class="stat-item-particle">
+          <span class="particle" style="--tx: -32px; --ty: -42px;"></span>
+          <span class="particle" style="--tx: 28px; --ty: -38px;"></span>
+          <span class="particle" style="--tx: -18px; --ty: 42px;"></span>
+          <span class="stat-icon-particle"><i class="fas fa-clock"></i></span>
+          <div class="stat-number-particle font-size-h3 font-weight-bold">7+</div>
+          <div class="stat-label-particle">Лет на рынке</div>
+        </div>
+      </div>
+
       <div class="cards-grid">
-        <a href="#" class="service-card">
+        <div class="service-card">
           <div class="service-content">
             <h3 class="service-title">Веб-разработка & CMS</h3>
             <p class="service-description">Создаем и глубоко кастомизируем корпоративные сайты, интернет-магазины и веб-приложения на 1С-Битрикс и WordPress, включая сложные интеграции.</p>
@@ -126,15 +181,17 @@
               <span class="service-feature">Интернет-магазины</span>
               <span class="service-feature">Интеграции (CRM, ERP)</span>
             </div>
+            <!--
             <p class="service-link">
               <i class="fas fa-arrow-left"></i> Подробнее
             </p>
+            -->
           </div>
           <div class="service-details">
             <div class="service-price">от 200 000 ₽</div>
             <div class="service-time">Проектная работа</div>
           </div>
-        </a>
+        </div>
         <div class="service-card">
           <div class="service-content">
             <h3 class="service-title">Техническая миграция и модернизация</h3>
@@ -145,9 +202,11 @@
               <span class="service-feature">Обновление стеков</span>
               <span class="service-feature">Оптимизация</span>
             </div>
+            <!--
             <a href="#" class="service-link">
               <i class="fas fa-arrow-left"></i> Подробнее
             </a>
+            -->
           </div>
           <div class="service-details">
             <div class="service-price">от 120 000 ₽</div>
@@ -164,9 +223,11 @@
               <span class="service-feature">Резервное копирование</span>
               <span class="service-feature">Доработки</span>
             </div>
+            <!--
             <a href="#" class="service-link">
               <i class="fas fa-arrow-left"></i> Подробнее
             </a>
+            -->
           </div>
           <div class="service-details">
             <div class="service-price">от 25 000 ₽/мес</div>
@@ -183,12 +244,14 @@
               <span class="service-feature">Технический консалтинг</span>
               <span class="service-feature">Выбор технологий</span>
             </div>
+            <!--
             <a href="#" class="service-link">
               <i class="fas fa-arrow-left"></i> Подробнее
             </a>
+            -->
           </div>
           <div class="service-details">
-            <div class="service-price">от 50 000 ₽</div>
+            <div class="service-price">от 10 000 ₽</div>
             <div class="service-time">Разовый аудит</div>
           </div>
         </div>
@@ -198,9 +261,14 @@
 </main>
 <footer>
   <div class="footer-content">
-    <div class="footer-logo color-whitesmoke">
-      <span>K</span>·<span class="color-accent-red">ART</span>·<span>TECH</span>
-    </div>
+    <a class="logo color-whitesmoke" href="/">
+      <span class="font-size-h2">K</span>
+      <span class="font-size-h2">·</span>
+      <span class="font-size-h3 color-accent-red">ART</span>
+      <span class="font-size-h2">·</span>
+      <span class="font-size-h4">MAKE</span>
+    </a>
+
 
     <div class="footer-info">
       <p>Ваш внешний технический отдел. Поддержка и развитие digital-продуктов на аутсорсе.</p>
@@ -219,26 +287,26 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <div class="copyright">KARTECH © 2026. Все права защищены.</div>
+    <div class="copyright">KARTEMAKE © 2026. Все права защищены.</div>
   </div>
 </footer>
 
 <!-- Overlay для затемнения фона -->
 <div class="overlay" id="overlay"></div>
 
-  <!-- Sidebar burger menu -->
-  <aside class="sidebar-burger-menu" id="sidebar-burger-menu">
-    <nav>
-      <ul class="sidebar-nav">
-        <li><a class="active" href="services.html">Услуги</a></li>
-        <li><a href="projects.html">Кейсы</a></li>
-        <li><a href="about.html">Команда</a></li>
-        <li><a href="blog.html">Технический блог</a></li>
-        <li><a href="calculator.html">Калькулятор работ</a></li>
-        <li><a href="support.html">Техподдержка</a></li>
-        <li><a href="contacts.html">Контакты</a></li>
-      </ul>
-    </nav>
+<!-- Sidebar burger menu -->
+<aside class="sidebar-burger-menu" id="sidebar-burger-menu">
+  <div class="close-modal" data-controller-burger-menu="item">
+    <i class="fas fa-times"></i>
+  </div>
+  <nav>
+    <ul class="sidebar-nav">
+      <li><a class="active" href="services.html">Услуги</a></li>
+      <li><a href="blog.html">Технический блог</a></li>
+      <li><a href="support.html">Техподдержка</a></li>
+      <li><a href="contacts.html">Контакты</a></li>
+    </ul>
+  </nav>
 
   <button
           class="cta-button"
@@ -254,19 +322,21 @@
     <button class="theme-toggle" data-controller-theme="item">
       <i class="fas fa-moon"></i>
     </button>
+    <!--
     <button
-            class="language-toggle"
-            data-controller="lang"
-            data-controller-ripple-effect="item"
+      class="language-toggle"
+      data-controller="lang"
+      data-controller-ripple-effect="item"
     >
       <span data-controller-lang="item">RU</span>
       <i class="fas fa-chevron-down"></i>
     </button>
+    -->
   </div>
   <div class="sidebar-social">
-    <a href="#"><i class="fab fa-vk"></i></a>
-    <a href="#"><i class="fab fa-telegram"></i></a>
-    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="https://github.com/fhntv06" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="https://t.me/KArtech76" target="_blank"><i class="fab fa-telegram"></i></a>
+    <a href="https://vk.com/k.artem76" target="_blank"><i class="fab fa-vk"></i></a>
   </div>
 </aside>
 
@@ -278,12 +348,7 @@
       <p>Опишите проблему или проект. Мы оценим её и предложим решение: разовую работу или абонентское обслуживание.</p>
     </div>
 
-    <!-- Секция с формой -->
     <div class="form-container">
-      <div class="form-header">
-
-      </div>
-
       <form class="contact-form" data-controller="form">
         <div class="form-group">
           <input type="text" class="form-input" id="name" placeholder=" " required>
@@ -325,7 +390,7 @@
       </form>
     </div>
   </div>
-  <div id="close-modal" class="close-modal">
+  <div class="close-modal" data-controller-modal-func="close">
     <i class="fas fa-times"></i>
   </div>
 </div>
@@ -344,7 +409,6 @@
   <div class="preloader__container">
     <svg id="preloader-svg" class="preloader__svg" width="1280" height="600" viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
       <defs>
-        <!-- Multiple gradients for complex animation -->
         <linearGradient id="mainGradient" x1="0%" y1="0%" x2="100%" y2="0%">
           <stop offset="0%" stop-color="#ff6b6b">
             <animate attributeName="offset" values="-2;2" dur="3s" repeatCount="indefinite"/>
@@ -372,7 +436,6 @@
           </stop>
         </linearGradient>
 
-        <!-- Glow effects -->
         <filter id="pulseGlow" x="-50%" y="-50%" width="200%" height="200%">
           <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
           <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -8" result="glow"/>
@@ -384,49 +447,41 @@
           <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 30 -7"/>
         </filter>
 
-        <!-- Pattern for background effect -->
         <pattern id="grid" patternUnits="userSpaceOnUse" width="50" height="50">
           <path d="M 0 0 L 50 0 50 50 0 50 Z" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
         </pattern>
       </defs>
 
-      <!-- Background grid -->
       <rect width="100%" height="100%" fill="url(#grid)" opacity="0.5"/>
 
-      <!-- Base white text (subtle) -->
       <text x="400" y="150" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="80" fill="rgba(255,255,255,0.1)" opacity="0.5">
-        KARTECH
+        KARTEMAKE
       </text>
 
-      <!-- Main animated stroke -->
       <text x="400" y="150" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="80" fill="none" stroke="url(#mainGradient)" stroke-width="2" stroke-dasharray="1000" stroke-dashoffset="1000">
-        KARTECH
+        KARTEMAKE
         <animate attributeName="stroke-dashoffset" values="1000;0;1000" dur="4s" repeatCount="indefinite"/>
         <animate attributeName="stroke-width" values="2;3;2" dur="2s" repeatCount="indefinite"/>
       </text>
 
-      <!-- Secondary stroke (reverse direction) -->
       <text x="400" y="150" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="80" fill="none" stroke="url(#secondaryGradient)" stroke-width="1" stroke-dasharray="800" stroke-dashoffset="800" opacity="0.7">
-        KARTECH
+        KARTEMAKE
         <animate attributeName="stroke-dashoffset" values="800;1600;800" dur="3.5s" repeatCount="indefinite"/>
       </text>
 
-      <!-- Pulsating glow effect -->
       <text x="400" y="150" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="80" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="4" opacity="0">
-        KARTECH
+        KARTEMAKE
         <animate attributeName="opacity" values="0;0.5;0" dur="2s" repeatCount="indefinite"/>
         <animate attributeName="stroke-width" values="4;8;4" dur="2s" repeatCount="indefinite"/>
       </text>
 
-      <!-- Individual letter animations -->
       <g class="letter-pulses" opacity="0.8">
         <text x="400" y="150" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="80" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1">
-          KARTECH
+          KARTEMAKE
           <animate attributeName="stroke-width" values="1;2;1" dur="1.5s" repeatCount="indefinite"/>
         </text>
       </g>
 
-      <!-- Floating particles -->
       <g class="particles" opacity="0.6">
         <circle cx="100" cy="100" r="2" fill="#ff6b6b">
           <animate attributeName="cx" values="100;500;100" dur="8s" repeatCount="indefinite"/>
@@ -456,15 +511,19 @@
         </circle>
       </g>
 
-      <!-- Final white text (hidden until load) -->
       <text x="400" y="150" text-anchor="middle" class="final-text" font-family="Arial Black, sans-serif" font-size="80" fill="white" filter="url(#strongGlow)" opacity="0">
-        KARTECH
+        KARTEMAKE
       </text>
     </svg>
   </div>
 </div>
 <!-- stars-container -->
 <canvas id="stars-canvas" data-controller-starfield="item"></canvas>
+<!-- scroll-progress -->
+<div class="scroll-progress color-accent-red" id="scrollProgress" data-controller-scroll-progress="item"></div>
+
+<!-- back-to-top -->
+<a href="#hero" class="to-top" data-controller-anchor="item" data-controller-ripple-effect="item">↑</a>
+
 </body>
 </html>
-```

@@ -2,6 +2,7 @@
 
 .stats {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   margin: offsets.$middle 0;
 }

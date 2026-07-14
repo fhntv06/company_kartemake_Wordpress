@@ -1,30 +1,44 @@
 export class BurgerMenuController {
-  constructor(controllerName, container) {
+    constructor(controllerName, container) {
+      this.items = Array.from(container.querySelectorAll(`[data-controller-${controllerName}="item"]`))
+
+    if (!this.items.length) {
+      throw new Error(`No have controller items in ${controllerName}`)
+    }
+
+    this.classActive = 'active'
+    this.classOpen = 'open'
+    // this.activeButton = null
+
+    this.sidebar = document.getElementById('sidebar-burger-menu');
+    this.overlay = document.getElementById('overlay');
+
     this.init()
   }
   init = () => {
-    const burgerMenu = document.getElementById('burgerMenu');
-    const sidebar = document.getElementById('sidebar-burger-menu');
-    const overlay = document.getElementById('overlay');
+    this.items.forEach((button) => button.addEventListener('click', this.openMenu))
+    this.overlay.addEventListener('click', this.closeMenu);
+  }
+  openMenu = (e) => {
+    // const button = e.target
 
-    // Открытие/закрытие sidebar
-    burgerMenu.addEventListener('click', function() {
-      sidebar.classList.toggle('open')
-      overlay.classList.toggle('active')
-      burgerMenu.classList.toggle('active')
+    // this.activeButton = button
 
-      // Блокировка скролла при открытом sidebar
-      document.body.style.overflow = sidebar.classList.contains('open')
-        ? 'hidden' :
-        ''
-    })
+    this.sidebar.classList.toggle(this.classOpen)
+    this.overlay.classList.toggle(this.classActive)
+    // button.classList.toggle(this.classActive)
 
-    // Закрытие sidebar при клике на overlay
-    overlay.addEventListener('click', function() {
-      sidebar.classList.remove('open');
-      overlay.classList.remove('active');
-      burgerMenu.classList.remove('active');
-      document.body.style.overflow = '';
-    });
+    // Блокировка скролла при открытом sidebar
+    document.body.style.overflow = this.sidebar.classList.contains('open')
+      ? 'hidden' :
+      ''
+  }
+  closeMenu = (e) => {
+    this.items.forEach(button => button.classList.remove(this.classActive))
+
+    this.sidebar.classList.remove('open');
+    e.target.classList.remove('active');
+    // this.activeButton.classList.remove('active');
+    document.body.style.overflow = '';
   }
 }

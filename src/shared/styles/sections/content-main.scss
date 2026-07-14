@@ -12,22 +12,34 @@
     padding-bottom: offsets.$extra-small;
     border-bottom: 1px solid var(--gray);
   }
+  .showreel {
+    padding: 32px;
+
+    & .showreel-overlay {
+      h4, p {
+        color: #fff;
+      }
+    }
+  }
   .showreel,
   .content-image {
     height: 400px;
   }
-  ul {
+  ul, ol, div {
     & + p {
-      margin-top: offsets.$middle;
+      margin-top: offsets.$small;
     }
   }
   p {
     color: #666;
-
+    & + ul,
+    & + ol {
+      margin-top: offsets.$extra-small;
+    }
     & + p,
     & + div,
     & + ul {
-      margin-top: offsets.$middle;
+      //margin-top: offsets.$middle;
     }
   }
 }
@@ -58,6 +70,20 @@
     line-height: 1.6;
     color: var(--dark-text);
     margin: 0;
+
+    & + ul {
+      margin-top: 12px;
+    }
+  }
+}
+
+.results-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  & .stat {
+    flex: 1;
   }
 }
 
@@ -74,4 +100,152 @@
       color: var(--light-text);
     }
   }
+}
+
+/* ===== Таблицы ===== */
+.content-table {
+  width: 100%;
+  overflow-x: auto;
+  margin: 24px 0 32px 0;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+.content-table table {
+  width: 100%;
+  min-width: 600px;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.content-table thead {
+  background: rgba(255, 107, 107, 0.12);
+  border-bottom: 2px solid rgba(255, 107, 107, 0.25);
+}
+
+.content-table thead th {
+  padding: 14px 20px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-accent-red, #ff2e2e);
+  white-space: nowrap;
+}
+
+.content-table tbody tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  transition: background 0.2s ease;
+}
+
+.content-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.content-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.content-table tbody td {
+  padding: 12px 20px;
+  color: rgba(255, 255, 255, 0.85);
+  vertical-align: middle;
+}
+
+/* Цветовые индикаторы для ячеек с данными */
+.content-table tbody td:last-child {
+  font-weight: 500;
+}
+
+/* Статусы в таблице (опционально) */
+.content-table .status-critical {
+  color: #ff6b6b;
+  font-weight: 600;
+}
+
+.content-table .status-high {
+  color: #ff9f43;
+  font-weight: 600;
+}
+
+.content-table .status-medium {
+  color: #feca57;
+  font-weight: 500;
+}
+
+.content-table .status-low {
+  color: #4ecdc4;
+  font-weight: 500;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+  .content-table {
+    border-radius: 8px;
+    margin: 16px 0 24px 0;
+  }
+
+  .content-table table {
+    min-width: 500px;
+    font-size: 0.85rem;
+  }
+
+  .content-table thead th,
+  .content-table tbody td {
+    padding: 10px 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-table table {
+    min-width: 400px;
+    font-size: 0.78rem;
+  }
+
+  .content-table thead th,
+  .content-table tbody td {
+    padding: 8px 12px;
+  }
+}
+
+/* ===== Тёмная тема (если используется) ===== */
+[data-theme="dark"] .content-table {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+[data-theme="dark"] .content-table thead {
+  background: rgba(255, 107, 107, 0.08);
+}
+
+[data-theme="dark"] .content-table tbody td {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* ===== Светлая тема (если используется) ===== */
+[data-theme="light"] .content-table {
+  background: #f8f9fa;
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .content-table thead {
+  background: rgba(255, 107, 107, 0.08);
+  border-bottom-color: rgba(255, 107, 107, 0.2);
+}
+
+[data-theme="light"] .content-table tbody td {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+[data-theme="light"] .content-table tbody tr {
+  border-bottom-color: rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="light"] .content-table tbody tr:hover {
+  background: rgba(0, 0, 0, 0.03);
 }

@@ -3,42 +3,41 @@
 
 .hero {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 80px;
-  height: 100vh;
-}
-.hero-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.hero-text {
-  width: 50%;
+  min-height: 100dvh;
+  max-height: max-content;
 
-  h1, h2 {
+  h1 {
     margin-bottom: offsets.$small;
   }
-  p {
-    font-size: 20px;
-    line-height: 1.6;
-    margin-bottom: 40px;
-    color: #aaa;
-  }
+}
+.hero-content {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  column-gap: calc(offsets.$large);
+}
+.hero-text {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  gap: offsets.$middle;
+  padding-bottom: offsets.$middle;
+  max-width: 50%;
+}
+.hero-stats-particle {
+  flex: 1;
 }
 .hero-devices {
-  position: relative;
-  width: 45%;
-  height: 500px;
+  position: absolute;
+  top: 0;
+  right: calc(offsets.$small * 2);
+  width: 40%;
+  height: 100%;
   perspective: 1000px;
 
   &:hover {
     .device-screen {
       opacity: 1;
-    }
-    .laptop {
-      transform: translateX(-25%) rotate(0);
     }
     .tablet, .phone {
       transform: rotate(0);
@@ -98,26 +97,41 @@
   }
 }
 
-body.dark-theme {
-  .hero-text p {
-    color: #666;
-  }
-}
-
 @media (max-width: media.$middle) {
   .hero-text {
     z-index: 1;
-    width: 80%;
+    height: 100%;
+    min-width: 600px;
   }
   .hero-devices {
-    position: absolute;
-    top: calc(offsets.$middle * 3);
-    right: offsets.$middle;
+    .laptop {
+      right: 0;
+      left: unset;
+      transform: translateX(15%) rotateY(-20deg);
+
+      &:hover {
+        transform: translateX(15%) rotateY(0);
+      }
+    }
+    .tablet {
+      bottom: 0;
+      top: unset;
+    }
   }
 }
+@media (max-width: media.$lower-middle) {
+  .hero {
+    .hero-stats-particle {
+      display: none;
+    }
+  }
+}
+
 @media (max-width: media.$extra-small) {
   .hero-text {
-    width: 100%;
+    max-width: 100%;
+    min-width: 260px;
+    gap: offsets.$small;
   }
   .hero-devices {
     display: none;

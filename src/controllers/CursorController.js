@@ -3,10 +3,8 @@ export class CursorController {
     this.item = container.querySelector(`[data-controller-${controllerName}="item"]`)
 
     if (!this.item) {
-      console.error(`[CursorController] - No item found for controller: ${controllerName}`)
-      return
+      throw new Error(`No have controller item in ${controllerName}`)
     }
-
     if (window.innerWidth > 768) this.init()
     else this.item.remove()
   }

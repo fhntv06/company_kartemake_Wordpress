@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Рефакторинг legacy-кода: ускорение сайта в 3 раза | Технический блог KARTEMAKE</title>
+
+  <link rel="shortcut icon" href="../../public/images/logotypes/logo-dark.ico" type="image/x-icon">
+</head>
+<body data-controller="custom-cursor modal preloader ripple-effect starfield theme sidebar-anchor">
+<header class="header" data-controller="header">
+  <a href="/" class="logo">
+    <span class="font-size-h2">K</span>
+    <span class="font-size-h2">·</span>
+    <span class="font-size-h3 color-accent-red">ART</span>
+    <span class="font-size-h2">·</span>
+    <span class="font-size-h4">MAKE</span>
+  </a>
+
+  <nav class="nav-links">
+    <a href="services.html">Услуги</a>
+    <a class="active" href="blog.html">Технический блог</a>
+    <a href="support.html">Техподдержка</a>
+    <a href="contacts.html">Контакты</a>
+  </nav>
+
+  <div class="header-controls">
+    <div class="social-links">
+      <a href="https://github.com/fhntv06" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://t.me/KArtech76" target="_blank"><i class="fab fa-telegram"></i></a>
+      <a href="https://vk.com/k.artem76" target="_blank"><i class="fab fa-vk"></i></a>
+    </div>
+
+    <div class="phone">
+      <i class="fas fa-phone"></i>
+      <span>+7 (908) 946-14-83</span>
+    </div>
+
+    <button
+            class="theme-toggle"
+            data-controller-theme="item"
+    >
+      <i class="fas fa-moon"></i>
+    </button>
+
+    <!--
+    <button
+      class="language-toggle"
+      data-controller="lang"
+      data-controller-ripple-effect="item"
+    >
+      <span data-controller-lang="item">RU</span>
+      <i class="fas fa-chevron-down"></i>
+    </button>
+    -->
+
+    <button
+            class="cta-button"
+            data-controller-modal-open="form"
+            data-controller-modal-func="open"
+            data-controller-ripple-effect="item"
+    >
+      Обсудить задачу
+      <i class="fas fa-arrow-right"></i>
+    </button>
+
+    <button class="burger-menu" id="burgerMenu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+<main>
+  <section class="project-detail">
+    <div class="container">
+      <a href="blog.html" class="back-link">
+        <i class="fas fa-arrow-left"></i>
+        <span>Назад к блогу</span>
+      </a>
+
+      <div class="breadcrumbs">
+        <a href="index.html">Главная</a>
+        <span>/</span>
+        <a href="blog.html">Технический блог</a>
+        <span>/</span>
+        <span>Рефакторинг legacy-кода</span>
+      </div>
+
+      <h1 class="project-title">Рефакторинг <span class="color-accent-red">legacy-кода</span>: как мы ускорили сайт в 3 раза</h1>
+
+      <div class="project-meta">
+        <div>
+          <i class="far fa-clock"></i>
+          <span>Время чтения: 8 минут</span>
+        </div>
+        <div>
+          <i class="far fa-eye"></i>
+          <span>1,856 просмотров</span>
+        </div>
+        <div>
+          <i class="far fa-calendar"></i>
+          <span>2 ноября 2026</span>
+        </div>
+      </div>
+
+      <div class="project-tags">
+        <a href="#" class="project-tag">Рефакторинг</a>
+        <a href="#" class="project-tag">Оптимизация</a>
+        <a href="#" class="project-tag">Производительность</a>
+        <a href="#" class="project-tag">Legacy-код</a>
+        <a href="#" class="project-tag">Аутсорс</a>
+      </div>
+
+      <div class="project-summary">
+        <p class="project-description">
+          Работа с 10-летним кодом интернет-магазина: анализ архитектурных ошибок, устранение узких мест,
+          оптимизация запросов к БД и внедрение кэширования. Результат: время загрузки с 8 до 2.5 секунд.
+        </p>
+
+        <div class="project-author">
+          <div class="author-avatar">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Алексей, Fullstack-разработчик">
+          </div>
+          <div class="author-info">
+            <h4>Алексей</h4>
+            <p>Fullstack-разработчик, специалист по оптимизации</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-hero-image">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Рефакторинг legacy-кода">
+      </div>
+
+      <div class="project-content">
+        <div class="sidebar">
+          <nav class="sidebar__nav">
+            <h4 class="sidebar__title">Содержание</h4>
+            <ul>
+              <li><a href="#challenge" class="active">Проблема: 10-летний код</a></li>
+              <li><a href="#audit">Технический аудит</a></li>
+              <li><a href="#architecture">Архитектурные проблемы</a></li>
+              <li><a href="#optimization">Оптимизация и рефакторинг</a></li>
+              <li><a href="#results">Результаты</a></li>
+              <li><a href="#lessons">Уроки и выводы</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="content-main">
+          <div data-id="challenge" class="content-section">
+            <h4 class="content-section__title">Проблема: 10-летний код</h4>
+            <p>К нам обратился владелец интернет-магазина, который работал на одной и той же кодовой базе более 10 лет. За это время сайт обрастал новыми функциями без какой-либо архитектурной рефлексии. Основные проблемы:</p>
+
+            <div class="content-image">
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Проблемы legacy-кода">
+            </div>
+
+            <ul>
+              <li>Скорость загрузки страниц — <strong>8 секунд</strong> (критично для SEO и удержания клиентов)</li>
+              <li>Сложность добавления нового функционала — любые доработки занимали недели</li>
+              <li>Высокий порог входа для новых разработчиков</li>
+              <li>Отсутствие документации</li>
+              <li>Критические уязвимости безопасности из-за устаревших библиотек</li>
+              <li>База данных с неоптимизированными запросами</li>
+            </ul>
+
+            <div class="content-highlight">
+              <p><strong>Задача:</strong> провести полную реорганизацию кода без остановки работы магазина, сохранив весь существующий функционал.</p>
+            </div>
+          </div>
+
+          <div data-id="audit" class="content-section">
+            <h4 class="content-section__title">Технический аудит</h4>
+            <p>Первый этап — детальный аудит существующей кодовой базы. Мы использовали следующие инструменты:</p>
+
+            <ol class="tech-stack">
+              <li class="tech-item">Xdebug</li>
+              <li class="tech-item">Blackfire.io</li>
+              <li class="tech-item">PHPStan</li>
+              <li class="tech-item">Psalm</li>
+              <li class="tech-item">SonarQube</li>
+              <li class="tech-item">New Relic</li>
+            </ol>
+
+            <p>Результаты аудита показали:</p>
+
+            <div class="content-table">
+              <table>
+                <thead>
+                <tr>
+                  <th>Проблема</th>
+                  <th>Количество</th>
+                  <th>Влияние на производительность</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>N+1 запросов к БД</td>
+                  <td>47 мест</td>
+                  <td>Высокое</td>
+                </tr>
+                <tr>
+                  <td>Неиспользуемые зависимости</td>
+                  <td>23 библиотеки</td>
+                  <td>Среднее</td>
+                </tr>
+                <tr>
+                  <td>Уязвимости безопасности</td>
+                  <td>12 критических</td>
+                  <td>Критическое</td>
+                </tr>
+                <tr>
+                  <td>Глубокие вложенности if-else</td>
+                  <td>18 мест</td>
+                  <td>Среднее</td>
+                </tr>
+                <tr>
+                  <td>Устаревшие PHP-функции</td>
+                  <td>34</td>
+                  <td>Низкое</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div data-id="architecture" class="content-section">
+            <h4 class="content-section__title">Архитектурные проблемы</h4>
+            <p>Главная архитектурная проблема заключалась в отсутствии четкого разделения ответственности. Весь код был смешан в одном файле:</p>
+
+            <div class="content-highlight">
+              <p>"Один файл контроллера содержал более 5 000 строк кода, в которых были перемешаны запросы к БД, бизнес-логика, HTML-верстка и обработка форм."</p>
+            </div>
+
+            <p>Мы предложили архитектуру на основе MVC с четким разделением слоев:</p>
+
+            <div class="content-image">
+              <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="MVC архитектура">
+            </div>
+
+            <ul>
+              <li><strong>Models</strong> — работа с данными, бизнес-логика</li>
+              <li><strong>Views</strong> — только отображение данных</li>
+              <li><strong>Controllers</strong> — обработка запросов, координация</li>
+              <li><strong>Services</strong> — выделенная бизнес-логика</li>
+              <li><strong>Repositories</strong> — слой работы с БД</li>
+            </ul>
+          </div>
+
+          <div data-id="optimization" class="content-section">
+            <h4 class="content-section__title">Оптимизация и рефакторинг</h4>
+            <p>Мы реализовали комплексную программу оптимизации:</p>
+
+            <div class="integration-list">
+              <div class="integration-item">
+                <h5><i class="fas fa-database color-accent-red"></i> Оптимизация запросов</h5>
+                <p>Переписали 47 N+1 запросов на один JOIN-запрос. Внедрили индексы в БД.</p>
+              </div>
+              <div class="integration-item">
+                <h5><i class="fas fa-bolt color-accent-red"></i> Кэширование</h5>
+                <p>Внедрили Redis для кэширования тяжелых запросов и рендеринга страниц.</p>
+              </div>
+              <div class="integration-item">
+                <h5><i class="fas fa-code color-accent-red"></i> Рефакторинг кода</h5>
+                <p>Разбили монолитный контроллер на отдельные классы по принципу Single Responsibility.</p>
+              </div>
+              <div class="integration-item">
+                <h5><i class="fas fa-shield-alt color-accent-red"></i> Безопасность</h5>
+                <p>Обновили все библиотеки, исправили уязвимости, внедрили строгую валидацию данных.</p>
+              </div>
+              <div class="integration-item">
+                <h5><i class="fas fa-tachometer-alt color-accent-red"></i> Frontend-оптимизация</h5>
+                <p>Минифицировали CSS/JS, внедрили lazy-loading для изображений.</p>
+              </div>
+              <div class="integration-item">
+                <h5><i class="fas fa-database color-accent-red"></i> Автотесты</h5>
+                <p>Написали > 200 юнит-тестов и интеграционных тестов для предотвращения регрессий.</p>
+              </div>
+            </div>
+
+            <p>Объем работ впечатляет:</p>
+            <div class="results-stats">
+              <div class="stat">
+                <div class="stat-number color-accent-red">5 000+</div>
+                <div class="stat-label">строк кода переписано</div>
+              </div>
+              <div class="stat">
+                <div class="stat-number color-accent-red">200+</div>
+                <div class="stat-label">автотестов написано</div>
+              </div>
+              <div class="stat">
+                <div class="stat-number color-accent-red">47</div>
+                <div class="stat-label">запросов оптимизировано</div>
+              </div>
+              <div class="stat">
+                <div class="stat-number color-accent-red">12</div>
+                <div class="stat-label">уязвимостей устранено</div>
+              </div>
+            </div>
+          </div>
+
+          <div data-id="results" class="content-section">
+            <h4 class="content-section__title">Результаты</h4>
+            <p>После 3 месяцев работы мы получили впечатляющие результаты:</p>
+
+            <div class="content-image">
+              <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Результаты оптимизации">
+            </div>
+
+            <div class="results-stats">
+              <div class="stat">
+                <div class="stat-number color-accent-red">8 → 2.5</div>
+                <div class="stat-label">секунды загрузки страницы</div>
+              </div>
+              <div class="stat">
+                <div class="stat-number color-accent-red">74%</div>
+                <div class="stat-label">ускорение работы сайта</div>
+              </div>
+              <div class="stat">
+                <div class="stat-number color-accent-red">3×</div>
+                <div class="stat-label">скорость разработки нового функционала</div>
+              </div>
+              <div class="stat">
+                <div class="stat-number color-accent-red">0</div>
+                <div class="stat-label">критических ошибок за месяц после рефакторинга</div>
+              </div>
+            </div>
+
+            <p>Дополнительные результаты:</p>
+            <ul>
+              <li>Снижение нагрузки на сервер на <strong>40%</strong></li>
+              <li>Увеличение конверсии на <strong>15%</strong> за счет скорости</li>
+              <li>Повышение позиций в поисковой выдаче</li>
+              <li>Новые разработчики начали вливаться в проект за 2 недели вместо 2 месяцев</li>
+            </ul>
+
+            <div class="content-highlight success">
+              <p><strong>Что сработало идеально:</strong></p>
+              <ul>
+                <li>Детальный аудит перед началом рефакторинга</li>
+                <li>Постепенный подход — рефакторинг по модулям</li>
+                <li>Автотесты на каждом этапе</li>
+                <li>Регулярные демонстрации клиенту</li>
+              </ul>
+            </div>
+          </div>
+          <div class="content-section">
+            <h4>Нужна миграция или техническая поддержка ваших проектов?</h4>
+            <p>Мы можем провести бесплатный аудит вашей текущей инфраструктуры и предложить план миграции или оптимизации.</p>
+            <button
+                    class="button button--accent cta-button"
+                    data-controller-modal-open="form"
+                    data-controller-modal-func="open"
+                    data-controller-ripple-effect="item"
+            >
+              Заказать аудит
+            </button>
+          </div>
+        </div>
+
+        <div class="related-sidebar">
+          <div class="related-projects">
+            <h4 class="sidebar__title">Похожие кейсы</h4>
+            <a href="migration-bitrix-50-sites.html" class="related-project">
+              <h5 class="related-project__title">Миграция 50+ сайтов на 1С-Битрикс без простоя бизнеса</h5>
+              <p class="related-project__description">Организация процесса миграции, автоматизация переноса данных</p>
+              <span class="related-project__meta">12 мин · 2,345 просмотров</span>
+            </a>
+            <a href="integration-bitrix24-1c-wordpress.html" class="related-project">
+              <h5 class="related-project__title">Сложная интеграция: Битрикс24 + 1С + WordPress</h5>
+              <p class="related-project__description">Автоматизация заказов, синхронизация остатков, обработка платежей</p>
+              <span class="related-project__meta">10 мин · 1,732 просмотра</span>
+            </a>
+            <a href="security-audit-15-vulnerabilities.html" class="related-project">
+              <h5 class="related-project__title">Технический аудит безопасности: 15 уязвимостей за 3 дня</h5>
+              <p class="related-project__description">Комплексный аудит корпоративного портала, устранение критических уязвимостей</p>
+              <span class="related-project__meta">7 мин · 1,945 просмотров</span>
+            </a>
+            <a href="tech-partner-for-agencies.html" class="related-project">
+              <h5 class="related-project__title">Технический партнер для digital-агентств: кейс совместной работы</h5>
+              <p class="related-project__description">Как агентство передало нам техническую часть 20+ проектов</p>
+              <span class="related-project__meta">5 мин · 1,623 просмотра</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-form">
+    <div class="form-container">
+      <div class="form-header">
+        <h3>Нужна оптимизация вашего проекта? <span class="color-accent-red">Закажите аудит</span></h3>
+        <p>Проведем бесплатный аудит производительности и предложим план рефакторинга вашего кода</p>
+      </div>
+      <form class="contact-form" data-controller="form">
+        <div class="form-group">
+          <input type="text" class="form-input" name="name" id="name-project-form" placeholder=" " required>
+          <label for="name-project-form" class="form-label">Имя</label>
+        </div>
+
+        <div class="form-group">
+          <input type="text" class="form-input" name="company" id="company-project-form" placeholder=" ">
+          <label for="company-project-form" class="form-label">Название компании</label>
+        </div>
+
+        <div class="form-group">
+          <input type="email" class="form-input" name="email" id="email-project-form" placeholder=" ">
+          <label for="email-project-form" class="form-label">Email</label>
+        </div>
+
+        <div class="form-group">
+          <input type="tel" class="form-input" name="phone" id="phone-project-form" placeholder=" " required>
+          <label for="phone-project-form" class="form-label">Телефон</label>
+        </div>
+
+        <div class="form-group full-width">
+          <textarea class="form-input" name="message" id="message-project-form" placeholder=" " required rows="4"></textarea>
+          <label for="message-project-form" class="form-label">Опишите ваш проект: какие проблемы производительности вас беспокоят?</label>
+        </div>
+
+        <div class="form-button">
+          <button class="cta-button" type="submit" data-controller-ripple-effect="item">
+            Заказать аудит
+            <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+
+        <p class="form-notice">Нажимая на кнопку, вы соглашаетесь с политикой конфиденциальности. Мы ответим в течение 24 часов.</p>
+      </form>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="footer-content">
+    <div class="footer-logo color-whitesmoke">
+      <span>K</span>·<span class="color-accent-red">ART</span>·<span>MAKE</span>
+    </div>
+
+    <div class="footer-info">
+      <p>Ваш внешний технический отдел. Поддержка и развитие digital-продуктов</p>
+    </div>
+
+    <div class="footer-cta">
+      <button
+              class="cta-button"
+              data-controller-modal-open="form"
+              data-controller-modal-func="open"
+              data-controller-ripple-effect="item"
+      >
+        Обсудить задачу
+        <i class="fas fa-arrow-right"></i>
+      </button>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="copyright">KARTEMAKE © 2026. Ваш партнер по веб-инфраструктуре.</div>
+  </div>
+</footer>
+
+<!-- Overlay для затемнения фона -->
+<div class="overlay" id="overlay"></div>
+
+<aside class="sidebar-burger-menu" id="sidebar-burger-menu">
+  <nav>
+    <ul class="sidebar-nav">
+      <li><a href="services.html">Услуги</a></li>
+      <li><a class="active" href="blog.html">Технический блог</a></li>
+      <li><a href="support.html">Техподдержка</a></li>
+      <li><a href="contacts.html">Контакты</a></li>
+    </ul>
+  </nav>
+
+  <button
+          class="cta-button"
+          data-controller-modal-open="form"
+          data-controller-modal-func="open"
+          data-controller-ripple-effect="item"
+  >
+    Обсудить задачу
+    <i class="fas fa-arrow-right"></i>
+  </button>
+
+  <div class="sidebar-social">
+    <button class="theme-toggle" data-controller-theme="item">
+      <i class="fas fa-moon"></i>
+    </button>
+    <!--
+    <button
+      class="language-toggle"
+      data-controller="lang"
+      data-controller-ripple-effect="item"
+    >
+      <span data-controller-lang="item">RU</span>
+      <i class="fas fa-chevron-down"></i>
+    </button>
+    -->
+  </div>
+  <div class="sidebar-social">
+    <a href="https://github.com/fhntv06" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="https://t.me/KArtech76" target="_blank"><i class="fab fa-telegram"></i></a>
+    <a href="https://vk.com/k.artem76" target="_blank"><i class="fab fa-vk"></i></a>
+  </div>
+</aside>
+
+<div id="form" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3>Обсудить техническую задачу</h3>
+      <p>Опишите проблему или задачу — мы проведем бесплатный аудит и предложим решение</p>
+    </div>
+
+    <div class="form-container">
+      <form class="contact-form" data-controller="form">
+        <div class="form-group">
+          <input type="text" class="form-input" id="name" name="name" placeholder=" " required>
+          <label for="name" class="form-label">Имя</label>
+        </div>
+
+        <div class="form-group">
+          <input type="text" class="form-input" id="company" name="company" placeholder=" ">
+          <label for="company" class="form-label">Название компании</label>
+        </div>
+
+        <div class="form-group">
+          <input type="email" class="form-input" id="email" name="email" placeholder=" ">
+          <label for="email" class="form-label">Email</label>
+        </div>
+
+        <div class="form-group">
+          <input type="tel" class="form-input" id="phone" name="phone" placeholder=" " required>
+          <label for="phone" class="form-label">Телефон</label>
+        </div>
+
+        <div class="form-group full-width">
+          <textarea class="form-input" id="message" name="message" placeholder=" " required rows="4"></textarea>
+          <label for="message" class="form-label">Опишите вашу техническую задачу или проблему</label>
+        </div>
+
+        <div class="form-group">
+          <select class="form-input" name="type" id="type">
+            <option value="">Выберите тип задачи</option>
+            <option value="support">Техническая поддержка сайта</option>
+            <option value="development">Разработка/доработка</option>
+            <option value="migration">Миграция/модернизация</option>
+            <option value="audit">Аудит безопасности/производительности</option>
+            <option value="consulting">Консультация</option>
+            <option value="other">Другое</option>
+          </select>
+          <label for="type" class="form-label">Тип задачи</label>
+        </div>
+
+        <div class="form-button">
+          <button type="submit" class="cta-button">
+            Отправить задачу
+            <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+
+        <p class="form-notice">Нажимая на кнопку, вы соглашаетесь с политикой конфиденциальности</p>
+      </form>
+    </div>
+  </div>
+  <div id="close-modal" class="close-modal">
+    <i class="fas fa-times"></i>
+  </div>
+</div>
+
+<!--
+<div id="showreel" class="modal">
+  <div class="modal-content">
+    <iframe class="modal-video" src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0" allowfullscreen></iframe>
+  </div>
+  <div class="close-modal">
+    <i class="fas fa-times"></i>
+  </div>
+</div>
+-->
+
+<div class="lines">
+  <div class="line line-1"></div>
+  <div class="line line-2"></div>
+  <div class="line line-3"></div>
+  <div class="line line-4"></div>
+  <div class="line line-5"></div>
+</div>
+<div id="custom-cursor" class="custom-cursor" data-controller-custom-cursor="item"></div>
+<div class="preloader" data-controller-preloader="item">
+  <div class="preloader__container">
+    <svg id="preloader-svg" class="preloader__svg" width="1280" height="600" viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="mainGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#ff6b6b">
+            <animate attributeName="offset" values="-2;2" dur="3s" repeatCount="indefinite"/>
+          </stop>
+          <stop offset="33%" stop-color="#4ecdc4">
+            <animate attributeName="offset" values="-1;3" dur="3s" repeatCount="indefinite"/>
+          </stop>
+          <stop offset="66%" stop-color="#45b7d1">
+            <animate attributeName="offset" values="0;4" dur="3s" repeatCount="indefinite"/>
+          </stop>
+          <stop offset="100%" stop-color="#ff6b6b">
+            <animate attributeName="offset" values="1;5" dur="3s" repeatCount="indefinite"/>
+          </stop>
+        </linearGradient>
+        <linearGradient id="secondaryGradient" x1="100%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#ffd93d">
+            <animate attributeName="offset" values="0;1" dur="2.5s" repeatCount="indefinite"/>
+          </stop>
+          <stop offset="50%" stop-color="#6c5ce7">
+            <animate attributeName="offset" values="0.5;1.5" dur="2.5s" repeatCount="indefinite"/>
+          </stop>
+          <stop offset="100%" stop-color="#ffd93d">
+            <animate attributeName="offset" values="1;2" dur="2.5s" repeatCount="indefinite"/>
+          </stop>
+        </linearGradient>
+        <filter id="pulseGlow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -8" result="glow"/>
+          <feComposite in="SourceGraphic" in2="glow" operator="over"/>
+        </filter>
+        <filter id="strongGlow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur"/>
+          <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 30 -7"/>
+        </filter>
+        <pattern id="grid" patternUnits="userSpaceOnUse" width="50" height="50">
+          <path d="M 0 0 L 50 0 50 50 0 50 Z" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#grid)" opacity="0.5"/>
+      <text x="400" y="150" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="80" fill="rgba(255,255,255,0.1)" opacity="0.5">KARTEMAKE</text>
+      <text x="400" y="150" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="80" fill="none" stroke="url(#mainGradient)" stroke-width="2" stroke-dasharray="1000" stroke-dashoffset="1000">KARTEMAKE
+        <animate attributeName="stroke-dashoffset" values="1000;0;1000" dur="4s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-width" values="2;3;2" dur="2s" repeatCount="indefinite"/>
+      </text>
+      <text x="400" y="150" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="80" fill="none" stroke="url(#secondaryGradient)" stroke-width="1" stroke-dasharray="800" stroke-dashoffset="800" opacity="0.7">KARTEMAKE
+        <animate attributeName="stroke-dashoffset" values="800;1600;800" dur="3.5s" repeatCount="indefinite"/>
+      </text>
+      <text x="400" y="150" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="80" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="4" opacity="0">KARTEMAKE
+        <animate attributeName="opacity" values="0;0.5;0" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-width" values="4;8;4" dur="2s" repeatCount="indefinite"/>
+      </text>
+      <g class="letter-pulses" opacity="0.8">
+        <text x="400" y="150" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="80" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1">KARTEMAKE
+          <animate attributeName="stroke-width" values="1;2;1" dur="1.5s" repeatCount="indefinite"/>
+        </text>
+      </g>
+      <g class="particles" opacity="0.6">
+        <circle cx="100" cy="100" r="2" fill="#ff6b6b">
+          <animate attributeName="cx" values="100;500;100" dur="8s" repeatCount="indefinite"/>
+          <animate attributeName="cy" values="100;200;100" dur="6s" repeatCount="indefinite"/>
+          <animate attributeName="r" values="2;4;2" dur="3s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="700" cy="200" r="3" fill="#4ecdc4">
+          <animate attributeName="cx" values="700;300;700" dur="7s" repeatCount="indefinite"/>
+          <animate attributeName="cy" values="200;100;200" dur="5s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="300" cy="250" r="2.5" fill="#45b7d1">
+          <animate attributeName="cx" values="300;600;300" dur="9s" repeatCount="indefinite"/>
+          <animate attributeName="cy" values="250;150;250" dur="4s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="100" cy="100" r="2" fill="#ffd93d">
+          <animate attributeName="cx" values="200;350;150" dur="8s" repeatCount="indefinite"/>
+          <animate attributeName="cy" values="50;600;150" dur="6s" repeatCount="indefinite"/>
+          <animate attributeName="r" values="2;4;2" dur="3s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="700" cy="200" r="3" fill="#6c5ce7">
+          <animate attributeName="cx" values="600;450;750" dur="7s" repeatCount="indefinite"/>
+          <animate attributeName="cy" values="10;150;200" dur="5s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="300" cy="250" r="2.5" fill="#4ecdc4">
+          <animate attributeName="cx" values="700;600;100" dur="9s" repeatCount="indefinite"/>
+          <animate attributeName="cy" values="650;150;350" dur="4s" repeatCount="indefinite"/>
+        </circle>
+      </g>
+      <text x="400" y="150" text-anchor="middle" class="final-text" font-family="Arial Black, sans-serif" font-size="80" fill="white" filter="url(#strongGlow)" opacity="0">KARTEMAKE</text>
+    </svg>
+  </div>
+</div>
+<canvas id="stars-canvas" data-controller-starfield="item"></canvas>
+</body>
+</html>

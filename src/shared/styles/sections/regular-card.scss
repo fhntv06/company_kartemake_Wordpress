@@ -18,7 +18,13 @@
       transform: scale(1.1);
     }
     .regular-title {
-      color: var(--accent-red);
+      a {
+        color: var(--accent-red);
+
+        &::after {
+          width: 100%;
+        }
+      }
     }
     &.regular-read-more {
       opacity: 1;
