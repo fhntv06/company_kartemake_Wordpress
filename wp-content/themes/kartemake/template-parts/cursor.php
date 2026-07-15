@@ -1,0 +1,1 @@
+<div id="custom-cursor" class="custom-cursor" data-controller-custom-cursor="item"></div>

@@ -1,0 +1,1 @@
+<a href="#hero" class="to-top" data-controller-anchor="item" data-controller-ripple-effect="item">↑</a>
