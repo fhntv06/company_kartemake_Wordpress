@@ -4,22 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f436328a-f833-435e-b59f-dc03317a5ed7" name="Changes" comment="update .gitignore">
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/chatplace-integration-instagram-telegram.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/chatplace-integration-instagram-telegram.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/styles/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/styles/index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/styles/sections/content-main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/styles/sections/content-main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/styles/sections/project-detail.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/styles/sections/project-detail.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/styles/sections/project-hero-image.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/styles/sections/project-hero-image.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/styles/sections/related-sidebar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/styles/sections/related-sidebar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/styles/sections/sidebar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/styles/sections/sidebar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/styles/ui/author.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/styles/ui/author.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/styles/ui/breadcrumbs.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/styles/ui/breadcrumbs.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/styles/variables/offsets.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/styles/variables/offsets.scss" afterDir="false" />
-    </list>
+    <list default="true" id="f436328a-f833-435e-b59f-dc03317a5ed7" name="Changes" comment="update .gitignore" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
