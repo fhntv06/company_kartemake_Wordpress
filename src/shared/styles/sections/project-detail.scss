@@ -1,13 +1,14 @@
 @use '../variables/offsets' as offsets;
+@use '../variables/media' as media;
 
 .back-link {
   display: flex;
   align-items: center;
-  gap: 10px;
+  column-gap: calc(offsets.$extra-small / 2);
   width: fit-content;
   color: var(--dark-text);
   text-decoration: none;
-  margin-bottom: offsets.$extra-small;
+  margin-bottom: calc(offsets.$extra-small / 2);
   transition: var(--transition);
 
   &:hover {
@@ -17,7 +18,7 @@
 
 .project-meta {
   display: flex;
-  gap: 30px;
+  gap: offsets.$small;
   margin-bottom: offsets.$middle;;
   color: var(--gray-text);
 
@@ -37,7 +38,7 @@
 .project-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: offsets.$extra-small;
   margin-bottom: offsets.$middle;
 }
 .project-tag {
@@ -59,11 +60,6 @@
   }
 }
 
-body.light-theme .project-tag {
-  background-color: #e5e5e5;
-  color: var(--dark-text);
-}
-
 .project-summary {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -75,15 +71,61 @@ body.light-theme .project-tag {
   color: var(--gray-text);
 }
 .project-content {
-  display: flex;
-  gap: offsets.$small;
+  display: grid;
+  column-gap: offsets.$small;
+  grid-template-columns: repeat(12, 1fr);
 }
 
+@media (max-width: media.$lower-middle) {
+  .project-title {
+    margin-bottom: offsets.$small;
+  }
+  .project-content {
+    column-gap: offsets.$extra-small;
+  }
+  .project-meta,
+  .project-tags,
+  .project-summary {
+    margin-bottom: offsets.$small;
+  }
+
+}
+@media (max-width: media.$extra-small) {
+  .project-content {
+    row-gap: offsets.$small;
+  }
+  .project-title {
+    margin-bottom: offsets.$extra-small;
+  }
+  .project-meta {
+    margin-bottom: offsets.$extra-small;
+  }
+  .project-summary {
+    row-gap: offsets.$extra-small;
+  }
+}
+@media (max-width: calc(media.$lower-middle / 2)) {
+  .project-summary {
+    grid-template-columns: repeat(6, 1fr);
+    gap: offsets.$extra-small;
+  }
+  .project-description,
+  .project-author {
+    grid-column: 1/-1;
+  }
+  .project-content {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
 [data-theme="dark"] {
   .back-link {
     color: var(--light-text);
   }
   .project-description {
     color: #aaa;
+  }
+  .project-tag {
+    background-color: #e5e5e5;
+    color: var(--dark-text);
   }
 }

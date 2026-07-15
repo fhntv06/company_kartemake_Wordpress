@@ -2,7 +2,7 @@
 @use "../variables/media" as media;
 
 .sidebar {
-  width: 20%;
+  grid-column: span 2;
 }
 .sidebar__title {
   margin-bottom: offsets.$extra-small;
@@ -11,11 +11,9 @@
 }
 .sidebar__nav {
   position: sticky;
-  top: 160px;
+  top: offsets.$offset-top-from-header;
 
-  ul {
-    list-style: none;
-  }
+
   a {
     color: #aaa;
     text-decoration: none;
@@ -42,6 +40,24 @@
 }
 @media (max-width: media.$middle) {
   .sidebar__nav {
-    top: 200px;
+    top: calc(offsets.$offset-top-from-header + 10px);
+  }
+}
+@media (max-width: media.$lower-middle) {
+  .sidebar {
+    grid-column: span 3;
+  }
+}
+@media (max-width: media.$extra-small) {
+  .sidebar {
+    grid-column: span 3;
+  }
+  .sidebar__nav {
+    top: calc(offsets.$offset-top-from-header - 20px);
+  }
+}
+@media (max-width: calc(media.$lower-middle / 2)) {
+  .sidebar {
+    display: none;
   }
 }

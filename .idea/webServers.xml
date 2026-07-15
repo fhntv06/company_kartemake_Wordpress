@@ -2,8 +2,8 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="0f77a402-b725-45a8-991b-dc57f32d54c8" name="kartemake">
-        <fileTransfer rootFolder="/home/c/cu49721/kartemake.ru/public_html" accessType="SFTP" host="vh276.timeweb.ru" port="22" sshConfigId="42da25a8-8a7c-4f1d-9fda-094e04045286" sshConfig="cu49721@vh276.timeweb.ru:22 password">
+      <webServer id="0f77a402-b725-45a8-991b-dc57f32d54c8" name="kartemake" url="">
+        <fileTransfer rootFolder="/kartemake.ru/public_html" host="vh276.timeweb.ru" port="21">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>

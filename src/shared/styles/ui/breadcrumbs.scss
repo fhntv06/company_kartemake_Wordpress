@@ -1,7 +1,10 @@
+@use '../variables/offsets' as offsets;
+@use '../variables/media' as media;
+
 .breadcrumbs {
   display: flex;
-  gap: 10px;
-  margin-bottom: 30px;
+  column-gap: calc(offsets.$extra-small / 2);
+  margin-bottom: offsets.$extra-small;
   font-size: 14px;
   color: #aaa;
 

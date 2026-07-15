@@ -1,4 +1,5 @@
 @use '../variables/offsets' as offsets;
+@use '../variables/media' as media;
 
 .project-author {
   grid-column: 10 / span 3;
@@ -30,6 +31,12 @@
   p {
     font-size: 14px;
     color: var(--gray-text);
+  }
+}
+
+@media (max-width: media.$lower-middle) {
+  .project-author {
+    grid-column: 1 / span 5;
   }
 }
 

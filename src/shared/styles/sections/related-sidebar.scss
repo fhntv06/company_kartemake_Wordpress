@@ -2,11 +2,11 @@
 @use "../variables/media" as media;
 
 .related-sidebar {
-  width: 30%;
+  grid-column: span 4;
 }
 .related-projects {
   position: sticky;
-  top: 160px;
+  top: offsets.$offset-top-from-header;
   display: flex;
   flex-direction: column;
 
@@ -37,8 +37,6 @@
   }
 }
 
-body.light-theme .related-project
-
 [data-theme="dark"] {
   .related-project {
     color: var(--light-text);
@@ -48,9 +46,22 @@ body.light-theme .related-project
     }
   }
 }
-
 @media (max-width: media.$middle) {
   .related-projects {
-    top: 200px;
+    top: calc(offsets.$offset-top-from-header + 10px);
+  }
+}
+
+@media (max-width: media.$lower-middle) {
+  .related-sidebar {
+    grid-column: span 3;
+  }
+}
+@media (max-width: media.$extra-small) {
+  .related-sidebar {
+    grid-column: 1/-1;
+  }
+  .related-projects {
+    top: calc(offsets.$offset-top-from-header - 20px);
   }
 }

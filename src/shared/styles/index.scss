@@ -91,4 +91,8 @@ button, input, textarea {
 }
 ul {
     list-style: none;
+
+    li:not(:last-child) {
+        margin-bottom: 16px;
+    }
 }

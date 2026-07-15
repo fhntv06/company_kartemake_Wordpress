@@ -11,16 +11,16 @@
 <body data-controller="custom-cursor modal preloader ripple-effect starfield theme sidebar-anchor">
 <header class="header" data-controller="header">
   <a href="/" class="logo">
-    <span class="font-size-h2">K</span>
-    <span class="font-size-h2">·</span>
-    <span class="font-size-h3 color-accent-red">Artem</span>
-    <span class="font-size-h2">·</span>
-    <span class="font-size-h4">Make</span>
+    <span class="font-size-h3">K</span>
+    <span class="font-size-h3">·</span>
+    <span class="font-size-h4 color-accent-red">ART</span>
+    <span class="font-size-h3">·</span>
+    <span class="font-size-h5">MAKE</span>
   </a>
 
   <nav class="nav-links">
     <a href="services.html">Услуги</a>
-    <a class="active" href="blog.html">Технический блог</a>
+    <a href="blog.html">Технический блог</a>
     <a href="support.html">Техподдержка</a>
     <a href="contacts.html">Контакты</a>
   </nav>
@@ -61,11 +61,11 @@
             data-controller-modal-func="open"
             data-controller-ripple-effect="item"
     >
-      Обсудить задачу
+      Начать проект
       <i class="fas fa-arrow-right"></i>
     </button>
 
-    <button class="burger-menu" id="burgerMenu">
+    <button class="burger-menu" id="burgerMenu" data-controller-burger-menu="item">
       <span></span>
       <span></span>
       <span></span>
@@ -88,7 +88,9 @@
         <span>Интеграция Chatplace</span>
       </div>
 
-      <h1 class="project-title">Как экскурсоводам использовать <span class="color-accent-red">Chatplace + Instagram + Telegram</span>: интеграция и практика</h1>
+      <h1 class="project-title">
+        <span class="color-accent-red">Chatplace, Instagram, Telegram</span>: интеграция и практика
+      </h1>
 
       <div class="project-meta">
         <div>
@@ -159,7 +161,7 @@
             <h4 class="content-section__title">Введение</h4>
             <p>Экскурсоводы и гиды сегодня сталкиваются с одной и той же проблемой: запросы от клиентов приходят отовсюду. Сообщения в Instagram, Telegram, заявки с сайта, личные сообщения в WhatsApp и VK — все это нужно обрабатывать, не теряя ни одного клиента.</p>
 
-            <p>На практике это выглядит так:</p>
+            <p><strong>На практике это выглядит так</strong>:</p>
             <ul>
               <li>Утром вы отвечаете на 5 сообщений в Instagram</li>
               <li>Через час приходит запрос в Telegram</li>
@@ -411,9 +413,9 @@
             </ul>
           </div>
 
-          <div class="content-section">
-            <h4>Хотите настроить подобную интеграцию для вашего бизнеса?</h4>
-            <p>Поможем подключить Chatplace, Instagram и Telegram, настроить процессы и обучить сотрудников.</p>
+          <div class="content-section content-section__cta">
+            <h4 class="content-section__title">Хотите настроить интеграцию для вашего бизнеса?</h4>
+            <p><strong>Поможем подключить</strong>: Chatplace, Instagram и Telegram, настроить процессы и обучить сотрудников.</p>
             <button
                     class="cta-button"
                     data-controller-modal-open="form"
@@ -450,7 +452,7 @@
   </section>
 
   <section class="project-form">
-    <div class="form-container">
+    <div class="form-container container">
       <div class="form-header">
         <h3>Хотите настроить интеграцию для вашего бизнеса? <span class="color-accent-red">Обсудим решение</span></h3>
         <p>Поможем подключить платформы, настроить процессы и автоматизировать работу с клиентами</p>
@@ -525,12 +527,15 @@
 
 <!-- Sidebar burger menu -->
 <aside class="sidebar-burger-menu" id="sidebar-burger-menu">
+  <div class="close-modal" data-controller-burger-menu="item">
+    <i class="fas fa-times"></i>
+  </div>
   <nav>
     <ul class="sidebar-nav">
       <li><a href="services.html">Услуги</a></li>
-      <li><a class="active" href="blog.html">Технический блог</a></li>
+      <li><a href="blog.html">Технический блог</a></li>
       <li><a href="support.html">Техподдержка</a></li>
-      <li><a href="contacts.html">Контакты</a></li>
+      <li><a class="active" href="contacts.html">Контакты</a></li>
     </ul>
   </nav>
 
@@ -566,38 +571,38 @@
   </div>
 </aside>
 
-<!-- Modal form -->
+<!-- modal form -->
 <div id="form" class="modal">
   <div class="modal-content">
     <div class="modal-header">
-      <h3>Обсудить техническую задачу</h3>
-      <p>Опишите проблему или задачу — мы проведем бесплатный аудит и предложим решение</p>
+      <h3>Описать техническую задачу</h3>
+      <p>Опишите проблему или задачу — мы предложим решение и расценки в течение 24 часов</p>
     </div>
 
     <div class="form-container">
       <form class="contact-form" data-controller="form">
         <div class="form-group">
-          <input type="text" class="form-input" id="name" name="name" placeholder=" " required>
+          <input type="text" class="form-input" name="name" id="name" placeholder=" " required>
           <label for="name" class="form-label">Имя</label>
         </div>
 
         <div class="form-group">
-          <input type="text" class="form-input" id="company" name="company" placeholder=" ">
+          <input type="text" class="form-input" name="company" id="company" placeholder=" ">
           <label for="company" class="form-label">Название компании</label>
         </div>
 
         <div class="form-group">
-          <input type="email" class="form-input" id="email" name="email" placeholder=" ">
+          <input type="email" class="form-input" name="email" id="email" placeholder=" ">
           <label for="email" class="form-label">Email</label>
         </div>
 
         <div class="form-group">
-          <input type="tel" class="form-input" id="phone" name="phone" placeholder=" " required>
+          <input type="tel" class="form-input" name="phone" id="phone" placeholder=" " required>
           <label for="phone" class="form-label">Телефон</label>
         </div>
 
         <div class="form-group full-width">
-          <textarea class="form-input" id="message" name="message" placeholder=" " required rows="4"></textarea>
+          <textarea class="form-input" name="message" id="message" placeholder=" " required rows="4"></textarea>
           <label for="message" class="form-label">Опишите вашу техническую задачу или проблему</label>
         </div>
 
@@ -615,7 +620,7 @@
         </div>
 
         <div class="form-button">
-          <button type="submit" class="cta-button">
+          <button type="submit" class="cta-button" data-controller-ripple-effect="item">
             Отправить задачу
             <i class="fas fa-arrow-right"></i>
           </button>
@@ -625,22 +630,10 @@
       </form>
     </div>
   </div>
-  <div id="close-modal" class="close-modal">
+  <div class="close-modal" data-controller-modal-func="close">
     <i class="fas fa-times"></i>
   </div>
 </div>
-
-<!-- modal showreel закомментирован -->
-<!--
-<div id="showreel" class="modal">
-  <div class="modal-content">
-    <iframe class="modal-video" src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0" allowfullscreen></iframe>
-  </div>
-  <div class="close-modal">
-    <i class="fas fa-times"></i>
-  </div>
-</div>
--->
 <!-- decoration lines -->
 <div class="lines">
   <div class="line line-1"></div>
@@ -766,5 +759,11 @@
 </div>
 <!-- stars-container -->
 <canvas id="stars-canvas" data-controller-starfield="item"></canvas>
+<!-- scroll-progress -->
+<div class="scroll-progress color-accent-red" id="scrollProgress" data-controller-scroll-progress="item"></div>
+
+<!-- back-to-top -->
+<a href="#hero" class="to-top" data-controller-anchor="item" data-controller-ripple-effect="item">↑</a>
+
 </body>
 </html>

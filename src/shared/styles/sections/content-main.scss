@@ -1,7 +1,8 @@
 @use '../variables/offsets' as offsets;
+@use '../variables/media' as media;
 
 .content-main {
-  width: 50%;
+  grid-column: span 6;
 }
 
 .content-section {
@@ -25,8 +26,13 @@
   .content-image {
     height: 400px;
   }
-  ul, ol, div {
+  ul,
+  ol,
+  div {
     & + p {
+      margin-top: offsets.$small;
+    }
+    & + div {
       margin-top: offsets.$small;
     }
   }
@@ -39,8 +45,16 @@
     & + p,
     & + div,
     & + ul {
-      //margin-top: offsets.$middle;
+      margin-top: calc(offsets.$extra-small / 2);
     }
+    & + h5 {
+      margin-top: offsets.$small;
+    }
+  }
+}
+.content-section__cta {
+  button {
+    margin-top: offsets.$extra-small;
   }
 }
 .content-image {
@@ -59,12 +73,15 @@
     transform: scale(1.05);
   }
 }
+p + .content-highlight,
+h5 + .content-highlight {
+  margin: offsets.$extra-small 0 offsets.$small;
+}
 .content-highlight {
   background-color: #e5e5e5;
   border-left: 4px solid var(--accent-red);
-  padding: 30px;
+  padding: offsets.$extra-small;
   border-radius: var(--border-radius);
-  margin: offsets.$small 0;
 
   p {
     line-height: 1.6;
@@ -84,6 +101,12 @@
 
   & .stat {
     flex: 1;
+  }
+}
+
+@media (max-width: media.$lower-middle) {
+  .content-section {
+    margin-bottom: offsets.$small;
   }
 }
 
@@ -183,7 +206,10 @@
 }
 
 /* Адаптивность для мобильных устройств */
-@media (max-width: 768px) {
+@media (max-width: media.$extra-small) {
+  .content-main {
+    grid-column: span 9;
+  }
   .content-table {
     border-radius: 8px;
     margin: 16px 0 24px 0;
@@ -199,53 +225,70 @@
     padding: 10px 14px;
   }
 }
-
-@media (max-width: 480px) {
+@media (max-width: calc(media.$lower-middle / 2)) {
+  .content-main {
+    grid-column: 1/-1;
+  }
   .content-table table {
     min-width: 400px;
     font-size: 0.78rem;
   }
-
   .content-table thead th,
   .content-table tbody td {
     padding: 8px 12px;
   }
+  .content-section {
+    ul,
+    ol,
+    div {
+      & + p {
+        margin-top: offsets.$extra-small;
+      }
+      & + div {
+        margin-top: offsets.$extra-small;
+      }
+    }
+  }
 }
+
 
 /* ===== Тёмная тема (если используется) ===== */
-[data-theme="dark"] .content-table {
-  background: rgba(255, 255, 255, 0.03);
-  border-color: rgba(255, 255, 255, 0.06);
-}
+[data-theme="dark"] {
+  .content-table {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.06);
 
-[data-theme="dark"] .content-table thead {
-  background: rgba(255, 107, 107, 0.08);
-}
-
-[data-theme="dark"] .content-table tbody td {
-  color: rgba(255, 255, 255, 0.8);
+    thead {
+      background: rgba(255, 107, 107, 0.08);
+    }
+    tbody td {
+      color: rgba(255, 255, 255, 0.8);
+    }
+  }
 }
 
 /* ===== Светлая тема (если используется) ===== */
-[data-theme="light"] .content-table {
-  background: #f8f9fa;
-  border-color: rgba(0, 0, 0, 0.08);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
-}
+[data-theme="light"] {
+  .content-table {
+    background: #f8f9fa;
+    border-color: rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
 
-[data-theme="light"] .content-table thead {
-  background: rgba(255, 107, 107, 0.08);
-  border-bottom-color: rgba(255, 107, 107, 0.2);
-}
+    thead {
+      background: rgba(255, 107, 107, 0.08);
+      border-bottom-color: rgba(255, 107, 107, 0.2);
+    }
+    tbody {
+     td {
+       color: rgba(0, 0, 0, 0.8);
+     }
+      tr {
+        border-bottom-color: rgba(0, 0, 0, 0.06);
 
-[data-theme="light"] .content-table tbody td {
-  color: rgba(0, 0, 0, 0.8);
-}
-
-[data-theme="light"] .content-table tbody tr {
-  border-bottom-color: rgba(0, 0, 0, 0.06);
-}
-
-[data-theme="light"] .content-table tbody tr:hover {
-  background: rgba(0, 0, 0, 0.03);
+        &:hover {
+          background: rgba(0, 0, 0, 0.03);
+        }
+      }
+    }
+  }
 }
