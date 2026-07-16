@@ -25,6 +25,7 @@ const pages = getPageEntries();
 
 module.exports = (env, argv) => {
   const isProduction = argv.mode === 'production';
+  const isDebug = process.env.DEBUG_MODE === 'true';
 
   return {
     // Режим зависит от флага
@@ -106,10 +107,10 @@ module.exports = (env, argv) => {
         new TerserPlugin({
           terserOptions: {
             compress: {
-              drop_console: true, // убирает console.log в production
+              drop_console: isDebug, // убирает console.log в production
             },
             output: {
-              comments: false, // убирает комментарии
+              comments: isDebug, // убирает комментарии
             },
           },
           extractComments: false,
