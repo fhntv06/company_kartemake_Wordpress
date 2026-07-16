@@ -3,9 +3,9 @@ export class SpecialistWidgetController {
         this.element = container
 
         this.config = {
-          juniorRate: 1500,
-          middleRate: 2500,
-          seniorRate: 3500,
+          juniorRate: 500,
+          middleRate: 1000,
+          seniorRate: 2000,
           requiredMessage: 'Пожалуйста, выберите вариант'
         };
 
@@ -21,7 +21,7 @@ export class SpecialistWidgetController {
         this.elements = {};
         this.errorTimeout = null;
 
-        setTimeout(() => this.init(), 2500)
+        this.init()
       }
 
       init() {
@@ -315,9 +315,6 @@ export class SpecialistWidgetController {
 
           // 5. Закрыть виджет
           this.closeModal();
-
-          // 6. Открыть основную форму
-          this.openModal('form');
 
           // 7. Прокрутить к форме
           mainForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -736,9 +733,6 @@ export class SpecialistWidgetController {
         if (this.errorTimeout) {
           clearTimeout(this.errorTimeout);
         }
-
-        // Удаление обработчиков событий
-        document.removeEventListener('keydown', this.handleEscape);
 
         // Удаление элемента
         if (this.element.parentNode) {
