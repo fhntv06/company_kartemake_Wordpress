@@ -160,11 +160,11 @@
     background: linear-gradient(to right, rgba(255, 107, 107, 0.1), rgba(78, 205, 196, 0.1));
   }
 
-  .task-option:not(.active):hover,
-  .complexity-option:not(.active):hover,
-  .specialist-option:not(.active):hover {
-    border-color: #ff6b6b;
-  }
+  //.task-option:not(.active):hover,
+  //.complexity-option:not(.active):hover,
+  //.specialist-option:not(.active):hover {
+  //  border-color: #ff6b6b;
+  //}
 
   /* Анимация для привлечения внимания к обязательному выбору */
   @keyframes pulse-border {
@@ -362,6 +362,12 @@
   .btn-prev:disabled {
     opacity: 0.5;
     cursor: not-allowed;
+  }
+
+  .btn-primary, .btn-outline, .btn-prev, .btn-next {
+    &:hover:not(:disabled) {
+      border-color: #4ecdc4;
+    }
   }
 
   .widget-progress {
