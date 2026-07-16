@@ -20,6 +20,7 @@ import { SpecialistWidgetController } from './SpecialistWidgetController.js'
 import { StarfieldController } from './StarfieldController.js'
 import { TabsController } from './TabsController'
 import { ThemeController } from './ThemeController.js'
+import {ScrollRevealController} from "./ScrollRevealController";
 
 export class EntryPointApp {
   constructor() {
@@ -44,6 +45,7 @@ export class EntryPointApp {
       'physics-container': PhysicsContainerController,
       'ripple-effect': RippleEffectController,
       'scroll-progress': ScrollProgressController,
+      'scroll-reveal': ScrollRevealController,
       'sidebar-anchor': SidebarAnchorController,
       'specialist-widget': SpecialistWidgetController,
       tabs: TabsController,
