@@ -82,12 +82,3 @@
     margin-bottom: offsets.$extra-small;
   }
 }
-
-[data-theme="dark"] {
-  .modal-header {
-    color: var(--light-text);
-  }
-  .form-input {
-    color: var(--dark-text);
-  }
-}
