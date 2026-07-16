@@ -1,6 +1,11 @@
 export class AccordionController {
   constructor(controllerName, container) {
     this.items = container.querySelectorAll(`[data-controller-${controllerName}="item"]`)
+
+    if (!this.items.length) {
+      throw new Error(`No have controller items in ${controllerName}`)
+    }
+
     this.init()
     this.setupResizeObserver()
   }
