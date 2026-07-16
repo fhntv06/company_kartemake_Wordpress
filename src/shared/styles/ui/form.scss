@@ -9,10 +9,6 @@
 .form-header {
   text-align: center;
   margin-bottom: offsets.$middle;
-
-  p {
-    color: var(--gray-text);
-  }
 }
 .contact-form {
   display: grid;
@@ -28,10 +24,11 @@
 .form-input {
   width: 100%;
   padding: offsets.$extra-small;
-  color: var(--dark-text);
-  background-color: rgba(245,245,245,.8);
-  border: 1px solid var(--gray);
+  color: var(--color);
+  background-color: var(--bg-color);
+  border: 1px solid var(--color);
   border-radius: var(--border-radius);
+  transition: border-color .3s ease;
 
   &:focus {
     border-color: var(--accent-red);
@@ -43,8 +40,9 @@
   top: calc(22px - 10px);
   left: 12px;
   padding: 0 8px;
-  background-color: var(--light-text);
+  background-color: var(--bg-color);
   color: var(--gray-text);
+  border-radius: var(--border-radius);
   pointer-events: none;
   transition: top .3s ease, left .3s ease;
 }
@@ -73,37 +71,6 @@ textarea {
   text-align: center;
   font-size: 14px;
   color: var(--gray-text);
-}
-
-[data-theme="dark"] {
-  .form-container {
-    background-color: var(--darker-bg);
-  }
-  .form-header {
-    p {
-      color: var(--dark-text);
-    }
-  }
-  .form-input {
-    background-color: transparent;
-    color: var(--light-text);
-  }
-  .form-label {
-    background-color: var(--dark-text);
-  }
-}
-
-@media (max-width: media.$extra-small) {
-  .contact-form {
-    grid-template-columns: 1fr;
-    gap: offsets.$extra-small;
-  }
-  .form-input {
-    padding: calc(offsets.$extra-small / 2);
-  }
-  .form-label {
-    top: calc(22px - 17px);
-  }
 }
 
 /* Стили для ошибок формы */
@@ -152,4 +119,18 @@ select.error {
 /* Стили для чекбокса с ошибкой */
 .checkbox-group.error {
   color: var(--accent-red);
+}
+
+@media (max-width: media.$extra-small) {
+  .contact-form {
+    grid-template-columns: 1fr;
+    gap: offsets.$extra-small;
+  }
+  .form-input {
+    padding: calc(offsets.$extra-small / 2);
+  }
+  .form-label {
+    top: calc(22px - 17px);
+    left: calc(offsets.$extra-small / 2);
+  }
 }
