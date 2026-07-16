@@ -197,13 +197,6 @@ get_header();
             </div>
         </section>
 
-        <!-- Last Works Section - закомментирован -->
-        <!--
-        <section class="last-works" data-controller="cube-with-work">
-            ...
-        </section>
-        -->
-
         <section class="faq">
             <div class="container">
                 <h3 class="section__title">Частые <span class="color-accent-red">вопросы</span></h3>

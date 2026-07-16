@@ -9,7 +9,7 @@
  * Функция возвращает строку с контроллерами для data-controller на body
  */
 function kartemake_get_body_controllers() {
-    // Базовые контроллеры для всех страниц
+    // Базовые контроллеры для всех страниц (есть во всех шаблонах)
     $base_controllers = [
         'custom-cursor',
         'modal',
@@ -28,9 +28,9 @@ function kartemake_get_body_controllers() {
         $page_controllers = [
             'preloader',
             'header',
-            'hero-animation',
             'sidebar-anchor',
             'burger-menu',
+            'animation-numbers',
         ];
     }
 
@@ -39,9 +39,7 @@ function kartemake_get_body_controllers() {
         $page_controllers = [
             'preloader',
             'burger-menu',
-            'blog-load-more',
-            'blog-search',
-            'blog-filter',
+            'animation-numbers',
         ];
     }
 
@@ -50,9 +48,8 @@ function kartemake_get_body_controllers() {
         $page_controllers = [
             'preloader',
             'burger-menu',
-            'post-gallery',
-            'post-comments',
-            'post-share',
+            'animation-numbers',
+            'accordion',
         ];
     }
 
@@ -62,10 +59,7 @@ function kartemake_get_body_controllers() {
             'preloader',
             'sidebar-anchor',
             'burger-menu',
-            'services-filter',
-            'services-grid',
-            'pricing-calc',
-            'particle-animation',
+            'animation-numbers',
         ];
     }
 
@@ -74,9 +68,7 @@ function kartemake_get_body_controllers() {
         $page_controllers = [
             'preloader',
             'burger-menu',
-            'contacts-map',
-            'contacts-form',
-            'yandex-map',
+            'animation-numbers',
         ];
     }
 
@@ -85,10 +77,7 @@ function kartemake_get_body_controllers() {
         $page_controllers = [
             'preloader',
             'burger-menu',
-            'support-tickets',
-            'support-chat',
-            'support-faq',
-            'accordion',
+            'animation-numbers',
         ];
     }
 
@@ -97,7 +86,6 @@ function kartemake_get_body_controllers() {
         $page_controllers = [
             'preloader',
             'burger-menu',
-            'error-animation',
         ];
     }
 

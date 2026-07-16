@@ -110,7 +110,7 @@ get_header();
     </section>
 
     <!-- Секция Last Works (Примеры работ) -->
-    <section class="last-works" data-controller="cube-with-work">
+    <section class="last-works">
         <div class="container">
             <h3 class="section__title">Примеры наших работ</h3>
             <div class="works-container">
@@ -138,10 +138,11 @@ get_header();
                     if ($works_query->have_posts()) :
                         while ($works_query->have_posts()) : $works_query->the_post();
                             ?>
-                            <a href="<?php the_permalink(); ?>" class="work-item" data-controller-cube-with-work="item">
+                            <a href="<?php the_permalink(); ?>" class="work-item">
                                 <h3 class="work-title"><?php the_title(); ?></h3>
                                 <p class="work-description"><?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?></p>
-                                <p class="work-link">Подробнее <i class="fas fa-arrow-right"></i></p>
+                                <a href="<?= get_permalink() ?>" class="work-link">Подробнее <i class="fas fa-arrow-right"></i></a>
+                                <!--                                <p class="work-link">Подробнее <i class="fas fa-arrow-right"></i></p>-->
                             </a>
                         <?php
                         endwhile;
@@ -149,35 +150,35 @@ get_header();
                     else :
                         // Если нет постов, выводим статику
                         ?>
-                        <a href="#" class="work-item" data-controller-cube-with-work="item">
+                        <a href="#" class="work-item" >
                             <h3 class="work-title">Миграция и поддержка интернет-магазина на 1С-Битрикс</h3>
                             <p class="work-description">Полный перенос и модернизация крупного магазина с устаревшей CMS. Ежемесячное абонентское обслуживание, включая доработки и интеграции.</p>
-                            <p class="work-link">Подробнее <i class="fas fa-arrow-right"></i></p>
+<!--                            <p class="work-link">Подробнее <i class="fas fa-arrow-right"></i></p>-->
                         </a>
-                        <a href="#" class="work-item" data-controller-cube-with-work="item">
+                        <a href="#" class="work-item" >
                             <h3 class="work-title">Разработка и техподдержка корпоративного портала</h3>
                             <p class="work-description">Создание веб-приложения с внутренней CRM и API. Дальнейшая полная техническая поддержка инфраструктуры и кодовой базы.</p>
-                            <p class="work-link">Подробнее <i class="fas fa-arrow-right"></i></p>
+<!--                            <p class="work-link">Подробнее <i class="fas fa-arrow-right"></i></p>-->
                         </a>
-                        <a href="#" class="work-item" data-controller-cube-with-work="item">
+                        <a href="#" class="work-item" >
                             <h3 class="work-title">Технический аудит и рефакторинг legacy-кода</h3>
                             <p class="work-description">Комплексный аудит безопасности и производительности старого проекта. Оптимизация кода и переход на современный стек для агентства-партнера.</p>
-                            <p class="work-link">Подробнее <i class="fas fa-arrow-right"></i></p>
+<!--                            <p class="work-link">Подробнее <i class="fas fa-arrow-right"></i></p>-->
                         </a>
-                        <a href="#" class="work-item" data-controller-cube-with-work="item">
+                        <a href="#" class="work-item" >
                             <h3 class="work-title">Абонентское обслуживание сети лендингов</h3>
                             <p class="work-description">Постоянная поддержка, обновление контента, исправление ошибок и настройка аналитики для 15+ промо-сайтов производственной компании.</p>
-                            <p class="work-link">Подробнее <i class="fas fa-arrow-right"></i></p>
+<!--                            <p class="work-link">Подробнее <i class="fas fa-arrow-right"></i></p>-->
                         </a>
-                        <a href="#" class="work-item" data-controller-cube-with-work="item">
+                        <a href="#" class="work-item" >
                             <h3 class="work-title">Интеграция платежных систем и CRM в WordPress</h3>
                             <p class="work-description">Глубокая кастомизация и настройка сложных интеграций для сайта сервисной компании. Поддержка 24/7.</p>
-                            <p class="work-link">Подробнее <i class="fas fa-arrow-right"></i></p>
+<!--                            <p class="work-link">Подробнее <i class="fas fa-arrow-right"></i></p>-->
                         </a>
-                        <a href="#" class="work-item" data-controller-cube-with-work="item">
+                        <a href="#" class="work-item" >
                             <h3 class="work-title">Разработка MVP для стартапа</h3>
                             <p class="work-description">Полный цикл: от архитектуры до запуска. После запуска — передача клиента на тариф постоянной технической поддержки.</p>
-                            <p class="work-link">Подробнее <i class="fas fa-arrow-right"></i></p>
+<!--                            <p class="work-link">Подробнее <i class="fas fa-arrow-right"></i></p>-->
                         </a>
                     <?php endif; ?>
                 </div>
