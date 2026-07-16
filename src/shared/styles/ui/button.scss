@@ -1,5 +1,6 @@
 @use "../variables/colors" as colors;
 @use "../variables/mixins" as mixins;
+@use "../variables/offsets" as offsets;
 
 button, .button {
   padding: 12px 24px;
@@ -8,36 +9,38 @@ button, .button {
   color: var(--light-text);
   transition: var(--transition);
 
-  &:hover {
+  &:not(:disabled):hover {
     box-shadow: var(--shadow);
     color: var(--light-text);
     transform: translateY(-3px);
+
+    &--primary {
+      background-color: var(--accent-red);
+      color: var(--color);
+      transform: translateY(-2px);
+    }
+    &--accent {
+      background-color: rgba(var(--accent-red), 10%);
+      color: var(--dark-text);
+    }
+    &--outline {
+      background-color: var(--accent-red);
+    }
   }
 
   @include mixins.rippleAnimation();
 
   &--primary {
     background-color: var(--bg-color);
-
-    &:hover {
-      background-color: var(--accent-red);
-      color: var(--color);
-      transform: translateY(-2px);
-    }
   }
   &--accent {
     background-color: var(--accent-red);
-
-    &:hover {
-      background-color: rgba(var(--accent-red), 10%);
-      color: var(--dark-text);
-    }
   }
   &.cta-button {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 8px;
+    gap: calc(offsets.$extra-small / 2);
     background-color: var(--accent-red);
     transition: var(--transition);
     cursor: pointer;
@@ -46,13 +49,9 @@ button, .button {
     background-color: transparent;
     color: var(--accent-red);
     border: 2px solid var(--accent-red);
-
-    &:hover {
-      background-color: var(--accent-red);
-    }
   }
   &--large {
-    padding: 16px 40px;
+    padding: offsets.$extra-small offsets.$small;
     font-size: 1.1rem;
   }
 }
