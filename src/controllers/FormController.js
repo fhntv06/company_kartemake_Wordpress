@@ -62,6 +62,8 @@ export class FormController {
         this.clearFieldError('urgent');
       });
     }
+
+    document.addEventListener('reset-form', () => this.resetForm())
   }
 
   // Валидация конкретного поля

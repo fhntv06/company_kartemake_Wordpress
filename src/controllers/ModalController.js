@@ -30,6 +30,7 @@ export class ModalController {
             button.addEventListener('click', () => {
               this.modal.classList.remove('active')
               document.body.style.overflow = ''
+              document.dispatchEvent(new CustomEvent('reset-form'))
             })
           }
         )
