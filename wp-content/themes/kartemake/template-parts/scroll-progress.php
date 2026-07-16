@@ -1,0 +1,1 @@
+<div class="scroll-progress color-accent-red" id="scrollProgress" data-controller-scroll-progress="item"></div>
