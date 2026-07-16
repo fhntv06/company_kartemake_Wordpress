@@ -1,0 +1,58 @@
+@use "../variables/colors" as colors;
+@use "../variables/mixins" as mixins;
+@use "../variables/offsets" as offsets;
+@use "../variables/media" as media;
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 offsets.$small;
+}
+section, .section {
+  width: 100%;
+  margin: 0 auto;
+  padding: offsets.$middle 0;
+
+  &:first-child {
+    padding-top: calc(offsets.$middle * 3);
+  }
+  &:nth-child(even) {
+    background-color: #fff;
+  }
+}
+.section__title {
+  position: relative;
+  margin-bottom: offsets.$middle;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent-red);
+    border-radius: 2px;
+  }
+}
+
+[data-theme="dark"] {
+  section, .section {
+    &:nth-child(even) {
+      background-color: transparent;
+    }
+  }
+}
+
+@media (max-width: media.$extra-small) {
+    section, .section {
+        padding: offsets.$small 0;
+
+        &:first-child {
+          padding-top: offsets.$large;
+        }
+    }
+    .container {
+        padding: 0 offsets.$extra-small;
+    }
+}

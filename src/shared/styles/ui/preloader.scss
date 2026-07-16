@@ -1,0 +1,66 @@
+.preloader {
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 1s ease;
+  overflow: hidden;
+}
+.preloader--hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.preloader__container {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+.preloader__svg {
+  width: 100%;
+  height: 100%;
+}
+.preloader__text {
+  stroke: #222;
+  stroke-width: 2;
+  fill: none;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.preloader__text--active {
+  opacity: 1;
+  stroke: #fff;
+  fill: #fff;
+}
+.preloader__stroke {
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
+  animation: dash 2s cubic-bezier(0.77,0,0.175,1) forwards;
+}
+
+.grid__svg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+body.preloader-lock {
+  overflow: hidden !important;
+  height: 100vh;
+
+  > *:not(.preloader, #stars-canvas){
+    opacity: 0;
+  }
+}

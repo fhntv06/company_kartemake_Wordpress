@@ -1,0 +1,148 @@
+@use "../variables/offsets" as offsets;
+@use "../variables/media" as media;
+
+.stats-particle {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.stat-item-particle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  width: 150px;
+  min-width: 170px;
+  height: auto;
+  max-height: 150px;
+  background-color: var(--color);
+  border-radius: 20px;
+  padding: 5% 5%;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  transition: all 0.4s ease;
+  cursor: pointer;
+  aspect-ratio: 1;
+}
+
+/* Градиентный фон при наведении */
+.stat-item-particle::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+          rgba(255, 46, 46, 0.15) 0%,
+          transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.stat-item-particle:hover::before {
+  opacity: 1;
+}
+
+/* Частицы */
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--accent-red);
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  animation: particleFly 1.5s ease-out infinite;
+}
+
+@keyframes particleFly {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--tx), var(--ty)) scale(0);
+  }
+}
+
+.stat-icon-particle {
+  font-size: 2rem;
+  color: var(--accent-red);
+  display: block;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 1;
+  transition: all 0.4s ease;
+}
+
+.stat-item-particle:hover .stat-icon-particle {
+  transform: rotateY(180deg);
+  filter: drop-shadow(0 0 30px rgba(255, 46, 46, 0.5));
+}
+
+.stat-number-particle {
+  z-index: 1;
+  position: relative;
+  background: linear-gradient(135deg, var(--light-text) 0%, var(--accent-red) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.stat-label-particle {
+  font-size: 0.8rem;
+  color: var(--gray-text);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease;
+}
+
+.stat-item-particle:hover .stat-label-particle {
+  color: var(--light-text);
+}
+@media (max-width: media.$middle) {
+  .stats-particle {
+    gap: 8px;
+  }
+  .stat-item-particle {
+    width: 40%;
+  }
+}
+@media (max-width: media.$lower-middle) {
+  .stats-particle {
+    display: none;
+  }
+}
+@media (max-width: media.$extra-small) {
+  .hero-devices-particle {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .stat-number-particle {
+    font-size: 2.4rem;
+  }
+}
+@media (max-width: media.$extra-small) {
+  .hero-devices-particle {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .stat-number-particle {
+    font-size: 1.8rem;
+  }
+
+  .stat-item-particle {
+    padding: 20px 12px;
+  }
+}

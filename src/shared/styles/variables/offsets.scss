@@ -1,0 +1,14 @@
+@use 'sass:math';
+@use "./media" as media;
+
+$middle: math.div(64px, 1); // 64px
+
+$large: math.div($middle, 0.5); // 128px
+$extra-large: math.div($large, 0.5); // 256px
+$small: math.div($middle, 2); // 32px
+$lower-small: math.div($small, 1.5); // ~21px
+$extra-small: math.div($small, 2); // 16px
+
+$header-height: 105px;
+$offset-header: 20px;
+$offset-top-from-header: calc($header-height + $offset-header);

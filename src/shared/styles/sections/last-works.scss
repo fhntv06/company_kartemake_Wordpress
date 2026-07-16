@@ -1,0 +1,124 @@
+@use '../variables/offsets' as offsets;
+@use '../variables/media' as media;
+
+.works-container {
+  display: flex;
+}
+.works-list {
+  position: relative;
+  display: flex;
+  flex: 4;
+  gap: offsets.$small;
+  padding-bottom: offsets.$extra-small;
+  overflow-x: scroll;
+}
+.work-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  flex-grow: 1;
+  min-width: 150px;
+  min-height: 250px;
+  flex-basis: 33%;
+  border-radius: var(--border-radius);
+  padding: offsets.$extra-small;
+  overflow: hidden;
+  transition: var(--transition);
+  cursor: pointer;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0,0,0,.1), transparent);
+    transition: left .5s ease;
+  }
+  &:hover {
+    flex-basis: 50%;
+    background-color: rgba(230,57,70,.1);
+
+    .work-link {
+      opacity: 1;
+    }
+    &::before {
+      left: 100%;
+    }
+  }
+}
+.work-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: var(--text-light);
+}
+.work-description {
+  margin-bottom: offsets.$extra-small;
+}
+.work-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  opacity: 0;
+  transition: var(--transition);
+}
+.work-preview {
+  width: 50%;
+  position: relative;
+  perspective: 1000px;
+}
+.works-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 2;
+  opacity: .5;
+  transition: opacity .3s ease-in;
+}
+.works-cube {
+  width: 300px;
+  height: 300px;
+  transform-style: preserve-3d;
+  transform: rotateX(-15deg) rotateY(30deg);
+  transition: transform .5s ease;
+}
+
+[data-theme="dark"] {
+  .work-item {
+    &:before {
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.1), transparent);
+    }
+  }
+}
+
+@media (max-width: media.$lower-middle) {
+  .works-container {
+    flex-direction: column;
+    row-gap: offsets.$middle;
+  }
+  .work-item {
+    flex-basis: 45%;
+
+    &:hover {
+      flex-basis: 45%;
+    }
+  }
+}
+@media (max-width: media.$extra-small) {
+  .works-visual {
+    display: none;
+  }
+  .work-item {
+    flex-basis: 100%;
+
+    &:hover {
+      flex-basis: 100%;
+    }
+  }
+}

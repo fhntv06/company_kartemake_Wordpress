@@ -1,0 +1,29 @@
+@use "../variables/offsets" as offsets;
+@use "../variables/media" as media;
+
+.project-hero-image {
+  position: relative;
+  width: 100%;
+  margin-bottom: offsets.$middle;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  aspect-ratio: 16/9;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+  }
+
+  &:hover img {
+    transform: scale(1.05);
+  }
+}
+
+@media (max-width: media.$extra-small) {
+  .project-hero-image {
+    margin-bottom: offsets.$small;
+    aspect-ratio: 4/3;
+  }
+}

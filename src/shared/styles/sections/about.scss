@@ -1,0 +1,61 @@
+@use "../variables/media" as media;
+@use "../variables/offsets" as offsets;
+
+.about {
+  z-index: 1;
+  position: relative;
+  background-color: #fff;
+  overflow: hidden;
+  --wave-x: 50%;
+  --wave-y: 50%;
+}
+.about-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: offsets.$middle;
+  gap: offsets.$small;
+}
+.about-text {
+  flex: 2;
+
+  h2 {
+    font-size: 42px;
+    margin-bottom: 24px;
+  }
+  p {
+    font-size: 18px;
+    line-height: 1.6;
+
+    & + p {
+      margin-top: offsets.$extra-small;
+    }
+  }
+
+  .cta-button {
+    margin-top: offsets.$small;
+  }
+}
+.about-image {
+  flex: 1;
+}
+
+@media (max-width: media.$lower-middle) {
+  .about-top {
+    flex-direction: column;
+    row-gap: offsets.$middle;
+  }
+  .about-text {
+    width: 100%;
+
+    h2 {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  .about-image {
+    max-width: 100%;
+  }
+  .cube-container {
+    width: 100%;
+  }
+}

@@ -1,0 +1,123 @@
+@use "../variables/offsets" as offsets;
+
+.accordion-container {
+  display: flex;
+  flex-direction: column;
+  gap: offsets.$extra-small;
+}
+
+.accordion-item {
+  position: relative;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  border: 1px solid rgba(230, 57, 70, 0.3);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.1), transparent);
+    transition: left 0.5s ease;
+    pointer-events: none;
+  }
+
+  &.active {
+    background-color: rgba(230, 57, 70, 0.1);
+
+    .accordion-answer {
+      max-height: 500px; /* Запасная высота, переопределяется JS */
+      opacity: 1;
+      padding: 0 offsets.$extra-small offsets.$extra-small;
+      margin: 0;
+
+      & > * {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .accordion-icon {
+      transform: rotate(45deg);
+      color: var(--accent-red);
+    }
+
+    &::before {
+      left: 100%;
+    }
+  }
+
+  &:hover {
+    background-color: rgba(230, 57, 70, 0.1);
+  }
+}
+
+.accordion-question {
+  padding: offsets.$extra-small;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: var(--transition);
+  user-select: none;
+  position: relative;
+  z-index: 1;
+}
+
+.accordion-icon {
+  transition: var(--transition);
+  font-size: 24px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.accordion-answer {
+  /* Базовые стили - все в CSS! */
+  overflow: hidden;
+  transition:
+    max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.3s ease,
+    padding 0.3s ease,
+    margin 0.3s ease;
+
+  /* Начальное состояние */
+  max-height: 0;
+  opacity: 0;
+  padding: 0 offsets.$extra-small;
+  margin: 0;
+
+  /* Контент внутри */
+  & > * {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease 0.15s, transform 0.3s ease 0.15s;
+  }
+
+  /* Последний элемент - отступ снизу */
+  & > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* ===== МОДИФИКАТОРЫ ДЛЯ РАЗНЫХ PADDING ===== */
+.accordion-item.small-padding {
+  &.active .accordion-answer {
+    padding: 10px 15px;
+  }
+}
+
+.accordion-item.large-padding {
+  &.active .accordion-answer {
+    padding: 30px 40px;
+  }
+}
+
+.accordion-item.no-padding {
+  &.active .accordion-answer {
+    padding: 0;
+  }
+}

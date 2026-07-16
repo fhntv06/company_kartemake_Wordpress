@@ -1,0 +1,17 @@
+@use "../variables/offsets" as offsets;
+@use "../variables/media" as media;
+
+.services {
+  .stats-particle {
+    display: none;
+    margin: 0 auto offsets.$middle;
+  }
+}
+
+@media (max-width: media.$lower-middle) {
+  .services {
+    .stats-particle {
+      display: flex;
+    }
+  }
+}

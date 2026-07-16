@@ -1,0 +1,15 @@
+figure {
+  width: 100%;
+
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+figcaption {
+  color: var(--gray-text);
+}
+
+[data-theme="dark"] {
+
+}

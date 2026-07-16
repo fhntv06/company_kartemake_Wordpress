@@ -1,0 +1,36 @@
+@use "../variables/offsets" as offsets;
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: offsets.$middle 0;
+}
+.stat-item {
+  text-align: center;
+}
+.stat-number {
+  position: relative;
+  height: 70px;
+  margin-bottom: 10px;
+  font-size: 60px;
+  font-weight: 800;
+  color: var(--accent-red);
+  overflow: hidden;
+
+  span {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+.stat-label {
+  font-size: 18px;
+  color: #666;
+}
+
+body.dark-theme {
+  .stat-label {
+    color: #aaa;
+  }
+}

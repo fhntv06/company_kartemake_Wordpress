@@ -1,0 +1,23 @@
+@use '../variables/offsets' as offsets;
+@use '../variables/media' as media;
+
+.breadcrumbs {
+  display: flex;
+  column-gap: calc(offsets.$extra-small / 2);
+  margin-bottom: offsets.$extra-small;
+  font-size: 14px;
+  color: #aaa;
+
+  a {
+    color: #aaa;
+    text-decoration: none;
+    transition: var(--transition);
+
+    &:hover {
+      color: var(--accent-red);
+    }
+  }
+  span {
+    color: var(--accent-red);
+  }
+}

@@ -1,0 +1,10 @@
+@use "../variables/offsets" as offsets;
+
+.cta {
+  background-color: #fff;
+
+  p {
+    color: var(--gray-text);
+    margin-bottom: offsets.$small;
+  }
+}
