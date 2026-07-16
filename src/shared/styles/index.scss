@@ -89,10 +89,20 @@ button, input, textarea {
     background-color: unset;
     cursor: pointer;
 }
-ul {
+ul, ol {
     list-style: none;
 
-    li:not(:last-child) {
-        margin-bottom: 16px;
+    li {
+        list-style: none;
+
+        &:not(:last-child) {
+            margin-bottom: 16px;
+        }
+        &::marker {
+            display: none;
+        }
     }
+}
+.fa, .fa-brands, .fa-classic, .fa-regular, .fa-sharp, .fa-solid, .fab, .far, .fas {
+    pointer-events: none;
 }
