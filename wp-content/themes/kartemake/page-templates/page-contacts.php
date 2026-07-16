@@ -38,7 +38,7 @@ get_header();
                                 <span class="particle" style="--tx: 30px; --ty: -35px;"></span>
                                 <span class="particle" style="--tx: -20px; --ty: 40px;"></span>
                                 <span class="stat-icon-particle"><i class="fas <?php echo $stat['icon']; ?>"></i></span>
-                                <div class="stat-number-particle"
+                                <div class="stat-number-particle font-size-h3 font-weight-bold"
                                     <?php echo isset($stat['postfix']) ? 'data-postfix="' . $stat['postfix'] . '"' : ''; ?>
                                      data-controller-animation-numbers="item">
                                     <?php echo $stat['number']; ?>
