@@ -4,7 +4,7 @@
 @use "../variables/media" as media;
 
 footer {
-  background-color: var(--darker-bg);
+  background-color: var(--bg-color);
   padding: offsets.$extra-small offsets.$small;
   border-top: 1px solid var(--gray);
 
@@ -14,17 +14,13 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 40px;
+  margin-bottom: offsets.$small;
 }
 .footer-info {
   order: 2;
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  color: var(--light-text);
 }
 .privacy-policy {
-  color: #aaa;
+  color: var(--gray-text);
   text-decoration: none;
   transition: var(--transition);
 }
@@ -32,8 +28,7 @@ footer {
   color: var(--accent-red);
 }
 .copyright {
-  color: #aaa;
-  font-size: 14px;
+  color: var(--gray-text);
 }
 .footer-cta {
   order: 3;
@@ -43,17 +38,19 @@ footer {
   }
 }
 .footer-bottom {
-  text-align: center;
-  padding-top: 30px;
+  padding-top: offsets.$small;
   border-top: 1px solid var(--gray);
-  color: #666;
-  font-size: 14px;
+  color: var(--gray-text);
+  text-align: center;
 }
 
 @media (max-width: media.$lower-middle) {
   .footer-content {
     flex-wrap: wrap;
-    gap: offsets.$lower-small;
+    row-gap: offsets.$lower-small;
+  }
+  .footer-bottom {
+    padding-top: offsets.$lower-small;
   }
 }
 @media (max-width: media.$extra-small) {
