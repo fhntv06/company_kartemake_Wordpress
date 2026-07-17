@@ -2,12 +2,12 @@
 
 <footer>
     <div class="footer-content">
-        <a class="logo color-whitesmoke" href="<?php echo home_url('/'); ?>">
-            <span class="font-size-h2">K</span>
-            <span class="font-size-h2">·</span>
-            <span class="font-size-h3 color-accent-red">ART</span>
-            <span class="font-size-h2">·</span>
-            <span class="font-size-h4">MAKE</span>
+        <a href="<?php echo home_url('/'); ?>" class="logo">
+            <span class="font-size-h3">K</span>
+            <span class="font-size-h3">·</span>
+            <span class="font-size-h4 color-accent-red">ART</span>
+            <span class="font-size-h3">·</span>
+            <span class="font-size-h5">MAKE</span>
         </a>
 
         <div class="footer-info">

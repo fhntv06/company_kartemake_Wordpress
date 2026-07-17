@@ -15,6 +15,18 @@
         ?>
     </title>
 
+    <!-- ✅ ПРИМЕНЯЕМ ТЕМУ ДО ЗАГРУЗКИ CSS -->
+<!--    <script>-->
+<!--        (function() {-->
+<!--            try {-->
+<!--                const theme = localStorage.getItem('theme') || 'light';-->
+<!--                document.body.setAttribute('data-theme', theme)-->
+<!--            } catch (e) {-->
+<!--                document.body.className = 'light';-->
+<!--            }-->
+<!--        })();-->
+<!--    </script>-->
+
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>
@@ -31,7 +43,7 @@
         <span class="font-size-h5">MAKE</span>
     </a>
 
-    <nav class="nav-links">
+    <ul class="nav-links">
         <?php
         wp_nav_menu(array(
             'theme_location' => 'header-menu',
@@ -43,7 +55,7 @@
             'items_wrap'     => '%3$s',
         ));
         ?>
-    </nav>
+    </ul>
 
     <div class="header-controls">
         <div class="social-links">

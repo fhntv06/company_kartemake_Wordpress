@@ -107,7 +107,7 @@ get_header();
 
                     foreach ($benefits as $benefit) :
                         ?>
-                        <div class="benefit-card">
+                        <div class="benefit-card" data-controller-scroll-reveal="item">
                             <div class="benefit-icon"><i class="fas <?php echo $benefit['icon']; ?>"></i></div>
                             <h3><?php echo $benefit['title']; ?></h3>
                             <p><?php echo $benefit['description']; ?></p>
@@ -133,7 +133,7 @@ get_header();
                         $tariffs = [
                             'basic' => [
                                 'title' => 'Начальный',
-                                'price' => 'от 25 000 ₽/мес',
+                                'price' => 'от 8 000 ₽/мес',
                                 'features' => [
                                     'Мониторинг доступности сайта/сервиса',
                                     'Исправление критических ошибок (до 5 часов/мес)',
@@ -144,7 +144,7 @@ get_header();
                             ],
                             'pro' => [
                                 'title' => 'Бизнес',
-                                'price' => 'от 50 000 ₽/мес',
+                                'price' => 'от 25 000 ₽/мес',
                                 'features' => [
                                     'Всё из тарифа "Начальный"',
                                     'Исправление ошибок и доработки (до 15 часов/мес)',
@@ -157,7 +157,7 @@ get_header();
                             ],
                             'enterprise' => [
                                 'title' => 'Партнерский',
-                                'price' => 'от 100 000 ₽/мес',
+                                'price' => 'от 70 000 ₽/мес',
                                 'features' => [
                                     'Всё из тарифа "Бизнес"',
                                     'Полное абонентское обслуживание (до 40 часов/мес)',
@@ -186,6 +186,8 @@ get_header();
                                         data-controller-modal-open="form"
                                         data-controller-modal-func="open"
                                         data-controller-ripple-effect="item"
+                                        data-tariff-name="<?php echo $tariff['title']; ?>"
+                                        data-tariff-price="<?php echo $tariff['price']; ?>"
                                     >
                                         Выбрать тариф
                                     </button>

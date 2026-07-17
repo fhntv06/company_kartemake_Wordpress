@@ -61,7 +61,7 @@ get_header();
                 <p class="section__description">Мы работаем удаленно по всей России. Выберите удобный способ связи для обсуждения технических вопросов.</p>
 
                 <div class="cards-grid">
-                    <div class="vertical-card">
+                    <div class="vertical-card" data-controller-scroll-reveal="item">
                         <div class="icon">
                             <i class="fas fa-headset font-size-h5"></i>
                         </div>
@@ -74,7 +74,7 @@ get_header();
                         </a>
                     </div>
 
-                    <div class="vertical-card">
+                    <div class="vertical-card" data-controller-scroll-reveal="item">
                         <div class="icon">
                             <i class="fas fa-project-diagram font-size-h5"></i>
                         </div>
@@ -87,7 +87,7 @@ get_header();
                         </a>
                     </div>
 
-                    <div class="vertical-card">
+                    <div class="vertical-card" data-controller-scroll-reveal="item">
                         <div class="icon">
                             <i class="fas fa-phone font-size-h5"></i>
                         </div>
@@ -100,7 +100,7 @@ get_header();
                         </a>
                     </div>
 
-                    <div class="vertical-card">
+                    <div class="vertical-card" data-controller-scroll-reveal="item">
                         <div class="icon">
                             <i class="fas fa-clock font-size-h5"></i>
                         </div>

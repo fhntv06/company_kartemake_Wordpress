@@ -69,6 +69,7 @@ function kartemake_get_body_controllers() {
             'preloader',
             'burger-menu',
             'animation-numbers',
+            'scroll-reveal'
         ];
     }
 
@@ -78,6 +79,7 @@ function kartemake_get_body_controllers() {
             'preloader',
             'burger-menu',
             'animation-numbers',
+            'scroll-reveal'
         ];
     }
 

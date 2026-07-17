@@ -57,6 +57,7 @@ function kartemake_enqueue_scripts() {
     // Подключение через CDN
     wp_enqueue_script('gsap', get_template_directory_uri() . '/assets/js/gsap.min.js', [], '3', false);
     wp_enqueue_script('flubber', get_template_directory_uri() . '/assets/js/flubber.min.js', [], '0.4.2', false);
+    wp_enqueue_script('flubber', get_template_directory_uri() . '/assets/js/swiper-bundle.min.js', [], '11.2.10', false);
 
     wp_enqueue_script(
         'kartemake-bundle',                              // ID скрипта

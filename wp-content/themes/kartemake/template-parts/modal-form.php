@@ -13,27 +13,27 @@
 
                 <div class="form-group">
                     <input type="text" class="form-input" id="name" name="name" placeholder=" " required>
-                    <label for="name" class="form-label">Имя</label>
+                    <label for="name" class="form-label font-size-p">Имя</label>
                 </div>
 
                 <div class="form-group">
                     <input type="text" class="form-input" id="company" name="company" placeholder=" ">
-                    <label for="company" class="form-label">Название компании</label>
+                    <label for="company" class="form-label font-size-p">Название компании</label>
                 </div>
 
                 <div class="form-group">
                     <input type="email" class="form-input" id="email" name="email" placeholder=" " required>
-                    <label for="email" class="form-label">Email</label>
+                    <label for="email" class="form-label font-size-p">Email</label>
                 </div>
 
                 <div class="form-group">
                     <input type="tel" class="form-input" id="phone" name="phone" placeholder=" " required>
-                    <label for="phone" class="form-label">Телефон</label>
+                    <label for="phone" class="form-label font-size-p">Телефон</label>
                 </div>
 
                 <div class="form-group full-width">
                     <textarea class="form-input" id="message" name="message" placeholder=" " required></textarea>
-                    <label for="message" class="form-label">Расскажите о вашем проекте</label>
+                    <label for="message" class="form-label font-size-p">Расскажите о вашем проекте</label>
                 </div>
 
                 <div class="form-button">
