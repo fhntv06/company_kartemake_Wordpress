@@ -188,6 +188,7 @@ get_header();
                                         data-controller-ripple-effect="item"
                                         data-tariff-name="<?php echo $tariff['title']; ?>"
                                         data-tariff-price="<?php echo $tariff['price']; ?>"
+                                        data-controller-tabs-func="setTariffsInForm"
                                     >
                                         Выбрать тариф
                                     </button>
