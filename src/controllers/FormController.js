@@ -64,7 +64,42 @@ export class FormController {
     }
 
     document.addEventListener('reset-form', () => this.resetForm())
+    document.addEventListener('fill-form-field', (e) => this.fillingFormField(e));
   }
+
+  fillingFormField = (event) => {
+    const { fieldName, value } = event.detail;
+
+    if (!fieldName) {
+      console.warn('fill-form-field: не указано имя поля');
+      return;
+    }
+
+    // Ищем поле в форме
+    const field = this.fields[fieldName];
+
+    if (!field) {
+      console.warn(`fill-form-field: поле "${fieldName}" не найдено в форме`);
+      return;
+    }
+
+    // Заполняем поле
+    if (field.tagName === 'TEXTAREA' || field.tagName === 'INPUT' || field.tagName === 'SELECT') {
+      field.value = value;
+
+      // Триггерим события для активации валидации и стилей
+      const inputEvent = new Event('input', { bubbles: true });
+      field.dispatchEvent(inputEvent);
+
+      const changeEvent = new Event('change', { bubbles: true });
+      field.dispatchEvent(changeEvent);
+
+      // Очищаем ошибку для этого поля
+      this.clearFieldError(fieldName);
+
+      console.log(`fill-form-field: поле "${fieldName}" заполнено`);
+    }
+  };
 
   // Валидация конкретного поля
   validateField(fieldName) {
