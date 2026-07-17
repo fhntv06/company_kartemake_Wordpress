@@ -8,8 +8,8 @@
   position: relative;
   display: flex;
   flex: 4;
-  gap: offsets.$small;
-  padding-bottom: offsets.$extra-small;
+  gap: offsets.$extra-small;
+  padding: offsets.$extra-small 0;
   overflow-x: scroll;
 }
 .work-item {
@@ -21,6 +21,7 @@
   min-width: 150px;
   min-height: 250px;
   flex-basis: 33%;
+  border: 1px solid var(--gray);
   border-radius: var(--border-radius);
   padding: offsets.$extra-small;
   overflow: hidden;
@@ -40,6 +41,7 @@
   &:hover {
     flex-basis: 50%;
     background-color: rgba(230,57,70,.1);
+    border-color: var(--accent-red);
 
     .work-link {
       opacity: 1;

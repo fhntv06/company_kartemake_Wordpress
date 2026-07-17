@@ -36,14 +36,6 @@
   overflow: hidden;
   transform: scale(.8);
   transition: transform .5s ease;
-
-  .form-input {
-    background-color: var(--light-bg);
-  }
-  .form-label {
-    border-radius: var(--border-radius);
-    background-color: var(--light-bg);
-  }
 }
 .modal-video {
   width: 100%;

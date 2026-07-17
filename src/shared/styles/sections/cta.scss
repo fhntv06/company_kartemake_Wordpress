@@ -1,10 +1,16 @@
 @use "../variables/offsets" as offsets;
+@use "../variables/media" as media;
 
 .cta {
-  background-color: #fff;
-
   p {
-    color: var(--gray-text);
     margin-bottom: offsets.$small;
+  }
+}
+
+@media (max-width: media.$extra-small) {
+  .cta {
+    p {
+      margin-bottom: calc(offsets.$small / 2);
+    }
   }
 }

@@ -46,13 +46,17 @@
   pointer-events: none;
   transition: top .3s ease, left .3s ease;
 }
+
 .form-input:focus ~ .form-label,
 .form-input:not(:placeholder-shown) ~ .form-label {
   top: 0;
-  font-size: 14px;
-  color: var(--accent-red);
   transform: translateY(-50%);
+  color: var(--color);
 }
+.form-input:focus ~ .form-label {
+  color: var(--accent-red);
+}
+
 textarea {
   &.form-input {
     min-height: 150px;
@@ -128,6 +132,9 @@ select.error {
   }
   .form-input {
     padding: calc(offsets.$extra-small / 2);
+  }
+  textarea.form-input {
+    min-height: 100px;
   }
   .form-label {
     top: calc(22px - 17px);

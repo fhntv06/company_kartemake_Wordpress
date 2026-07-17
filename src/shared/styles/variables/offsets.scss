@@ -9,6 +9,7 @@ $small: math.div($middle, 2); // 32px
 $lower-small: math.div($small, 1.5); // ~21px
 $extra-small: math.div($small, 2); // 16px
 
-$header-height: 105px;
+$header-height-desctop: 105px;
+$header-height-mobile: 81px;
 $offset-header: 20px;
-$offset-top-from-header: calc($header-height + $offset-header);
+$offset-top-from-header: calc($header-height-desctop + $offset-header);

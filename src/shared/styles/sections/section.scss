@@ -14,7 +14,7 @@ section, .section {
   padding: offsets.$middle 0;
 
   &:first-child {
-    padding-top: calc(offsets.$middle * 3);
+    padding-top: calc(offsets.$header-height-desctop + offsets.$small);
   }
   &:nth-child(even) {
     background-color: #fff;
@@ -39,7 +39,8 @@ section, .section {
 [data-theme="dark"] {
   section, .section {
     &:nth-child(even) {
-      background-color: transparent;
+      background-color: rgba(230, 57, 70, 0.1);
+      //background-color: transparent;
     }
   }
 }
@@ -49,10 +50,13 @@ section, .section {
         padding: offsets.$small 0;
 
         &:first-child {
-          padding-top: offsets.$large;
+          padding-top: calc(offsets.$header-height-mobile + offsets.$small);
         }
     }
     .container {
         padding: 0 offsets.$extra-small;
     }
+  .section__title {
+    margin-bottom: calc(offsets.$middle / 2);
+  }
 }

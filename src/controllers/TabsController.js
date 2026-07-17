@@ -4,7 +4,10 @@ export class TabsController {
     this.navigationBtns = Array.from(document.querySelectorAll(`[data-controller-${controllerName}-func="open"]`))
     this.panels = Array.from(this.container.querySelectorAll(`[data-controller-${controllerName}="item"]`))
 
+    this.elementFuncs = Array.from(this.container.querySelectorAll(`[data-controller-${controllerName}-func]`))
+
     this.init()
+    this.setupFuncs()
   }
   init = () => {
     this.navigationBtns.forEach((button) => {
@@ -30,5 +33,18 @@ export class TabsController {
   clearActiveNavigationBtns = () => {
     this.navigationBtns.forEach(b => b.classList.remove('active'))
     this.panels.forEach(p => p.classList.remove('active'))
+  }
+  setupFuncs = () => {
+    this.elementFuncs.forEach((element) => element.addEventListener('click', this[element.dataset.controllerTabsFunc]))
+  }
+  setTariffsInForm = (e) => {
+    document.dispatchEvent(
+      new CustomEvent('fill-form-field',
+        {
+          detail: {
+            fieldName: 'message',
+            value: `Здравствуйте, я выбрал тариф "${e.target.dataset.tariffName || "Бизнес"}" стоимостью ${e.target.dataset.tariffPrice || 'от&nbsp;25 000&nbsp;₽'}` }
+        }
+      ));
   }
 }

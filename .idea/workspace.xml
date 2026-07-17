@@ -4,12 +4,47 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f436328a-f833-435e-b59f-dc03317a5ed7" name="Changes" comment="update .gitignore">
+    <list default="true" id="f436328a-f833-435e-b59f-dc03317a5ed7" name="Changes" comment="frontend / обновление стилей списков">
       <change afterPath="$PROJECT_DIR$/TODO.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/kartemake/assets/fonts/fa-brands-400.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/kartemake/assets/fonts/fa-solid-900.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wp-content/themes/kartemake/assets/js/swiper-bundle.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/AnchorController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/AnchorController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/FormController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/FormController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/ScrollRevealController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ScrollRevealController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/SpecialistWidgetController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/SpecialistWidgetController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/TabsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/TabsController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/blog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/contacts.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/contacts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/services.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/services.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/support.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/support.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/styles/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/styles/index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/styles/sections/benefits.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/styles/sections/benefits.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/styles/sections/cta.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/styles/sections/cta.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/styles/sections/last-works.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/styles/sections/last-works.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/styles/sections/section.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/styles/sections/section.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/styles/sections/service-card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/styles/sections/service-card.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/styles/sections/services-support.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/styles/sections/services-support.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/styles/sections/sidebar-burger-menu.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/styles/sections/sidebar-burger-menu.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/styles/sections/tabs.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/styles/sections/tabs.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/styles/ui/accordion.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/styles/ui/accordion.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/styles/ui/form.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/styles/ui/form.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/styles/ui/modal.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/styles/ui/modal.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/styles/ui/specialist-widget.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/styles/ui/specialist-widget.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/styles/variables/offsets.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/styles/variables/offsets.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/kartemake/assets/js/bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/kartemake/assets/js/bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/kartemake/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/kartemake/footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/kartemake/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/kartemake/functions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/kartemake/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/kartemake/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/kartemake/inc/controllers.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/kartemake/inc/controllers.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wp-content/themes/kartemake/page-templates/page-contacts.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/kartemake/page-templates/page-contacts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/kartemake/page-templates/page-support.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/kartemake/page-templates/page-support.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/kartemake/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/kartemake/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/kartemake/template-parts/modal-form.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/kartemake/template-parts/modal-form.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/kartemake/template-parts/specialist-widget.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/kartemake/template-parts/specialist-widget.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +53,11 @@
   </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="CopilotPersistence">
+    <persistenceIdMap>
+      <entry key="_C:/Users/CifronPro/projects/work/company_kartemake_Wordpress" value="2z2X4tiQeVnxM9i5C4vJKgRfZkC" />
+    </persistenceIdMap>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -50,44 +90,47 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "JavaScript Debug.blog.html.executor": "Run",
-    "JavaScript Debug.index.html.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowPanel.toolwindow.highlight.mappings": "true",
-    "WebServerToolWindowPanel.toolwindow.highlight.symlinks": "true",
-    "WebServerToolWindowPanel.toolwindow.show.date": "false",
-    "WebServerToolWindowPanel.toolwindow.show.permissions": "false",
-    "WebServerToolWindowPanel.toolwindow.show.size": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/CifronPro/projects/work/landing-kartech.site/src",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.build.executor": "Run",
-    "npm.start.executor": "Run",
-    "settings.editor.selected.configurable": "project.propVCSSupport.Mappings",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2024.2.3\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;JavaScript Debug.blog.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.index.html.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.webpack.config.js.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.highlight.mappings&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.highlight.symlinks&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.date&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.permissions&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.size&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/CifronPro/projects/work/company_kartemake_Wordpress/wp-content/themes/kartemake&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.build.executor&quot;: &quot;Run&quot;,
+    &quot;npm.start.executor&quot;: &quot;Run&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.Mappings&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\PhpStorm 2024.2.4\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "GitStage.ChangesTree.GroupingKeys": [
-      "directory",
-      "module",
-      "repository"
+  &quot;keyToStringList&quot;: {
+    &quot;GitStage.ChangesTree.GroupingKeys&quot;: [
+      &quot;directory&quot;,
+      &quot;module&quot;,
+      &quot;repository&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\CifronPro\projects\work\company_kartemake_Wordpress\wp-content\themes\kartemake" />
+      <recent name="C:\Users\CifronPro\projects\work\company_kartemake_Wordpress\wp-content\themes\kartemake\assets\js" />
+      <recent name="C:\Users\CifronPro\projects\work\company_kartemake_Wordpress\wp-content\themes\kartemake\assets\webfonts" />
       <recent name="C:\Users\CifronPro\projects\work\landing-kartech.site\src" />
       <recent name="C:\Users\CifronPro\projects\work\landing-kartech.site\src\controllers" />
-      <recent name="C:\Users\CifronPro\projects\work\PROFI\landing" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\CifronPro\projects\work\landing-kartech.site\src\controllers" />
@@ -171,118 +214,9 @@
       <workItem from="1782463789382" duration="34964000" />
       <workItem from="1784006490373" duration="14947000" />
       <workItem from="1784084247090" duration="5310000" />
-    </task>
-    <task id="LOCAL-00007" summary="create burger menu and sidebar burger menu in detail blog page">
-      <option name="closed" value="true" />
-      <created>1767706972555</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1767706972555</updated>
-    </task>
-    <task id="LOCAL-00008" summary="update header, burger menu for all pages">
-      <option name="closed" value="true" />
-      <created>1767707670812</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1767707670812</updated>
-    </task>
-    <task id="LOCAL-00009" summary="create styles for burger-menu">
-      <option name="closed" value="true" />
-      <created>1767707698623</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1767707698623</updated>
-    </task>
-    <task id="LOCAL-00010" summary="create styles for sidebar burger menu">
-      <option name="closed" value="true" />
-      <created>1767707714076</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1767707714076</updated>
-    </task>
-    <task id="LOCAL-00011" summary="refactor entry point import styles for sections and ui, create files index">
-      <option name="closed" value="true" />
-      <created>1767707751317</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1767707751318</updated>
-    </task>
-    <task id="LOCAL-00012" summary="create var file for media">
-      <option name="closed" value="true" />
-      <created>1767707765211</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1767707765211</updated>
-    </task>
-    <task id="LOCAL-00013" summary="added media for hero section">
-      <option name="closed" value="true" />
-      <created>1767707788649</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1767707788649</updated>
-    </task>
-    <task id="LOCAL-00014" summary="added media for related-sidebar section">
-      <option name="closed" value="true" />
-      <created>1767707800159</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1767707800159</updated>
-    </task>
-    <task id="LOCAL-00015" summary="added media for sidebar section">
-      <option name="closed" value="true" />
-      <created>1767707818166</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1767707818166</updated>
-    </task>
-    <task id="LOCAL-00016" summary="correct position items in cta-button">
-      <option name="closed" value="true" />
-      <created>1767707841727</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1767707841727</updated>
-    </task>
-    <task id="LOCAL-00017" summary="added media in header ui">
-      <option name="closed" value="true" />
-      <created>1767707866171</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1767707866171</updated>
-    </task>
-    <task id="LOCAL-00018" summary="added styles for overlay block">
-      <option name="closed" value="true" />
-      <created>1767707888349</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1767707888349</updated>
-    </task>
-    <task id="LOCAL-00019" summary="added media for nav links ui">
-      <option name="closed" value="true" />
-      <created>1767707909437</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1767707909437</updated>
-    </task>
-    <task id="LOCAL-00020" summary="correct z index for scroll-hint">
-      <option name="closed" value="true" />
-      <created>1767707932892</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1767707932892</updated>
+      <workItem from="1784190113894" duration="27134000" />
+      <workItem from="1784278271115" duration="114000" />
+      <workItem from="1784305067069" duration="9450000" />
     </task>
     <task id="LOCAL-00021" summary="added media for theme-toggle items">
       <option name="closed" value="true" />
@@ -564,7 +498,119 @@
       <option name="project" value="LOCAL" />
       <updated>1768567281212</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="wip">
+      <option name="closed" value="true" />
+      <created>1784193717130</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1784193717131</updated>
+    </task>
+    <task id="LOCAL-00057" summary="update webpack.config.js">
+      <option name="closed" value="true" />
+      <created>1784193736501</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1784193736501</updated>
+    </task>
+    <task id="LOCAL-00058" summary="backend / fix fonts in stat-number-particle text">
+      <option name="closed" value="true" />
+      <created>1784193768276</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1784193768276</updated>
+    </task>
+    <task id="LOCAL-00059" summary="backend / added new fonts files">
+      <option name="closed" value="true" />
+      <created>1784218158575</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1784218158575</updated>
+    </task>
+    <task id="LOCAL-00060" summary="backend / приведены в порядок контроллеры">
+      <option name="closed" value="true" />
+      <created>1784218204740</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1784218204740</updated>
+    </task>
+    <task id="LOCAL-00061" summary="frontend / добавлена обработка исключения для AccordionController.js">
+      <option name="closed" value="true" />
+      <created>1784218248700</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1784218248700</updated>
+    </task>
+    <task id="LOCAL-00062" summary="frontend / изменены цены на специалистов в виджете">
+      <option name="closed" value="true" />
+      <created>1784218307988</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1784218307989</updated>
+    </task>
+    <task id="LOCAL-00063" summary="frontend / добавлено событие reset-form">
+      <option name="closed" value="true" />
+      <created>1784218327309</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1784218327309</updated>
+    </task>
+    <task id="LOCAL-00064" summary="frontend / обновление стилей кнопок">
+      <option name="closed" value="true" />
+      <created>1784219995159</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1784219995159</updated>
+    </task>
+    <task id="LOCAL-00065" summary="frontend / добавлена функция reveal">
+      <option name="closed" value="true" />
+      <created>1784220032623</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1784220032623</updated>
+    </task>
+    <task id="LOCAL-00066" summary="frontend / обновление стилей форм">
+      <option name="closed" value="true" />
+      <created>1784220051070</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1784220051070</updated>
+    </task>
+    <task id="LOCAL-00067" summary="frontend / обновление стилей modal">
+      <option name="closed" value="true" />
+      <created>1784220068148</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1784220068148</updated>
+    </task>
+    <task id="LOCAL-00068" summary="frontend / обновление стилей specialist-widget.scss">
+      <option name="closed" value="true" />
+      <created>1784220161275</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1784220161275</updated>
+    </task>
+    <task id="LOCAL-00069" summary="frontend / обновление стилей списков">
+      <option name="closed" value="true" />
+      <created>1784220178528</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1784220178528</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -609,20 +655,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added media in feature-card section" />
-    <MESSAGE value="added media in last-work section" />
-    <MESSAGE value="added media in regular-card section" />
-    <MESSAGE value="added media in main section styles file" />
-    <MESSAGE value="added media in service-card section" />
-    <MESSAGE value="added media in services-support section" />
-    <MESSAGE value="correct box-shadow in sidebar-burger-menu" />
-    <MESSAGE value="correct figure ui" />
-    <MESSAGE value="added media in footer ui" />
-    <MESSAGE value="added media in form ui" />
-    <MESSAGE value="correct active styles for accent link" />
-    <MESSAGE value="correct variables files: colors and offsets" />
-    <MESSAGE value="refactor theme controller" />
-    <MESSAGE value="refactor cursor controller" />
     <MESSAGE value="correct burger menu for theme dark" />
     <MESSAGE value="correct symbols" />
     <MESSAGE value="build" />
@@ -634,7 +666,21 @@
     <MESSAGE value="change texts and correct pages for new target project" />
     <MESSAGE value="update workflow" />
     <MESSAGE value="update .gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="update .gitignore" />
+    <MESSAGE value="wip" />
+    <MESSAGE value="update webpack.config.js" />
+    <MESSAGE value="backend / fix fonts in stat-number-particle text" />
+    <MESSAGE value="backend / added new fonts files" />
+    <MESSAGE value="backend / приведены в порядок контроллеры" />
+    <MESSAGE value="frontend / добавлена обработка исключения для AccordionController.js" />
+    <MESSAGE value="frontend / изменены цены на специалистов в виджете" />
+    <MESSAGE value="frontend / добавлено событие reset-form" />
+    <MESSAGE value="frontend / обновление стилей кнопок" />
+    <MESSAGE value="frontend / добавлена функция reveal" />
+    <MESSAGE value="frontend / обновление стилей форм" />
+    <MESSAGE value="frontend / обновление стилей modal" />
+    <MESSAGE value="frontend / обновление стилей specialist-widget.scss" />
+    <MESSAGE value="frontend / обновление стилей списков" />
+    <option name="LAST_COMMIT_MESSAGE" value="frontend / обновление стилей списков" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

@@ -1,9 +1,13 @@
 @use "../variables/offsets" as offsets;
+@use "../variables/media" as media;
 
+.tabs-content {
+  position: relative;
+}
 .tabs-nav {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: calc(offsets.$extra-small / 2);
   margin-bottom: offsets.$small;
 }
 .tab-btn {
@@ -18,19 +22,37 @@
     color: var(--light-text);
     background-color: var(--accent-red);
     border-color: var(--accent-red);
+
+    &::after {
+      display: none;
+    }
   }
 }
 .tab-panel {
-  display: none;
-  animation: fadeIn .5s ease forwards;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100%;
+  height: max-content;
+  transform: translate(-50%, 20px);
+  //display: none;
+  opacity: 0;
+  visibility: hidden;
 
   &.active {
-    display: block;
+    position: relative;
+    //display: block;
+    animation: fadeIn .5s ease forwards;
   }
 }
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  to { opacity: 1; transform: translate(-50%, 0); visibility: visible; }
+}
+
+@media (max-width: media.$extra-small) {
+  .tab-btn {
+    padding: calc(offsets.$extra-small / 2);
+  }
 }
 
 [data-theme="dark"] {

@@ -149,6 +149,9 @@ export class SpecialistWidgetController {
 
       // Основные методы
       toggleModal() {
+        if (window.innerWidth <= 768) {
+          document.body.style.overflow = 'hidden';
+        }
         this.elements.modal.classList.toggle('active');
         if (this.elements.modal.classList.contains('active')) {
           this.resetToFirstStep();
@@ -156,6 +159,9 @@ export class SpecialistWidgetController {
       }
 
       closeModal() {
+        if (window.innerWidth <= 768) {
+          document.body.style.overflow = '';
+        }
         this.elements.modal.classList.remove('active');
         this.hideError();
       }
@@ -361,19 +367,17 @@ export class SpecialistWidgetController {
           company: '', // Оставляем пустым
           email: '', // Оставляем пустым
           phone: '', // Оставляем пустым
-          message: message
+          message,
         };
 
         // Заполняем поля формы
-        Object.keys(fieldMapping).forEach(fieldName => {
-          const field = form.querySelector(`[name="${fieldName}"], #${fieldName}`);
-          if (field && fieldMapping[fieldName]) {
-            field.value = fieldMapping[fieldName];
-
-            // Триггерим событие change для валидации
-            const event = new Event('change', { bubbles: true });
-            field.dispatchEvent(event);
-          }
+        ['name', 'company', 'email', 'phone', 'message'].forEach(fieldName => {
+          document.dispatchEvent(
+            new CustomEvent('fill-form-field',
+            {
+              detail: { fieldName: fieldName, value: fieldMapping[fieldName] }
+            }
+          ));
         });
 
         // Добавляем скрытое поле с данными виджета

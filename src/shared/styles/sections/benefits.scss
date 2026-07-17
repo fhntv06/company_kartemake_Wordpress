@@ -10,10 +10,12 @@
   padding: 30px;
   transition: var(--transition);
   text-align: center;
-}
-.benefit-card:hover {
-  transform: translateY(-10px);
-  border-color: var(--accent-red);
+
+  &.reveal,
+  &:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-red);
+  }
 }
 .benefit-icon {
   font-size: 3rem;

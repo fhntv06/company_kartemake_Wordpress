@@ -26,7 +26,6 @@ export class ScrollRevealController {
             });
         }, {
             threshold: 1,
-            rootMargin: '-50px 0px 0px 0px'
         });
 
         this.items.forEach(el => {

@@ -8,7 +8,7 @@
 
   <link rel="shortcut icon" href="../../public/images/logotypes/logo-dark.ico" type="image/x-icon">
 </head>
-<body data-controller="custom-cursor modal preloader ripple-effect starfield theme anchor anchor scroll-progress burger-menu">
+<body data-controller="custom-cursor modal preloader ripple-effect starfield theme anchor anchor scroll-progress burger-menu scroll-reveal">
 <header class="header" data-controller="header">
   <a href="/" class="logo">
     <span class="font-size-h3">K</span>
@@ -156,22 +156,22 @@
       </div>
 
       <div class="benefits-grid">
-        <div class="benefit-card">
+        <div class="benefit-card" data-controller-scroll-reveal="item">
           <div class="benefit-icon"><i class="fas fa-users"></i></div>
           <h3>Команда, а не один человек</h3>
           <p>Доступ к пулу специалистов (разработчики, DevOps, тестировщик). Никаких простоев из-за больничных или отпусков.</p>
         </div>
-        <div class="benefit-card">
+        <div class="benefit-card" data-controller-scroll-reveal="item">
           <div class="benefit-icon"><i class="fas fa-calculator"></i></div>
           <h3>Фиксированный бюджет</h3>
           <p>Предсказуемая абонентская плата вместо непредвиденных расходов на срочные задачи, больничные и налоги.</p>
         </div>
-        <div class="benefit-card">
+        <div class="benefit-card" data-controller-scroll-reveal="item">
           <div class="benefit-icon"><i class="fas fa-tasks"></i></div>
           <h3>Отработанные процессы</h3>
           <p>У нас есть система постановки задач, приоритизации, контроля качества и отчетности. Вы всегда в курсе статуса.</p>
         </div>
-        <div class="benefit-card">
+        <div class="benefit-card" data-controller-scroll-reveal="item">
           <div class="benefit-icon"><i class="fas fa-briefcase"></i></div>
           <h3>Фокус на вашем бизнесе</h3>
           <p>Вам не нужно тратить время на управление IT-специалистом. Вы ставите задачу — мы её выполняем и отчитываемся.</p>
@@ -185,20 +185,44 @@
       <h3 class="section__title">Тарифы <span class="color-accent-red">поддержки</span></h3>
       <p class="section__description">Гибкие пакеты услуг для бизнесов, которым нужна надежная работа и развитие их digital-инфраструктуры.</p>
 
-      <div class="services-support-tabs" data-controller="tabs">
+      <div id="services-support-tabs" class="services-support-tabs" data-controller="tabs">
         <div class="tabs-nav">
-          <button class="tab-btn active" data-panel="basic" data-controller-tabs-func="open">Начальный</button>
-          <button class="tab-btn" data-panel="pro" data-controller-tabs-func="open">Бизнес</button>
-          <button class="tab-btn" data-panel="enterprise" data-controller-tabs-func="open">Партнерский</button>
+          <a class="tab-btn active" data-panel="basic" data-controller-tabs-func="open" data-controller-anchor="item">Начальный</a>
+          <a class="tab-btn" data-panel="pro" data-controller-tabs-func="open" data-controller-anchor="item">Бизнес</a>
+          <a class="tab-btn" data-panel="enterprise" data-controller-tabs-func="open" data-controller-anchor="item">Партнерский</a>
         </div>
         <div class="tabs-content">
           <div class="tab-panel active" id="basic" data-controller-tabs="item">
             <div class="service-list">
-              <div class="service-item"><i class="fas fa-check"></i> Мониторинг доступности сайта/сервиса</div>
-              <div class="service-item"><i class="fas fa-check"></i> Исправление критических ошибок (до 5 часов/мес)</div>
-              <div class="service-item"><i class="fas fa-check"></i> Резервное копирование (еженедельно)</div>
-              <div class="service-item"><i class="fas fa-check"></i> Консультации по техническим вопросам</div>
-              <div class="service-item"><i class="fas fa-check"></i> Базовое обновление CMS и плагинов</div>
+              <p class="service-item"><i class="fas fa-check"></i> Мониторинг доступности сайта/сервиса</p>
+              <p class="service-item"><i class="fas fa-check"></i> Исправление критических ошибок (до 5 часов/мес)</p>
+              <p class="service-item"><i class="fas fa-check"></i> Резервное копирование (еженедельно)</p>
+              <p class="service-item"><i class="fas fa-check"></i> Консультации по техническим вопросам</p>
+              <p class="service-item"><i class="fas fa-check"></i> Базовое обновление CMS и плагинов</p>
+              <p class="service-item"><i class="fas fa-check"></i> Ежемесячный отчет о проделанной работе</p>
+            </div>
+            <div class="service-price">
+              <h4 class="price">от&nbsp;8 000&nbsp;₽/мес</h4>
+              <button
+                      class="button button--outline"
+                      data-controller-modal-open="form"
+                      data-controller-modal-func="open"
+                      data-controller-ripple-effect="item"
+                      data-tariff-name="Начальный"
+                      data-tariff-price="от&nbsp;8 000&nbsp;₽"
+                      data-controller-tabs-func="setTariffsInForm"
+              >
+                Выбрать тариф
+              </button>
+            </div>
+          </div>
+          <div class="tab-panel" id="pro" data-controller-tabs="item">
+            <div class="service-list">
+              <p class="service-item"><i class="fas fa-check"></i> Всё из тарифа "Начальный"</p>
+              <p class="service-item"><i class="fas fa-check"></i> Исправление ошибок и доработки (до 15 часов/мес)</p>
+              <p class="service-item"><i class="fas fa-check"></i> Приоритетная реакция на запросы (до 2 часов)</p>
+              <p class="service-item"><i class="fas fa-check"></i> Мониторинг безопасности и производительности</p>
+              <p class="service-item"><i class="fas fa-check"></i> Работа с хостингом и инфраструктурой</p>
             </div>
             <div class="service-price">
               <h4 class="price">от&nbsp;25 000&nbsp;₽/мес</h4>
@@ -207,28 +231,8 @@
                       data-controller-modal-open="form"
                       data-controller-modal-func="open"
                       data-controller-ripple-effect="item"
-              >
-                Выбрать тариф
-              </button>
-            </div>
-          </div>
-          <div class="tab-panel" id="pro" data-controller-tabs="item">
-            <div class="service-list">
-              <div class="service-item"><i class="fas fa-check"></i> Всё из тарифа "Начальный"</div>
-              <div class="service-item"><i class="fas fa-check"></i> Исправление ошибок и доработки (до 15 часов/мес)</div>
-              <div class="service-item"><i class="fas fa-check"></i> Приоритетная реакция на запросы (до 2 часов)</div>
-              <div class="service-item"><i class="fas fa-check"></i> Резервное копирование (ежедневно)</div>
-              <div class="service-item"><i class="fas fa-check"></i> Мониторинг безопасности и производительности</div>
-              <div class="service-item"><i class="fas fa-check"></i> Работа с хостингом и инфраструктурой</div>
-              <div class="service-item"><i class="fas fa-check"></i> Ежемесячный отчет о проделанной работе</div>
-            </div>
-            <div class="service-price">
-              <h4 class="price">от&nbsp;50 000&nbsp;₽/мес</h4>
-              <button
-                      class="button button--outline"
-                      data-controller-modal-open="form"
-                      data-controller-modal-func="open"
-                      data-controller-ripple-effect="item"
+                      data-tariff-name="Бизнес"
+                      data-tariff-price="от&nbsp;25 000&nbsp;₽"
               >
                 Выбрать тариф
               </button>
@@ -236,21 +240,23 @@
           </div>
           <div class="tab-panel" id="enterprise" data-controller-tabs="item">
             <div class="service-list">
-              <div class="service-item"><i class="fas fa-check"></i> Всё из тарифа "Бизнес"</div>
-              <div class="service-item"><i class="fas fa-check"></i> Полное абонентское обслуживание (до 40 часов/мес)</div>
-              <div class="service-item"><i class="fas fa-check"></i> Круглосуточный мониторинг и реакция 24/7</div>
-              <div class="service-item"><i class="fas fa-check"></i> Выделенный менеджер проекта</div>
-              <div class="service-item"><i class="fas fa-check"></i> Регулярный аудит безопасности и оптимизации</div>
-              <div class="service-item"><i class="fas fa-check"></i> Разработка нового функционала в рамках поддержки</div>
-              <div class="service-item"><i class="fas fa-check"></i> Стратегические совещания по развитию продукта</div>
+              <p class="service-item"><i class="fas fa-check"></i> Всё из тарифа "Бизнес"</p>
+              <p class="service-item"><i class="fas fa-check"></i> Полное абонентское обслуживание (до 40 часов/мес)</p>
+              <p class="service-item"><i class="fas fa-check"></i> Круглосуточный мониторинг и реакция 24/7</p>
+              <p class="service-item"><i class="fas fa-check"></i> Выделенный менеджер проекта</p>
+              <p class="service-item"><i class="fas fa-check"></i> Регулярный аудит безопасности и оптимизации</p>
+              <p class="service-item"><i class="fas fa-check"></i> Разработка нового функционала в рамках поддержки</p>
+              <p class="service-item"><i class="fas fa-check"></i> Стратегические совещания по развитию продукта</p>
             </div>
             <div class="service-price">
-              <h4 class="price">от&nbsp;100 000&nbsp;₽/мес</h4>
+              <h4 class="price">от&nbsp;70 000&nbsp;₽/мес</h4>
               <button
                       class="button button--outline"
                       data-controller-modal-open="form"
                       data-controller-modal-func="open"
                       data-controller-ripple-effect="item"
+                      data-tariff-name="Партнерский"
+                      data-tariff-price="от&nbsp;70 000&nbsp;₽/мес"
               >
                 Выбрать тариф
               </button>
@@ -260,55 +266,6 @@
       </div>
     </div>
   </section>
-
-  <!-- Last Works Section - закомментирован -->
-  <!--
-  <section class="last-works">
-    <div class="container">
-      <h3 class="section__title">Проекты на <span class="color-accent-red">поддержке</span></h3>
-      <div class="works-container">
-        <div class="works-list">
-          <a href="#" class="work-item" >
-            <h3 class="work-title">Интернет-магазин на 1С-Битрикс (производство)</h3>
-            <p class="work-description">Полное абонентское обслуживание: обновления, интеграция с CRM и 1С, исправление ошибок, оптимизация скорости.</p>
-            <p class="work-link">Подробнее <i class="fas fa-arrow-right"></i></p>
-          </a>
-          <a href="#" class="work-item" >
-            <h3 class="work-title">Миграция корпоративного портала с устаревшей CMS</h3>
-            <p class="work-description">Перенос сайта с самописной CMS на WordPress с сохранением структуры и данных. Дальнейшая техническая поддержка.</p>
-            <p class="work-link">Подробнее <i class="fas fa-arrow-right"></i></p>
-          </a>
-          <a href="#" class="work-item" >
-            <h3 class="work-title">Технический партнер для маркетингового агентства</h3>
-            <p class="work-description">Аутсорс всей технической реализации проектов агентства: от лендингов до сложных веб-приложений.</p>
-            <p class="work-link">Подробнее <i class="fas fa-arrow-right"></i></p>
-          </a>
-          <a href="#" class="work-item" >
-            <h3 class="work-title">Рефакторинг и ускорение legacy-сайта</h3>
-            <p class="work-description">Анализ и оптимизация кодовой базы старого корпоративного сайта, что сократило время загрузки на 70%.</p>
-            <p class="work-link">Подробнее <i class="fas fa-arrow-right"></i></p>
-          </a>
-        </div>
-        <div class="works-visual">
-          <div id="works-cube" class="works-cube">
-            <div class="cube-face cube-face-front">
-              <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Project">
-            </div>
-            <div class="cube-face cube-face-back">
-              <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Project">
-            </div>
-            <div class="cube-face cube-face-right">
-              <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Project">
-            </div>
-            <div class="cube-face cube-face-left">
-              <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Project">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  -->
 
   <section class="faq">
     <div class="container">
@@ -372,12 +329,12 @@
 </main>
 <footer>
   <div class="footer-content">
-    <a class="logo color-whitesmoke" href="/">
-      <span class="font-size-h2">K</span>
-      <span class="font-size-h2">·</span>
-      <span class="font-size-h3 color-accent-red">ART</span>
-      <span class="font-size-h2">·</span>
-      <span class="font-size-h4">MAKE</span>
+    <a href="/" class="logo">
+      <span class="font-size-h3">K</span>
+      <span class="font-size-h3">·</span>
+      <span class="font-size-h4 color-accent-red">ART</span>
+      <span class="font-size-h3">·</span>
+      <span class="font-size-h5">MAKE</span>
     </a>
 
     <div class="footer-info">
@@ -464,27 +421,27 @@
     <div class="form-container">
       <form class="contact-form" data-controller="form">
         <div class="form-group">
-          <input type="text" class="form-input" id="name" placeholder=" " required>
+          <input type="text" class="form-input" id="name" name="name" placeholder=" " required>
           <label for="name" class="form-label">Имя</label>
         </div>
 
         <div class="form-group">
-          <input type="text" class="form-input" id="company" placeholder=" ">
+          <input type="text" class="form-input" id="company" name="company" placeholder=" ">
           <label for="company" class="form-label">Название компании</label>
         </div>
 
         <div class="form-group">
-          <input type="email" class="form-input" id="email" placeholder=" ">
+          <input type="email" class="form-input" id="email" name="email" placeholder=" ">
           <label for="email" class="form-label">Email</label>
         </div>
 
         <div class="form-group">
-          <input type="tel" class="form-input" id="phone" placeholder=" " required>
+          <input type="tel" class="form-input" id="phone" name="phone" placeholder=" " required>
           <label for="phone" class="form-label">Телефон</label>
         </div>
 
         <div class="form-group full-width">
-          <textarea class="form-input" id="message" placeholder=" " required></textarea>
+          <textarea class="form-input" id="message" name="message" placeholder=" " required></textarea>
           <label for="message" class="form-label">Опишите ваш проект, текущие проблемы и задачи для поддержки</label>
         </div>
 
