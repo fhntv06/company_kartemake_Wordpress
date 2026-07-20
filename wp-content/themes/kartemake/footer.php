@@ -169,6 +169,9 @@
 <!-- Specialist widget -->
 <?php get_template_part('template-parts/specialist-widget'); ?>
 
+<!-- Cookie banner -->
+<?php get_template_part('template-parts/cookie-banner'); ?>
+
 <?php wp_footer(); ?>
 </body>
 </html>
