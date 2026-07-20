@@ -327,34 +327,74 @@
     </div>
   </section>
 </main>
-<footer>
-  <div class="footer-content">
-    <a href="/" class="logo">
-      <span class="font-size-h3">K</span>
-      <span class="font-size-h3">·</span>
-      <span class="font-size-h4 color-accent-red">ART</span>
-      <span class="font-size-h3">·</span>
-      <span class="font-size-h5">MAKE</span>
-    </a>
+<footer class="footer">
+  <div class="container">
+    <!-- Строка 1: Лого + 3 колонки + CTA -->
+    <div class="footer__row footer__row--top">
+      <!-- Колонка 1: Логотип -->
+      <div class="footer__col footer__col--logo">
+        <a href="/" class="logo">
+          <span class="font-size-h3">K</span>
+          <span class="font-size-h3">·</span>
+          <span class="font-size-h4 color-accent-red">ART</span>
+          <span class="font-size-h3">·</span>
+          <span class="font-size-h5">MAKE</span>
+        </a>
+      </div>
 
-    <div class="footer-info">
-      <p>Ваш внешний технический отдел. Поддержка и развитие digital-продуктов на аутсорсе.</p>
+      <!-- Колонка 2: Услуги -->
+      <div class="footer__col footer__col--services">
+        <h4 class="footer__title">Услуги</h4>
+        <ul class="footer__list">
+          <li><a href="services.html#web-development">Веб-разработка &amp; CMS</a></li>
+          <li><a href="services.html#migration">Техническая миграция и модернизация</a></li>
+          <li><a href="services.html#support">Техподдержка &amp; Инфраструктура</a></li>
+          <li><a href="services.html#audit">Аудит и консалтинг</a></li>
+        </ul>
+      </div>
+
+      <!-- Колонка 3: Полезное -->
+      <div class="footer__col footer__col--links">
+        <h4 class="footer__title">Полезное</h4>
+        <ul class="footer__list">
+          <li><a href="/services">Услуги</a></li>
+          <li><a href="/blog">Технический блог</a></li>
+          <li><a href="/support">Техподдержка</a></li>
+          <li><a href="/contacts">Контакты</a></li>
+          <li class="footer__list-divider"></li>
+          <li><a href="/requisites">Реквизиты</a></li>
+          <li><a href="/privacy-policy">Политика конфиденциальности</a></li>
+          <li><a href="/offer">Публичная оферта</a></li>
+        </ul>
+      </div>
+
+      <!-- Колонка 4: CTA (кнопка "Начать проект") -->
+      <div class="footer__col footer__col--cta">
+        <button
+                class="cta-button"
+                data-controller-modal-open="form"
+                data-controller-modal-func="open"
+                data-controller-ripple-effect="item"
+        >
+          Начать проект
+          <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
     </div>
 
-    <div class="footer-cta">
-      <button
-              class="cta-button"
-              data-controller-modal-open="form"
-              data-controller-modal-func="open"
-              data-controller-ripple-effect="item"
-      >
-        Обсудить проект
-        <i class="fas fa-arrow-right"></i>
-      </button>
+    <!-- Строка 2: Описание -->
+    <div class="footer__row footer__row--middle">
+      <p class="footer__description">
+        Ваш внешний технический отдел. Поддержка и развитие digital-продуктов
+      </p>
     </div>
-  </div>
-  <div class="footer-bottom">
-    <div class="copyright">KARTEMAKE © 2026. Все права защищены.</div>
+
+    <!-- Строка 3: Копирайт -->
+    <div class="footer__row footer__row--bottom">
+      <div class="footer__copyright">
+        <small>KARTEMAKE © 2026. Все права защищены.</small>
+      </div>
+    </div>
   </div>
 </footer>
 

@@ -1,66 +1,224 @@
-@use "../variables/colors" as colors;
 @use "../variables/offsets" as offsets;
-@use "../variables/mixins" as mixins;
 @use "../variables/media" as media;
 
-footer {
-  background-color: var(--bg-color);
-  padding: offsets.$extra-small offsets.$small;
-  border-top: 1px solid var(--gray);
 
-  @include mixins.add-opacity-load();
-}
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: offsets.$small;
-}
-.footer-info {
-  order: 2;
-}
-.privacy-policy {
-  color: var(--gray-text);
-  text-decoration: none;
-  transition: var(--transition);
-}
-.privacy-policy:hover {
-  color: var(--accent-red);
-}
-.copyright {
-  color: var(--gray-text);
-}
-.footer-cta {
-  order: 3;
+.footer {
+  color: var(--footer-text, rgba(255, 255, 255, .7));
+  padding: offsets.$middle 0 offsets.$small;
+  border-top: 1px solid rgba(255, 255, 255, .05);
+  opacity: 0;
 
-  .cta-button {
-    margin-left: auto;
+  p {
+    color: var(--light-text);
   }
 }
-.footer-bottom {
-  padding-top: offsets.$small;
-  border-top: 1px solid var(--gray);
+
+/* ============================================
+   СТРОКА 1: 4 колонки
+   ============================================ */
+
+.footer__row--top {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: offsets.$extra-small;
+  padding-bottom: offsets.$small;
+  border-bottom: 1px solid rgba(255, 255, 255, .08);
+}
+
+/* Колонка 1: Логотип */
+.footer__col--logo {
+  grid-column: span 4;
+}
+
+/* Колонки 2 и 3: Заголовки и списки */
+.footer__title {
+  margin-bottom: offsets.$extra-small;
+}
+
+.footer__list {
+  a {
+    transition: color 0.3s ease;
+  }
+
+  li:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+
+.footer__list-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, .08);
+  margin: offsets.$extra-small 0;
+}
+
+.footer__col--services,
+.footer__col--links {
+  grid-column: span 3;
+}
+.footer__col--contacts {
+  grid-column: 11 / span 2;
+}
+
+/* ============================================
+   СТРОКА 2: Описание
+   ============================================ */
+
+.footer__row--middle {
+  padding: offsets.$extra-small 0;
+  border-bottom: 1px solid rgba(255, 255, 255, .06);
+}
+
+.footer__description {
+  font-size: 16px;
+  color: var(--footer-text, rgba(255, 255, 255, .5));
+  text-align: center;
+}
+
+/* ============================================
+   СТРОКА 3: Копирайт
+   ============================================ */
+
+.footer__row--bottom {
+  padding-top: offsets.$extra-small;
+}
+
+.footer__copyright {
   color: var(--gray-text);
   text-align: center;
 }
 
-@media (max-width: media.$lower-middle) {
-  .footer-content {
-    flex-wrap: wrap;
-    row-gap: offsets.$lower-small;
-  }
-  .footer-bottom {
-    padding-top: offsets.$lower-small;
+/* ============================================
+   ФУТЕР - НОВЫЕ СТИЛИ
+   ============================================ */
+
+/* Колонка 1: Информация о компании */
+.footer__company {
+  margin-top: 16px;
+}
+
+.footer__company-inn,
+.footer__company-ogrn {
+  margin: 0;
+}
+
+/* Колонка 4: Контакты */
+.footer__list--contacts li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.footer__list--contacts i {
+  width: 18px;
+  color: var(--accent-red, #ff6b6b);
+  font-size: 14px;
+}
+
+.footer__list--contacts a {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer__list--contacts a:hover {
+  color: #fff;
+}
+
+/* Социальные сети */
+.footer__social {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, .06);
+    color: var(--light-text);
+    font-size: 18px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+
+    &:hover {
+      background-color: var(--accent-red);
+      color: var(--light-text);
+
+      &::after {
+        display: none;
+      }
+    }
   }
 }
-@media (max-width: media.$extra-small) {
-  footer {
-    padding: offsets.$extra-small;
+
+/* ============================================
+   АДАПТИВ
+   ============================================ */
+
+@media (max-width: media.$lower-middle) {
+  .footer {
+    padding: offsets.$small 0 offsets.$extra-small;
   }
-  .footer-info {
+  .footer__row--top {
+    grid-template-columns: repeat(6, 1fr);
+    row-gap: offsets.$small;
+  }
+  .footer__col--logo {
+    grid-column: span 3;
+  }
+  .footer__col--logo {
+    order: 1;
+  }
+  .footer__col--cta {
+    order: 2;
+  }
+  .footer__col--services, .footer__col--links {
     order: 3;
   }
-  .footer-cta {
-    order: 2;
+  .footer__col--contacts {
+    order: 4;
+    grid-column: span 3;
+  }
+}
+
+@media (max-width: calc(media.$large-small)) {
+  .footer__col--services, .footer__col--links, .footer__col--contacts {
+    grid-column: 1 / -1;
+  }
+  .cta-button {
+    width: 100%;
+  }
+}
+
+[data-theme="dark"] {
+  .footer {
+    background-color: var(--light-bg);
+
+    p {
+      color: var(--dark-text);
+    }
+
+    .logo,
+    .footer__title,
+    .footer__list a {
+      color: var(--dark-text);
+    }
+  }
+}
+
+[data-theme="light"] {
+  .footer {
+    background-color: var(--darker-bg);
+
+    .logo,
+    .footer__title,
+    .footer__list a {
+      color: var(--light-text);
+    }
   }
 }
