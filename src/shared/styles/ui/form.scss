@@ -125,6 +125,104 @@ select.error {
   color: var(--accent-red);
 }
 
+/* ============================================
+   ЧЕКБОКС СОГЛАСИЯ (.checkbox-group)
+   ============================================ */
+
+.checkbox-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+
+  input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+
+    &:checked + .checkbox-label::before {
+      background: var(--accent-red, #ff6b6b);
+      border-color: var(--accent-red, #ff6b6b);
+    }
+
+    &:checked + .checkbox-label::after {
+      transform: rotate(-45deg) scale(1);
+    }
+
+    &:focus + .checkbox-label::before {
+      box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.25);
+    }
+
+    &:disabled + .checkbox-label {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    &:disabled + .checkbox-label::before {
+      background: #f0f0f0;
+      border-color: #ddd;
+    }
+
+    & + .checkbox-label::before {
+      border-color: var(--accent-red, #ff6b6b);
+      box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.15);
+    }
+  }
+
+  .error-message {
+    color: var(--accent-red);
+    font-size: 12px;
+    margin-top: 4px;
+    display: block;
+  }
+
+  .checkbox-label {
+    position: relative;
+    padding-left: 32px;
+    cursor: pointer;
+    color: var(--light-text);
+
+    a {
+      color: var(--accent-red, #ff6b6b);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 6px;
+      top: 4px;
+      width: 10px;
+      height: 6px;
+      border-left: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+      transform: rotate(-45deg) scale(0);
+      transition: transform 0.25s ease;
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 1px;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      background: var(--bg-color, #fff);
+      transition: all 0.25s ease;
+    }
+
+    &:hover::before {
+      border-color: var(--accent-red, #ff6b6b);
+    }
+  }
+}
+
+
 @media (max-width: media.$extra-small) {
   .contact-form {
     grid-template-columns: 1fr;
@@ -139,5 +237,38 @@ select.error {
   .form-label {
     top: calc(22px - 17px);
     left: calc(offsets.$extra-small / 2);
+  }
+
+  .checkbox-group {
+    .checkbox-label {
+      &::before {
+        width: 18px;
+        height: 18px;
+        top: 2px;
+      }
+
+      &::after {
+        left: 5px;
+        top: 5px;
+        width: 8px;
+        height: 5px;
+      }
+    }
+  }
+}
+
+[data-theme="dark"] {
+  .checkbox-group {
+    .checkbox-label {
+      &::before {
+        border-color: #555;
+        background: #1a1a2e;
+      }
+    }
+
+    input[type="checkbox"]:disabled + .checkbox-label::before {
+      background-color: var(--darker-bg);
+      border-color: var(--darker-bg);
+    }
   }
 }
