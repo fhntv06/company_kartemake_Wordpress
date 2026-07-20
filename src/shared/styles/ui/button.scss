@@ -11,7 +11,6 @@ button, .button {
 
   &:not(:disabled):hover {
     box-shadow: var(--shadow);
-    color: var(--light-text);
     transform: translateY(-3px);
 
     &--primary {
@@ -25,6 +24,9 @@ button, .button {
     }
     &--outline {
       background-color: var(--accent-red);
+    }
+    &--decline {
+      background-color: transparent;
     }
   }
 
@@ -53,5 +55,9 @@ button, .button {
   &--large {
     padding: offsets.$extra-small offsets.$small;
     font-size: 1.1rem;
+  }
+  &--decline {
+    color: var(--gray-text);
+    border: 1px solid var(--gray-text);
   }
 }

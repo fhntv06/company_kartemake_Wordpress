@@ -4,6 +4,7 @@ import { AnimationNumbersController } from './AnimationNumbersController.js'
 import { BlobClusterController  } from './BlobClusterController.js'
 import { BurgerMenuController } from './BurgerMenuController.js'
 import { CalculatorController } from './CalculatorController.js'
+import { CookieController } from './CookieController.js'
 import { CubeWithWorkItemsController } from './CubeWithWorkItemsController.js'
 import { FormController } from './FormController.js'
 import { CursorController } from './CursorController.js'
@@ -35,6 +36,7 @@ export class EntryPointApp {
       'blob-cluster': BlobClusterController,
       'burger-menu': BurgerMenuController,
       'calculator': CalculatorController,
+      'cookie': CookieController,
       'cube-with-work': CubeWithWorkItemsController,
       'form': FormController,
       'custom-cursor': CursorController,
