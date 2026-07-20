@@ -97,7 +97,7 @@ export class FormController {
       // Очищаем ошибку для этого поля
       this.clearFieldError(fieldName);
 
-      console.log(`fill-form-field: поле "${fieldName}" заполнено`);
+      console.error(`fill-form-field: поле "${fieldName}" заполнено`);
     }
   };
 
@@ -359,7 +359,6 @@ export class FormController {
 
     try {
       const formData = this.getFormData();
-      console.log('Данные формы:', formData);
 
       // Показываем состояние отправки
       submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Отправка...';
@@ -377,7 +376,6 @@ export class FormController {
 
       // Форматируем данные для уведомления
       const formattedMessage = this.formatDataForDisplay(formData);
-      console.log('Форматированные данные:', formattedMessage);
 
       // Можно отправлять в Telegram или другую систему
       // this.sendToTelegram(formattedMessage);

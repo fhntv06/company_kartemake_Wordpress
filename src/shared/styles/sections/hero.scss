@@ -14,7 +14,7 @@
   position: relative;
   display: flex;
   justify-content: space-between;
-  column-gap: calc(offsets.$large);
+  column-gap: offsets.$large;
 }
 .hero-text {
   flex: 3;

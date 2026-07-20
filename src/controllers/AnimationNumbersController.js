@@ -20,7 +20,7 @@ export class AnimationNumbersController {
   }
   animateValue = (settings) => {
     if (typeof settings.start != "number" || typeof settings.end != "number" || typeof settings.duration != "number") {
-      return console.log("Error types in Animation value with settings:", settings)
+      return console.error("Error types in Animation value with settings:", settings)
     }
 
     let startTimestamp = null

@@ -14,12 +14,7 @@ export class SidebarAnchorController {
         e.preventDefault();
 
         const targetId = this.getAttribute('href');
-
-        console.log(targetId)
-
         const targetSection = document.querySelector(`[data-id="${targetId.substring(1)}"]`);
-
-        console.log(targetSection)
 
         if (targetSection) {
           // Плавная прокрутка к секции
