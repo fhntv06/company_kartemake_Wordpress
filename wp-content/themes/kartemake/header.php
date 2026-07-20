@@ -65,7 +65,7 @@
             <a href="https://t.me/KArtech76" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-telegram"></i>
             </a>
-            <a href="https://vk.com/k.artem76" target="_blank" rel="noopener noreferrer">
+            <a href="https://vk.ru/kartemake" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-vk"></i>
             </a>
         </div>

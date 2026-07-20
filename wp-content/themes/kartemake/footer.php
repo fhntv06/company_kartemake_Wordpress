@@ -84,7 +84,7 @@
 
                 <!-- Социальные сети -->
                 <div class="footer__social">
-                    <a href="https://vk.com/k.artem76" target="_blank" rel="noopener noreferrer" aria-label="ВКонтакте">
+                    <a href="https://vk.ru/kartemake" target="_blank" rel="noopener noreferrer" aria-label="ВКонтакте">
                         <i class="fab fa-vk"></i>
                     </a>
                     <a href="https://t.me/KArtech76" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
@@ -124,7 +124,7 @@
                 <small>
                     <?php
                     $current_year = date('Y');
-                    echo get_theme_mod('footer_copyright', "KARTEMAKE © {$current_year}. Все права защищены.");
+                    echo get_theme_mod('footer_copyright', "© {$current_year}. KARTEMAKE. Все права защищены.");
                     ?>
                 </small>
             </div>
