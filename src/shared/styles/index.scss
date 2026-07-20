@@ -38,6 +38,8 @@
     --max-h5-font-size: 24;
     --min-p-font-size: 12;
     --max-p-font-size: 20;
+    --min-small-font-size: 12;
+    --max-small-font-size: 16;
     --min-screen-width: 320;
     --max-screen-width: 1920;
     --star-color-light: #111;
@@ -105,4 +107,7 @@ ul, ol {
 }
 .fa, .fa-brands, .fa-classic, .fa-regular, .fa-sharp, .fa-solid, .fab, .far, .fas {
     pointer-events: none;
+}
+h1,h2,h3,h4,h5,h6,p {
+    transition: var(--transition);
 }

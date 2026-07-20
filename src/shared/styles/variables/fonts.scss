@@ -57,6 +57,14 @@ p, .font-size-p {
       var(--max-screen-width)
   )
 }
+small, .font-size-small {
+  @include mixins.responsive-font(
+    var(--min-small-font-size),
+    var(--max-small-font-size),
+    var(--min-screen-width),
+    var(--max-screen-width)
+  )
+}
 .font-weight-bold {
   font-weight: 700;
 }
