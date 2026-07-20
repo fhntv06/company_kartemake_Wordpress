@@ -59,20 +59,12 @@
 
     <div class="header-controls">
         <div class="social-links">
-            <a href="https://github.com/fhntv06" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-github"></i>
+            <a href="https://vk.ru/kartemake" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-vk"></i>
             </a>
             <a href="https://t.me/KArtech76" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-telegram"></i>
             </a>
-            <a href="https://vk.ru/kartemake" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-vk"></i>
-            </a>
-        </div>
-
-        <div class="phone">
-            <i class="fas fa-phone"></i>
-            <span><?php echo get_theme_mod('header_phone', '+7 (908) 946-14-83'); ?></span>
         </div>
 
         <button class="theme-toggle" data-controller-theme="item">

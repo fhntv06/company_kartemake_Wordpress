@@ -69,10 +69,6 @@
 
                 <ul class="footer__list footer__list--contacts">
                     <li>
-                        <i class="fas fa-phone"></i>
-                        <a href="tel:+79089461483">+7 (908) 946-14-83</a>
-                    </li>
-                    <li>
                         <i class="fas fa-envelope"></i>
                         <a href="mailto:hello@kartemake.ru">hello@kartemake.ru</a>
                     </li>
