@@ -22,24 +22,62 @@ export class AnchorController {
           : scrollHintText.classList.remove('hidden')
       })
     }
+
+    this.handleHashOnLoad();
   }
+  handleHashOnLoad = () => {
+    if (window.location.hash) {
+      const targetId = window.location.hash.substring(1);
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+        // Даём время на полную загрузку страницы и рендеринг
+        setTimeout(() => {
+          this.scrollToElement(targetElement);
+        }, 500);
+      }
+    }
+  }
+  scrollToElement = (element) => {
+    const header = document.querySelector('.header');
+    const headerHeight = header ? header.offsetHeight : 0;
+    const offset = window.innerWidth < 768 ? 32 : 64; // дополнительный отступ
+
+    const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+    const offsetPosition = elementPosition - headerHeight - offset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+    });
+  };
   anchorHandler = (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
-    const targetId = e.currentTarget.getAttribute('href')
+    const rawHref = e.currentTarget.getAttribute('href');
 
-    if (targetId === '#') return
+    // Разбираем URL на части
+    const [path, hash] = rawHref.split('#');
 
-    const targetElement = document.querySelector(targetId)
+    // Если есть якорь
+    if (hash) {
+      // Проверяем, текущая страница или внешняя
+      const currentPath = window.location.pathname;
+      const targetPath = path || '/';
 
-    if (targetElement) {
-      const targetPosition = targetElement.offsetTop
+      // Если это ссылка на другую страницу
+      if (targetPath !== currentPath && targetPath !== '') {
+        // Переходим на страницу с якорем в URL
+        window.location.href = rawHref;
+        return;
+      }
 
-      // Плавная прокрутка к секции
-      window.scrollTo({
-        top: targetPosition,
-        behavior: 'smooth'
-      })
+      // Ищем элемент с якорем на текущей странице
+      const targetElement = document.getElementById(hash);
+
+      if (targetElement) {
+        this.scrollToElement(targetElement);
+      }
     }
   }
 }
