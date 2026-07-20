@@ -25,20 +25,7 @@ header {
     color: var(--dark-text);
   }
 }
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
 
-  &:hover {
-    transform: none;
-
-    &:after {
-      display: none;
-    }
-  }
-}
 .header-controls {
   order: 3;
   display: flex;
