@@ -7,38 +7,3 @@
   justify-content: space-between;
   gap: offsets.$extra-small;
 }
-.menu-item {
-  padding: offsets.$extra-small;
-  background-color: colors.$gray;
-  border-radius: 12px;
-  transition: all .3s;
-
-  a {
-    color: colors.$white;
-
-    &:after {
-      background-color: colors.$white;
-    }
-  }
-  &.active {
-    background-color: colors.$c5;
-    pointer-events: none;
-  }
-  &:hover {
-    color: colors.$dark;
-    background-color: colors.$light-black;
-  }
-}
-
-// DARK THEME
-[data-theme="dark"] {
-  .menu-item {
-    &.active {
-      background-color: colors.$c5;
-    }
-    &:hover {
-      color: colors.$dark;
-      background-color: colors.$light-black;
-    }
-  }
-}
