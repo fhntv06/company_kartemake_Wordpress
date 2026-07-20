@@ -1,3 +1,6 @@
+@use '../variables/offsets' as offsets;
+@use '../variables/media' as media;
+
 .scroll-progress {
   z-index: 1001;
   position: fixed;
@@ -10,7 +13,7 @@
 }
 .scroll-hint {
   position: absolute;
-  bottom: 30px;
+  bottom: offsets.$middle;
   left: 50%;
   transform: translateX(-50%);
   opacity: 1;
@@ -21,6 +24,12 @@
     opacity: 0;
     pointer-events: none;
     transition: opacity .3s ease-out;
+  }
+}
+
+@media (max-width: media.$extra-small) {
+  .scroll-hint {
+    bottom: offsets.$small;
   }
 }
 
