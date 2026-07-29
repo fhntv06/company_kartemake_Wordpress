@@ -1,6 +1,8 @@
 @use '../variables/offsets' as offsets;
 @use '../variables/media' as media;
 
+$cookie-step-width: calc(media.$extra-small);
+
 .cookie-banner {
   z-index: 10000;
   position: fixed;
@@ -10,7 +12,13 @@
   width: 100%;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.4s ease, visibility 0.4s ease;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  border-radius: var(--border-radius);
+  transition:
+    opacity .4s ease,
+    visibility .4s ease;
+
   pointer-events: none;
 }
 
@@ -22,31 +30,38 @@
 
 .cookie-banner__wrapper {
   background-color: var(--bg-color);
-  border-radius: var(--border-radius);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-  padding: offsets.$extra-small offsets.$small;
   border: 1px solid var(--border-color, #e8e8e8);
 }
 
 .cookie-banner__content {
   position: relative;
-}
+  display: flex;
+  transition: transform .5s ease-out;
 
+  &.cookie-step--active {
+    transform: translateX(-100%);
+
+    #cookie-step-2 {
+      opacity: 1;
+    }
+  }
+}
+.cookie-banner__header {
+  margin-bottom: calc(offsets.$extra-small / 2);
+}
+#cookie-step-2 {
+  .cookie-banner__header {
+    text-align: right;
+  }
+}
 .cookie-step {
-  position: absolute;
-  inset: 0;
-  flex-direction: column;
-  animation: cookieFade 0.35s ease;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
-
-.cookie-step--active {
   position: relative;
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
+  flex-shrink: 0;
+  padding: offsets.$extra-small;
+  width: 100%;
+  max-width: inherit;
+  animation: cookieFade 0.35s ease;
+  transition: opacity .3s ease;
 }
 
 @keyframes cookieFade {
@@ -66,25 +81,27 @@
 }
 
 .cookie-banner__links {
-  margin-bottom: offsets.$extra-small;
+  margin-bottom: calc(offsets.$extra-small / 2);
 }
 
 .cookie-banner__actions {
   display: flex;
   flex-wrap: wrap;
-  gap: offsets.$extra-small;
+  gap: calc(offsets.$extra-small / 2);
 }
 
 .cookie-settings__body {
   display: flex;
   flex-direction: column;
-  gap: offsets.$extra-small;
+  gap: calc(offsets.$extra-small / 2);
 }
 
 .cookie-step__back {
+  position: absolute;
+  top: offsets.$extra-small;
+  left: offsets.$extra-small;
   display: flex;
   align-items: center;
-  margin-bottom: offsets.$extra-small;
   cursor: pointer;
 
   svg {
@@ -100,16 +117,11 @@
 
 .cookie-settings__group-header {
   position: relative;
-}
 
-.cookie-settings__group-badge {
-  display: inline-block;
-  color: var(--light-text);
-  background-color: var(--gray-text);
-  padding: 2px 12px;
-  border-radius: var(--border-radius);
-  height: max-content;
-  width: max-content;
+  small {
+    display: block;
+    max-width: calc(100% - 44px - offsets.$extra-small);
+  }
 }
 
 .cookie-settings__group-description {
