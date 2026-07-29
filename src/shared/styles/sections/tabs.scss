@@ -53,6 +53,9 @@
   .tab-btn {
     padding: calc(offsets.$extra-small / 2);
   }
+  .tabs-nav {
+    justify-content: space-between;
+  }
 }
 
 [data-theme="dark"] {

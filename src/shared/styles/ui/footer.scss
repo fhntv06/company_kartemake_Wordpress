@@ -64,6 +64,8 @@
    ============================================ */
 
 .footer__row--middle {
+  display: flex;
+  justify-content: space-between;
   padding: offsets.$extra-small 0;
   border-bottom: 1px solid rgba(255, 255, 255, .06);
 }
@@ -167,6 +169,7 @@
   .footer__row--top {
     grid-template-columns: repeat(6, 1fr);
     row-gap: offsets.$small;
+    padding-bottom: 0;
   }
   .footer__col--logo {
     grid-column: span 3;
@@ -184,9 +187,18 @@
     order: 4;
     grid-column: span 3;
   }
+  .footer__row--middle {
+    flex-direction: column;
+  }
+  .footer__copyright {
+    order: 2;
+    margin-top: offsets.$extra-small;
+  }
+  .footer__description {
+    order: 1;
+  }
 }
-
-@media (max-width: calc(media.$large-small)) {
+@media (max-width: media.$large-small) {
   .footer__col--services, .footer__col--links, .footer__col--contacts {
     grid-column: 1 / -1;
   }

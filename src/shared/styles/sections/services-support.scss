@@ -18,7 +18,7 @@
 }
 .section__description {
   max-width: 800px;
-  margin: 0 auto offsets.$middle;
+  margin: offsets.$middle auto;
   text-align: center;
 }
 .services-support-tabs {
@@ -52,6 +52,10 @@
 @media (max-width: media.$extra-small) {
   .service-list {
     padding: calc(offsets.$small / 2);
+    margin-bottom: calc(offsets.$small / 2);
+  }
+  .section__description {
+    margin: offsets.$small auto;
   }
   .service-item {
     padding: calc(offsets.$extra-small / 2) 0;

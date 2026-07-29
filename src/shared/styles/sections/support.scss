@@ -3,8 +3,15 @@
 
 .support {
   .stats-particle {
-    display: none;
-    margin: 0 auto offsets.$middle;
+    //display: none;
+    //margin: 0 auto offsets.$middle;
+  }
+
+  .hero-content {
+    margin-bottom: offsets.$middle;
+  }
+  .hero-text {
+    row-gap: offsets.$small;
   }
 }
 .hero-support {
@@ -45,14 +52,24 @@
   gap: 60px;
   margin-bottom: 50px;
 }
-
-.services {
-  .stats-particle {
-    display: none;
-    margin: 0 auto offsets.$middle;
+@media (max-width: media.$middle) {
+  .support {
+    .hero-content {
+      column-gap: offsets.$middle;
+    }
   }
 }
-
+@media (max-width: media.$lower-middle) {
+  .support {
+    .hero-content {
+      flex-direction: column;
+      margin-bottom: offsets.$small;
+    }
+    .hero-text {
+      padding-bottom: offsets.$small;
+    }
+  }
+}
 @media (max-width: media.$lower-middle) {
   .support {
     .stats-particle {

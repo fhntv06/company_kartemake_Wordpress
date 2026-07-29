@@ -1,0 +1,29 @@
+@use "../variables/offsets" as offsets;
+@use "../variables/media" as media;
+
+.contacts {
+  .hero-content {
+    margin-bottom: offsets.$middle;
+  }
+  .hero-text {
+    row-gap: offsets.$small;
+  }
+}
+@media (max-width: media.$middle) {
+  .contacts {
+    .hero-content {
+      column-gap: offsets.$middle;
+    }
+  }
+}
+@media (max-width: media.$lower-middle) {
+  .contacts {
+    .hero-content {
+      flex-direction: column;
+      margin-bottom: offsets.$small;
+    }
+    .hero-text {
+      padding-bottom: offsets.$small;
+    }
+  }
+}

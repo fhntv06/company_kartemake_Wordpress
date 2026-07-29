@@ -1,3 +1,6 @@
+@use "../variables/offsets" as offsets;
+@use "../variables/media" as media;
+
 .benefits-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -7,7 +10,7 @@
   background: var(--bg-color);
   border: 1px solid var(--gray);
   border-radius: var(--border-radius);
-  padding: 30px;
+  padding: offsets.$small;
   transition: var(--transition);
   text-align: center;
 
@@ -29,4 +32,9 @@
 }
 .benefit-card p {
   color: var(--gray-text);
+}
+@media (max-width: media.$extra-middle) {
+  .benefit-card {
+    padding: offsets.$extra-small;
+  }
 }

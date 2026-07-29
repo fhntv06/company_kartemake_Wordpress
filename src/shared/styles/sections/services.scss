@@ -3,15 +3,41 @@
 
 .services {
   .stats-particle {
-    display: none;
-    margin: 0 auto offsets.$middle;
+    //display: none;
+    //margin: 0 auto offsets.$middle;
+  }
+
+  .hero-content {
+    margin-bottom: offsets.$middle;
+  }
+  .hero-text {
+    row-gap: offsets.$small;
   }
 }
 
+@media (max-width: media.$middle) {
+  .services {
+    .stats-particle {
+      display: flex;
+    }
+
+    .hero-content {
+      column-gap: offsets.$middle;
+    }
+  }
+}
 @media (max-width: media.$lower-middle) {
   .services {
     .stats-particle {
       display: flex;
+    }
+
+    .hero-content {
+      flex-direction: column;
+      margin-bottom: offsets.$small;
+    }
+    .hero-text {
+      padding-bottom: offsets.$small;
     }
   }
 }
