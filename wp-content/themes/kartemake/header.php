@@ -15,18 +15,6 @@
         ?>
     </title>
 
-    <!-- ✅ ПРИМЕНЯЕМ ТЕМУ ДО ЗАГРУЗКИ CSS -->
-<!--    <script>-->
-<!--        (function() {-->
-<!--            try {-->
-<!--                const theme = localStorage.getItem('theme') || 'light';-->
-<!--                document.body.setAttribute('data-theme', theme)-->
-<!--            } catch (e) {-->
-<!--                document.body.className = 'light';-->
-<!--            }-->
-<!--        })();-->
-<!--    </script>-->
-
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>
