@@ -14,16 +14,16 @@ export class BurgerMenuController {
     this.overlay = document.getElementById('overlay');
 
     this.init()
+    this.setupEventListeners();
   }
   init = () => {
     this.items.forEach((button) => button.addEventListener('click', this.openMenu))
     this.overlay.addEventListener('click', this.closeMenu);
   }
+    setupEventListeners = () => {
+        document.addEventListener('close-burger', this.openMenu);
+    }
   openMenu = (e) => {
-    // const button = e.target
-
-    // this.activeButton = button
-
     this.sidebar.classList.toggle(this.classOpen)
     this.overlay.classList.toggle(this.classActive)
     // button.classList.toggle(this.classActive)

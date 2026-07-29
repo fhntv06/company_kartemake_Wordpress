@@ -44,6 +44,11 @@ export class CookieController {
             throw new Error(`No have analyticsCheckbox in ${controllerName}`)
         }
 
+        this.content = this.banner.querySelector('.cookie-banner__content')
+        if (!this.content) {
+            throw new Error(`No have content in ${controllerName}`)
+        }
+
         // Состояние
         this.isVisible = false;
         this.isOpen = false;
@@ -72,7 +77,6 @@ export class CookieController {
         this.isVisible = true;
 
         setTimeout(() => {
-            this.banner.style.display = 'block';
             requestAnimationFrame(() => {
                 this.banner.classList.add('cookie-banner--show');
             });
@@ -85,7 +89,6 @@ export class CookieController {
 
         this.banner.classList.remove('cookie-banner--show');
         setTimeout(() => {
-            this.banner.style.display = 'none';
             // Возвращаемся на шаг 1
             this.showStep(1);
         }, 400);
@@ -95,11 +98,9 @@ export class CookieController {
 
     showStep = (stepNumber) => {
         if (stepNumber === 1) {
-            this.step1.classList.add('cookie-step--active');
-            this.step2.classList.remove('cookie-step--active');
+            this.content.classList.remove('cookie-step--active')
         } else {
-            this.step2.classList.add('cookie-step--active');
-            this.step1.classList.remove('cookie-step--active');
+            this.content.classList.add('cookie-step--active')
         }
     };
 

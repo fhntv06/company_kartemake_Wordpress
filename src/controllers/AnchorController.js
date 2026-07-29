@@ -56,25 +56,42 @@ export class AnchorController {
 
     const rawHref = e.currentTarget.getAttribute('href');
 
-    // Разбираем URL на части
+    // Если ссылка начинается с # — это якорь на текущей странице
+    if (rawHref.startsWith('#')) {
+      const hash = rawHref.substring(1); // убираем #
+      const targetElement = document.getElementById(hash);
+      if (targetElement) {
+        this.scrollToElement(targetElement);
+      }
+      return;
+    }
+
+    // Разбираем URL на части для ссылок вида page.html#anchor
     const [path, hash] = rawHref.split('#');
 
-    // Если есть якорь
-    if (hash) {
-      // Проверяем, текущая страница или внешняя
-      const currentPath = window.location.pathname;
-      const targetPath = path || '/';
+    // Если есть якорь и путь не пустой
+    if (hash && path) {
+      // Получаем имя текущего файла из URL
+      const currentFile = window.location.pathname.split('/').pop();
+      const targetFile = path.split('/').pop();
 
       // Если это ссылка на другую страницу
-      if (targetPath !== currentPath && targetPath !== '') {
-        // Переходим на страницу с якорем в URL
+      if (targetFile && targetFile !== currentFile) {
         window.location.href = rawHref;
         return;
       }
 
       // Ищем элемент с якорем на текущей странице
       const targetElement = document.getElementById(hash);
+      if (targetElement) {
+        this.scrollToElement(targetElement);
+      }
+      return;
+    }
 
+    // Если есть якорь, но путь пустой (случай #anchor после обработки startsWith)
+    if (hash) {
+      const targetElement = document.getElementById(hash);
       if (targetElement) {
         this.scrollToElement(targetElement);
       }
