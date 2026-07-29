@@ -4,8 +4,8 @@
 /* Стили для виджета */
 #specialistWidget {
   position: fixed;
-  bottom: 32px;
-  right: 32px;
+  bottom: offsets.$extra-small;
+  right: offsets.$small;
   z-index: 100;
   opacity: 0;
   visibility: hidden;
