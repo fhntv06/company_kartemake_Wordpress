@@ -7,7 +7,6 @@ import { CalculatorController } from './CalculatorController.js'
 import { CookieController } from './CookieController.js'
 import { CubeWithWorkItemsController } from './CubeWithWorkItemsController.js'
 import { FormController } from './FormController.js'
-import { CursorController } from './CursorController.js'
 import { HeaderController } from './HeaderController.js'
 import { InteractiveCardEffectController } from './InteractiveCardEffectController.js'
 import { LangController } from './LangController.js'
@@ -39,7 +38,6 @@ export class EntryPointApp {
       'cookie': CookieController,
       'cube-with-work': CubeWithWorkItemsController,
       'form': FormController,
-      'custom-cursor': CursorController,
       header: HeaderController,
       'interactive-card-effect': InteractiveCardEffectController,
       lang: LangController,
