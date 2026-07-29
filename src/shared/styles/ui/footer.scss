@@ -1,12 +1,14 @@
 @use "../variables/offsets" as offsets;
 @use "../variables/media" as media;
+@use "../variables/mixins" as mixins;
 
 
 .footer {
   color: var(--footer-text, rgba(255, 255, 255, .7));
   padding: offsets.$middle 0 offsets.$small;
   border-top: 1px solid rgba(255, 255, 255, .05);
-  opacity: 0;
+
+  @include mixins.add-opacity-load();
 
   p {
     color: var(--light-text);

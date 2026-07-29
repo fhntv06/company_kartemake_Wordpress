@@ -1,7 +1,7 @@
 import { AccordionController } from './AccordionController.js'
 import { AnchorController } from './AnchorController.js'
 import { AnimationNumbersController } from './AnimationNumbersController.js'
-import { BlobClusterController  } from './BlobClusterController.js'
+import { BlobClusterController } from './BlobClusterController.js'
 import { BurgerMenuController } from './BurgerMenuController.js'
 import { CalculatorController } from './CalculatorController.js'
 import { CookieController } from './CookieController.js'
@@ -12,22 +12,17 @@ import { InteractiveCardEffectController } from './InteractiveCardEffectControll
 import { LangController } from './LangController.js'
 import { ModalController } from './ModalController.js'
 import { PhysicsContainerController } from './PhysicsContainerController.js'
-import { PreloaderController } from './PreloaderController.js'
 import { RippleEffectController } from './RippleEffectController.js'
 import { ScrollProgressController } from './ScrollProgressController.js'
 import { SidebarAnchorController } from './SidebarAnchorController.js'
 import { SpecialistWidgetController } from './SpecialistWidgetController.js'
-import { StarfieldController } from './StarfieldController.js'
 import { TabsController } from './TabsController'
 import { ThemeController } from './ThemeController.js'
-import {ScrollRevealController} from "./ScrollRevealController";
+import { ScrollRevealController } from './ScrollRevealController.js'
 
 export class EntryPointApp {
   constructor() {
-    this.controllerBeforeLoad = {
-      starfield: StarfieldController,
-      preloader: PreloaderController,
-    }
+    // 1. Прелоадер - единственный контроллер, который запускается ДО всех
     this.controllers = {
       accordion: AccordionController,
       anchor: AnchorController,
@@ -52,52 +47,111 @@ export class EntryPointApp {
       theme: ThemeController,
     }
 
-    this.connect()
-  }
-  connect = () => {
-    document.addEventListener('exit-preloader', this.loadControllers)
-    this.beforeLoadControllers()
-    // this.loadControllers()
-  }
-  beforeLoadControllers = () => {
-    try {
-      for (const controllerName in this.controllerBeforeLoad) {
-        const entityController = this.controllerBeforeLoad[controllerName]
+    // 3. Флаг готовности
+    this.isInitialized = false
 
-        if (!entityController) console.error("Is controller ", controllerName, " not define!")
-        console.log('Initializing controller:', entityController.name)
-        new entityController(controllerName, document.body)
+    // 4. Запуск
+    this.init()
+  }
+
+  // ===== ИНИЦИАЛИЗАЦИЯ =====
+  init() {
+    console.log('[App] Starting...')
+
+    this.initControllers()
+
+    setTimeout(() => {
+      if (!this.isInitialized) {
+        console.warn('[App] Force init after timeout')
+        this.forceInit()
       }
+    }, 3000)
+  }
 
-      console.log('Before load controllers initialized!')
-    } catch (e) {
-      console.error(`Before load controllers failed! Error: ${e}`)
+  // ===== ЗАПУСК ВСЕХ КОНТРОЛЛЕРОВ =====
+  initControllers() {
+    console.log('[App] Initializing controllers (parallel)...')
+
+    // Используем requestIdleCallback для приоритизации
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(() => {
+        this.initAllControllers()
+      }, { timeout: 100 })
+    } else {
+      // Fallback для старых браузеров
+      setTimeout(() => this.initAllControllers(), 0)
     }
   }
-  loadControllers = () => {
-    try {
-      for (const controllerName in this.controllers) {
-        const controllerContainers = Array.from(document.querySelectorAll(`[data-controller~="${controllerName}"]`))
 
-        controllerContainers.forEach((container) => {
-          this.initializeEntityController(controllerName, container)
+  initAllControllers() {
+    console.time('[App] Controllers initialization')
+
+    const controllerNames = Object.keys(this.controllers)
+    let index = 0
+
+    const initNext = () => {
+      if (index >= controllerNames.length) {
+        console.timeEnd('[App] Controllers initialization')
+        console.log(`[App] All ${controllerNames.length} controllers initialized!`)
+        this.isInitialized = true
+
+        // Диспатчим событие готовности приложения
+        document.dispatchEvent(new CustomEvent('app:ready'))
+        return
+      }
+
+      const name = controllerNames[index]
+      this.initControllerByName(name)
+
+      index++
+
+      // Каждые 5 контроллеров даем браузеру отдохнуть
+      if (index % 5 === 0 && index < controllerNames.length) {
+        requestAnimationFrame(initNext)
+      } else {
+        setTimeout(initNext, 0)
+      }
+    }
+
+    initNext()
+  }
+
+  initControllerByName(name) {
+    const containers = document.querySelectorAll(`[data-controller~="${name}"]`)
+
+    if (containers.length === 0) return
+
+    const Controller = this.controllers[name]
+
+    containers.forEach(container => {
+      try {
+        new Controller(name, container)
+        // console.log(`[App] ✓ ${name} initialized`)
+      } catch (error) {
+        console.error(`[App] ✗ ${name} failed:`, error)
+      }
+    })
+  }
+
+  // ===== ФОРСИРОВАННАЯ ИНИЦИАЛИЗАЦИЯ (если прелоадер сломался) =====
+  forceInit() {
+    if (this.isInitialized) return
+
+    console.warn('[App] Force initialization')
+
+    // Принудительно показываем контент
+    document.querySelectorAll('header, main, footer, section')
+        .forEach(el => {
+          el.style.opacity = '1'
         })
-      }
 
-      console.log('Main controllers initialized!')
-    } catch (e) {
-      console.error(`Main controllers failed! Error: ${e}`)
-    }
-  }
-  initializeEntityController = (controllerName, container) => {
-    const entityController = this.controllers[controllerName]
+    // Разблокируем скролл
+    document.body.classList.remove('preloader-lock')
+    document.body.style.overflow = ''
 
-    try {
-      new entityController(controllerName, container)
-      console.log('Initializing controller is success:', entityController.name)
-    } catch (e) {
-      console.error('Initializing controller is failed:', entityController.name)
-      console.error(`Error init ${entityController.name}:`, e)
+    // Инициализируем контроллеры, если не сделали это раньше
+    if (!this.isInitialized) {
+      this.initAllControllers()
     }
   }
 }
