@@ -36,9 +36,6 @@
   perspective: 1000px;
 
   &:hover {
-    .device-screen {
-      opacity: 1;
-    }
     .tablet, .phone {
       transform: rotate(0);
     }
@@ -54,7 +51,6 @@
     border-radius: 6px;
     color: white;
     font-weight: bold;
-    opacity: 0;
     pointer-events: none;
     transition: opacity 1s ease-in-out;
   }
@@ -91,7 +87,7 @@
     z-index: 2;
     width: 100px;
     height: 180px;
-    bottom: 20%;
+    bottom: 0;
     right: 40%;
     transform: rotateY(-30deg) rotateX(15deg);
   }

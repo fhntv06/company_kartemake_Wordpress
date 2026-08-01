@@ -79,4 +79,14 @@
 @mixin add-opacity-load() {
   opacity: 0;
   transition: all .3s;
+  animation: opacity 5s forwards;
+
+  @keyframes opacity {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 }

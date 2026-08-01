@@ -8,7 +8,7 @@
 
   <link rel="shortcut icon" href="../../public/images/logotypes/logo-dark.ico" type="image/x-icon">
 </head>
-<body data-controller="custom-cursor modal preloader ripple-effect starfield theme anchor scroll-progress burger-menu">
+<body data-controller="modal  preloader ripple-effect theme anchor scroll-progress burger-menu">
 <header class="header" data-controller="header">
   <a href="/" class="logo">
     <span class="font-size-h3">K</span>
@@ -686,8 +686,6 @@
   <div class="line line-4"></div>
   <div class="line line-5"></div>
 </div>
-<!-- custom-cursor -->
-<div id="custom-cursor" class="custom-cursor" data-controller-custom-cursor="item"></div>
 <!-- preloader -->
 <div class="preloader" data-controller-preloader="item">
   <div class="preloader__container">
@@ -801,8 +799,6 @@
     </svg>
   </div>
 </div>
-<!-- stars-container -->
-<canvas id="stars-canvas" data-controller-starfield="item"></canvas>
 <!-- scroll-progress -->
 <div class="scroll-progress color-accent-red" id="scrollProgress" data-controller-scroll-progress="item"></div>
 
@@ -815,17 +811,12 @@
     <div class="cookie-banner__content">
 
       <!-- ===== ШАГ 1: ОСНОВНОЙ БАННЕР ===== -->
-      <div id="cookie-step-1" class="cookie-step cookie-step--active">
+      <div id="cookie-step-1" class="cookie-step">
         <div class="cookie-banner__header">
-          <p class="cookie-banner__title font-size-h4">🍪 Мы используем файлы cookie и сервисы веб-аналитики</p>
+          <p>Мы применяем cookies, чтобы сайт работал без сбоев и постоянно становился для вас удобнее</p>
         </div>
-        <p class="cookie-banner__description">
-          для обеспечения работы сайта, анализа посещаемости и улучшения пользовательского опыта.
-        </p>
         <div class="cookie-banner__links">
-          <p class="font-size-h5"><b>Подробнее</b>:</p>
-          <p><a href="cookie-policy.html" target="_blank">Политика использования Cookie</a></p>
-          <p><a href="privacy-policy.html" target="_blank">Политика обработки персональных данных</a></p>
+          <small><b>Подробнее</b>: <a class="color-accent-red" href="cookie-policy.html" target="_blank">Политика использования Cookie</a>, <a class="color-accent-red" href="privacy-policy.html" target="_blank">Политика обработки персональных данных</a></small>
         </div>
 
         <div class="cookie-banner__actions">
@@ -833,7 +824,7 @@
             Отклонить необязательные
           </button>
           <button id="cookie-settings-open" class="button--outline">
-            Настроить
+            Настроить <i class="fas fa-arrow-right"></i>
           </button>
           <button id="cookie-accept" class="button--accent">
             Принять
@@ -850,38 +841,31 @@
           Назад
         </div>
 
-        <p class="font-size-h4">Настройки cookie</p>
-        <p class="cookie-banner__description">Выберите, какие файлы cookie разрешить</p>
+        <div class="cookie-banner__header">
+          <p>Настройки cookie</p>
+        </div>
 
         <div class="cookie-settings__body">
           <!-- Обязательные -->
           <div class="cookie-settings__group">
             <div class="cookie-settings__group-header">
-              <span class="font-size-h5">Обязательные cookies</span>
-              <span class="cookie-settings__group-badge"><small>всегда включены</small></span>
+              <small><b>Обязательные cookies</b>: эти файлы необходимы для корректной работы сайта.</small>
               <label for="cookie-require" class="cookie-settings__toggle cookie-settings__toggle--disabled">
                 <input id="cookie-require" type="checkbox" checked disabled>
                 <span class="cookie-settings__toggle-slider"></span>
               </label>
             </div>
-            <small class="cookie-settings__group-description">
-              Эти файлы необходимы для корректной работы сайта. Обеспечивают базовую функциональность, безопасность и доступность.
-            </small>
           </div>
 
           <!-- Аналитические -->
           <div class="cookie-settings__group">
             <div class="cookie-settings__group-header">
-              <span class="font-size-h5">Аналитические cookies</span>
-              <span class="cookie-settings__group-badge"><small>опционально</small></span>
+              <small><b>Аналитические cookies</b>: анализ, использования сайта, для улучшения его работы.</small>
               <label for="analytics-cookies" class="cookie-settings__toggle">
                 <input id="analytics-cookies" type="checkbox">
                 <span class="cookie-settings__toggle-slider"></span>
               </label>
             </div>
-            <small class="cookie-settings__group-description">
-              Помогают анализировать, как посетители используют сайт, чтобы улучшать его работу. Данные собираются анонимно через Яндекс.Метрику.
-            </small>
           </div>
         </div>
 

@@ -10,7 +10,7 @@
 
   <link rel="shortcut icon" href="../../public/images/logotypes/logo-dark.ico" type="image/x-icon">
 </head>
-<body id="smoothScrollContainer" data-controller="custom-cursor modal preloader ripple-effect starfield theme anchor scroll-progress sidebar-anchor burger-menu">
+<body id="smoothScrollContainer" data-controller="modal ripple-effect theme anchor scroll-progress sidebar-anchor burger-menu">
   <header class="header" data-controller="header">
     <a href="/" class="logo">
       <span class="font-size-h3">K</span>
@@ -116,7 +116,6 @@
       </div>
 
       <div id="scroll-hint" class="scroll-hint color-accent-red font-weight-bold">
-        Листайте вниз
         <i class="fas fa-arrow-down"></i>
       </div>
     </section>
@@ -594,142 +593,6 @@
     <div class="line line-4"></div>
     <div class="line line-5"></div>
   </div>
-  <!-- custom-cursor -->
-  <div id="custom-cursor" class="custom-cursor" data-controller-custom-cursor="item"></div>
-  <!-- preloader -->
-  <div class="preloader" data-controller-preloader="item">
-    <div class="preloader__container">
-      <svg id="preloader-svg" class="preloader__svg" width="1280" height="600" viewBox="0 0 800 300"
-           xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <!-- Multiple gradients for complex animation -->
-          <linearGradient id="mainGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#ff6b6b">
-              <animate attributeName="offset" values="-2;2" dur="3s" repeatCount="indefinite"/>
-            </stop>
-            <stop offset="33%" stop-color="#4ecdc4">
-              <animate attributeName="offset" values="-1;3" dur="3s" repeatCount="indefinite"/>
-            </stop>
-            <stop offset="66%" stop-color="#45b7d1">
-              <animate attributeName="offset" values="0;4" dur="3s" repeatCount="indefinite"/>
-            </stop>
-            <stop offset="100%" stop-color="#ff6b6b">
-              <animate attributeName="offset" values="1;5" dur="3s" repeatCount="indefinite"/>
-            </stop>
-          </linearGradient>
-
-          <linearGradient id="secondaryGradient" x1="100%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="#ffd93d">
-              <animate attributeName="offset" values="0;1" dur="2.5s" repeatCount="indefinite"/>
-            </stop>
-            <stop offset="50%" stop-color="#6c5ce7">
-              <animate attributeName="offset" values="0.5;1.5" dur="2.5s" repeatCount="indefinite"/>
-            </stop>
-            <stop offset="100%" stop-color="#ffd93d">
-              <animate attributeName="offset" values="1;2" dur="2.5s" repeatCount="indefinite"/>
-            </stop>
-          </linearGradient>
-
-          <!-- Glow effects -->
-          <filter id="pulseGlow" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
-            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -8" result="glow"/>
-            <feComposite in="SourceGraphic" in2="glow" operator="over"/>
-          </filter>
-
-          <filter id="strongGlow" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur"/>
-            <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 30 -7"/>
-          </filter>
-
-          <!-- Pattern for background effect -->
-          <pattern id="grid" patternUnits="userSpaceOnUse" width="50" height="50">
-            <path d="M 0 0 L 50 0 50 50 0 50 Z" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
-          </pattern>
-        </defs>
-
-        <!-- Background grid -->
-        <rect width="100%" height="100%" fill="url(#grid)" opacity="0.5"/>
-
-        <!-- Base white text (subtle) -->
-        <text x="400" y="150" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="80"
-              fill="rgba(255,255,255,0.1)" opacity="0.5">
-          KARTEMAKE
-        </text>
-
-        <!-- Main animated stroke -->
-        <text x="400" y="150" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="80" fill="none"
-              stroke="url(#mainGradient)" stroke-width="2" stroke-dasharray="1000" stroke-dashoffset="1000">
-          KARTEMAKE
-          <animate attributeName="stroke-dashoffset" values="1000;0;1000" dur="4s" repeatCount="indefinite"/>
-          <animate attributeName="stroke-width" values="2;3;2" dur="2s" repeatCount="indefinite"/>
-        </text>
-
-        <!-- Secondary stroke (reverse direction) -->
-        <text x="400" y="150" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="80" fill="none"
-              stroke="url(#secondaryGradient)" stroke-width="1" stroke-dasharray="800" stroke-dashoffset="800"
-              opacity="0.7">
-          KARTEMAKE
-          <animate attributeName="stroke-dashoffset" values="800;1600;800" dur="3.5s" repeatCount="indefinite"/>
-        </text>
-
-        <!-- Pulsating glow effect -->
-        <text x="400" y="150" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="80" fill="none"
-              stroke="rgba(255,255,255,0.3)" stroke-width="4" opacity="0">
-          KARTEMAKE
-          <animate attributeName="opacity" values="0;0.5;0" dur="2s" repeatCount="indefinite"/>
-          <animate attributeName="stroke-width" values="4;8;4" dur="2s" repeatCount="indefinite"/>
-        </text>
-
-        <!-- Individual letter animations -->
-        <g class="letter-pulses" opacity="0.8">
-          <text x="400" y="150" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="80" fill="none"
-                stroke="rgba(255,255,255,0.2)" stroke-width="1">
-            KARTEMAKE
-            <animate attributeName="stroke-width" values="1;2;1" dur="1.5s" repeatCount="indefinite"/>
-          </text>
-        </g>
-
-        <!-- Floating particles -->
-        <g class="particles" opacity="0.6">
-          <circle cx="100" cy="100" r="2" fill="#ff6b6b">
-            <animate attributeName="cx" values="100;500;100" dur="8s" repeatCount="indefinite"/>
-            <animate attributeName="cy" values="100;200;100" dur="6s" repeatCount="indefinite"/>
-            <animate attributeName="r" values="2;4;2" dur="3s" repeatCount="indefinite"/>
-          </circle>
-          <circle cx="700" cy="200" r="3" fill="#4ecdc4">
-            <animate attributeName="cx" values="700;300;700" dur="7s" repeatCount="indefinite"/>
-            <animate attributeName="cy" values="200;100;200" dur="5s" repeatCount="indefinite"/>
-          </circle>
-          <circle cx="300" cy="250" r="2.5" fill="#45b7d1">
-            <animate attributeName="cx" values="300;600;300" dur="9s" repeatCount="indefinite"/>
-            <animate attributeName="cy" values="250;150;250" dur="4s" repeatCount="indefinite"/>
-          </circle>
-          <circle cx="100" cy="100" r="2" fill="#ffd93d">
-            <animate attributeName="cx" values="200;350;150" dur="8s" repeatCount="indefinite"/>
-            <animate attributeName="cy" values="50;600;150" dur="6s" repeatCount="indefinite"/>
-            <animate attributeName="r" values="2;4;2" dur="3s" repeatCount="indefinite"/>
-          </circle>
-          <circle cx="700" cy="200" r="3" fill="#6c5ce7">
-            <animate attributeName="cx" values="600;450;750" dur="7s" repeatCount="indefinite"/>
-            <animate attributeName="cy" values="10;150;200" dur="5s" repeatCount="indefinite"/>
-          </circle>
-          <circle cx="300" cy="250" r="2.5" fill="#4ecdc4">
-            <animate attributeName="cx" values="700;600;100" dur="9s" repeatCount="indefinite"/>
-            <animate attributeName="cy" values="650;150;350" dur="4s" repeatCount="indefinite"/>
-          </circle>
-        </g>
-
-        <!-- Final white text (hidden until load) -->
-        <text x="400" y="150" text-anchor="middle" class="final-text" font-family="Arial Black, sans-serif" font-size="80"
-              fill="white" filter="url(#strongGlow)" opacity="0">
-          KARTEMAKE
-        </text>
-      </svg>
-    </div>
-  </div>
-  <!-- stars-container -->
-  <canvas id="stars-canvas" data-controller-starfield="item"></canvas>
   <!-- scroll-progress -->
   <div class="scroll-progress color-accent-red" id="scrollProgress" data-controller-scroll-progress="item"></div>
 
@@ -863,17 +726,12 @@
       <div class="cookie-banner__content">
 
         <!-- ===== ШАГ 1: ОСНОВНОЙ БАННЕР ===== -->
-        <div id="cookie-step-1" class="cookie-step cookie-step--active">
+        <div id="cookie-step-1" class="cookie-step">
           <div class="cookie-banner__header">
-            <p class="cookie-banner__title font-size-h4">🍪 Мы используем файлы cookie и сервисы веб-аналитики</p>
+            <p>Мы применяем cookies, чтобы сайт работал без сбоев и постоянно становился для вас удобнее.</p>
           </div>
-          <p class="cookie-banner__description">
-            для обеспечения работы сайта, анализа посещаемости и улучшения пользовательского опыта.
-          </p>
           <div class="cookie-banner__links">
-            <p class="font-size-h5"><b>Подробнее</b>:</p>
-            <p><a href="cookie-policy.html" target="_blank">Политика использования Cookie</a></p>
-            <p><a href="privacy-policy.html" target="_blank">Политика обработки персональных данных</a></p>
+            <small><b>Подробнее</b>: <a class="color-accent-red" href="cookie-policy.html" target="_blank">использование cookie</a>, <a class="color-accent-red" href="privacy-policy.html" target="_blank">обработка персональных данных</a></small>
           </div>
 
           <div class="cookie-banner__actions">
@@ -881,7 +739,7 @@
               Отклонить необязательные
             </button>
             <button id="cookie-settings-open" class="button--outline">
-              Настроить
+              Настроить <i class="fas fa-arrow-right"></i>
             </button>
             <button id="cookie-accept" class="button--accent">
               Принять
@@ -895,45 +753,34 @@
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M19 12H5M12 19l-7-7 7-7"/>
             </svg>
-            Назад
+            <small>Назад</small>
           </div>
-
-          <p class="font-size-h4">Настройки cookie</p>
-          <p class="cookie-banner__description">Выберите, какие файлы cookie разрешить</p>
 
           <div class="cookie-settings__body">
             <!-- Обязательные -->
             <div class="cookie-settings__group">
               <div class="cookie-settings__group-header">
-                <span class="font-size-h5">Обязательные cookies</span>
-                <span class="cookie-settings__group-badge"><small>всегда включены</small></span>
+                <small><b>Обязательные cookies</b>: эти файлы необходимы для корректной работы сайта.</small>
                 <label for="cookie-require" class="cookie-settings__toggle cookie-settings__toggle--disabled">
                   <input id="cookie-require" type="checkbox" checked disabled>
                   <span class="cookie-settings__toggle-slider"></span>
                 </label>
               </div>
-              <small class="cookie-settings__group-description">
-                Эти файлы необходимы для корректной работы сайта. Обеспечивают базовую функциональность, безопасность и доступность.
-              </small>
             </div>
 
             <!-- Аналитические -->
             <div class="cookie-settings__group">
               <div class="cookie-settings__group-header">
-                <span class="font-size-h5">Аналитические cookies</span>
-                <span class="cookie-settings__group-badge"><small>опционально</small></span>
+                <small><b>Аналитические cookies</b>: анализ, использования сайта, для улучшения его работы.</small>
                 <label for="analytics-cookies" class="cookie-settings__toggle">
                   <input id="analytics-cookies" type="checkbox">
                   <span class="cookie-settings__toggle-slider"></span>
                 </label>
               </div>
-              <small class="cookie-settings__group-description">
-                Помогают анализировать, как посетители используют сайт, чтобы улучшать его работу. Данные собираются анонимно через Яндекс.Метрику.
-              </small>
             </div>
           </div>
 
-          <div class="cookie-settings__footer">
+          <div class="cookie-banner__actions">
             <button id="cookie-settings-save" class="button--accent">
               Сохранить настройки
             </button>
