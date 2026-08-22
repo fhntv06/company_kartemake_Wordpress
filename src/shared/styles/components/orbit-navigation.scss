@@ -1,0 +1,158 @@
+@use '../variables/colors' as *;
+@use '../variables/offsets' as *;
+@use '../system/mixins' as *;
+@use '../variables/media' as *;
+
+.orbit-navigation {
+  position: fixed;
+  right: $small; // 32px → $small
+  top: 50%;
+  width: 120px;
+  height: 420px;
+  transform: translateY(-50%);
+  z-index: var(--z-navigation);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .9s ease;
+}
+.orbit-navigation.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.orbit-circle {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.orbit-circle::before {
+  content: "";
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  border-left: 1px solid rgba(255,255,255,.15);
+  border-right: 1px solid rgba(255,255,255,.15);
+  border-radius: 100px;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+.orbit-circle::after {
+  content:"";
+  z-index: 1;
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  width:100%;
+  height: 100%;
+  background-color: rgba(17,19,24, .85);
+  border-radius: 100px;
+  pointer-events: none;
+}
+
+.orbit-point {
+  z-index: 2;
+  position: relative;
+  width: #{$small + $extra-small}; // 44px → 48px (32+16)
+  height: #{$small + $extra-small};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.15);
+  color: rgba(255,255,255,.45);
+  font-size: 11px;
+  letter-spacing: .15em;
+  cursor: pointer;
+  transition: .6s var(--ease);
+}
+
+.orbit-point:hover {
+  transform: scale(1.15);
+  color: $white;
+  border-color: $orange;
+}
+
+.orbit-point.active {
+  width: 60px;
+  height: 60px;
+  color: $white;
+  background: $orange;
+  border-color: $orange;
+  box-shadow: $shadow; // var(--glow-orange) → $shadow
+}
+
+.orbit-point.active::after {
+  content: "";
+  position: absolute;
+  inset: -12px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,46,46,.5); // orange → accent-red
+  animation: orbitPulse 2s infinite;
+}
+.orbit-point__description {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-60%, -50%);
+  opacity: 0;
+  transition: opacity .3s ease, transform .3s ease;
+  pointer-events: none;
+}
+.orbit-point:hover .orbit-point__description {
+  transform: translate(-120%, -50%);
+  opacity: 1;
+}
+@keyframes orbitPulse {
+  50% {
+    transform: scale(1.3);
+    opacity: 0;
+  }
+}
+@media (max-width: #{$breakpoint-extra-small}) { // 768px
+  .orbit-navigation {
+    right: 20px;
+    width: 60px;
+  }
+  .orbit-point {
+    width: $small; // 32px → $small
+    height: $small;
+  }
+  .orbit-point.active {
+    width: $small + $extra-small; // 48px → 48px
+    height: $small + $extra-small;
+  }
+}
+
+@media (max-width: #{$breakpoint-large-small}) { // 576px
+  .orbit-navigation {
+    top: unset;
+    bottom: 0;
+    width: calc(100% - $small); // 40px → $small (32px)
+    height: max-content;
+    transform: translateY(0);
+    transition: opacity .3s ease, transform .3s ease;
+  }
+  .orbit-navigation.visible {
+    transform: translateY(-20%);
+  }
+  .orbit-circle {
+    flex-direction: row;
+  }
+  .orbit-point__description {
+    top: 0;
+    left: 50%;
+  }
+  .orbit-point:hover .orbit-point__description {
+    transform: translate(-50%, -250%);
+  }
+}

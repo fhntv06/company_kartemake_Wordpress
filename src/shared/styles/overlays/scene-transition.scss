@@ -1,0 +1,117 @@
+@use '../variables/colors' as *;
+@use '../variables/offsets' as *;
+@use '../variables/fonts' as *;
+@use '../system/mixins' as *;
+
+.scene-transition {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-loader);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(255, 255, 255, 0.035),
+      transparent 45%
+    ),
+    rgba(8, 9, 12, 0.96);
+
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+}
+
+.scene-transition::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image:
+          linear-gradient(
+                          rgba(255, 255, 255, 0.025) 1px,
+                          transparent 1px
+          ),
+          linear-gradient(
+                          90deg,
+                          rgba(255, 255, 255, 0.025) 1px,
+                          transparent 1px
+          );
+
+  background-size: 80px 80px;
+
+  mask-image:
+          linear-gradient(
+                          to bottom,
+                          transparent,
+                          black 25%,
+                          black 75%,
+                          transparent
+          );
+}
+
+.scene-transition-inner {
+  position: relative;
+  z-index: 1;
+
+  width: min(420px, calc(100% - $small)); // 48px → $small (32px)
+
+  padding: #{$small - 4px}; // 28px → 28px (близко к 32px)
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.scene-transition-label {
+  margin-bottom: #{$small - 4px}; // 28px → 28px
+
+  font-family: var(--font-mono, monospace);
+  @include responsive-font(9,11);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+
+  opacity: 0.4;
+}
+
+.scene-transition-status {
+  display: flex;
+  align-items: center;
+  gap: $extra-small - 6px; // 10px → 10px
+
+  font-family: var(--font-mono, monospace);
+  @include responsive-font(10,12);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.scene-transition-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: $orange; // currentColor → $orange (для единообразия)
+  box-shadow: 0 0 10px $orange; // currentColor → $orange
+}
+
+.scene-transition-target {
+  margin-top: $extra-small; // 16px → $extra-small
+
+  font-family: var(--font-mono, monospace);
+  @include responsive-font(
+    $min-h3-font-size,
+    $max-h3-font-size,
+  );
+  letter-spacing: -0.04em;
+}
+
+@media (max-width: 600px) {
+  .scene-transition-inner {
+    width: calc(100% - #{$small + 4px}); // 36px → 36px
+    padding: #{$small - 10px}; // 22px → 22px
+  }
+  .scene-transition-target {
+    @include responsive-font(22,28);
+  }
+}

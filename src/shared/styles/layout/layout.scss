@@ -1,0 +1,82 @@
+@use '../variables/colors' as *;
+@use '../variables/offsets' as *;
+@use '../variables/fonts' as *;
+@use '../system/mixins' as *;
+@use '../variables/media' as *;
+
+.scene {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+/* =================================================
+   SCENE CONTAINER
+================================================= */
+.scene-container {
+  position: relative;
+  width: 100%;
+  max-width: 1920px;
+  margin: auto;
+  padding: $middle; // 64px → $middle
+}
+
+/* =================================================
+   SCENE HEADER
+================================================= */
+.scene-header {
+  max-width: 80%;
+  margin-bottom: $large; // 120px → $extra-large (128px)
+}
+.scene-eyebrow {
+  display: block;
+  margin-bottom: $extra-small;
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  line-height: 1;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  opacity: 0.55;
+}
+
+.scene-description {
+  margin-top: $small; // 28px → $small (32px)
+  max-width: 620px;
+  line-height: 1.6;
+  opacity: .7;
+}
+
+/* =================================================
+   МЕДИА-ЗАПРОСЫ с использованием старых брейкпоинтов
+================================================= */
+@media (max-width: #{$breakpoint-lower-middle}) { // 1024px
+  .scene-container {
+    padding-left: $small; // 48px → $small (32px)
+    padding-right: $small;
+  }
+}
+
+@media (max-width: #{$breakpoint-extra-small}) { // 768px
+  .scene-header {
+    max-width: 80%;
+    margin-bottom: $middle; // 64px → $middle
+  }
+  .scene-container {
+    padding: $small $small $middle; // 32px 32px 72px → $small $small $extra-large
+  }
+}
+
+@media (max-width: #{$breakpoint-large-small}) { // 576px
+  .scene-header {
+    max-width: 100%;
+    margin-bottom: $small; // 32px → $small
+  }
+  .scene-description {
+    margin-top: $extra-small; // 16px → $extra-small
+  }
+  .scene-container {
+    padding-top: $extra-small; // 12px → $extra-small
+    padding-left: $extra-small; // 16px → $extra-small
+    padding-right: $extra-small;
+  }
+}

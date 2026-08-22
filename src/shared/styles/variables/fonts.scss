@@ -1,4 +1,4 @@
-@use './mixins' as mixins;
+$font-family-base: "Inter", Arial, sans-serif;
 
 $h1: 72px;
 $h2: 64px;
@@ -6,65 +6,18 @@ $h3: 48px;
 $h4: 32px;
 $p: 20px;
 
-body {
-  font-family: "Roboto", "Arial", sans-serif;
-}
-h1, .font-size-h1 {
-  @include mixins.responsive-font(
-    var(--min-h1-font-size),
-    var(--max-h1-font-size),
-    var(--min-screen-width),
-    var(--max-screen-width)
-  )
-}
-h2, .font-size-h2 {
-    @include mixins.responsive-font(
-      var(--min-h2-font-size),
-      var(--max-h2-font-size),
-      var(--min-screen-width),
-      var(--max-screen-width)
-  )
-}
-h3, .font-size-h3 {
-    @include mixins.responsive-font(
-      var(--min-h3-font-size),
-      var(--max-h3-font-size),
-      var(--min-screen-width),
-      var(--max-screen-width)
-  )
-}
-h4, .font-size-h4 {
-    @include mixins.responsive-font(
-      var(--min-h4-font-size),
-      var(--max-h4-font-size),
-      var(--min-screen-width),
-      var(--max-screen-width)
-  )
-}
-h5, .font-size-h5 {
-  @include mixins.responsive-font(
-    var(--min-h5-font-size),
-    var(--max-h5-font-size),
-    var(--min-screen-width),
-    var(--max-screen-width)
-  )
-}
-p, .font-size-p {
-    @include mixins.responsive-font(
-      var(--min-p-font-size),
-      var(--max-p-font-size),
-      var(--min-screen-width),
-      var(--max-screen-width)
-  )
-}
-small, .font-size-small {
-  @include mixins.responsive-font(
-    var(--min-small-font-size),
-    var(--max-small-font-size),
-    var(--min-screen-width),
-    var(--max-screen-width)
-  )
-}
-.font-weight-bold {
-  font-weight: 700;
-}
+// ===== АДАПТИВНЫЕ ШРИФТЫ (мин/макс значения) =====
+$min-h1-font-size: 48;
+$max-h1-font-size: 96;
+$min-h2-font-size: 36;
+$max-h2-font-size: 76;
+$min-h3-font-size: 32;
+$max-h3-font-size: 56;
+$min-h4-font-size: 24;
+$max-h4-font-size: 48;
+$min-h5-font-size: 16;
+$max-h5-font-size: 36;
+$min-p-font-size: 16;
+$max-p-font-size: 20;
+$min-small-font-size: 12;
+$max-small-font-size: 16;

@@ -1,5 +1,9 @@
 import './shared/styles/index.scss'
-import { EntryPointApp } from './controllers/main.js'
+
+import './app/lib/gsap.min.js'
+import './app/lib/lenis.min.js'
+import './app/lib/ScrollTrigger.min.js'
+import EntryPointApp from './app/main.js'
 
 new EntryPointApp()
 

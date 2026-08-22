@@ -1,9 +1,0 @@
-@use '../variables/colors' as colors;
-@use '../variables/offsets' as offsets;
-@use '../variables/mixins' as mixins;
-
-.menu {
-  display: flex;
-  justify-content: space-between;
-  gap: offsets.$extra-small;
-}

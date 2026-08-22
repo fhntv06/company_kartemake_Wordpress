@@ -1,0 +1,61 @@
+// =====================================================
+// ТИПОГРАФИКА — адаптирована под старую систему
+// =====================================================
+@use '../variables/colors' as *;
+@use '../variables/offsets' as *;
+@use '../variables/fonts' as *;
+@use '../variables/media' as *;
+@use '../system/mixins' as *;
+
+h1, .font-size-h1 {
+  @include responsive-font(
+    $min-h1-font-size,
+    $max-h1-font-size,
+  );
+}
+
+h2, .font-size-h2 {
+  @include responsive-font(
+    $min-h2-font-size,
+    $max-h2-font-size,
+  );
+}
+
+h3, .font-size-h3 {
+  @include responsive-font(
+    $min-h3-font-size,
+    $max-h3-font-size,
+  );
+}
+
+h4, .font-size-h4 {
+  @include responsive-font(
+    $min-h4-font-size,
+    $max-h4-font-size,
+  );
+}
+
+h5, .font-size-h5 {
+  @include responsive-font(
+    $min-h5-font-size,
+    $max-h5-font-size,
+  );
+}
+
+p, .font-size-p {
+  @include responsive-font(
+    $min-p-font-size,
+    $max-p-font-size,
+  );
+}
+
+small, .font-size-small {
+  @include responsive-font(
+    $min-small-font-size,
+    $max-small-font-size,
+  );
+}
+
+.font-weight-bold {
+  font-weight: 700;
+}

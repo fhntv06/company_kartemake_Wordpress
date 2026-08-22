@@ -1,0 +1,151 @@
+@use '../variables/colors' as *;
+@use '../variables/offsets' as *;
+@use '../variables/fonts' as *;
+@use '../system/mixins' as *;
+@use '../variables/media' as *;
+.pipeline-track {
+  position: relative;
+  width: min(1400px, 100%);
+  min-height: 1300px;
+  margin: 0 auto;
+}
+
+.pipeline-line {
+  position: absolute;
+  top: $small + $extra-small - 8px; // 40px → 40px
+  bottom: $small + $extra-small - 8px;
+  left: 50%;
+  width: 2px;
+  transform: translateX(-50%);
+  background: rgba(255,255,255,.12);
+}
+
+.pipeline-line-progress {
+  position: absolute;
+  top: $small + $extra-small - 8px;
+  left: 50%;
+  width: 3px;
+  height: 0;
+  transform: translateX(-50%);
+  background: $orange;
+  box-shadow: 0 0 20px rgba(255,46,46,.4); // orange-light → accent-red
+  transform-origin: top;
+}
+
+.pipeline-step {
+  position: absolute;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 80px 1fr;
+  align-items: center;
+  transform: translateY(#{$small}) scale(.96); // 60px → $small (32px)
+  filter: blur(8px);
+  transition: transform 1s cubic-bezier(.16, 1, .3, 1), filter .8s ease;
+}
+
+.pipeline-step-1 { top: 0; }
+.pipeline-step-2 { top: 280px; }
+.pipeline-step-3 { top: 560px; }
+.pipeline-step-4 { top: 840px; }
+.pipeline-step-5 { top: 1120px; }
+
+.pipeline-step:nth-child(odd) .pipeline-step-content {
+  grid-column: 1;
+  text-align: right;
+}
+.pipeline-step:nth-child(even)  .pipeline-step-content {
+  grid-column: 3;
+  text-align: left;
+}
+
+.pipeline-step p {
+  margin-top: #{$extra-small};
+  color: var(--text-secondary);
+}
+
+.pipeline-step-marker {
+  grid-column: 2;
+  grid-row: 1;
+  width: $middle; // 64px → $middle
+  height: $middle;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #{$orange-light}; // orange-light → accent-red
+  border: 1px solid rgba(255,255,255,.2);
+  transition: .5s ease;
+}
+.pipeline-step.step-active {
+  opacity: 1;
+  filter: unset;
+  transform: translateY(0) scale(1);
+}
+.pipeline-step.step-active .pipeline-step-marker {
+  border-color: $orange;
+  box-shadow: 0 0 30px rgba(255,46,46,.2); // orange-light → accent-red
+}
+
+@media (max-width: #{$breakpoint-extra-small}) { // 768px
+  .pipeline-step:nth-child(even) .pipeline-step-content {
+    grid-column: 1;
+    text-align: right;
+  }
+}
+
+@media (max-width: #{$breakpoint-large-small}) { // 576px
+  .pipeline-step {
+    grid-template-columns: 1fr 80px;
+  }
+}
+// =====================================================
+// ВОССТАНОВЛЕННЫЕ КЛАССЫ
+// =====================================================
+
+.pipeline-wrapper {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pipeline-step-content {
+  // стили для содержимого шага
+}
+
+.pipeline-step-label {
+  display: block;
+  font-family: var(--font-mono, monospace);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.45;
+  margin-bottom: 8px;
+}
+
+.pipeline-step-number {
+  // номер шага в маркере
+}
+
+.pipeline-step.step-active .pipeline-step-number {
+  color: var(--text-primary);
+}
+@media (max-width: 768px) {
+  .pipeline-step:nth-child(even) .pipeline-step-content {
+    grid-column: 1;
+    text-align: right;
+  }
+}
+@media (max-width: 576px) {
+  .pipeline-step {
+    grid-template-columns: 1fr 80px;
+  }
+  .pipeline-line-progress,
+  .pipeline-line {
+    right: 38px;
+    left: unset;
+  }
+}

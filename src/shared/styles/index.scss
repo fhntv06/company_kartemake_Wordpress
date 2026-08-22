@@ -1,113 +1,90 @@
-@use "ui" as ui;
-@use "./sections" as sections;
-@use "./fonts/font-awesome" as font-awesome;
+// =====================================================
+// СТАРАЯ СИСТЕМА — ПЕРЕМЕННЫЕ
+// =====================================================
+@use 'variables/colors' as *;
+@use 'variables/fonts' as *;
+@use 'variables/offsets' as *;
+@use 'variables/media' as *;
+@use 'system/mixins' as *;
 
+// =====================================================
+// БАЗОВЫЕ СТИЛИ
+// =====================================================
+@use 'layout/reset';
+@use 'system/typography';
+@use 'effects/animations';
+
+// =====================================================
+// ЛЕЙАУТ
+// =====================================================
+@use 'layout/layout';
+@use 'layout/reveal';
+
+// =====================================================
+// КОМПОНЕНТЫ
+// =====================================================
+@use 'components/buttons';
+@use 'components/cookie-banner';
+@use 'components/global-dashboard';
+@use 'components/modal';
+@use 'components/orbit-navigation';
+@use 'components/terminal';
+@use 'components/transition-loader';
+
+// =====================================================
+// СЦЕНЫ
+// =====================================================
+@use 'scenes/hero';
+@use 'scenes/solutions';
+@use 'scenes/architecture';
+@use 'scenes/pipeline';
+@use 'scenes/audit';
+@use 'scenes/monitoring';
+@use 'scenes/contact';
+
+// =====================================================
+// ОВЕРЛЕИ
+// =====================================================
+@use 'overlays/scene-transition';
+
+// =====================================================
+// ГЛОБАЛЬНЫЕ CSS-ПЕРЕМЕННЫЕ
+// =====================================================
 :root {
-    --shadow: 0 10px 20px rgba(255, 46, 46, 0.3);
+  --bg-primary: #{$bg-primary};
+  --bg-secondary: #{$bg-secondary};
+  --surface: #{$surface};
+  --surface-hover: #{$surface-hover};
+  --white: #{$white};
+  --text-primary: #{$text-primary};
+  --text-secondary: #{$text-secondary};
+  --text-gray: #{$text-gray};
+  --text-muted: #{$text-muted};
+  --orange: #{$orange};
+  --orange-light: #{$orange-light};
+  --green: #{$green};
+  --red: #{$red};
+  --glow-orange: #{$glow-orange};
+  --glow-green: #{$glow-green};
+  --border: #{$border};
+  --border-orange: #{$border-orange};
+  --font-main: #{$font-family-base};
+  --shadow: #{$shadow};
+  --border-radius: #{$border-radius};
+  --transition: #{$transition};
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
 
-    --card-bg: #151515;
-    --card-border: #2a2a2a;
-    --dark-card: #1e1e1e;
+  --z-loader: 99999;
+  --z-dashboard-open: 2100;
+  --z-dashboard: 2000;
+  --z-cursor: 999;
+  --z-overlay: 500;
+  --z-navigation: 200;
+  --z-dashboard-base: 100;
+  --z-content: 10;
 
-    --dark-bg: #0a0a0a;
-    --light-bg: #f5f5f5;
-    --darker-bg: #050505;
-
-    --light-text: #f5f5f5;
-    --gray-text: #666;
-    --dark-text: #0a0a0a;
-
-    --accent-red: #ff2e2e;
-    --accent-yellow: #ffd600;
-
-    --gray: #2a2a2a;
-    --light-gray: #3a3a3a;
-
-    --border-radius: 12px;
-    --transition: all .3s ease;
-
-    --min-h1-font-size: 36;
-    --max-h1-font-size: 72;
-    --min-h2-font-size: 28;
-    --max-h2-font-size: 60;
-    --min-h3-font-size: 24;
-    --max-h3-font-size: 48;
-    --min-h4-font-size: 20;
-    --max-h4-font-size: 32;
-    --min-h5-font-size: 16;
-    --max-h5-font-size: 24;
-    --min-p-font-size: 12;
-    --max-p-font-size: 20;
-    --min-small-font-size: 12;
-    --max-small-font-size: 16;
-    --min-screen-width: 320;
-    --max-screen-width: 1920;
-    --star-color-light: #111;
-    --star-color-dark: whitesmoke;
-}
-
-[data-theme="light"] {
-    --star-color: var(--star-color-light);
-    --color: var(--dark-text);
-    --bg-color: var(--light-bg);
-}
-
-[data-theme="dark"] {
-    --star-color: var(--star-color-dark);
-    --color: var(--light-text);
-    --bg-color: var(--dark-bg);
-}
-
-::-webkit-scrollbar {
-    width: 4px;
-    height: 4px;
-}
-::-webkit-scrollbar-track-piece  {
-    background-color: #C2D2E4;
-}
-::-webkit-scrollbar-thumb:vertical,
-::-webkit-scrollbar-thumb:horizontal {
-    background-color: var(--accent-red);
-}
-// common styles
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Inter', 'Segoe UI', sans-serif;
-    //cursor: none;
-
-
-}
-body, html {
-    background-color: var(--bg-color);
-    color: var(--color);
-    //cursor: none;
-}
-
-button, input, textarea {
-    border: none;
-    outline: none;
-    background-color: unset;
-    cursor: pointer;
-}
-ul, ol {
-    list-style: none;
-
-    li {
-        list-style: none;
-
-        &:not(:last-child) {
-            margin-bottom: 16px;
-        }
-        &::marker {
-            display: none;
-        }
-    }
-}
-.fa, .fa-brands, .fa-classic, .fa-regular, .fa-sharp, .fa-solid, .fab, .far, .fas {
-    pointer-events: none;
-}
-h1,h2,h3,h4,h5,h6,p {
-    transition: var(--transition);
+  /* SPACING */
+  --container: 1400px;
+  --side-padding: clamp(24px,5vw,80px);
+  --section-gap: 180px;
 }

@@ -1,23 +1,31 @@
-@use "mixins" as mixins;
+// =====================================================
+// СТАРАЯ СИСТЕМА — ВСЕ ПЕРЕМЕННЫЕ
+// =====================================================
 
-$white: #fff;
-$light: whitesmoke;
-$dark: rgb(10,10,10);
-$light-black: rgb(56,56,56);
-$gray: rgba(17, 17, 17, 0.46);
-$blue: #c5cae9;
+// ===== ЦВЕТА =====
+$bg-primary: #08090c;
+$bg-secondary: #111318;
+$surface: rgba(255,255,255,.05);
+$surface-hover: rgba(255,255,255,.09);
+$white: #ffffff;
+$text-primary: #ffffff;
+$text-secondary: rgba(255,255,255,.65);
+$text-gray: #eee;
+$text-muted: rgba(255,255,255,.4);
 
-// colors site
-$c1: #ff6b6b;
-$c2: #4ecdc4;
-$c3: #45b7d1;
-$c4: #ffd93d;
-$c5: #6c5ce7;
+// ===== БРЕНД =====
+$orange: #ff6b00;
+$orange-light: #ff9b45;
+$green: #00c853;
+$red: #ff453a;
 
-$accent-red: #ff2e2e;
+// ===== ЭФФЕКТЫ =====
+$glow-orange: 0 0 60px rgba(255,107,0,.35);
+$glow-green: 0 0 40px rgba(0,200,83,.35);
 
-@include mixins.generate-color-classes((
-  'c1': $c1, 'c2': $c2, 'c3': $c3, 'c4': $c4,
-  'c5': $c5, 'dark': $dark, 'light-black': $light-black, 'blue': $blue,
-  'accent-red': $accent-red, 'whitesmoke': $light
-));
+// ===== ГРАНИЦЫ =====
+$border: rgba(255,255,255,.12);
+$border-orange: rgba(255,107,0,.4);
+
+// ===== ЭФФЕКТЫ =====
+$shadow: 0 10px 20px rgba(255, 46, 46, 0.3);

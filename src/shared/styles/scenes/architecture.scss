@@ -1,0 +1,400 @@
+@use '../variables/colors' as *;
+@use '../variables/offsets' as *;
+@use '../system/mixins' as *;
+@use '../variables/media' as *;
+
+.architecture-node {
+  display: flex;
+  column-gap: $small; // 32px → $small
+  z-index: 2;
+  position: absolute;
+  width: 100%;
+  max-width: 480px;
+  padding: 20px;
+  border-radius: calc(var(--border-radius) * 2 + 10px); // 34px → 34px
+  background: linear-gradient(145deg, rgba(255,255,255,.10), rgba(255,255,255,.035));
+  border: 1px solid rgba(255,255,255,.12);
+  opacity: 0;
+  transform: translateY(#{$small}) scale(.96); // 60px → $small
+  filter: blur(8px);
+  transition: opacity .8s ease, transform 1s cubic-bezier(.16, 1, .3, 1), filter .8s ease;
+}
+
+.architecture-node:hover {
+  transform: translateY(#{-$extra-small}) scale(1.03); // -12px → -16px
+  border-color: rgba(255,255,255,.35);
+}
+
+.node-core {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: #{$small - 2px}; // 30px → 30px
+}
+
+.node-object {
+  position: relative;
+  width: 92px;
+  height: 92px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: calc(var(--border-radius) * 2 + 4px); // 28px → 28px
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.16);
+  transition: transform .5s ease;
+}
+
+.node-particles {
+  position: absolute;
+  inset: -30px;
+  pointer-events: none;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.node-particles::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 40%, rgba(255,46,46,0.08), transparent 60%); // orange → accent-red
+  animation: particleOrbit 6s infinite linear;
+}
+
+.node-particles::after {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border-radius: 50%;
+  border: 1px dashed rgba(255,46,46,0.08); // orange → accent-red
+  animation: particleOrbit 8s infinite linear reverse;
+}
+
+.server-slot {
+  width: 50px;
+  height: $extra-small - 8px; // 8px → 8px
+  border-radius: 20px;
+  background: $orange;
+  box-shadow: 0 0 12px rgba(255,46,46,.3);
+}
+
+.node-title {
+  margin: 0;
+  @include responsive-font(30,38);
+}
+
+.node-description {
+  margin-top: $small;
+  opacity: .65;
+}
+
+.architecture-result {
+  position: relative;
+  width: min(100%, 1024px);
+  margin: $middle auto 0; // 32px
+  padding: #{$small}; // 32px
+  border: 1px solid rgba(255,46,46,0.28);
+  background: rgba(255,46,46,0.025);
+  box-sizing: border-box;
+  opacity: 0;
+  transform: translateY(#{$small}); // 32px
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.architecture-result.node-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+.architecture-result::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: $small; // 32px
+  width: 72px;
+  height: 1px;
+  background: $orange; //
+}
+
+.architecture-result::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 8px;
+  height: 8px;
+  border-right: 1px solid $orange;
+  border-bottom: 1px solid $orange;
+}
+
+.architecture-result > span {
+  display: block;
+  margin-bottom: $small;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  @include responsive-font(9,12);
+  color: $orange;
+  text-transform: uppercase;
+}
+.architecture-result > button {
+  margin-top: $extra-small;
+}
+@media (max-width: #{$breakpoint-extra-small}) { // 768px
+  .architecture-result {
+    width: 100%;
+    padding: #{$small - 10px} 20px #{$small - 8px}; // 22px 20px 24px → 22px 20px 24px
+  }
+
+  .architecture-result::before {
+    left: 20px;
+    width: 56px;
+  }
+}
+// =====================================================
+// ВОССТАНОВЛЕННЫЕ КЛАССЫ
+// =====================================================
+
+.scene-architecture {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.architecture-header {
+  position: relative;
+  z-index: 5;
+  max-width: 700px;
+}
+
+.architecture-map {
+  position: relative;
+  width: 100%;
+  height: 1200px;
+}
+
+.architecture-svg {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: calc(50% - 150px - 200px);
+  overflow: visible;
+  transform: translateX(-50%);
+}
+
+.architecture-path {
+  fill: none;
+  stroke: rgba(255, 255, 255, .12);
+  stroke-width: 3;
+  stroke-linecap: round;
+  opacity: .5;
+}
+
+.architecture-progress {
+  fill: none;
+  stroke: var(--orange);
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-dasharray: 0;
+  stroke-dashoffset: 0;
+  filter: drop-shadow(0 0 15px var(--orange-light));
+}
+
+.architecture-node.node-active {
+  border-color: var(--orange-light);
+  box-shadow: 0 0 80px rgba(0, 220, 255, .18);
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+  filter: unset;
+}
+
+.architecture-node.node-active .node-object {
+  transform: scale(1.08);
+}
+
+.node-server {
+  left: calc(50% - 200px);
+  top: -40px;
+}
+
+.node-application {
+  left: calc(80% - 200px);
+  top: 440px;
+}
+
+.node-database {
+  left: calc(45% - 200px);
+  top: 255px;
+}
+
+.node-api {
+  left: calc(50% - 200px);
+  top: 950px;
+}
+
+.node-cloud {
+  left: calc(45% - 200px);
+  top: 660px;
+}
+
+.server-object {
+  flex-direction: column;
+  gap: 8px;
+}
+
+.application-object {
+  flex-direction: column;
+  gap: 6px;
+}
+
+.app-layer {
+  width: 55px;
+  height: 12px;
+  border-radius: 20px;
+  background: linear-gradient(90deg, var(--orange-light), transparent);
+}
+
+.app-layer:nth-child(2) {
+  width: 42px;
+  opacity: .7;
+}
+
+.app-layer:nth-child(3) {
+  width: 30px;
+  opacity: .4;
+}
+
+.database-object {
+  overflow: hidden;
+}
+
+.database-cylinder {
+  width: 55px;
+  height: 65px;
+  position: relative;
+  background: linear-gradient(180deg, var(--orange-light), rgba(255, 255, 255, .15));
+  border-radius: 50% / 15%;
+}
+
+.database-cylinder span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 14px;
+  border: 1px solid rgba(255, 255, 255, .3);
+  border-radius: 50%;
+}
+
+.database-cylinder span:nth-child(1) {
+  top: 0;
+}
+.database-cylinder span:nth-child(2) {
+  top: 25px;
+}
+.database-cylinder span:nth-child(3) {
+  top: 50px;
+}
+
+.api-object {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: .15em;
+  color: var(--orange);
+}
+
+.cloud-object {
+  overflow: hidden;
+}
+
+.cloud-shape {
+  width: 55px;
+  height: 35px;
+  background: var(--orange);
+  border-radius: 30px;
+  position: relative;
+}
+
+.cloud-shape::before {
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  top: -15px;
+  left: 10px;
+  background: var(--orange);
+  border-radius: 50%;
+}
+
+.node-label {
+  display: block;
+  margin-bottom: 14px;
+  font-size: 11px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  opacity: .5;
+}
+
+@media(max-width: $breakpoint-middle){
+  .architecture-map {
+    transform-origin: top center;
+  }
+  .node-application {
+    right: 0;
+    left: unset;
+  }
+  .node-application.node-active {
+    transform: translateX(0) scale(1);
+  }
+}
+@media(max-width: $breakpoint-extra-small){
+  .architecture-map {
+    height:auto;
+    display:flex;
+    flex-direction:column;
+    gap: $small;
+  }
+  .architecture-node {
+    position:relative;
+    left:auto;
+    top:auto;
+  }
+  .architecture-svg {
+    display:none;
+  }
+
+}
+@media (max-width: $breakpoint-extra-small) {
+  .architecture-result {
+    width: 100%;
+    padding: 22px 20px 24px;
+  }
+  .architecture-result::before {
+    left: 20px;
+    width: 56px;
+  }
+  .architecture-result > span {
+    margin-bottom: $extra-small;
+    font-size: 9px;
+    letter-spacing: 0.13em;
+  }
+  .architecture-result > p {
+    font-size: 19px;
+    line-height: 1.4;
+  }
+  .architecture-node.node-active {
+    transform: unset;
+  }
+}
+@media (max-width: 576px) {
+  .node-title {
+    font-size: 20px;
+  }
+}
+@keyframes particleOrbit {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

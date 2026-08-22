@@ -1,0 +1,227 @@
+@use '../variables/colors' as *;
+@use '../variables/offsets' as *;
+@use '../system/mixins' as *;
+
+.terminal {
+  position: relative;
+  transform: translateX(#{$large}); // 120px → $extra-large (128px)
+  transition-delay: .15s;
+  transition: 2s var(--ease);
+  width: 100%;
+  max-width: 900px;
+  height: max-content;
+  background: rgba(12, 14, 18, 0.85);
+  border: 1px solid var(--border);
+  border-radius: calc(var(--border-radius) * 2); // 24px → 24px (12*2)
+  overflow: hidden;
+}
+.scene-active .terminal {
+  transform: translateX(0);
+}
+.terminal-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: $extra-small; // 10px → $extra-small (16px)
+  height: $middle - $extra-small; // 52px → 48px (64-16)
+  padding: 0 20px;
+  border-bottom: 1px solid var(--border);
+  @include responsive-font(9, 12);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.terminal-header::before {
+  content: "";
+  width: $extra-small - 6px; // 10px → 10px
+  height: $extra-small - 6px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: var(--glow-green);
+  flex-shrink: 0;
+}
+
+.terminal-header::after {
+  content: "";
+  margin-left: auto;
+  width: $extra-small - 8px; // 8px → 8px
+  height: $extra-small - 8px;
+  border-radius: 50%;
+  background: $orange;
+  animation: blink 1.5s infinite;
+  flex-shrink: 0;
+}
+
+.terminal-title {
+  flex: 1;
+  opacity: 0.5;
+  text-align: center;
+  @include responsive-font(9, 12);
+  letter-spacing: 0.15em;
+}
+
+.terminal-body {
+  min-height: 320px;
+  padding: #{$small - 2px}; // 30px → 30px (близко к 32px)
+  font-family: var(--font-mono, monospace);
+  color: #d7d7d7;
+  overflow: hidden;
+  @include responsive-font(13,16);
+  line-height: 1.6;
+}
+
+.terminal-line {
+  display: flex;
+  gap: #{$extra-small - 1px}; // 15px → 15px
+  margin-bottom: $extra-small; // 12px → 12px
+  font-family: var(--font-mono, monospace);
+  color: rgba(255, 255, 255, 0.75);
+  @include responsive-font(12,15);
+}
+
+.terminal-line span {
+  opacity: 0.6;
+}
+
+.terminal-line strong {
+  margin-left: auto;
+  font-weight: 500;
+  color: var(--green);
+}
+
+.terminal-line::before {
+  content: ">";
+  color: $orange;
+  flex-shrink: 0;
+}
+
+.terminal-line-accent strong {
+  color: $orange;
+}
+
+.terminal-warning {
+  color: $orange;
+}
+
+.terminal-scan {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: $orange;
+  opacity: .5;
+  animation: scanLine 3s infinite;
+}
+
+.terminal-footer {
+  min-height: 38px;
+  padding: 0 $extra-small; // 16px → $extra-small
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  font-family: var(--font-mono, monospace);
+  @include responsive-font(8,10);
+  letter-spacing: 0.1em;
+  opacity: 0.38;
+}
+
+@media (max-width: 900px) {
+  .terminal-header {
+    height: $small + $extra-small - 4px; // 44px → 44px
+    padding: 0 $extra-small; // 16px → $extra-small
+  }
+
+  .terminal-body {
+    padding: 20px;
+    min-height: 240px;
+  }
+
+  .terminal-line {
+    gap: $extra-small - 6px; // 10px → 10px
+    margin-bottom: $extra-small - 6px; // 10px → 10px
+  }
+}
+
+@media (max-width: 520px) {
+  .terminal-header {
+    height: $small + $extra-small - 8px; // 40px → 40px
+    padding: 0 $extra-small - 4px; // 12px → 12px
+    gap: $extra-small - 10px; // 6px → 6px
+  }
+
+  .terminal-body {
+    padding: $extra-small; // 16px → $extra-small
+    min-height: 200px;
+  }
+
+  .terminal-line {
+    gap: $extra-small - 8px; // 8px → 8px
+    margin-bottom: $extra-small - 8px; // 8px → 8px
+  }
+}
+// =====================================================
+// ВОССТАНОВЛЕННЫЕ КЛАССЫ
+// =====================================================
+
+.terminal-status {
+  opacity: 0.5;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+}
+
+.terminal-dots {
+  display: flex;
+  gap: 5px;
+  flex-shrink: 0;
+}
+
+.terminal-dots span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.3;
+}
+
+.terminal-dots span:nth-child(1) {
+  background: #ff5f57;
+  opacity: 1;
+}
+.terminal-dots span:nth-child(2) {
+  background: #ffbd2e;
+  opacity: 1;
+}
+.terminal-dots span:nth-child(3) {
+  background: #28c840;
+  opacity: 1;
+}
+
+.terminal-success {
+  color: var(--green);
+}
+
+.contact-terminal .terminal-body {
+  min-height: 200px;
+}
+
+// =====================================================
+// ВОССТАНОВЛЕННАЯ АНИМАЦИЯ
+// =====================================================
+
+@keyframes scanLine {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: .3;
+  }
+}

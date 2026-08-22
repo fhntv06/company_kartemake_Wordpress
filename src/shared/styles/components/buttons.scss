@@ -1,0 +1,44 @@
+// components/_buttons.scss
+@use '../variables/colors' as *;
+@use '../variables/fonts' as *;
+@use '../variables/offsets' as *;
+@use '../system/mixins' as *;
+
+.button-primary,
+.button-secondary {
+  padding: $extra-small $small + 2px;
+  border-radius: 999px;
+  transition: .4s var(--ease);
+  font-family: var(--font-main);
+  @include responsive-font(13, 16);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $extra-small - 8px;
+  text-decoration: none;
+  border: none;
+}
+
+.button-primary {
+  background: $orange;        // ✅ оранжевый
+  color: $white;
+}
+
+.button-primary:hover {
+  transform: translateY(-5px);
+  box-shadow: $glow-orange;   // ✅ оранжевое свечение
+}
+
+.button-secondary {
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  background: transparent;
+}
+
+.button-secondary:hover {
+  background: var(--surface);
+  border-color: rgba(255, 255, 255, 0.25);
+}

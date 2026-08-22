@@ -1,7 +1,11 @@
-$small: 375px;
-$large-small: 576px;
-$extra-small: 768px;
-$lower-middle: 1024px;
-$middle: 1440px;
-$extra-middle: 1600px;
-$large: 1920px;
+// =====================================================
+// БРЕЙКПОИНТЫ
+// =====================================================
+
+$breakpoint-small: 375px;
+$breakpoint-large-small: 576px;
+$breakpoint-extra-small: 768px;
+$breakpoint-lower-middle: 1024px;
+$breakpoint-middle: 1440px;
+$breakpoint-extra-middle: 1600px;
+$breakpoint-large: 1920px;

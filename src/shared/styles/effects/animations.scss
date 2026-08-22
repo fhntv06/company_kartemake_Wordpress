@@ -1,0 +1,106 @@
+@use '../variables/colors' as *;
+@use '../variables/offsets' as *;
+@use '../system/mixins' as *;
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(#{$small}); // 60px → $small (32px)
+}
+
+.fade-up.active {
+  animation: fadeUp .9s var(--ease) forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scale-reveal {
+  opacity: 0;
+  transform: scale(.85);
+}
+
+.scale-reveal.active {
+  animation: scaleReveal 1s var(--ease) forwards;
+}
+
+@keyframes scaleReveal {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.glow-active {
+  animation: glowPulse 2s infinite;
+}
+
+@keyframes glowPulse {
+  50% {
+    box-shadow: 0 0 70px rgba(255,46,46,.5); // orange → accent-red
+  }
+}
+
+.system-loader {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-loader);
+  background: var(--bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: loaderExit 1s 2s forwards;
+}
+
+.loader-terminal {
+  width: calc(100% - $small); // 32px → $small
+  max-width: 500px;
+  font-family: monospace;
+}
+
+.loader-progress {
+  margin-top: #{$small - 2px}; // 30px → 30px
+  height: 4px;
+  background: rgba(255,255,255,.1);
+}
+
+.loader-progress div {
+  width: 0;
+  height: 100%;
+  background: $orange;
+  animation: loadProgress 2s forwards;
+}
+
+@keyframes loadProgress {
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes loaderExit {
+  to {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.float-hover {
+  transition: transform .5s var(--ease);
+}
+
+.float-hover:hover {
+  transform: translateY(#{-$extra-small}); // -10px → -16px (привожу к сетке)
+}
+// =====================================================
+// ВОССТАНОВЛЕННЫЕ АНИМАЦИИ
+// =====================================================
+
+@keyframes pulse-status {
+  50% {
+    opacity: .4;
+    transform: scale(.7);
+  }
+}

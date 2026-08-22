@@ -3,792 +3,1073 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KARTEMAKE - Создание и поддержка сайтов</title>
-
-  <script src="https://unpkg.com/flubber@0.4.2/build/flubber.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
-
-  <link rel="shortcut icon" href="../../public/images/logotypes/logo-dark.ico" type="image/x-icon">
+  <title>K·ART·MAKE — Технический партнёр для вашего сайта</title>
+  <meta name="description" content="Техническая поддержка, модернизация и развитие цифровой инфраструктуры бизнеса. Берём на себя стабильность вашего сайта.">
 </head>
-<body id="smoothScrollContainer" data-controller="modal ripple-effect theme anchor scroll-progress sidebar-anchor burger-menu">
-  <header class="header" data-controller="header">
-    <a href="/" class="logo">
-      <span class="font-size-h3">K</span>
-      <span class="font-size-h3">·</span>
-      <span class="font-size-h4 color-accent-red">ART</span>
-      <span class="font-size-h3">·</span>
-      <span class="font-size-h5">MAKE</span>
-    </a>
-
-    <nav class="nav-links">
-      <a href="services.html">Услуги</a>
-      <a href="blog.html">Технический блог</a>
-      <a href="support.html">Техподдержка</a>
-      <a href="contacts.html">Контакты</a>
-    </nav>
-
-    <div class="header-controls">
-      <div class="social-links">
-<!--        <a href="https://github.com/fhntv06" target="_blank"><i class="fab fa-github"></i></a>-->
-        <a href="https://vk.ru/kartemake" target="_blank"><i class="fab fa-vk"></i></a>
-        <a href="https://t.me/KArtech76" target="_blank"><i class="fab fa-telegram"></i></a>
-      </div>
-
-<!--      <div class="phone">-->
-<!--        <i class="fas fa-phone"></i>-->
-<!--        <span>+7 (908) 946-14-83</span>-->
-<!--      </div>-->
-
-      <button
-              class="theme-toggle"
-              data-controller-theme="item"
-      >
-        <i class="fas fa-moon"></i>
-      </button>
-
-      <!--
-      <button
-        class="language-toggle"
-        data-controller="lang"
-        data-controller-ripple-effect="item"
-      >
-        <span data-controller-lang="item">RU</span>
-        <i class="fas fa-chevron-down"></i>
-      </button>
-      -->
-
-      <button
-              class="cta-button"
-              data-controller-modal-open="form"
-              data-controller-modal-func="open"
-              data-controller-ripple-effect="item"
-      >
-        Начать проект
-        <i class="fas fa-arrow-right"></i>
-      </button>
-
-      <button class="burger-menu" id="burgerMenu" data-controller-burger-menu="item">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+<body class="document-ready">
+<!-- =================================================
+SYSTEM LOADER
+================================================= -->
+<div class="system-loader">
+  <div class="loader-terminal">
+    <span>ЗАПУСК СИСТЕМЫ K·ART·MAKE</span>
+    <div class="loader-progress">
+      <div></div>
     </div>
-  </header>
-  <main>
-    <section id="hero" class="hero">
-      <div class="container">
+  </div>
+</div>
+<!-- =================================================
+ORBIT NAVIGATION
+================================================= -->
+<div id="orbit-navigation" class="orbit-navigation">
+  <div class="orbit-circle">
+    <button class="orbit-point" data-scene="hero">
+      <span class="orbit-point__description">Начало</span>
+      <span></span>
+      <strong>01</strong>
+    </button>
+    <button class="orbit-point" data-scene="audit">
+      <span class="orbit-point__description">Диагностика</span>
+      <span></span>
+      <strong>02</strong>
+    </button>
+    <button class="orbit-point" data-scene="solutions">
+      <span class="orbit-point__description">Решения</span>
+      <span></span>
+      <strong>03</strong>
+    </button>
+    <button class="orbit-point" data-scene="architecture">
+      <span class="orbit-point__description">Инфраструктура</span>
+      <span></span>
+      <strong>04</strong>
+    </button>
+    <button class="orbit-point" data-scene="pipeline">
+      <span class="orbit-point__description">Процесс</span>
+      <span></span>
+      <strong>05</strong>
+    </button>
+    <button class="orbit-point" data-scene="monitoring">
+      <span class="orbit-point__description">Контроль</span>
+      <span></span>
+      <strong>06</strong>
+    </button>
+    <button class="orbit-point" data-scene="contact">
+      <span class="orbit-point__description">Контакты</span>
+      <span></span>
+      <strong>07</strong>
+    </button>
+  </div>
+</div>
+<!-- =================================================
+GLOBAL DASHBOARD
+================================================= -->
+<header id="header" class="global-dashboard">
+  <div class="dashboard-inner">
+    <a href="/" class="dashboard-brand">K·ART·MAKE</a>
+    <div class="dashboard-status">
+      <span class="dashboard-status-dot"></span>
+      СИСТЕМА РАБОТАЕТ
+    </div>
+    <button class="dashboard-menu" type="button" aria-expanded="false" aria-controls="dashboard-menu-panel">
+      <span class="dashboard-menu-label">МЕНЮ</span>
+      <span class="dashboard-menu-icon">
+        <span></span>
+        <span></span>
+      </span>
+    </button>
+  </div>
+  <div id="dashboard-menu-panel" class="dashboard-menu-panel" aria-hidden="true">
+    <div class="dashboard-menu-panel-inner">
+      <!-- CONTACTS -->
+      <div class="dashboard-menu-column">
+        <span class="dashboard-menu-title">КОНТАКТЫ</span>
+        <a href="mailto:hello@kartemake.ru">
+          <span>НОВЫЕ ПРОЕКТЫ</span>
+          <strong>hello@kartemake.ru</strong>
+        </a>
+        <a href="mailto:support@kartemake.ru">
+          <span>ТЕХНИЧЕСКАЯ ПОДДЕРЖКА</span>
+          <strong>support@kartemake.ru</strong>
+        </a>
+      </div>
+      <!-- SERVICES -->
+      <div class="dashboard-menu-column">
+        <span class="dashboard-menu-title">УСЛУГИ</span>
+        <a href="#solutions">
+          <span>01</span>
+          <strong>Оптимизация сайта</strong>
+        </a>
+        <a href="#solutions">
+          <span>02</span>
+          <strong>Модернизация</strong>
+        </a>
+        <a href="#solutions">
+          <span>03</span>
+          <strong>Техническая поддержка</strong>
+        </a>
+        <a href="#solutions">
+          <span>04</span>
+          <strong>Аудит и консультации</strong>
+        </a>
+      </div>
+      <!-- INFORMATION -->
+      <div class="dashboard-menu-column">
+        <span class="dashboard-menu-title">ИНФОРМАЦИЯ</span>
+        <a href="/privacy-policy">Политика обработки персональных данных</a>
+        <a href="/personal-data-consent">Согласие на обработку персональных данных</a>
+        <a href="/offer">Публичная оферта</a>
+      </div>
+    </div>
+  </div>
+</header>
+<main class="experience">
+  <!-- =================================================
+  HERO
+  ================================================= -->
+  <section class="scene scene-hero" data-scene="hero">
+    <canvas id="heroCanvas"></canvas>
+    <canvas id="hero-particle-canvas"></canvas>
+    <div class="scene-container">
+      <div class="hero-content">
+        <div class="system-label">
+          ТЕХНИЧЕСКИЙ ПАРТНЁР ДЛЯ ВАШЕГО БИЗНЕСА
+        </div>
         <h1>
-          <span>K</span>
-          · <span class="color-accent-red">ART</span> ·
-          MAKE
+          Ваш сайт работает.
+          <br>
+          <span>Мы отвечаем за его стабильность.</span>
         </h1>
-        <div class="hero-content">
-          <div class="hero-text">
-            <h4>
-              Ваш надежный <span class="color-accent-red">технический партнер</span> для поддержки и развития <span
-                    class="color-accent-red">digital-инфраструктуры</span>
-            </h4>
-            <p class="hero-description">
-              Мы - это ваш внешний IT-отдел. Мы не агентство. Мы — команда инженеров, которая берет на себя все
-              технические задачи, долги и развитие ваших digital-продуктов, чтобы вы могли сосредоточиться на бизнесе.
-            </p>
-            <button
-                    class="button button--large button--accent"
-                    data-controller-modal-open="form"
-                    data-controller-modal-func="open"
-                    data-controller-ripple-effect="item"
-            >
-              Обсудить задачу
-            </button>
-          </div>
-          <div class="hero-devices">
-            <div class="device laptop">
-              <div class="device-screen">Ваш IT-отдел</div>
-            </div>
-            <div class="device tablet">
-              <div class="device-screen">на аутсорсе</div>
-            </div>
-            <div class="device phone">
-              <div class="device-screen">KARTEMAKE</div>
-            </div>
-          </div>
+        <p>
+          Берём на себя технические проблемы вашего сайта и инфраструктуры:
+          находим узкие места, устраняем ошибки, ускоряем работу и поддерживаем
+          систему в рабочем состоянии.
+        </p>
+        <div class="hero-note">
+          WordPress · 1C-Битрикс · Laravel · Next.js · Docker · Nginx
         </div>
-      </div>
-
-      <div id="scroll-hint" class="scroll-hint color-accent-red font-weight-bold">
-        <i class="fas fa-arrow-down"></i>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-      <div class="container">
-        <div class="about-top">
-          <div class="about-text">
-            <p class="logo">
-              <span class="font-size-h2">K</span>
-              <span class="font-size-h2">·</span>
-              <span class="font-size-h3 color-accent-red">ART</span>
-              <span class="font-size-h2">·</span>
-              <span class="font-size-h4">MAKE</span>
-            </p>
-            <p>Мы — распределенная команда fullstack-разработчиков и DevOps-инженеров. Наша философия — прозрачность,
-              гибкость и ориентация на результат, как у внутреннего отдела, но без затрат на штат.</p>
-            <p>Мы становимся вашим техническим департаментом: поддерживаем, развиваем и масштабируем ваши сайты, магазины
-              и веб-приложения, беря на себя все «технические долги».</p>
-          </div>
-
-<!--          <div class="about-image">-->
-<!--            <div class="scene" data-controller="blob-cluster"></div>-->
-<!--          </div>-->
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="stats" data-controller="animation-numbers">
-          <div class="stat-item">
-            <div class="stat-number" data-postfix="+" data-controller-animation-numbers="item">50</div>
-            <div class="stat-label">Поддерживаемых проектов</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number" data-postfix="+" data-controller-animation-numbers="item">99.9</div>
-            <div class="stat-label">Аптайм, %</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number" data-prefix=">" data-controller-animation-numbers="item">30</div>
-            <div class="stat-label">Клиентов на абонентском обслуживании</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- How We Make It Section -->
-    <section id="how-make-it" class="how-make-it">
-      <div class="showreel"
-           style="background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');">
-        <!-- Картинка заменена на более техническую, подходящую по смыслу -->
-        <button
-                class="play-button"
-                data-controller-modal-open="showreel"
-                data-controller-modal-func="open"
-                data-controller-ripple-effect="item"
-        >
-          <i class="fas fa-play"></i>
-        </button>
-      </div>
-    </section>
-
-    <!-- Last Works Section - закомментирован -->
-    <section class="last-works">
-      <div class="container">
-        <h3 class="section__title">Примеры наших работ</h3>
-        <div class="works-container">
-          <div class="works-list">
-            <a href="#" class="work-item" >
-              <h3 class="work-title">Миграция и поддержка интернет-магазина на 1С-Битрикс</h3>
-              <p class="work-description">Полный перенос и модернизация крупного магазина с устаревшей CMS. Ежемесячное абонентское обслуживание, включая доработки и интеграции.</p>
-              <p class="work-link">Подробнее <i class="fas fa-arrow-right"></i></p>
-            </a>
-            <a href="#" class="work-item" >
-              <h3 class="work-title">Разработка и техподдержка корпоративного портала</h3>
-              <p class="work-description">Создание веб-приложения с внутренней CRM и API. Дальнейшая полная техническая поддержка инфраструктуры и кодовой базы.</p>
-              <p class="work-link">Подробнее <i class="fas fa-arrow-right"></i></p>
-            </a>
-            <a href="#" class="work-item" >
-              <h3 class="work-title">Технический аудит и рефакторинг legacy-кода</h3>
-              <p class="work-description">Комплексный аудит безопасности и производительности старого проекта. Оптимизация кода и переход на современный стек для агентства-партнера.</p>
-              <p class="work-link">Подробнее <i class="fas fa-arrow-right"></i></p>
-            </a>
-            <a href="#" class="work-item" >
-              <h3 class="work-title">Абонентское обслуживание сети лендингов</h3>
-              <p class="work-description">Постоянная поддержка, обновление контента, исправление ошибок и настройка аналитики для 15+ промо-сайтов производственной компании.</p>
-              <p class="work-link">Подробнее <i class="fas fa-arrow-right"></i></p>
-            </a>
-            <a href="#" class="work-item" >
-              <h3 class="work-title">Интеграция платежных систем и CRM в WordPress</h3>
-              <p class="work-description">Глубокая кастомизация и настройка сложных интеграций для сайта сервисной компании. Поддержка 24/7.</p>
-              <p class="work-link">Подробнее <i class="fas fa-arrow-right"></i></p>
-            </a>
-            <a href="#" class="work-item" >
-              <h3 class="work-title">Разработка MVP для стартапа</h3>
-              <p class="work-description">Полный цикл: от архитектуры до запуска. После запуска — передача клиента на тариф постоянной технической поддержки.</p>
-              <p class="work-link">Подробнее <i class="fas fa-arrow-right"></i></p>
-            </a>
-          </div>
-<!--          <div class="works-visual">-->
-<!--            <div id="works-cube" class="works-cube">-->
-<!--              <div class="cube-face cube-face-front">-->
-<!--                <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Project">-->
-<!--              </div>-->
-<!--              <div class="cube-face cube-face-back">-->
-<!--                <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Project">-->
-<!--              </div>-->
-<!--              <div class="cube-face cube-face-right">-->
-<!--                <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Project">-->
-<!--              </div>-->
-<!--              <div class="cube-face cube-face-left">-->
-<!--                <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Project">-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </div>-->
-        </div>
-      </div>
-    </section>
-
-
-    <!-- Stack Technology Section -->
-    <section class="stack-technology">
-      <div class="container">
-        <div class="section__title">
-          <h3>Наши <span class="color-accent-red">основные</span> технологии</h3>
-        </div>
-        <div class="stack-categories">
-          <div class="scrolling-items" >
-            <div class="stack-item">
-              <div class="stack-icon"><i class="fab fa-js"></i></div>
-              <p class="stack-name font-weight-bold">JavaScript</p>
-            </div>
-            <div class="stack-item">
-              <div class="stack-icon"><i class="fab fa-react"></i></div>
-              <p class="stack-name font-weight-bold">React</p>
-            </div>
-            <div class="stack-item">
-              <div class="stack-icon"><i class="fab fa-vuejs"></i></div>
-              <p class="stack-name font-weight-bold">Vue.js</p>
-            </div>
-            <div class="stack-item">
-              <div class="stack-icon"><i class="fab fa-node-js"></i></div>
-              <p class="stack-name font-weight-bold">Node.js</p>
-            </div>
-            <div class="stack-item">
-              <div class="stack-icon"><i class="fab fa-python"></i></div>
-              <p class="stack-name font-weight-bold">Python</p>
-            </div>
-            <div class="stack-item">
-              <div class="stack-icon"><i class="fab fa-php"></i></div>
-              <p class="stack-name font-weight-bold">PHP</p>
-            </div>
-            <div class="stack-item">
-              <div class="stack-icon"><b class="fa-bitrix">1С</b></div>
-              <p class="stack-name font-weight-bold">Битрикс</p>
-            </div>
-            <div class="stack-item">
-              <div class="stack-icon"><i class="fab fa-wordpress"></i></div>
-              <p class="stack-name font-weight-bold">WordPress</p>
-            </div>
-            <div class="stack-item">
-              <div class="stack-icon"><i class="fab fa-docker"></i></div>
-              <p class="stack-name font-weight-bold">Docker</p>
-            </div>
-            <div class="stack-item">
-              <div class="stack-icon"><i class="fab fa-git-alt"></i></div>
-              <p class="stack-name font-weight-bold">Git</p>
-            </div>
-            <div class="stack-item">
-              <div class="stack-icon"><i class="fas fa-database"></i></div>
-              <p class="stack-name font-weight-bold">PostgreSQL</p>
-            </div>
-            <div class="stack-item">
-              <div class="stack-icon"><i class="fas fa-database"></i></div>
-              <p class="stack-name font-weight-bold">MySQL</p>
-            </div>
-            <div class="stack-item">
-              <div class="stack-icon"><i class="fab fa-aws"></i></div>
-              <p class="stack-name font-weight-bold">AWS</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="faq">
-      <div class="container">
-        <h3 class="section__title">Часто задаваемые вопросы</h3>
-        <div class="accordion-container" data-controller="accordion">
-          <div class="accordion-item" data-controller-accordion="item">
-            <div class="accordion-question">
-              <h5>Вы digital-агентство? Вы делаете дизайн и маркетинг?</h5>
-              <span class="accordion-icon"><i class="fas fa-plus"></i></span>
-            </div>
-            <div class="accordion-answer">
-              <p>Нет, и в этом наше ключевое отличие. Мы — исключительно техническая команда, ваш аутсорс-отдел разработки
-                и поддержки. Мы не занимаемся дизайном, контентом или привлечением трафика. Мы берем готовый дизайн или
-                существующий продукт и отвечаем за его надежную работу, развитие и все «технические долги».</p>
-            </div>
-          </div>
-          <div class="accordion-item" data-controller-accordion="item">
-            <div class="accordion-question">
-              <h5>Чем вы лучше штатного программиста?</h5>
-              <span class="accordion-icon"><i class="fas fa-plus"></i></span>
-            </div>
-            <div class="accordion-answer">
-              <p>Вы получаете не одного человека, а сбалансированную команду специалистов (fullstack, backend, DevOps) по
-                цене одного сотрудника. Нет рисков больничных, увольнений и профессионального выгорания. Мы работаем по
-                прозрачным процессам и несем ответственность за результат как партнер.</p>
-            </div>
-          </div>
-          <div class="accordion-item" data-controller-accordion="item">
-            <div class="accordion-question">
-              <h5>Как построена оплата? Есть ли абонентская плата?</h5>
-              <span class="accordion-icon"><i class="fas fa-plus"></i></span>
-            </div>
-            <div class="accordion-answer">
-              <p>Да, наша основная модель — фиксированная ежемесячная абонентская плата за комплексную поддержку и
-                выделенный пул часов на доработки. Для новых проектов (разработка с нуля, миграция) — проектная оплата по
-                этапам. После запуска проекта клиент обычно переходит на абонентское обслуживание.</p>
-            </div>
-          </div>
-          <div class="accordion-item" data-controller-accordion="item">
-            <div class="accordion-question">
-              <h5>Вы работаете с legacy-кодом и старыми сайтами?</h5>
-              <span class="accordion-icon"><i class="fas fa-plus"></i></span>
-            </div>
-            <div class="accordion-answer">
-              <p>Это одна из наших специализаций. Мы проводим аудит, рефакторим и поддерживаем проекты на устаревших CMS и
-                технологиях. Мы можем взять на себя поддержку существующего продукта, чтобы ваш бизнес продолжал работать,
-                пока мы плавно модернизируем его архитектуру.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-  <footer class="footer">
-    <div class="container">
-      <!-- Строка 1: Лого + 3 колонки + CTA -->
-      <div class="footer__row footer__row--top">
-        <!-- Колонка 1: Логотип -->
-        <div class="footer__col footer__col--logo">
-          <a href="/" class="logo">
-            <span class="font-size-h3">K</span>
-            <span class="font-size-h3">·</span>
-            <span class="font-size-h4 color-accent-red">ART</span>
-            <span class="font-size-h3">·</span>
-            <span class="font-size-h5">MAKE</span>
-          </a>
-
-          <!-- Информация о компании -->
-          <div class="footer__company">
-            <p class="footer__company-name">ИП [ФИО]</p>
-            <p class="footer__company-inn">ИНН: [ваш ИНН]</p>
-            <p class="footer__company-ogrn">ОГРНИП: [ваш ОГРНИП]</p>
-          </div>
-        </div>
-
-        <!-- Колонка 2: Услуги -->
-        <div class="footer__col footer__col--services">
-          <h4 class="footer__title">Услуги</h4>
-          <ul class="footer__list">
-            <li><a href="services.html#web-development">Веб-разработка &amp; CMS</a></li>
-            <li><a href="services.html#migration">Техническая миграция и модернизация</a></li>
-            <li><a href="services.html#support">Техподдержка &amp; Инфраструктура</a></li>
-            <li><a href="services.html#audit">Аудит и консалтинг</a></li>
-          </ul>
-        </div>
-
-        <!-- Колонка 3: Полезное -->
-        <div class="footer__col footer__col--links">
-          <h4 class="footer__title">Полезное</h4>
-          <ul class="footer__list">
-            <li><a href="services.html">Услуги</a></li>
-            <li><a href="blog.html">Технический блог</a></li>
-            <li><a href="support.html">Техподдержка</a></li>
-            <li><a href="contacts.html">Контакты</a></li>
-            <li class="footer__list-divider"></li>
-            <li><a href="/requisites">Реквизиты</a></li>
-            <li><a href="privacy-policy.html">Политика конфиденциальности</a></li>
-            <li><a href="terms.html">Публичная оферта</a></li>
-          </ul>
-        </div>
-
-        <!-- Колонка 4: Контакты + Соцсети -->
-        <div class="footer__col footer__col--contacts">
-          <h4 class="footer__title">Контакты</h4>
-
-          <ul class="footer__list footer__list--contacts">
-<!--            <li>-->
-<!--              <i class="fas fa-phone"></i>-->
-<!--              <a href="tel:+79089461483">+7 (908) 946-14-83</a>-->
-<!--            </li>-->
-            <li>
-              <i class="fas fa-envelope"></i>
-              <a href="mailto:hello@kartemake.ru">hello@kartemake.ru</a>
-            </li>
-<!--            <li>-->
-<!--              <i class="fas fa-map-marker-alt"></i>-->
-<!--              <span>г. Москва, ул. Тверская, д. 1</span>-->
-<!--            </li>-->
-          </ul>
-
-          <!-- Социальные сети -->
-          <div class="footer__social">
-            <a href="https://vk.ru/kartemake" target="_blank" rel="noopener noreferrer" aria-label="ВКонтакте">
-              <i class="fab fa-vk"></i>
-            </a>
-            <a href="https://t.me/KArtech76" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
-              <i class="fab fa-telegram-plane"></i>
-            </a>
-            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Дзен">
-              <svg class="t-sociallinks__svg" role="presentation" width="20px" height="20px" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" clip-rule="evenodd" d="M50 100c27.6142 0 50-22.3858 50-50S77.6142 0 50 0 0 22.3858 0 50s22.3858 50 50 50ZM35.3336 27.8846c1.2589-.3077 2.3116-.4739 4.8709-.7693.7839-.0905 1.3869-.103 5.2489-.1088L49.8167 27l-.0339.3452c-.0186.1899-.1204 1.6999-.2263 3.3555-.4348 6.8018-.6381 8.3757-1.3516 10.467-.2973.8712-1.0137 2.2987-1.4822 2.9532-.4581.64-1.3831 1.6092-1.9816 2.0761-1.6917 1.3198-3.8089 2.1132-7.0551 2.6436-2.6678.436-4.7613.6235-8.9945.8058-.7307.0315-1.4102.0677-1.5099.0806L27 49.7504l.0166-4.2914.0164-4.2913.2644-2.1817c.3766-3.1087.5331-3.9621.9614-5.2442.5988-1.7921 1.6612-3.2524 3.0514-4.194.9943-.6735 2.4704-1.2837 4.0234-1.6632Zm15.224 4.6389c-.0765-1.1086-.3068-5.1806-.3068-5.4268-.0001-.0912.2362-.0967 4.1877-.0967 3.9405 0 4.2223.0065 4.774.1095.3225.0601 1.072.1598 1.6656.2213 2.4298.2519 3.4802.4076 4.4588.6609 2.7604.7144 4.7564 2.2289 5.8632 4.4489.5777 1.1587.8034 1.961 1.1033 3.9217.2277 1.4894.4354 3.2249.5619 4.695.1036 1.2043.1734 6.194.1076 7.6843l-.0404.912-.4782-.0323c-1.9452-.1314-3.1578-.2092-4.768-.3061-5.2572-.3164-7.4005-.6222-9.2684-1.3223-1.6732-.6272-3.251-1.6887-4.2962-2.8902-.8884-1.0214-1.675-2.3791-2.1437-3.7002-.6773-1.909-1.1383-4.7907-1.4204-8.879ZM27.0033 58.3121v-8.1135l.1799.0002c.0989.0001.5659.0364 1.0378.0806 1.1314.1061 1.975.1679 4.5665.3346 4.1299.2655 6.0308.4888 7.5539.8872 3.8588 1.0095 6.5704 3.5441 7.8248 7.3141.5523 1.6597.9022 3.805 1.2657 7.7605.1121 1.2196.126 1.673.1193 3.8833-.0042 1.3763-.0221 2.5167-.0397 2.5343-.0541.054-7.5172-.2361-10.248-.3983-1.667-.099-2.6352-.2506-4.3727-.685-1.3707-.3426-2.1775-.633-2.8783-1.0361-1.7943-1.0319-3.0155-2.6066-3.7588-4.8469-.3924-1.1825-.6039-2.3774-1.0009-5.6545l-.2495-2.0605Zm43.838-7.92c.685-.0459 1.37-.0913 1.5222-.1009.1522-.0095.3576-.0219.4566-.0274L73 50.2539l-.0008 3.3279c-.0009 4.085-.0714 5.7459-.3382 7.9676-.2117 1.7635-.6244 3.7599-.9962 4.8196-.8917 2.5413-2.6656 4.3097-5.2174 5.2015-1.2738.4451-3.4947.8733-5.597 1.0789-1.7994.176-2.5751.2042-6.4345.2339l-3.9438.0303v-2.0673c0-1.8113.0207-2.3196.1667-4.1037.2446-2.9873.4094-4.3643.6974-5.8284.8877-4.5117 3.1252-7.4157 6.8788-8.9277 1.8378-.7403 4.0014-1.0565 9.582-1.4003.9894-.0609 2.3593-.1483 3.0443-.1941Z" fill="#f5f5f5"></path> </svg>
-            </a>
-            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-              <i class="fab fa-youtube"></i>
-            </a>
-          </div>
-
-          <!-- Кнопка CTA (скрыта на десктопе, показывается на мобилках) -->
-          <button class="cta-button" data-controller-modal-open="form" data-controller-modal-func="open" data-controller-ripple-effect="item">
-            Начать проект
-            <i class="fas fa-arrow-right"></i>
+        <div class="hero-actions">
+          <button class="button-primary" data-modal-func="open">
+            Обсудить задачу
           </button>
         </div>
       </div>
+    </div>
+  </section>
+  <!-- =================================================
+  AUDIT ENGINE
+  ================================================= -->
+  <section class="scene scene-audit" data-scene="audit">
+    <div class="scene-container">
 
-      <!-- Строка 2: Описание -->
-      <div class="footer__row footer__row--middle">
-        <p class="footer__description">
-          Ваш внешний технический отдел. Поддержка и развитие digital-продуктов
+      <header class="scene-header reveal-item">
+        <span class="scene-eyebrow">ЭТАП 02 / ДИАГНОСТИКА</span>
+
+        <h2 class="scene-title">
+          Сначала разбираемся,<br>
+          что мешает вашему сайту работать лучше
+        </h2>
+
+        <p class="scene-description">
+          Проверяем сайт и инфраструктуру целиком: производительность,
+          ошибки, безопасность, адаптивность, код и серверное окружение.
+          Вы получаете понятный отчёт о проблемах и приоритетный план их устранения.
         </p>
-      </div>
+      </header>
 
-      <!-- Строка 3: Копирайт -->
-      <div class="footer__row footer__row--bottom">
-        <div class="footer__copyright">
-          <small>KARTEMAKE © 2026. Все права защищены.</small>
+      <!-- TERMINAL -->
+      <div class="audit-terminal terminal reveal-item">
+        <div class="terminal-header">
+          <span>ТЕХНИЧЕСКАЯ ДИАГНОСТИКА</span>
+          <span class="terminal-status">ВЫПОЛНЯЕТСЯ</span>
         </div>
-      </div>
-    </div>
-  </footer>
 
-  <!-- Overlay для затемнения фона -->
-  <div class="overlay" id="overlay"></div>
-
-  <!-- Sidebar burger menu -->
-  <aside class="sidebar-burger-menu" id="sidebar-burger-menu">
-    <div class="close-modal" data-controller-burger-menu="item">
-      <i class="fas fa-times"></i>
-    </div>
-
-    <nav>
-      <ul class="sidebar-nav">
-        <li><a href="services.html">Услуги</a></li>
-        <li><a href="blog.html">Технический блог</a></li>
-        <li><a href="support.html">Техподдержка</a></li>
-        <li><a href="contacts.html">Контакты</a></li>
-      </ul>
-    </nav>
-
-    <button
-            class="cta-button"
-            data-controller-modal-open="form"
-            data-controller-modal-func="open"
-            data-controller-ripple-effect="item"
-    >
-      Начать проект
-      <i class="fas fa-arrow-right"></i>
-    </button>
-
-    <div class="sidebar-social">
-      <button
-              class="theme-toggle"
-              data-controller-theme="item"
-              data-controller-ripple-effect="item"
-      >
-        <i class="fas fa-moon"></i>
-      </button>
-      <!--
-      <button
-        class="language-toggle"
-        data-controller="lang"
-        data-controller-ripple-effect="item"
-      >
-        <span data-controller-lang="item">RU</span>
-        <i class="fas fa-chevron-down"></i>
-      </button>
-      -->
-    </div>
-    <div class="sidebar-social">
-<!--      <a href="https://github.com/fhntv06" target="_blank"><i class="fab fa-github"></i></a>-->
-      <a href="https://t.me/KArtech76" target="_blank"><i class="fab fa-telegram"></i></a>
-      <a href="https://vk.ru/kartemake" target="_blank"><i class="fab fa-vk"></i></a>
-    </div>
-  </aside>
-
-  <!-- modal form -->
-  <div id="form" class="modal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3>Хотите чтобы мы решили <span class="color-accent-red">ваш кейс</span>?</h3>
-        <p>Оставьте заявку и наш специалист свяжется с вами для обсуждения деталей вашего проекта</p>
+        <div class="terminal-body"></div>
       </div>
 
-      <!-- Секция с формой -->
-      <div class="form-container">
-        <form class="contact-form" data-controller="form">
-          <div class="form-group">
-            <input type="text" class="form-input" id="name" name="name" placeholder=" " required>
-            <label for="name" class="form-label font-size-p">Имя</label>
-          </div>
+      <div class="audit-content reveal-item">
 
-          <div class="form-group">
-            <input type="text" class="form-input" id="company" name="company" placeholder=" ">
-            <label for="company" class="form-label font-size-p">Название компании</label>
-          </div>
+        <!-- METRICS -->
+        <div class="audit-metrics">
 
-          <div class="form-group">
-            <input type="email" class="form-input" id="email" name="email" placeholder=" ">
-            <label for="email" class="form-label font-size-p">Email</label>
-          </div>
-
-          <div class="form-group">
-            <input type="tel" class="form-input" id="phone" name="phone" placeholder=" " required>
-            <label for="phone" class="form-label font-size-p">Телефон</label>
-          </div>
-
-          <div class="form-group full-width">
-            <textarea class="form-input" id="message" name="message" placeholder=" " required></textarea>
-            <label for="message" class="form-label font-size-p">Расскажите о вашем проекте</label>
-          </div>
-
-          <div class="form-group checkbox-group full-width">
-            <input type="checkbox" id="consent" name="consent" required>
-            <label for="consent" class="checkbox-label">
-                Я ознакомился с <a href="privacy-policy.html" target="_blank">Политикой обработки персональных данных</a> и <a href="personal-data-consent.html" target="_blank">даю согласие на обработку моих персональных данных</a>
-            </label>
-          </div>
-
-          <div class="form-button">
-            <button
-                    class="cta-button"
-                    type="submit"
-                    data-controller-ripple-effect="item"
-            >
-              Отправить
-              <i class="fas fa-arrow-right"></i>
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-    <div class="close-modal" data-controller-modal-func="close">
-      <i class="fas fa-times"></i>
-    </div>
-  </div>
-  <!-- modal showreel - закомментирован -->
-  <div id="showreel" class="modal">
-    <div class="modal-content">
-      <iframe class="modal-video" src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0" allowfullscreen></iframe>
-    </div>
-    <div class="close-modal" data-controller-modal-func="close">
-      <i class="fas fa-times"></i>
-    </div>
-  </div>
-
-  <!-- decoration lines -->
-  <div class="lines">
-    <div class="line line-1"></div>
-    <div class="line line-2"></div>
-    <div class="line line-3"></div>
-    <div class="line line-4"></div>
-    <div class="line line-5"></div>
-  </div>
-  <!-- scroll-progress -->
-  <div class="scroll-progress color-accent-red" id="scrollProgress" data-controller-scroll-progress="item"></div>
-
-  <!-- back-to-top -->
-  <a href="#hero" class="to-top" data-controller-anchor="item" data-controller-ripple-effect="item">↑</a>
-
-  <!-- Плавающий виджет - закомментирован -->
-  <div id="specialistWidget" data-controller="specialist-widget" data-specialist-widget>
-    <div class="widget-circle" data-widget-trigger>
-      <i class="fas fa-user-tie"></i>
-      <div class="widget-pulse"></div>
-    </div>
-    <div class="widget-modal" data-widget-modal>
-      <div class="widget-header">
-        <h4>Какой специалист вам нужен?</h4>
-        <p>Рассчитайте стоимость задачи за 30 секунд</p>
-        <button class="widget-close" data-widget-close>
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-      <div class="widget-steps">
-        <div class="widget-step active" data-widget-step>
-          <h5 class="widget-steps__header">Какая у вас задача?</h5>
-          <div class="task-options">
-            <button class="task-option" data-widget-task data-task="bug">Исправление ошибки/бага</button>
-            <button class="task-option active" data-widget-task data-task="feature">Доработка функционала</button>
-            <button class="task-option" data-widget-task data-task="consult">Консультация/аудит</button>
-            <button class="task-option" data-widget-task data-task="other">Другое</button>
-          </div>
-          <textarea class="task-other" data-widget-other-text placeholder="Опишите вашу задачу..." style="display: none;"></textarea>
-        </div>
-        <div class="widget-step" data-widget-step>
-          <h5 class="widget-steps__header">Оцените сложность задачи</h5>
-          <div class="complexity-options">
-            <button class="complexity-option" data-widget-complexity data-hours="2" data-level="junior">
-              <span>Простая</span>
-              <small>1-2 часа работы</small>
-            </button>
-            <button class="complexity-option active" data-widget-complexity data-hours="5" data-level="middle">
-              <span>Средняя</span>
-              <small>3-8 часов работы</small>
-            </button>
-            <button class="complexity-option" data-widget-complexity data-hours="10" data-level="senior">
-              <span>Сложная</span>
-              <small>8+ часов работы</small>
-            </button>
-          </div>
-          <div class="hours-input">
-            <p>Или укажите точное количество часов</p>
-            <input type="number" min="1" max="100" value="4" data-widget-hours>
-          </div>
-        </div>
-        <div class="widget-step" data-widget-step>
-          <h5 class="widget-steps__header">Рекомендуемый специалист</h5>
-          <div class="specialist-options">
-            <div class="specialist-option active" data-widget-specialist data-level="junior">
-              <div class="specialist-header">
-                <h6>Младший разработчик</h6>
-                <span class="specialist-rate">500&nbsp;₽&nbsp;/&nbsp;час</span>
-              </div>
-              <p>Идеально для простых правок и контент-обновлений.</p>
-            </div>
-            <div class="specialist-option" data-widget-specialist data-level="middle">
-              <div class="specialist-header">
-                <h6>Опытный разработчик</h6>
-                <span class="specialist-rate">1&nbsp;000&nbsp;₽&nbsp;/&nbsp;час</span>
-              </div>
-              <p>Основной исполнитель для доработок и интеграций.</p>
-            </div>
-            <div class="specialist-option" data-widget-specialist data-level="senior">
-              <div class="specialist-header">
-                <h6>Ведущий разработчик</h6>
-                <span class="specialist-rate">2&nbsp;000&nbsp;₽&nbsp;/&nbsp;час</span>
-              </div>
-              <p>Для сложных задач и оптимизации legacy-кода.</p>
-            </div>
-          </div>
-        </div>
-        <div class="widget-step" data-widget-step>
-          <div class="calculation-result">
-            <h5 class="widget-steps__header">Расчет для задачи на <span data-widget-result-hours>4</span> часа</h5>
-            <div class="price-comparison">
-              <div class="price-item junior">
-                <p class="price-label">Младший разработчик</p>
-                <p class="price-value" data-widget-price-junior>6&nbsp;000&nbsp;₽</p>
-              </div>
-              <div class="price-item middle">
-                <p class="price-label">Опытный разработчик</p>
-                <p class="price-value" data-widget-price-middle>10&nbsp;000&nbsp;₽</p>
-              </div>
-              <div class="price-item senior">
-                <p class="price-label">Ведущий разработчик</p>
-                <p class="price-value" data-widget-price-senior>14&nbsp;000&nbsp;₽</p>
-              </div>
-            </div>
-            <p class="widget-note">
-              <i class="fas fa-info-circle"></i>
-              <strong>Важно:</strong> Вы получаете не одного человека, а поддержку всей команды KARTEMAKE. Это включает контроль качества, менеджмент проекта и гарантию результата.
+          <article class="audit-metric reveal-item">
+            <span class="metric-label">ПРОИЗВОДИТЕЛЬНОСТЬ</span>
+            <strong class="metric-value">SPEED</strong>
+            <p>
+              Скорость загрузки, Core Web Vitals,
+              тяжёлые ресурсы и узкие места.
             </p>
-            <div class="widget-cta">
-              <button class="btn-primary" data-widget-discuss data-controller-modal-func="open" data-controller-modal-open="form">
-                <i class="fas fa-comments"></i> Обсудить с менеджером
-              </button>
-              <button class="btn-outline" data-widget-support>
-                <i class="fas fa-calculator"></i> Рассчитать абонентскую плату
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="widget-footer">
-        <button class="btn-prev" data-widget-prev disabled>
-          <i class="fas fa-arrow-left"></i> Назад
-        </button>
-        <div class="widget-progress">
-          <div class="progress-step active" data-widget-progress-step></div>
-          <div class="progress-step" data-widget-progress-step></div>
-          <div class="progress-step" data-widget-progress-step></div>
-          <div class="progress-step" data-widget-progress-step></div>
-        </div>
-        <button class="btn-next" data-widget-next disabled>
-          Далее <i class="fas fa-arrow-right"></i>
-        </button>
-      </div>
-    </div>
-  </div>
+          </article>
 
-  <!-- Cookie-баннер -->
-  <div id="cookie-banner" class="cookie-banner" data-controller="cookie">
-    <div class="cookie-banner__wrapper">
-      <div class="cookie-banner__content">
+          <article class="audit-metric reveal-item">
+            <span class="metric-label">НАДЁЖНОСТЬ</span>
+            <strong class="metric-value">STABLE</strong>
+            <p>
+              Ошибки, сбои, обновления,
+              сервер и состояние инфраструктуры.
+            </p>
+          </article>
 
-        <!-- ===== ШАГ 1: ОСНОВНОЙ БАННЕР ===== -->
-        <div id="cookie-step-1" class="cookie-step">
-          <div class="cookie-banner__header">
-            <p>Мы применяем cookies, чтобы сайт работал без сбоев и постоянно становился для вас удобнее.</p>
-          </div>
-          <div class="cookie-banner__links">
-            <small><b>Подробнее</b>: <a class="color-accent-red" href="cookie-policy.html" target="_blank">использование cookie</a>, <a class="color-accent-red" href="privacy-policy.html" target="_blank">обработка персональных данных</a></small>
-          </div>
+          <article class="audit-metric reveal-item">
+            <span class="metric-label">КАЧЕСТВО</span>
+            <strong class="metric-value">READY</strong>
+            <p>
+              Адаптивность, браузеры,
+              технические ошибки и корректность работы.
+            </p>
+          </article>
 
-          <div class="cookie-banner__actions">
-            <button id="cookie-decline" class="button--decline">
-              Отклонить необязательные
-            </button>
-            <button id="cookie-settings-open" class="button--outline">
-              Настроить <i class="fas fa-arrow-right"></i>
-            </button>
-            <button id="cookie-accept" class="button--accent">
-              Принять
-            </button>
-          </div>
         </div>
 
-        <!-- ===== ШАГ 2: НАСТРОЙКИ ===== -->
-        <div id="cookie-step-2" class="cookie-step">
-          <div id="cookie-settings-back" class="cookie-step__back">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M19 12H5M12 19l-7-7 7-7"/>
-            </svg>
-            <small>Назад</small>
+        <!-- CHECKS -->
+        <div class="audit-checks">
+
+          <article class="audit-check reveal-item">
+            <h5>Сайт и страницы</h5>
+            <span>Проверено</span>
+          </article>
+
+          <article class="audit-check reveal-item">
+            <h5>Код и интеграции</h5>
+            <span>Проверено</span>
+          </article>
+
+          <article class="audit-check reveal-item">
+            <h5>Сервер и инфраструктура</h5>
+            <span>Проверено</span>
+          </article>
+
+        </div>
+
+        <!-- RESULT -->
+        <div class="audit-result reveal-item">
+          <div class="result-score">
+            <strong>→</strong>
           </div>
 
-          <div class="cookie-settings__body">
-            <!-- Обязательные -->
-            <div class="cookie-settings__group">
-              <div class="cookie-settings__group-header">
-                <small><b>Обязательные cookies</b>: эти файлы необходимы для корректной работы сайта.</small>
-                <label for="cookie-require" class="cookie-settings__toggle cookie-settings__toggle--disabled">
-                  <input id="cookie-require" type="checkbox" checked disabled>
-                  <span class="cookie-settings__toggle-slider"></span>
-                </label>
-              </div>
-            </div>
-
-            <!-- Аналитические -->
-            <div class="cookie-settings__group">
-              <div class="cookie-settings__group-header">
-                <small><b>Аналитические cookies</b>: анализ, использования сайта, для улучшения его работы.</small>
-                <label for="analytics-cookies" class="cookie-settings__toggle">
-                  <input id="analytics-cookies" type="checkbox">
-                  <span class="cookie-settings__toggle-slider"></span>
-                </label>
-              </div>
-            </div>
-          </div>
-
-          <div class="cookie-banner__actions">
-            <button id="cookie-settings-save" class="button--accent">
-              Сохранить настройки
-            </button>
+          <div>
+            <h5>Что вы получите</h5>
+            <p>
+              Понимание текущего состояния сайта, список проблем
+              с приоритетами и конкретный план технических работ.
+            </p>
           </div>
         </div>
 
       </div>
     </div>
+  </section>
+  <!-- =================================================
+  SOLUTIONS
+  ================================================= -->
+  <section class="scene scene-solutions" data-scene="solutions">
+    <div class="scene-container">
+
+      <header class="scene-header reveal-item">
+        <span class="scene-eyebrow">ЭТАП 03 / РЕШЕНИЯ</span>
+
+        <h2 class="scene-title">
+          Исправляем то,<br>
+          что мешает вашему бизнесу работать
+        </h2>
+
+        <p class="scene-description">
+          Подключаемся к существующему проекту и решаем технические задачи —
+          от ускорения сайта и исправления ошибок до модернизации
+          и постоянного сопровождения.
+        </p>
+      </header>
+
+      <div class="solutions-list">
+
+        <!-- SOLUTION 01 -->
+        <article id="optimization" class="solution-card">
+
+          <div class="solution-content">
+            <span>01</span>
+            <span class="solution-label">ОПТИМИЗАЦИЯ</span>
+
+            <h3>
+              Сайт работает медленно?
+            </h3>
+
+            <p>
+              Находим причины медленной загрузки, оптимизируем код,
+              изображения, запросы и серверное окружение.
+            </p>
+
+            <p>
+              <span>РЕЗУЛЬТАТ</span>
+              <strong>Быстрее загрузка → меньше потерь клиентов</strong>
+            </p>
+          </div>
+
+          <div class="solution-visual visual-development">
+            <div class="dev-object">
+              <div class="dev-window">
+                <span></span>
+                <span></span>
+                <span></span>
+                <div class="dev-lines"></div>
+              </div>
+
+              <div class="dev-layer cms">CMS</div>
+              <div class="dev-node node-1"></div>
+              <div class="dev-node node-2"></div>
+            </div>
+          </div>
+
+        </article>
+
+        <!-- SOLUTION 02 -->
+        <article id="modernization" class="solution-card">
+
+          <div class="solution-content">
+            <span>02</span>
+            <span class="solution-label">МОДЕРНИЗАЦИЯ</span>
+
+            <h3>
+              Сайт устарел, но бизнес на нём работает?
+            </h3>
+
+            <p>
+              Обновляем CMS, код, серверное окружение и архитектуру
+              без необоснованного риска для работающего проекта.
+            </p>
+
+            <p>
+              <span>РЕЗУЛЬТАТ</span>
+              <strong>Современная инфраструктура → меньше технических рисков</strong>
+            </p>
+          </div>
+
+          <div class="solution-visual visual-development">
+            <div class="migration-object">
+              <div class="system old">СТАРАЯ</div>
+              <div class="migration-arrow">→</div>
+              <div class="system new">НОВАЯ</div>
+              <div class="migration-particles"></div>
+            </div>
+          </div>
+
+        </article>
+
+        <!-- SOLUTION 03 -->
+        <article id="support" class="solution-card">
+
+          <div class="solution-content">
+            <span>03</span>
+            <span class="solution-label">ПОДДЕРЖКА</span>
+
+            <h3>
+              Некому заниматься технической частью?
+            </h3>
+
+            <p>
+              Берём сайт и инфраструктуру на постоянное сопровождение:
+              обновления, исправления, контроль состояния и решение
+              возникающих технических задач.
+            </p>
+
+            <p>
+              <span>РЕЗУЛЬТАТ</span>
+              <strong>Техническая опора → вам не нужно искать специалиста каждый раз</strong>
+            </p>
+          </div>
+
+          <div class="solution-visual visual-development">
+            <div class="infra-object">
+              <div class="server-box">
+                <div class="server-light"></div>
+                СЕРВЕР
+              </div>
+
+              <div class="infra-lines"></div>
+
+              <div class="uptime">24/7</div>
+            </div>
+          </div>
+
+        </article>
+
+        <!-- SOLUTION 04 -->
+        <article id="audit" class="solution-card">
+
+          <div class="solution-content">
+            <span>04</span>
+            <span class="solution-label">АУДИТ</span>
+
+            <h3>
+              Не понимаете, что происходит с сайтом?
+            </h3>
+
+            <p>
+              Разбираемся в текущем состоянии проекта, находим слабые места
+              и объясняем, что действительно нужно исправить,
+              а что можно оставить без изменений.
+            </p>
+
+            <p>
+              <span>РЕЗУЛЬТАТ</span>
+              <strong>Понятная картина → решения на основе фактов</strong>
+            </p>
+          </div>
+
+          <div class="solution-visual visual-development">
+            <div class="audit-object">
+              <div class="scan-circle">АНАЛИЗ</div>
+              <div class="scan-line"></div>
+              <div class="audit-score">→</div>
+            </div>
+          </div>
+
+        </article>
+
+      </div>
+    </div>
+  </section>
+  <!-- =================================================
+  ARCHITECTURE BUILDER
+  ================================================= -->
+  <section class="scene scene-architecture" data-scene="architecture">
+    <div class="scene-container">
+      <header class="scene-header reveal-item">
+        <span class="scene-eyebrow">ЭТАП 04 / ИНФРАСТРУКТУРА</span>
+        <h2 class="scene-title">
+          Сайт — это только часть<br>
+          вашей цифровой инфраструктуры
+        </h2>
+        <p class="scene-description">
+          Разбираемся со всей технической цепочкой: сервером, базами данных,
+          приложением, интеграциями и окружением. Поэтому ищем причину проблемы,
+          а не просто устраняем её внешний симптом.
+        </p>
+      </header>
+      <div class="architecture-map reveal-item">
+        <svg class="architecture-svg">
+          <path
+                  class="architecture-progress"
+                  d="M300 150 C300 250 700 250 700 350
+             C700 450 300 450 300 550
+             C300 650 700 650 700 750
+             C700 850 300 850 300 950"
+          />
+        </svg>
+        <!-- SERVER -->
+        <article
+          class="architecture-node node-server"
+          data-node="server"
+        >
+          <div class="node-core">
+            <div class="node-object server-object">
+              <div class="server-slot"></div>
+              <div class="server-slot"></div>
+              <div class="server-slot"></div>
+            </div>
+            <div class="node-particles"></div>
+          </div>
+          <div class="node-content">
+            <span class="node-label">ИНФРАСТРУКТУРА</span>
+            <h3 class="node-title">
+              Сервер
+            </h3>
+            <p class="node-description">
+              Серверы, Docker, Nginx, окружение
+              и конфигурация системы.
+            </p>
+          </div>
+        </article>
+
+        <!-- DATABASE -->
+        <article
+          class="architecture-node node-database"
+          data-node="database"
+        >
+          <div class="node-core">
+            <div class="node-object database-object">
+              <div class="database-cylinder">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+            <div class="node-particles"></div>
+          </div>
+          <div class="node-content">
+            <span class="node-label">ДАННЫЕ</span>
+            <h3 class="node-title">
+              База данных
+            </h3>
+            <p class="node-description">
+              Хранение данных, запросы,
+              производительность и надёжность.
+            </p>
+          </div>
+        </article>
+
+        <!-- APPLICATION -->
+        <article
+          class="architecture-node node-application"
+          data-node="application"
+        >
+          <div class="node-core">
+            <div class="node-object application-object">
+              <div class="app-layer"></div>
+              <div class="app-layer"></div>
+              <div class="app-layer"></div>
+            </div>
+            <div class="node-particles"></div>
+          </div>
+          <div class="node-content">
+            <span class="node-label">ПРОДУКТ</span>
+            <h3 class="node-title">
+              Приложение
+            </h3>
+            <p class="node-description">
+              Frontend, Backend, CMS и бизнес-логика,
+              на которых работает ваш продукт.
+            </p>
+          </div>
+        </article>
+
+        <!-- CLOUD -->
+        <article
+          class="architecture-node node-cloud"
+          data-node="cloud"
+        >
+          <div class="node-core">
+            <div class="node-object cloud-object">
+              <div class="cloud-shape"></div>
+            </div>
+            <div class="node-particles"></div>
+          </div>
+          <div class="node-content">
+            <span class="node-label">ДОСТУПНОСТЬ</span>
+            <h3 class="node-title">
+              Облачная инфраструктура
+            </h3>
+            <p class="node-description">
+              Развёртывание, масштабирование,
+              доступность и отказоустойчивость.
+            </p>
+          </div>
+        </article>
+
+        <!-- API -->
+        <article
+          class="architecture-node node-api"
+          data-node="api"
+        >
+          <div class="node-core">
+            <div class="node-object api-object">
+              <span>API</span>
+            </div>
+            <div class="node-particles"></div>
+          </div>
+          <div class="node-content">
+            <span class="node-label">ИНТЕГРАЦИИ</span>
+            <h3 class="node-title">
+              API и интеграции
+            </h3>
+            <p class="node-description">
+              Обмен данными между сайтом,
+              сервисами, CRM и другими системами.
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <!-- ARCHITECTURE RESULT -->
+      <div class="architecture-result">
+        <span>ЧТО ЭТО ДАЁТ БИЗНЕСУ</span>
+        <p>
+          Одна техническая команда отвечает за всю цепочку —
+          от сервера до интерфейса пользователя.
+        </p>
+        <button class="button-primary" data-modal-func="open">
+          Обсудить задачу
+        </button>
+      </div>
+    </div>
+  </section>
+  <!-- =================================================
+  ENGINEERING PIPELINE
+  ================================================= -->
+  <section class="scene scene-pipeline" data-scene="pipeline">
+    <div class="scene-container">
+      <header class="scene-header pipeline-header reveal-item">
+        <span class="scene-eyebrow">ЭТАП 05 / ПРОЦЕСС РАБОТЫ</span>
+        <h2 class="scene-title">От первой проблемы до стабильной работы</h2>
+        <p class="scene-description">Разбираемся в проблеме, согласовываем результат, выполняем технические работы и проверяем их качество. После запуска остаёмся техническим партнёром вашего бизнеса.</p>
+      </header>
+      <div class="pipeline-scene">
+        <div class="pipeline-track reveal-item">
+          <div class="pipeline-line"></div>
+          <div class="pipeline-line-progress"></div>
+          <!-- STEP 01 -->
+          <article class="pipeline-step pipeline-step-1" data-step="1">
+            <div class="pipeline-step-marker">
+              <b class="pipeline-step-number">01</b>
+            </div>
+            <div class="pipeline-step-content">
+              <span class="pipeline-step-label">РАЗБИРАЕМСЯ</span>
+              <h3>Находим проблему</h3>
+              <p>Изучаем сайт, инфраструктуру и текущую ситуацию. Определяем, что мешает системе работать нормально.</p>
+            </div>
+          </article>
+          <!-- STEP 02 -->
+          <article class="pipeline-step pipeline-step-2" data-step="2">
+            <div class="pipeline-step-marker">
+              <b class="pipeline-step-number">02</b>
+            </div>
+            <div class="pipeline-step-content">
+              <span class="pipeline-step-label">ПЛАНИРУЕМ</span>
+              <h3>Определяем результат</h3>
+              <p>Формируем список задач, сроки и ожидаемый результат. Вы понимаете, что именно будет сделано.</p>
+            </div>
+          </article>
+          <!-- STEP 03 -->
+          <article class="pipeline-step pipeline-step-3" data-step="3">
+            <div class="pipeline-step-marker">
+              <b class="pipeline-step-number">03</b>
+            </div>
+            <div class="pipeline-step-content">
+              <span class="pipeline-step-label">РЕШАЕМ</span>
+              <h3>Устраняем проблемы</h3>
+              <p>Вносим изменения в сайт, код, инфраструктуру, интеграции и настройки, необходимые для результата.</p>
+            </div>
+          </article>
+          <!-- STEP 04 -->
+          <article class="pipeline-step pipeline-step-4" data-step="4">
+            <div class="pipeline-step-marker">
+              <b class="pipeline-step-number">04</b>
+            </div>
+            <div class="pipeline-step-content">
+              <span class="pipeline-step-label">ПРОВЕРЯЕМ</span>
+              <h3>Тестируем результат</h3>
+              <p>Проверяем выполненные работы и убеждаемся, что система работает так, как договорились.</p>
+            </div>
+          </article>
+          <!-- STEP 05 -->
+          <article class="pipeline-step pipeline-step-5" data-step="5">
+            <div class="pipeline-step-marker">
+              <b class="pipeline-step-number">05</b>
+            </div>
+            <div class="pipeline-step-content">
+              <span class="pipeline-step-label">ПОДДЕРЖИВАЕМ</span>
+              <h3>Остаёмся на связи</h3>
+              <p>После запуска продолжаем поддерживать систему, чтобы новые технические проблемы не оставались без решения.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- =================================================
+  MONITORING CONTROL ROOM
+  ================================================= -->
+  <section class="scene scene-monitoring" data-scene="monitoring">
+    <div class="scene-container">
+      <div class="monitoring-pin">
+
+        <!-- SCENE HEADER -->
+        <header class="scene-header monitoring-header reveal-item">
+          <span class="scene-eyebrow">ЭТАП 06 / КОНТРОЛЬ</span>
+
+          <h2 class="scene-title">
+            После запуска мы не исчезаем
+          </h2>
+
+          <p class="scene-description">
+            Поддерживаем сайт и инфраструктуру в рабочем состоянии:
+            следим за доступностью, производительностью, ошибками и
+            критическими изменениями, чтобы проблемы не становились
+            проблемами вашего бизнеса.
+          </p>
+        </header>
+
+        <div class="monitoring-viewport">
+
+          <!-- COMPLETED CARDS STACK -->
+          <aside class="monitoring-stack" aria-label="Что находится под контролем">
+            <span class="monitoring-stack-label">ПОД КОНТРОЛЕМ</span>
+
+            <div class="monitoring-stack-items">
+              <!--
+                monitor-stack-card
+                elements are generated by
+                monitoring-scroll.js
+              -->
+            </div>
+          </aside>
+
+          <!-- MONITORING TRACK -->
+          <div class="monitoring-track">
+
+            <!-- CARD 01 -->
+            <article class="monitor-card" data-index="0">
+              <div class="monitor-card-top">
+                <span>01 / ДОСТУПНОСТЬ</span>
+                <span class="monitor-card-status">КОНТРОЛЬ</span>
+              </div>
+
+              <div class="monitor-card-content">
+                <span class="monitor-card-label">ДОСТУПНОСТЬ САЙТА</span>
+                <h2 class="monitor-card-metric">24/7</h2>
+                <p>
+                  Контролируем доступность сайта,
+                  чтобы ваши клиенты могли пользоваться им в любой момент.
+                </p>
+              </div>
+
+              <div class="monitor-card-footer">
+                <span>БИЗНЕС</span>
+                <span>САЙТ ДОСТУПЕН</span>
+              </div>
+            </article>
+
+            <!-- CARD 02 -->
+            <article class="monitor-card" data-index="1">
+              <div class="monitor-card-top">
+                <span>02 / ПРОИЗВОДИТЕЛЬНОСТЬ</span>
+                <span class="monitor-card-status">КОНТРОЛЬ</span>
+              </div>
+
+              <div class="monitor-card-content">
+                <span class="monitor-card-label">СКОРОСТЬ РАБОТЫ</span>
+                <h2 class="monitor-card-metric">СТАБИЛЬНО</h2>
+                <p>
+                  Следим за скоростью загрузки и откликом системы,
+                  чтобы медленный сайт не приводил к потере клиентов.
+                </p>
+              </div>
+
+              <div class="monitor-card-footer">
+                <span>БИЗНЕС</span>
+                <span>РАБОТАЕТ БЫСТРО</span>
+              </div>
+            </article>
+
+            <!-- CARD 03 -->
+            <article class="monitor-card" data-index="2">
+              <div class="monitor-card-top">
+                <span>03 / ОШИБКИ</span>
+                <span class="monitor-card-status">КОНТРОЛЬ</span>
+              </div>
+
+              <div class="monitor-card-content">
+                <span class="monitor-card-label">ТЕХНИЧЕСКИЕ ОШИБКИ</span>
+                <h2 class="monitor-card-metric">ПОД КОНТРОЛЕМ</h2>
+                <p>
+                  Находим технические сбои и неисправности,
+                  прежде чем они начинают влиять на работу бизнеса.
+                </p>
+              </div>
+
+              <div class="monitor-card-footer">
+                <span>СИСТЕМА</span>
+                <span>СТАБИЛЬНА</span>
+              </div>
+            </article>
+
+            <!-- CARD 04 -->
+            <article class="monitor-card" data-index="3">
+              <div class="monitor-card-top">
+                <span>04 / БЕЗОПАСНОСТЬ</span>
+                <span class="monitor-card-status">КОНТРОЛЬ</span>
+              </div>
+
+              <div class="monitor-card-content">
+                <span class="monitor-card-label">КРИТИЧЕСКИЕ СОБЫТИЯ</span>
+                <h2 class="monitor-card-metric">ОТСЛЕЖИВАЕМ</h2>
+                <p>
+                  Контролируем состояние системы и обращаем внимание
+                  на изменения, которые могут повлиять на её работу.
+                </p>
+              </div>
+
+              <div class="monitor-card-footer">
+                <span>РИСКИ</span>
+                <span>ОТСЛЕЖИВАЮТСЯ</span>
+              </div>
+            </article>
+
+            <!-- CARD 05 -->
+            <article class="monitor-card" data-index="4">
+              <div class="monitor-card-top">
+                <span>05 / РЕЗЕРВИРОВАНИЕ</span>
+                <span class="monitor-card-status">КОНТРОЛЬ</span>
+              </div>
+
+              <div class="monitor-card-content">
+                <span class="monitor-card-label">РЕЗЕРВНЫЕ КОПИИ</span>
+                <h2 class="monitor-card-metric">ПРОВЕРЯЕМ</h2>
+                <p>
+                  Контролируем резервное копирование,
+                  чтобы восстановление было возможным тогда, когда оно потребуется.
+                </p>
+              </div>
+
+              <div class="monitor-card-footer">
+                <span>ДАННЫЕ</span>
+                <span>ЗАЩИЩЕНЫ</span>
+              </div>
+            </article>
+
+          </div>
+
+          <!-- FINAL STATE -->
+          <div class="monitoring-complete">
+            <span>ЦЕНТР ТЕХНИЧЕСКОГО КОНТРОЛЯ</span>
+            <h3>Вы занимаетесь бизнесом. Мы следим за системой.</h3>
+            <p>
+              Сайт и инфраструктура остаются под техническим контролем
+              после выполнения работ. Если возникает проблема —
+              мы подключаемся и решаем её.
+            </p>
+
+            <strong>ТЕХНИЧЕСКАЯ ОПОРА БИЗНЕСА</strong>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- =================================================
+  CONTACT
+  ================================================= -->
+  <section class="scene scene-contact" data-scene="contact">
+    <div class="scene-container">
+      <!-- CONTACT HEADER -->
+      <header class="scene-header contact-header">
+        <span class="scene-eyebrow">ЭТАП 07 / СВЯЗЬ</span>
+        <h2 class="scene-title">Передайте технические задачи нам</h2>
+        <p class="scene-description">
+          Расскажите, что происходит с вашим сайтом или инфраструктурой.
+          <br>
+          Разберём задачу, определим объём работ и предложим решение.
+        </p>
+      </header>
+      <!-- CONTACT MAIN -->
+      <div class="contact-content">
+        <!-- CTA -->
+        <div class="contact-cta">
+          <div class="contact-cta-header">
+            <span>СЛЕДУЮЩИЙ ШАГ</span>
+            <span>ГОТОВЫ ПОДКЛЮЧИТЬСЯ</span>
+          </div>
+          <div class="contact-cta-body">
+            <h3>Расскажите о вашей задаче</h3>
+            <p>Неважно, что произошло: сайт работает медленно,
+              появились ошибки, требуется перенос, модернизация,
+              интеграция или постоянная техническая поддержка.
+              Подключимся на любом этапе.
+            </p>
+          </div>
+          <div class="contact-actions">
+            <a href="mailto:hello@kartemake.ru" class="contact-action contact-action-primary">
+              <span class="contact-action-label">ОБСУДИТЬ ЗАДАЧУ</span>
+              <strong>hello@kartemake.ru</strong>
+              <span class="contact-action-arrow">↗</span>
+            </a>
+            <a href="mailto:support@kartemake.ru" class="contact-action">
+              <span class="contact-action-label">ТЕХНИЧЕСКАЯ ПОДДЕРЖКА</span>
+              <strong>support@kartemake.ru</strong>
+              <span class="contact-action-arrow">↗</span>
+            </a>
+          </div>
+        </div>
+        <!-- CONTACT TERMINAL -->
+        <div class="contact-terminal terminal" aria-label="Статус связи">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <span class="terminal-title">K·ART·MAKE / ПОДКЛЮЧЕНИЕ</span>
+            <span class="terminal-status">ГОТОВЫ</span>
+          </div>
+          <div class="terminal-body"></div>
+          <div class="terminal-footer">
+            <span>СИСТЕМА ГОТОВА К ЗАДАЧЕ</span>
+            <span>07 / 07</span>
+          </div>
+        </div>
+      </div>
+      <div class="contact-info">
+        <div class="contact-info-item">
+          <span class="contact-info-label">НАЧИНАЕМ С ДИАГНОСТИКИ</span>
+          <span class="contact-info-value">СНАЧАЛА РАЗБИРАЕМСЯ</span>
+          <span class="contact-info-description">Изучаем вашу задачу и текущее состояние системы, прежде чем предлагать технические решения.</span>
+        </div>
+        <div class="contact-info-item">
+          <span class="contact-info-label">РАБОТАЕМ ПО ДОГОВОРУ</span>
+          <span class="contact-info-value">ОФИЦИАЛЬНО</span>
+          <span class="contact-info-description">Фиксируем задачи, сроки и условия работы. Отвечаем за согласованный результат.</span>
+        </div>
+        <div class="contact-info-item">
+          <span class="contact-info-label">ПОСЛЕ ЗАПУСКА</span>
+          <span class="contact-info-value">ОСТАЁМСЯ НА СВЯЗИ</span>
+          <span class="contact-info-description">Поддерживаем и развиваем систему, чтобы вам не приходилось каждый раз искать нового специалиста.</span>
+        </div>
+      </div>
+      <!-- FINAL STATEMENT -->
+      <div class="contact-final-statement">
+        <span>ТЕХНИЧЕСКАЯ ОПОРА БИЗНЕСА</span>
+        <h3>Вы занимаетесь бизнесом.</h3>
+        <h4>Мы отвечаем за техническую сторону.</h4>
+        <p>K·ART·MAKE — технический партнёр для поддержки, оптимизации и развития цифровой инфраструктуры бизнеса.</p>
+      </div>
+      <!-- CONTACT INFORMATION -->
+      <div class="contact-info">
+        <div class="contact-info-item">
+          <span class="contact-info-label">НОВЫЕ ПРОЕКТЫ</span>
+          <a href="mailto:hello@kartemake.ru" class="contact-info-value">hello@kartemake.ru</a>
+          <span class="contact-info-description">Обсудить новый проект, разработку или модернизацию.</span>
+        </div>
+        <div class="contact-info-item">
+          <span class="contact-info-label">ТЕХНИЧЕСКАЯ ПОДДЕРЖКА</span>
+          <a href="mailto:support@kartemake.ru" class="contact-info-value">support@kartemake.ru</a>
+          <span class="contact-info-description">Техническая поддержка и сопровождение.</span>
+        </div>
+        <div class="contact-info-item">
+          <span class="contact-info-label">ОТВЕТ</span>
+          <span class="contact-info-value">В ТЕЧЕНИЕ 1 ДНЯ</span>
+          <span class="contact-info-description">Получаем запрос и связываемся для обсуждения задачи.</span>
+        </div>
+        <div class="contact-info-item">
+          <span class="contact-info-label">TELEGRAM</span>
+          <a href="https://t.me/KArtech76" class="contact-info-value">@KArtech76</a>
+        </div>
+        <div class="contact-info-item">
+          <span class="contact-info-label">ВКОНТАКТЕ</span>
+          <a href="https://vk.ru/kartemake" class="contact-info-value">vk.com/kartemake</a>
+        </div>
+      </div>
+      <!-- =================================================
+      FOOTER
+      ================================================= -->
+      <footer class="contact-footer">
+        <!-- FOOTER BRAND -->
+        <div class="contact-footer-brand">
+          <a href="/" class="contact-footer-logo" aria-label="K·ART·MAKE">K·ART·MAKE</a>
+          <p>Технический партнёр для вашего бизнеса.</p>
+        </div>
+        <!-- FOOTER NAVIGATION -->
+        <nav class="contact-footer-nav" aria-label="Навигация по сайту">
+          <div class="contact-footer-column">
+            <span class="contact-footer-title">УСЛУГИ</span>
+            <a href="#optimization">Оптимизация сайта</a>
+            <a href="#modernization">Модернизация</a>
+            <a href="#support">Техническая поддержка</a>
+            <a href="#audit">Аудит и консультации</a>
+          </div>
+          <div class="contact-footer-column">
+            <span class="contact-footer-title">ИНФОРМАЦИЯ</span>
+            <a href="/privacy-policy">Политика обработки персональных данных</a>
+            <a href="/personal-data-consent">Согласие на обработку персональных данных</a>
+            <a href="/offer">Публичная оферта</a>
+          </div>
+          <div class="contact-footer-column">
+            <span class="contact-footer-title">КОНТАКТЫ</span>
+            <a href="mailto:hello@kartemake.ru">hello@kartemake.ru</a>
+            <a href="mailto:support@kartemake.ru">support@kartemake.ru</a>
+            <a href="https://t.me/KArtech76">Telegram</a>
+            <a href="https://vk.ru/kartemake">VK</a>
+          </div>
+        </nav>
+        <!-- FOOTER BOTTOM -->
+        <div class="contact-footer-bottom">
+          <span>© 2026 K·ART·MAKE</span>
+          <span>ТЕХНИЧЕСКИЙ ПАРТНЁР</span>
+          <span>ВСЕ СИСТЕМЫ РАБОТАЮТ</span>
+        </div>
+      </footer>
+    </div>
+  </section>
+</main>
+<div id="cookie-banner" class="cookie-banner" aria-hidden="true">
+  <div class="cookie-banner__wrapper">
+    <div class="cookie-banner__status">
+      <span class="cookie-banner__status-dot"></span>
+      <span>PRIVACY / COOKIE CONTROL</span>
+    </div>
+    <div class="cookie-banner__content">
+      <!-- STEP 1 -->
+      <section id="cookie-step-1" class="cookie-step cookie-step--active">
+        <div class="cookie-banner__header">
+          <p class="cookie-banner__description">Мы применяем cookies, чтобы сайт работал без сбоев и постоянно становился для вас удобнее.</p>
+        </div>
+        <div class="cookie-banner__links">
+          <span>Подробнее:</span>
+          <a href="cookie-policy.html" target="_blank">использование cookie</a>
+          <a href="privacy-policy.html" target="_blank">обработка персональных данных</a>
+        </div>
+        <div class="cookie-banner__actions">
+          <button type="button" id="cookie-decline" class="cookie-button cookie-button--outline">Отклонить</button>
+          <button type="button" id="cookie-accept" class="cookie-button cookie-button--accent">Принять</button>
+        </div>
+      </section>
+    </div>
   </div>
-  </body>
+</div>
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <!-- Закрытие -->
+    <div class="close-modal no-icon" data-modal-func="close"></div>
+
+    <!-- Заголовок -->
+    <div class="modal-header">
+      <h3>Хотите чтобы мы решили <span class="color-accent">ваш кейс</span>?</h3>
+      <p>Оставьте заявку и наш специалист свяжется с вами для обсуждения деталей вашего проекта</p>
+    </div>
+
+    <!-- Контейнер с гридом -->
+    <div class="form-container">
+
+      <!-- КОЛОНКА 1: КОНТАКТЫ (как в дашборде) -->
+      <div class="contact-modal__body">
+        <a href="mailto:hello@kartemake.ru" class="contact-modal__item">
+          <span class="contact-modal__item-label">НОВЫЕ ПРОЕКТЫ</span>
+          <strong class="contact-modal__item-value">hello@kartemake.ru</strong>
+        </a>
+        <a href="mailto:support@kartemake.ru" class="contact-modal__item">
+          <span class="contact-modal__item-label">ТЕХНИЧЕСКАЯ ПОДДЕРЖКА</span>
+          <strong class="contact-modal__item-value">support@kartemake.ru</strong>
+        </a>
+      </div>
+
+      <!-- КОЛОНКА 2: СОЦСЕТИ -->
+      <div class="contact-modal__body">
+        <a href="https://t.me/KArtech76" target="_blank" class="contact-modal__item">
+          <span class="contact-modal__item-label">TELEGRAM</span>
+          <strong class="contact-modal__item-value">@KArtech76</strong>
+        </a>
+        <a href="https://vk.ru/kartemake" target="_blank" class="contact-modal__item">
+          <span class="contact-modal__item-label">ВКОНТАКТЕ</span>
+          <strong class="contact-modal__item-value">vk.com/kartemake</strong>
+        </a>
+      </div>
+
+      <!-- КОЛОНКА 3: ИНФОРМАЦИЯ -->
+      <div class="contact-modal__body">
+        <a href="/privacy-policy" class="contact-modal__item">
+          <span class="contact-modal__item-label">ДОКУМЕНТЫ</span>
+          <strong class="contact-modal__item-value">Политика конфиденциальности</strong>
+        </a>
+        <!--        <a href="/personal-data-consent" class="contact-modal__item">-->
+        <!--          <span class="contact-modal__item-label">СОГЛАСИЕ</span>-->
+        <!--          <strong class="contact-modal__item-value">На обработку данных</strong>-->
+        <!--        </a>-->
+      </div>
+
+      <!-- ФУТЕР -->
+      <div class="contact-modal__footer">
+        <p class="contact-modal__footer-text">Напишите нам — мы ответим в течение 24 часов</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+</body>
 </html>

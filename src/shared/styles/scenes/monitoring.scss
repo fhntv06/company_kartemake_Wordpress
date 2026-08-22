@@ -1,0 +1,406 @@
+@use '../variables/colors' as *;
+@use '../variables/offsets' as *;
+@use '../variables/fonts' as *;
+@use '../system/mixins' as *;
+@use '../variables/media' as *;
+
+.monitoring-viewport {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  isolation: isolate;
+  opacity: 0;
+  transition: opacity .9s ease;
+}
+
+.monitoring-pin {
+  padding-top: $small + $extra-small - 8px; // 40px → 40px
+}
+
+.monitoring-viewport::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+  opacity: .35;
+}
+
+.monitor-card {
+  position: absolute;
+  left: 50%;
+  top: 25%;
+  width: min(440px, 70vw);
+  min-height: 500px;
+  max-height: max-content;
+  padding: $small; // 32px → $small
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+  border: 1px solid rgba(255,255,255,.13);
+  border-radius: calc(var(--border-radius) * 2 + 4px); // 28px → 28px
+  background: linear-gradient(145deg, rgba(255,255,255,.105), rgba(255,255,255,.035));
+  box-shadow: 0 30px 80px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.05);
+  opacity: 0;
+  visibility: visible;
+  will-change: transform, opacity;
+}
+
+.monitor-card-content p {
+  max-width: 330px;
+  margin: #{$small - 4px} 0 0; // 28px → 28px
+  @include responsive-font(13,16);
+  line-height: 1.65;
+  opacity: .55;
+}
+
+.monitor-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: $small; // 32px → $small
+  width: 70px;
+  height: 1px;
+  background: currentColor;
+  opacity: .35;
+}
+
+.monitor-card::after {
+  content: "";
+  position: absolute;
+  right: $small - 4px; // 28px → 28px
+  top: $small - 4px;
+  width: $extra-small - 8px; // 8px → 8px
+  height: $extra-small - 8px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  opacity: .25;
+}
+
+.monitor-stack-card {
+  width: 100%;
+  min-height: $middle - $extra-small + 4px; // 52px → 52px
+  padding: $extra-small - 6px 14px; // 10px → 10px
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $extra-small - 4px; // 12px → 12px
+  border: 1px solid rgba(255,255,255,.11);
+  border-radius: $extra-small - 6px; // 10px → 10px
+  background: rgba(255,255,255,.045);
+  box-shadow: 0 12px 30px rgba(0,0,0,.15);
+  transform-origin: left center;
+  will-change: transform, opacity;
+}
+.monitor-stack-card span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 9px;
+  line-height: 1.2;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  opacity: .48;
+}
+.monitor-stack-card strong {
+  flex: 0 0 auto;
+  font-size: 13px;
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: -.02em;
+}
+/* ============================================================
+   COMPLETE STATE
+============================================================ */
+.monitoring-complete {
+  z-index: 20;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  opacity: 0;
+}
+.monitoring-complete > strong::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  flex: 0 0 6px;
+  border-radius: 50%;
+  background: #00ff9d;
+  box-shadow: 0 0 20px #00ff9d;
+  animation: pulse-status 2s infinite;
+}
+.monitoring-complete > span {
+  display: block;
+  margin-bottom: $extra-small;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  opacity: .42;
+}
+.monitoring-complete h3 {
+  margin-bottom: $small;
+}
+.monitoring-complete h5 {
+  margin-bottom: $extra-small;
+}
+.monitoring-complete p {
+  color: #{$text-gray};
+  opacity: .42;
+}
+.monitoring-complete strong {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 30px;
+  font-size: 10px;
+  line-height: 1;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  opacity: .7;
+}
+
+@media (max-width: 1100px) {
+  .monitor-card {
+    width: 400px;
+    min-height: 470px;
+    max-height: max-content;
+    padding: $small - 4px; // 28px → 28px
+  }
+}
+
+@media (max-width: #{$breakpoint-extra-small}) { // 768px
+  .monitor-card {
+    bottom: 20%;
+    width: min(340px, calc(100vw - $small + 8px)); // 40px → 40px
+    min-height: 400px;
+    max-height: max-content;
+    padding: $extra-small; // 16px → $extra-small
+    border-radius: calc(var(--border-radius) * 2 - 2px); // 22px → 22px
+  }
+
+  .monitoring-pin {
+    padding-top: $extra-large - $extra-large + 72px; // 72px → 72px
+  }
+}
+
+@media (max-width: #{$breakpoint-large-small}) { // 576px
+  .monitor-card {
+    top: 0;
+    bottom: unset;
+    width: 100%;
+    min-height: 250px;
+    max-height: max-content;
+    transform: translate(-50%, -140%);
+  }
+}
+// =====================================================
+// ВОССТАНОВЛЕННЫЕ КЛАССЫ
+// =====================================================
+
+.monitoring-pin.monitoring-pin__active .monitoring-viewport {
+  opacity: 1;
+}
+
+.monitoring-track {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  gap: 0;
+}
+
+.monitor-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 10px;
+  line-height: 1;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  opacity: .52;
+}
+
+.monitor-card-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  white-space: nowrap;
+}
+
+.monitor-card-status::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  flex: 0 0 6px;
+  border-radius: 50%;
+  background: #00ff9d;
+  box-shadow: 0 0 20px #00ff9d;
+  animation: pulse-status 2s infinite;
+}
+
+.monitor-card-label {
+  display: block;
+  margin-bottom: 14px;
+  font-size: 11px;
+  line-height: 1;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  opacity: .48;
+}
+
+.monitor-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, .08);
+  font-size: 9px;
+  line-height: 1;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  opacity: .42;
+}
+
+.monitoring-stack {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 220px;
+  z-index: 50;
+}
+
+.monitoring-stack-label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 9px;
+  line-height: 1;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  opacity: .38;
+}
+
+.monitoring-stack-items {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.monitoring-stack-items::before {
+  content: "";
+  position: absolute;
+  left: -16px;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, .18), transparent);
+  opacity: .4;
+}
+@media (max-width: 768px) {
+  .monitor-card {
+    bottom: 20%;
+    width: min(340px, calc(100vw - 40px));
+    min-height: 400px;
+    max-height: max-content;
+    padding: 16px;
+    border-radius: 22px;
+  }
+  .monitoring-pin {
+    padding-top: 72px;
+  }
+  .monitoring-stack-items {
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 80%;
+  }
+  .monitoring-stack {
+    width: 100%;
+  }
+  .monitor-card-content p {
+    font-size: 13px;
+  }
+  .monitor-stack-card {
+    min-height: 44px;
+    padding: 8px 10px;
+    flex-grow: 1;
+    width: unset;
+  }
+  .monitor-stack-card span {
+    font-size: 8px;
+  }
+  .monitor-stack-card strong {
+    font-size: 11px;
+  }
+  .monitoring-complete {
+    width: calc(100% - 40px);
+  }
+  .monitoring-complete h3 {
+    font-size: 20px;
+  }
+  .monitoring-complete p {
+    font-size: 13px;
+  }
+}
+@media (max-width: 576px) {
+  .monitoring-stack {
+    display: none;
+  }
+  .monitor-card {
+    top: 0;
+    bottom: unset;
+    width: 100%;
+    min-height: 250px;
+    max-height: max-content;
+    transform: translate(-50%, -140%);
+  }
+  .monitor-card-content {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: unset;
+    flex: unset;
+    padding-bottom: 16px;
+  }
+  .monitoring-stack-items {
+    max-width: 100%;
+  }
+  .monitoring-complete {
+    top: 20%;
+  }
+  .monitoring-complete p {
+    margin: 16px auto 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .monitor-card,
+  .monitor-stack-card,
+  .monitoring-complete {
+    transition: none;
+  }
+}
+// =====================================================
+// ВОССТАНОВЛЕННАЯ АНИМАЦИЯ
+// =====================================================
+
+@keyframes pulse-status {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}

@@ -1,5 +1,4 @@
 @use 'sass:math';
-@use "./media" as media;
 
 $middle: math.div(64px, 1); // 64px
 
@@ -13,3 +12,6 @@ $header-height-desctop: 105px;
 $header-height-mobile: 81px;
 $offset-header: 20px;
 $offset-top-from-header: calc($header-height-desctop + $offset-header);
+
+$border-radius: 12px;
+$transition: all .3s ease;
