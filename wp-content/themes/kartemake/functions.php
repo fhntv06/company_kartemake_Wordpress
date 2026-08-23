@@ -54,23 +54,30 @@ function kartemake_enqueue_scripts() {
     wp_enqueue_style('kartemake-style', get_stylesheet_uri(), [], wp_get_theme()->get('Version'));
 
     // Font Awesome
-    wp_enqueue_style('font-awesome', get_template_directory_uri() . '/assets/css/all.min.css', [], '6.5.1');
+//    wp_enqueue_style('font-awesome', get_template_directory_uri() . '/assets/css/all.min.css', [], '6.5.1');
 
     // Основной JS
     // Подключение через CDN
-//    wp_enqueue_script('gsap', get_template_directory_uri() . '/assets/js/gsap.min.js', [], '3', false);
-//    wp_enqueue_script('flubber', get_template_directory_uri() . '/assets/js/flubber.min.js', [], '0.4.2', false);
-//    wp_enqueue_script('flubber', get_template_directory_uri() . '/assets/js/swiper-bundle.min.js', [], '11.2.10', false);
-
     wp_enqueue_script(
-        'kartemake-bundle',                              // ID скрипта
-        get_template_directory_uri() . '/assets/js/bundle.js', // Путь к файлу
-        [],                                              // Зависимости (если нет - пустой массив)
-        wp_get_theme()->get('Version'),                  // Версия
-        [
-            'in_footer' => true,
-            'strategy'  => 'async',
-        ]
+    'main',
+    get_template_directory_uri() . '/assets/js/main.build.js',
+        [],
+        wp_get_theme()->get('Version'),
+        ['in_footer' => true,'strategy'  => 'defer']
+    );
+    wp_enqueue_script(
+    'runtime',
+    get_template_directory_uri() . '/assets/js/runtime.build.js',
+        [],
+        wp_get_theme()->get('Version'),
+        ['in_footer' => true,'strategy'  => 'defer']
+    );
+    wp_enqueue_script(
+    'vendors',
+    get_template_directory_uri() . '/assets/js/vendors.build.js',
+        [],
+        wp_get_theme()->get('Version'),
+        ['in_footer' => true,'strategy'  => 'defer']
     );
 }
 add_action('wp_enqueue_scripts', 'kartemake_enqueue_scripts');

@@ -1,5 +1,6 @@
 export default class ModalController {
   constructor() {
+    console.log("[ModalController] ready")
     this.modal = document.getElementById('modal')
 
     if (!this.modal) {

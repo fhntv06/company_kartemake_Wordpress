@@ -9,13 +9,14 @@ Contact теперь самостоятельная сцена со своим S
 */
 export default class ContactScroll {
   constructor() {
+    console.log("[ContactScroll] ready")
     this.scene = document.querySelector(".scene-contact");
     if (!this.scene) {
       console.warn("[ContactScroll] Scene not found");
       return;
     }
 
-    this.scrollTrigger = window.SceneManager.scrollTrigger
+    this.scrollTrigger = window?.App?.SceneManager.scrollTrigger
 
     this.init();
   }
@@ -46,8 +47,8 @@ export default class ContactScroll {
     });
 
     // Обновляем registry после создания
-    if (window.SceneManager) {
-      window.SceneManager.refresh();
+    if (window?.App?.SceneManager) {
+      window?.App?.SceneManager.refresh();
     }
 
     console.log("[ContactScroll] initialized");

@@ -149,4 +149,3 @@ export default class SceneRegistry {
     );
   }
 }
-window.SceneRegistry = SceneRegistry;

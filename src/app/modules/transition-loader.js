@@ -31,6 +31,8 @@ reveal()
 */
 export default class TransitionLoader {
   constructor() {
+    console.log("[TransitionLoader] ready")
+
     this.canvas = null
     this.ctx = null
     this.width = window.innerWidth
@@ -63,7 +65,6 @@ export default class TransitionLoader {
     this.ctx = this.canvas.getContext("2d")
     this.resize()
     window.addEventListener("resize", () => this.resize())
-    console.log("[TransitionLoader] ready")
   }
 
   ////////////////////////////////////////////////////////

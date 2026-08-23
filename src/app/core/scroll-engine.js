@@ -10,6 +10,8 @@ Lenis + GSAP ScrollTrigger
 */
 export default class ScrollEngine {
   constructor(){
+    console.log("[ScrollEngine] ready")
+
     this.initLenis();
     this.initGSAP();
   }
@@ -38,4 +40,3 @@ export default class ScrollEngine {
     this.lenis.scrollTo(target);
   }
 }
-window.ScrollEngine = ScrollEngine;

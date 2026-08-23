@@ -16,6 +16,7 @@ Responsibilities:
 */
 export default class CookieController {
   constructor() {
+    console.log("[CookieController] ready")
     this.banner = document.querySelector("#cookie-banner");
     if (!this.banner) {
       throw new Error(`[CookieController] Banner not found!`);

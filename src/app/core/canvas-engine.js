@@ -10,6 +10,7 @@ Particle infrastructure renderer
 */
 export default class CanvasEngine {
   constructor() {
+    console.log("[CanvasEngine] ready")
     this.scene = document.querySelector(".scene-hero");
     this.canvas = document.getElementById("heroCanvas");
     this.ctx = this.canvas.getContext("2d");

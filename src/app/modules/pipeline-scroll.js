@@ -1,5 +1,6 @@
 export default class PipelineScroll {
   constructor() {
+    console.log("[PipelineScroll] ready")
     this.scene = document.querySelector(".scene-pipeline");
     if (!this.scene) {
       return;
@@ -10,7 +11,7 @@ export default class PipelineScroll {
     ];
     this.progress = 0;
 
-    this.scrollTrigger = window.SceneManager.scrollTrigger
+    this.scrollTrigger = window?.App?.SceneManager.scrollTrigger
   }
 
   start() {

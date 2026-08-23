@@ -1,5 +1,6 @@
 export default class Terminal {
   constructor() {
+    console.log("[Terminal] ready")
     this.hero = document.querySelector(".hero-terminal");
     this.audit = document.querySelector(".audit-terminal");
     this.contact = document.querySelector(".contact-terminal");

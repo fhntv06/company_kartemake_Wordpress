@@ -52,6 +52,7 @@ ScrollTrigger for:
 */
 export default class MonitoringScroll {
   constructor() {
+    console.log("[MonitoringScroll] ready")
     this.scene = document.querySelector(".scene-monitoring");
     if (!this.scene) {
       return;
@@ -474,7 +475,7 @@ export default class MonitoringScroll {
     if (!this.scrollTrigger) {
       return;
     }
-    if (!window.SceneManager) {
+    if (!window?.App?.SceneManager) {
       return;
     }
     /*
@@ -484,7 +485,7 @@ export default class MonitoringScroll {
     */
     const monitoringStart = this.scrollTrigger.start;
     const monitoringEnd = this.scrollTrigger.end;
-    window.SceneManager.registerScenePosition("monitoring", monitoringStart, monitoringEnd);
+    window?.App?.SceneManager.registerScenePosition("monitoring", monitoringStart, monitoringEnd);
   }
 
   /*

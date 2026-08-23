@@ -1,5 +1,6 @@
 export default class ArchitectureBuilder {
   constructor(){
+    console.log("[ArchitectureBuilder] ready")
     this.scene = document.querySelector(".scene-architecture");
     this.map = this.scene?.querySelector(".architecture-map");
     this.progress = this.map?.querySelector(".architecture-progress");
@@ -8,7 +9,7 @@ export default class ArchitectureBuilder {
       this.scene.querySelector('.architecture-result')
     ];
 
-    this.scrollTrigger = window.SceneManager.scrollTrigger
+    this.scrollTrigger = window?.App.SceneManager.scrollTrigger
 
     if (!this.scene) {
       console.warn("Architecture scene not found");

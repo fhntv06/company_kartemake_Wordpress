@@ -1,5 +1,6 @@
 export default class DashboardMenu {
   constructor() {
+    console.log("[DashboardMenu] ready")
     this.dashboard = document.querySelector(".global-dashboard");
     this.button = document.querySelector(".dashboard-menu");
     this.panel = document.querySelector(".dashboard-menu-panel");

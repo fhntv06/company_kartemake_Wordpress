@@ -43,10 +43,14 @@ AnchorNavigation НЕ управляет SceneManager.
 */
 export default class AnchorNavigation {
   constructor() {
+    console.log("[AnchorNavigation] ready")
     this.isNavigating = false;
+
+    const headerHeight = document.getElementById('header').offsetHeight
+
     this.config = {
       duration: 1.8,
-      offset: 60 * 7, // чтобы сцена активировалась раньше, чем якорь достигнет верха окна
+      offset: headerHeight * (window.innerWidth < 768 ? 3 : 7), // чтобы сцена активировалась раньше, чем якорь достигнет верха окна
       refreshFrames: 3
     };
 
@@ -123,7 +127,7 @@ export default class AnchorNavigation {
       console.log("[AnchorNavigation] navigation already active");
       return;
     }
-    const transition = window.TransitionLoader;
+    const transition = window?.App.TransitionLoader;
     if (!transition) {
       console.warn("[AnchorNavigation] TransitionLoader not found");
       return;
@@ -167,7 +171,7 @@ export default class AnchorNavigation {
       3. SCROLL
       ======================================================
       */
-      await window.OrbitNavigation.scrollTo(targetPosition);
+      await window.App.OrbitNavigation.scrollTo(targetPosition);
       /*
       ======================================================
       4. WAIT

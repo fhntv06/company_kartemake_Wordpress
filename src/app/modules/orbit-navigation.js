@@ -15,6 +15,8 @@ Responsibilities:
 */
 export default class OrbitNavigation {
   constructor() {
+    console.log("[OrbitNavigation] ready")
+
     this.navigation = document.getElementById('orbit-navigation')
     this.points = Array.from(this.navigation.querySelectorAll(".orbit-point"));
     this.scenes = Array.from(document.querySelectorAll(".scene[data-scene]"));
@@ -113,12 +115,12 @@ export default class OrbitNavigation {
     DEPENDENCIES
     ========================================================
     */
-    const manager = window.SceneManager;
+    const manager = window?.App?.SceneManager;
     if (!manager) {
       console.warn("[OrbitNavigation] SceneManager not found");
       return;
     }
-    const transition = window.TransitionLoader;
+    const transition = window?.App?.TransitionLoader;
     if (!transition) {
       console.warn("[OrbitNavigation] TransitionLoader not found");
       return;
@@ -236,13 +238,13 @@ export default class OrbitNavigation {
           force: true,
           onComplete: () => {
             // Проверяем точность позиции
-            const currentScroll = window.scrollY;
-            const diff = Math.abs(currentScroll - target);
+            // const currentScroll = window.scrollY;
+            // const diff = Math.abs(currentScroll - target);
 
-            if (diff > 1) {
-              console.warn(`[OrbitNavigation] Scroll position mismatch: ${Math.round(currentScroll)} vs ${Math.round(target)}, correcting...`);
-              window.scrollTo(0, target);
-            }
+            // if (diff > 1) {
+            //   console.warn(`[OrbitNavigation] Scroll position mismatch: ${Math.round(currentScroll)} vs ${Math.round(target)}, correcting...`);
+            //   window.scrollTo(0, target);
+            // }
 
             ScrollTrigger.refresh();
             resolve();

@@ -3,277 +3,294 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Политика использования Cookie | KARTEMAKE</title>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="shortcut icon" href="../../public/images/logotypes/logo-dark.ico" type="image/x-icon">
+    <title>K·ART·MAKE — Политика использования Cookie</title>
+    <meta name="description" content="Политика использования файлов Cookie на сайте K·ART·MAKE">
+    <link rel="stylesheet" href="cookie-policy.css">
 </head>
-<body data-controller="modal  preloader ripple-effect theme anchor scroll-progress burger-menu">
-
-<header class="header" data-controller="header">
-    <a href="/" class="logo">
-        <span class="font-size-h3">K</span>
-        <span class="font-size-h3">·</span>
-        <span class="font-size-h4 color-accent-red">ART</span>
-        <span class="font-size-h3">·</span>
-        <span class="font-size-h5">MAKE</span>
-    </a>
-
-    <nav class="nav-links">
-        <a href="services.html">Услуги</a>
-        <a href="blog.html">Технический блог</a>
-        <a href="support.html">Техподдержка</a>
-        <a href="contacts.html">Контакты</a>
-    </nav>
-
-    <div class="header-controls">
-        <div class="social-links">
-            <a href="https://github.com/fhntv06" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://t.me/KArtech76" target="_blank"><i class="fab fa-telegram"></i></a>
-            <a href="https://vk.ru/kartemake" target="_blank"><i class="fab fa-vk"></i></a>
+<body>
+<!-- =================================================
+SYSTEM LOADER
+================================================= -->
+<div class="system-loader">
+    <div class="loader-terminal">
+        <span>ЗАГРУЗКА ДОКУМЕНТА</span>
+        <div class="loader-progress">
+            <div></div>
         </div>
+    </div>
+</div>
 
-        <div class="phone">
-            <i class="fas fa-phone"></i>
-            <span>+7 (908) 946-14-83</span>
+<!-- =================================================
+GLOBAL DASHBOARD (как в index)
+================================================= -->
+<header id="header" class="global-dashboard">
+    <div class="dashboard-inner">
+        <a href="/" class="dashboard-brand">K·ART·MAKE</a>
+        <div class="dashboard-status">
+            <span class="dashboard-status-dot"></span>
+            СИСТЕМА РАБОТАЕТ
         </div>
-
-        <button
-                class="theme-toggle"
-                data-controller-theme="item"
-        >
-            <i class="fas fa-moon"></i>
+        <button class="dashboard-menu" type="button" aria-expanded="false" aria-controls="dashboard-menu-panel">
+            <span class="dashboard-menu-label">МЕНЮ</span>
+            <span class="dashboard-menu-icon">
+          <span></span>
+          <span></span>
+        </span>
         </button>
-
-        <!--
-        <button
-          class="language-toggle"
-          data-controller="lang"
-          data-controller-ripple-effect="item"
-        >
-          <span data-controller-lang="item">RU</span>
-          <i class="fas fa-chevron-down"></i>
-        </button>
-        -->
-
-        <button
-                class="cta-button"
-                data-controller-modal-open="form"
-                data-controller-modal-func="open"
-                data-controller-ripple-effect="item"
-        >
-            Начать проект
-            <i class="fas fa-arrow-right"></i>
-        </button>
-
-        <button class="burger-menu" id="burgerMenu" data-controller-burger-menu="item">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+    </div>
+    <div id="dashboard-menu-panel" class="dashboard-menu-panel" aria-hidden="true">
+        <div class="dashboard-menu-panel-inner">
+            <!-- CONTACTS -->
+            <div class="dashboard-menu-column">
+                <span class="dashboard-menu-title">КОНТАКТЫ</span>
+                <a href="mailto:hello@kartemake.ru">
+                    <span>НОВЫЕ ПРОЕКТЫ</span>
+                    <strong>hello@kartemake.ru</strong>
+                </a>
+                <a href="mailto:support@kartemake.ru">
+                    <span>ТЕХНИЧЕСКАЯ ПОДДЕРЖКА</span>
+                    <strong>support@kartemake.ru</strong>
+                </a>
+            </div>
+            <!-- SERVICES -->
+            <div class="dashboard-menu-column">
+                <span class="dashboard-menu-title">УСЛУГИ</span>
+                <a href="/#optimization">
+                    <span>01</span>
+                    <strong>Оптимизация сайта</strong>
+                </a>
+                <a href="/#modernization">
+                    <span>02</span>
+                    <strong>Модернизация</strong>
+                </a>
+                <a href="/#support">
+                    <span>03</span>
+                    <strong>Техническая поддержка</strong>
+                </a>
+                <a href="/#audit">
+                    <span>04</span>
+                    <strong>Аудит и консультации</strong>
+                </a>
+            </div>
+            <!-- INFORMATION -->
+            <div class="dashboard-menu-column">
+                <span class="dashboard-menu-title">ИНФОРМАЦИЯ</span>
+                <a href="./privacy-policy.html">Политика обработки персональных данных</a>
+                <a href="./cookie-policy.html">Политика использования Cookie</a>
+            </div>
+        </div>
     </div>
 </header>
 
-<main>
-    <section class="legal-page">
-        <div class="container">
-            <div class="breadcrumbs">
-                <a href="index.html">Главная</a>
-                <span>/</span>
-                <span>Политика использования Cookie</span>
+<!-- =================================================
+MAIN CONTENT — COOKIE POLICY
+================================================= -->
+<main class="policy-page">
+    <div class="scene-container">
+
+        <!-- HEADER -->
+        <header class="policy-header reveal-item">
+            <span class="scene-eyebrow">ДОКУМЕНТ / ПОЛИТИКА ИСПОЛЬЗОВАНИЯ COOKIE</span>
+            <h1 class="policy-title">Политика использования файлов Cookie</h1>
+            <p class="policy-subtitle">
+                Настоящий документ определяет порядок использования файлов Cookie на сайте
+                <a href="https://kartemake.ru" target="_blank">kartemake.ru</a>,
+                цели их применения и способы управления.
+            </p>
+            <div class="policy-meta">
+                <span>Версия 2.0</span>
+                <span>Актуальна с 01.01.2026</span>
             </div>
+        </header>
 
-            <h1 class="legal-page__title">Политика использования <span class="color-accent-red">Cookie</span></h1>
-            <p class="legal-page__subtitle">Информация о том, как мы используем файлы cookie и другие технологии</p>
+        <!-- CONTENT GRID -->
+        <div class="policy-grid">
 
-            <div class="legal-document">
-                <div class="legal-document__meta">
-                    <p><strong>Дата вступления в силу:</strong> 18 июля 2026 г.</p>
-                    <p><strong>Владелец сайта:</strong> Индивидуальный предприниматель [ФИО]</p>
+            <!-- SIDEBAR NAV -->
+            <aside class="policy-sidebar">
+                <nav class="policy-toc">
+                    <span class="toc-title">СОДЕРЖАНИЕ</span>
+                    <a href="#section-1" class="toc-link">1. Общие положения</a>
+                    <a href="#section-2" class="toc-link">2. Что такое файлы Cookie</a>
+                    <a href="#section-3" class="toc-link">3. Какие Cookie используются</a>
+                    <a href="#section-4" class="toc-link">4. Цели использования</a>
+                    <a href="#section-5" class="toc-link">5. Управление Cookie</a>
+                    <a href="#section-6" class="toc-link">6. Связь с персональными данными</a>
+                    <a href="#section-7" class="toc-link">7. Изменение Политики</a>
+                    <a href="#section-8" class="toc-link">8. Контактная информация</a>
+                </nav>
+                <div class="policy-sidebar-actions">
+                    <a href="/" class="button-secondary" style="width:100%;justify-content:center;">← На главную</a>
                 </div>
+            </aside>
 
-                <div class="legal-document__section">
-                    <h2>1. Что такое cookie</h2>
-                    <p>Cookie — это небольшие текстовые файлы, которые сохраняются на вашем устройстве при посещении веб-сайтов. Они помогают сайтам запоминать ваши действия и предпочтения (например, язык, тему, настройки) на определенный период времени.</p>
-                </div>
+            <!-- MAIN TEXT -->
+            <div class="policy-body">
 
-                <div class="legal-document__section">
-                    <h2>2. Какие cookie мы используем</h2>
+                <!-- SECTION 1 -->
+                <section id="section-1" class="policy-section">
+                    <h2>1. Общие положения</h2>
+                    <p><strong>1.1.</strong> Настоящая Политика использования файлов Cookie (далее — <strong>Политика</strong>) определяет порядок использования файлов Cookie на сайте <a href="https://kartemake.ru" target="_blank">https://kartemake.ru/</a> (далее — <strong>Сайт</strong>), а также устанавливает цели их использования, порядок управления ими и иные вопросы, связанные с применением файлов Cookie при посещении Сайта.</p>
+                    <p><strong>1.2.</strong> Политика распространяется на всех пользователей Сайта независимо от используемого устройства, программного обеспечения или браузера, посредством которых осуществляется доступ к Сайту.</p>
+                    <p><strong>1.3.</strong> Сайт использует файлы Cookie, необходимые для обеспечения его корректной работы, повышения удобства использования, сохранения пользовательских настроек, а также в целях получения аналитической информации о работе Сайта.</p>
+                    <p><strong>1.4.</strong> Использование необязательных файлов Cookie осуществляется на основании согласия пользователя, выражаемого посредством интерфейса управления файлами Cookie (Cookie-баннера), размещенного на Сайте. Пользователь вправе самостоятельно выбрать категории файлов Cookie, использование которых он разрешает, за исключением обязательных файлов Cookie, необходимых для функционирования Сайта.</p>
+                    <p><strong>1.5.</strong> Использование обязательных файлов Cookie не требует отдельного согласия пользователя, поскольку такие файлы необходимы для обеспечения функционирования Сайта, его безопасности и реализации основных технических возможностей.</p>
+                    <p><strong>1.6.</strong> Настоящая Политика применяется совместно с Политикой обработки персональных данных, регулирующей вопросы обработки персональных данных пользователей, а также с Политикой использования сервиса Яндекс.Метрика, определяющей особенности применения указанного сервиса веб-аналитики на Сайте. В случае если сведения, получаемые с использованием файлов Cookie, относятся к персональным данным, их обработка осуществляется в соответствии с Политикой обработки персональных данных и законодательством Российской Федерации.</p>
+                </section>
 
-                    <h3>2.1. Обязательные cookie</h3>
-                    <p>Эти cookie необходимы для работы сайта и не могут быть отключены. Они используются для:</p>
-                    <ul>
-                        <li>Хранения настроек темы (светлая/тёмная)</li>
-                        <li>Обеспечения безопасности</li>
-                        <li>Поддержания сессии пользователя</li>
-                    </ul>
+                <!-- SECTION 2 -->
+                <section id="section-2" class="policy-section">
+                    <h2>2. Что такое файлы Cookie</h2>
+                    <p>Файлы Cookie — это небольшие текстовые файлы, которые веб-сайт сохраняет в браузере на устройстве пользователя (компьютере, планшете, смартфоне или ином устройстве), используемом для доступа к Сайту.</p>
+                    <p>Файлы Cookie позволяют веб-сайту распознавать устройство пользователя, сохранять отдельные пользовательские настройки, обеспечивать корректную работу отдельных функций Сайта, а также получать информацию, необходимую для анализа использования Сайта и повышения удобства его использования.</p>
+                    <p>Файлы Cookie могут содержать различные сведения, включая информацию о действиях пользователя на Сайте, используемом браузере и устройстве, технических параметрах соединения, дате и времени посещения, а также иные технические идентификаторы, необходимые для функционирования отдельных сервисов Сайта.</p>
+                    <p>Файлы Cookie не являются компьютерными программами, не содержат исполняемого кода, не способны самостоятельно запускаться на устройстве пользователя, устанавливать программное обеспечение или получать доступ к информации, находящейся за пределами браузера пользователя.</p>
+                    <p>В зависимости от назначения файлы Cookie могут сохраняться только на время использования Сайта либо храниться на устройстве пользователя в течение определенного периода времени до их автоматического удаления или удаления пользователем.</p>
+                </section>
 
-                    <h3>2.2. Аналитические cookie</h3>
-                    <p>Эти cookie помогают нам понять, как посетители взаимодействуют с сайтом, чтобы улучшать его работу:</p>
-                    <ul>
-                        <li>Данные о посещениях и просмотрах страниц</li>
-                        <li>Информация о поведении пользователей</li>
-                    </ul>
+                <!-- SECTION 3 -->
+                <section id="section-3" class="policy-section">
+                    <h2>3. Какие файлы Cookie используются на сайте</h2>
+                    <p>На Сайте используются различные категории файлов Cookie, которые отличаются по своему назначению, сроку хранения и характеру обрабатываемой информации.</p>
+                    <p>Использование отдельных категорий файлов Cookie необходимо для обеспечения корректной работы Сайта, сохранения пользовательских настроек, анализа посещаемости и улучшения качества предоставляемых услуг.</p>
 
-                    <h3>2.3. Функциональные cookie</h3>
-                    <p>Эти cookie позволяют запоминать ваши предпочтения:</p>
-                    <ul>
-                        <li>Выбранный язык</li>
-                        <li>Настройки интерфейса</li>
-                        <li>Сохраненные данные в формах</li>
-                    </ul>
-                </div>
-
-                <div class="legal-document__section">
-                    <h2>3. Управление cookie</h2>
-                    <p>Вы можете управлять cookie через настройки вашего браузера:</p>
-                    <ul>
-                        <li><strong>Google Chrome:</strong> Настройки → Конфиденциальность и безопасность → Настройки сайта → Cookie</li>
-                        <li><strong>Mozilla Firefox:</strong> Настройки → Приватность и защита → Cookie и данные сайтов</li>
-                        <li><strong>Microsoft Edge:</strong> Настройки → Файлы cookie и разрешения сайтов</li>
-                        <li><strong>Safari:</strong> Настройки → Конфиденциальность → Управление данными сайтов</li>
-                    </ul>
-                    <p>Отключение cookie может повлиять на работу некоторых функций сайта.</p>
-                </div>
-
-                <div class="legal-document__section">
-                    <h2>4. Срок хранения cookie</h2>
-                    <ul>
-                        <li><strong>Сессионные cookie:</strong> Удаляются после закрытия браузера</li>
-                        <li><strong>Постоянные cookie:</strong> Хранятся до истечения срока действия или до ручного удаления</li>
-                    </ul>
-                </div>
-
-                <div class="legal-document__section">
-                    <h2>5. Сторонние cookie</h2>
-                    <p>На сайте могут использоваться сторонние сервисы, которые устанавливают свои cookie:</p>
-                    <ul>
-                        <li>Аналитические системы (Яндекс.Метрика, Google Analytics)</li>
-                        <li>Социальные сети (VK, Telegram, GitHub)</li>
-                    </ul>
-                </div>
-
-                <div class="legal-document__section">
-                    <h2>6. Контакты</h2>
-                    <div class="legal-card__grid">
-                        <div class="legal-card__item">
-                            <span class="legal-card__label">ИП [ФИО]</span>
-                            <span class="legal-card__value"><a href="mailto:hello@kartemake.ru">hello@kartemake.ru</a></span>
-                        </div>
-                        <div class="legal-card__item">
-                            <span class="legal-card__label">Телефон</span>
-                            <span class="legal-card__value"><a href="tel:+79089461483">+7 (908) 946-14-83</a></span>
-                        </div>
+                    <div class="policy-table-wrap">
+                        <table class="policy-table">
+                            <thead>
+                            <tr>
+                                <th>Категория файлов Cookie</th>
+                                <th>Назначение использования</th>
+                                <th>Обрабатываемая информация</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><strong>Обязательные (технические) Cookie</strong></td>
+                                <td>Необходимы для корректной работы Сайта, обеспечения его основных функций, безопасности и стабильности работы отдельных элементов интерфейса</td>
+                                <td>Технические параметры работы Сайта, данные о сессии пользователя, настройки работы отдельных компонентов Сайта</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Аналитические Cookie</strong></td>
+                                <td>Используются для получения статистической информации о посещении и использовании Сайта, анализа эффективности его работы и улучшения пользовательского опыта</td>
+                                <td>Информация о посещении страниц Сайта, источниках перехода, действиях пользователя на Сайте, технические сведения об устройстве и браузере пользователя</td>
+                            </tr>
+                            </tbody>
+                        </table>
                     </div>
+
+                    <p>Обязательные технические файлы Cookie используются Сайтом для обеспечения его функционирования и не могут быть отключены пользователем без риска нарушения работы отдельных функций Сайта.</p>
+                    <p>Аналитические файлы Cookie используются только в целях анализа работы Сайта. На Сайте применяется сервис веб-аналитики «Яндекс.Метрика», порядок использования которого раскрывается в отдельной Политике использования Яндекс.Метрики.</p>
+                    <p>Сайт не использует рекламные Cookie, Cookie социальных сетей, а также иные технологии отслеживания поведения пользователей в рекламных целях, если иное прямо не указано в настоящей Политике.</p>
+                </section>
+
+                <!-- SECTION 4 -->
+                <section id="section-4" class="policy-section">
+                    <h2>4. Цели использования файлов Cookie</h2>
+                    <p>Файлы Cookie используются на Сайте для обеспечения его корректной работы, повышения удобства использования, анализа активности пользователей и совершенствования качества предоставляемых услуг.</p>
+                    <p>Использование файлов Cookie осуществляется в следующих целях:</p>
+                    <ul class="policy-list">
+                        <li><strong>обеспечение функционирования Сайта</strong> — для корректного отображения страниц, работы отдельных элементов интерфейса, поддержания технической стабильности и безопасности Сайта;</li>
+                        <li><strong>сохранение пользовательских настроек</strong> — для запоминания выбранных параметров и настроек, позволяющих сделать взаимодействие с Сайтом более удобным;</li>
+                        <li><strong>анализ использования Сайта</strong> — для получения статистической информации о посещаемости Сайта, оценке востребованности отдельных страниц и выявлении возможных проблем в работе Сайта;</li>
+                        <li><strong>улучшение качества Сайта и пользовательского опыта</strong> — для анализа поведения пользователей, оптимизации структуры, содержания и функциональных возможностей Сайта;</li>
+                        <li><strong>обеспечение работы сторонних сервисов</strong> — для функционирования подключённых сервисов, используемых на Сайте, включая сервис веб-аналитики «Яндекс.Метрика».</li>
+                    </ul>
+                    <p>Информация, получаемая с использованием файлов Cookie, используется только в целях, указанных в настоящей Политике, и не применяется для принятия решений, создающих юридические последствия для пользователей, без дополнительных оснований, предусмотренных законодательством Российской Федерации.</p>
+                </section>
+
+                <!-- SECTION 5 -->
+                <section id="section-5" class="policy-section">
+                    <h2>5. Управление файлами Cookie</h2>
+                    <p>Пользователь может самостоятельно управлять использованием файлов Cookie, выбирая, какие категории файлов Cookie разрешить при посещении Сайта.</p>
+                    <p>При первом посещении Сайта пользователю отображается уведомление об использовании файлов Cookie, в котором пользователь может:</p>
+                    <ul class="policy-list">
+                        <li>согласиться на использование всех доступных категорий файлов Cookie;</li>
+                        <li>отказаться от использования необязательных файлов Cookie;</li>
+                        <li>настроить параметры использования файлов Cookie, выбрав разрешённые категории.</li>
+                    </ul>
+                    <p>Обязательные технические файлы Cookie используются всегда, поскольку они необходимы для обеспечения корректной работы Сайта, его безопасности и доступности основных функций.</p>
+                    <p>Пользователь вправе в любое время изменить ранее выбранные настройки использования файлов Cookie через специальный интерфейс управления файлами Cookie на Сайте либо удалить сохранённые файлы Cookie через настройки используемого браузера.</p>
+                    <p>Отключение отдельных категорий файлов Cookie может привести к ограничению работы некоторых функций Сайта или снижению удобства его использования.</p>
+                    <p>Дополнительно пользователь может управлять сохранением и удалением файлов Cookie через настройки своего браузера. Порядок изменения настроек зависит от используемого браузера и может включать блокировку, удаление или ограничение сохранения файлов Cookie.</p>
+                    <p>Информация о настройках управления файлами Cookie доступна в справочных материалах соответствующего браузера.</p>
+                </section>
+
+                <!-- SECTION 6 -->
+                <section id="section-6" class="policy-section">
+                    <h2>6. Связь файлов Cookie с обработкой персональных данных</h2>
+                    <p>Использование файлов Cookie на Сайте может быть связано с обработкой информации о пользователях и их устройствах.</p>
+                    <p>Отдельные сведения, содержащиеся в файлах Cookie, а также информация, получаемая с их использованием, могут относиться к персональным данным в случаях, когда такие сведения позволяют прямо или косвенно определить пользователя.</p>
+                    <p>Обработка персональных данных, получаемых при использовании Сайта, осуществляется в соответствии с Политикой обработки персональных данных, размещённой на Сайте.</p>
+                    <p>В случаях, когда использование файлов Cookie связано с работой сторонних сервисов, обработка информации осуществляется с учётом условий и документов соответствующих сервисов.</p>
+                    <p>На Сайте используется сервис веб-аналитики «Яндекс.Метрика», предназначенный для анализа посещаемости и улучшения работы Сайта. Порядок использования указанного сервиса, перечень обрабатываемой информации и особенности обработки данных раскрываются в отдельной Политике использования Яндекс.Метрики.</p>
+                    <p>Используя Сайт, пользователь подтверждает ознакомление с настоящей Политикой использования файлов Cookie, а также с Политикой обработки персональных данных и иными документами, регулирующими обработку информации на Сайте.</p>
+                </section>
+
+                <!-- SECTION 7 -->
+                <section id="section-7" class="policy-section">
+                    <h2>7. Изменение настоящей Политики</h2>
+                    <p>Оператор вправе вносить изменения в настоящую Политику использования файлов Cookie в случае изменения порядка использования файлов Cookie, используемых технологий, функциональных возможностей Сайта, требований законодательства Российской Федерации либо по иным основаниям.</p>
+                    <p>Новая редакция настоящей Политики вступает в силу с момента её размещения на Сайте, если иное прямо не указано в новой редакции документа.</p>
+                    <p>Оператор рекомендует пользователям самостоятельно знакомиться с актуальной версией настоящей Политики при каждом посещении Сайта.</p>
+                    <p>Дата размещения и актуальная редакция настоящей Политики указываются на странице Сайта, на которой размещён настоящий документ.</p>
+                </section>
+
+                <!-- SECTION 8 -->
+                <section id="section-8" class="policy-section">
+                    <h2>8. Контактная информация</h2>
+                    <p>По вопросам, связанным с использованием файлов Cookie, обработкой персональных данных, а также реализацией прав пользователей, предусмотренных законодательством Российской Федерации, пользователь может обратиться к Оператору.</p>
+                    <p>Контактная информация Оператора:</p>
+                    <div class="policy-contacts">
+                        <p><strong>Адрес сайта:</strong> <a href="https://kartemake.ru" target="_blank">https://kartemake.ru/</a></p>
+                        <p><strong>Электронная почта для обращений по вопросам обработки персональных данных и использования файлов Cookie:</strong> <a href="mailto:privacy@kartemake.ru">privacy@kartemake.ru</a></p>
+                    </div>
+                    <p>Оператор рассматривает обращения пользователей в порядке и сроки, установленные законодательством Российской Федерации.</p>
+                </section>
+
+                <!-- BACK TO TOP -->
+                <div class="policy-back-top">
+                    <a href="#top" class="button-secondary">↑ Наверх</a>
                 </div>
+
             </div>
         </div>
-    </section>
+    </div>
 </main>
 
-<footer class="footer">
-    <div class="container">
-        <!-- Строка 1: Лого + 3 колонки + CTA -->
-        <div class="footer__row footer__row--top">
-            <!-- Колонка 1: Логотип -->
-            <div class="footer__col footer__col--logo">
-                <a href="/" class="logo">
-                    <span class="font-size-h3">K</span>
-                    <span class="font-size-h3">·</span>
-                    <span class="font-size-h4 color-accent-red">ART</span>
-                    <span class="font-size-h3">·</span>
-                    <span class="font-size-h5">MAKE</span>
-                </a>
-
-                <!-- Информация о компании -->
-                <div class="footer__company">
-                    <p class="footer__company-name">ИП [ФИО]</p>
-                    <p class="footer__company-inn">ИНН: [ваш ИНН]</p>
-                    <p class="footer__company-ogrn">ОГРНИП: [ваш ОГРНИП]</p>
-                </div>
-            </div>
-
-            <!-- Колонка 2: Услуги -->
-            <div class="footer__col footer__col--services">
-                <h4 class="footer__title">Услуги</h4>
-                <ul class="footer__list">
-                    <li><a href="services.html#web-development">Веб-разработка &amp; CMS</a></li>
-                    <li><a href="services.html#migration">Техническая миграция и модернизация</a></li>
-                    <li><a href="services.html#support">Техподдержка &amp; Инфраструктура</a></li>
-                    <li><a href="services.html#audit">Аудит и консалтинг</a></li>
-                </ul>
-            </div>
-
-            <!-- Колонка 3: Полезное -->
-            <div class="footer__col footer__col--links">
-                <h4 class="footer__title">Полезное</h4>
-                <ul class="footer__list">
-                    <li><a href="services.html">Услуги</a></li>
-                    <li><a href="blog.html">Технический блог</a></li>
-                    <li><a href="support.html">Техподдержка</a></li>
-                    <li><a href="contacts.html">Контакты</a></li>
-                    <li class="footer__list-divider"></li>
-                    <li><a href="/requisites">Реквизиты</a></li>
-                    <li><a href="privacy-policy.html">Политика конфиденциальности</a></li>
-                    <li><a href="terms.html">Публичная оферта</a></li>
-                </ul>
-            </div>
-
-            <!-- Колонка 4: Контакты + Соцсети -->
-            <div class="footer__col footer__col--contacts">
-                <h4 class="footer__title">Контакты</h4>
-
-                <ul class="footer__list footer__list--contacts">
-                    <li>
-                        <i class="fas fa-phone"></i>
-                        <a href="tel:+79089461483">+7 (908) 946-14-83</a>
-                    </li>
-                    <li>
-                        <i class="fas fa-envelope"></i>
-                        <a href="mailto:hello@kartemake.ru">hello@kartemake.ru</a>
-                    </li>
-                    <li>
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>г. Москва, ул. Тверская, д. 1</span>
-                    </li>
-                </ul>
-
-                <!-- Социальные сети -->
-                <div class="footer__social">
-                    <a href="https://vk.ru/kartemake" target="_blank" rel="noopener noreferrer" aria-label="ВКонтакте">
-                        <i class="fab fa-vk"></i>
-                    </a>
-                    <a href="https://t.me/KArtech76" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
-                        <i class="fab fa-telegram-plane"></i>
-                    </a>
-                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Дзен">
-                        <svg class="t-sociallinks__svg" role="presentation" width="20px" height="20px" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" clip-rule="evenodd" d="M50 100c27.6142 0 50-22.3858 50-50S77.6142 0 50 0 0 22.3858 0 50s22.3858 50 50 50ZM35.3336 27.8846c1.2589-.3077 2.3116-.4739 4.8709-.7693.7839-.0905 1.3869-.103 5.2489-.1088L49.8167 27l-.0339.3452c-.0186.1899-.1204 1.6999-.2263 3.3555-.4348 6.8018-.6381 8.3757-1.3516 10.467-.2973.8712-1.0137 2.2987-1.4822 2.9532-.4581.64-1.3831 1.6092-1.9816 2.0761-1.6917 1.3198-3.8089 2.1132-7.0551 2.6436-2.6678.436-4.7613.6235-8.9945.8058-.7307.0315-1.4102.0677-1.5099.0806L27 49.7504l.0166-4.2914.0164-4.2913.2644-2.1817c.3766-3.1087.5331-3.9621.9614-5.2442.5988-1.7921 1.6612-3.2524 3.0514-4.194.9943-.6735 2.4704-1.2837 4.0234-1.6632Zm15.224 4.6389c-.0765-1.1086-.3068-5.1806-.3068-5.4268-.0001-.0912.2362-.0967 4.1877-.0967 3.9405 0 4.2223.0065 4.774.1095.3225.0601 1.072.1598 1.6656.2213 2.4298.2519 3.4802.4076 4.4588.6609 2.7604.7144 4.7564 2.2289 5.8632 4.4489.5777 1.1587.8034 1.961 1.1033 3.9217.2277 1.4894.4354 3.2249.5619 4.695.1036 1.2043.1734 6.194.1076 7.6843l-.0404.912-.4782-.0323c-1.9452-.1314-3.1578-.2092-4.768-.3061-5.2572-.3164-7.4005-.6222-9.2684-1.3223-1.6732-.6272-3.251-1.6887-4.2962-2.8902-.8884-1.0214-1.675-2.3791-2.1437-3.7002-.6773-1.909-1.1383-4.7907-1.4204-8.879ZM27.0033 58.3121v-8.1135l.1799.0002c.0989.0001.5659.0364 1.0378.0806 1.1314.1061 1.975.1679 4.5665.3346 4.1299.2655 6.0308.4888 7.5539.8872 3.8588 1.0095 6.5704 3.5441 7.8248 7.3141.5523 1.6597.9022 3.805 1.2657 7.7605.1121 1.2196.126 1.673.1193 3.8833-.0042 1.3763-.0221 2.5167-.0397 2.5343-.0541.054-7.5172-.2361-10.248-.3983-1.667-.099-2.6352-.2506-4.3727-.685-1.3707-.3426-2.1775-.633-2.8783-1.0361-1.7943-1.0319-3.0155-2.6066-3.7588-4.8469-.3924-1.1825-.6039-2.3774-1.0009-5.6545l-.2495-2.0605Zm43.838-7.92c.685-.0459 1.37-.0913 1.5222-.1009.1522-.0095.3576-.0219.4566-.0274L73 50.2539l-.0008 3.3279c-.0009 4.085-.0714 5.7459-.3382 7.9676-.2117 1.7635-.6244 3.7599-.9962 4.8196-.8917 2.5413-2.6656 4.3097-5.2174 5.2015-1.2738.4451-3.4947.8733-5.597 1.0789-1.7994.176-2.5751.2042-6.4345.2339l-3.9438.0303v-2.0673c0-1.8113.0207-2.3196.1667-4.1037.2446-2.9873.4094-4.3643.6974-5.8284.8877-4.5117 3.1252-7.4157 6.8788-8.9277 1.8378-.7403 4.0014-1.0565 9.582-1.4003.9894-.0609 2.3593-.1483 3.0443-.1941Z" fill="#f5f5f5"></path> </svg>
-                    </a>
-                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-                        <i class="fab fa-youtube"></i>
-                    </a>
-                </div>
-
-                <!-- Кнопка CTA (скрыта на десктопе, показывается на мобилках) -->
-                <button class="cta-button" data-controller-modal-open="form" data-controller-modal-func="open" data-controller-ripple-effect="item">
-                    Начать проект
-                    <i class="fas fa-arrow-right"></i>
-                </button>
-            </div>
+<!-- =================================================
+FOOTER (как в index)
+================================================= -->
+<footer class="contact-footer">
+    <div class="scene-container">
+        <div class="contact-footer-brand">
+            <a href="/" class="contact-footer-logo" aria-label="K·ART·MAKE">K·ART·MAKE</a>
+            <p>Технический партнёр для вашего бизнеса.</p>
         </div>
-
-        <!-- Строка 2: Описание -->
-        <div class="footer__row footer__row--middle">
-            <p class="footer__description">
-                Ваш внешний технический отдел. Поддержка и развитие digital-продуктов
-            </p>
-        </div>
-
-        <!-- Строка 3: Копирайт -->
-        <div class="footer__row footer__row--bottom">
-            <div class="footer__copyright">
-                <small>KARTEMAKE © 2026. Все права защищены.</small>
+        <nav class="contact-footer-nav" aria-label="Навигация по сайту">
+            <div class="contact-footer-column">
+                <span class="contact-footer-title">УСЛУГИ</span>
+                <a href="/#optimization">Оптимизация сайта</a>
+                <a href="/#modernization">Модернизация</a>
+                <a href="/#support">Техническая поддержка</a>
+                <a href="/#audit">Аудит и консультации</a>
             </div>
+            <div class="contact-footer-column">
+                <span class="contact-footer-title">ИНФОРМАЦИЯ</span>
+                <a href="./privacy-policy.html">Политика обработки персональных данных</a>
+                <a href="./cookie-policy.html">Политика использования Cookie</a>
+            </div>
+            <div class="contact-footer-column">
+                <span class="contact-footer-title">КОНТАКТЫ</span>
+                <a href="mailto:hello@kartemake.ru">hello@kartemake.ru</a>
+                <a href="mailto:support@kartemake.ru">support@kartemake.ru</a>
+                <a href="https://t.me/KArtech76">Telegram</a>
+                <a href="https://vk.ru/kartemake">VK</a>
+            </div>
+        </nav>
+        <div class="contact-footer-bottom">
+            <span>© 2026 K·ART·MAKE</span>
+            <span>ТЕХНИЧЕСКИЙ ПАРТНЁР</span>
+            <span>ВСЕ СИСТЕМЫ РАБОТАЮТ</span>
         </div>
     </div>
 </footer>

@@ -1,5 +1,7 @@
 export default class AuditEngine {
   constructor() {
+    console.log("[AuditEngine] ready")
+
     this.section = document.querySelector('[data-scene="audit"]');
     this.started = false;
     this.initialized = false;

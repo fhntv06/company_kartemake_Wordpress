@@ -5,14 +5,11 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
-// Функция для получения всех HTML-файлов из pages
 function getPageEntries() {
   const pages = glob.sync('./src/pages/*.html');
-
   return pages.map(page => {
     const name = path.basename(page, '.html');
     const route = page.replace('./src/pages', '').replace('.html', '');
-
     return {
       name,
       path: page,
@@ -28,15 +25,21 @@ module.exports = (env, argv) => {
   const isDebug = process.env.DEBUG_MODE === 'true';
 
   return {
-    // Режим зависит от флага
     mode: isProduction ? 'production' : 'development',
 
+    // Оставляем только main, vendor будет собран через splitChunks
     entry: './src/index.js',
+
     output: {
-      filename: isProduction ? 'bundle.js' : 'bundle.[contenthash].js',
+      // Все JS файлы в assets/js
+      filename: 'assets/js/[name].build.js',
+      chunkFilename: 'assets/js/[name].build.chunk.js',
       path: path.resolve(__dirname, 'build'),
       clean: true,
+      publicPath: '/',
+      assetModuleFilename: 'assets/images/[name].[hash][ext]',
     },
+
     module: {
       rules: [
         {
@@ -69,56 +72,97 @@ module.exports = (env, argv) => {
           ]
         },
         {
-          test: /\.(png|svg|jpg|jpeg|gif)$/i,
-          type: 'asset/resource', // исправлено
+          test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
+          type: 'asset/resource',
           generator: {
-            filename: 'images/[name].[hash][ext]'
+            filename: 'assets/images/[name].[hash][ext]'
+          }
+        },
+        {
+          test: /\.(woff|woff2|eot|ttf|otf)$/i,
+          type: 'asset/resource',
+          generator: {
+            filename: 'assets/fonts/[name].[hash][ext]'
+          }
+        },
+        {
+          test: /\.(mp4|webm|ogg|mp3|wav)$/i,
+          type: 'asset/resource',
+          generator: {
+            filename: 'assets/media/[name].[hash][ext]'
           }
         },
       ],
     },
+
     plugins: [
-      // MiniCssExtractPlugin только в production
       ...(isProduction ? [new MiniCssExtractPlugin({
-        filename: 'style.css' // фиксированное имя
+        filename: 'assets/css/style.css',
+        chunkFilename: 'assets/css/style.css',
       })] : []),
 
-      // Динамически создаем плагины для всех страниц
       ...pages.map(page => new HtmlWebpackPlugin({
         template: page.path,
         filename: `${page.name}.html`,
-        chunks: ['main'],
+        // Указываем все нужные чанки
+        chunks: ['main', 'runtime', 'vendors'],
+        chunksSortMode: 'manual',
         inject: 'body',
-        // В production добавляем минификацию HTML
-        // minify: false // isProduction ? {
-        //   collapseWhitespace: true,
-        //   removeComments: true,
-        //   removeRedundantAttributes: true,
-        //   removeScriptTypeAttributes: true,
-        //   removeStyleLinkTypeAttributes: true,
-        //   useShortDoctype: true
-        // } : false,
       }))
     ],
+
     optimization: {
       minimize: isProduction,
+      runtimeChunk: {
+        name: 'runtime'
+      },
+      splitChunks: {
+        chunks: 'all',
+        maxInitialRequests: 10,
+        minSize: 0,
+        cacheGroups: {
+          // Все библиотеки в vendors
+          vendors: {
+            test: /[\\/]lib[\\/]/,
+            name: 'vendors',
+            chunks: 'all',
+            priority: 20,
+            enforce: true,
+            reuseExistingChunk: true,
+          },
+          // Библиотеки из node_modules
+          npm: {
+            test: /[\\/]node_modules[\\/]/,
+            name: 'npm',
+            chunks: 'all',
+            priority: 10,
+            reuseExistingChunk: true,
+          },
+          // Общие модули
+          common: {
+            minChunks: 2,
+            priority: -10,
+            reuseExistingChunk: true,
+            name: 'common',
+          },
+        }
+      },
       minimizer: [
-        // Минификация JS
         new TerserPlugin({
           terserOptions: {
             compress: {
-              drop_console: isDebug, // убирает console.log в production
+              drop_console: false,
             },
             output: {
-              comments: isDebug, // убирает комментарии
+              comments: false
             },
           },
           extractComments: false,
         }),
-        // Минификация CSS
         new CssMinimizerPlugin(),
       ],
     },
+
     devServer: {
       static: './build',
       port: 3000,
@@ -133,7 +177,7 @@ module.exports = (env, argv) => {
       open: true,
       hot: true,
     },
-    // Source maps для удобства отладки
+
     devtool: isProduction ? false : 'eval-source-map',
   };
 };

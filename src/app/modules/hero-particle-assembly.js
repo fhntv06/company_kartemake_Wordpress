@@ -62,6 +62,7 @@ It does NOT control:
 */
 export default class HeroParticleAssembly {
   constructor() {
+    console.log("[HeroParticleAssembly] ready")
     /*
     ======================================================
     DOM

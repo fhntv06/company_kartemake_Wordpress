@@ -4,7 +4,29 @@
 @use '../variables/media' as *;
 @use '../system/mixins' as *;
 
-.cookie-banner--show {
+.cookie-banner {
+  position: fixed;
+  left: $small;
+  bottom: $extra-small;
+  width: 100%;
+  max-width: max-content;
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(24px);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  background: var(--bg-primary);
+  box-shadow: 0 20px 60px rgba(0,0,0,.15);
+  transition-delay: 1s;
+  transition:
+    opacity .4s ease,
+    transform .4s ease,
+    visibility .4s ease;
+}
+
+.document-ready .cookie-banner.cookie-banner--show {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
@@ -115,29 +137,6 @@
 
 .cookie-button--accent:hover {
   box-shadow: 0 0 20px rgba(255,107,0,.2);
-}
-
-.cookie-banner {
-  position: fixed;
-  left: $small + 8px;
-  bottom: $extra-small;
-  width: 100%;
-  max-width: max-content;
-  z-index: 10000;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  overflow: hidden;
-  border: 1px solid var(--border-color);
-  background: var(--bg-primary);
-  box-shadow: 0 20px 60px rgba(0,0,0,.15);
-  transition: opacity .4s ease, visibility .4s ease;
-}
-
-.cookie-banner--show {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
 }
 
 .cookie-banner__header {

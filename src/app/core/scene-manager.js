@@ -30,6 +30,8 @@ ScrollTrigger for:
 */
 export default class SceneManager {
   constructor() {
+    console.log("[SceneManager] ready")
+
     this.scenes = [];
     this.engines = new Map();
     this.triggers = [];
@@ -62,8 +64,8 @@ export default class SceneManager {
   init() {
     this.scenes = Array.from(document.querySelectorAll(".scene[data-scene]"));
     console.log(`[SceneManager] ${this.scenes.length} scenes found`);
-    if (window.SceneRegistry) {
-      window.SceneRegistry.refresh();
+    if (window?.App?.SceneRegistry) {
+      window.App.SceneRegistry.refresh();
     }
     return this;
   }

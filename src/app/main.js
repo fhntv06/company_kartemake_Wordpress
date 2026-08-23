@@ -30,6 +30,17 @@ MAIN APPLICATION BOOT
 export default class EntryPointApp {
   constructor() {
     this.modules = {}
+    this.beforeLoad = {SceneManager}
+    this.registryModules = {
+      CanvasEngine, ScrollEngine,
+      TransitionLoader, OrbitNavigation, AuditEngine,
+      DashboardMenu, MonitoringScroll, AnchorNavigation,
+      ContactScroll, HeroParticleAssembly, CookieController,
+      ModalController, SolutionsEngine, ArchitectureBuilder,
+      PipelineScroll, Terminal
+    }
+    this.afterLoad = {SceneRegistry}
+
     this.boot()
   }
 
@@ -37,16 +48,6 @@ export default class EntryPointApp {
     document.addEventListener("DOMContentLoaded", () => {
       this.initialize()
     })
-
-    this.registryModules = [
-      CanvasEngine, ScrollEngine, SceneManager,
-      TransitionLoader, OrbitNavigation, AuditEngine,
-      DashboardMenu, MonitoringScroll, AnchorNavigation,
-      ContactScroll, HeroParticleAssembly, CookieController,
-      ModalController, SolutionsEngine, ArchitectureBuilder,
-      PipelineScroll, Terminal
-    ]
-    this.beforeLoad = [SceneRegistry]
   }
 
   initialize() {
@@ -61,17 +62,21 @@ export default class EntryPointApp {
     this.hideLoader()
   }
   initRegistry() {
-    [...this.registryModules, ...this.beforeLoad].forEach((module) => {
+    window.App = {}
+
+    const modules = {...this.beforeLoad, ...this.registryModules, ...this.afterLoad}
+
+    for (let name in modules) {
+      const module = modules[name]
       const instance = new module()
-      const name = instance.constructor.name
 
       this.modules[name] = instance
-      window[name] = instance
-      
-      if (name === SceneRegistry) {
+      window.App[name] = instance
+
+      if (name === 'SceneRegistry') {
         instance.debug()
       }
-    })
+    }
 
     this.modules.SceneManager.register("audit", this.modules.AuditEngine)
     this.modules.SceneManager.register("solutions", this.modules.SolutionsEngine)

@@ -10,6 +10,7 @@ Card reveal system
 */
 export default class SolutionsEngine {
   constructor(){
+    console.log("[SolutionsEngine] ready")
     this.cards = document.querySelectorAll(".solution-card");
 
     this.classActive = 'reveal-item'
