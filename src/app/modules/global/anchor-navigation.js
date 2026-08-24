@@ -105,8 +105,6 @@ export default class AnchorNavigation {
         this.goTo(target);
       });
     })
-
-    console.log("[AnchorNavigation] initialized");
   }
 
   /*

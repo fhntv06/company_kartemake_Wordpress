@@ -17,16 +17,14 @@ export default class ContactScroll {
     }
 
     this.scrollTrigger = window?.App?.SceneManager.scrollTrigger
-
-    this.init();
   }
 
   /*
   ==========================================================
-  INIT
+  start
   ==========================================================
   */
-  init() {
+  start() {
     // Создаём ScrollTrigger для Contact
     ScrollTrigger.create({
       trigger: this.scene,

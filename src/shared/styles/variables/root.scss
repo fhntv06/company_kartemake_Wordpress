@@ -1,0 +1,46 @@
+@use 'colors' as *;
+@use 'fonts' as *;
+@use 'offsets' as *;
+@use 'media' as *;
+
+// =====================================================
+// ГЛОБАЛЬНЫЕ CSS-ПЕРЕМЕННЫЕ
+// =====================================================
+:root {
+  --bg-primary: #{$bg-primary};
+  --bg-secondary: #{$bg-secondary};
+  --surface: #{$surface};
+  --surface-hover: #{$surface-hover};
+  --white: #{$white};
+  --text-primary: #{$text-primary};
+  --text-secondary: #{$text-secondary};
+  --text-gray: #{$text-gray};
+  --text-muted: #{$text-muted};
+  --orange: #{$orange};
+  --orange-light: #{$orange-light};
+  --green: #{$green};
+  --red: #{$red};
+  --glow-orange: #{$glow-orange};
+  --glow-green: #{$glow-green};
+  --border: #{$border};
+  --border-orange: #{$border-orange};
+  --font-main: #{$font-family-base};
+  --shadow: #{$shadow};
+  --border-radius: #{$border-radius};
+  --transition: #{$transition};
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --z-loader: 99999;
+  --z-dashboard-open: 2100;
+  --z-dashboard: 2000;
+  --z-cursor: 999;
+  --z-overlay: 500;
+  --z-navigation: 200;
+  --z-dashboard-base: 100;
+  --z-content: 10;
+
+  /* SPACING */
+  --container: 1400px;
+  --side-padding: clamp(24px,5vw,80px);
+  --section-gap: 180px;
+}

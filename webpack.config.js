@@ -18,7 +18,17 @@ function getPageEntries() {
   });
 }
 
+function getChunks() {
+  const common = ['runtime', 'vendors', 'common']
+
+  return {
+    index: [...common, 'home'],
+    policy: [...common, 'policy'],
+  }
+}
+
 const pages = getPageEntries();
+const chunks = getChunks()
 
 module.exports = (env, argv) => {
   const isProduction = argv.mode === 'production';
@@ -28,7 +38,11 @@ module.exports = (env, argv) => {
     mode: isProduction ? 'production' : 'development',
 
     // Оставляем только main, vendor будет собран через splitChunks
-    entry: './src/index.js',
+    entry: {
+      home: './src/app/pages/home/home-entry.js',
+      policy: './src/app/pages/policy/policy-entry.js',
+      common: './src/app/global.js',
+    },
 
     output: {
       // Все JS файлы в assets/js
@@ -96,16 +110,18 @@ module.exports = (env, argv) => {
     },
 
     plugins: [
-      ...(isProduction ? [new MiniCssExtractPlugin({
-        filename: 'assets/css/style.css',
-        chunkFilename: 'assets/css/style.css',
-      })] : []),
+      ...(isProduction ? [
+        new MiniCssExtractPlugin({
+          filename: 'assets/css/[name].build.css',
+          chunkFilename: 'assets/css/[name].chunk.css',
+        })
+      ] : []),
 
       ...pages.map(page => new HtmlWebpackPlugin({
         template: page.path,
         filename: `${page.name}.html`,
         // Указываем все нужные чанки
-        chunks: ['main', 'runtime', 'vendors'],
+        chunks: chunks[page.name],
         chunksSortMode: 'manual',
         inject: 'body',
       }))
@@ -137,13 +153,6 @@ module.exports = (env, argv) => {
             chunks: 'all',
             priority: 10,
             reuseExistingChunk: true,
-          },
-          // Общие модули
-          common: {
-            minChunks: 2,
-            priority: -10,
-            reuseExistingChunk: true,
-            name: 'common',
           },
         }
       },
