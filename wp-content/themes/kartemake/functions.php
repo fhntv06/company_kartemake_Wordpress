@@ -1,6 +1,6 @@
 <?php
 /**
- * Файл функций темы Kartemake
+ * Функции темы KARTMAKE
  *
  * @package Kartemake
  */
@@ -13,9 +13,9 @@
  * Регистрация меню
  */
 register_nav_menus([
-    'header-menu' => 'Главное меню в шапке',
-    'footer-menu' => 'Меню блок "Полезное"',
-    'privacy-menu' => 'Правовая информация блок "Полезное"',
+    'header-menu'   => 'Главное меню в шапке',
+    'footer-menu'   => 'Меню блок "Полезное"',
+    'privacy-menu'  => 'Правовая информация блок "Полезное"',
     'services-menu' => 'Меню блок "Услуги"',
 ]);
 
@@ -32,6 +32,16 @@ add_theme_support('html5', [
     'caption',
 ]);
 add_theme_support('post-formats', ['video', 'gallery', 'audio']);
+
+/**
+ * Добавляем поддержку шаблонов страниц
+ */
+function kartmake_page_template_include($templates) {
+    $templates['page-privacy-policy.php'] = __('Политика использования', 'kartmake');
+    $templates['page-cookie-policy.php'] = __('Политика Cookie', 'kartmake');
+    return $templates;
+}
+add_filter('theme_page_templates', 'kartmake_page_template_include');
 
 // ============================================
 // 2. ПОДКЛЮЧЕНИЕ ФАЙЛОВ
@@ -51,34 +61,141 @@ require_once get_template_directory() . '/inc/controllers.php';
  */
 function kartemake_enqueue_scripts() {
     // Основной CSS
-    wp_enqueue_style('kartemake-style', get_stylesheet_uri(), [], wp_get_theme()->get('Version'));
+//    wp_enqueue_style('kartemake-style', get_stylesheet_uri(), [], wp_get_theme()->get('Version'));
 
-    // Font Awesome
-//    wp_enqueue_style('font-awesome', get_template_directory_uri() . '/assets/css/all.min.css', [], '6.5.1');
+    // Основные скрипты
+    wp_enqueue_script(
+        'kartemake-js-runtime',
+        get_template_directory_uri() . '/assets/js/runtime.build.js',
+        array(),
+        wp_get_theme()->get('Version'),
+        true
+    );
+    wp_enqueue_script(
+        'kartemake-js-vendors',
+        get_template_directory_uri() . '/assets/js/vendors.build.js',
+        array('kartemake-js-runtime'),
+        wp_get_theme()->get('Version'),
+        true
+    );
 
-    // Основной JS
-    // Подключение через CDN
+    // Общий JS
     wp_enqueue_script(
-    'main',
-    get_template_directory_uri() . '/assets/js/main.build.js',
-        [],
+        'kartemake-js-common',
+        get_template_directory_uri() . '/assets/js/common.build.js',
+        array('kartemake-js-runtime', 'kartemake-js-vendors'),
         wp_get_theme()->get('Version'),
-        ['in_footer' => true,'strategy'  => 'defer']
+        true
     );
-    wp_enqueue_script(
-    'runtime',
-    get_template_directory_uri() . '/assets/js/runtime.build.js',
+    wp_enqueue_style(
+        'kartemake-style-common',
+        get_template_directory_uri() . '/assets/css/common.build.css',
         [],
-        wp_get_theme()->get('Version'),
-        ['in_footer' => true,'strategy'  => 'defer']
+        wp_get_theme()->get('Version')
     );
-    wp_enqueue_script(
-    'vendors',
-    get_template_directory_uri() . '/assets/js/vendors.build.js',
-        [],
-        wp_get_theme()->get('Version'),
-        ['in_footer' => true,'strategy'  => 'defer']
-    );
+
+
+    // Главная страница
+    if (is_front_page()) {
+        wp_enqueue_script(
+            'kartemake-js-home',
+            get_template_directory_uri() . '/assets/js/home.build.js',
+            array('kartemake-js-common'),
+            wp_get_theme()->get('Version'),
+            true
+        );
+        wp_enqueue_style(
+            'kartemake-style-home',
+            get_template_directory_uri() . '/assets/css/home.build.css',
+            [],
+            wp_get_theme()->get('Version')
+        );
+    }
+
+    // Страницы политик
+    if (is_page('privacy-policy') || is_page('cookie-policy')) {
+        wp_enqueue_script(
+            'kartemake-js-policy',
+            get_template_directory_uri() . '/assets/js/policy.build.js',
+            array('kartemake-js-common'),
+            wp_get_theme()->get('Version'),
+            true
+        );
+        wp_enqueue_style(
+            'kartemake-style-policy',
+            get_template_directory_uri() . '/assets/css/policy.build.css',
+            [],
+            wp_get_theme()->get('Version')
+        );
+    }
+
+    // Страница контактов
+    if (is_page('contacts') || is_page_template('page-contacts.php')) {
+        wp_enqueue_script(
+            'kartemake-js-contacts',
+            get_template_directory_uri() . '/assets/js/contacts.build.js',
+            array('kartemake-js-common'),
+            wp_get_theme()->get('Version'),
+            true
+        );
+        wp_enqueue_style(
+            'kartemake-style-contacts',
+            get_template_directory_uri() . '/assets/css/contacts.build.css',
+            [],
+            wp_get_theme()->get('Version')
+        );
+    }
+
+    // Страница блога
+    if (is_home() || is_page('blog') || is_page_template('page-blog.php')) {
+        wp_enqueue_script(
+            'kartemake-js-blog',
+            get_template_directory_uri() . '/assets/js/blog.build.js',
+            array('kartemake-js-common'),
+            wp_get_theme()->get('Version'),
+            true
+        );
+        wp_enqueue_style(
+            'kartemake-style-blog',
+            get_template_directory_uri() . '/assets/css/blog.build.css',
+            [],
+            wp_get_theme()->get('Version')
+        );
+    }
+
+    // Отдельная запись
+    if (is_single()) {
+        wp_enqueue_script(
+            'kartemake-js-single',
+            get_template_directory_uri() . '/assets/js/single.build.js',
+            array('kartemake-js-common'),
+            wp_get_theme()->get('Version'),
+            true
+        );
+        wp_enqueue_style(
+            'kartemake-style-single',
+            get_template_directory_uri() . '/assets/css/single.build.css',
+            [],
+            wp_get_theme()->get('Version')
+        );
+    }
+
+    // Страница услуг
+    if (is_page('services') || is_page_template('page-services.php') || is_singular('services')) {
+        wp_enqueue_script(
+            'kartemake-js-services',
+            get_template_directory_uri() . '/assets/js/services.build.js',
+            array('kartemake-js-common'),
+            wp_get_theme()->get('Version'),
+            true
+        );
+        wp_enqueue_style(
+            'kartemake-style-services',
+            get_template_directory_uri() . '/assets/css/services.build.css',
+            [],
+            wp_get_theme()->get('Version')
+        );
+    }
 }
 add_action('wp_enqueue_scripts', 'kartemake_enqueue_scripts');
 
@@ -136,6 +253,50 @@ add_action('customize_register', function($wp_customize) {
         'type'    => 'text',
     ]);
 
+    // Email для новых проектов
+    $wp_customize->add_setting('contact_hello_email', [
+        'default'           => 'hello@kartemake.ru',
+        'sanitize_callback' => 'sanitize_email',
+    ]);
+    $wp_customize->add_control('contact_hello_email', [
+        'label'   => 'Email для новых проектов',
+        'section' => 'kartemake_contacts',
+        'type'    => 'email',
+    ]);
+
+    // Email для поддержки
+    $wp_customize->add_setting('contact_support_email', [
+        'default'           => 'support@kartemake.ru',
+        'sanitize_callback' => 'sanitize_email',
+    ]);
+    $wp_customize->add_control('contact_support_email', [
+        'label'   => 'Email техподдержки',
+        'section' => 'kartemake_contacts',
+        'type'    => 'email',
+    ]);
+
+    // Telegram
+    $wp_customize->add_setting('contact_telegram', [
+        'default'           => 'https://t.me/KArtech76',
+        'sanitize_callback' => 'esc_url_raw',
+    ]);
+    $wp_customize->add_control('contact_telegram', [
+        'label'   => 'Ссылка на Telegram',
+        'section' => 'kartemake_contacts',
+        'type'    => 'url',
+    ]);
+
+    // VK
+    $wp_customize->add_setting('contact_vk', [
+        'default'           => 'https://vk.ru/kartemake',
+        'sanitize_callback' => 'esc_url_raw',
+    ]);
+    $wp_customize->add_control('contact_vk', [
+        'label'   => 'Ссылка на VK',
+        'section' => 'kartemake_contacts',
+        'type'    => 'url',
+    ]);
+
     // -------- Секция: Подвал --------
     $wp_customize->add_section('kartemake_footer', [
         'title'    => 'Настройки подвала',
@@ -144,7 +305,7 @@ add_action('customize_register', function($wp_customize) {
 
     // Текст описания в подвале
     $wp_customize->add_setting('footer_description', [
-        'default'           => 'Ваш внешний технический отдел. Поддержка и развитие digital-продуктов',
+        'default'           => 'Технический партнёр для вашего бизнеса.',
         'sanitize_callback' => 'sanitize_textarea_field',
     ]);
     $wp_customize->add_control('footer_description', [
@@ -156,11 +317,11 @@ add_action('customize_register', function($wp_customize) {
 
     // Текст копирайта
     $wp_customize->add_setting('footer_copyright', [
-        'default'           => 'KARTEMAKE © 2026. Все права защищены.',
+        'default'           => 'ВСЕ СИСТЕМЫ РАБОТАЮТ',
         'sanitize_callback' => 'sanitize_text_field',
     ]);
     $wp_customize->add_control('footer_copyright', [
-        'label'   => 'Текст копирайта',
+        'label'   => 'Текст статуса в подвале',
         'section' => 'kartemake_footer',
         'type'    => 'text',
     ]);
@@ -171,209 +332,89 @@ add_action('customize_register', function($wp_customize) {
         'priority' => 20,
     ]);
 
+    // Заголовок Hero
+    $wp_customize->add_setting('hero_title', [
+        'default'           => 'Ваш сайт работает.<br><span>Мы отвечаем за его стабильность.</span>',
+        'sanitize_callback' => 'wp_kses_post',
+    ]);
+    $wp_customize->add_control('hero_title', [
+        'label'   => 'Заголовок Hero блока (можно использовать HTML)',
+        'section' => 'kartemake_hero',
+        'type'    => 'textarea',
+        'rows'    => 3,
+    ]);
+
+    // Описание Hero
     $wp_customize->add_setting('hero_description', [
-        'default'           => 'Мы - это ваш внешний IT-отдел. Мы не агентство. Мы — команда инженеров, которая берет на себя все технические задачи, долги и развитие ваших digital-продуктов, чтобы вы могли сосредоточиться на бизнесе.',
+        'default'           => 'Берём на себя технические проблемы вашего сайта и инфраструктуры: находим узкие места, устраняем ошибки, ускоряем работу и поддерживаем систему в рабочем состоянии.',
         'sanitize_callback' => 'sanitize_textarea_field',
     ]);
     $wp_customize->add_control('hero_description', [
         'label'   => 'Текст описания в Hero блоке',
         'section' => 'kartemake_hero',
         'type'    => 'textarea',
-        'rows'    => 5,
+        'rows'    => 4,
     ]);
 
-    // -------- Секция: Главная - О нас --------
-    $wp_customize->add_section('kartemake_about', [
-        'title'    => 'Главная - О нас',
-        'priority' => 21,
-    ]);
-
-    $wp_customize->add_setting('about_text_first', [
-        'default'           => 'Мы — распределенная команда fullstack-разработчиков и DevOps-инженеров. Наша философия — прозрачность, гибкость и ориентация на результат, как у внутреннего отдела, но без затрат на штат.',
-        'sanitize_callback' => 'sanitize_textarea_field',
-    ]);
-    $wp_customize->add_control('about_text_first', [
-        'label'   => 'Первый абзац "О нас"',
-        'section' => 'kartemake_about',
-        'type'    => 'textarea',
-        'rows'    => 3,
-    ]);
-
-    $wp_customize->add_setting('about_text_second', [
-        'default'           => 'Мы становимся вашим техническим департаментом: поддерживаем, развиваем и масштабируем ваши сайты, магазины и веб-приложения, беря на себя все «технические долги».',
-        'sanitize_callback' => 'sanitize_textarea_field',
-    ]);
-    $wp_customize->add_control('about_text_second', [
-        'label'   => 'Второй абзац "О нас"',
-        'section' => 'kartemake_about',
-        'type'    => 'textarea',
-        'rows'    => 3,
-    ]);
-
-    // -------- Секция: Главная - Статистика --------
-    $wp_customize->add_section('kartemake_stats', [
-        'title'    => 'Главная - Статистика',
-        'priority' => 22,
-    ]);
-
-    $stats = [
-        'stat_projects' => ['label' => 'Количество проектов', 'default' => '50'],
-        'stat_uptime'   => ['label' => 'Аптайм %', 'default' => '99.9'],
-        'stat_clients'  => ['label' => 'Количество клиентов', 'default' => '30'],
-    ];
-
-    foreach ($stats as $key => $stat) {
-        $wp_customize->add_setting($key, [
-            'default'           => $stat['default'],
-            'sanitize_callback' => 'sanitize_text_field',
-        ]);
-        $wp_customize->add_control($key, [
-            'label'   => $stat['label'],
-            'section' => 'kartemake_stats',
-            'type'    => 'text',
-        ]);
-    }
-
-    // -------- Секция: Главная - Showreel --------
-    $wp_customize->add_section('kartemake_showreel', [
-        'title'    => 'Главная - Showreel',
-        'priority' => 23,
-    ]);
-
-    $wp_customize->add_setting('showreel_image', [
-        'default'           => 'https://skillbox.ru/upload/setka_images/08434114042023_08fda0244b5397e030ee401fd2bea5b24f78a72b.jpg',
-        'sanitize_callback' => 'esc_url_raw',
-    ]);
-    $wp_customize->add_control('showreel_image', [
-        'label'   => 'URL фонового изображения для секции',
-        'section' => 'kartemake_showreel',
-        'type'    => 'url',
-    ]);
-
-    // -------- Секция: Услуги - Статистика --------
-    $wp_customize->add_section('kartemake_services_stats', [
-        'title'    => 'Услуги - Статистика',
-        'priority' => 25,
-    ]);
-
-    $services_stats = [
-        'services_stat_projects'    => ['label' => 'Количество проектов', 'default' => '12+'],
-        'services_stat_specialists' => ['label' => 'Количество специалистов', 'default' => '24+'],
-        'services_stat_clients'     => ['label' => 'Довольных клиентов %', 'default' => '98%'],
-        'services_stat_years'       => ['label' => 'Лет на рынке', 'default' => '7+'],
-    ];
-
-    foreach ($services_stats as $key => $stat) {
-        $wp_customize->add_setting($key, [
-            'default'           => $stat['default'],
-            'sanitize_callback' => 'sanitize_text_field',
-        ]);
-        $wp_customize->add_control($key, [
-            'label'   => $stat['label'],
-            'section' => 'kartemake_services_stats',
-            'type'    => 'text',
-        ]);
-    }
-
-    // -------- Секция: Поддержка - Статистика --------
-    $wp_customize->add_section('kartemake_support_stats', [
-        'title'    => 'Поддержка - Статистика',
-        'priority' => 26,
-    ]);
-
-    $support_stats = [
-        'support_stat_uptime'   => ['label' => 'Uptime %', 'default' => '99'],
-        'support_stat_reaction' => ['label' => 'Реакция (часы)', 'default' => '2'],
-        'support_stat_team'     => ['label' => 'Команда вместо 1', 'default' => '1'],
-    ];
-
-    foreach ($support_stats as $key => $stat) {
-        $wp_customize->add_setting($key, [
-            'default'           => $stat['default'],
-            'sanitize_callback' => 'sanitize_text_field',
-        ]);
-        $wp_customize->add_control($key, [
-            'label'   => $stat['label'],
-            'section' => 'kartemake_support_stats',
-            'type'    => 'text',
-        ]);
-    }
-
-    // -------- Секция: Контакты --------
-    $wp_customize->add_section('kartemake_contacts_page', [
-        'title'    => 'Страница контактов',
-        'priority' => 27,
-    ]);
-
-    // Телефон
-    $wp_customize->add_setting('contact_phone', [
-        'default'           => '+7 (908) 946-14-83',
+    // Технологии в Hero
+    $wp_customize->add_setting('hero_technologies', [
+        'default'           => 'WordPress · 1C-Битрикс · Laravel · Next.js · Docker · Nginx',
         'sanitize_callback' => 'sanitize_text_field',
     ]);
-    $wp_customize->add_control('contact_phone', [
-        'label'   => 'Телефон',
-        'section' => 'kartemake_contacts_page',
+    $wp_customize->add_control('hero_technologies', [
+        'label'   => 'Список технологий (через · )',
+        'section' => 'kartemake_hero',
         'type'    => 'text',
     ]);
 
-    // Email для поддержки
-    $wp_customize->add_setting('contact_support_email', [
-        'default'           => 'support@kartemake.ru',
-        'sanitize_callback' => 'sanitize_email',
-    ]);
-    $wp_customize->add_control('contact_support_email', [
-        'label'   => 'Email техподдержки',
-        'section' => 'kartemake_contacts_page',
-        'type'    => 'email',
-    ]);
-
-    // Email для новых проектов
-    $wp_customize->add_setting('contact_hello_email', [
-        'default'           => 'hello@kartemake.ru',
-        'sanitize_callback' => 'sanitize_email',
-    ]);
-    $wp_customize->add_control('contact_hello_email', [
-        'label'   => 'Email для новых проектов',
-        'section' => 'kartemake_contacts_page',
-        'type'    => 'email',
-    ]);
-
-    // Статистика контактов
-    $wp_customize->add_setting('contact_stat_projects', [
-        'default'           => '99.9',
-        'sanitize_callback' => 'sanitize_text_field',
-    ]);
-    $wp_customize->add_control('contact_stat_projects', [
-        'label'   => 'Проектов %',
-        'section' => 'kartemake_contacts_page',
-        'type'    => 'text',
-    ]);
-
-    $wp_customize->add_setting('contact_stat_specialists', [
-        'default'           => '2',
-        'sanitize_callback' => 'sanitize_text_field',
-    ]);
-    $wp_customize->add_control('contact_stat_specialists', [
-        'label'   => 'Специалистов (часы)',
-        'section' => 'kartemake_contacts_page',
-        'type'    => 'text',
-    ]);
-
-    // -------- Секция: SEO --------
-    $wp_customize->add_section('kartemake_seo', [
-        'title'    => 'SEO и заголовки',
+    // -------- Секция: Политика --------
+    $wp_customize->add_section('kartemake_policy', [
+        'title'    => 'Политика конфиденциальности',
         'priority' => 40,
     ]);
 
-    // Заголовок для главной
-    $wp_customize->add_setting('homepage_title', [
-        'default'           => 'KARTEMAKE - Создание и поддержка сайтов',
+    // Версия документа
+    $wp_customize->add_setting('policy_version', [
+        'default'           => '2.0',
         'sanitize_callback' => 'sanitize_text_field',
     ]);
-    $wp_customize->add_control('homepage_title', [
-        'label'   => 'Заголовок главной страницы',
-        'section' => 'kartemake_seo',
+    $wp_customize->add_control('policy_version', [
+        'label'   => 'Версия документа политики',
+        'section' => 'kartemake_policy',
         'type'    => 'text',
+    ]);
+
+    // Дата актуальности
+    $wp_customize->add_setting('policy_date', [
+        'default'           => '01.01.2026',
+        'sanitize_callback' => 'sanitize_text_field',
+    ]);
+    $wp_customize->add_control('policy_date', [
+        'label'   => 'Дата актуальности документа',
+        'section' => 'kartemake_policy',
+        'type'    => 'text',
+    ]);
+
+    // ИНН
+    $wp_customize->add_setting('policy_inn', [
+        'default'           => '421219133712',
+        'sanitize_callback' => 'sanitize_text_field',
+    ]);
+    $wp_customize->add_control('policy_inn', [
+        'label'   => 'ИНН',
+        'section' => 'kartemake_policy',
+        'type'    => 'text',
+    ]);
+
+    // Email для запросов по политике
+    $wp_customize->add_setting('policy_email', [
+        'default'           => 'privacy@kartemake.ru',
+        'sanitize_callback' => 'sanitize_email',
+    ]);
+    $wp_customize->add_control('policy_email', [
+        'label'   => 'Email для запросов по политике',
+        'section' => 'kartemake_policy',
+        'type'    => 'email',
     ]);
 });
 
@@ -409,7 +450,7 @@ function kartemake_handle_form_submission() {
 
     // Отправка email
     $to      = get_option('admin_email');
-    $subject = 'Новая заявка с сайта KARTEMAKE';
+    $subject = 'Новая заявка с сайта KARTMAKE';
     $body    = "Имя: $name\n";
     $body   .= "Компания: $company\n";
     $body   .= "Email: $email\n";
@@ -435,6 +476,12 @@ function kartemake_handle_form_submission() {
  * Добавляем классы для body
  */
 add_filter('body_class', function($classes) {
+    if (is_front_page()) {
+        $classes[] = 'page-home';
+    }
+    if (is_page('privacy-policy') || is_page('cookie-policy')) {
+        $classes[] = 'privacy-policy';
+    }
     if (is_home() || is_page('blog') || is_page_template('page-blog.php')) {
         $classes[] = 'blog-page';
     }
@@ -443,9 +490,6 @@ add_filter('body_class', function($classes) {
     }
     if (is_page('services') || is_page_template('page-services.php')) {
         $classes[] = 'services-page';
-    }
-    if (is_page('support') || is_page_template('page-support.php')) {
-        $classes[] = 'support-page';
     }
     if (is_page('contacts') || is_page_template('page-contacts.php')) {
         $classes[] = 'contacts-page';
@@ -473,8 +517,30 @@ add_filter('excerpt_more', function($more) {
     return $more;
 });
 
+/**
+ * Получение ID страницы по пути
+ */
+function kartmake_get_page_id_by_path($path) {
+    $page = get_page_by_path($path);
+    if ($page) {
+        return $page->ID;
+    }
+    return 0;
+}
+
+/**
+ * Получение URL страницы политики
+ */
+function kartmake_get_policy_url($type = 'privacy-policy') {
+    $page_id = kartmake_get_page_id_by_path($type);
+    if ($page_id) {
+        return get_permalink($page_id);
+    }
+    return home_url('/' . $type . '/');
+}
+
 // ============================================
-// 8. КАСТОМНЫЙ ТИП ПОСТОВ "УСЛУГИ" (опционально)
+// 8. КАСТОМНЫЙ ТИП ПОСТОВ "УСЛУГИ"
 // ============================================
 
 /**
@@ -522,6 +588,12 @@ function kartemake_register_services_post_type() {
         'single'        => true,
         'show_in_rest'  => true,
     ]);
+
+    register_post_meta('services', 'service_icon', [
+        'type'          => 'string',
+        'single'        => true,
+        'show_in_rest'  => true,
+    ]);
 }
 
 /**
@@ -546,6 +618,7 @@ function kartemake_services_meta_callback($post) {
     $price    = get_post_meta($post->ID, 'service_price', true);
     $time     = get_post_meta($post->ID, 'service_time', true);
     $features = get_post_meta($post->ID, 'service_features', true);
+    $icon     = get_post_meta($post->ID, 'service_icon', true);
     ?>
     <p>
         <label for="service_price">Стоимость:</label>
@@ -561,6 +634,11 @@ function kartemake_services_meta_callback($post) {
         <label for="service_features">Особенности (через запятую):</label>
         <input type="text" id="service_features" name="service_features" value="<?php echo esc_attr($features); ?>" style="width: 100%;">
         <span class="description">Например: 1С-Битрикс, WordPress, Интернет-магазины</span>
+    </p>
+    <p>
+        <label for="service_icon">CSS класс иконки:</label>
+        <input type="text" id="service_icon" name="service_icon" value="<?php echo esc_attr($icon); ?>" style="width: 100%;">
+        <span class="description">Например: icon-server, icon-database, icon-code</span>
     </p>
     <?php
 }
@@ -584,16 +662,11 @@ function kartemake_save_services_meta($post_id) {
         return;
     }
 
-    if (isset($_POST['service_price'])) {
-        update_post_meta($post_id, 'service_price', sanitize_text_field($_POST['service_price']));
-    }
-
-    if (isset($_POST['service_time'])) {
-        update_post_meta($post_id, 'service_time', sanitize_text_field($_POST['service_time']));
-    }
-
-    if (isset($_POST['service_features'])) {
-        update_post_meta($post_id, 'service_features', sanitize_text_field($_POST['service_features']));
+    $fields = ['service_price', 'service_time', 'service_features', 'service_icon'];
+    foreach ($fields as $field) {
+        if (isset($_POST[$field])) {
+            update_post_meta($post_id, $field, sanitize_text_field($_POST[$field]));
+        }
     }
 }
 
