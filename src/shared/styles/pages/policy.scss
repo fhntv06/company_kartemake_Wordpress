@@ -1,6 +1,6 @@
 /* ============================================================
    policy.scss — стили только для страниц политик
-   (cookie-policy.html, privacy-policy.html)
+   (privacy-policy, cookie-policy)
    Дополняет основные стили из style.css
    ============================================================ */
 
@@ -8,158 +8,159 @@
 @use '../variables/fonts' as *;
 @use '../variables/offsets' as *;
 @use '../variables/media' as *;
-@use '../variables/root' as *;
+@use '../system/mixins' as *;
 
-/* ----- POLICY PAGE (основной контейнер) ----- */
-.policy-page {
-  min-height: 100vh;
-  padding-top: 40px;
-}
-
-/* ----- POLICY HEADER (шапка документа) ----- */
+/* ----- POLICY HEADER ----- */
 .policy-header {
   margin-bottom: $middle;
-  max-width: 900px;
+  max-width: 80%;
 }
+
 .policy-title {
-  font-size: clamp(40px, 5vw, 72px);
-  font-weight: 700;
-  letter-spacing: -0.04em;
-  line-height: 1.05;
-  margin: 24px 0 16px;
+  margin: $small 0 $extra-small;
 }
+
 .policy-subtitle {
-  font-size: clamp(16px, 1.2vw, 20px);
-  line-height: 1.6;
-  max-width: 720px;
-  opacity: 0.7;
+  max-width: 80%;
+  opacity: .7;
 }
+
 .policy-subtitle a {
   color: var(--orange);
 }
 .policy-subtitle a:hover {
   text-decoration: underline;
 }
+
 .policy-meta {
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
   font-family: var(--font-mono, monospace);
-  font-size: 11px;
-  letter-spacing: 0.08em;
-  margin-top: 24px;
-  opacity: 0.4;
+  margin-top: $small;
+  opacity: .4;
   text-transform: uppercase;
 }
 
-/* ----- POLICY GRID (сетка: сайдбар + контент) ----- */
+/* ----- POLICY GRID ----- */
 .policy-grid {
   display: grid;
-  gap: 48px;
+  gap: $middle;
   grid-template-columns: 280px 1fr;
 }
 
-/* ----- POLICY SIDEBAR (оглавление) ----- */
+/* ----- POLICY SIDEBAR ----- */
 .policy-sidebar {
+  z-index: 1;
   position: sticky;
   top: calc(#{$header-height-desctop} + #{$offset-header});
   height: fit-content;
 }
+
 .policy-toc {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  padding: 24px 0;
+  gap: calc($extra-small / 2);
+  padding: $extra-small;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  background: rgba(255, 255, 255, 0.025);
+  transition: all 3s ease-out;
 }
+
 .toc-title {
   font-family: var(--font-mono, monospace);
-  font-size: 10px;
-  letter-spacing: 0.12em;
-  margin-bottom: 12px;
-  opacity: 0.4;
+  @include responsive-font($min-small-font-size, $max-small-font-size);
+  letter-spacing: .12em;
+  margin-bottom: $extra-small;
+  opacity: .4;
   text-transform: uppercase;
 }
+
 .toc-link {
   border-left: 2px solid transparent;
   display: block;
-  font-size: 13px;
+  @include responsive-font($min-small-font-size, $max-small-font-size);
   line-height: 1.4;
-  opacity: 0.6;
-  padding: 6px 0 6px 16px;
+  opacity: .6;
   transition: $transition;
 }
-.toc-link:hover {
-  border-left-color: var(--orange);
-  opacity: 1;
-}
+
+.toc-link:hover,
 .toc-link.active {
   border-left-color: var(--orange);
   opacity: 1;
 }
+
 .policy-sidebar-actions {
-  margin-top: $extra-small;
-  padding-top: 24px;
+  margin-top: $small;
+  padding-top: $small;
   border-top: 1px solid var(--border);
 }
 
-/* ----- POLICY BODY (основной текст) ----- */
-.policy-body {
-  min-width: 0;
-}
+/* ----- POLICY BODY ----- */
 .policy-section {
   margin-bottom: $middle;
   scroll-margin-top: 80px;
-}
-.policy-section:last-child {
-  margin-bottom: 0;
-}
-.policy-section h2 {
-  font-size: clamp(28px, 3vw, 40px);
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 1.1;
-  margin-bottom: $extra-small;
-}
-.policy-section h3 {
-  font-size: clamp(18px, 1.5vw, 24px);
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  margin: $extra-small 0 16px;
-  opacity: 0.85;
-}
-.policy-section p {
-  line-height: 1.8;
-  margin-bottom: 16px;
-  max-width: 780px;
-  opacity: 0.85;
-}
-.policy-section p strong {
-  color: var(--white);
-  opacity: 1;
-}
-.policy-section p a {
-  color: var(--orange);
-}
-.policy-section p a:hover {
-  text-decoration: underline;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Используем глобальные стили для h2, h3, p, ul */
+  /* Но добавляем специфичные для политик отступы */
+  h2 {
+    margin-bottom: $extra-small;
+  }
+  h3 {
+    margin: $small 0 $extra-small;
+    opacity: 0.85;
+  }
+  p {
+    max-width: 80%;
+    opacity: 0.85;
+
+    & + p {
+      margin-top: $extra-small;
+    }
+    strong {
+      color: var(--white);
+      opacity: 1;
+    }
+    a {
+      color: var(--orange);
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 /* ----- POLICY LISTS ----- */
 .policy-list {
-  margin: 16px 0 24px 24px;
-}
-.policy-list li {
-  line-height: 1.6;
-  margin-bottom: 8px;
-  opacity: 0.85;
-  padding-left: 20px;
-  position: relative;
-}
-.policy-list li:before {
-  color: var(--orange);
-  content: "—";
-  left: 0;
-  position: absolute;
+  margin: $extra-small 0 0;
+
+  & + ul,
+  & + p {
+    margin-top: $small;
+  }
+
+  li {
+    line-height: 1.6;
+    opacity: .85;
+    padding-left: 20px;
+    position: relative;
+    list-style: none;
+
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+    &:before {
+      color: var(--orange);
+      content: "—";
+      left: 0;
+      position: absolute;
+    }
+  }
 }
 
 /* ----- POLICY TABLES ----- */
@@ -167,22 +168,24 @@
   margin: 24px 0 $extra-small;
   overflow-x: auto;
 }
+
 .policy-table {
   border-collapse: collapse;
-  font-size: 13px;
+  @include responsive-font($min-small-font-size, $max-small-font-size);
   min-width: 480px;
   width: 100%;
 }
+
 .policy-table th {
   background: rgba(255, 107, 0, 0.08);
   border-bottom: 2px solid var(--orange);
-  font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.1em;
   padding: 14px $extra-small;
   text-align: left;
   text-transform: uppercase;
 }
+
 .policy-table td {
   border-bottom: 1px solid var(--border);
   line-height: 1.5;
@@ -190,15 +193,17 @@
   padding: 14px $extra-small;
   vertical-align: top;
 }
+
 .policy-table td strong {
   color: var(--white);
   opacity: 1;
 }
+
 .policy-table tr:hover td {
   background: var(--surface);
 }
 
-/* ----- POLICY CONTACTS (блок контактов в конце) ----- */
+/* ----- POLICY CONTACTS ----- */
 .policy-contacts {
   background: rgba(255, 107, 0, 0.04);
   border: 1px solid rgba(255, 107, 0, 0.15);
@@ -206,9 +211,11 @@
   margin: 16px 0;
   padding: 24px $extra-small;
 }
+
 .policy-contacts p {
   margin-bottom: 8px !important;
 }
+
 .policy-contacts a {
   color: var(--orange);
   font-weight: 500;
@@ -225,139 +232,173 @@
 }
 
 /* ============================================================
-   АДАПТИВНОСТЬ ТОЛЬКО ДЛЯ СТРАНИЦ ПОЛИТИК
+   АДАПТИВНОСТЬ
    ============================================================ */
 
-/* ----- Планшеты и средние экраны ----- */
 @media (max-width: #{$breakpoint-lower-middle}) {
   .policy-grid {
     grid-template-columns: 1fr;
     gap: $extra-small;
   }
+
   .policy-sidebar {
     position: relative;
     top: 0;
     margin-bottom: 24px;
   }
+
   .policy-toc {
-    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 4px 16px;
-    padding: 12px 0;
+    padding: calc($extra-small / 2);
+    background: rgba(255, 255, 255, 0.025);
+    max-width: 80%;
   }
+
   .toc-title {
+    display: flex;
     width: 100%;
     margin-bottom: 8px;
   }
+
   .toc-link {
     border-left: none;
     border-bottom: 2px solid transparent;
-    font-size: 12px;
     padding: 4px 0;
   }
   .toc-link:hover {
     border-left: none;
     border-bottom-color: var(--orange);
   }
+
   .policy-sidebar-actions {
     display: none;
   }
 }
 
-/* ----- Мобильные устройства ----- */
 @media (max-width: #{$breakpoint-extra-small}) {
   .policy-page {
     padding-top: 0;
   }
+
   .policy-header {
     margin-bottom: 40px;
   }
+
   .policy-title {
-    font-size: clamp(32px, 6vw, 44px);
     margin: 16px 0 12px;
   }
+
   .policy-subtitle {
-    font-size: 15px;
+    @include responsive-font($min-small-font-size, $max-small-font-size);
   }
+
   .policy-meta {
-    font-size: 10px;
     gap: 16px;
   }
+
   .policy-section h2 {
-    font-size: clamp(24px, 4vw, 32px);
     margin-bottom: 24px;
   }
+
   .policy-section h3 {
-    font-size: 18px;
     margin: 24px 0 12px;
   }
-  .policy-section p {
-    font-size: 15px;
-  }
+
   .policy-table {
-    font-size: 12px;
     min-width: 360px;
   }
   .policy-table th,
   .policy-table td {
-    padding: $lower-small $extra-small;
+    padding: 10px 12px;
   }
+
   .policy-contacts {
-    padding: $extra-small $lower-small;
+    padding: 16px 20px;
   }
 }
 
-/* ----- Маленькие мобильные ----- */
 @media (max-width: #{$breakpoint-large-small}) {
   .policy-header {
+    max-width: 100%;
     margin-bottom: $extra-small;
   }
-  .policy-title {
-    font-size: clamp(28px, 7vw, 36px);
-  }
+
   .policy-subtitle {
-    font-size: 14px;
+    max-width: 100%;
+  }
+
+  .toc-link {
+    border: none;
   }
   .policy-meta {
     flex-direction: column;
     gap: 6px;
-    font-size: 9px;
     margin-top: 16px;
   }
+  .policy-toc {
+    max-width: 100%;
+    max-height: 32px;
+    overflow: hidden;
+    background-color: $bg-primary;
+
+    &.is-open {
+      max-height: max-content;
+
+      .toc-title::after {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  .policy-sidebar {
+    position: sticky;
+    top: 80px;
+  }
+  .toc-title {
+    &::after {
+      content: "▾";
+      display: block;
+      transition: transform 0.3s ease;
+      font-size: 12px;
+      margin-left: auto;
+    }
+  }
+
   .policy-section {
-    margin-bottom: 40px;
+    margin-bottom: $small;
+
+    p {
+      max-width: 100%;
+    }
+    h2 {
+      margin-bottom: $extra-small;
+    }
+    h3 {
+      margin: $lower-small 0 10px;
+    }
   }
-  .policy-section h2 {
-    font-size: 22px;
-    margin-bottom: 16px;
-  }
-  .policy-section h3 {
-    font-size: 16px;
-    margin: $lower-small 0 12px;
-  }
-  .policy-section p {
-    font-size: 14px;
-    line-height: 1.7;
-  }
+
   .policy-list {
-    margin: 12px 0 16px 16px;
+    margin: $extra-small;
+
+    li {
+      padding-left: $extra-small;
+    }
   }
-  .policy-list li {
-    font-size: 14px;
-    padding-left: 16px;
-  }
+
   .policy-table {
-    font-size: 11px;
     min-width: 300px;
   }
   .policy-table th,
   .policy-table td {
-    padding: $extra-small $lower-small;
+    padding: 8px 10px;
   }
+
   .policy-contacts {
-    padding: 12px $extra-small;
+    padding: 12px 16px;
   }
+
   .policy-back-top {
     margin-top: $extra-small;
     padding-top: $lower-small;
@@ -365,10 +406,9 @@
 }
 
 /* ============================================================
-   УТИЛИТЫ ДЛЯ СТРАНИЦ ПОЛИТИК
+   УТИЛИТЫ
    ============================================================ */
 
-/* Анимация для появления элементов (дополняет .reveal-item из style.css) */
 .policy-section.scene-active .reveal-item,
 .policy-header.scene-active .reveal-item {
   filter: unset;
@@ -376,12 +416,11 @@
   transform: translateY(0) scale(1);
 }
 
-/* Стили для выделения важных элементов */
 .policy-highlight {
   background: rgba(255, 107, 0, 0.06);
   border-left: 3px solid var(--orange);
   padding: $extra-small $lower-small;
-  margin: 16px 0;
+  margin: $extra-small 0;
 }
 .policy-highlight p {
   margin-bottom: 0 !important;

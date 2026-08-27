@@ -12,7 +12,16 @@ export default class CanvasEngine {
   constructor() {
     console.log("[CanvasEngine] ready")
     this.scene = document.querySelector(".scene-hero");
+    if (!this.scene) {
+      console.warn('[CanvasEngine] Not found scene!')
+      return
+    }
+
     this.canvas = document.getElementById("heroCanvas");
+    if (!this.canvas) {
+      console.warn('[CanvasEngine] Not found canvas!')
+      return
+    }
     this.ctx = this.canvas.getContext("2d");
     this.width = window.innerWidth;
     this.height = window.innerHeight;

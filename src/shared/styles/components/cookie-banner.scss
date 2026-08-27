@@ -351,10 +351,10 @@
   transform: translateX(18px);
 }
 
-@media (max-width: 480px) {
+@media (max-width: 576px) {
   .cookie-banner {
     left: $extra-small;
-    width: calc(100% - $small);
+    width: calc(100% - $extra-small * 2);
   }
 
   .cookie-banner__actions {

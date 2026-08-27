@@ -28,8 +28,8 @@ HOME:
 HOME LIBRARIES
 =====================================================
 */
-import "../../lib/gsap.min.js";
-import "../../lib/ScrollTrigger.min.js";
+// import "../../lib/gsap.min.js";
+// import "../../lib/ScrollTrigger.min.js";
 
 import "../../../shared/styles/pages/home.scss"
 
@@ -38,7 +38,7 @@ import "../../../shared/styles/pages/home.scss"
 HOME ENGINE
 =====================================================
 */
-import GSAPEngine from "../../core/gsap-engine.js";
+// import GSAPEngine from "../../core/gsap-engine.js";
 /*
 =====================================================
 HOME APP
@@ -50,7 +50,7 @@ import HomeApp from "./home-app.js";
 BOOT
 =====================================================
 */
-export default class HomeEntry {
+class HomeEntry {
     constructor() {
         this.init()
     }
@@ -60,7 +60,7 @@ export default class HomeEntry {
         GSAP must be initialized before Home modules.
         -----------------------------------------------------
         */
-        new GSAPEngine();
+        // new GSAPEngine();
         /*
         -----------------------------------------------------
         Start Home application.

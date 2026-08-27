@@ -18,8 +18,25 @@ export default class OrbitNavigation {
     console.log("[OrbitNavigation] ready")
 
     this.navigation = document.getElementById('orbit-navigation')
+    if (!this.navigation) {
+      console.warn('[OrbitNavigation] Not found navigation element!')
+      return
+    }
+
     this.points = Array.from(this.navigation.querySelectorAll(".orbit-point"));
+
+    if (!this.points.length) {
+      console.warn('[OrbitNavigation] Not found points elements!')
+      return
+    }
+
     this.scenes = Array.from(document.querySelectorAll(".scene[data-scene]"));
+
+    if (!this.scenes.length) {
+      console.warn('[OrbitNavigation] Not found scenes elements!')
+      return
+    }
+
     this.headerOffsetHeight = document.getElementById('header').offsetHeight;
     this.activeScene = null;
     this.isNavigating = false;

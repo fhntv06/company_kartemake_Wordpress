@@ -20,3 +20,18 @@
 // =====================================================
 @use 'layout/layout';
 @use 'layout/reveal';
+
+// =====================================================
+// COMPONENTS
+// =====================================================
+@use './components/global-dashboard';
+@use './components/footer';
+@use './components/modal';
+@use './components/cookie-banner';
+@use './components/buttons';
+@use './components/transition-loader';
+
+// =====================================================
+// ОВЕРЛЕИ
+// =====================================================
+@use './overlays/scene-transition';

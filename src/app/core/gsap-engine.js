@@ -13,6 +13,9 @@ Responsibilities:
 
 =====================================================
 */
+import "../lib/gsap.min.js";
+import "../lib/ScrollTrigger.min.js";
+
 export default class GSAPEngine {
     constructor() {
         console.log("[GSAPEngine] ready");

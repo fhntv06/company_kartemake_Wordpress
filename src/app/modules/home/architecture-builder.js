@@ -2,6 +2,11 @@ export default class ArchitectureBuilder {
   constructor(){
     console.log("[ArchitectureBuilder] ready")
     this.scene = document.querySelector(".scene-architecture");
+    if (!this.scene) {
+      console.warn('[ArchitectureBuilder] Not found scene!')
+      return
+    }
+
     this.map = this.scene?.querySelector(".architecture-map");
     this.progress = this.map?.querySelector(".architecture-progress");
     this.nodes = [

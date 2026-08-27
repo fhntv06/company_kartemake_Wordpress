@@ -1,3 +1,6 @@
+import "../shared/styles/common.scss"
+
+import GSAPEngine from "./core/gsap-engine.js";
 import ScrollEngine from "./core/scroll-engine.js"
 
 import AnchorNavigation from "./modules/global/anchor-navigation.js"
@@ -10,6 +13,7 @@ export default class GlobalApp {
     constructor() {
         this.modules = {}
         this.registry = {
+            GSAPEngine,
             ScrollEngine,
             AnchorNavigation,
             DashboardMenu,

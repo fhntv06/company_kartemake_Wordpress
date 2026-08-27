@@ -169,7 +169,7 @@ export default class AnchorNavigation {
       3. SCROLL
       ======================================================
       */
-      await window.App.OrbitNavigation.scrollTo(targetPosition);
+      await this.scrollTo(targetPosition);
       /*
       ======================================================
       4. WAIT

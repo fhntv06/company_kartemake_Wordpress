@@ -18,7 +18,7 @@
   width: 100%;
   max-width: 1920px;
   margin: auto;
-  padding: $middle; // 64px → $middle
+  padding: $middle $middle 0; // 64px → $middle
 }
 
 /* =================================================
@@ -51,7 +51,7 @@
 ================================================= */
 @media (max-width: #{$breakpoint-lower-middle}) { // 1024px
   .scene-container {
-    padding-left: $small; // 48px → $small (32px)
+    padding-left: $small;
     padding-right: $small;
   }
 }
@@ -62,7 +62,7 @@
     margin-bottom: $middle; // 64px → $middle
   }
   .scene-container {
-    padding: $small $small $middle; // 32px 32px 72px → $small $small $extra-large
+    padding: $small $small 0;
   }
 }
 
@@ -75,8 +75,6 @@
     margin-top: $extra-small; // 16px → $extra-small
   }
   .scene-container {
-    padding-top: $extra-small; // 12px → $extra-small
-    padding-left: $extra-small; // 16px → $extra-small
-    padding-right: $extra-small;
+    padding: $extra-small $extra-small 0;
   }
 }
