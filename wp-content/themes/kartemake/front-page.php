@@ -1,83 +1,33 @@
 <?php
 /**
  * Template Name: Главная страница
- * Description: Шаблон для главной страницы сайта
+ *
+ * @package KARTMAKE
  */
 
-require get_theme_file_path('page-templates/page-landing.php');
+get_header(); ?>
 
-//$front_page_id = (int) get_option('page_on_front');
-//
-//if (!$front_page_id) {
-//    status_header(404);
-//    require get_404_template();
-//    exit;
-//}
-//
-///*
-//|--------------------------------------------------------------------------
-//| Страница существует?
-//|--------------------------------------------------------------------------
-//*/
-//
-//$page = get_post($front_page_id);
-//
-//if (!$page instanceof WP_Post) {
-//    status_header(404);
-//    require get_404_template();
-//    exit;
-//}
-//
-///*
-//|--------------------------------------------------------------------------
-//| Какой шаблон выбран в админке?
-//|--------------------------------------------------------------------------
-//|
-//| Возвращает:
-//| templates/page-landing.php
-//| или пустую строку (Default template)
-//|
-//*/
-//
-//$template_slug = get_page_template_slug($front_page_id);
-//
-///*
-//|--------------------------------------------------------------------------
-//| Определяем какой файл подключать
-//|--------------------------------------------------------------------------
-//*/
-//
-//if ($template_slug === 'templates/page-landing.php') {
-//
-//    $template = locate_template('templates/page-landing.php');
-//
-//} else {
-//
-//    $template = locate_template('templates/page-main.php');
-//
-//}
-//
-///*
-//|--------------------------------------------------------------------------
-//| Подключаем шаблон
-//|--------------------------------------------------------------------------
-//*/
-//
-//if ($template) {
-//
-//    require $template;
-//    exit;
-//
-//}
-//
-///*
-//|--------------------------------------------------------------------------
-//| Если файла нет — 404
-//|--------------------------------------------------------------------------
-//*/
-//
-//status_header(404);
-//
-//require get_404_template();
-//
-//exit;
+    <main class="experience">
+        <!-- HERO -->
+        <?php get_template_part('template-parts/sections/hero'); ?>
+
+        <!-- AUDIT -->
+        <?php get_template_part('template-parts/sections/audit'); ?>
+
+        <!-- SOLUTIONS -->
+        <?php get_template_part('template-parts/sections/solutions'); ?>
+
+        <!-- ARCHITECTURE -->
+        <?php get_template_part('template-parts/sections/architecture'); ?>
+
+        <!-- PIPELINE -->
+        <?php get_template_part('template-parts/sections/pipeline'); ?>
+
+        <!-- MONITORING -->
+        <?php get_template_part('template-parts/sections/monitoring'); ?>
+
+        <!-- CONTACT -->
+        <?php get_template_part('template-parts/sections/contact'); ?>
+    </main>
+
+<?php get_footer(); ?>
