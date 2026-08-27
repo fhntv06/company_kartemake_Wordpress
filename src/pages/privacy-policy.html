@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>K·ART·MAKE — Политика обработки персональных данных</title>
     <meta name="description" content="Политика обработки персональных данных на сайте K·ART·MAKE">
-    <link rel="stylesheet" href="privacy-policy.css">
 </head>
 <body>
 <!-- =================================================
@@ -87,9 +86,8 @@ MAIN CONTENT — PRIVACY POLICY
 ================================================= -->
 <main class="policy-page">
     <div class="scene-container">
-
         <!-- HEADER -->
-        <header class="policy-header reveal-item">
+        <header class="policy-header">
             <span class="scene-eyebrow">ДОКУМЕНТ / ПОЛИТИКА ОБРАБОТКИ ПЕРСОНАЛЬНЫХ ДАННЫХ</span>
             <h1 class="policy-title">Политика обработки персональных данных</h1>
             <p class="policy-subtitle">
@@ -122,13 +120,63 @@ MAIN CONTENT — PRIVACY POLICY
                     <a href="#section-10" class="toc-link">10. Контактная информация</a>
                 </nav>
                 <div class="policy-sidebar-actions">
-                    <a href="/" class="button-secondary" style="width:100%;justify-content:center;">← На главную</a>
+                    <a href="/" class="button-secondary">← На главную</a>
                 </div>
             </aside>
+            <script>
+                /**
+                 * Policy Toggle — аккордеон для оглавления на мобильных устройствах
+                 */
+                (function() {
+                    'use strict';
+
+                    const initPolicyTocToggle = () => {
+                        const tocToggle = document.querySelector('.toc-title');
+                        const policyToc = document.querySelector('.policy-toc');
+
+                        if (!tocToggle || !policyToc) {
+                            return;
+                        }
+
+                        // Состояние: открыто по умолчанию на десктопе, закрыто на мобилке
+                        const isMobile = window.innerWidth <= 1024;
+
+                        if (isMobile) {
+                            policyToc.classList.remove('is-open');
+                        } else {
+                            policyToc.classList.add('is-open');
+                        }
+
+                        // Обработчик клика
+                        tocToggle.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            policyToc.classList.toggle('is-open');
+                        });
+
+                        // При изменении размера окна — сбрасываем состояние
+                        let resizeTimeout;
+                        window.addEventListener('resize', function() {
+                            clearTimeout(resizeTimeout);
+                            resizeTimeout = setTimeout(function() {
+                                const width = window.innerWidth;
+                                if (width > 1024) {
+                                    policyToc.classList.add('is-open');
+                                }
+                            }, 250);
+                        });
+                    };
+
+                    // Запускаем после загрузки DOM
+                    if (document.readyState === 'loading') {
+                        document.addEventListener('DOMContentLoaded', initPolicyTocToggle);
+                    } else {
+                        initPolicyTocToggle();
+                    }
+                })();
+            </script>
 
             <!-- MAIN TEXT -->
             <div class="policy-body">
-
                 <!-- SECTION 1 -->
                 <section id="section-1" class="policy-section">
                     <h2>1. Общие положения</h2>
@@ -155,7 +203,7 @@ MAIN CONTENT — PRIVACY POLICY
                     <p><strong>Пользователь</strong> — любое физическое лицо, использующее Сайт и взаимодействующее с его функциональными возможностями, включая заполнение форм, направление обращений и использование сервисов Сайта.</p>
 
                     <h3>1.4. Основные принципы обработки персональных данных</h3>
-                    <p>Оператор осуществляет обработку персональных данных на основании следующих принципов:</p>
+                    <p><strong>Оператор осуществляет обработку персональных данных на основании следующих принципов:</strong></p>
                     <ul class="policy-list">
                         <li>законности и справедливости обработки;</li>
                         <li>обработки персональных данных исключительно для достижения заранее определенных и законных целей;</li>
@@ -460,14 +508,14 @@ MAIN CONTENT — PRIVACY POLICY
                     <h2>10. Контактная информация Оператора</h2>
 
                     <h3>10.1. Сведения об Операторе</h3>
-                    <p><strong>10.1.1.</strong> Оператором персональных данных является:</p>
-                    <p><strong>Кусков Артем Сергеевич</strong>, зарегистрированный в Федеральной налоговой службе Российской Федерации в качестве налогоплательщика налога на профессиональный доход (самозанятый) в соответствии с Федеральным законом от 27.11.2018 № 422-ФЗ «О проведении эксперимента по установлению специального налогового режима "Налог на профессиональный доход"».</p>
+                    <p><strong>10.1.1.</strong> Оператором персональных данных является:
+                        <strong>Кусков Артем Сергеевич</strong>, зарегистрированный в Федеральной налоговой службе Российской Федерации в качестве налогоплательщика налога на профессиональный доход (самозанятый) в соответствии с Федеральным законом от 27.11.2018 № 422-ФЗ «О проведении эксперимента по установлению специального налогового режима "Налог на профессиональный доход"».
+                    </p>
                     <p><strong>10.1.2.</strong> ИНН Оператора: <strong>421219133712</strong>.</p>
                     <p><strong>10.1.3.</strong> Настоящая Политика применяется при обработке персональных данных, осуществляемой посредством сайта <a href="https://kartemake.ru" target="_blank">https://kartemake.ru/</a>.</p>
 
                     <h3>10.2. Контактные данные</h3>
-                    <p><strong>10.2.1.</strong> По вопросам, связанным с обработкой персональных данных, реализацией прав субъектов персональных данных, отзывом согласия на обработку персональных данных, а также по иным вопросам, связанным с настоящей Политикой, Пользователь может обратиться к Оператору по адресу электронной почты:</p>
-                    <p><a href="mailto:privacy@kartemake.ru" style="font-size:1.2em;font-weight:600;color:var(--orange);">privacy@kartemake.ru</a></p>
+                    <p><strong>10.2.1.</strong> По вопросам, связанным с обработкой персональных данных, реализацией прав субъектов персональных данных, отзывом согласия на обработку персональных данных, а также по иным вопросам, связанным с настоящей Политикой, Пользователь может обратиться к Оператору по адресу электронной почты: <a href="mailto:privacy@kartemake.ru">privacy@kartemake.ru</a></p>
 
                     <h3>10.3. Заключительные сведения</h3>
                     <p><strong>10.3.1.</strong> Актуальная редакция настоящей Политики размещается в свободном доступе на Сайте.</p>
@@ -483,13 +531,55 @@ MAIN CONTENT — PRIVACY POLICY
             </div>
         </div>
     </div>
+    <section>
+        <div class="scene-container">
+            <!-- =================================================
+            FOOTER
+            ================================================= -->
+            <footer class="contact-footer">
+                <!-- FOOTER BRAND -->
+                <div class="contact-footer-brand">
+                    <a href="/" class="contact-footer-logo" aria-label="K·ART·MAKE">K·ART·MAKE</a>
+                    <p>Технический партнёр для вашего бизнеса.</p>
+                </div>
+                <!-- FOOTER NAVIGATION -->
+                <nav class="contact-footer-nav" aria-label="Навигация по сайту">
+                    <div class="contact-footer-column">
+                        <span class="contact-footer-title">УСЛУГИ</span>
+                        <a href="/#optimization">Оптимизация сайта</a>
+                        <a href="/#modernization">Модернизация</a>
+                        <a href="/#support">Техническая поддержка</a>
+                        <a href="/#audit">Аудит и консультации</a>
+                    </div>
+                    <div class="contact-footer-column">
+                        <span class="contact-footer-title">ИНФОРМАЦИЯ</span>
+                        <a href="./privacy-policy.html">Политика обработки персональных данных</a>
+                        <a href="./cookie-policy.html">Политика использования Cookie</a>
+                    </div>
+                    <div class="contact-footer-column">
+                        <span class="contact-footer-title">КОНТАКТЫ</span>
+                        <a href="mailto:hello@kartemake.ru">hello@kartemake.ru</a>
+                        <a href="mailto:support@kartemake.ru">support@kartemake.ru</a>
+                        <a href="https://t.me/KArtech76">Telegram</a>
+                        <a href="https://vk.ru/kartemake">VK</a>
+                    </div>
+                </nav>
+                <!-- FOOTER BOTTOM -->
+                <div class="contact-footer-bottom">
+                    <span>© 2026 K·ART·MAKE</span>
+                    <span>ТЕХНИЧЕСКИЙ ПАРТНЁР</span>
+                    <span>ВСЕ СИСТЕМЫ РАБОТАЮТ</span>
+                </div>
+            </footer>
+        </div>
+    </section>
 </main>
 
 <!-- =================================================
 FOOTER
 ================================================= -->
 <footer class="contact-footer">
-    <div class="scene-container" style="padding-top:0;padding-bottom:32px;">
+    <div class="scene-container">
         <div class="contact-footer-brand">
             <a href="/" class="contact-footer-logo" aria-label="K·ART·MAKE">K·ART·MAKE</a>
             <p>Технический партнёр для вашего бизнеса.</p>
@@ -522,6 +612,88 @@ FOOTER
         </div>
     </div>
 </footer>
+<div id="cookie-banner" class="cookie-banner" aria-hidden="true">
+    <div class="cookie-banner__wrapper">
+        <div class="cookie-banner__status">
+            <span class="cookie-banner__status-dot"></span>
+            <span>PRIVACY / COOKIE CONTROL</span>
+        </div>
+        <div class="cookie-banner__content">
+            <!-- STEP 1 -->
+            <section id="cookie-step-1" class="cookie-step cookie-step--active">
+                <div class="cookie-banner__header">
+                    <p class="cookie-banner__description">Мы применяем cookies, чтобы сайт работал без сбоев и постоянно становился для вас удобнее.</p>
+                </div>
+                <div class="cookie-banner__links">
+                    <span>Подробнее:</span>
+                    <a href="cookie-policy.html" target="_blank">использование cookie</a>
+                    <a href="privacy-policy.html" target="_blank">обработка персональных данных</a>
+                </div>
+                <div class="cookie-banner__actions">
+                    <button type="button" id="cookie-decline" class="cookie-button cookie-button--outline">Отклонить</button>
+                    <button type="button" id="cookie-accept" class="cookie-button cookie-button--accent">Принять</button>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <!-- Закрытие -->
+        <div class="close-modal no-icon" data-modal-func="close"></div>
 
+        <!-- Заголовок -->
+        <div class="modal-header">
+            <h3>Хотите чтобы мы решили <span class="color-accent">ваш кейс</span>?</h3>
+            <p>Оставьте заявку и наш специалист свяжется с вами для обсуждения деталей вашего проекта</p>
+        </div>
+
+        <!-- Контейнер с гридом -->
+        <div class="form-container">
+
+            <!-- КОЛОНКА 1: КОНТАКТЫ (как в дашборде) -->
+            <div class="contact-modal__body">
+                <a href="mailto:hello@kartemake.ru" class="contact-modal__item">
+                    <span class="contact-modal__item-label">НОВЫЕ ПРОЕКТЫ</span>
+                    <strong class="contact-modal__item-value">hello@kartemake.ru</strong>
+                </a>
+                <a href="mailto:support@kartemake.ru" class="contact-modal__item">
+                    <span class="contact-modal__item-label">ТЕХНИЧЕСКАЯ ПОДДЕРЖКА</span>
+                    <strong class="contact-modal__item-value">support@kartemake.ru</strong>
+                </a>
+            </div>
+
+            <!-- КОЛОНКА 2: СОЦСЕТИ -->
+            <div class="contact-modal__body">
+                <a href="https://t.me/KArtech76" target="_blank" class="contact-modal__item">
+                    <span class="contact-modal__item-label">TELEGRAM</span>
+                    <strong class="contact-modal__item-value">@KArtech76</strong>
+                </a>
+                <a href="https://vk.ru/kartemake" target="_blank" class="contact-modal__item">
+                    <span class="contact-modal__item-label">ВКОНТАКТЕ</span>
+                    <strong class="contact-modal__item-value">vk.com/kartemake</strong>
+                </a>
+            </div>
+
+            <!-- КОЛОНКА 3: ИНФОРМАЦИЯ -->
+            <div class="contact-modal__body">
+                <a href="/privacy-policy" class="contact-modal__item">
+                    <span class="contact-modal__item-label">ДОКУМЕНТЫ</span>
+                    <strong class="contact-modal__item-value">Политика конфиденциальности</strong>
+                </a>
+                <!--        <a href="/personal-data-consent" class="contact-modal__item">-->
+                <!--          <span class="contact-modal__item-label">СОГЛАСИЕ</span>-->
+                <!--          <strong class="contact-modal__item-value">На обработку данных</strong>-->
+                <!--        </a>-->
+            </div>
+
+            <!-- ФУТЕР -->
+            <div class="contact-modal__footer">
+                <p class="contact-modal__footer-text">Напишите нам — мы ответим в течение 24 часов</p>
+            </div>
+
+        </div>
+    </div>
+</div>
 </body>
 </html>
