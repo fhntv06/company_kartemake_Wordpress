@@ -3,78 +3,24 @@
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>
-        <?php
-        if (is_front_page() || is_home()) {
-            echo get_theme_mod('homepage_title', 'KARTEMAKE - Создание и поддержка сайтов');
-        } else {
-            wp_title('|', true, 'right');
-            bloginfo('name');
-        }
-        ?>
-    </title>
-
     <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>
-    id="smoothScrollContainer"
-    data-controller="<?php echo kartemake_get_body_controllers(); ?>">
+<body <?php body_class(); ?> data-page="<?php echo is_front_page() ? 'home' : 'page'; ?>">
 <?php wp_body_open(); ?>
 
-<header class="header" data-controller="header">
-    <a href="<?php echo home_url('/'); ?>" class="logo">
-        <span class="font-size-h3">K</span>
-        <span class="font-size-h3">·</span>
-        <span class="font-size-h4 color-accent-red">ART</span>
-        <span class="font-size-h3">·</span>
-        <span class="font-size-h5">MAKE</span>
-    </a>
+<!-- =================================================
+SYSTEM LOADER
+================================================= -->
+<?php get_template_part('template-parts/global/loader'); ?>
 
-    <ul class="nav-links">
-        <?php
-        wp_nav_menu(array(
-            'theme_location' => 'header-menu',
-            'container'      => false,
-            'menu_class'     => '',
-            'fallback_cb'    => false,
-            'depth'          => 1,
-            'echo'           => true,
-            'items_wrap'     => '%3$s',
-        ));
-        ?>
-    </ul>
+<!-- =================================================
+ORBIT NAVIGATION
+================================================= -->
+<?php if (is_front_page()) : ?>
+    <?php get_template_part('template-parts/global/orbit-navigation'); ?>
+<?php endif; ?>
 
-    <div class="header-controls">
-        <div class="social-links">
-            <a href="https://vk.ru/kartemake" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-vk"></i>
-            </a>
-            <a href="https://t.me/KArtech76" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-telegram"></i>
-            </a>
-        </div>
-
-        <button class="theme-toggle" data-controller-theme="item">
-            <i class="fas fa-moon"></i>
-        </button>
-
-        <button
-            class="cta-button"
-            data-controller-modal-open="form"
-            data-controller-modal-func="open"
-            data-controller-ripple-effect="item"
-        >
-            Начать проект
-            <i class="fas fa-arrow-right"></i>
-        </button>
-
-        <button class="burger-menu" id="burgerMenu" data-controller-burger-menu="item">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </div>
-</header>
-
-<main id="main-content">
+<!-- =================================================
+GLOBAL DASHBOARD
+================================================= -->
+<?php get_template_part('template-parts/global/dashboard'); ?>
