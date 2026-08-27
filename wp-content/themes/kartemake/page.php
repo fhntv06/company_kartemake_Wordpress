@@ -1,45 +1,25 @@
 <?php
 /**
  * Шаблон для обычных страниц
- * Используется по умолчанию для всех страниц, если не выбран другой шаблон
+ *
+ * @package KARTMAKE
  */
 
-get_header();
+get_header(); ?>
 
-if (have_posts()) :
-    while (have_posts()) : the_post();
-        ?>
-
-        <article class="page-content">
-            <div class="container">
-                <!-- Заголовок страницы -->
-                <header class="page-header">
-                    <h1 class="page-title"><?php the_title(); ?></h1>
-                </header>
-
-                <!-- Основное изображение -->
-                <?php if (has_post_thumbnail()) : ?>
-                    <div class="page-featured-image">
-                        <?php the_post_thumbnail('large'); ?>
+    <main class="page-content">
+        <div class="scene-container">
+            <div class="page-wrapper">
+                <?php while (have_posts()) : the_post(); ?>
+                    <header class="page-header">
+                        <h1 class="page-title"><?php the_title(); ?></h1>
+                    </header>
+                    <div class="page-body">
+                        <?php the_content(); ?>
                     </div>
-                <?php endif; ?>
-
-                <!-- Контент страницы -->
-                <div class="page-body">
-                    <?php the_content(); ?>
-
-                    <?php
-                    wp_link_pages([
-                        'before' => '<div class="page-links">' . __('Страницы:'),
-                        'after'  => '</div>',
-                    ]);
-                    ?>
-                </div>
+                <?php endwhile; ?>
             </div>
-        </article>
+        </div>
+    </main>
 
-    <?php
-    endwhile;
-endif;
-
-get_footer();
+<?php get_footer(); ?>

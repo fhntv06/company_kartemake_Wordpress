@@ -1,41 +1,59 @@
 <?php
 /**
  * Шаблон страницы 404
- * Отображается, когда страница не найдена
+ *
+ * @package KARTMAKE
  */
 
-get_header();
-?>
+get_header(); ?>
 
-    <main>
-        <section class="error-404">
-            <div class="container">
-                <div class="error-content">
-                    <div class="error-code">404</div>
+    <main class="error-404">
+        <div class="scene-container">
+            <div class="error-content">
+                <div class="error-code">
+                    <span class="scene-eyebrow">ОШИБКА 404</span>
                     <h1 class="error-title">Страница не найдена</h1>
+                </div>
+
+                <div class="error-body">
                     <p class="error-description">
-                        К сожалению, страница, которую вы ищете, не существует или была перемещена.
+                        Запрашиваемая страница была перемещена, удалена или никогда не существовала.
+                        <br>
+                        Возможно, вы перешли по устаревшей ссылке или допустили опечатку в адресе.
                     </p>
 
                     <div class="error-actions">
-                        <a href="<?php echo home_url('/'); ?>" class="button button--large button--accent">
-                            <i class="fas fa-arrow-left"></i>
-                            Вернуться на главную
+                        <a href="<?php echo home_url('/'); ?>" class="button-primary">
+                            ← На главную
+                        </a>
+                        <a href="mailto:support@kartemake.ru" class="button-secondary">
+                            Сообщить о проблеме
                         </a>
                     </div>
+                </div>
 
+                <!-- Похожие страницы -->
+                <?php
+                $recent_posts = wp_get_recent_posts(array(
+                    'numberposts' => 3,
+                    'post_status' => 'publish'
+                ));
+                if (!empty($recent_posts)) : ?>
                     <div class="error-suggestions">
-                        <p>Вы можете попробовать:</p>
-                        <ul>
-                            <li><a href="<?php echo home_url('/'); ?>">Перейти на главную страницу</a></li>
-                            <li><a href="<?php echo get_permalink(get_option('page_for_posts')); ?>">Посмотреть блог</a></li>
-                            <li><a href="<?php echo get_permalink(get_page_by_path('services')); ?>">Наши услуги</a></li>
-                            <li><a href="<?php echo get_permalink(get_page_by_path('contacts')); ?>">Связаться с нами</a></li>
+                        <span class="error-suggestions-title">ВОЗМОЖНО, ВАМ ПРИГОДИТСЯ</span>
+                        <ul class="error-suggestions-list">
+                            <?php foreach ($recent_posts as $post) : ?>
+                                <li>
+                                    <a href="<?php echo get_permalink($post['ID']); ?>">
+                                        <?php echo $post['post_title']; ?>
+                                    </a>
+                                </li>
+                            <?php endforeach; ?>
                         </ul>
                     </div>
-                </div>
+                <?php endif; ?>
             </div>
-        </section>
+        </div>
     </main>
 
 <?php get_footer(); ?>
