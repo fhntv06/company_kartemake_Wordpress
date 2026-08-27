@@ -1,1 +1,0 @@
-<canvas id="stars-canvas" data-controller-starfield="item"></canvas>
