@@ -3,14 +3,16 @@
 // =====================================================
 @use '../components/orbit-navigation';
 @use '../components/terminal';
+@use '../components/canvas';
+@use '../components/contact-info';
 
 // =====================================================
 // СЦЕНЫ
 // =====================================================
-@use '../scenes/hero';
-@use '../scenes/solutions';
-@use '../scenes/architecture';
-@use '../scenes/pipeline';
-@use '../scenes/audit';
-@use '../scenes/monitoring';
-@use '../scenes/contact';
+@use '../scenes/global/hero';
+@use '../scenes/home/solutions';
+@use '../scenes/home/architecture';
+@use '../scenes/home/pipeline';
+@use '../scenes/home/audit';
+@use '../scenes/home/monitoring';
+@use '../scenes/home/contact';
