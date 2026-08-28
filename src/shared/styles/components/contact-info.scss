@@ -1,0 +1,68 @@
+@use '../variables/colors' as *;
+@use '../variables/offsets' as *;
+@use '../system/mixins' as *;
+@use '../variables/media' as *;
+
+/* ----- CONTACT INFO ----- */
+.contact-info {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-bottom: $small;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.contact-info-item {
+  min-height: 130px;
+  padding: #{$lower-small} #{$small};
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: $extra-small;
+  border-right: 1px solid rgba(255,255,255,0.08);
+}
+
+.contact-info-item:last-child {
+  border-right: none;
+}
+
+.contact-info-label {
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 12px;
+  text-transform: uppercase;
+  opacity: 0.42;
+}
+
+.contact-info-value {
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+}
+
+.contact-info-description {
+  max-width: 300px;
+  font-size: 12px;
+  line-height: 1.5;
+  opacity: 0.4;
+}
+
+@media (max-width: $breakpoint-extra-small) {
+  .contact-info {
+    grid-template-columns: 1fr;
+  }
+  .contact-info-item {
+    padding: $extra-small 0;
+    min-height: 100px;
+    border-right: 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .contact-info-item:last-child {
+    border-bottom: 0;
+  }
+}
+
+@media (max-width: $breakpoint-large-small) {
+  .contact-info-item {
+    padding: 16px 0;
+    min-height: max-content;
+  }
+}
