@@ -1,0 +1,661 @@
+@use "../../variables/colors" as *;
+@use "../../variables/fonts" as *;
+@use "../../variables/offsets" as *;
+@use "../../variables/media" as *;
+@use "../../variables/root" as *;
+@use "../../system/mixins" as *;
+
+/*
+==========================================================
+K·ART·MAKE
+ABOUT INTRO
+==========================================================
+
+Scene:
+
+BUSINESS
+    ↓
+K·ART·MAKE
+    ↓
+ENGINEERING SERVICES
+    ↓
+STABLE SYSTEM
+    ↓
+BUSINESS
+
+All styles are page-specific.
+
+/*
+==========================================================
+INTRO LAYOUT
+==========================================================
+*/
+.about-intro-layout {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(280px, 0.75fr) minmax(520px, 1.25fr);
+  gap: $small;
+  min-height: 620px;
+}
+/*
+==========================================================
+CONTENT
+==========================================================
+*/
+.about-intro-label {
+  display: block;
+  margin-bottom: $small;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  color: $orange;
+  text-transform: uppercase;
+}
+.about-intro-content h3 {
+  margin: 0 0 $small;
+}
+.about-intro-content p {
+  margin: 0 0 $extra-small;
+  color: rgba(255,255,255,0.58);
+}
+.about-intro-content p:last-child {
+  margin-bottom: 0;
+}
+/*
+==========================================================
+VISUAL
+==========================================================
+*/
+.about-intro-visual {
+  position: relative;
+  width: 100%;
+  min-height: 720px;
+  overflow: hidden;
+  isolation: isolate;
+}
+/*
+==========================================================
+SYSTEM
+==========================================================
+*/
+.about-intro-system {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+/*
+==========================================================
+BUSINESS NODE
+==========================================================
+*/
+.about-intro-business {
+  position: absolute;
+  left: 50%;
+  top: 2%;
+  width: 190px;
+  padding: 18px 20px;
+  box-sizing: border-box;
+  transform: translateX(-50%);
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.025);
+  opacity: 0;
+  z-index: 5;
+  text-align: center;
+  transition: border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+.about-intro-business::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 20px;
+  width: 48px;
+  height: 1px;
+  background: $orange;
+}
+.about-intro-business::after {
+  content: "";
+  position: absolute;
+  right: -1px;
+  bottom: -1px;
+  width: 7px;
+  height: 7px;
+  border-right: 1px solid $orange;
+  border-bottom: 1px solid $orange;
+}
+.about-intro-business:hover {
+  border-color: rgba(255,46,46,0.35);
+  background: rgba(255,46,46,0.025);
+  box-shadow: 0 0 40px rgba(255,46,46,0.04);
+}
+.about-intro-node-label {
+  display: block;
+  margin-bottom: 7px;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  @include responsive-font(8, 10);
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.38);
+}
+.about-intro-node-title {
+  display: block;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  @include responsive-font(16, 20);
+  line-height: 1;
+  letter-spacing: 0.04em;
+  color: $white;
+}
+.about-intro-node-status {
+  display: block;
+  margin-top: 9px;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  @include responsive-font(8, 9);
+  letter-spacing: 0.06em;
+  color: $orange;
+}
+/*
+==========================================================
+BUSINESS → CORE CONNECTOR
+==========================================================
+*/
+.about-intro-connector {
+  position: absolute;
+  width: 1px;
+  background: linear-gradient(to bottom, rgba(255,46,46,0.05), rgba(255,46,46,0.5), rgba(255,46,46,0.05));
+  transform-origin: top center;
+  z-index: 1;
+}
+.about-intro-connector-main {
+  left: 50%;
+  top: 15%;
+  height: 17%;
+  transform: translateX(-50%);
+}
+/*
+==========================================================
+CORE
+==========================================================
+*/
+.about-intro-system-core {
+  position: absolute;
+  left: 50%;
+  top: 32%;
+  width: 210px;
+  min-height: 110px;
+  padding: 24px 20px;
+  box-sizing: border-box;
+  transform: translateX(-50%) translateY(15px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(255,46,46,0.35);
+  background: radial-gradient(circle at center, rgba(255,46,46,0.09), rgba(255,46,46,0.025) 50%, transparent 80%);
+  opacity: 0;
+  z-index: 5;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.about-intro-system-core::before {
+  content: "";
+  position: absolute;
+  inset: 7px;
+  border: 1px solid rgba(255,46,46,0.08);
+  pointer-events: none;
+}
+.about-intro-system-core::after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  top: 50%;
+  left: -3px;
+  transform: translateY(-50%);
+  background: $orange;
+  box-shadow: 0 0 12px rgba(255,46,46,0.8);
+}
+.about-intro-system-core.is-active {
+  border-color: rgba(255,46,46,0.7);
+  box-shadow: 0 0 40px rgba(255,46,46,0.12), inset 0 0 30px rgba(255,46,46,0.04);
+}
+.about-intro-core-label {
+  position: relative;
+  margin-bottom: 8px;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  @include responsive-font(8, 10);
+  letter-spacing: 0.08em;
+  color: $orange;
+}
+.about-intro-core-title {
+  position: relative;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  @include responsive-font(18, 24);
+  line-height: 1;
+  letter-spacing: 0.04em;
+  color: $white;
+}
+.about-intro-core-status {
+  position: relative;
+  margin-top: 9px;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  @include responsive-font(8, 9);
+  letter-spacing: 0.06em;
+  color: rgba(255,255,255,0.35);
+}
+/*
+==========================================================
+CORE → SERVICES CONNECTORS
+==========================================================
+*/
+.about-intro-connector-service {
+  top: 49%;
+  height: 13%;
+}
+/*
+DEVELOPMENT
+*/
+.connector-development {
+  left: 16%;
+  transform: rotate(47deg);
+}
+/*
+INFRASTRUCTURE
+*/
+.connector-infrastructure {
+  left: 38%;
+  transform: rotate(16deg);
+}
+/*
+SUPPORT
+*/
+.connector-support {
+  left: 62%;
+  transform: rotate(-16deg);
+}
+/*
+AUDIT
+*/
+.connector-audit {
+  left: 84%;
+  transform: rotate(-47deg);
+}
+/*
+==========================================================
+SERVICES
+==========================================================
+*/
+.about-intro-services {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 22%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  z-index: 5;
+}
+.about-intro-service {
+  position: relative;
+  min-height: 92px;
+  padding: 13px 12px;
+  box-sizing: border-box;
+  border: 1px solid rgba(255,255,255,0.09);
+  background: rgba(255,255,255,0.018);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: border-color 0.3s ease, background 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+  cursor: default;
+}
+.about-intro-service::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 12px;
+  width: 24px;
+  height: 1px;
+  background: rgba(255,46,46,0.5);
+}
+.about-intro-service:hover {
+  border-color: rgba(255,46,46,0.3);
+  background: rgba(255,46,46,0.025);
+}
+.about-intro-service-number {
+  display: block;
+  margin-bottom: 8px;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  @include responsive-font(8, 9);
+  color: rgba(255,255,255,0.3);
+}
+.about-intro-service-content {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.about-intro-service-label {
+  margin-bottom: 5px;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  @include responsive-font(8, 10);
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+  color: $orange;
+}
+.about-intro-service strong {
+  display: block;
+  margin-bottom: 6px;
+  font-family: "Inter", Arial, sans-serif;
+  @include responsive-font(12, 15);
+  line-height: 1.2;
+  font-weight: 500;
+  color: rgba(255,255,255,0.9);
+}
+.about-intro-service small {
+  display: block;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  @include responsive-font(7, 9);
+  line-height: 1.35;
+  color: rgba(255,255,255,0.3);
+}
+/*
+==========================================================
+SERVICES ACTIVE
+==========================================================
+*/
+.about-intro-service.is-active {
+  border-color: rgba(255,46,46,0.45);
+  background: rgba(255,46,46,0.04);
+  box-shadow: 0 0 30px rgba(255,46,46,0.04);
+}
+.about-intro-service.is-active::before {
+  width: 48px;
+  background: $orange;
+}
+/*
+==========================================================
+SERVICES → RESULT
+==========================================================
+*/
+.about-intro-connector-result {
+  left: 50%;
+  bottom: 14%;
+  height: 7%;
+  transform: translateX(-50%);
+}
+/*
+==========================================================
+RESULT
+==========================================================
+*/
+.about-intro-result {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 220px;
+  padding: 15px 18px;
+  box-sizing: border-box;
+  transform: translateX(-50%) translateY(10px);
+  border: 1px solid rgba(255,46,46,0.2);
+  background: rgba(255,46,46,0.02);
+  opacity: 0;
+  z-index: 5;
+  text-align: center;
+  transition: opacity 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.about-intro-result::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 18px;
+  width: 42px;
+  height: 1px;
+  background: $orange;
+}
+.about-intro-result.is-active {
+  border-color: rgba(255,46,46,0.55);
+  box-shadow: 0 0 35px rgba(255,46,46,0.08);
+}
+.about-intro-result-label {
+  display: block;
+  margin-bottom: 6px;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  @include responsive-font(8, 9);
+  letter-spacing: 0.08em;
+  color: $orange;
+}
+.about-intro-result-title {
+  display: block;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  @include responsive-font(14, 18);
+  line-height: 1;
+  letter-spacing: 0.04em;
+  color: $white;
+}
+.about-intro-result-description {
+  display: block;
+  margin-top: 7px;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  @include responsive-font(7, 9);
+  color: rgba(255,255,255,0.35);
+}
+/*
+==========================================================
+PARTICLE / DATA PACKETS
+==========================================================
+
+These are NOT decorative particles.
+
+They represent technical requests/data
+moving through the system.
+==========================================================
+*/
+.about-intro-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+.about-intro-particle {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  margin-left: -2.5px;
+  margin-top: -2.5px;
+  border-radius: 50%;
+  background: $orange;
+  box-shadow: 0 0 8px rgba(255,46,46,0.8), 0 0 18px rgba(255,46,46,0.3);
+  opacity: 0;
+  pointer-events: none;
+}
+/*
+==========================================================
+PACKET TRAIL
+==========================================================
+*/
+.about-intro-packet {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: $orange;
+  box-shadow: 0 0 8px rgba(255,46,46,0.9), 0 0 22px rgba(255,46,46,0.4);
+}
+/*
+==========================================================
+SUBTLE SYSTEM GRID
+==========================================================
+*/
+.about-intro-visual::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.18;
+  background-image: linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(ellipse at center, black 20%, transparent 78%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 20%, transparent 78%);
+}
+/*
+==========================================================
+CENTER GLOW
+==========================================================
+*/
+.about-intro-visual::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 42%;
+  width: 320px;
+  height: 320px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,46,46,0.055), transparent 68%);
+  pointer-events: none;
+  z-index: 0;
+}
+/*
+==========================================================
+TABLET
+==========================================================
+*/
+@media (max-width: 1100px) {
+  .about-intro-layout {
+    grid-template-columns: 1fr;
+    gap: $large;
+    align-items: start;
+  }
+  .about-intro-visual {
+    min-height: 600px;
+  }
+}
+/*
+==========================================================
+MOBILE
+==========================================================
+*/
+@media (max-width: 700px) {
+  .scene-about-intro .scene-container {
+    padding: $middle $small $large;
+  }
+  .scene-about-intro .scene-header {
+    margin-bottom: $middle;
+  }
+  .about-intro-layout {
+    display: block;
+    min-height: 0;
+  }
+  .about-intro-content {
+    margin-bottom: $large;
+  }
+  .about-intro-visual {
+    min-height: 680px;
+  }
+  /*
+  --------------------------------------------------------
+  BUSINESS
+  --------------------------------------------------------
+  */
+  .about-intro-business {
+    width: 170px;
+    top: 0;
+  }
+  /*
+  --------------------------------------------------------
+  CORE
+  --------------------------------------------------------
+  */
+  .about-intro-system-core {
+    width: 190px;
+    top: 27%;
+  }
+  /*
+  --------------------------------------------------------
+  SERVICES
+  --------------------------------------------------------
+  */
+  .about-intro-services {
+    bottom: 13%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+  .about-intro-service {
+    min-height: 88px;
+  }
+  /*
+  --------------------------------------------------------
+  RESULT
+  --------------------------------------------------------
+  */
+  .about-intro-result {
+    width: 190px;
+  }
+  /*
+  --------------------------------------------------------
+  CONNECTORS
+  --------------------------------------------------------
+  */
+  .about-intro-connector-service {
+    height: 15%;
+  }
+  .connector-development {
+    left: 25%;
+    transform: rotate(35deg);
+  }
+  .connector-infrastructure {
+    left: 43%;
+    transform: rotate(12deg);
+  }
+  .connector-support {
+    left: 57%;
+    transform: rotate(-12deg);
+  }
+  .connector-audit {
+    left: 75%;
+    transform: rotate(-35deg);
+  }
+}
+/*
+==========================================================
+SMALL MOBILE
+==========================================================
+*/
+@media (max-width: 480px) {
+  .about-intro-visual {
+    min-height: 720px;
+  }
+  .about-intro-business {
+    width: 155px;
+    padding: 14px;
+  }
+  .about-intro-system-core {
+    width: 175px;
+    min-height: 100px;
+  }
+  .about-intro-services {
+    bottom: 14%;
+  }
+  .about-intro-service {
+    padding: 11px 9px;
+  }
+  .about-intro-service strong {
+    @include responsive-font(11, 13);
+  }
+  .about-intro-service small {
+    display: none;
+  }
+  .about-intro-result {
+    width: 175px;
+    padding: 13px;
+  }
+}
+/*
+==========================================================
+REDUCED MOTION
+==========================================================
+*/
+@media (prefers-reduced-motion: reduce) {
+  .about-intro-service,
+  .about-intro-result,
+  .about-intro-business,
+  .about-intro-system-core {
+    transition: none;
+  }
+  .about-intro-particle {
+    display: none;
+  }
+}
