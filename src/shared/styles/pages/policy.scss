@@ -10,6 +10,11 @@
 @use '../variables/media' as *;
 @use '../system/mixins' as *;
 
+// =====================================================
+// КОМПОНЕНТЫ
+// =====================================================
+@use '../components/canvas';
+
 /* ----- POLICY HEADER ----- */
 .policy-header {
   margin-bottom: $middle;
@@ -36,7 +41,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
-  font-family: var(--font-mono, monospace);
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
   margin-top: $small;
   opacity: .4;
   text-transform: uppercase;
@@ -68,7 +73,7 @@
 }
 
 .toc-title {
-  font-family: var(--font-mono, monospace);
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
   @include responsive-font($min-small-font-size, $max-small-font-size);
   letter-spacing: .12em;
   margin-bottom: $extra-small;
@@ -408,14 +413,6 @@
 /* ============================================================
    УТИЛИТЫ
    ============================================================ */
-
-.policy-section.scene-active .reveal-item,
-.policy-header.scene-active .reveal-item {
-  filter: unset;
-  opacity: 1;
-  transform: translateY(0) scale(1);
-}
-
 .policy-highlight {
   background: rgba(255, 107, 0, 0.06);
   border-left: 3px solid var(--orange);

@@ -18,7 +18,7 @@
   width: 100%;
   max-width: 1920px;
   margin: auto;
-  padding: $middle $middle 0; // 64px → $middle
+  padding: $middle; // 64px → $middle
 }
 
 /* =================================================
@@ -31,7 +31,7 @@
 .scene-eyebrow {
   display: block;
   margin-bottom: $extra-small;
-  font-family: var(--font-mono, monospace);
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
   font-size: 11px;
   line-height: 1;
   letter-spacing: 0.16em;
@@ -42,7 +42,6 @@
 .scene-description {
   margin-top: $small; // 28px → $small (32px)
   max-width: 620px;
-  line-height: 1.6;
   opacity: .7;
 }
 
@@ -61,15 +60,11 @@
     max-width: 80%;
     margin-bottom: $middle; // 64px → $middle
   }
-  .scene-container {
-    padding: $small $small 0;
-  }
 }
 
 @media (max-width: #{$breakpoint-large-small}) { // 576px
   .scene-header {
     max-width: 100%;
-    margin-bottom: $small; // 32px → $small
   }
   .scene-description {
     margin-top: $extra-small; // 16px → $extra-small

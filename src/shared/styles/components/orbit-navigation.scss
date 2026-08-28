@@ -22,11 +22,11 @@
 .orbit-circle {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: max-content;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
+  row-gap: $extra-small;
 }
 
 .orbit-circle::before {
@@ -147,6 +147,7 @@
   }
   .orbit-circle {
     flex-direction: row;
+    justify-content: space-between;
   }
   .orbit-point__description {
     top: 0;

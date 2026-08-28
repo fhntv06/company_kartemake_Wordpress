@@ -68,7 +68,7 @@
 .scene-transition-label {
   margin-bottom: #{$small - 4px}; // 28px → 28px
 
-  font-family: var(--font-mono, monospace);
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
   @include responsive-font(9,11);
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -81,7 +81,7 @@
   align-items: center;
   gap: $extra-small - 6px; // 10px → 10px
 
-  font-family: var(--font-mono, monospace);
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
   @include responsive-font(10,12);
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -98,7 +98,7 @@
 .scene-transition-target {
   margin-top: $extra-small; // 16px → $extra-small
 
-  font-family: var(--font-mono, monospace);
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
   @include responsive-font(
     $min-h3-font-size,
     $max-h3-font-size,

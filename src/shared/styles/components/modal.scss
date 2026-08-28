@@ -165,7 +165,7 @@
 .form-container {
   display: grid;
   grid-template-columns: minmax(0, 1.45fr) minmax(0, 0.75fr) minmax(0, 0.75fr);
-  gap: clamp(20px, 3vw, $small + $extra-small);
+  gap: $extra-small;
 }
 
 .contact-modal__body {
@@ -177,11 +177,12 @@
 
 .contact-modal__item {
   position: relative;
-  padding: $extra-small 18px;
+  padding: $extra-small;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: $extra-small - 8px;
+  min-height: 64px;
+  gap: $extra-small;
   border: 1px solid rgba(255, 255, 255, 0.09);
   background: rgba(0, 0, 0, 0.14);
   text-decoration: none;
@@ -197,7 +198,6 @@
 .contact-modal__item:first-child {
   border-color: rgba(255, 255, 255, 0.2);
   background: rgba(255, 255, 255, 0.055);
-  min-height: 90px;
 }
 
 .contact-modal__item:first-child::after {
@@ -217,7 +217,7 @@
 
 .contact-modal__item-label {
   display: block;
-  font-family: var(--font-mono, monospace);
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
   font-size: 8px;
   line-height: 1;
   letter-spacing: 0.12em;
@@ -228,7 +228,7 @@
 
 .contact-modal__item-value {
   display: block;
-  font-family: var(--font-mono, monospace);
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
   font-size: clamp(11px, 0.85vw, 14px);
   font-weight: 500;
   letter-spacing: -0.01em;
@@ -241,10 +241,6 @@
   display: none;
 }
 
-.contact-modal__item[target="_blank"] {
-  min-height: $middle;
-}
-
 .contact-modal__footer {
   grid-column: 1 / -1;
   padding-top: 20px;
@@ -254,7 +250,7 @@
 }
 
 .contact-modal__footer-text {
-  font-family: var(--font-mono, monospace);
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
   font-size: 8px;
   line-height: 1;
   letter-spacing: 0.12em;
@@ -278,15 +274,10 @@
   .form-container {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-template-rows: max-content;
-    gap: $extra-small;
   }
 
   .contact-modal__body {
     grid-column: 1 / -1;
-  }
-
-  .contact-modal__item:first-child {
-    min-height: $extra-large + $extra-small - 8px;
   }
 
   .modal-header h3 {
