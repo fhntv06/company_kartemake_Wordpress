@@ -11,7 +11,7 @@ export default class ArchitectureBuilder {
     this.progress = this.map?.querySelector(".architecture-progress");
     this.nodes = [
       ...this.map?.querySelectorAll(".architecture-node"),
-      this.scene.querySelector('.architecture-result')
+      this.scene.querySelector('.cta-block')
     ];
 
     this.scrollTrigger = window?.App.SceneManager.scrollTrigger
