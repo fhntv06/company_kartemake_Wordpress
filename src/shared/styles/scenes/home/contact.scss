@@ -3,11 +3,10 @@
    Стили для секции контактов (scene-contact)
 ========================================================= */
 
-@use '../variables/colors' as *;
-@use '../variables/fonts' as *;
-@use '../variables/offsets' as *;
-@use '../variables/media' as *;
-@use '../system/mixins' as *;
+@use '../../variables/colors' as *;
+@use '../../variables/offsets' as *;
+@use '../../system/mixins' as *;
+@use '../../variables/media' as *;
 
 /* ----- CONTACT CONTENT ----- */
 .contact-content {
@@ -40,7 +39,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 20px;
-  font-family: var(--font-mono, monospace);
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
   font-size: 10px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -118,14 +117,14 @@
 }
 
 .contact-action strong {
-  font-family: var(--font-mono, monospace);
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
   @include responsive-font(13, 16);
   font-weight: 500;
   letter-spacing: -0.01em;
 }
 
 .contact-action-label {
-  font-family: var(--font-mono, monospace);
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
   font-size: 9px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -183,48 +182,6 @@
 
 .contact-terminal .terminal-line-accent {
   opacity: 1;
-}
-
-/* ----- CONTACT INFO ----- */
-.contact-info {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  border-top: 1px solid rgba(255,255,255,0.08);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  flex-shrink: 0;
-}
-
-.contact-info-item {
-  min-height: 130px;
-  padding: #{$lower-small} #{$small};
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: $extra-small;
-  border-right: 1px solid rgba(255,255,255,0.08);
-}
-
-.contact-info-item:last-child {
-  border-right: none;
-}
-
-.contact-info-label {
-  font-family: var(--font-mono, monospace);
-  font-size: 12px;
-  text-transform: uppercase;
-  opacity: 0.42;
-}
-
-.contact-info-value {
-  font-family: var(--font-mono, monospace);
-}
-
-.contact-info-description {
-  max-width: 300px;
-  font-size: 12px;
-  line-height: 1.5;
-  opacity: 0.4;
 }
 
 /* ----- CONTACT FINAL STATEMENT ----- */
@@ -331,23 +288,8 @@
   .contact-header {
     margin-bottom: 36px;
   }
-  .contact-header .scene-title {
-    font-size: clamp(38px, 9vw, 62px);
-  }
   .contact-actions {
     grid-template-columns: 1fr;
-  }
-  .contact-info {
-    grid-template-columns: 1fr;
-  }
-  .contact-info-item {
-    padding: $extra-small 0;
-    min-height: 100px;
-    border-right: 0;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-  }
-  .contact-info-item:last-child {
-    border-bottom: 0;
   }
   .contact-final-statement {
     padding: 38px 24px 42px;
@@ -391,10 +333,6 @@
   .contact-terminal .terminal-line strong {
     grid-column: 2;
     margin-top: -3px;
-  }
-  .contact-info-item {
-    padding: 16px 0;
-    min-height: max-content;
   }
 }
 

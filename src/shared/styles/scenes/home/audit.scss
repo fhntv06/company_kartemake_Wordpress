@@ -1,7 +1,7 @@
-@use '../variables/colors' as *;
-@use '../variables/offsets' as *;
-@use '../system/mixins' as *;
-@use '../variables/media' as *;
+@use '../../variables/colors' as *;
+@use '../../variables/offsets' as *;
+@use '../../system/mixins' as *;
+@use '../../variables/media' as *;
 
 .audit-container {
   width: min(1200px, 90vw);
@@ -50,6 +50,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
   font-size: 12px;
   letter-spacing: .18em;
   text-transform: uppercase;

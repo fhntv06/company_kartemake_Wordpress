@@ -1,8 +1,9 @@
-@use '../variables/colors' as *;
-@use '../variables/offsets' as *;
-@use '../variables/fonts' as *;
-@use '../system/mixins' as *;
-@use '../variables/media' as *;
+@use '../../variables/colors' as *;
+@use '../../variables/offsets' as *;
+@use '../../variables/fonts' as *;
+@use '../../system/mixins' as *;
+@use '../../variables/media' as *;
+
 .pipeline-track {
   position: relative;
   width: min(1400px, 100%);
@@ -118,7 +119,7 @@
 
 .pipeline-step-label {
   display: block;
-  font-family: var(--font-mono, monospace);
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
   font-size: 12px;
   letter-spacing: 0.18em;
   text-transform: uppercase;

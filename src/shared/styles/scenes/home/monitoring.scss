@@ -1,8 +1,8 @@
-@use '../variables/colors' as *;
-@use '../variables/offsets' as *;
-@use '../variables/fonts' as *;
-@use '../system/mixins' as *;
-@use '../variables/media' as *;
+@use '../../variables/fonts' as *;
+@use '../../variables/colors' as *;
+@use '../../variables/offsets' as *;
+@use '../../system/mixins' as *;
+@use '../../variables/media' as *;
 
 .monitoring-viewport {
   position: relative;

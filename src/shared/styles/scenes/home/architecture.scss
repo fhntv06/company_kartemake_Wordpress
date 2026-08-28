@@ -1,7 +1,7 @@
-@use '../variables/colors' as *;
-@use '../variables/offsets' as *;
-@use '../system/mixins' as *;
-@use '../variables/media' as *;
+@use '../../variables/colors' as *;
+@use '../../variables/offsets' as *;
+@use '../../system/mixins' as *;
+@use '../../variables/media' as *;
 
 .architecture-node {
   display: flex;
@@ -92,54 +92,7 @@
   opacity: .65;
 }
 
-.architecture-result {
-  position: relative;
-  width: min(100%, 1024px);
-  margin: $middle auto 0; // 32px
-  padding: #{$small}; // 32px
-  border: 1px solid rgba(255,46,46,0.28);
-  background: rgba(255,46,46,0.025);
-  box-sizing: border-box;
-  opacity: 0;
-  transform: translateY(#{$small}); // 32px
-  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.architecture-result.node-active {
-  opacity: 1;
-  transform: translateY(0);
-}
-.architecture-result::before {
-  content: "";
-  position: absolute;
-  top: -1px;
-  left: $small; // 32px
-  width: 72px;
-  height: 1px;
-  background: $orange; //
-}
 
-.architecture-result::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 8px;
-  height: 8px;
-  border-right: 1px solid $orange;
-  border-bottom: 1px solid $orange;
-}
-
-.architecture-result > span {
-  display: block;
-  margin-bottom: $small;
-  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
-  @include responsive-font(9,12);
-  color: $orange;
-  text-transform: uppercase;
-}
-.architecture-result > button {
-  margin-top: $extra-small;
-}
 @media (max-width: #{$breakpoint-extra-small}) { // 768px
   .architecture-result {
     width: 100%;
@@ -155,12 +108,6 @@
 // ВОССТАНОВЛЕННЫЕ КЛАССЫ
 // =====================================================
 
-.scene-architecture {
-  position: relative;
-  min-height: 100vh;
-  overflow: hidden;
-}
-
 .architecture-header {
   position: relative;
   z-index: 5;
@@ -171,6 +118,7 @@
   position: relative;
   width: 100%;
   height: 1200px;
+  margin-bottom: $middle;
 }
 
 .architecture-svg {

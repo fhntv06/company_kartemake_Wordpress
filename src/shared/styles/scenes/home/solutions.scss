@@ -1,7 +1,7 @@
-@use '../variables/colors' as *;
-@use '../variables/offsets' as *;
-@use '../system/mixins' as *;
-@use '../variables/media' as *;
+@use '../../variables/colors' as *;
+@use '../../variables/offsets' as *;
+@use '../../system/mixins' as *;
+@use '../../variables/media' as *;
 
 .solutions-list {
   width: 100%;
