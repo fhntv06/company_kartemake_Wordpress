@@ -32,18 +32,14 @@ Home:
 
 =====================================================
 */
-import CanvasEngine from "../../modules/global/canvas-engine.js"
-import SceneManager from "../../modules/global/scene-manager.js"
 import ArchitectureBuilder from "../../modules/home/architecture-builder.js"
 import AuditEngine from "../../modules/home/audit-engine.js"
 import Terminal from "../../modules/home/terminal.js"
 import MonitoringScroll from "../../modules/home/monitoring-scroll.js"
-import OrbitNavigation from "../../modules/global/orbit-navigation.js"
 import PipelineScroll from "../../modules/home/pipeline-scroll.js"
 import SolutionsEngine from "../../modules/home/solutions-engine.js"
 import SceneRegistry from "../../modules/home/scene-registry.js"
 import ContactScroll from "../../modules/home/contact-scroll.js"
-import HeroParticleAssembly from "../../modules/global/hero-particle-assembly.js"
 
 export default class HomeApp {
     constructor() {
@@ -54,18 +50,14 @@ export default class HomeApp {
         =====================================================
         */
         this.registry = {
-            CanvasEngine,
-            SceneManager,
             ArchitectureBuilder,
             AuditEngine,
             Terminal,
             MonitoringScroll,
-            OrbitNavigation,
             PipelineScroll,
             SolutionsEngine,
             SceneRegistry,
             ContactScroll,
-            HeroParticleAssembly
         }
         this.init()
     }
@@ -109,12 +101,7 @@ export default class HomeApp {
         -----------------------------------------------------
         */
         this.registerScenes()
-        this.startExperience()
         console.log("[HomeApp] initialized")
-    }
-    startExperience() {
-        this.modules.SceneManager.start()
-        ScrollTrigger.refresh()
     }
     /*
     =====================================================

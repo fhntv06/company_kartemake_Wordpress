@@ -24,9 +24,6 @@ Home:
 =====================================================
 */
 
-import CanvasEngine from "../../modules/global/canvas-engine";
-import SceneManager from "../../modules/global/scene-manager";
-
 export default class PolicyApp {
     constructor() {
         this.modules = {}
@@ -35,10 +32,7 @@ export default class PolicyApp {
         HOME MODULE REGISTRY
         =====================================================
         */
-        this.registry = {
-            CanvasEngine,
-            SceneManager,
-        }
+        this.registry = {}
         this.init()
     }
 

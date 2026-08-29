@@ -29,10 +29,6 @@ Home:
 =====================================================
 */
 
-import HeroParticleAssembly from "../../modules/global/hero-particle-assembly.js"
-import CanvasEngine from "../../modules/global/canvas-engine";
-import SceneManager from "../../modules/global/scene-manager";
-import OrbitNavigation from "../../modules/global/orbit-navigation.js"
 import AboutIntro from "../../modules/about/about-intro";
 
 export default class AboutApp {
@@ -44,10 +40,6 @@ export default class AboutApp {
         =====================================================
         */
         this.registry = {
-            CanvasEngine,
-            SceneManager,
-            HeroParticleAssembly,
-            OrbitNavigation,
             AboutIntro,
         }
         this.init()
@@ -91,12 +83,6 @@ export default class AboutApp {
         Register scenes in SceneManager
         -----------------------------------------------------
         */
-        this.startExperience()
-        console.log("[HomeApp] initialized")
-    }
-
-    startExperience() {
-        this.modules.SceneManager.start()
-        ScrollTrigger.refresh()
+        console.log("[AboutApp] initialized")
     }
 }

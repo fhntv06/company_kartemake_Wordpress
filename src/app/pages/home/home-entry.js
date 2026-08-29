@@ -28,8 +28,6 @@ HOME:
 HOME LIBRARIES
 =====================================================
 */
-// import "../../lib/gsap.min.js";
-// import "../../lib/ScrollTrigger.min.js";
 
 import "../../../shared/styles/pages/home.scss"
 

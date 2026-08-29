@@ -1,9 +1,9 @@
 import "../shared/styles/common.scss"
 
 import ScrollEngine from "./core/scroll-engine.js"
-
 import GSAPEngine from "./core/gsap-engine.js";
-
+import CanvasEngine from "./modules/global/canvas-engine.js";
+import SceneManager from "./modules/global/scene-manager.js";
 import AnchorNavigation from "./modules/global/anchor-navigation.js"
 import DashboardMenu from "./modules/global/dashboard-menu.js"
 import TransitionLoader from "./modules/global/transition-loader.js"
@@ -12,9 +12,13 @@ import ModalController from "./modules/global/modal.js"
 export default class GlobalApp {
     constructor() {
         this.modules = {}
-        this.registry = {
+        this.beforeRegistry = {
             ScrollEngine, // load first !important
-            GSAPEngine,
+            GSAPEngine, // load second !important
+        }
+        this.registry = {
+            CanvasEngine,
+            SceneManager,
             AnchorNavigation,
             DashboardMenu,
             TransitionLoader,
@@ -28,15 +32,22 @@ export default class GlobalApp {
     }
 
     init() {
-        for (const name in this.registry) {
-            const Module = this.registry[name]
+        const modules = { ...this.beforeRegistry, ...this.registry }
+        for (const name in modules) {
+            const Module = modules[name]
             const instance = new Module()
 
             this.modules[name] = instance
             window.App[name] = instance
         }
 
+        this.startExperience()
+
         document.body.classList.add('document-ready')
+    }
+    startExperience() {
+        this.modules.SceneManager.start()
+        ScrollTrigger.refresh()
     }
 }
 
