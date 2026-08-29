@@ -19,12 +19,13 @@ function getPageEntries() {
 }
 
 function getChunks() {
-  const common = ['runtime', 'vendors', 'common']
+  const common = ['runtime', 'vendors']
 
+  // регулировка подключения в html
   return {
-    index: [...common, 'home'],
-    policy: [...common, 'policy'],
-    about: [...common, 'about'],
+    index: [...common, 'pages-common', 'global', 'home'],
+    policy: [...common, 'global', 'policy'],
+    about: [...common, 'pages-common', 'global', 'about'],
   }
 }
 
@@ -40,10 +41,11 @@ module.exports = (env, argv) => {
 
     // Оставляем только main, vendor будет собран через splitChunks
     entry: {
+      global: './src/app/global.js',
+      'pages-common': './src/app/pages-common.js',
       home: './src/app/pages/home/home-entry.js',
       policy: './src/app/pages/policy/policy-entry.js',
       about: './src/app/pages/about/about-entry.js',
-      common: './src/app/global.js',
     },
 
     output: {
