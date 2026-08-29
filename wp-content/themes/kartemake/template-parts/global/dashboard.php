@@ -53,6 +53,9 @@ GLOBAL DASHBOARD
             <!-- INFORMATION -->
             <div class="dashboard-menu-column">
                 <span class="dashboard-menu-title">ИНФОРМАЦИЯ</span>
+                <a href="<?php echo get_permalink(get_page_by_path('about')); ?>">
+                    О Компании
+                </a>
                 <a href="<?php echo get_permalink(get_page_by_path('privacy-policy')); ?>">
                     Политика обработки персональных данных
                 </a>

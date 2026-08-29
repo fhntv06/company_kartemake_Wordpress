@@ -4,25 +4,25 @@ ORBIT NAVIGATION
 <div id="orbit-navigation" class="orbit-navigation">
     <div class="orbit-circle">
         <?php
-        $scenes = array(
+        $scenes = [
             'hero'       => 'Начало',
             'audit'      => 'Диагностика',
             'solutions'  => 'Решения',
             'architecture' => 'Инфраструктура',
             'pipeline'   => 'Процесс',
             'monitoring' => 'Контроль',
-            'contact'    => 'Контакты'
-        );
+            'contact'    => 'Контакты',
+        ];
 
         if (is_page('about')) {
-            $scenes = array(
+            $scenes = [
                 'hero'       => 'Начало',
                 'about-intro'      => 'Мы',
                 'about-model'  => 'Модель',
                 'about-team' => 'Команда',
                 'about-philosophy'   => 'Философия',
                 'about-contact' => 'Контакты',
-            );
+            ];
         }
 
         $number = 1;

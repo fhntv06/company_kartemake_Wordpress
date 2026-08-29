@@ -13,8 +13,8 @@
             <article class="about-team-card" data-controller-interactive-card-effect="item">
                 <figure class="about-team-image">
                     <img
-                        srcset="/assets/images/team/team-five.jpg 576w"
-                        src="/assets/images/team/team-five-3-4.jpg"
+                        srcset="<?= get_template_directory_uri() . '/assets/images/team/team-five.jpg 576w' ?>"
+                        src="<?= get_template_directory_uri() . '/assets/images/team/team-five-3-4.jpg' ?>"
                         alt="Project manager"
                         loading="lazy"
                     >
@@ -33,8 +33,8 @@
             <article class="about-team-card" data-controller-interactive-card-effect="item">
                 <figure class="about-team-image">
                     <img
-                        srcset="/assets/images/team/team-one.jpg 576w"
-                        src="/assets/images/team/team-one-3-4.jpg"
+                        srcset="<?= get_template_directory_uri() . '/assets/images/team/team-one.jpg 576w' ?>"
+                        src="<?= get_template_directory_uri() . '/assets/images/team/team-one-3-4.jpg' ?>"
                         alt="Fullstack-разработчик"
                         loading="lazy"
                     >
@@ -49,8 +49,8 @@
             <article class="about-team-card" data-controller-interactive-card-effect="item">
                 <figure class="about-team-image">
                     <img
-                        srcset="/assets/images/team/team-two.jpg 576w"
-                        src="/assets/images/team/team-two-3-4.jpg"
+                        srcset="<?= get_template_directory_uri() . '/assets/images/team/team-two.jpg 576w' ?>"
+                        src="<?= get_template_directory_uri() . '/assets/images/team/team-two-3-4.jpg' ?>"
                         alt="Frontend-разработчик"
                         loading="lazy"
                     >
@@ -65,8 +65,8 @@
             <article class="about-team-card" data-controller-interactive-card-effect="item">
                 <figure class="about-team-image">
                     <img
-                        srcset="/assets/images/team/team-three.jpg 576w"
-                        src="/assets/images/team/team-three-3-4.jpg"
+                        srcset="<?= get_template_directory_uri() . '/assets/images/team/team-three.jpg 576w' ?>"
+                        src="<?= get_template_directory_uri() . '/assets/images/team/team-three-3-4.jpg' ?>"
                         alt="DevOps и Tech Lead"
                         loading="lazy"
                     >
@@ -81,8 +81,8 @@
             <article class="about-team-card" data-controller-interactive-card-effect="item">
                 <figure class="about-team-image">
                     <img
-                        srcset="/assets/images/team/team-four.jpg 576w"
-                        src="/assets/images/team/team-four-3-4.jpg"
+                        srcset="<?= get_template_directory_uri() . '/assets/images/team/team-four.jpg 576w' ?>"
+                        src="<?= get_template_directory_uri() . '/assets/images/team/team-four-3-4.jpg' ?>"
                         alt="Разработчик нестандартных решений"
                         loading="lazy"
                     >
