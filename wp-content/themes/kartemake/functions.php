@@ -63,7 +63,16 @@ function kartemake_enqueue_scripts() {
     // Основной CSS
 //    wp_enqueue_style('kartemake-style', get_stylesheet_uri(), [], wp_get_theme()->get('Version'));
 
+    // Порядок подключения скриптов
+    // - runtime.build.js
+    // - vendors.build.js
+    // - pages-common.build.js
+    // - global.build.js
+    // - other pages sceripts
+
+
     // Основные скрипты
+    // runtime
     wp_enqueue_script(
         'kartemake-js-runtime',
         get_template_directory_uri() . '/assets/js/runtime.build.js',
@@ -71,6 +80,7 @@ function kartemake_enqueue_scripts() {
         wp_get_theme()->get('Version'),
         true
     );
+    // vendors
     wp_enqueue_script(
         'kartemake-js-vendors',
         get_template_directory_uri() . '/assets/js/vendors.build.js',
@@ -79,28 +89,40 @@ function kartemake_enqueue_scripts() {
         true
     );
 
+    // pages-common
+    if (is_front_page() || is_page('about')) {
+        wp_enqueue_script(
+            'kartemake-js-pages-common',
+            get_template_directory_uri() . '/assets/js/pages-common.build.js',
+            array('kartemake-js-vendors'),
+            wp_get_theme()->get('Version'),
+            true
+        );
+    }
+
     // Общий JS
+    // global
     wp_enqueue_script(
-        'kartemake-js-common',
-        get_template_directory_uri() . '/assets/js/common.build.js',
-        array('kartemake-js-runtime', 'kartemake-js-vendors'),
+        'kartemake-js-global',
+        get_template_directory_uri() . '/assets/js/global.build.js',
+        [],
         wp_get_theme()->get('Version'),
         true
     );
     wp_enqueue_style(
-        'kartemake-style-common',
-        get_template_directory_uri() . '/assets/css/common.build.css',
+        'kartemake-style-global',
+        get_template_directory_uri() . '/assets/css/global.build.css',
         [],
         wp_get_theme()->get('Version')
     );
 
-
     // Главная страница
     if (is_front_page()) {
+        // home
         wp_enqueue_script(
             'kartemake-js-home',
             get_template_directory_uri() . '/assets/js/home.build.js',
-            array('kartemake-js-common'),
+            array('kartemake-js-global'),
             wp_get_theme()->get('Version'),
             true
         );
@@ -112,12 +134,31 @@ function kartemake_enqueue_scripts() {
         );
     }
 
+    // Страницы about
+    if (is_page('about')) {
+        // about
+        wp_enqueue_script(
+            'kartemake-js-about',
+            get_template_directory_uri() . '/assets/js/about.build.js',
+            array('kartemake-js-global'),
+            wp_get_theme()->get('Version'),
+            true
+        );
+        wp_enqueue_style(
+            'kartemake-style-about',
+            get_template_directory_uri() . '/assets/css/about.build.css',
+            [],
+            wp_get_theme()->get('Version')
+        );
+    }
+
     // Страницы политик
     if (is_page('privacy-policy') || is_page('cookie-policy')) {
+        // policy
         wp_enqueue_script(
             'kartemake-js-policy',
             get_template_directory_uri() . '/assets/js/policy.build.js',
-            array('kartemake-js-common'),
+            array('kartemake-js-global'),
             wp_get_theme()->get('Version'),
             true
         );
@@ -130,11 +171,12 @@ function kartemake_enqueue_scripts() {
     }
 
     // Страница контактов
+    // contacts
     if (is_page('contacts') || is_page_template('page-contacts.php')) {
         wp_enqueue_script(
             'kartemake-js-contacts',
             get_template_directory_uri() . '/assets/js/contacts.build.js',
-            array('kartemake-js-common'),
+            array('kartemake-js-global'),
             wp_get_theme()->get('Version'),
             true
         );
@@ -147,11 +189,12 @@ function kartemake_enqueue_scripts() {
     }
 
     // Страница блога
+    // blog
     if (is_home() || is_page('blog') || is_page_template('page-blog.php')) {
         wp_enqueue_script(
             'kartemake-js-blog',
             get_template_directory_uri() . '/assets/js/blog.build.js',
-            array('kartemake-js-common'),
+            array('kartemake-js-global'),
             wp_get_theme()->get('Version'),
             true
         );
@@ -168,7 +211,7 @@ function kartemake_enqueue_scripts() {
         wp_enqueue_script(
             'kartemake-js-single',
             get_template_directory_uri() . '/assets/js/single.build.js',
-            array('kartemake-js-common'),
+            array('kartemake-js-global'),
             wp_get_theme()->get('Version'),
             true
         );
@@ -181,11 +224,12 @@ function kartemake_enqueue_scripts() {
     }
 
     // Страница услуг
+    // services
     if (is_page('services') || is_page_template('page-services.php') || is_singular('services')) {
         wp_enqueue_script(
             'kartemake-js-services',
             get_template_directory_uri() . '/assets/js/services.build.js',
-            array('kartemake-js-common'),
+            array('kartemake-js-global'),
             wp_get_theme()->get('Version'),
             true
         );
