@@ -46,7 +46,13 @@ export default class AnchorNavigation {
     console.log("[AnchorNavigation] ready")
     this.isNavigating = false;
 
-    const headerHeight = document.getElementById('header').offsetHeight
+    const header = document.getElementById('header')
+
+    if (!header) {
+      console.warn("[AnchorNavigation] Header not found!")
+    }
+
+    const headerHeight = header.offsetHeight
 
     this.config = {
       duration: 1.8,

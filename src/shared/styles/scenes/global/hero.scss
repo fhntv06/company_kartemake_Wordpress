@@ -63,21 +63,20 @@
 
 .hero-content p {
   max-width: 700px;
-  margin: 40px 0 0;
+  margin: $small 0 0;
   color: var(--text-secondary);
-  font-size: 20px;
   line-height: 1.7;
 }
 
 .hero-actions {
-  margin-top: 50px;
+  margin-top: $middle;
   display: flex;
   justify-content: flex-start;
-  gap: 20px;
+  gap: $extra-small;
 }
 
 .hero-note {
-  margin-top: 24px;
+  margin-top: $small;
 }
 
 .hero-terminal {
