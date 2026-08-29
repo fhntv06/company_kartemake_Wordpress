@@ -11,7 +11,7 @@ Particle infrastructure renderer
 export default class CanvasEngine {
   constructor() {
     console.log("[CanvasEngine] ready")
-    this.scene = document.querySelector(".scene-hero");
+    this.scene = document.querySelector('[data-canvas-engine]');
     if (!this.scene) {
       console.warn('[CanvasEngine] Not found scene!')
       return
