@@ -125,7 +125,7 @@ GLOBAL DASHBOARD
   <!-- =================================================
   HERO
   ================================================= -->
-  <section class="scene scene-hero" data-scene="hero">
+  <section class="scene scene-hero" data-scene="hero" data-canvas-engine>
     <canvas id="heroCanvas" class="reveal-item"></canvas>
     <canvas id="hero-particle-canvas" class="reveal-item"></canvas>
     <div class="scene-container">
@@ -578,13 +578,15 @@ GLOBAL DASHBOARD
       </div>
 
       <!-- ARCHITECTURE RESULT -->
-      <div class="architecture-result">
-        <span>ЧТО ЭТО ДАЁТ БИЗНЕСУ</span>
-        <p>
+      <div class="cta-block">
+        <span class="cta-block__eyebrow">
+          ЧТО ЭТО ДАЁТ БИЗНЕСУ
+        </span>
+        <p class="cta-block__text">
           Одна техническая команда отвечает за всю цепочку —
           от сервера до интерфейса пользователя.
         </p>
-        <button class="button-primary" data-modal-func="open">
+        <button class="button-primary cta-block__button" data-modal-func="open">
           Обсудить задачу
         </button>
       </div>
@@ -947,6 +949,10 @@ GLOBAL DASHBOARD
       </div>
     </div>
   </section>
+
+  <!-- =================================================
+  FOOTER
+  ================================================= -->
   <section>
     <div class="scene-container">
       <!-- =================================================

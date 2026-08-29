@@ -3,488 +3,636 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KARTECH - Создание и поддержка сайтов</title>
-
-  <link rel="shortcut icon" href="../../public/images/logotypes/logo-dark.ico" type="image/x-icon">
+  <title>K·ART·MAKE — Технический партнёр для вашего сайта</title>
+  <meta name="description" content="Техническая поддержка, модернизация и развитие цифровой инфраструктуры бизнеса. Берём на себя стабильность вашего сайта.">
 </head>
-<body data-controller="modal preloader ripple-effect theme">
-<header class="header" data-controller="header">
-  <a href="/" class="logo">
-    <span class="font-size-h2">K</span>
-    <span class="font-size-h2">·</span>
-    <span class="font-size-h3 color-accent-red">ART</span>
-    <span class="font-size-h2">·</span>
-    <span class="font-size-h4">TECH</span>
-  </a>
-
-  <nav class="nav-links">
-    <a href="services.html">Услуги</a>
-    <a href="projects.html">Кейсы</a>
-    <a class="active" href="about.html">Команда</a>
-    <a href="blog.html">Технический блог</a>
-    <a href="calculator.html">Калькулятор работ</a>
-    <a href="support.html">Техподдержка</a>
-    <a href="contacts.html">Контакты</a>
-  </nav>
-
-  <div class="header-controls">
-    <div class="social-links">
-      <a href="#"><i class="fab fa-behance"></i></a>
-      <a href="#"><i class="fab fa-dribbble"></i></a>
-      <a href="#"><i class="fab fa-github"></i></a>
+<body>
+<!-- =================================================
+SYSTEM LOADER
+================================================= -->
+<div class="system-loader">
+  <div class="loader-terminal">
+    <span>ЗАПУСК СИСТЕМЫ K·ART·MAKE</span>
+    <div class="loader-progress">
+      <div></div>
     </div>
-
-    <div class="phone">
-      <i class="fas fa-phone"></i>
-      <span>+7 (999) 123-45-67</span>
-    </div>
-
-    <button
-            class="theme-toggle"
-            data-controller-theme="item"
-    >
-      <i class="fas fa-moon"></i>
-    </button>
-
-    <button
-            class="language-toggle"
-            data-controller="lang"
-            data-controller-ripple-effect="item"
-    >
-      <span data-controller-lang="item">RU</span>
-      <i class="fas fa-chevron-down"></i>
-    </button>
-
-    <button
-            class="cta-button"
-            data-controller-modal-open="form"
-            data-controller-modal-func="open"
-            data-controller-ripple-effect="item"
-    >
-      Обсудить сотрудничество
-      <i class="fas fa-arrow-right"></i>
-    </button>
-
-    <button class="burger-menu" id="burgerMenu">
+  </div>
+</div>
+<!-- =================================================
+ORBIT NAVIGATION
+================================================= -->
+<div id="orbit-navigation" class="orbit-navigation">
+  <div class="orbit-circle">
+    <button class="orbit-point" data-scene="hero">
+      <span class="orbit-point__description">Начало</span>
       <span></span>
+      <strong>01</strong>
+    </button>
+    <button class="orbit-point" data-scene="about-intro">
+      <span class="orbit-point__description">Мы</span>
       <span></span>
+      <strong>02</strong>
+    </button>
+    <button class="orbit-point" data-scene="about-model">
+      <span class="orbit-point__description">Модель</span>
       <span></span>
+      <strong>03</strong>
+    </button>
+    <button class="orbit-point" data-scene="about-team">
+      <span class="orbit-point__description">Команда</span>
+      <span></span>
+      <strong>04</strong>
+    </button>
+    <button class="orbit-point" data-scene="about-philosophy">
+      <span class="orbit-point__description">Философия</span>
+      <span></span>
+      <strong>05</strong>
+    </button>
+    <button class="orbit-point" data-scene="about-contact">
+      <span class="orbit-point__description">Контакты</span>
+      <span></span>
+      <strong>06</strong>
     </button>
   </div>
-</header>
-
-<main>
-  <section class="hero">
-    <div class="container">
-      <h1>K · <span class="color-accent-red">ART</span>· TECH</h1>
-      <p>Ваш внешний технический отдел. Философия open‑source: прозрачность, гибкость, ориентация на результат.</p>
+</div>
+<!-- =================================================
+GLOBAL DASHBOARD
+================================================= -->
+<header id="header" class="global-dashboard">
+  <div class="dashboard-inner">
+    <a href="/" class="dashboard-brand">K·ART·MAKE</a>
+    <div class="dashboard-status">
+      <span class="dashboard-status-dot"></span>
+      СИСТЕМА РАБОТАЕТ
     </div>
-  </section>
-
-  <section id="about" class="about">
-    <div class="container">
-      <div class="about-top">
-        <div class="about-text">
-          <h2><span class="font-size-h2">K</span>&nbsp;<span class="font-size-h2">·</span>&nbsp;<span class="font-size-h3 color-accent-red">ART</span>&nbsp;<span class="font-size-h2">·</span>&nbsp;<span class="font-size-h4">TECH</span> — это не ещё одно агентство!</h2>
-          <p>Мы — распределенная команда инженеров, которая работает как ваш внешний технический отдел (fractional IT team). Мы берем на себя все «технические долги» и задачи по поддержке и развитию ваших digital-продуктов.</p>
-          <p>Наша команда состоит из опытных fullstack-разработчиков, DevOps-инженеров и архитекторов. Мы увлечены сложными техническими задачами, оптимизацией и созданием надежных решений.</p>
-          <p>Мы верим, что лучшие результаты достигаются через прозрачность и гибкость, поэтому работаем по принципам open-source: без жесткой иерархии, с фокусом на эффективность и долгосрочное партнерство.</p>
-          <button
-            class="cta-button"
-            data-controller-modal-open="form"
-            data-controller-modal-func="open"
-            data-controller-ripple-effect="item"
-          >
-            Обсудить сотрудничество
+    <button class="dashboard-menu" type="button" aria-expanded="false" aria-controls="dashboard-menu-panel">
+      <span class="dashboard-menu-label">МЕНЮ</span>
+      <span class="dashboard-menu-icon">
+        <span></span>
+        <span></span>
+      </span>
+    </button>
+  </div>
+  <div id="dashboard-menu-panel" class="dashboard-menu-panel" aria-hidden="true">
+    <div class="dashboard-menu-panel-inner">
+      <!-- CONTACTS -->
+      <div class="dashboard-menu-column">
+        <span class="dashboard-menu-title">КОНТАКТЫ</span>
+        <a href="mailto:hello@kartemake.ru">
+          <span>НОВЫЕ ПРОЕКТЫ</span>
+          <strong>hello@kartemake.ru</strong>
+        </a>
+        <a href="mailto:support@kartemake.ru">
+          <span>ТЕХНИЧЕСКАЯ ПОДДЕРЖКА</span>
+          <strong>support@kartemake.ru</strong>
+        </a>
+      </div>
+      <!-- SERVICES -->
+      <div class="dashboard-menu-column">
+        <span class="dashboard-menu-title">УСЛУГИ</span>
+        <a href="#optimization">
+          <span>01</span>
+          <strong>Оптимизация сайта</strong>
+        </a>
+        <a href="#modernization">
+          <span>02</span>
+          <strong>Модернизация</strong>
+        </a>
+        <a href="#support">
+          <span>03</span>
+          <strong>Техническая поддержка</strong>
+        </a>
+        <a href="#audit">
+          <span>04</span>
+          <strong>Аудит и консультации</strong>
+        </a>
+      </div>
+      <!-- INFORMATION -->
+      <div class="dashboard-menu-column">
+        <span class="dashboard-menu-title">ИНФОРМАЦИЯ</span>
+        <a href="./privacy-policy.html">Политика обработки персональных данных</a>
+        <a href="./cookie-policy.html">Политика использования Cookie</a>
+      </div>
+    </div>
+  </div>
+</header>
+<main class="experience about-page">
+  <!-- =================================================
+  ABOUT HERO
+  ================================================= -->
+  <section class="scene scene-hero about-hero" data-scene="hero" data-canvas-engine>
+    <canvas id="heroCanvas" class="hero-canvas" aria-hidden="true"></canvas>
+    <canvas id="hero-particle-canvas" class="hero-particle-canvas" aria-hidden="true"></canvas>
+    <div class="scene-container">
+      <div class="hero-content">
+        <div class="system-label">K·ART·MAKE / О КОМПАНИИ</div>
+        <h1>Техническая команда,<br><span>которая работает на стороне бизнеса.</span></h1>
+        <p>Мы — внешний технический отдел для компаний, которым нужно поддерживать, развивать и масштабировать цифровую инфраструктуру без создания собственной большой IT-команды.</p>
+        <div class="hero-note">ENGINEERING · INFRASTRUCTURE · DEVELOPMENT · SUPPORT</div>
+        <div class="hero-actions">
+          <button class="button-primary" data-modal-func="open">
+            Обсудить задачу
           </button>
         </div>
-
-        <div class="about-image" data-controller-interactive-card-effect="item">
-          <figure>
-            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Распределенная команда KARTECH">
-            <figcaption>Наша распределенная команда</figcaption>
-          </figure>
-        </div>
       </div>
-
-      <div class="divider"></div>
-
-      <div class="cards-grid">
-        <div class="vertical-card">
-          <div class="icon">
-            <i class="fas fa-shield-alt font-size-h2"></i>
-          </div>
-          <h3 class="title">Надежность</h3>
-          <p>Мы обеспечиваем стабильную работу ваших digital-продуктов. Мониторинг, резервное копирование и оперативное устранение сбоев — наша ежедневная рутина.</p>
+    </div>
+  </section>
+  <!-- =================================================
+  ABOUT INTRO
+  ================================================= -->
+  <section class="scene about-intro" data-scene="about-intro">
+    <div class="scene-container">
+      <!-- =================================================
+      HEADER
+      ================================================= -->
+      <header class="scene-header reveal-item">
+        <span class="scene-eyebrow">02 / КТО МЫ</span>
+        <h2 class="scene-title">Подключаем техническую экспертизу туда, где она действительно нужна</h2>
+        <p class="scene-description">Мы подключаемся туда, где бизнесу нужна техническая экспертиза, но содержать полноценный внутренний IT-отдел нецелесообразно.</p>
+      </header>
+      <!-- =================================================
+      INTRO LAYOUT
+      ================================================= -->
+      <div class="about-intro-layout reveal-item">
+        <!-- =================================================
+        TEXT
+        ================================================= -->
+        <div class="about-intro-content">
+          <span class="about-intro-label">ВНЕШНИЙ ТЕХНИЧЕСКИЙ ОТДЕЛ</span>
+          <h3>Вы сохраняете фокус на бизнесе.</h3>
+          <p>Мы берём на себя техническую сторону: разработку, инфраструктуру, поддержку, интеграции и решение сложных задач.</p>
+          <p>Подключаем нужную экспертизу именно тогда, когда она требуется проекту.</p>
         </div>
-
-        <div class="vertical-card">
-          <div class="icon">
-            <i class="fas fa-chart-line font-size-h2"></i>
+        <!-- =================================================
+        VISUAL
+        ================================================= -->
+        <div class="about-intro-visual" aria-label="Модель работы K·ART·MAKE">
+          <!-- =================================================
+          SYSTEM
+          ================================================= -->
+          <div class="about-intro-system">
+            <!-- =================================================
+            BUSINESS
+            ================================================= -->
+            <div class="about-intro-business" data-node="business">
+              <span class="about-intro-node-label">ВАШ БИЗНЕС</span>
+              <strong class="about-intro-node-title">BUSINESS</strong>
+              <span class="about-intro-node-status">ТЕХНИЧЕСКАЯ ЗАДАЧА</span>
+            </div>
+            <!-- =================================================
+            CONNECTION: BUSINESS → CORE
+            ================================================= -->
+            <div class="about-intro-connector about-intro-connector-main" data-connection="business-core" aria-hidden="true"></div>
+            <!-- =================================================
+            CORE
+            ================================================= -->
+            <div class="about-intro-system-core" data-node="core">
+              <span class="about-intro-core-label">ТЕХНИЧЕСКИЙ ПАРТНЁР</span>
+              <strong class="about-intro-core-title">K·ART·MAKE</strong>
+              <span class="about-intro-core-status">ENGINEERING CORE</span>
+            </div>
+            <!-- =================================================
+            SERVICE CONNECTIONS
+            ================================================= -->
+            <div class="about-intro-connector about-intro-connector-service connector-development" data-connection="core-development" aria-hidden="true"></div>
+            <div class="about-intro-connector about-intro-connector-service connector-infrastructure" data-connection="core-infrastructure" aria-hidden="true"></div>
+            <div class="about-intro-connector about-intro-connector-service connector-support" data-connection="core-support" aria-hidden="true"></div>
+            <div class="about-intro-connector about-intro-connector-service connector-audit" data-connection="core-audit" aria-hidden="true"></div>
+            <!-- =================================================
+            SERVICES
+            ================================================= -->
+            <div class="about-intro-services">
+              <!-- DEVELOPMENT -->
+              <article class="about-intro-service" data-service="development">
+                <span class="about-intro-service-number">01</span>
+                <div class="about-intro-service-content">
+                  <span class="about-intro-service-label">DEVELOPMENT</span>
+                  <strong>Разработка</strong>
+                  <small>Сайт · CMS · Backend · Frontend</small>
+                </div>
+              </article>
+              <!-- INFRASTRUCTURE -->
+              <article class="about-intro-service" data-service="infrastructure">
+                <span class="about-intro-service-number">02</span>
+                <div class="about-intro-service-content">
+                  <span class="about-intro-service-label">INFRASTRUCTURE</span>
+                  <strong>Инфраструктура</strong>
+                  <small>Server · Docker · Nginx · Cloud</small>
+                </div>
+              </article>
+              <!-- SUPPORT -->
+              <article class="about-intro-service" data-service="support">
+                <span class="about-intro-service-number">03</span>
+                <div class="about-intro-service-content">
+                  <span class="about-intro-service-label">SUPPORT</span>
+                  <strong>Поддержка</strong>
+                  <small>Monitoring · Updates · Stability</small>
+                </div>
+              </article>
+              <!-- AUDIT -->
+              <article class="about-intro-service" data-service="audit">
+                <span class="about-intro-service-number">04</span>
+                <div class="about-intro-service-content">
+                  <span class="about-intro-service-label">AUDIT</span>
+                  <strong>Аудит</strong>
+                  <small>Analysis · Architecture · Consulting</small>
+                </div>
+              </article>
+            </div>
+            <!-- =================================================
+            RESULT CONNECTION
+            ================================================= -->
+            <div class="about-intro-connector about-intro-connector-result" data-connection="services-result" aria-hidden="true"></div>
+            <!-- =================================================
+            RESULT
+            ================================================= -->
+            <div class="about-intro-result" data-node="result">
+              <span class="about-intro-result-label">РЕЗУЛЬТАТ</span>
+              <strong class="about-intro-result-title">STABLE SYSTEM</strong>
+              <span class="about-intro-result-description">Техническая часть под контролем</span>
+            </div>
+            <!-- =================================================
+            RETURN CONNECTION
+            ================================================= -->
+            <div class="about-intro-connector about-intro-connector-return" data-connection="result-business" aria-hidden="true"></div>
+            <!-- =================================================
+            PARTICLES / DATA PACKETS
+            ================================================= -->
+            <div class="about-intro-particles" aria-hidden="true"></div>
           </div>
-          <h3 class="title">Эффективность</h3>
-          <p>Дешевле, чем штатный сотрудник, и эффективнее, чем агентство. Вы получаете доступ к целой команде специалистов по фиксированной стоимости.</p>
-        </div>
-
-        <div class="vertical-card">
-          <div class="icon">
-            <i class="fas fa-expand-alt font-size-h2"></i>
-          </div>
-          <h3 class="title">Масштабирование</h3>
-          <p>Мы развиваем и масштабируем вашу digital-инфраструктуру вместе с ростом бизнеса. От MVP до высоконагруженных систем.</p>
         </div>
       </div>
     </div>
   </section>
+  <!-- =================================================
+  HOW WE WORK
+  ================================================= -->
+  <section class="scene about-model" data-scene="about-model">
+    <div class="scene-container">
+      <header class="scene-header reveal-item">
+        <span class="scene-eyebrow">03 / МОДЕЛЬ РАБОТЫ</span>
+        <h2 class="scene-title">Внешний технический отдел<br><span class="color-accent">вашего бизнеса</span></h2>
+        <p class="scene-description">Вы получаете доступ не к одному специалисту, а к команде с разными инженерными компетенциями.</p>
+      </header>
+      <div class="about-model-layout reveal-item">
 
-  <section class="team">
-    <div class="container">
-      <h2 class="section__title">Наша <span class="color-accent-red">команда</span></h2>
-      <div class="cards-grid">
-        <div class="vertical-card" data-controller-interactive-card-effect="item">
-          <figure>
-            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Артем, Fullstack-разработчик">
-            <figcaption>Fullstack-разработчик</figcaption>
-          </figure>
-          <h4 class="title">Артем</h4>
-          <p>Архитектура серверных приложений (Node.js/Python), базы данных, проектирование API. Фокус на backend и системной интеграции.</p>
-          <a href="mailto:info@kartech.ru" class="link">
-            <span>Связаться с Артемом</span>
-            <i class="fas fa-arrow-right"></i>
-          </a>
+        <div class="about-model-main">
+          <div class="about-model-marker">
+            <span>BUSINESS</span>
+          </div>
+          <div class="about-model-line">
+            <span class="about-model-line__point"></span>
+            <span class="about-model-line__point"></span>
+            <span class="about-model-line__point"></span>
+          </div>
+          <div class="about-model-marker about-model-marker-tech">
+            <span>K·ART·MAKE</span>
+          </div>
         </div>
-        <div class="vertical-card" data-controller-interactive-card-effect="item">
-          <figure>
-            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Алексей, Fullstack-разработчик">
-            <figcaption>Fullstack-разработчик</figcaption>
-          </figure>
-          <h4 class="title">Алексей</h4>
-          <p>Клиентская часть (React/Vue.js), производительность, сложная Frontend-логика и оптимизация пользовательского интерфейса.</p>
-          <a href="mailto:info@kartech.ru" class="link">
-            <span>Связаться с Алексеем</span>
-            <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
-        <div class="vertical-card" data-controller-interactive-card-effect="item">
-          <figure>
-            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Иван, DevOps & Tech Lead">
-            <figcaption>DevOps & Tech Lead</figcaption>
-          </figure>
-          <h4 class="title">Иван</h4>
-          <p>Инфраструктура, архитектурные решения, back-end и процессы разработки. Отвечает за надежность и масштабируемость решений.</p>
-          <a href="mailto:info@kartech.ru" class="link">
-            <span>Связаться с Иваном</span>
-            <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
-        <div class="vertical-card" data-controller-interactive-card-effect="item">
-          <figure>
-            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Станислав, Gamedev-developer">
-            <figcaption>Gamedev-developer</figcaption>
-          </figure>
-          <h4 class="title">Станислав</h4>
-          <p>Решение нестандарных задач, оптимизация, работа с графикой и сложными вычислениями.</p>
-          <a href="mailto:info@kartech.ru" class="link">
-            <span>Связаться со Станиславом</span>
-            <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
-        <div class="vertical-card" data-controller-interactive-card-effect="item">
-          <figure>
-            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Project manager">
-            <figcaption>Project manager</figcaption>
-          </figure>
-          <h4 class="title">Кто ты воин?</h4>
-          <p>Общение с клиентом, постановка задач команде, контроль сроков и бюджета.</p>
-          <a href="mailto:info@kartech.ru" class="link">
-            <span>Связаться с Менеджером проектов</span>
-            <i class="fas fa-arrow-right"></i>
-          </a>
+
+        <div class="about-model-list">
+          <article class="about-model-item">
+            <span>01</span>
+            <div>
+              <h3>Разработка</h3>
+              <p>Frontend, Backend, CMS, API и интеграции.</p>
+            </div>
+          </article>
+          <article class="about-model-item">
+            <span>02</span>
+            <div>
+              <h3>Инфраструктура</h3>
+              <p>Docker, Nginx, серверы, окружение и развёртывание.</p>
+            </div>
+          </article>
+          <article class="about-model-item">
+            <span>03</span>
+            <div>
+              <h3>Поддержка</h3>
+              <p>Обновления, мониторинг, исправление ошибок и технические задачи.</p>
+            </div>
+          </article>
+          <article class="about-model-item">
+            <span>04</span>
+            <div>
+              <h3>Архитектура</h3>
+              <p>Анализ существующей системы и поиск технических решений.</p>
+            </div>
+          </article>
         </div>
       </div>
+    </div>
+  </section>
+  <!-- =================================================
+  TEAM
+  ================================================= -->
+  <section class="scene about-team" data-scene="about-team">
+    <div class="scene-container">
+      <header class="scene-header reveal-item">
+        <span class="scene-eyebrow">04 / КОМАНДА</span>
+        <h2 class="scene-title">Инженеры,<br>которые решают задачи</h2>
+        <p class="scene-description">Вместо универсального специалиста — команда с разными зонами экспертизы.</p>
+      </header>
+
+      <div class="about-team-grid reveal-item">
+        <h2>Управление проектами</h2>
+
+        <article class="about-team-card" data-controller-interactive-card-effect="item">
+          <figure class="about-team-image">
+            <img
+              srcset="../../public/images/team/team-five.jpg 576w"
+              src="../../public/images/team/team-five-3-4.jpg"
+              alt="Project manager"
+              loading="lazy"
+            >
+            <figcaption>PROJECT MANAGEMENT</figcaption>
+          </figure>
+          <div class="about-team-content">
+            <span class="about-team-role">PROJECT MANAGER</span>
+            <h3>Анастасия</h3>
+            <p>Коммуникация с клиентом, постановка задач, контроль сроков и бюджета.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="about-team-grid reveal-item">
+        <h2>Отдел разработки</h2>
+        <article class="about-team-card" data-controller-interactive-card-effect="item">
+          <figure class="about-team-image">
+            <img
+              srcset="../../public/images/team/team-one.jpg 576w"
+              src="../../public/images/team/team-one-3-4.jpg"
+              alt="Fullstack-разработчик"
+              loading="lazy"
+            >
+            <figcaption>FULLSTACK ENGINEERING</figcaption>
+          </figure>
+          <div class="about-team-content">
+            <span class="about-team-role">FULLSTACK</span>
+            <h3>Василий</h3>
+            <p>Backend, архитектура приложений, базы данных, API и системная интеграция.</p>
+          </div>
+        </article>
+        <article class="about-team-card" data-controller-interactive-card-effect="item">
+          <figure class="about-team-image">
+            <img
+              srcset="../../public/images/team/team-two.jpg 576w"
+              src="../../public/images/team/team-two-3-4.jpg"
+              alt="Frontend-разработчик"
+              loading="lazy"
+            >
+            <figcaption>FRONTEND ENGINEERING</figcaption>
+          </figure>
+          <div class="about-team-content">
+            <span class="about-team-role">FULLSTACK</span>
+            <h3>Виктор</h3>
+            <p>React, Vue.js, производительность, frontend-архитектура и интерфейсы.</p>
+          </div>
+        </article>
+        <article class="about-team-card" data-controller-interactive-card-effect="item">
+          <figure class="about-team-image">
+            <img
+              srcset="../../public/images/team/team-three.jpg 576w"
+              src="../../public/images/team/team-three-3-4.jpg"
+              alt="DevOps и Tech Lead"
+              loading="lazy"
+            >
+            <figcaption>INFRASTRUCTURE</figcaption>
+          </figure>
+          <div class="about-team-content">
+            <span class="about-team-role">DEVOPS / TECH LEAD</span>
+            <h3>Павел</h3>
+            <p>Инфраструктура, архитектура, DevOps-процессы и масштабирование.</p>
+          </div>
+        </article>
+        <article class="about-team-card" data-controller-interactive-card-effect="item">
+          <figure class="about-team-image">
+            <img
+              srcset="../../public/images/team/team-four.jpg 576w"
+              src="../../public/images/team/team-four-3-4.jpg"
+              alt="Разработчик нестандартных решений"
+              loading="lazy"
+            >
+            <figcaption>ENGINEERING</figcaption>
+          </figure>
+          <div class="about-team-content">
+            <span class="about-team-role">GAMEDEV / R&D</span>
+            <h3>Дмитрий</h3>
+            <p>Нестандартные задачи, графика, оптимизация и сложные вычисления.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+  <!-- =================================================
+  PRINCIPLES / OPEN SOURCE
+  ================================================= -->
+  <section class="scene about-philosophy" data-scene="about-philosophy">
+    <div class="scene-container">
+      <header class="scene-header reveal-item">
+        <span class="scene-eyebrow">05 / ФИЛОСОФИЯ</span>
+        <h2 class="scene-title">Мы работаем<br><span class="color-accent">как open-source команда</span></h2>
+        <p class="scene-description">Прозрачность, понятные решения и отсутствие зависимости от одного специалиста.</p>
+      </header>
+      <div class="about-philosophy-grid reveal-item">
+        <article class="about-philosophy-card">
+          <span>01</span>
+          <h3>Прозрачность</h3>
+          <p>Вы понимаете, что происходит с системой, какие проблемы найдены и почему предлагаем именно такое решение.</p>
+        </article>
+        <article class="about-philosophy-card">
+          <span>02</span>
+          <h3>Гибкость</h3>
+          <p>Подключаем нужную экспертизу тогда, когда она действительно требуется проекту.</p>
+        </article>
+        <article class="about-philosophy-card">
+          <span>03</span>
+          <h3>Независимость</h3>
+          <p>Знания и инфраструктура не должны находиться исключительно в голове одного специалиста.</p>
+        </article>
+        <article class="about-philosophy-card">
+          <span>04</span>
+          <h3>Результат</h3>
+          <p>Нас интересует не процесс ради процесса, а состояние системы после выполненной работы.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+  <!-- =================================================
+  GLOBAL CTA
+  ================================================= -->
+  <section class="scene about-contact" data-scene="about-contact">
+    <div class="scene-container">
+      <header class="scene-header reveal-item">
+        <span class="scene-eyebrow">06 / СЛЕДУЮЩИЙ ШАГ</span>
+        <h2 class="scene-title">Передайте технические задачи<br><span class="color-accent">нам</span></h2>
+        <p class="scene-description">Расскажите, что происходит с вашим сайтом, приложением или инфраструктурой. Разберёмся и предложим решение.</p>
+      </header>
+      <div class="cta-block reveal-item">
+        <span class="cta-block__eyebrow">ТЕХНИЧЕСКАЯ КОМАНДА / ГОТОВЫ ПОДКЛЮЧИТЬСЯ</span>
+        <h3 class="cta-block__title">Есть техническая задача?</h3>
+        <p class="cta-block__text">Оптимизация, модернизация, перенос, интеграция, исправление ошибок или постоянная техническая поддержка.</p>
+        <button class="button-primary cta-block__button" data-modal-func="open">
+          <span>ОБСУДИТЬ ЗАДАЧУ</span>
+          <strong>↗</strong>
+        </button>
+      </div>
+      <!-- CONTACT INFORMATION -->
+      <div class="contact-info">
+        <div class="contact-info-item">
+          <span class="contact-info-label">НОВЫЕ ПРОЕКТЫ</span>
+          <a href="mailto:hello@kartemake.ru" class="contact-info-value">hello@kartemake.ru</a>
+          <span class="contact-info-description">Обсудить новый проект, разработку или модернизацию.</span>
+        </div>
+        <div class="contact-info-item">
+          <span class="contact-info-label">ТЕХНИЧЕСКАЯ ПОДДЕРЖКА</span>
+          <a href="mailto:support@kartemake.ru" class="contact-info-value">support@kartemake.ru</a>
+          <span class="contact-info-description">Техническая поддержка и сопровождение.</span>
+        </div>
+        <div class="contact-info-item">
+          <span class="contact-info-label">ОТВЕТ</span>
+          <span class="contact-info-value">В ТЕЧЕНИЕ 1 ДНЯ</span>
+          <span class="contact-info-description">Получаем запрос и связываемся для обсуждения задачи.</span>
+        </div>
+        <div class="contact-info-item">
+          <span class="contact-info-label">TELEGRAM</span>
+          <a href="https://t.me/KArtech76" class="contact-info-value">@KArtech76</a>
+        </div>
+        <div class="contact-info-item">
+          <span class="contact-info-label">ВКОНТАКТЕ</span>
+          <a href="https://vk.ru/kartemake" class="contact-info-value">vk.com/kartemake</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- =================================================
+  FOOTER
+  ================================================= -->
+  <section>
+    <div class="scene-container">
+      <!-- =================================================
+      FOOTER
+      ================================================= -->
+      <footer class="contact-footer">
+        <!-- FOOTER BRAND -->
+        <div class="contact-footer-brand">
+          <a href="/" class="contact-footer-logo" aria-label="K·ART·MAKE">K·ART·MAKE</a>
+          <p>Технический партнёр для вашего бизнеса.</p>
+        </div>
+        <!-- FOOTER NAVIGATION -->
+        <nav class="contact-footer-nav" aria-label="Навигация по сайту">
+          <div class="contact-footer-column">
+            <span class="contact-footer-title">УСЛУГИ</span>
+            <a href="#optimization">Оптимизация сайта</a>
+            <a href="#modernization">Модернизация</a>
+            <a href="#support">Техническая поддержка</a>
+            <a href="#audit">Аудит и консультации</a>
+          </div>
+          <div class="contact-footer-column">
+            <span class="contact-footer-title">ИНФОРМАЦИЯ</span>
+            <a href="./privacy-policy.html">Политика обработки персональных данных</a>
+            <a href="./cookie-policy.html">Политика использования Cookie</a>
+          </div>
+          <div class="contact-footer-column">
+            <span class="contact-footer-title">КОНТАКТЫ</span>
+            <a href="mailto:hello@kartemake.ru">hello@kartemake.ru</a>
+            <a href="mailto:support@kartemake.ru">support@kartemake.ru</a>
+            <a href="https://t.me/KArtech76">Telegram</a>
+            <a href="https://vk.ru/kartemake">VK</a>
+          </div>
+        </nav>
+        <!-- FOOTER BOTTOM -->
+        <div class="contact-footer-bottom">
+          <span>© 2026 K·ART·MAKE</span>
+          <span>ТЕХНИЧЕСКИЙ ПАРТНЁР</span>
+          <span>ВСЕ СИСТЕМЫ РАБОТАЮТ</span>
+        </div>
+      </footer>
     </div>
   </section>
 </main>
-
-<footer>
-  <div class="footer-content">
-    <div class="footer-logo color-whitesmoke">
-      <span>K</span>·<span class="color-accent-red">ART</span>·<span>TECH</span>
+<div id="cookie-banner" class="cookie-banner" aria-hidden="true">
+  <div class="cookie-banner__wrapper">
+    <div class="cookie-banner__status">
+      <span class="cookie-banner__status-dot"></span>
+      <span>PRIVACY / COOKIE CONTROL</span>
     </div>
-
-    <div class="footer-info">
-      <p>Ваш внешний технический отдел. Поддержка и развитие digital-продуктов</p>
+    <div class="cookie-banner__content">
+      <!-- STEP 1 -->
+      <section id="cookie-step-1" class="cookie-step cookie-step--active">
+        <div class="cookie-banner__header">
+          <p class="cookie-banner__description">Мы применяем cookies, чтобы сайт работал без сбоев и постоянно становился для вас удобнее.</p>
+        </div>
+        <div class="cookie-banner__links">
+          <span>Подробнее:</span>
+          <a href="cookie-policy.html" target="_blank">использование cookie</a>
+          <a href="privacy-policy.html" target="_blank">обработка персональных данных</a>
+        </div>
+        <div class="cookie-banner__actions">
+          <button type="button" id="cookie-decline" class="cookie-button cookie-button--outline">Отклонить</button>
+          <button type="button" id="cookie-accept" class="cookie-button cookie-button--accent">Принять</button>
+        </div>
+      </section>
     </div>
-
-    <div class="footer-cta">
-      <button
-              class="cta-button"
-              data-controller-modal-open="form"
-              data-controller-modal-func="open"
-              data-controller-ripple-effect="item"
-      >
-        Обсудить сотрудничество
-        <i class="fas fa-arrow-right"></i>
-      </button>
-    </div>
   </div>
-  <div class="footer-bottom">
-    <div class="copyright">KARTECH © 2026. Все права защищены.</div>
-  </div>
-</footer>
-
-<!-- Overlay для затемнения фона -->
-<div class="overlay" id="overlay"></div>
-
-<!-- Sidebar burger menu -->
-<aside class="sidebar-burger-menu" id="sidebar-burger-menu">
-  <nav>
-    <ul class="sidebar-nav">
-      <li><a href="services.html">Услуги</a></li>
-      <li><a href="projects.html">Кейсы</a></li>
-      <li><a class="active" href="about.html">Команда</a></li>
-      <li><a href="blog.html">Технический блог</a></li>
-      <li><a href="calculator.html">Калькулятор работ</a></li>
-      <li><a href="support.html">Техподдержка</a></li>
-      <li><a href="contacts.html">Контакты</a></li>
-    </ul>
-  </nav>
-
-  <button
-          class="cta-button"
-          data-controller-modal-open="form"
-          data-controller-modal-func="open"
-          data-controller-ripple-effect="item"
-  >
-    Обсудить сотрудничество
-    <i class="fas fa-arrow-right"></i>
-  </button>
-
-  <div class="sidebar-social">
-    <button class="theme-toggle" data-controller-theme="item">
-      <i class="fas fa-moon"></i>
-    </button>
-    <button
-            class="language-toggle"
-            data-controller="lang"
-            data-controller-ripple-effect="item"
-    >
-      <span data-controller-lang="item">RU</span>
-      <i class="fas fa-chevron-down"></i>
-    </button>
-  </div>
-  <div class="sidebar-social">
-    <a href="#"><i class="fab fa-vk"></i></a>
-    <a href="#"><i class="fab fa-telegram"></i></a>
-    <a href="#"><i class="fab fa-github"></i></a>
-  </div>
-</aside>
-
-<!-- modal form -->
-<div id="form" class="modal">
+</div>
+<div id="modal" class="modal">
   <div class="modal-content">
+    <!-- Закрытие -->
+    <div class="close-modal no-icon" data-modal-func="close"></div>
+
+    <!-- Заголовок -->
     <div class="modal-header">
-      <h3>Хотите чтобы мы решили <span class="color-accent-red">ваш кейс</span>?</h3>
+      <h3>Хотите чтобы мы решили <span class="color-accent">ваш кейс</span>?</h3>
       <p>Оставьте заявку и наш специалист свяжется с вами для обсуждения деталей вашего проекта</p>
     </div>
 
-    <!-- Секция с формой -->
+    <!-- Контейнер с гридом -->
     <div class="form-container">
-      <div class="form-header">
 
+      <!-- КОЛОНКА 1: КОНТАКТЫ (как в дашборде) -->
+      <div class="contact-modal__body">
+        <a href="mailto:hello@kartemake.ru" class="contact-modal__item">
+          <span class="contact-modal__item-label">НОВЫЕ ПРОЕКТЫ</span>
+          <strong class="contact-modal__item-value">hello@kartemake.ru</strong>
+        </a>
+        <a href="mailto:support@kartemake.ru" class="contact-modal__item">
+          <span class="contact-modal__item-label">ТЕХНИЧЕСКАЯ ПОДДЕРЖКА</span>
+          <strong class="contact-modal__item-value">support@kartemake.ru</strong>
+        </a>
       </div>
 
-      <form class="contact-form" data-controller="form">
-        <div class="form-group">
-          <input type="text" class="form-input" id="name" name="name" placeholder=" " required>
-          <label for="name" class="form-label">Имя</label>
-        </div>
+      <!-- КОЛОНКА 2: СОЦСЕТИ -->
+      <div class="contact-modal__body">
+        <a href="https://t.me/KArtech76" target="_blank" class="contact-modal__item">
+          <span class="contact-modal__item-label">TELEGRAM</span>
+          <strong class="contact-modal__item-value">@KArtech76</strong>
+        </a>
+        <a href="https://vk.ru/kartemake" target="_blank" class="contact-modal__item">
+          <span class="contact-modal__item-label">ВКОНТАКТЕ</span>
+          <strong class="contact-modal__item-value">vk.com/kartemake</strong>
+        </a>
+      </div>
 
-        <div class="form-group">
-          <input type="text" class="form-input" id="company" name="company" placeholder=" ">
-          <label for="company" class="form-label">Название компании</label>
-        </div>
+      <!-- КОЛОНКА 3: ИНФОРМАЦИЯ -->
+      <div class="contact-modal__body">
+        <a href="/privacy-policy" class="contact-modal__item">
+          <span class="contact-modal__item-label">ДОКУМЕНТЫ</span>
+          <strong class="contact-modal__item-value">Политика конфиденциальности</strong>
+        </a>
+        <!--        <a href="/personal-data-consent" class="contact-modal__item">-->
+        <!--          <span class="contact-modal__item-label">СОГЛАСИЕ</span>-->
+        <!--          <strong class="contact-modal__item-value">На обработку данных</strong>-->
+        <!--        </a>-->
+      </div>
 
-        <div class="form-group">
-          <input type="email" class="form-input" id="email" name="email" placeholder=" ">
-          <label for="email" class="form-label">Email</label>
-        </div>
+      <!-- ФУТЕР -->
+      <div class="contact-modal__footer">
+        <p class="contact-modal__footer-text">Напишите нам — мы ответим в течение 24 часов</p>
+      </div>
 
-        <div class="form-group">
-          <input type="tel" class="form-input" id="phone" name="phone" placeholder=" " required>
-          <label for="phone" class="form-label">Телефон</label>
-        </div>
-
-        <div class="form-group full-width">
-          <textarea class="form-input" id="message" name="message" placeholder=" " required></textarea>
-          <label for="message" class="form-label">Расскажите о вашем проекте</label>
-        </div>
-
-        <div class="form-button">
-          <button
-                  class="cta-button"
-                  type="submit"
-                  data-controller-ripple-effect="item"
-          >
-            Отправить
-            <i class="fas fa-arrow-right"></i>
-          </button>
-        </div>
-
-        <p class="form-notice">Нажимая на кнопку, вы соглашаетесь с политикой конфиденциальности</p>
-      </form>
     </div>
   </div>
-  <div id="close-modal" class="close-modal">
-    <i class="fas fa-times"></i>
-  </div>
 </div>
-
-<!-- modal -->
-<div id="showreel" class="modal">
-  <div class="modal-content">
-    <iframe class="modal-video" src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0" allowfullscreen></iframe>
-  </div>
-  <div class="close-modal">
-    <i class="fas fa-times"></i>
-  </div>
-</div>
-<!-- decoration lines -->
-<div class="lines">
-  <div class="line line-1"></div>
-  <div class="line line-2"></div>
-  <div class="line line-3"></div>
-  <div class="line line-4"></div>
-  <div class="line line-5"></div>
-</div>
-
-<!-- preloader -->
-<div class="preloader" data-controller-preloader="item">
-  <div class="preloader__container">
-    <svg id="preloader-svg" class="preloader__svg" width="1280" height="600" viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <!-- Multiple gradients for complex animation -->
-        <linearGradient id="mainGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stop-color="#ff6b6b">
-            <animate attributeName="offset" values="-2;2" dur="3s" repeatCount="indefinite"/>
-          </stop>
-          <stop offset="33%" stop-color="#4ecdc4">
-            <animate attributeName="offset" values="-1;3" dur="3s" repeatCount="indefinite"/>
-          </stop>
-          <stop offset="66%" stop-color="#45b7d1">
-            <animate attributeName="offset" values="0;4" dur="3s" repeatCount="indefinite"/>
-          </stop>
-          <stop offset="100%" stop-color="#ff6b6b">
-            <animate attributeName="offset" values="1;5" dur="3s" repeatCount="indefinite"/>
-          </stop>
-        </linearGradient>
-
-        <linearGradient id="secondaryGradient" x1="100%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stop-color="#ffd93d">
-            <animate attributeName="offset" values="0;1" dur="2.5s" repeatCount="indefinite"/>
-          </stop>
-          <stop offset="50%" stop-color="#6c5ce7">
-            <animate attributeName="offset" values="0.5;1.5" dur="2.5s" repeatCount="indefinite"/>
-          </stop>
-          <stop offset="100%" stop-color="#ffd93d">
-            <animate attributeName="offset" values="1;2" dur="2.5s" repeatCount="indefinite"/>
-          </stop>
-        </linearGradient>
-
-        <!-- Glow effects -->
-        <filter id="pulseGlow" x="-50%" y="-50%" width="200%" height="200%">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
-          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -8" result="glow"/>
-          <feComposite in="SourceGraphic" in2="glow" operator="over"/>
-        </filter>
-
-        <filter id="strongGlow" x="-50%" y="-50%" width="200%" height="200%">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur"/>
-          <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 30 -7"/>
-        </filter>
-
-        <!-- Pattern for background effect -->
-        <pattern id="grid" patternUnits="userSpaceOnUse" width="50" height="50">
-          <path d="M 0 0 L 50 0 50 50 0 50 Z" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
-        </pattern>
-      </defs>
-
-      <!-- Background grid -->
-      <rect width="100%" height="100%" fill="url(#grid)" opacity="0.5"/>
-
-      <!-- Base white text (subtle) -->
-      <text x="400" y="150" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="80" fill="rgba(255,255,255,0.1)" opacity="0.5">
-        KARTECH
-      </text>
-
-      <!-- Main animated stroke -->
-      <text x="400" y="150" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="80" fill="none" stroke="url(#mainGradient)" stroke-width="2" stroke-dasharray="1000" stroke-dashoffset="1000">
-        KARTECH
-        <animate attributeName="stroke-dashoffset" values="1000;0;1000" dur="4s" repeatCount="indefinite"/>
-        <animate attributeName="stroke-width" values="2;3;2" dur="2s" repeatCount="indefinite"/>
-      </text>
-
-      <!-- Secondary stroke (reverse direction) -->
-      <text x="400" y="150" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="80" fill="none" stroke="url(#secondaryGradient)" stroke-width="1" stroke-dasharray="800" stroke-dashoffset="800" opacity="0.7">
-        KARTECH
-        <animate attributeName="stroke-dashoffset" values="800;1600;800" dur="3.5s" repeatCount="indefinite"/>
-      </text>
-
-      <!-- Pulsating glow effect -->
-      <text x="400" y="150" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="80" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="4" opacity="0">
-        KARTECH
-        <animate attributeName="opacity" values="0;0.5;0" dur="2s" repeatCount="indefinite"/>
-        <animate attributeName="stroke-width" values="4;8;4" dur="2s" repeatCount="indefinite"/>
-      </text>
-
-      <!-- Individual letter animations -->
-      <g class="letter-pulses" opacity="0.8">
-        <text x="400" y="150" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="80" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1">
-          KARTECH
-          <animate attributeName="stroke-width" values="1;2;1" dur="1.5s" repeatCount="indefinite"/>
-        </text>
-      </g>
-
-      <!-- Floating particles -->
-      <g class="particles" opacity="0.6">
-        <circle cx="100" cy="100" r="2" fill="#ff6b6b">
-          <animate attributeName="cx" values="100;500;100" dur="8s" repeatCount="indefinite"/>
-          <animate attributeName="cy" values="100;200;100" dur="6s" repeatCount="indefinite"/>
-          <animate attributeName="r" values="2;4;2" dur="3s" repeatCount="indefinite"/>
-        </circle>
-        <circle cx="700" cy="200" r="3" fill="#4ecdc4">
-          <animate attributeName="cx" values="700;300;700" dur="7s" repeatCount="indefinite"/>
-          <animate attributeName="cy" values="200;100;200" dur="5s" repeatCount="indefinite"/>
-        </circle>
-        <circle cx="300" cy="250" r="2.5" fill="#45b7d1">
-          <animate attributeName="cx" values="300;600;300" dur="9s" repeatCount="indefinite"/>
-          <animate attributeName="cy" values="250;150;250" dur="4s" repeatCount="indefinite"/>
-        </circle>
-        <circle cx="100" cy="100" r="2" fill="#ffd93d">
-          <animate attributeName="cx" values="200;350;150" dur="8s" repeatCount="indefinite"/>
-          <animate attributeName="cy" values="50;600;150" dur="6s" repeatCount="indefinite"/>
-          <animate attributeName="r" values="2;4;2" dur="3s" repeatCount="indefinite"/>
-        </circle>
-        <circle cx="700" cy="200" r="3" fill="#6c5ce7">
-          <animate attributeName="cx" values="600;450;750" dur="7s" repeatCount="indefinite"/>
-          <animate attributeName="cy" values="10;150;200" dur="5s" repeatCount="indefinite"/>
-        </circle>
-        <circle cx="300" cy="250" r="2.5" fill="#4ecdc4">
-          <animate attributeName="cx" values="700;600;100" dur="9s" repeatCount="indefinite"/>
-          <animate attributeName="cy" values="650;150;350" dur="4s" repeatCount="indefinite"/>
-        </circle>
-      </g>
-
-      <!-- Final white text (hidden until load) -->
-      <text x="400" y="150" text-anchor="middle" class="final-text" font-family="Arial Black, sans-serif" font-size="80" fill="white" filter="url(#strongGlow)" opacity="0">
-        KARTECH
-      </text>
-    </svg>
-  </div>
-</div>
-
-<script>
-
-</script>
 </body>
 </html>
