@@ -1,4 +1,4 @@
-<section class="scene scene-hero" data-scene="hero">
+<section class="scene scene-hero" data-scene="hero" data-canvas-engine>
     <canvas id="heroCanvas" class="reveal-item"></canvas>
     <canvas id="hero-particle-canvas" class="reveal-item"></canvas>
     <div class="scene-container">
