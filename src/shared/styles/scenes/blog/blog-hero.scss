@@ -1,0 +1,49 @@
+// =====================================================
+// BLOG HERO SCENE
+// =====================================================
+//
+// Blog-specific styles only.
+//
+// Global styles are intentionally NOT duplicated:
+// - .scene
+// - .scene-container
+// - .scene-header
+// - .scene-eyebrow
+// - .scene-title
+// - .scene-description
+//
+// Lifecycle:
+// .scene-active is controlled by SceneManager.
+// =====================================================
+@use 'sass:color';
+@use '../../variables/colors' as *;
+@use '../../variables/offsets' as *;
+@use '../../system/mixins' as *;
+@use '../../variables/media' as *;
+
+// =====================================================
+// META
+// =====================================================
+.blog-hero-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: $small;
+  margin-top: $middle;
+  max-width: 700px;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+// =====================================================
+// MOBILE
+// =====================================================
+@media (max-width: $breakpoint-extra-small) {
+  .blog-hero-meta {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: $extra-small;
+    margin-top: $middle;
+  }
+}

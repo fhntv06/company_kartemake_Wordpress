@@ -1,0 +1,302 @@
+// ============================================================
+// BLOG FEATURED SCENE
+// ============================================================
+@use '../../variables/colors' as *;
+@use '../../variables/offsets' as *;
+@use '../../variables/media' as *;
+@use '../../system/mixins' as *;
+
+// ============================================================
+// FEATURED LAYOUT
+// ============================================================
+.blog-featured-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+  gap: $small;
+}
+
+// ============================================================
+// FEATURED VISUAL
+// ============================================================
+.blog-featured-visual {
+  position: relative;
+  min-width: 0;
+  min-height: 560px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.015);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.9s ease, transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.blog-featured.scene-active .blog-featured-visual {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+// ============================================================
+// IMAGE
+// ============================================================
+.blog-featured-image {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+.blog-featured-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transform: scale(1.02);
+  transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1), filter 0.8s ease;
+}
+.blog-featured-visual:hover .blog-featured-image img {
+  transform: scale(1.06);
+  filter: grayscale(20%);
+}
+
+// ============================================================
+// IMAGE OVERLAY
+// ============================================================
+.blog-featured-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.45) 45%, rgba(0,0,0,0.08) 100%);
+  pointer-events: none;
+}
+
+// ============================================================
+// VISUAL LABEL
+// ============================================================
+.blog-featured-status {
+  position: absolute;
+  z-index: 2;
+  top: $small;
+  left: $small;
+  display: inline-flex;
+  align-items: center;
+  gap: $extra-small;
+  padding: 8px 12px;
+  border: 1px solid rgba(255,255,255,0.16);
+  background: rgba(0,0,0,0.55);
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  @include responsive-font(9, 11);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+  backdrop-filter: blur(8px);
+}
+.blog-featured-status::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: $orange;
+  transform: rotate(45deg);
+}
+
+// ============================================================
+// VISUAL CONTENT
+// ============================================================
+.blog-featured-visual-content {
+  position: absolute;
+  z-index: 2;
+  left: $small;
+  right: $small;
+  bottom: $small;
+}
+.blog-featured-category {
+  display: block;
+  margin-bottom: $extra-small;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  @include responsive-font(9, 11);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $orange;
+}
+.blog-featured-visual-content h3 {
+  max-width: 850px;
+  margin: 0;
+  @include responsive-font(28, 48);
+  line-height: 1.05;
+}
+.blog-featured-visual-content h3 a {
+  color: #fff;
+  transition: color 0.25s ease;
+}
+.blog-featured-visual-content h3 a:hover {
+  color: $orange;
+}
+
+// ============================================================
+// FEATURED CONTENT
+// ============================================================
+.blog-featured-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: $middle;
+  min-width: 0;
+  min-height: 560px;
+  padding: $small;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.015);
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.9s ease 0.15s, transform 1s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;
+}
+.blog-featured.scene-active .blog-featured-content {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+// ============================================================
+// META
+// ============================================================
+.blog-featured-meta {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  border-left: 1px solid rgba(255,255,255,0.1);
+}
+.blog-featured-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: calc($extra-small / 2);
+  padding: $extra-small;
+  border-right: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.blog-featured-meta-label {
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  @include responsive-font(8, 10);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+}
+.blog-featured-meta-value {
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  @include responsive-font(11, 14);
+  color: rgba(255,255,255,0.75);
+}
+
+// ============================================================
+// DESCRIPTION
+// ============================================================
+.blog-featured-description {
+  color: var(--text-secondary);
+}
+
+// ============================================================
+// TAGS
+// ============================================================
+.blog-featured-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc($extra-small / 2);
+}
+.blog-featured-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 9px;
+  border: 1px solid rgba(255,255,255,0.12);
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  @include responsive-font(8, 10);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  transition: color 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+.blog-featured-tag:hover {
+  color: $orange;
+  border-color: rgba(255,46,46,0.35);
+  background: rgba(255,46,46,0.03);
+}
+
+// ============================================================
+// LINK
+// ============================================================
+.blog-featured-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $small;
+  margin-top: $large;
+  padding-top: $small;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  @include responsive-font(9, 12);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+  transition: color 0.25s ease, border-color 0.25s ease;
+}
+.blog-featured-link:hover {
+  color: $orange;
+  border-color: rgba(255,46,46,0.35);
+}
+.blog-featured-link-arrow {
+  color: $orange;
+  transition: transform 0.25s ease;
+}
+.blog-featured-link:hover .blog-featured-link-arrow {
+  transform: translate(4px, -4px);
+}
+
+// ============================================================
+// MOBILE
+// ============================================================
+@media (max-width: $breakpoint-extra-small) {
+  .blog-featured-layout {
+    gap: $extra-small;
+    margin-top: $middle;
+  }
+  .blog-featured-visual {
+    min-height: 420px;
+    transform: translateY(30px);
+  }
+  .blog-featured-content {
+    min-height: 0;
+    padding: $extra-small;
+    row-gap: $small;
+    transform: translateY(30px);
+  }
+  .blog-featured-link {
+    margin-top: 0;
+  }
+  .blog-featured-layout {
+    grid-template-columns: 1fr;
+  }
+  .blog-featured.scene-active .blog-featured-visual,
+  .blog-featured.scene-active .blog-featured-content {
+    transform: translateY(0);
+  }
+  .blog-featured-status {
+    top: $extra-small;
+    left: $extra-small;
+  }
+  .blog-featured-visual-content {
+    left: $extra-small;
+    right: $extra-small;
+    bottom: $extra-small;
+  }
+  .blog-featured-meta-item {
+    min-height: 64px;
+  }
+}
+
+// ============================================================
+// REDUCED MOTION
+// ============================================================
+@media (prefers-reduced-motion: reduce) {
+  .blog-featured-visual,
+  .blog-featured-content {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .blog-featured-image img {
+    transition: none;
+  }
+}

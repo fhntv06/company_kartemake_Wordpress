@@ -1,0 +1,524 @@
+// ============================================================
+// K·ART·MAKE
+// BLOG ARTICLES
+// ============================================================
+//
+// BLOG-ONLY STYLES
+//
+// Global styles are intentionally NOT duplicated here:
+// - .scene
+// - .scene-container
+// - .scene-header
+// - .scene-eyebrow
+// - .scene-title
+// - .scene-description
+// - .reveal-item
+// - .cta-block
+//
+// ============================================================
+@use "../../variables/colors" as *;
+@use "../../variables/fonts" as *;
+@use "../../variables/offsets" as *;
+@use "../../variables/media" as *;
+@use "../../variables/root" as *;
+@use "../../system/mixins" as *;
+
+// ============================================================
+// ARTICLES GRID
+// ============================================================
+.blog-articles-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: $small;
+  margin-bottom: $middle;
+}
+
+// ============================================================
+// ARTICLE
+// ============================================================
+.blog-article {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.015);
+  overflow: hidden;
+  transition: border-color 0.3s ease, background 0.3s ease, transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  &:hover {
+    border-color: rgba(255,46,46,0.35);
+    background: rgba(255,46,46,0.018);
+    transform: translateY(-4px);
+  }
+}
+
+// ============================================================
+// ARTICLE NUMBER
+// ============================================================
+.blog-article__number {
+  position: absolute;
+  top: $middle;
+  left: $extra-small;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $extra-small;
+  border: 1px solid rgba(255,46,46,0.35);
+  background: rgba(0,0,0,0.72);
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  color: $orange;
+}
+
+// ============================================================
+// ARTICLE IMAGE
+// ============================================================
+.blog-article__image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  padding-top: $extra-small;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.025);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transform: scale(1.01);
+    transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1), filter 0.8s ease;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,46,46,0.1), transparent 45%);
+    pointer-events: none;
+  }
+}
+.blog-article:hover .blog-article__image img {
+  transform: scale(1.05);
+  filter: grayscale(0%);
+}
+
+// ============================================================
+// ARTICLE IMAGE META
+// ============================================================
+.blog-article__image-meta {
+  position: absolute;
+  right: $small;
+  bottom: $small;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 9px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(0,0,0,0.65);
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  @include responsive-font(8, 10);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+}
+
+// ============================================================
+// ARTICLE CONTENT
+// ============================================================
+.blog-article__content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: $small;
+}
+
+// ============================================================
+// ARTICLE META
+// ============================================================
+.blog-article__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: $extra-small;
+  margin-bottom: $small;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  @include responsive-font(8, 10);
+  line-height: 1.4;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.blog-article__meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: calc($extra-small / 2);
+  white-space: nowrap;
+  &::before {
+    content: "";
+    width: 4px;
+    height: 4px;
+    background: $orange;
+    transform: rotate(45deg);
+  }
+}
+
+// ============================================================
+// ARTICLE TYPE
+// ============================================================
+.blog-article__type {
+  display: block;
+  padding-left: $extra-small;
+  margin-bottom: $extra-small;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  text-transform: uppercase;
+  color: $orange;
+}
+
+// ============================================================
+// ARTICLE TITLE
+// ============================================================
+.blog-article__title {
+  margin-bottom: $small;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.25s ease;
+
+    &:hover {
+      color: $orange;
+    }
+  }
+}
+
+// ============================================================
+// ARTICLE DESCRIPTION
+// ============================================================
+.blog-article__description {
+  max-width: 680px;
+  margin-bottom: $small;
+  @include responsive-font(13, 16);
+  line-height: 1.65;
+  color: rgba(255,255,255,0.52);
+}
+
+// ============================================================
+// ARTICLE TAGS
+// ============================================================
+.blog-article__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc($extra-small / 2);
+  margin-top: auto;
+  padding-top: $small;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.blog-article__tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 8px;
+  border: 1px solid rgba(255,255,255,0.1);
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  @include responsive-font(8, 10);
+  line-height: 1.2;
+  color: rgba(255,255,255,0.45);
+  transition: border-color 0.25s ease, color 0.25s ease, background 0.25s ease;
+  &:hover {
+    border-color: rgba(255,46,46,0.35);
+    background: rgba(255,46,46,0.04);
+    color: $orange;
+  }
+}
+
+// ============================================================
+// ARTICLE LINK
+// ============================================================
+.blog-article__link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $small;
+  margin-top: $small;
+  padding-top: $small;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+  text-decoration: none;
+  transition: color 0.25s ease, border-color 0.25s ease;
+  &:hover {
+    color: $orange;
+    border-color: rgba(255,46,46,0.35);
+  }
+}
+
+// ============================================================
+// ARTICLE LINK ARROW
+// ============================================================
+.blog-article__link-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border: 1px solid rgba(255,46,46,0.3);
+  color: $orange;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+.blog-article__link:hover .blog-article__link-arrow {
+  transform: translate(3px, -3px);
+  background: rgba(255,46,46,0.06);
+}
+
+// ============================================================
+// FEATURED ARTICLE
+// ============================================================
+.blog-article--featured {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+  min-height: 420px;
+}
+
+// ------------------------------------------------------------
+// FEATURED IMAGE
+// ------------------------------------------------------------
+.blog-article--featured .blog-article__image {
+  height: 100%;
+  min-height: 420px;
+  aspect-ratio: auto;
+  border-right: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 0;
+}
+
+// ------------------------------------------------------------
+// FEATURED CONTENT
+// ------------------------------------------------------------
+.blog-article--featured .blog-article__content {
+  justify-content: center;
+  padding: clamp($small, 4vw, $large);
+}
+
+// ------------------------------------------------------------
+// FEATURED TYPE
+// ------------------------------------------------------------
+.blog-article--featured .blog-article__type {
+  margin-bottom: $small;
+}
+
+// ------------------------------------------------------------
+// FEATURED TITLE
+// ------------------------------------------------------------
+.blog-article--featured .blog-article__title {
+  @include responsive-font(28, 44);
+  line-height: 1.08;
+}
+
+// ------------------------------------------------------------
+// FEATURED DESCRIPTION
+// ------------------------------------------------------------
+.blog-article--featured .blog-article__description {
+  max-width: 620px;
+  @include responsive-font(14, 17);
+}
+
+// ------------------------------------------------------------
+// FEATURED TAGS
+// ------------------------------------------------------------
+.blog-article--featured .blog-article__tags {
+  margin-top: $extra-small;
+}
+
+// ============================================================
+// FEATURED MARKER
+// ============================================================
+.blog-article--featured::after {
+  content: "FEATURED";
+  position: absolute;
+  top: $small;
+  right: $small;
+  z-index: 4;
+  padding: 5px 8px;
+  border: 1px solid rgba(255,46,46,0.35);
+  background: rgba(0,0,0,0.7);
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  @include responsive-font(8, 10);
+  letter-spacing: 0.1em;
+  color: $orange;
+}
+
+// ============================================================
+// ARTICLES REVEAL
+// ============================================================
+//
+// Scene activation controls visibility.
+// Individual internal elements do not start hidden.
+// This prevents the "everything is opacity: 0" problem.
+//
+// ============================================================
+.blog-articles-grid .blog-article {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity 0.8s ease, transform 0.9s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s ease, background 0.3s ease;
+}
+.blog-articles.scene-active .blog-article {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+// ------------------------------------------------------------
+// STAGGER
+// ------------------------------------------------------------
+.blog-articles.scene-active .blog-article:nth-child(1) {
+  transition-delay: 0.15s;
+}
+.blog-articles.scene-active .blog-article:nth-child(2) {
+  transition-delay: 0.3s;
+}
+.blog-articles.scene-active .blog-article:nth-child(3) {
+  transition-delay: 0.45s;
+}
+.blog-articles.scene-active .blog-article:nth-child(4) {
+  transition-delay: 0.6s;
+}
+.blog-articles.scene-active .blog-article:nth-child(5) {
+  transition-delay: 0.75s;
+}
+.blog-articles.scene-active .blog-article:nth-child(6) {
+  transition-delay: 0.9s;
+}
+.blog-articles.scene-active .blog-article:nth-child(7) {
+  transition-delay: 1.05s;
+}
+.blog-articles.scene-active .blog-article:nth-child(8) {
+  transition-delay: 1.2s;
+}
+
+// ============================================================
+// TABLET
+// ============================================================
+@media (max-width: $breakpoint-lower-middle) {
+  .blog-articles-grid {
+    grid-template-columns: 1fr;
+  }
+  .blog-article--featured {
+    grid-template-columns: 1fr;
+  }
+  .blog-article--featured .blog-article__image {
+    min-height: 0;
+    aspect-ratio: 16 / 9;
+    border-right: 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .blog-article--featured .blog-article__content {
+    padding: $middle;
+  }
+}
+
+// ============================================================
+// MOBILE
+// ============================================================
+@media (max-width: $breakpoint-extra-small) {
+  .blog-articles-grid {
+    grid-template-columns: 1fr;
+    gap: $small;
+    margin-top: $middle;
+  }
+  // ----------------------------------------------------------
+  // ARTICLE
+  // ----------------------------------------------------------
+  .blog-article {
+    transform: none;
+  }
+  // ----------------------------------------------------------
+  // NUMBER
+  // ----------------------------------------------------------
+  .blog-article__number {
+    top: $middle;
+    left: $extra-small;
+    padding: calc($extra-small / 2);
+  }
+  // ----------------------------------------------------------
+  // IMAGE
+  // ----------------------------------------------------------
+  .blog-article__image {
+    aspect-ratio: 16 / 10;
+  }
+  // ----------------------------------------------------------
+  // CONTENT
+  // ----------------------------------------------------------
+  .blog-article__content {
+    padding: $extra-small;
+  }
+  .blog-article__description {
+    margin-bottom: $extra-small;
+  }
+  .blog-article__link {
+    margin-top: $extra-small;
+    padding-top: $extra-small;
+  }
+  // ----------------------------------------------------------
+  // META
+  // ----------------------------------------------------------
+  .blog-article__meta {
+    gap: calc($extra-small / 2);
+  }
+  .blog-article__tags {
+    padding-top: $extra-small;
+  }
+  // ----------------------------------------------------------
+  // FEATURED
+  // ----------------------------------------------------------
+  .blog-article--featured {
+    display: flex;
+    min-height: 0;
+  }
+  .blog-article--featured .blog-article__image {
+    min-height: 0;
+    aspect-ratio: 16 / 10;
+  }
+  .blog-article--featured .blog-article__content {
+    padding: $small;
+  }
+  .blog-article--featured .blog-article__title {
+    @include responsive-font(23, 30);
+    line-height: 1.1;
+  }
+  .blog-article--featured .blog-article__description {
+    @include responsive-font(13, 15);
+  }
+  // ----------------------------------------------------------
+  // FEATURED LABEL
+  // ----------------------------------------------------------
+  .blog-article--featured::after {
+    top: $extra-small;
+    right: $extra-small;
+  }
+  // ----------------------------------------------------------
+  // MOBILE STAGGER
+  // ----------------------------------------------------------
+  .blog-articles-grid .blog-article {
+    transition-delay: unset !important;
+  }
+}
+
+// ============================================================
+// REDUCED MOTION
+// ============================================================
+@media (prefers-reduced-motion: reduce) {
+  .blog-articles-grid .blog-article {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .blog-article:hover {
+    transform: none;
+  }
+  .blog-article__image img {
+    transition: none;
+  }
+  .blog-article__link-arrow {
+    transition: none;
+  }
+}

@@ -1,0 +1,213 @@
+// ============================================================
+// BLOG INTRO SCENE
+// ============================================================
+//
+// BLOG-ONLY STYLES
+//
+// Global styles are intentionally NOT duplicated here:
+// - .scene
+// - .scene-container
+// - .scene-header
+// - .scene-eyebrow
+// - .scene-title
+// - .scene-description
+// - .reveal-item
+//
+// ============================================================
+@use '../../variables/colors' as *;
+@use '../../variables/fonts' as *;
+@use '../../variables/offsets' as *;
+@use '../../variables/media' as *;
+@use '../../variables/root' as *;
+@use '../../system/mixins' as *;
+
+
+// ============================================================
+// INTRO LEAD
+// ============================================================
+.blog-intro-lead {
+  max-width: 80%;
+  margin-top: $middle;
+  color: var(--text-secondary);
+}
+
+// ============================================================
+// BLOG DIRECTIONS
+// ============================================================
+.blog-intro-directions {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: $large;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  border-left: 1px solid rgba(255,255,255,0.1);
+}
+
+// ============================================================
+// DIRECTION CARD
+// ============================================================
+.blog-intro-direction {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 240px;
+  padding: $small;
+  border-right: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.012);
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity 0.8s ease, transform 0.9s cubic-bezier(0.22, 1, 0.36, 1), background 0.3s ease, border-color 0.3s ease;
+  &:hover {
+    background: rgba(255,46,46,0.018);
+    border-color: rgba(255,46,46,0.25);
+  }
+}
+
+// ============================================================
+// DIRECTION NUMBER
+// ============================================================
+.blog-intro-direction-number {
+  display: block;
+  margin-bottom: $middle;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  @include responsive-font(10, 13);
+  line-height: 1;
+  letter-spacing: 0.08em;
+  color: $orange;
+}
+
+// ============================================================
+// DIRECTION LABEL
+// ============================================================
+.blog-intro-direction-label {
+  display: block;
+  margin-bottom: $extra-small;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  @include responsive-font(9, 11);
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+}
+
+// ============================================================
+// DIRECTION TITLE
+// ============================================================
+.blog-intro-direction h3 {
+  margin-bottom: $small;
+  @include responsive-font(20, 28);
+  line-height: 1.1;
+}
+
+// ============================================================
+// DIRECTION DESCRIPTION
+// ============================================================
+.blog-intro-direction p {
+  max-width: 300px;
+  margin-bottom: 0;
+  @include responsive-font(12, 15);
+  line-height: 1.6;
+  color: rgba(255,255,255,0.5);
+}
+
+// ============================================================
+// DIRECTION MARKER
+// ============================================================
+.blog-intro-direction::after {
+  content: "";
+  position: absolute;
+  right: $small;
+  bottom: $small;
+  width: 7px;
+  height: 7px;
+  border: 1px solid rgba(255,255,255,0.25);
+  transform: rotate(45deg);
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+.blog-intro-direction:hover::after {
+  border-color: $orange;
+  background: $orange;
+  transform: rotate(45deg) scale(1.15);
+}
+
+// ============================================================
+// SCENE ACTIVATION
+// ============================================================
+.blog-intro.scene-active .blog-intro-direction {
+  opacity: 1;
+  transform: translateY(0);
+}
+.blog-intro.scene-active .blog-intro-direction:nth-child(1) {
+  transition-delay: 0.2s;
+}
+.blog-intro.scene-active .blog-intro-direction:nth-child(2) {
+  transition-delay: 0.4s;
+}
+.blog-intro.scene-active .blog-intro-direction:nth-child(3) {
+  transition-delay: 0.6s;
+}
+.blog-intro.scene-active .blog-intro-direction:nth-child(4) {
+  transition-delay: 0.8s;
+}
+
+// ============================================================
+// TABLET
+// ============================================================
+@media (max-width: $breakpoint-lower-middle) {
+  .blog-intro-directions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .blog-intro-direction {
+    min-height: 210px;
+  }
+}
+
+// ============================================================
+// MOBILE
+// ============================================================
+@media (max-width: $breakpoint-extra-small) {
+  .blog-intro {
+    align-items: flex-start;
+  }
+  .blog-intro-layout {
+    gap: $middle;
+  }
+  .blog-intro-header .scene-description {
+    margin-top: $small;
+  }
+  .blog-intro-lead {
+    margin-top: $small;
+    @include responsive-font(17, 22);
+  }
+  .blog-intro-directions {
+    grid-template-columns: 1fr;
+    margin-top: $middle;
+  }
+  .blog-intro-direction {
+    min-height: 0;
+    padding: $small;
+  }
+  .blog-intro-direction-number {
+    margin-bottom: $small;
+  }
+  .blog-intro-direction h3 {
+    margin-bottom: $extra-small;
+  }
+  .blog-intro-direction p {
+    max-width: none;
+  }
+  .blog-intro.scene-active .blog-intro-direction {
+    transition-delay: unset !important;
+  }
+}
+
+// ============================================================
+// REDUCED MOTION
+// ============================================================
+@media (prefers-reduced-motion: reduce) {
+  .blog-intro-direction {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
