@@ -1,0 +1,32 @@
+@use '../variables/colors' as *;
+@use '../variables/offsets' as *;
+@use '../system/mixins' as *;
+@use '../variables/media' as *;
+
+// =====================================================
+// breadcrumbs
+// =====================================================
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: $extra-small;
+  margin-bottom: $small;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  @include responsive-font(9, 11);
+  letter-spacing: 0.05em;
+  color: rgba(255,255,255,0.4);
+}
+.breadcrumbs a {
+  color: rgba(255,255,255,0.55);
+  transition: color 0.25s ease;
+}
+.breadcrumbs a:hover {
+  color: $orange;
+}
+.breadcrumbs__separator {
+  color: rgba(255,255,255,0.2);
+}
+.breadcrumbs__current {
+  color: $orange;
+}
