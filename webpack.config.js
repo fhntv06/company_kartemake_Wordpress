@@ -24,6 +24,7 @@ function getChunks() {
   return {
     index: [...common, 'home'],
     policy: [...common, 'policy'],
+    about: [...common, 'about'],
   }
 }
 
@@ -41,6 +42,7 @@ module.exports = (env, argv) => {
     entry: {
       home: './src/app/pages/home/home-entry.js',
       policy: './src/app/pages/policy/policy-entry.js',
+      about: './src/app/pages/about/about-entry.js',
       common: './src/app/global.js',
     },
 
