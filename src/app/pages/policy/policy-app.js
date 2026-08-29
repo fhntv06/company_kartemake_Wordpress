@@ -74,12 +74,6 @@ export default class PolicyApp {
         Register scenes in SceneManager
         -----------------------------------------------------
         */
-        this.startExperience()
         console.log("[PolicyApp] initialized")
-    }
-
-    startExperience() {
-        this.modules.SceneManager.start()
-        ScrollTrigger.refresh()
     }
 }

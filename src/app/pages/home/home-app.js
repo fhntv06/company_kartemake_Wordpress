@@ -109,7 +109,7 @@ export default class HomeApp {
     =====================================================
     */
     registerScenes() {
-        const sceneManager = this.modules.SceneManager
+        const sceneManager = window?.App?.SceneManager
         if (!sceneManager) {
             console.warn("[HomeApp] SceneManager not found")
             return
