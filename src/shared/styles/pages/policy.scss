@@ -84,14 +84,15 @@
 .toc-link {
   border-left: 2px solid transparent;
   display: block;
-  @include responsive-font($min-small-font-size, $max-small-font-size);
   line-height: 1.4;
   opacity: .6;
+  white-space: nowrap;
   transition: $transition;
 }
 
 .toc-link:hover,
 .toc-link.active {
+  padding-left: 8px;
   border-left-color: var(--orange);
   opacity: 1;
 }
