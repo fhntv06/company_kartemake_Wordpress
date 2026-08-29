@@ -1,15 +1,14 @@
 import "../../../shared/styles/pages/policy.scss"
 
+import PolicyApp from "./policy-app.js";
+
 class PolicyEntry {
     constructor() {
         this.init()
     }
     init() {
-        /*
-        -----------------------------------------------------
-        Start Home application.
-        -----------------------------------------------------
-        */
+        new PolicyApp()
+
         console.log("[PolicyEntry] Home application started");
     }
 }
