@@ -9,7 +9,9 @@
 get_header();
 ?>
 
-    <main class="policy-page">
+    <main class="scene policy-page" data-scene="policy" data-canvas-engine>
+        <canvas id="heroCanvas"></canvas>
+
         <div class="scene-container">
 
             <!-- HEADER -->
@@ -230,6 +232,5 @@ get_header();
                 </div>
             </div>
         </div>
-    </main>
 
 <?php get_footer(); ?>
