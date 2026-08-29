@@ -5,29 +5,31 @@
  * @package KARTMAKE
  */
 
-get_header(); ?>
+get_header();
+get_template_part('template-parts/global/orbit-navigation');
+
+?>
 
     <main class="experience">
         <!-- HERO -->
-        <?php get_template_part('template-parts/sections/hero'); ?>
+        <?php get_template_part('template-parts/sections/home/hero'); ?>
 
         <!-- AUDIT -->
-        <?php get_template_part('template-parts/sections/audit'); ?>
+        <?php get_template_part('template-parts/sections/home/audit'); ?>
 
         <!-- SOLUTIONS -->
-        <?php get_template_part('template-parts/sections/solutions'); ?>
+        <?php get_template_part('template-parts/sections/home/solutions'); ?>
 
         <!-- ARCHITECTURE -->
-        <?php get_template_part('template-parts/sections/architecture'); ?>
+        <?php get_template_part('template-parts/sections/home/architecture'); ?>
 
         <!-- PIPELINE -->
-        <?php get_template_part('template-parts/sections/pipeline'); ?>
+        <?php get_template_part('template-parts/sections/home/pipeline'); ?>
 
         <!-- MONITORING -->
-        <?php get_template_part('template-parts/sections/monitoring'); ?>
+        <?php get_template_part('template-parts/sections/home/monitoring'); ?>
 
         <!-- CONTACT -->
-        <?php get_template_part('template-parts/sections/contact'); ?>
-    </main>
+        <?php get_template_part('template-parts/sections/home/contact'); ?>
 
 <?php get_footer(); ?>
