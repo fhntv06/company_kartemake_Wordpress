@@ -13,12 +13,24 @@ ORBIT NAVIGATION
             'monitoring' => 'Контроль',
             'contact'    => 'Контакты'
         );
+
+        if (is_page('about')) {
+            $scenes = array(
+                'hero'       => 'Начало',
+                'about-intro'      => 'Мы',
+                'about-model'  => 'Модель',
+                'about-team' => 'Команда',
+                'about-philosophy'   => 'Философия',
+                'about-contact' => 'Контакты',
+            );
+        }
+
         $number = 1;
         foreach ($scenes as $id => $label) : ?>
-            <button class="orbit-point" data-scene="<?php echo esc_attr($id); ?>">
-                <span class="orbit-point__description"><?php echo esc_html($label); ?></span>
+            <button class="orbit-point" data-scene="<?= esc_attr($id); ?>">
+                <span class="orbit-point__description"><?= esc_html($label); ?></span>
                 <span></span>
-                <strong><?php echo sprintf('%02d', $number); ?></strong>
+                <strong><?= sprintf('%02d', $number); ?></strong>
             </button>
             <?php $number++;
         endforeach; ?>
