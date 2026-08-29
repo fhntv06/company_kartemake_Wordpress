@@ -1,20 +1,20 @@
 import "../shared/styles/common.scss"
 
-import GSAPEngine from "./core/gsap-engine.js";
 import ScrollEngine from "./core/scroll-engine.js"
+
+import GSAPEngine from "./core/gsap-engine.js";
 
 import AnchorNavigation from "./modules/global/anchor-navigation.js"
 import DashboardMenu from "./modules/global/dashboard-menu.js"
 import TransitionLoader from "./modules/global/transition-loader.js"
 import CookieController from "./modules/global/cookie-controller.js"
 import ModalController from "./modules/global/modal.js"
-
 export default class GlobalApp {
     constructor() {
         this.modules = {}
         this.registry = {
+            ScrollEngine, // load first !important
             GSAPEngine,
-            ScrollEngine,
             AnchorNavigation,
             DashboardMenu,
             TransitionLoader,
