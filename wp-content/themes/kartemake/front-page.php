@@ -9,7 +9,6 @@ get_header();
 get_template_part('template-parts/global/orbit-navigation');
 
 ?>
-
     <main class="experience">
         <!-- HERO -->
         <?php get_template_part('template-parts/sections/home/hero'); ?>
