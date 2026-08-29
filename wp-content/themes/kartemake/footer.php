@@ -31,6 +31,7 @@
                     </div>
                     <div class="contact-footer-column">
                         <span class="contact-footer-title">ИНФОРМАЦИЯ</span>
+                        <a href="/about">О Компании</a>
                         <a href="/privacy-policy">Политика обработки персональных данных</a>
                         <a href="/cookie-policy">Политика использования Cookie</a>
                     </div>
