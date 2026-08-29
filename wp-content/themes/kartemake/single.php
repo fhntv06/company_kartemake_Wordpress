@@ -27,6 +27,5 @@ get_header(); ?>
                 <?php endwhile; ?>
             </article>
         </div>
-    </main>
 
 <?php get_footer(); ?>
