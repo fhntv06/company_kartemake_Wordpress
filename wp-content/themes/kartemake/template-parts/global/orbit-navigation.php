@@ -25,6 +25,15 @@ ORBIT NAVIGATION
             ];
         }
 
+        if (is_page('blog')) {
+            $scenes = [
+                'hero'       => 'Начало',
+                'blog-intro'       => 'Знания',
+                'blog-featured'       => 'Избранное',
+                'blog-articles'       => 'Архив',
+            ];
+        }
+
         $number = 1;
         foreach ($scenes as $id => $label) : ?>
             <button class="orbit-point" data-scene="<?= esc_attr($id); ?>">
