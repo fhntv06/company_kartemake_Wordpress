@@ -31,9 +31,18 @@
                     </div>
                     <div class="contact-footer-column">
                         <span class="contact-footer-title">ИНФОРМАЦИЯ</span>
-                        <a href="/about">О Компании</a>
-                        <a href="/privacy-policy">Политика обработки персональных данных</a>
-                        <a href="/cookie-policy">Политика использования Cookie</a>
+                        <a href="<?php echo get_permalink(get_page_by_path('about')); ?>">
+                          О Компании
+                        </a>
+                        <a href="<?php echo get_permalink(get_page_by_path('blog')); ?>">
+                          Блог
+                        </a>
+                        <a href="<?php echo get_permalink(get_page_by_path('privacy-policy')); ?>">
+                          Политика обработки персональных данных
+                        </a>
+                        <a href="<?php echo get_permalink(get_page_by_path('cookie-policy')); ?>">
+                          Политика использования Cookie
+                        </a>
                     </div>
                     <div class="contact-footer-column">
                         <span class="contact-footer-title">КОНТАКТЫ</span>
