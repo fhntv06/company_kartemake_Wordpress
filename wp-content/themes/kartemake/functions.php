@@ -90,7 +90,7 @@ function kartemake_enqueue_scripts() {
     );
 
     // pages-common
-    if (is_front_page() || is_page('about')) {
+    if (is_front_page() || is_page('about') || is_page('calculator')) {
         wp_enqueue_script(
             'kartemake-js-pages-common',
             get_template_directory_uri() . '/assets/js/pages-common.build.js',
@@ -201,6 +201,24 @@ function kartemake_enqueue_scripts() {
         wp_enqueue_style(
             'kartemake-style-blog',
             get_template_directory_uri() . '/assets/css/blog.build.css',
+            [],
+            wp_get_theme()->get('Version')
+        );
+    }
+
+    // Страница Калькулятора
+    // calculator
+    if (is_page('calculator') || is_page_template('page-calculator.php')) {
+        wp_enqueue_script(
+            'kartemake-js-calculator',
+            get_template_directory_uri() . '/assets/js/calculator.build.js',
+            array('kartemake-js-global'),
+            wp_get_theme()->get('Version'),
+            true
+        );
+        wp_enqueue_style(
+            'kartemake-style-calculator',
+            get_template_directory_uri() . '/assets/css/calculator.build.css',
             [],
             wp_get_theme()->get('Version')
         );
