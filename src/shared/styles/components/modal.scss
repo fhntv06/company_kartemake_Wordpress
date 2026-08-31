@@ -34,7 +34,7 @@
 .modal-content {
   position: relative;
   width: min(900px, calc(100% - $small));
-  max-height: calc(100vh - 40px);
+  max-height: calc(100dvh - 40px);
   overflow-y: auto;
   padding: clamp(#{$small - 4px}, 4vw, $small + $extra-small);
   border-radius: $border-radius;

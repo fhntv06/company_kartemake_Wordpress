@@ -330,7 +330,6 @@
 // ------------------------------------------------------------
 .about-model-list {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1px;
   border-top: 1px solid rgba(255,255,255,0.1);
   border-left: 1px solid rgba(255,255,255,0.1);
@@ -534,6 +533,8 @@
 // ABOUT PHILOSOPHY
 // ============================================================
 .about-philosophy-grid {
+  position: sticky;
+  top: $offset-top-from-header;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   margin-top: $large;
@@ -658,9 +659,6 @@
     gap: $middle;
     margin-top: $middle;
   }
-  .about-intro-content .about-lead {
-    @include responsive-font(18, 22);
-  }
 
   .about-image-frame {
     aspect-ratio: 1 / 1;
@@ -784,8 +782,6 @@
     scroll-behavior: auto !important;
   }
   .about-hero-content,
-  .about-intro-content,
-  .about-intro-visual,
   .about-principles,
   .about-model-main,
   .about-model-item,

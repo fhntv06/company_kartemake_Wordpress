@@ -8,7 +8,7 @@
   right: $small; // 32px → $small
   top: 50%;
   width: 120px;
-  height: 420px;
+  height: max-content;
   transform: translateY(-50%);
   z-index: var(--z-navigation);
   pointer-events: none;

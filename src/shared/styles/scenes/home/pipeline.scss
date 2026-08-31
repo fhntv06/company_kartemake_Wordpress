@@ -104,19 +104,6 @@
 // ВОССТАНОВЛЕННЫЕ КЛАССЫ
 // =====================================================
 
-.pipeline-wrapper {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.pipeline-step-content {
-  // стили для содержимого шага
-}
-
 .pipeline-step-label {
   display: block;
   font-family: "IBM Plex Mono", "Roboto Mono", monospace;

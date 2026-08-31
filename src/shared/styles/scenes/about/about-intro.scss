@@ -49,6 +49,11 @@ CONTENT
   color: $orange;
   text-transform: uppercase;
 }
+.about-intro-content {
+  position: sticky;
+  top: $offset-top-from-header;
+  height: max-content;
+}
 .about-intro-content h3 {
   margin: 0 0 $small;
 }
@@ -528,7 +533,7 @@ TABLET
 MOBILE
 ==========================================================
 */
-@media (max-width: 700px) {
+@media (max-width: $breakpoint-extra-small) {
   .about-intro .scene-container {
     padding: $middle $small $large;
   }
@@ -541,6 +546,9 @@ MOBILE
   }
   .about-intro-content {
     margin-bottom: $large;
+  }
+  .about-intro-content .about-lead {
+    @include responsive-font(18, 22);
   }
   .about-intro-visual {
     min-height: 680px;
@@ -614,7 +622,7 @@ MOBILE
 SMALL MOBILE
 ==========================================================
 */
-@media (max-width: 480px) {
+@media (max-width: $breakpoint-large-small) {
   .about-intro-visual {
     min-height: 720px;
   }
@@ -657,5 +665,10 @@ REDUCED MOTION
   }
   .about-intro-particle {
     display: none;
+  }
+  .about-intro-content,
+  .about-intro-visual {
+    opacity: 1;
+    transform: none;
   }
 }
