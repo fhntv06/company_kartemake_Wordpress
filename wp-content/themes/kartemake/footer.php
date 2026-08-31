@@ -37,6 +37,9 @@
                         <a href="<?php echo get_permalink(get_page_by_path('blog')); ?>">
                           Блог
                         </a>
+                        <a href="<?php echo get_permalink(get_page_by_path('calculator')); ?>">
+                          Калькулятор стоимости
+                        </a>
                         <a href="<?php echo get_permalink(get_page_by_path('privacy-policy')); ?>">
                           Политика обработки персональных данных
                         </a>
