@@ -7,598 +7,796 @@
 
   <link rel="shortcut icon" href="../../public/images/logotypes/logo-dark.ico" type="image/x-icon">
 </head>
-<body data-controller="modal  preloader ripple-effect theme">
-<header class="header" data-controller="header">
-  <a href="/" class="logo">
-    <span class="font-size-h2">K</span>
-    <span class="font-size-h2">·</span>
-    <span class="font-size-h3 color-accent-red">ART</span>
-    <span class="font-size-h2">·</span>
-    <span class="font-size-h4">TECH</span>
-  </a>
-
-  <nav class="nav-links">
-    <a href="services.html">Услуги</a>
-    <a href="projects.html">Кейсы</a>
-    <a href="about.html">Команда</a>
-    <a href="blog.html">Технический блог</a>
-    <a class="active" href="calculator.html">Калькулятор работ</a>
-    <a href="support.html">Техподдержка</a>
-    <a href="contacts.html">Контакты</a>
-  </nav>
-
-  <div class="header-controls">
-    <div class="social-links">
-      <a href="#"><i class="fab fa-github"></i></a>
-      <a href="#"><i class="fab fa-stack-overflow"></i></a>
-      <a href="#"><i class="fab fa-telegram"></i></a>
+<body>
+<!-- =================================================
+SYSTEM LOADER
+================================================= -->
+<div class="system-loader">
+  <div class="loader-terminal">
+    <span>ЗАПУСК СИСТЕМЫ K·ART·MAKE</span>
+    <div class="loader-progress">
+      <div></div>
     </div>
-
-    <div class="phone">
-      <i class="fas fa-phone"></i>
-      <span>+7 (999) 123-45-67</span>
-    </div>
-
-    <button
-            class="theme-toggle"
-            data-controller-theme="item"
-    >
-      <i class="fas fa-moon"></i>
-    </button>
-
-    <button
-            class="language-toggle"
-            data-controller="lang"
-            data-controller-ripple-effect="item"
-    >
-      <span data-controller-lang="item">RU</span>
-      <i class="fas fa-chevron-down"></i>
-    </button>
-
-    <button
-            class="cta-button"
-            data-controller-modal-open="form"
-            data-controller-modal-func="open"
-            data-controller-ripple-effect="item"
-    >
-      Обсудить задачу
-      <i class="fas fa-arrow-right"></i>
-    </button>
-
-    <button class="burger-menu" id="burgerMenu">
+  </div>
+</div>
+<!-- =================================================
+ORBIT NAVIGATION
+================================================= -->
+<div id="orbit-navigation" class="orbit-navigation">
+  <div class="orbit-circle">
+    <button class="orbit-point" data-scene="hero">
+      <span class="orbit-point__description">Начало</span>
       <span></span>
+      <strong>01</strong>
+    </button>
+    <button class="orbit-point" data-scene="blog-intro">
+      <span class="orbit-point__description">Как формируется стоимость</span>
       <span></span>
-      <span></span>
+      <strong>02</strong>
     </button>
   </div>
+</div>
+<!-- =================================================
+GLOBAL DASHBOARD
+================================================= -->
+<header id="header" class="global-dashboard">
+  <div class="dashboard-inner">
+    <a href="/" class="dashboard-brand">K·ART·MAKE</a>
+    <div class="dashboard-status">
+      <span class="dashboard-status-dot"></span>
+      СИСТЕМА РАБОТАЕТ
+    </div>
+    <button class="dashboard-menu" type="button" aria-expanded="false" aria-controls="dashboard-menu-panel">
+      <span class="dashboard-menu-label">МЕНЮ</span>
+      <span class="dashboard-menu-icon">
+        <span></span>
+        <span></span>
+      </span>
+    </button>
+  </div>
+  <div id="dashboard-menu-panel" class="dashboard-menu-panel" aria-hidden="true">
+    <div class="dashboard-menu-panel-inner">
+      <!-- CONTACTS -->
+      <div class="dashboard-menu-column">
+        <span class="dashboard-menu-title">КОНТАКТЫ</span>
+        <a href="mailto:hello@kartemake.ru">
+          <span>НОВЫЕ ПРОЕКТЫ</span>
+          <strong>hello@kartemake.ru</strong>
+        </a>
+        <a href="mailto:support@kartemake.ru">
+          <span>ТЕХНИЧЕСКАЯ ПОДДЕРЖКА</span>
+          <strong>support@kartemake.ru</strong>
+        </a>
+      </div>
+      <!-- SERVICES -->
+      <div class="dashboard-menu-column">
+        <span class="dashboard-menu-title">УСЛУГИ</span>
+        <a href="/#optimization">
+          <span>01</span>
+          <strong>Оптимизация сайта</strong>
+        </a>
+        <a href="/#modernization">
+          <span>02</span>
+          <strong>Модернизация</strong>
+        </a>
+        <a href="/#support">
+          <span>03</span>
+          <strong>Техническая поддержка</strong>
+        </a>
+        <a href="/#audit">
+          <span>04</span>
+          <strong>Аудит и консультации</strong>
+        </a>
+      </div>
+      <!-- INFORMATION -->
+      <div class="dashboard-menu-column">
+        <span class="dashboard-menu-title">ИНФОРМАЦИЯ</span>
+        <a href="./about.html">О Компании</a>
+        <a href="./privacy-policy.html">Политика обработки персональных данных</a>
+        <a href="./cookie-policy.html">Политика использования Cookie</a>
+      </div>
+    </div>
+  </div>
 </header>
-<main>
-  <section class="hero-support">
-    <div class="container hero__container">
-      <h1>Калькулятор <span class="color-accent-red">IT-услуг</span></h1>
-      <p>Соберите ваш пакет технической поддержки и разработки. Оцените стоимость как разовых работ, так и абонентского обслуживания.</p>
-      <p>Вы — <span class="color-accent-red">бизнес без IT-отдела</span>? Мы — ваш <span class="color-accent-red">внешний технический отдел</span>.</p>
-
-      <div class="divider"></div>
-
-      <div class="stats" data-controller="animation-numbers">
-        <div class="stat-item">
-          <div class="stat-number" data-prefix="от" data-postfix="<" data-controller-animation-numbers="item">15000</div>
-          <div class="stat-label">Стоимость абонентского обслуживания в месяц</div>
+<main class="page page-calculator">
+  <!-- =================================================
+  CALCULATOR HERO
+  ================================================= -->
+  <section class="scene scene-hero calculator-hero" data-scene="hero" data-canvas-engine>
+    <canvas id="heroCanvas" class="hero-canvas" aria-hidden="true"></canvas>
+    <canvas id="hero-particle-canvas" class="hero-particle-canvas" aria-hidden="true"></canvas>
+    <div class="scene-container">
+      <div class="hero-content">
+        <div class="system-label">K·ART·MAKE / CALCULATOR</div>
+        <h1>Рассчитайте стоимость <span>технических работ.</span></h1>
+        <p>Соберите необходимый набор услуг — от разовой задачи до комплексного технического сопровождения проекта.</p>
+        <div class="hero-note">DEVELOPMENT · SUPPORT · AUDIT · INFRASTRUCTURE</div>
+        <div class="hero-actions">
+          <button class="button-primary">Начать расчёт</button>
         </div>
-        <div class="stat-item">
-          <div class="stat-number" data-postfix="%" data-controller-animation-numbers="item">40</div>
-          <div class="stat-label">Экономия vs штатный программист</div>
-        </div>
-      </div>
-
-      <div class="divider"></div>
-
-      <div class="info-tip">
-        <i class="fas fa-lightbulb color-accent-red"></i>
-        <span>Калькулятор показывает ориентировочную стоимость. После обсуждения деталей мы составим точное коммерческое предложение.</span>
       </div>
     </div>
   </section>
 
-  <section class="calculator" data-controller="calculator">
-    <div class="container">
-      <h2 class="section__title">Соберите ваш пакет <span class="color-accent-red">технической поддержки</span></h2>
-      <p class="section__description">Выберите необходимые услуги — от разовой задачи до комплексного абонентского обслуживания.</p>
-
-      <div class="calculator-tabs">
-        <button class="tab-button active" data-tab="development">Разработка и проекты</button>
-        <button class="tab-button" data-tab="maintenance">Поддержка и обслуживание</button>
-        <button class="tab-button" data-tab="consulting">Аудит и консалтинг</button>
-      </div>
-
-      <div class="calculator-grid">
-        <div class="calculator-options">
-          <!-- Тип проекта -->
-          <div class="option-group" data-controller-calculator="item">
-            <h4 class="option-title color-accent-red"><i class="fas fa-tasks"></i> Что вам нужно сделать?</h4>
-            <div class="option-items">
-              <div class="option-item" data-price="0" data-reset="true">
-                <div class="option-info">
-                  <span class="option-name font-weight-bold">Только поддержка</span>
-                  <span class="option-desc">У меня есть работающий сайт, нужна техническая поддержка</span>
-                </div>
-                <span class="option-price">0 ₽</span>
-              </div>
-              <div class="option-item selected" data-price="50000">
-                <div class="option-info">
-                  <span class="option-name font-weight-bold">Разработка с нуля</span>
-                  <span class="option-desc">Нужно создать новый сайт, магазин или веб-приложение</span>
-                </div>
-                <span class="option-price">от 50 000 ₽</span>
-              </div>
-              <div class="option-item" data-price="35000">
-                <div class="option-info">
-                  <span class="option-name font-weight-bold">Доработка существующего</span>
-                  <span class="option-desc">Добавить функционал, исправить ошибки, сделать интеграцию</span>
-                </div>
-                <span class="option-price">от 35 000 ₽</span>
-              </div>
-              <div class="option-item" data-price="40000">
-                <div class="option-info">
-                  <span class="option-name font-weight-bold">Миграция/модернизация</span>
-                  <span class="option-desc">Перенести сайт на новую CMS, обновить технологии, рефакторинг</span>
-                </div>
-                <span class="option-price">от 40 000 ₽</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Платформа (если выбрана разработка/доработка) -->
-          <div class="option-group dependent" data-controller-calculator="item" data-depends="development">
-            <h4 class="option-title color-accent-red"><i class="fas fa-layer-group"></i> Платформа проекта</h4>
-            <div class="option-items">
-              <div class="option-item" data-price="0">
-                <div class="option-info">
-                  <span class="option-name font-weight-bold">Не важно / Другое</span>
-                  <span class="option-desc">Выберем оптимальную технологию под задачу</span>
-                </div>
-                <span class="option-price">0 ₽</span>
-              </div>
-              <div class="option-item selected" data-price="0">
-                <div class="option-info">
-                  <span class="option-name font-weight-bold">1С-Битрикс</span>
-                  <span class="option-desc">Корпоративные сайты, интернет-магазины, интеграции с 1С</span>
-                </div>
-                <span class="option-price">0 ₽</span>
-              </div>
-              <div class="option-item" data-price="0">
-                <div class="option-info">
-                  <span class="option-name font-weight-bold">WordPress</span>
-                  <span class="option-desc">Сайты-визитки, блоги, каталоги, Landing Page</span>
-                </div>
-                <span class="option-price">0 ₽</span>
-              </div>
-              <div class="option-item" data-price="10000">
-                <div class="option-info">
-                  <span class="option-name font-weight-bold">Свой стек (React/Vue/Node.js)</span>
-                  <span class="option-desc">Веб-приложения, сложные системы, кастомная разработка</span>
-                </div>
-                <span class="option-price">+10 000 ₽</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Сложность проекта -->
-          <div class="option-group dependent" data-controller-calculator="item" data-depends="development">
-            <h4 class="option-title color-accent-red"><i class="fas fa-chart-line"></i> Сложность и объем работ</h4>
-            <div class="option-items">
-              <div class="option-item" data-price="30000">
-                <div class="option-info">
-                  <span class="option-name font-weight-bold">Простой (лендинг, сайт-визитка)</span>
-                  <span class="option-desc">5-10 страниц, базовая функциональность</span>
-                </div>
-                <span class="option-price">30 000 ₽</span>
-              </div>
-              <div class="option-item selected" data-price="85000">
-                <div class="option-info">
-                  <span class="option-name font-weight-bold">Средний (корпоративный сайт, каталог)</span>
-                  <span class="option-desc">10-30 страниц, формы, интеграции, админ-панель</span>
-                </div>
-                <span class="option-price">85 000 ₽</span>
-              </div>
-              <div class="option-item" data-price="180000">
-                <div class="option-info">
-                  <span class="option-name font-weight-bold">Сложный (интернет-магазин, веб-приложение)</span>
-                  <span class="option-desc">Каталог товаров, корзина, оплата, ЛК, CRM-интеграции</span>
-                </div>
-                <span class="option-price">180 000 ₽</span>
-              </div>
-              <div class="option-item" data-price="300000">
-                <div class="option-info">
-                  <span class="option-name font-weight-bold">Очень сложный (система, MVP стартапа)</span>
-                  <span class="option-desc">Многофункциональная система, кастомная логика, API</span>
-                </div>
-                <span class="option-price">300 000 ₽</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Дополнительные интеграции (чекбоксы) -->
-          <div class="option-group" data-controller-calculator="item" data-type="multiply">
-            <h4 class="option-title color-accent-red"><i class="fas fa-plug"></i> Интеграции и подключения</h4>
-            <div class="option-items">
-              <div class="option-item checkbox-option" data-price="15000">
-                <div class="option-info">
-                  <span class="option-name font-weight-bold">Интеграция с 1С</span>
-                  <span class="option-desc">Обмен товарами, заказами, клиентами</span>
-                </div>
-                <span class="option-price">15 000 ₽</span> <!-- НЕ содержит /мес или /год -->
-              </div>
-              <div class="option-item checkbox-option" data-price="20000">
-                <div class="option-info">
-                  <span class="option-name font-weight-bold">Подключение CRM (Битрикс24, AmoCRM)</span>
-                  <span class="option-desc">Отправка лидов, сделок, контактов</span>
-                </div>
-                <span class="option-price">20 000 ₽</span>
-              </div>
-              <div class="option-item checkbox-option" data-price="10000">
-                <div class="option-info">
-                  <span class="option-name font-weight-bold">Платежные системы</span>
-                  <span class="option-desc">ЮKassa, Сбербанк, Тинькофф, Робокасса</span>
-                </div>
-                <span class="option-price">10 000 ₽</span>
-              </div>
-              <div class="option-item checkbox-option" data-price="8000">
-                <div class="option-info">
-                  <span class="option-name font-weight-bold">Телефония и чаты</span>
-                  <span class="option-desc">Виджеты обратного звонка, онлайн-консультанты</span>
-                </div>
-                <span class="option-price">8 000 ₽</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Пакет поддержки (если выбрана поддержка) -->
-          <div class="option-group" data-controller-calculator="item">
-            <h4 class="option-title color-accent-red"><i class="fas fa-headset"></i> Абонентское обслуживание (в месяц)</h4>
-            <div class="option-items">
-              <div class="option-item" data-price="0" data-reset="true">
-                <div class="option-info">
-                  <span class="option-name font-weight-bold">Без поддержки</span>
-                  <span class="option-desc">Только разовая работа, дальнейшая поддержка не нужна</span>
-                </div>
-                <span class="option-price">0 ₽</span>
-              </div>
-              <div class="option-item" data-price="15000">
-                <div class="option-info">
-                  <span class="option-name font-weight-bold">Базовый пакет</span>
-                  <span class="option-desc">5 часов работы, мониторинг, резервные копии, консультации</span>
-                </div>
-                <span class="option-price">15 000 ₽/мес</span> <!-- Содержит /мес -->
-              </div>
-              <div class="option-item" data-price="30000">
-                <div class="option-info">
-                  <span class="option-name font-weight-bold">Стандартный пакет</span>
-                  <span class="option-desc">15 часов работы, приоритетная поддержка, еженедельные отчеты</span>
-                </div>
-                <span class="option-price">30 000 ₽/мес</span>
-              </div>
-              <div class="option-item" data-price="60000">
-                <div class="option-info">
-                  <span class="option-name font-weight-bold">Профессиональный пакет</span>
-                  <span class="option-desc">40 часов работы, выделенный специалист, SLA 24/7</span>
-                </div>
-                <span class="option-price">60 000 ₽/мес</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Дополнительные сервисные услуги -->
-          <div class="option-group" data-controller-calculator="item" data-type="multiply">
-            <h4 class="option-title color-accent-red"><i class="fas fa-tools"></i> Дополнительные услуги</h4>
-            <div class="option-items">
-              <div class="option-item checkbox-option" data-price="12000" data-price-type="yearly">
-                <div class="option-info">
-                  <span class="option-name font-weight-bold">Хостинг и домен (год)</span>
-                  <span class="option-desc">Настройка, обслуживание, мониторинг</span>
-                </div>
-                <span class="option-price">12 000 ₽/год</span>
-              </div>
-              <div class="option-item checkbox-option" data-price="15000" data-price-type="project">
-                <div class="option-info">
-                  <span class="option-name font-weight-bold">Технический аудит</span>
-                  <span class="option-desc">Проверка безопасности, производительности, кода</span>
-                </div>
-                <span class="option-price">15 000 ₽</span>
-              </div>
-              <div class="option-item checkbox-option" data-price="8000" data-price-type="project">
-                <div class="option-info">
-                  <span class="option-name font-weight-bold">Обучение сотрудников</span>
-                  <span class="option-desc">Работа с CMS, обновление контента, базовая админка</span>
-                </div>
-                <span class="option-price">8 000 ₽</span>
-              </div>
-              <div class="option-item checkbox-option" data-price="5000">
-                <div class="option-info">
-                  <span class="option-name font-weight-bold">SSL-сертификат (год)</span>
-                  <span class="option-desc">Настройка и обновление безопасного соединения</span>
-                </div>
-                <span class="option-price">5 000 ₽/год</span> <!-- Содержит /год -->
-              </div>
-            </div>
+  <!-- =================================================
+  CALCULATOR INTRO
+  ================================================= -->
+  <section class="scene calculator-intro" data-scene="blog-intro">
+    <div class="scene-container">
+      <header class="scene-header reveal-item">
+        <div class="scene-eyebrow">CALCULATION MODEL</div>
+        <h2 class="scene-title">Стоимость формируется <span>из состава задачи.</span></h2>
+        <p class="scene-description">Мы не используем универсальный тариф. Сначала определяем, что именно нужно сделать, затем учитываем сложность проекта и дополнительные работы.</p>
+      </header>
+      <div class="calculator-intro-layout reveal-item">
+        <div class="calculator-intro-content">
+          <h5 class="calculator-intro-lead">Выберите параметры проекта — калькулятор соберёт ориентировочную стоимость работ и покажет, из чего она складывается.</h5>
+          <div class="calculator-intro-process">
+            <article class="calculator-intro-step">
+              <span class="calculator-intro-step__number">01</span>
+              <h5>Определяем задачу</h5>
+              <p>Разработка, поддержка, модернизация, аудит или инфраструктурные работы.</p>
+            </article>
+            <article class="calculator-intro-step">
+              <span class="calculator-intro-step__number">02</span>
+              <h5>Учитываем объём</h5>
+              <p>Платформа, сложность проекта, интеграции и необходимый состав работ.</p>
+            </article>
+            <article class="calculator-intro-step">
+              <span class="calculator-intro-step__number">03</span>
+              <h5>Получаем оценку</h5>
+              <p>Вы видите ориентировочную стоимость проекта и дальнейшего сопровождения.</p>
+            </article>
           </div>
         </div>
-
-        <div class="calculator-summary">
-          <h3 class="summary-title color-accent-red">Ваш пакет услуг</h3>
-          <div class="summary-items">
-            <div class="summary-item">
-              <p><b>Основная задача</b>:</p>
-              <p><span class="summary-price font-weight-bold" data-controller-calculator-item="price-total" data-price="50000">50 000</span> ₽</p>
-            </div>
-            <div class="summary-item dependent-item" data-depends="development">
-              <p><b>Платформа</b>:</p>
-              <p><span class="summary-price" data-controller-calculator-item="price-total" data-price="0">0</span> ₽</p>
-            </div>
-            <div class="summary-item dependent-item" data-depends="development">
-              <p><b>Сложность проекта</b>:</p>
-              <p><span class="summary-price font-weight-bold" data-controller-calculator-item="price-total" data-price="85000">85 000</span> ₽</p>
-            </div>
-            <div class="summary-item">
-              <p><b>Интеграции и подключения</b>:</p>
-              <p><span class="summary-price" data-controller-calculator-item="price-total">0</span> ₽</p>
-            </div>
-            <div class="summary-item">
-              <p><b>Абонентское обслуживание</b>:</p>
-              <p><span class="summary-price font-weight-bold" data-controller-calculator-item="price-total" data-price="15000">15 000</span> ₽/мес</p>
-            </div>
-            <div class="summary-item">
-              <p><b>Дополнительные услуги</b>:</p>
-              <p><span class="summary-price" data-controller-calculator-item="price-total">0</span> ₽</p>
-            </div>
+        <div class="calculator-intro-metrics">
+          <div class="calculator-intro-metric">
+            <span class="calculator-intro-metric__label">STARTING PROJECT</span>
+            <span class="calculator-intro-metric__value">15 000 ₽</span>
+            <p class="calculator-intro-metric__description">Ориентир для небольших технических задач.</p>
           </div>
-
-          <div class="summary-section">
-            <div class="summary-total color-accent-red">
-              <p class="font-size-h4 font-weight-bold">Стоимость проекта:</p>
-              <p><span id="project-price" class="font-size-h4 font-weight-bold">135 000</span> ₽</p>
-            </div>
-            <div class="summary-total color-accent-red">
-              <p class="font-size-h4 font-weight-bold">Ежемесячная поддержка:</p>
-              <p><span id="monthly-price" class="font-size-h4 font-weight-bold">15 000</span> ₽/мес</p>
-            </div>
-            <div class="summary-total color-accent-red">
-              <p class="font-size-h4 font-weight-bold">Годовая стоимость (проект + поддержка):</p>
-              <p><span id="yearly-price" class="font-size-h5 font-weight-bold">315 000</span> ₽</p>
-            </div>
-          </div>
-
-          <p class="summary-note">
-            <i class="fas fa-info-circle color-accent-red"></i>
-            *Цены ориентировочные. При долгосрочном сотрудничестве предусмотрены скидки. <br>
-            **Стоимость абонентского обслуживания может меняться в зависимости от объема работ.
-          </p>
-
-          <div class="summary-buttons">
-            <button
-                    class="btn btn--accent"
-                    data-controller-modal-open="form"
-                    data-controller-modal-func="open"
-                    data-controller-ripple-effect="item"
-            >
-              Обсудить детали
-            </button>
-            <button
-                    class="btn btn--outline"
-                    id="save-estimate"
-                    data-controller-ripple-effect="item"
-            >
-              <i class="fas fa-download"></i> Сохранить расчет
-            </button>
-          </div>
-
-          <div class="comparison-tip">
-            <h4><i class="fas fa-balance-scale color-accent-red"></i> Сравнение с альтернативами:</h4>
-            <ul>
-              <li><span class="font-weight-bold">Штатный программист:</span> от 120 000 ₽/мес + налоги + отпуска</li>
-              <li><span class="font-weight-bold">Digital-агентство:</span> проекты на 30-50% дороже</li>
-              <li><span class="font-weight-bold">Фрилансер:</span> риски качества и сроков, нет команды</li>
-            </ul>
+          <div class="calculator-intro-metric">
+            <span class="calculator-intro-metric__label">OUTSOURCING MODEL</span>
+            <span class="calculator-intro-metric__value">−40%</span>
+            <p class="calculator-intro-metric__description">Потенциальная экономия относительно содержания собственного IT-ресурса.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FAQ по калькулятору -->
-  <section class="faq">
-    <div class="container">
-      <h3 class="section__title">Частые вопросы по <span class="color-accent-red">калькулятору</span></h3>
-      <div class="accordion-container" data-controller="accordion">
-        <div class="accordion-item" data-controller-accordion="item">
-          <div class="accordion-question">
-            <h5>Можно ли менять пакет поддержки после запуска проекта?</h5>
-            <span class="accordion-icon"><i class="fas fa-plus"></i></span>
+  <!-- ============================================================
+  CALCULATOR SCENE
+  ============================================================ -->
+  <section class="scene calculator" data-scene="calculator" data-calculator>
+    <div class="scene-container">
+      <!-- ====================================================
+      HEADER
+      ==================================================== -->
+      <header class="scene-header">
+        <div class="scene-eyebrow">PROJECT CALCULATOR</div>
+        <h2 class="scene-title">Рассчитайте стоимость <span>технических работ.</span></h2>
+        <p class="scene-description">Опишите задачу, выберите необходимые параметры и получите предварительную оценку технических работ.</p>
+      </header>
+      <!-- ====================================================
+           STEPS
+           ==================================================== -->
+      <nav id="calculator-steps" class="calculator-steps" aria-label="Этапы расчёта">
+        <button type="button" class="calculator-steps__item is-active" data-calculator-nav="options" aria-current="step">
+          <span class="calculator-steps__number">01</span>
+          <span class="calculator-steps__content">
+                    <span class="calculator-steps__title">Конфигурация</span>
+                    <span class="calculator-steps__status">Параметры задачи</span>
+                </span>
+        </button>
+        <button type="button" class="calculator-steps__item" data-calculator-nav="builder" disabled>
+          <span class="calculator-steps__number">02</span>
+          <span class="calculator-steps__content">
+                    <span class="calculator-steps__title">Состав работ</span>
+                    <span class="calculator-steps__status">Техническая конфигурация</span>
+                </span>
+        </button>
+        <button type="button" class="calculator-steps__item" data-calculator-nav="result" disabled>
+          <span class="calculator-steps__number">03</span>
+          <span class="calculator-steps__content">
+                    <span class="calculator-steps__title">Результат</span>
+                    <span class="calculator-steps__status">Предварительная оценка</span>
+                </span>
+        </button>
+      </nav>
+      <!-- ====================================================
+           CONTENT
+           ==================================================== -->
+      <div class="calculator__content">
+        <!-- =================================================
+             OPTIONS
+             ================================================= -->
+        <section class="calculator__step calculator-options is-active" data-calculator-step="options">
+          <div class="calculator-options__layout">
+            <div class="calculator-panel">
+              <!-- PANEL HEADER -->
+              <header class="calculator-panel__header">
+                <div>
+                  <span class="calculator-panel__label">CONFIG / TASK</span>
+                  <h5 class="calculator-panel__title">Что необходимо сделать?</h5>
+                </div>
+                <span class="calculator-panel__counter">01 / 03</span>
+              </header>
+              <!-- =================================================
+                   TASK
+                   ================================================= -->
+              <div class="calculator-group">
+                <div class="calculator-group__header">
+                  <div>
+                    <span class="calculator-group__label">Основная задача</span>
+                    <span class="calculator-group__description">Выберите основное направление технических работ.</span>
+                  </div>
+                  <span class="calculator-group__status">REQUIRED</span>
+                </div>
+                <div class="calculator-option-grid">
+                  <!-- DEVELOPMENT -->
+                  <label class="calculator-option" data-calculator-option data-option-group="task" data-value="development" data-price="15000">
+                    <input type="radio" name="calculator_task" value="development">
+                    <span class="calculator-option__indicator"></span>
+                    <span class="calculator-option__title">Разработка</span>
+                    <span class="calculator-option__description">Создание нового цифрового продукта или отдельного функционального модуля.</span>
+                    <span class="calculator-option__price">от <strong>15 000 ₽</strong></span>
+                  </label>
+                  <!-- SUPPORT -->
+                  <label class="calculator-option" data-calculator-option data-option-group="task" data-value="support" data-price="15000">
+                    <input type="radio" name="calculator_task" value="support">
+                    <span class="calculator-option__indicator"></span>
+                    <span class="calculator-option__title">Поддержка</span>
+                    <span class="calculator-option__description">Постоянное техническое сопровождение и решение текущих задач.</span>
+                    <span class="calculator-option__price">от <strong>15 000 ₽ / мес.</strong></span>
+                  </label>
+                  <!-- OPTIMIZATION -->
+                  <label class="calculator-option" data-calculator-option data-option-group="task" data-value="optimization" data-price="20000">
+                    <input type="radio" name="calculator_task" value="optimization">
+                    <span class="calculator-option__indicator"></span>
+                    <span class="calculator-option__title">Оптимизация</span>
+                    <span class="calculator-option__description">Поиск узких мест и повышение производительности системы.</span>
+                    <span class="calculator-option__price">от <strong>20 000 ₽</strong></span>
+                  </label>
+                  <!-- AUDIT -->
+                  <label class="calculator-option" data-calculator-option data-option-group="task" data-value="audit" data-price="15000">
+                    <input type="radio" name="calculator_task" value="audit">
+                    <span class="calculator-option__indicator"></span>
+                    <span class="calculator-option__title">Аудит</span>
+                    <span class="calculator-option__description">Техническое исследование проекта, инфраструктуры и текущих проблем.</span>
+                    <span class="calculator-option__price">от <strong>15 000 ₽</strong></span>
+                  </label>
+                </div>
+              </div>
+              <!-- =================================================
+                   SCALE
+                   ================================================= -->
+              <div class="calculator-group">
+                <div class="calculator-group__header">
+                  <div>
+                    <span class="calculator-group__label">Масштаб проекта</span>
+                    <span class="calculator-group__description">Определяет объём и сложность технических работ.</span>
+                  </div>
+                  <span class="calculator-group__status">REQUIRED</span>
+                </div>
+                <div class="calculator-option-grid">
+                  <!-- SMALL -->
+                  <label class="calculator-option" data-calculator-option data-option-group="scale" data-value="small" data-multiplier="1">
+                    <input type="radio" name="calculator_scale" value="small">
+                    <span class="calculator-option__indicator"></span>
+                    <span class="calculator-option__title">Небольшой</span>
+                    <span class="calculator-option__description">Сайт, небольшой сервис или отдельный цифровой модуль.</span>
+                    <span class="calculator-option__price">коэффициент <strong>×1.0</strong></span>
+                  </label>
+                  <!-- MEDIUM -->
+                  <label class="calculator-option" data-calculator-option data-option-group="scale" data-value="medium" data-multiplier="1.4">
+                    <input type="radio" name="calculator_scale" value="medium">
+                    <span class="calculator-option__indicator"></span>
+                    <span class="calculator-option__title">Средний</span>
+                    <span class="calculator-option__description">Несколько систем, интеграций или существенный объём технической работы.</span>
+                    <span class="calculator-option__price">коэффициент <strong>×1.4</strong></span>
+                  </label>
+                  <!-- LARGE -->
+                  <label class="calculator-option" data-calculator-option data-option-group="scale" data-value="large" data-multiplier="1.8">
+                    <input type="radio" name="calculator_scale" value="large">
+                    <span class="calculator-option__indicator"></span>
+                    <span class="calculator-option__title">Крупный</span>
+                    <span class="calculator-option__description">Сложная инфраструктура, несколько контуров и большое количество компонентов.</span>
+                    <span class="calculator-option__price">коэффициент <strong>×1.8</strong></span>
+                  </label>
+                </div>
+              </div>
+              <!-- =================================================
+                   ADDITIONAL
+                   ================================================= -->
+              <div class="calculator-group">
+                <div class="calculator-group__header">
+                  <div>
+                    <span class="calculator-group__label">Дополнительные работы</span>
+                    <span class="calculator-group__description">Необязательные работы, которые можно добавить к основной конфигурации.</span>
+                  </div>
+                  <span class="calculator-group__status">OPTIONAL</span>
+                </div>
+                <div class="calculator-option-grid">
+                  <!-- INFRASTRUCTURE -->
+                  <label class="calculator-option" data-calculator-option data-option-group="additional" data-value="infrastructure" data-price="10000">
+                    <input type="checkbox" name="calculator_additional" value="infrastructure">
+                    <span class="calculator-option__indicator"></span>
+                    <span class="calculator-option__title">Инфраструктура</span>
+                    <span class="calculator-option__description">Настройка сервера, окружения, SSL и базовой инфраструктуры.</span>
+                    <span class="calculator-option__price">+ <strong>10 000 ₽</strong></span>
+                  </label>
+                  <!-- MONITORING -->
+                  <label class="calculator-option" data-calculator-option data-option-group="additional" data-value="monitoring" data-price="8000">
+                    <input type="checkbox" name="calculator_additional" value="monitoring">
+                    <span class="calculator-option__indicator"></span>
+                    <span class="calculator-option__title">Мониторинг</span>
+                    <span class="calculator-option__description">Контроль доступности, ошибок и состояния технической системы.</span>
+                    <span class="calculator-option__price">+ <strong>8 000 ₽</strong></span>
+                  </label>
+                  <!-- DOCUMENTATION -->
+                  <label class="calculator-option" data-calculator-option data-option-group="additional" data-value="documentation" data-price="5000">
+                    <input type="checkbox" name="calculator_additional" value="documentation">
+                    <span class="calculator-option__indicator"></span>
+                    <span class="calculator-option__title">Документация</span>
+                    <span class="calculator-option__description">Фиксация архитектуры, настроек и технических решений.</span>
+                    <span class="calculator-option__price">+ <strong>5 000 ₽</strong></span>
+                  </label>
+                </div>
+              </div>
+              <!-- FOOTER -->
+              <footer class="calculator-panel__footer">
+                <p class="calculator-panel__hint">Выберите основную задачу и масштаб проекта. Дополнительные работы можно добавить по необходимости.</p>
+                <button type="button" class="button-primary" data-calculator-next="builder">Далее</button>
+              </footer>
+            </div>
           </div>
-          <div class="accordion-answer">
-            <p>Да, вы можете в любой момент изменить пакет поддержки (увеличить или уменьшить). Мы пересчитаем стоимость со следующего месяца. Обычно клиенты начинают с Базового пакета, а при росте проекта переходят на Стандартный или Профессиональный.</p>
+        </section>
+        <!-- =================================================
+             BUILDER
+             ================================================= -->
+        <section class="calculator__step calculator-builder" data-calculator-step="builder" hidden>
+          <div class="calculator-builder__layout">
+            <div class="calculator-panel">
+              <!-- HEADER -->
+              <header class="calculator-panel__header">
+                <div>
+                  <span class="calculator-panel__label">CONFIG / WORK PACKAGE</span>
+                  <h5 class="calculator-panel__title">Состав технических работ</h5>
+                </div>
+                <span class="calculator-panel__counter">02 / 03</span>
+              </header>
+              <!-- =================================================
+              WORKS
+              ================================================= -->
+              <div class="calculator-group" data-calculator-work-source="development">
+                <div class="calculator-group__header">
+                  <div>
+                    <span class="calculator-group__label">Работы для разработки</span>
+                    <span class="calculator-group__description">Базовый набор технических работ.</span>
+                  </div>
+                  <span class="calculator-group__status">INCLUDED</span>
+                </div>
+                <div class="calculator-builder-list">
+                  <label class="calculator-builder-item" data-calculator-work data-work-id="analysis" data-task="development" data-price="5000">
+                    <input type="checkbox" value="analysis">
+                    <span class="calculator-builder-item__indicator"></span>
+                    <span class="calculator-builder-item__content">
+                                        <span class="calculator-builder-item__title">Анализ задачи</span>
+                                        <span class="calculator-builder-item__description">Разбор требований, ограничений и технических условий проекта.</span>
+                                    </span>
+                    <span class="calculator-builder-item__price">5 000 ₽</span>
+                  </label>
+                  <label class="calculator-builder-item" data-calculator-work data-work-id="architecture" data-task="development" data-price="10000">
+                    <input type="checkbox" value="architecture">
+                    <span class="calculator-builder-item__indicator"></span>
+                    <span class="calculator-builder-item__content">
+                                        <span class="calculator-builder-item__title">Проектирование решения</span>
+                                        <span class="calculator-builder-item__description">Определение архитектуры и технического подхода к реализации.</span>
+                                    </span>
+                    <span class="calculator-builder-item__price">10 000 ₽</span>
+                  </label>
+                </div>
+              </div>
+              <!-- SUPPORT WORKS -->
+              <div class="calculator-group" data-calculator-work-source="support" hidden>
+                <div class="calculator-group__header">
+                  <div>
+                    <span class="calculator-group__label">Работы по поддержке</span>
+                    <span class="calculator-group__description">Базовый набор работ по техническому сопровождению.</span>
+                  </div>
+                  <span class="calculator-group__status">INCLUDED</span>
+                </div>
+                <div class="calculator-builder-list">
+                  <label class="calculator-builder-item" data-calculator-work data-work-id="diagnostics" data-task="support" data-price="7000">
+                    <input type="checkbox" value="diagnostics">
+                    <span class="calculator-builder-item__indicator"></span>
+                    <span class="calculator-builder-item__content">
+                                        <span class="calculator-builder-item__title">Техническая диагностика</span>
+                                        <span class="calculator-builder-item__description">Проверка текущего состояния системы и выявление проблем.</span>
+                                    </span>
+                    <span class="calculator-builder-item__price">7 000 ₽</span>
+                  </label>
+                  <label class="calculator-builder-item" data-calculator-work data-work-id="support" data-task="support" data-price="8000">
+                    <input type="checkbox" value="support">
+                    <span class="calculator-builder-item__indicator"></span>
+                    <span class="calculator-builder-item__content">
+                                        <span class="calculator-builder-item__title">Техническое сопровождение</span>
+                                        <span class="calculator-builder-item__description">Решение текущих технических задач и сопровождение проекта.</span>
+                                    </span>
+                    <span class="calculator-builder-item__price">8 000 ₽</span>
+                  </label>
+                </div>
+              </div>
+              <!-- OPTIMIZATION WORKS -->
+              <div class="calculator-group" data-calculator-work-source="optimization" hidden>
+                <div class="calculator-group__header">
+                  <div>
+                    <span class="calculator-group__label">Работы по оптимизации</span>
+                    <span class="calculator-group__description">Исследование и устранение технических узких мест.</span>
+                  </div>
+                  <span class="calculator-group__status">INCLUDED</span>
+                </div>
+                <div class="calculator-builder-list">
+                  <label class="calculator-builder-item" data-calculator-work data-work-id="analysis" data-task="optimization" data-price="15000">
+                    <input type="checkbox" value="analysis">
+                    <span class="calculator-builder-item__indicator"></span>
+                    <span class="calculator-builder-item__content">
+                                        <span class="calculator-builder-item__title">Анализ текущего состояния</span>
+                                        <span class="calculator-builder-item__description">Изучение текущей архитектуры, технического состояния и ограничений проекта.</span>
+                                    </span>
+                    <span class="calculator-builder-item__price">15 000 ₽</span>
+                  </label>
+                  <label class="calculator-builder-item" data-calculator-work data-work-id="architecture" data-task="optimization" data-price="12000">
+                    <input type="checkbox" value="architecture">
+                    <span class="calculator-builder-item__indicator"></span>
+                    <span class="calculator-builder-item__content">
+                                        <span class="calculator-builder-item__title">Анализ архитектуры</span>
+                                        <span class="calculator-builder-item__description">Проверка связей между компонентами, сервисами и инфраструктурой.</span>
+                                    </span>
+                    <span class="calculator-builder-item__price">12 000 ₽</span>
+                  </label>
+                  <label class="calculator-builder-item" data-calculator-work data-work-id="performance" data-task="optimization" data-price="20000">
+                    <input type="checkbox" value="performance">
+                    <span class="calculator-builder-item__indicator"></span>
+                    <span class="calculator-builder-item__content">
+                                        <span class="calculator-builder-item__title">Анализ производительности</span>
+                                        <span class="calculator-builder-item__description">Поиск узких мест и причин снижения производительности.</span>
+                                    </span>
+                    <span class="calculator-builder-item__price">20 000 ₽</span>
+                  </label>
+                </div>
+              </div>
+              <!-- AUDIT WORKS -->
+              <div class="calculator-group" data-calculator-work-source="audit" hidden>
+                <div class="calculator-group__header">
+                  <div>
+                    <span class="calculator-group__label">Работы по аудиту</span>
+                    <span class="calculator-group__description">Комплексное техническое исследование проекта.</span>
+                  </div>
+                  <span class="calculator-group__status">INCLUDED</span>
+                </div>
+                <div class="calculator-builder-list">
+                  <label class="calculator-builder-item" data-calculator-work data-work-id="technical-audit" data-task="audit" data-price="15000">
+                    <input type="checkbox" value="technical-audit">
+                    <span class="calculator-builder-item__indicator"></span>
+                    <span class="calculator-builder-item__content">
+                                        <span class="calculator-builder-item__title">Технический аудит</span>
+                                        <span class="calculator-builder-item__description">Комплексное исследование проекта, инфраструктуры и текущего состояния.</span>
+                                    </span>
+                    <span class="calculator-builder-item__price">15 000 ₽</span>
+                  </label>
+                  <label class="calculator-builder-item" data-calculator-work data-work-id="architecture" data-task="audit" data-price="12000">
+                    <input type="checkbox" value="architecture">
+                    <span class="calculator-builder-item__indicator"></span>
+                    <span class="calculator-builder-item__content">
+                                        <span class="calculator-builder-item__title">Анализ архитектуры</span>
+                                        <span class="calculator-builder-item__description">Проверка архитектурных решений и взаимосвязей компонентов системы.</span>
+                                    </span>
+                    <span class="calculator-builder-item__price">12 000 ₽</span>
+                  </label>
+                </div>
+              </div>
+              <!-- OPTIONAL WORKS -->
+              <div class="calculator-group">
+                <div class="calculator-group__header">
+                  <div>
+                    <span class="calculator-group__label">Дополнительные работы</span>
+                    <span class="calculator-group__description">Выбранные дополнительные услуги из конфигурации.</span>
+                  </div>
+                  <span class="calculator-group__status">OPTIONAL</span>
+                </div>
+                <div class="calculator-builder-list" data-calculator-additional-list></div>
+              </div>
+              <!-- FOOTER -->
+              <footer class="calculator-panel__footer">
+                <button type="button" class="button-secondary" data-calculator-back="options">Назад</button>
+                <button type="button" class="button-primary" data-calculator-next="result">Рассчитать стоимость</button>
+              </footer>
+            </div>
+            <!-- LIVE SUMMARY -->
+            <aside class="calculator-summary">
+              <div class="calculator-summary__header">
+                <span class="calculator-summary__label">LIVE ESTIMATE</span>
+                <span class="calculator-summary__status">READY</span>
+              </div>
+              <div class="calculator-summary__total">
+                <span class="calculator-summary__caption">Предварительная стоимость</span>
+                <strong class="calculator-summary__price" data-calculator-total>0 ₽</strong>
+              </div>
+              <div class="calculator-summary__meta">
+                <div class="calculator-summary__meta-item">
+                  <span>Работ выбрано</span>
+                  <strong data-calculator-count>0</strong>
+                </div>
+                <div class="calculator-summary__meta-item">
+                  <span>Масштаб</span>
+                  <strong data-calculator-scale>—</strong>
+                </div>
+              </div>
+              <p class="calculator-summary__note">Расчёт предварительный. Финальная стоимость определяется после анализа конкретной задачи и технического состояния проекта.</p>
+            </aside>
           </div>
+        </section>
+        <!-- =================================================
+             RESULT
+             ================================================= -->
+        <section class="calculator__step calculator-result" data-calculator-step="result" hidden>
+          <div class="calculator-result__layout">
+            <!-- RESULT PANEL -->
+            <div class="calculator-panel">
+              <!-- HEADER -->
+              <header class="calculator-panel__header">
+                <div>
+                  <span class="calculator-panel__label">ESTIMATE / SUMMARY</span>
+                  <h5 class="calculator-panel__title">Предварительная стоимость</h5>
+                </div>
+                <span class="calculator-panel__counter">03 / 03</span>
+              </header>
+              <!-- TOTAL -->
+              <div class="calculator-result__total">
+                <span class="calculator-result__caption">Ориентировочная стоимость</span>
+                <strong class="calculator-result__price" data-calculator-result-total>0 ₽</strong>
+                <span class="calculator-result__note">Финальная стоимость определяется после технического анализа задачи.</span>
+              </div>
+              <!-- CONFIGURATION -->
+              <div class="calculator-result__section">
+                <div class="calculator-result__section-header">
+                  <span class="calculator-result__section-label">CONFIGURATION</span>
+                  <button type="button" class="calculator-result__edit" data-calculator-back="options">Изменить</button>
+                </div>
+                <div class="calculator-result__config">
+                  <div class="calculator-result__config-item">
+                    <span>Основная задача</span>
+                    <strong data-calculator-result-task>—</strong>
+                  </div>
+                  <div class="calculator-result__config-item">
+                    <span>Масштаб</span>
+                    <strong data-calculator-result-scale>—</strong>
+                  </div>
+                  <div class="calculator-result__config-item">
+                    <span>Работ выбрано</span>
+                    <strong data-calculator-result-count>0</strong>
+                  </div>
+                </div>
+              </div>
+              <!-- WORK PACKAGE -->
+              <div class="calculator-result__section">
+                <div class="calculator-result__section-header">
+                  <span class="calculator-result__section-label">WORK PACKAGE</span>
+                  <button type="button" class="calculator-result__edit" data-calculator-back="builder">Изменить</button>
+                </div>
+                <div class="calculator-result__works" data-calculator-result-works></div>
+              </div>
+            </div>
+            <!-- CTA -->
+            <aside class="calculator-result__aside">
+              <div class="calculator-result__cta">
+                <span class="calculator-result__cta-label">NEXT STEP</span>
+                <h5 class="calculator-result__cta-title">Обсудим задачу?</h5>
+                <p class="calculator-result__cta-description">Отправьте конфигурацию. Мы изучим задачу, уточним технические детали и подготовим точное предложение.</p>
+                <form class="calculator-result__form" data-calculator-form>
+                  <div class="calculator-result__field">
+                    <label for="calculator-name">Имя</label>
+                    <input type="text" id="calculator-name" name="name" autocomplete="name" placeholder="Как к вам обращаться?" required>
+                  </div>
+                  <div class="calculator-result__field">
+                    <label for="calculator-contact">Контакт</label>
+                    <input type="text" id="calculator-contact" name="contact" placeholder="Email или телефон" required>
+                  </div>
+                  <button type="submit" class="button-primary">Отправить конфигурацию</button>
+                </form>
+                <p class="calculator-result__legal">Отправляя форму, вы соглашаетесь с условиями обработки предоставленных данных.</p>
+              </div>
+              <div class="calculator-result__note">
+                <span class="calculator-result__note-label">ENGINEERING NOTE</span>
+                <p>Калькулятор показывает ориентир, а не фиксированную цену. Реальная стоимость зависит от состояния проекта, архитектуры и фактического объёма работ.</p>
+              </div>
+            </aside>
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+  CALCULATOR CONTACT
+  ============================================================ -->
+  <section class="scene calculator-contact" data-scene="calculator-contact">
+    <div class="scene-container">
+      <header class="scene-header reveal-item">
+        <span class="scene-eyebrow">05 / СЛЕДУЮЩИЙ ШАГ</span>
+        <h2 class="scene-title">Передайте расчёт<br><span class="color-accent">специалисту</span></h2>
+        <p class="scene-description">Полученный расчёт является ориентировочным. Передадим вашу конфигурацию специалисту, чтобы уточнить задачу, состав работ и итоговую стоимость.</p>
+      </header>
+      <div class="cta-block reveal-item">
+        <span class="cta-block__eyebrow">K·ART·MAKE / ТЕХНИЧЕСКИЙ ПАРТНЁР</span>
+        <h3 class="cta-block__title">Готовы обсудить задачу?</h3>
+        <p class="cta-block__text">Передайте нам результаты расчёта. Мы изучим конфигурацию, уточним детали и предложим оптимальный вариант решения.</p>
+        <button class="button-primary cta-block__button" type="button" data-modal-func="open">
+          <span>ПЕРЕДАТЬ РАСЧЁТ</span>
+          <strong>↗</strong>
+        </button>
+      </div>
+      <!-- CONTACT INFORMATION -->
+      <div class="contact-info">
+        <div class="contact-info-item">
+          <span class="contact-info-label">НОВЫЕ ПРОЕКТЫ</span>
+          <a href="mailto:hello@kartemake.ru" class="contact-info-value">hello@kartemake.ru</a>
+          <span class="contact-info-description">Обсудить новый проект, разработку или модернизацию.</span>
         </div>
-        <div class="accordion-item" data-controller-accordion="item">
-          <div class="accordion-question">
-            <h5>Что входит в часы работы в абонентском обслуживании?</h5>
-            <span class="accordion-icon"><i class="fas fa-plus"></i></span>
-          </div>
-          <div class="accordion-answer">
-            <p>Часы идут на все технические задачи: исправление ошибок, консультации, обновление контента, настройки, мелкие доработки. Крупные задачи (новая функциональность, интеграции) обсуждаются отдельно как проектные работы.</p>
-          </div>
+        <div class="contact-info-item">
+          <span class="contact-info-label">ТЕХНИЧЕСКАЯ ПОДДЕРЖКА</span>
+          <a href="mailto:support@kartemake.ru" class="contact-info-value">support@kartemake.ru</a>
+          <span class="contact-info-description">Техническая поддержка и сопровождение.</span>
         </div>
-        <div class="accordion-item" data-controller-accordion="item">
-          <div class="accordion-question">
-            <h5>Работаете ли вы с legacy-кодом и старыми проектами?</h5>
-            <span class="accordion-icon"><i class="fas fa-plus"></i></span>
-          </div>
-          <div class="accordion-answer">
-            <p>Да, это одна из наших специализаций. Мы берем на поддержку проекты на любых технологиях. Сначала проводим аудит, затем предлагаем план: либо поддерживаем "как есть", либо постепенно модернизируем.</p>
-          </div>
+        <div class="contact-info-item">
+          <span class="contact-info-label">ОТВЕТ</span>
+          <span class="contact-info-value">В ТЕЧЕНИЕ 1 ДНЯ</span>
+          <span class="contact-info-description">Получаем запрос и связываемся для обсуждения задачи.</span>
         </div>
-        <div class="accordion-item" data-controller-accordion="item">
-          <div class="accordion-question">
-            <h5>Можно ли заказать только техническую поддержку без разработки?</h5>
-            <span class="accordion-icon"><i class="fas fa-plus"></i></span>
-          </div>
-          <div class="accordion-answer">
-            <p>Конечно! Большинство наших клиентов приходят именно за поддержкой существующих проектов. Мы можем взять на обслуживание ваш текущий сайт, магазин или приложение. Проведем аудит, устраним текущие проблемы и обеспечим стабильную работу.</p>
-          </div>
+        <div class="contact-info-item">
+          <span class="contact-info-label">TELEGRAM</span>
+          <a href="https://t.me/KArtech76" class="contact-info-value">@KArtech76</a>
+        </div>
+        <div class="contact-info-item">
+          <span class="contact-info-label">ВКОНТАКТЕ</span>
+          <a href="https://vk.ru/kartemake" class="contact-info-value">vk.com/kartemake</a>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- =================================================
+  FOOTER
+  ================================================= -->
+  <section>
+    <div class="scene-container">
+      <!-- =================================================
+      FOOTER
+      ================================================= -->
+      <footer class="contact-footer">
+        <!-- FOOTER BRAND -->
+        <div class="contact-footer-brand">
+          <a href="/" class="contact-footer-logo" aria-label="K·ART·MAKE">K·ART·MAKE</a>
+          <p>Технический партнёр для вашего бизнеса.</p>
+        </div>
+        <!-- FOOTER NAVIGATION -->
+        <nav class="contact-footer-nav" aria-label="Навигация по сайту">
+          <div class="contact-footer-column">
+            <span class="contact-footer-title">УСЛУГИ</span>
+            <a href="/#optimization">Оптимизация сайта</a>
+            <a href="/#modernization">Модернизация</a>
+            <a href="/#support">Техническая поддержка</a>
+            <a href="/#audit">Аудит и консультации</a>
+          </div>
+          <div class="contact-footer-column">
+            <span class="contact-footer-title">ИНФОРМАЦИЯ</span>
+            <a href="./privacy-policy.html">Политика обработки персональных данных</a>
+            <a href="./cookie-policy.html">Политика использования Cookie</a>
+          </div>
+          <div class="contact-footer-column">
+            <span class="contact-footer-title">КОНТАКТЫ</span>
+            <a href="mailto:hello@kartemake.ru">hello@kartemake.ru</a>
+            <a href="mailto:support@kartemake.ru">support@kartemake.ru</a>
+            <a href="https://t.me/KArtech76">Telegram</a>
+            <a href="https://vk.ru/kartemake">VK</a>
+          </div>
+        </nav>
+        <!-- FOOTER BOTTOM -->
+        <div class="contact-footer-bottom">
+          <span>© 2026 K·ART·MAKE</span>
+          <span>ТЕХНИЧЕСКИЙ ПАРТНЁР</span>
+          <span>ВСЕ СИСТЕМЫ РАБОТАЮТ</span>
+        </div>
+      </footer>
     </div>
   </section>
 </main>
-<footer>
-  <div class="footer-content">
-    <div class="footer-logo color-whitesmoke">
-      <span>K</span>·<span class="color-accent-red">ART</span>·<span>TECH</span>
+<div id="cookie-banner" class="cookie-banner" aria-hidden="true">
+  <div class="cookie-banner__wrapper">
+    <div class="cookie-banner__status">
+      <span class="cookie-banner__status-dot"></span>
+      <span>PRIVACY / COOKIE CONTROL</span>
     </div>
-
-    <div class="footer-info">
-      <p>Ваш внешний технический отдел. Поддержка и развитие digital-продуктов</p>
-    </div>
-
-    <div class="footer-cta">
-      <button
-              class="cta-button"
-              data-controller-modal-open="form"
-              data-controller-modal-func="open"
-              data-controller-ripple-effect="item"
-      >
-        Обсудить задачу
-        <i class="fas fa-arrow-right"></i>
-      </button>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <div class="copyright">KARTECH © 2026. Ваш партнер по веб-инфраструктуре.</div>
-  </div>
-</footer>
-
-<!-- Overlay для затемнения фона -->
-<div class="overlay" id="overlay"></div>
-
-  <!-- Sidebar burger menu -->
-  <aside class="sidebar-burger-menu" id="sidebar-burger-menu">
-    <nav>
-      <ul class="sidebar-nav">
-        <li><a href="services.html">Услуги</a></li>
-        <li><a href="projects.html">Кейсы</a></li>
-        <li><a href="about.html">Команда</a></li>
-        <li><a class="active" href="blog.html">Технический блог</a></li>
-        <li><a href="calculator.html">Калькулятор работ</a></li>
-        <li><a href="support.html">Техподдержка</a></li>
-        <li><a href="contacts.html">Контакты</a></li>
-      </ul>
-    </nav>
-
-    <button
-            class="cta-button"
-            data-controller-modal-open="form"
-            data-controller-modal-func="open"
-            data-controller-ripple-effect="item"
-    >
-      Обсудить задачу
-      <i class="fas fa-arrow-right"></i>
-    </button>
-
-  <div class="sidebar-social">
-    <button class="theme-toggle" data-controller-theme="item">
-      <i class="fas fa-moon"></i>
-    </button>
-    <button
-            class="language-toggle"
-            data-controller="lang"
-            data-controller-ripple-effect="item"
-    >
-      <span data-controller-lang="item">RU</span>
-      <i class="fas fa-chevron-down"></i>
-    </button>
-  </div>
-  <div class="sidebar-social">
-    <a href="#"><i class="fab fa-github"></i></a>
-    <a href="#"><i class="fab fa-stack-overflow"></i></a>
-    <a href="#"><i class="fab fa-telegram"></i></a>
-  </div>
-</aside>
-
-<!-- modal form -->
-<div id="form" class="modal">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h3>Обсудить рассчитанный пакет услуг?</h3>
-      <p>Отправьте ваш расчет — мы уточним детали и подготовим индивидуальное коммерческое предложение</p>
-    </div>
-
-    <!-- Секция с формой -->
-    <div class="form-container">
-      <form class="contact-form" data-controller="form">
-        <div class="form-group">
-          <input type="text" class="form-input" name="name" id="name" placeholder=" " required>
-          <label for="name" class="form-label">Имя</label>
+    <div class="cookie-banner__content">
+      <!-- STEP 1 -->
+      <section id="cookie-step-1" class="cookie-step cookie-step--active">
+        <div class="cookie-banner__header">
+          <p class="cookie-banner__description">Мы применяем cookies, чтобы сайт работал без сбоев и постоянно
+            становился для вас удобнее.</p>
         </div>
-
-        <div class="form-group">
-          <input type="text" class="form-input" name="company" id="company" placeholder=" ">
-          <label for="company" class="form-label">Название компании</label>
+        <div class="cookie-banner__links">
+          <span>Подробнее:</span>
+          <a href="cookie-policy.html" target="_blank">использование cookie</a>
+          <a href="privacy-policy.html" target="_blank">обработка персональных данных</a>
         </div>
-
-        <div class="form-group">
-          <input type="email" class="form-input" name="email" id="email" placeholder=" ">
-          <label for="email" class="form-label">Email</label>
-        </div>
-
-        <div class="form-group">
-          <input type="tel" class="form-input" name="phone" id="phone" placeholder=" " required>
-          <label for="phone" class="form-label">Телефон</label>
-        </div>
-
-        <div class="form-group full-width">
-          <textarea class="form-input" name="message" id="message" placeholder=" " required></textarea>
-          <label for="message" class="form-label">Опишите вашу задачу или прикрепите расчет</label>
-        </div>
-
-        <div class="form-group">
-          <div class="file-upload">
-            <input type="file" id="estimate-file" name="estimate" accept=".pdf,.doc,.docx,.txt">
-            <label for="estimate-file" class="file-label">
-              <i class="fas fa-paperclip"></i> Прикрепить расчет (опционально)
-            </label>
-          </div>
-        </div>
-
-        <div class="form-button">
-          <button type="submit" class="cta-button" data-controller-ripple-effect="item">
-            Отправить расчет
-            <i class="fas fa-arrow-right"></i>
+        <div class="cookie-banner__actions">
+          <button type="button" id="cookie-decline" class="cookie-button cookie-button--outline">Отклонить
+          </button>
+          <button type="button" id="cookie-accept" class="cookie-button cookie-button--accent">Принять
           </button>
         </div>
-
-        <p class="form-notice">Нажимая на кнопку, вы соглашаетесь с политикой конфиденциальности</p>
-      </form>
+      </section>
     </div>
   </div>
-  <div id="close-modal" class="close-modal">
-    <i class="fas fa-times"></i>
-  </div>
 </div>
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <!-- Закрытие -->
+    <div class="close-modal no-icon" data-modal-func="close"></div>
 
-<!-- decoration lines -->
-<div class="lines">
-  <div class="line line-1"></div>
-  <div class="line line-2"></div>
-  <div class="line line-3"></div>
-  <div class="line line-4"></div>
-  <div class="line line-5"></div>
-</div>
-<!-- preloader -->
-<div class="preloader" data-controller-preloader="item">
-  <div class="preloader__container">
-    <!-- Тот же прелоадер, что и ранее -->
-    <!-- Сокращено для экономии места -->
+    <!-- Заголовок -->
+    <div class="modal-header">
+      <h3>Хотите чтобы мы решили <span class="color-accent">ваш кейс</span>?</h3>
+      <p>Оставьте заявку и наш специалист свяжется с вами для обсуждения деталей вашего проекта</p>
+    </div>
+
+    <!-- Контейнер с гридом -->
+    <div class="form-container">
+
+      <!-- КОЛОНКА 1: КОНТАКТЫ (как в дашборде) -->
+      <div class="contact-modal__body">
+        <a href="mailto:hello@kartemake.ru" class="contact-modal__item">
+          <span class="contact-modal__item-label">НОВЫЕ ПРОЕКТЫ</span>
+          <strong class="contact-modal__item-value">hello@kartemake.ru</strong>
+        </a>
+        <a href="mailto:support@kartemake.ru" class="contact-modal__item">
+          <span class="contact-modal__item-label">ТЕХНИЧЕСКАЯ ПОДДЕРЖКА</span>
+          <strong class="contact-modal__item-value">support@kartemake.ru</strong>
+        </a>
+      </div>
+
+      <!-- КОЛОНКА 2: СОЦСЕТИ -->
+      <div class="contact-modal__body">
+        <a href="https://t.me/KArtech76" target="_blank" class="contact-modal__item">
+          <span class="contact-modal__item-label">TELEGRAM</span>
+          <strong class="contact-modal__item-value">@KArtech76</strong>
+        </a>
+        <a href="https://vk.ru/kartemake" target="_blank" class="contact-modal__item">
+          <span class="contact-modal__item-label">ВКОНТАКТЕ</span>
+          <strong class="contact-modal__item-value">vk.com/kartemake</strong>
+        </a>
+      </div>
+
+      <!-- КОЛОНКА 3: ИНФОРМАЦИЯ -->
+      <div class="contact-modal__body">
+        <a href="/privacy-policy" class="contact-modal__item">
+          <span class="contact-modal__item-label">ДОКУМЕНТЫ</span>
+          <strong class="contact-modal__item-value">Политика конфиденциальности</strong>
+        </a>
+        <!--        <a href="/personal-data-consent" class="contact-modal__item">-->
+        <!--          <span class="contact-modal__item-label">СОГЛАСИЕ</span>-->
+        <!--          <strong class="contact-modal__item-value">На обработку данных</strong>-->
+        <!--        </a>-->
+      </div>
+
+      <!-- ФУТЕР -->
+      <div class="contact-modal__footer">
+        <p class="contact-modal__footer-text">Напишите нам — мы ответим в течение 24 часов</p>
+      </div>
+
+    </div>
   </div>
 </div>
 </body>
