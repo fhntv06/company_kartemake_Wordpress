@@ -1,0 +1,272 @@
+@use '../../variables/colors' as *;
+@use '../../variables/offsets' as *;
+@use '../../system/mixins' as *;
+@use '../../variables/media' as *;
+
+// ============================================================
+// CALCULATOR INTRO
+// ============================================================
+.calculator-intro {
+  position: relative;
+}
+
+// ------------------------------------------------------------
+// INTRO LAYOUT
+// ------------------------------------------------------------
+.calculator-intro-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.8fr);
+  gap: clamp(40px, 8vw, 140px);
+  align-items: start;
+}
+
+// ------------------------------------------------------------
+// INTRO CONTENT
+// ------------------------------------------------------------
+.calculator-intro-content {
+  max-width: 760px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.calculator-intro.scene-active .calculator-intro-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+// ------------------------------------------------------------
+// LEAD
+// ------------------------------------------------------------
+.calculator-intro-lead {
+  max-width: 680px;
+  margin-top: $middle;
+  @include responsive-font(18, 26);
+  line-height: 1.55;
+  color: rgba(255,255,255,0.78);
+}
+
+// ------------------------------------------------------------
+// PROCESS
+// ------------------------------------------------------------
+.calculator-intro-process {
+  display: grid;
+  gap: 1px;
+  margin-top: $large;
+  border-top: 1px solid $surface-hover;
+  border-left: 1px solid $surface-hover;
+}
+.calculator-intro-step {
+  position: relative;
+  min-height: 190px;
+  padding: $small;
+  border-right: 1px solid $surface-hover;
+  border-bottom: 1px solid $surface-hover;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1), background 0.3s ease;
+}
+.calculator-intro.scene-active .calculator-intro-step {
+  opacity: 1;
+  transform: translateY(0);
+}
+.calculator-intro.scene-active .calculator-intro-step:nth-child(1) {
+  transition-delay: 0.25s;
+}
+.calculator-intro.scene-active .calculator-intro-step:nth-child(2) {
+  transition-delay: 0.45s;
+}
+.calculator-intro.scene-active .calculator-intro-step:nth-child(3) {
+  transition-delay: 0.65s;
+}
+
+// ------------------------------------------------------------
+// STEP NUMBER
+// ------------------------------------------------------------
+.calculator-intro-step__number {
+  display: block;
+  margin-bottom: $middle;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  @include responsive-font(10, 12);
+  letter-spacing: 0.08em;
+  color: $orange;
+}
+
+// ------------------------------------------------------------
+// STEP TITLE
+// ------------------------------------------------------------
+.calculator-intro-step h3 {
+  margin-bottom: $extra-small;
+  @include responsive-font(18, 24);
+  line-height: 1.15;
+}
+
+// ------------------------------------------------------------
+// STEP DESCRIPTION
+// ------------------------------------------------------------
+.calculator-intro-step p {
+  max-width: 260px;
+  margin-bottom: 0;
+  @include responsive-font(12, 15);
+  line-height: 1.6;
+  color: rgba(255,255,255,0.5);
+}
+
+// ------------------------------------------------------------
+// STEP DECORATION
+// ------------------------------------------------------------
+.calculator-intro-step::after {
+  content: "";
+  position: absolute;
+  right: $small;
+  bottom: $small;
+  width: 7px;
+  height: 7px;
+  border-right: 1px solid $orange;
+  border-bottom: 1px solid $orange;
+  opacity: 0.6;
+}
+.calculator-intro-step:hover {
+  background: rgba(255,46,46,0.018);
+}
+
+// ============================================================
+// METRICS
+// ============================================================
+.calculator-intro-metrics {
+  position: sticky;
+  top: $offset-top-from-header;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid $surface-hover;
+  border-bottom: 1px solid $surface-hover;
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.8s ease 0.2s, transform 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.2s;
+}
+.calculator-intro.scene-active .calculator-intro-metrics {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+// ------------------------------------------------------------
+// METRIC
+// ------------------------------------------------------------
+.calculator-intro-metric {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 190px;
+  padding: $small;
+  border-bottom: 1px solid $surface-hover;
+}
+.calculator-intro-metric:last-child {
+  border-bottom: 0;
+}
+.calculator-intro-metric__label {
+  margin-bottom: $extra-small;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  @include responsive-font(9, 12);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $text-muted;
+}
+.calculator-intro-metric__value {
+  display: block;
+  margin-top: auto;
+  @include responsive-font(38, 64);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  color: $orange;
+}
+.calculator-intro-metric__description {
+  max-width: 280px;
+  margin-top: $small;
+  margin-bottom: 0;
+  @include responsive-font(11, 14);
+  line-height: 1.5;
+  color: $text-muted;
+}
+
+// ------------------------------------------------------------
+// METRIC MARKER
+// ------------------------------------------------------------
+.calculator-intro-metric::after {
+  content: "";
+  position: absolute;
+  top: -1px;
+  right: $small;
+  width: 32px;
+  height: 1px;
+  background: $orange;
+  opacity: 0.6;
+}
+
+// ============================================================
+// TABLET
+// ============================================================
+@media (max-width: $breakpoint-lower-middle) {
+  .calculator-intro-layout {
+    grid-template-columns: 1fr;
+    gap: $large;
+  }
+  .calculator-intro-content {
+    max-width: none;
+  }
+  .calculator-intro-metrics {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-left: 1px solid $surface-hover;
+  }
+  .calculator-intro-metric {
+    min-height: 180px;
+    border-right: 1px solid $surface-hover;
+  }
+}
+
+// ============================================================
+// MOBILE
+// ============================================================
+@media (max-width: $breakpoint-extra-small) {
+  .calculator-intro-layout {
+    gap: $middle;
+  }
+  .calculator-intro-lead {
+    margin-top: $small;
+    @include responsive-font(17, 21);
+  }
+  .calculator-intro-process {
+    grid-template-columns: 1fr;
+    margin-top: $middle;
+  }
+  .calculator-intro-step {
+    min-height: 0;
+  }
+  .calculator-intro-step p {
+    max-width: none;
+  }
+  .calculator-intro-metrics {
+    grid-template-columns: 1fr;
+    border-left: 0;
+  }
+  .calculator-intro-metric {
+    min-height: 150px;
+    border-right: 0;
+  }
+  .calculator-intro-metric__value {
+    @include responsive-font(42, 56);
+  }
+}
+
+// ============================================================
+// REDUCED MOTION
+// ============================================================
+@media (prefers-reduced-motion: reduce) {
+  .calculator-intro-content,
+  .calculator-intro-step,
+  .calculator-intro-metrics {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

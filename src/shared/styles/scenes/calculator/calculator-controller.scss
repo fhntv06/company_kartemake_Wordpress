@@ -1,0 +1,792 @@
+@use '../../variables/colors' as *;
+@use '../../variables/offsets' as *;
+@use '../../system/mixins' as *;
+@use '../../variables/media' as *;
+
+/* ============================================================
+   STEP NAVIGATION
+   ============================================================ */
+.calculator-steps {
+  position: sticky;
+  top: $offset-top-from-header;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-bottom: $small;
+  border-top: 1px solid $surface-hover;
+  border-bottom: 1px solid $surface-hover;
+}
+.calculator-steps__item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: $extra-small;
+  min-width: 0;
+  padding: $extra-small;
+  border: 0;
+  border-right: 1px solid $surface-hover;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 200ms ease, opacity 200ms ease;
+  &:last-child {
+    border-right: 0;
+  }
+  &:not(:disabled):hover {
+    background: $surface;
+  }
+  &:disabled {
+    cursor: default;
+    opacity: .35;
+  }
+  &.is-active {
+    background: $surface;
+    &::after {
+      transform: scaleX(1);
+      opacity: 1;
+    }
+    .calculator-steps__number {
+      opacity: 1;
+    }
+    .calculator-steps__title {
+      opacity: 1;
+    }
+  }
+  &.is-completed {
+    opacity: .7;
+    &::after {
+      transform: scaleX(1);
+      opacity: .35;
+    }
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -1px;
+    left: 0;
+    height: 2px;
+    background: currentColor;
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 250ms ease, opacity 250ms ease;
+  }
+}
+.calculator-steps__number {
+  padding-top: 2px;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 10px;
+  line-height: 1;
+  letter-spacing: .08em;
+  opacity: .35;
+}
+.calculator-steps__content {
+  display: flex;
+  flex-direction: column;
+  gap: calc($extra-small / 2);
+}
+.calculator-steps__title {
+  font-size: 12px;
+  line-height: 1.2;
+  opacity: .65;
+}
+.calculator-steps__status {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .35;
+}
+/* ============================================================
+   STEP CONTENT
+   ============================================================ */
+.calculator__content {
+  min-width: 0;
+}
+.calculator__step {
+  &[hidden] {
+    display: none;
+  }
+}
+/* ============================================================
+   LAYOUTS
+   ============================================================ */
+.calculator-options__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+}
+.calculator-builder__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: $lower-small;
+  align-items: start;
+}
+.calculator-result__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: $lower-small;
+  align-items: start;
+}
+/* ============================================================
+   COMMON PANEL
+   ============================================================ */
+.calculator-panel {
+  min-width: 0;
+  border: 1px solid $surface-hover;
+  background: $surface;
+}
+.calculator-panel__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: $small;
+  padding: $small;
+  border-bottom: 1px solid $surface-hover;
+}
+.calculator-panel__label {
+  display: block;
+  margin-bottom: $extra-small;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: .1em;
+  opacity: .4;
+}
+.calculator-panel__counter {
+  flex: 0 0 auto;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 12px;
+  line-height: 1;
+  opacity: .4;
+}
+/* ============================================================
+   GROUP
+   ============================================================ */
+.calculator-group {
+  padding: $small;
+}
+.calculator-group + .calculator-group {
+  border-top: 1px solid $surface;
+}
+.calculator-group__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: $lower-small;
+  margin-bottom: $extra-small;
+}
+.calculator-group__label {
+  display: block;
+  margin-bottom: calc($extra-small / 2);
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  opacity: .55;
+}
+.calculator-group__description {
+  display: block;
+  font-size: 12px;
+  line-height: 1.45;
+  opacity: .36;
+}
+.calculator-group__status {
+  flex: 0 0 auto;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: .08em;
+  opacity: .32;
+}
+/* ============================================================
+   OPTION GRID
+   ============================================================ */
+.calculator-option-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: $extra-small;
+}
+/* ============================================================
+   OPTION
+   ============================================================ */
+.calculator-option {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 190px;
+  padding: $extra-small;
+  border: 1px solid $surface-hover;
+  background: rgba(255,255,255,.012);
+  cursor: pointer;
+  transition: border-color 200ms ease, background-color 200ms ease;
+  &:hover {
+    border-color: rgba(255,255,255,.24);
+    background: rgba(255,255,255,.035);
+  }
+  &:has(input:checked) {
+    border-color: currentColor;
+    background: $surface;
+  }
+  input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+}
+.calculator-option__indicator {
+  display: block;
+  width: 12px;
+  height: 12px;
+  margin-bottom: $small;
+  border: 1px solid currentColor;
+  opacity: .45;
+  transition: background-color 180ms ease, opacity 180ms ease;
+  .calculator-option input:checked + & {
+    background: currentColor;
+    opacity: 1;
+  }
+}
+.calculator-option__title {
+  margin-bottom: $extra-small;
+  font-size: 20px;
+  line-height: 1.2;
+  opacity: .9;
+}
+.calculator-option__description {
+  max-width: 440px;
+  font-size: 12px;
+  line-height: 1.55;
+  opacity: .45;
+}
+.calculator-option__price {
+  margin-top: auto;
+  padding-top: $lower-small;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  opacity: .42;
+
+  strong {
+    font-weight: 500;
+    opacity: 1;
+  }
+}
+/* ============================================================
+   PANEL FOOTER
+   ============================================================ */
+.calculator-panel__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $small;
+  padding: $lower-small $small;
+  border-top: 1px solid $surface-hover;
+}
+.calculator-panel__hint {
+  max-width: 620px;
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.5;
+  opacity: .4;
+}
+/* ============================================================
+   BUILDER
+   ============================================================ */
+.calculator-builder-list {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid $surface-hover;
+}
+.calculator-builder-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 20px minmax(0, 1fr) auto;
+  gap: $extra-small;
+  align-items: start;
+  padding: $extra-small 0;
+  border-bottom: 1px solid $surface-hover;
+  cursor: pointer;
+  transition: opacity 180ms ease;
+  &:last-child {
+    border-bottom: 0;
+  }
+  &:hover {
+    .calculator-builder-item__title {
+      opacity: 1;
+    }
+  }
+  input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+  }
+  &:has(input:not(:checked)) {
+    .calculator-builder-item__content,
+    .calculator-builder-item__price {
+      opacity: .38;
+    }
+    .calculator-builder-item__indicator {
+      opacity: .25;
+    }
+  }
+  &:has(input:checked) {
+    .calculator-builder-item__content,
+    .calculator-builder-item__price {
+      opacity: 1;
+    }
+    .calculator-builder-item__indicator {
+      background: currentColor;
+      opacity: 1;
+    }
+  }
+}
+.calculator-builder-item__indicator {
+  width: 14px;
+  height: 14px;
+  margin-top: 2px;
+  border: 1px solid currentColor;
+  transition: background-color 180ms ease, opacity 180ms ease;
+}
+.calculator-builder-item__content {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+}
+.calculator-builder-item__title {
+  font-size: 14px;
+  line-height: 1.3;
+  opacity: .82;
+}
+.calculator-builder-item__description {
+  max-width: 620px;
+  font-size: 12px;
+  line-height: 1.5;
+  opacity: .42;
+}
+.calculator-builder-item__price {
+  padding-top: 2px;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 10px;
+  line-height: 1;
+  white-space: nowrap;
+  opacity: .6;
+}
+/* ============================================================
+   SUMMARY
+   ============================================================ */
+.calculator-summary {
+  position: sticky;
+  top: 30px;
+  border: 1px solid $surface-hover;
+  background: $surface;
+}
+.calculator-summary__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $extra-small;
+  border-bottom: 1px solid $surface-hover;
+}
+.calculator-summary__label,
+.calculator-summary__status {
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 9px;
+  line-height: 1;
+  letter-spacing: .08em;
+  opacity: .4;
+}
+.calculator-summary__total {
+  padding: $small $extra-small;
+}
+.calculator-summary__caption {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 12px;
+  line-height: 1.3;
+  opacity: .42;
+}
+.calculator-summary__price {
+  display: block;
+  font-size: clamp(32px, 3vw, 46px);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -.04em;
+}
+.calculator-summary__meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 0 $lower-small;
+}
+.calculator-summary__meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: calc($extra-small / 2);
+  padding: $extra-small 0;
+  border-top: 1px solid $surface-hover;
+
+  &:nth-child(2) {
+    padding-left: $extra-small;
+    border-left: 1px solid $surface-hover;
+  }
+  span {
+    font-size: 10px;
+    opacity: .35;
+  }
+  strong {
+    font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+    font-size: 12px;
+    font-weight: 400;
+    opacity: .75;
+  }
+}
+.calculator-summary__note {
+  padding: $extra-small;
+  font-size: 12px;
+  line-height: 1.55;
+  opacity: .35;
+}
+/* ============================================================
+   RESULT
+   ============================================================ */
+.calculator-result__total {
+  padding: $small;
+  border-bottom: 1px solid $surface-hover;
+}
+.calculator-result__caption {
+  display: block;
+  margin-bottom: $extra-small;
+  font-size: 12px;
+  opacity: .4;
+}
+.calculator-result__price {
+  display: block;
+  margin-bottom: $extra-small;
+  font-size: clamp(44px, 5vw, 72px);
+  font-weight: 500;
+  line-height: .95;
+  letter-spacing: -.05em;
+}
+.calculator-result__section {
+  padding: $small;
+  border-bottom: 1px solid $surface-hover;
+}
+.calculator-result__section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: $extra-small;
+}
+.calculator-result__section-label {
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 9px;
+  letter-spacing: .08em;
+  opacity: .38;
+}
+.calculator-result__edit {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 10px;
+  opacity: .4;
+  cursor: pointer;
+  &:hover {
+    opacity: 1;
+  }
+}
+.calculator-result__config {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.calculator-result__config-item {
+  display: flex;
+  flex-direction: column;
+  gap: calc($extra-small / 2);
+  padding: 0 20px;
+  border-left: 1px solid $surface-hover;
+
+  &:first-child {
+    padding-left: 0;
+    border-left: 0;
+  }
+  span {
+    font-size: 12px;
+    opacity: .35;
+  }
+  strong {
+    font-size: 12px;
+    font-weight: 400;
+    opacity: .8;
+  }
+}
+.calculator-result__works {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid $surface-hover;
+
+}
+.calculator-result__work {
+  display: grid;
+  grid-template-columns: 30px minmax(0, 1fr) auto;
+  gap: $extra-small;
+  align-items: center;
+  padding: $extra-small 0;
+  border-bottom: 1px solid $surface-hover;
+
+  &:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+.calculator-result__work-number {
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 8px;
+  opacity: .3;
+}
+.calculator-result__work-title {
+  font-size: 12px;
+  opacity: .72;
+}
+.calculator-result__work-price {
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: .55;
+}
+/* ============================================================
+   RESULT ASIDE
+   ============================================================ */
+.calculator-result__aside {
+  position: sticky;
+  top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.calculator-result__cta {
+  padding: $small;
+  border: 1px solid $surface-hover;
+  background: rgba(255,255,255,.035);
+}
+.calculator-result__cta-label {
+  display: block;
+  margin-bottom: 16px;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 12px;
+  letter-spacing: .08em;
+  opacity: .4;
+}
+.calculator-result__cta-title {
+  margin: 0 0 $extra-small;
+}
+.calculator-result__cta-description {
+  margin: 0 0 $small;
+  font-size: 12px;
+  line-height: 1.55;
+  color: $text-muted;
+}
+/* ============================================================
+   FORM
+   ============================================================ */
+.calculator-result__form {
+  display: flex;
+  flex-direction: column;
+  gap: $lower-small;
+}
+.calculator-result__field {
+  display: flex;
+  flex-direction: column;
+  gap: calc($extra-small / 2);
+
+  label {
+    font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+    font-size: 12px;
+    letter-spacing: .06em;
+    color: $text-muted;
+  }
+
+  input {
+    width: 100%;
+    height: 44px;
+    padding: 0 13px;
+    border: 1px solid $surface-hover;
+    outline: 0;
+    background: $surface;
+    color: inherit;
+    font-family: inherit;
+    font-size: 12px;
+    &:focus {
+      border-color: $text-muted;
+    }
+    &::placeholder {
+      color: $text-muted;
+    }
+  }
+}
+.calculator-result__legal {
+  margin: $extra-small 0 0;
+  font-size: 12px;
+  line-height: 1.5;
+  opacity: .28;
+}
+/* ============================================================
+   ENGINEERING NOTE
+   ============================================================ */
+.calculator-result__note {
+  display: block;
+  max-width: 520px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: $text-muted;
+  padding: $extra-small;
+  border: 1px solid $surface-hover;
+  background: rgba(255,255,255,.012);
+
+  p {
+    margin: 0;
+    font-size: 10px;
+    line-height: 1.6;
+    opacity: .35;
+  }
+}
+.calculator-result__note-label {
+  display: block;
+  margin-bottom: 12px;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 9px;
+  letter-spacing: .08em;
+  opacity: .32;
+}
+/* ============================================================
+   BUTTON FALLBACK
+   ============================================================ */
+.calculator .button-secondary {
+  padding: $extra-small;
+  border: 1px solid rgba(255,255,255,.14);
+  background: transparent;
+  color: inherit;
+  font-family: inherit;
+  font-size: 12px;
+  cursor: pointer;
+  transition: border-color 180ms ease, background-color 180ms ease;
+  &:hover {
+    border-color: rgba(255,255,255,.3);
+    background: rgba(255,255,255,.035);
+  }
+}
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1100px) {
+  .calculator-builder__layout,
+  .calculator-result__layout {
+    grid-template-columns: 1fr;
+  }
+  .calculator-summary,
+  .calculator-result__aside {
+    position: static;
+  }
+  .calculator-summary {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .calculator-summary__header {
+    grid-column: 1 / -1;
+  }
+  .calculator-summary__total {
+    border-right: 1px solid $surface-hover;
+  }
+}
+@media (max-width: 760px) {
+  .calculator {
+    .scene-container {
+      width: min(100% - 32px, 640px);
+    }
+    .scene-header {
+      margin-bottom: 42px;
+    }
+  }
+  .calculator-steps {
+    grid-template-columns: 1fr;
+  }
+  .calculator-steps__item {
+    border-right: 0;
+    border-bottom: 1px solid $surface-hover;
+    &:last-child {
+      border-bottom: 0;
+    }
+    &::after {
+      right: auto;
+      bottom: 0;
+      left: 0;
+      width: 2px;
+      height: 100%;
+      transform: scaleY(0);
+      transform-origin: top;
+    }
+    &.is-active::after,
+    &.is-completed::after {
+      transform: scaleY(1);
+    }
+  }
+  .calculator-option-grid {
+    grid-template-columns: 1fr;
+  }
+  .calculator-panel__header,
+  .calculator-panel__footer,
+  .calculator-group,
+  .calculator-result__section,
+  .calculator-result__total {
+    padding: $lower-small;
+  }
+  .calculator-panel__footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .calculator-panel__footer .button-primary,
+  .calculator-panel__footer .button-secondary {
+    width: 100%;
+  }
+  .calculator-summary {
+    display: block;
+  }
+  .calculator-summary__total {
+    border-right: 0;
+  }
+  .calculator-builder-item {
+    grid-template-columns: 18px minmax(0, 1fr);
+    gap: 14px;
+  }
+  .calculator-builder-item__price {
+    grid-column: 2;
+    padding-top: 0;
+  }
+  .calculator-result__config {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .calculator-result__config-item {
+    padding: 0 0 16px;
+    border-left: 0;
+    border-bottom: 1px solid $surface-hover;
+    &:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+  }
+  .calculator-result__work {
+    grid-template-columns: 26px minmax(0, 1fr);
+  }
+  .calculator-result__work-price {
+    grid-column: 2;
+  }
+  .calculator-result__cta {
+    padding: 22px;
+  }
+}
