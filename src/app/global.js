@@ -9,10 +9,12 @@ import DashboardMenu from "./modules/global/dashboard-menu.js"
 import TransitionLoader from "./modules/global/transition-loader.js"
 import CookieController from "./modules/global/cookie-controller.js"
 import ModalController from "./modules/global/modal.js"
+import GlobalVariables from "./modules/global/variables";
 export default class GlobalApp {
     constructor() {
         this.modules = {}
         this.beforeRegistry = {
+            GlobalVariables,
             ScrollEngine, // load first !important
             GSAPEngine, // load second !important
         }

@@ -37,7 +37,7 @@ export default class OrbitNavigation {
       return
     }
 
-    this.headerOffsetHeight = document.getElementById('header').offsetHeight;
+    this.headerOffsetHeight = window?.App?.GlobalVariables?.globalConfig.headerOffsetHeight ?? 80;
     this.activeScene = null;
     this.isNavigating = false;
     this.config = {
