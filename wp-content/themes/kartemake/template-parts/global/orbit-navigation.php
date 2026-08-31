@@ -4,15 +4,19 @@ ORBIT NAVIGATION
 <div id="orbit-navigation" class="orbit-navigation">
     <div class="orbit-circle">
         <?php
-        $scenes = [
-            'hero'       => 'Начало',
-            'audit'      => 'Диагностика',
-            'solutions'  => 'Решения',
-            'architecture' => 'Инфраструктура',
-            'pipeline'   => 'Процесс',
-            'monitoring' => 'Контроль',
-            'contact'    => 'Контакты',
-        ];
+        $scenes = [];
+
+        if (is_front_page()) {
+            $scenes = [
+                'hero'       => 'Начало',
+                'audit'      => 'Диагностика',
+                'solutions'  => 'Решения',
+                'architecture' => 'Инфраструктура',
+                'pipeline'   => 'Процесс',
+                'monitoring' => 'Контроль',
+                'contact'    => 'Контакты',
+            ];
+        }
 
         if (is_page('about')) {
             $scenes = [
@@ -33,6 +37,17 @@ ORBIT NAVIGATION
                 'blog-articles'       => 'Архив',
             ];
         }
+
+        if (is_page('calculator')) {
+            $scenes = [
+                'hero'       => 'Начало',
+                'calculator-intro'       => 'Как формируется стоимость',
+                'calculator-scene'       => 'Рассчитайте стоимость',
+                'calculator-contact'       => 'Готовы обсудить задачу?',
+            ];
+        }
+
+        if (empty($scenes)) return;
 
         $number = 1;
         foreach ($scenes as $id => $label) : ?>
