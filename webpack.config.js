@@ -22,10 +22,19 @@ function getChunks() {
   const common = ['runtime', 'vendors']
 
   // регулировка подключения в html
+  // последовательность common -> pages-common -> global
+  // TODO нужно более гибкое управление global модулями.
+  //  т.к. уже pages-common был сформирован из-за не гибкости
+  //  а что если HeroParticle не нужен будет на какой то странице,
+  //  то придется ещё раз дробить и так далее.
+  //  поэтому нужно сделать так, чтобы можно был легко для кажой страницы
+  //  включать и выключать модули
   return {
     index: [...common, 'pages-common', 'global', 'home'],
     policy: [...common, 'global', 'policy'],
     about: [...common, 'pages-common', 'global', 'about'],
+    blog: [...common, 'pages-common', 'global', 'blog'],
+    calculator: [...common, 'pages-common', 'global', 'calculator'],
   }
 }
 
@@ -46,6 +55,8 @@ module.exports = (env, argv) => {
       home: './src/app/pages/home/home-entry.js',
       policy: './src/app/pages/policy/policy-entry.js',
       about: './src/app/pages/about/about-entry.js',
+      blog: './src/app/pages/blog/blog-entry.js',
+      calculator: './src/app/pages/calculator/calculator-entry.js',
     },
 
     output: {
