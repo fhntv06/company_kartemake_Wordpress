@@ -37,6 +37,7 @@ function getChunks() {
     calculator: [...common, 'pages-common', 'calculator'],
     contacts: [...common, 'pages-common', 'contacts'],
     services: [...common, 'pages-common', 'services'],
+    support: [...common, 'pages-common', 'support'],
   }
 }
 
@@ -61,6 +62,7 @@ module.exports = (env, argv) => {
       calculator: './src/app/pages/calculator/calculator-entry.js',
       contacts: './src/app/pages/contacts/contacts-entry.js',
       services: './src/app/pages/services/services-entry.js',
+      support: './src/app/pages/support/support-entry.js',
     },
 
     output: {
