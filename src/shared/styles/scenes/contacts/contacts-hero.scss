@@ -1,0 +1,43 @@
+@use "../../variables/colors" as *;
+@use "../../variables/fonts" as *;
+@use "../../variables/offsets" as *;
+@use "../../variables/media" as *;
+@use "../../variables/root" as *;
+@use "../../system/mixins" as *;
+
+/* ========================================================
+     01 / HERO
+  ======================================================== */
+.contacts-hero__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $small;
+  margin-bottom: $middle;
+}
+.contacts-hero__status {
+  display: inline-flex;
+  align-items: center;
+  gap: $extra-small;
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  opacity: .6;
+  white-space: nowrap;
+}
+.contacts-hero__status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+  animation: contacts-status-pulse 2s ease-in-out infinite;
+}
+
+@media (max-width: $breakpoint-extra-small) {
+  .contacts-hero__meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $lower-small;
+    margin-bottom: $small;
+  }
+}

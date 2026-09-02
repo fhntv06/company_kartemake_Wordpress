@@ -1,0 +1,191 @@
+@use "../../variables/colors" as *;
+@use "../../variables/fonts" as *;
+@use "../../variables/offsets" as *;
+@use "../../variables/media" as *;
+@use "../../variables/root" as *;
+@use "../../system/mixins" as *;
+
+/* ========================================================
+   03 / REQUEST
+======================================================== */
+.contacts-request__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.75fr);
+  gap: $middle;
+}
+.contacts-request__content {
+  display: flex;
+  flex-direction: column;
+}
+.contacts-request__content .scene-title span {
+  color: $orange;
+}
+.contacts-request__note {
+  display: inline-flex;
+  align-items: center;
+  gap: $extra-small;
+  margin-top: $small;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  color: $text-secondary;
+}
+.contacts-request__note-indicator {
+  width: 7px;
+  height: 7px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+}
+/* ========================================================
+   REQUEST PANEL
+======================================================== */
+.contacts-request__panel {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $text-muted;
+  background: linear-gradient(135deg, rgba(255,255,255,0.025), transparent 50%);
+  overflow: hidden;
+}
+.contacts-request__panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $small;
+  border-bottom: 1px solid $text-muted;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 0.14em;
+  color: $text-secondary;
+}
+.contacts-request__panel-header span:last-child {
+  color: $orange;
+  opacity: 1;
+}
+.contacts-request__panel-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: $small;
+}
+.contacts-request__terminal {
+  display: flex;
+  align-items: center;
+  gap: $extra-small;
+  margin-bottom: $small;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: clamp(14px, 1.2vw, 17px);
+  line-height: 1.4;
+  color: $text-secondary;
+}
+.contacts-request__terminal-prefix {
+  color: $orange;
+}
+.contacts-request__terminal-cursor {
+  width: 7px;
+  height: 16px;
+  display: inline-block;
+  background: currentColor;
+  animation: contacts-request-cursor 1s steps(1) infinite;
+}
+.contacts-request__panel-description {
+  margin: 0 0 $small;
+  font-size: 16px;
+  line-height: 1.7;
+  color: $text-secondary;
+}
+.contacts-request__types {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $extra-small;
+}
+.contacts-request__types span {
+  padding: $extra-small;
+  border: 1px solid $text-muted;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: $text-secondary;
+  transition: border-color 0.25s ease, opacity 0.25s ease;
+}
+.contacts-request__types span:hover {
+  border-color: currentColor;
+  opacity: 1;
+}
+/* ========================================================
+   PANEL FOOTER
+======================================================== */
+.contacts-request__panel-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $small;
+  padding: $small;
+  border-top: 1px solid $text-muted;
+}
+.contacts-request__panel-footer > span {
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: $text-secondary;
+}
+.contacts-request__button {
+  flex-shrink: 0;
+}
+/* ========================================================
+   RESPONSIVE
+======================================================== */
+@media (max-width: $breakpoint-lower-middle) {
+  .contacts-request__note {
+    margin-top: $middle;
+  }
+  .contacts-request__layout {
+    grid-template-columns: 1fr;
+  }
+  .contacts-request__content {
+    max-width: 760px;
+  }
+  .contacts-request__panel {
+    min-height: 420px;
+  }
+}
+@media (max-width: $breakpoint-extra-small) {
+  .contacts-request {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  .contacts-request__panel {
+    min-height: 440px;
+  }
+  .contacts-request__panel-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .contacts-request__button {
+    width: 100%;
+  }
+}
+@media (max-width: $breakpoint-large-small) {
+  .contacts-request__panel {
+    min-height: 400px;
+  }
+  .contacts-request__panel-body {
+    padding: $extra-small;
+  }
+  .contacts-request__panel-header,
+  .contacts-request__panel-footer {
+    padding: $extra-small;
+  }
+  .contacts-request__types span {
+    padding: calc($extra-small / 2);
+  }
+}
+@keyframes contacts-request-cursor {
+  0%,45% {
+    opacity: 1;
+  }
+  46%,100% {
+    opacity: 0;
+  }
+}
