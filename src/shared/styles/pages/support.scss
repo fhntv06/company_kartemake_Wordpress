@@ -1,0 +1,26 @@
+@use "../variables/colors" as *;
+@use "../variables/fonts" as *;
+@use "../variables/offsets" as *;
+@use "../variables/media" as *;
+@use "../variables/root" as *;
+@use "../system/mixins" as *;
+
+// =====================================================
+// КОМПОНЕНТЫ
+// =====================================================
+@use '../components/canvas';
+@use '../components/orbit-navigation';
+@use '../components/contact-info';
+
+// =====================================================
+// СЦЕНЫ
+// =====================================================
+@use '../scenes/global/hero';
+@use '../scenes/support/support-hero';
+@use '../scenes/support/support-format';
+@use '../scenes/support/support-operating';
+@use '../scenes/support/support-plan';
+@use '../scenes/support/support-scope';
+@use '../scenes/support/support-systems';
+@use '../scenes/support/support-task';
+@use '../scenes/support/support-cta';
