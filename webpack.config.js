@@ -19,7 +19,7 @@ function getPageEntries() {
 }
 
 function getChunks() {
-  const common = ['runtime', 'vendors']
+  const common = ['runtime', 'vendors', 'global']
 
   // регулировка подключения в html
   // последовательность common -> pages-common -> global
@@ -30,11 +30,12 @@ function getChunks() {
   //  поэтому нужно сделать так, чтобы можно был легко для кажой страницы
   //  включать и выключать модули
   return {
-    index: [...common, 'pages-common', 'global', 'home'],
-    policy: [...common, 'global', 'policy'],
-    about: [...common, 'pages-common', 'global', 'about'],
-    blog: [...common, 'pages-common', 'global', 'blog'],
-    calculator: [...common, 'pages-common', 'global', 'calculator'],
+    index: [...common, 'pages-common', 'home'],
+    policy: [...common, 'policy'],
+    about: [...common, 'pages-common', 'about'],
+    blog: [...common, 'pages-common', 'blog'],
+    calculator: [...common, 'pages-common', 'calculator'],
+    contacts: [...common, 'pages-common', 'contacts'],
   }
 }
 
@@ -57,6 +58,7 @@ module.exports = (env, argv) => {
       about: './src/app/pages/about/about-entry.js',
       blog: './src/app/pages/blog/blog-entry.js',
       calculator: './src/app/pages/calculator/calculator-entry.js',
+      contacts: './src/app/pages/contacts/contacts-entry.js',
     },
 
     output: {
