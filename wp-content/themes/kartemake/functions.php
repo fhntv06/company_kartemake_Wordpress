@@ -106,7 +106,12 @@ function kartemake_enqueue_scripts() {
     );
 
     // pages-common
-    if (is_front_page() || is_page('about') || is_page('calculator') || is_page('contacts')) {
+    if (is_front_page()
+        || is_page('about')
+        || is_page('calculator')
+        || is_page('contacts')
+        || is_page('services')
+    ) {
         wp_enqueue_script(
             'kartemake-js-pages-common',
             get_template_directory_uri() . '/assets/js/pages-common.build.js',
