@@ -89,17 +89,6 @@ function kartemake_enqueue_scripts() {
         true
     );
 
-    // pages-common
-    if (is_front_page() || is_page('about') || is_page('calculator')) {
-        wp_enqueue_script(
-            'kartemake-js-pages-common',
-            get_template_directory_uri() . '/assets/js/pages-common.build.js',
-            array('kartemake-js-vendors'),
-            wp_get_theme()->get('Version'),
-            true
-        );
-    }
-
     // Общий JS
     // global
     wp_enqueue_script(
@@ -115,6 +104,17 @@ function kartemake_enqueue_scripts() {
         [],
         wp_get_theme()->get('Version')
     );
+
+    // pages-common
+    if (is_front_page() || is_page('about') || is_page('calculator') || is_page('contacts')) {
+        wp_enqueue_script(
+            'kartemake-js-pages-common',
+            get_template_directory_uri() . '/assets/js/pages-common.build.js',
+            array('kartemake-js-vendors'),
+            wp_get_theme()->get('Version'),
+            true
+        );
+    }
 
     // Главная страница
     if (is_front_page()) {
