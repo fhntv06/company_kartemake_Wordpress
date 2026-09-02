@@ -40,6 +40,9 @@
                         <a href="<?php echo get_permalink(get_page_by_path('calculator')); ?>">
                           Калькулятор стоимости
                         </a>
+                        <a href="<?php echo get_permalink(get_page_by_path('contacts')); ?>">
+                          Контакты
+                        </a>
                         <a href="<?php echo get_permalink(get_page_by_path('privacy-policy')); ?>">
                           Политика обработки персональных данных
                         </a>
