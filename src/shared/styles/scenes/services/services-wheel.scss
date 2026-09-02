@@ -1,0 +1,425 @@
+@use "../../variables/colors" as *;
+@use "../../variables/fonts" as *;
+@use "../../variables/offsets" as *;
+@use "../../variables/media" as *;
+@use "../../variables/root" as *;
+@use "../../system/mixins" as *;
+
+/* ========================================================
+     02 / SERVICE WHEEL
+  ======================================================== */
+.services-wheel__interface {
+  display: grid;
+  grid-template-columns: minmax(440px, 0.95fr) minmax(380px, 1fr);
+  gap: $middle;
+  align-items: center;
+}
+/* ========================================================
+   WHEEL STAGE
+======================================================== */
+.services-wheel__stage {
+  position: relative;
+  width: min(100%, 620px);
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+}
+.services-wheel__orbit {
+  position: absolute;
+  inset: 9%;
+  border: 1px solid $text-muted;
+  border-radius: 50%;
+}
+.services-wheel__orbit-line {
+  position: absolute;
+  inset: 13%;
+  border: 1px dashed $text-muted;
+  border-radius: 50%;
+  opacity: 0.45;
+}
+.services-wheel__orbit-line--secondary {
+  inset: 29%;
+  border-style: solid;
+  opacity: 0.25;
+}
+/* ========================================================
+     SERVICE ITEMS
+  ======================================================== */
+.services-wheel-item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150px;
+  height: 150px;
+  margin: -75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.5s ease;
+}
+.services-wheel-item__trigger {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid $text-muted;
+  border-radius: 50%;
+  color: inherit;
+  cursor: pointer;
+  transition: border-color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+}
+.services-wheel-item__trigger:hover {
+  transform: scale(1.05);
+}
+.services-wheel-item.is-active .services-wheel-item__trigger {
+  border-color: $orange;
+}
+.services-wheel-item__index {
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 0.1em;
+  color: $text-secondary;
+}
+.services-wheel-item__name {
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 12px;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+  text-align: center;
+}
+/* ========================================================
+   CORE
+======================================================== */
+.services-wheel__core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 190px;
+  height: 190px;
+  margin: -95px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: $extra-small;
+  border: 1px solid $text-muted;
+  border-radius: 50%;
+  z-index: 1;
+  background: radial-gradient(circle, rgba(255,255,255,0.04), transparent 70%);
+}
+.services-wheel__core-label {
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 8px;
+  line-height: 1;
+  letter-spacing: 0.15em;
+  color: $text-secondary;
+}
+.services-wheel__core-title {
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: 0.08em;
+}
+.services-wheel__core-status {
+  display: inline-flex;
+  align-items: center;
+  gap: $extra-small;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 0.1em;
+  color: $text-secondary;
+}
+.services-wheel__core-status span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: $green;
+  animation: services-status-pulse 2s ease infinite;
+}
+/* ========================================================
+   ACTIVE SERVICE DETAILS
+======================================================== */
+.services-wheel__details {
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+  padding: $small;
+  border: 1px solid $text-muted;
+}
+.services-wheel__details-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: $extra-small;
+  border-bottom: 1px solid $text-muted;
+}
+.services-wheel__details-label,
+.services-wheel__details-index {
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 0.12em;
+  color: $text-secondary;
+}
+.services-wheel-detail {
+  display: none;
+  flex: 1;
+  flex-direction: column;
+  padding-top: $extra-small;
+}
+.services-wheel-detail.is-active {
+  display: flex;
+}
+.services-wheel-detail__eyebrow {
+  margin-bottom: $extra-small;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 0.14em;
+  color: $orange;
+}
+.services-wheel-detail__title {
+  margin: 0 0 $extra-small;
+}
+.services-wheel-detail__description {
+  max-width: 570px;
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.7;
+  color: $text-secondary;
+}
+.services-wheel-detail__footer {
+  display: flex;
+  align-items: flex-end;
+  gap: $small;
+  margin-top: $small;
+}
+.services-wheel-detail__price {
+  display: flex;
+  align-items: baseline;
+  gap: calc($extra-small / 2);
+  white-space: nowrap;
+}
+.services-wheel-detail__price span,
+.services-wheel-detail__price small {
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 12px;
+  color: $text-secondary;
+}
+.services-wheel-detail__price strong {
+  font-size: 20px;
+  line-height: 1;
+  font-weight: 500;
+}
+.services-wheel-detail__type {
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 12px;
+  color: $text-secondary;
+}
+.services-wheel-detail__link {
+  display: inline-flex;
+  align-items: center;
+  gap: $extra-small;
+  margin-left: auto;
+  color: inherit;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 12px;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+.services-wheel-detail__link strong {
+  font-size: 15px;
+}
+.services-wheel-detail__link:hover {
+  color: $orange;
+}
+/* ========================================================
+   WHEEL NAVIGATION
+======================================================== */
+.services-wheel__navigation {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: $middle;
+  border-top: 1px solid $text-muted;
+  border-bottom: 1px solid $text-muted;
+}
+.services-wheel-nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: $extra-small;
+  min-height: 62px;
+  padding: 0 $extra-small;
+  border: 0;
+  border-right: 1px solid $text-muted;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+.services-wheel-nav:last-child {
+  border-right: 0;
+}
+.services-wheel-nav::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: $orange;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+.services-wheel-nav:hover {
+  background: rgba(255,255,255,0.025);
+}
+.services-wheel-nav.is-active::after {
+  transform: scaleX(1);
+}
+.services-wheel-nav__index {
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 9px;
+  line-height: 1;
+  opacity: 0.4;
+}
+.services-wheel-nav__label {
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 9px;
+  line-height: 1;
+  letter-spacing: 0.08em;
+}
+.services-wheel-nav.is-active .services-wheel-nav__label {
+  color: $orange;
+}
+@media (max-width: $breakpoint-lower-middle) {
+  .services-wheel__interface {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  .services-wheel__stage {
+    width: min(100%, 560px);
+  }
+  .services-wheel__details {
+    min-height: 340px;
+  }
+}
+@media (max-width: $breakpoint-extra-small) {
+  .services-wheel {
+    min-height: auto;
+  }
+  .services-wheel {
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+  .services-wheel__header {
+    margin-bottom: 40px;
+  }
+  .services-wheel__stage {
+    width: min(100%, 440px);
+  }
+  .services-wheel-item {
+    width: 110px;
+    height: 110px;
+    margin: -55px;
+  }
+  .services-wheel__core {
+    width: 145px;
+    height: 145px;
+    margin: -72.5px;
+  }
+  .services-wheel__core-title {
+    font-size: 14px;
+  }
+  .services-wheel__details {
+    min-height: 400px;
+    padding: 24px;
+  }
+  .services-wheel-detail__footer {
+    flex-wrap: wrap;
+  }
+  .services-wheel-detail__link {
+    width: 100%;
+    margin-left: 0;
+  }
+  .services-wheel__navigation {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .services-wheel-nav:nth-child(2) {
+    border-right: 0;
+  }
+  .services-wheel-nav:nth-child(-n+2) {
+    border-bottom: 1px solid $text-muted;
+  }
+  .services-wheel-nav {
+    min-height: 56px;
+  }
+}
+@media (max-width: $breakpoint-large-small) {
+  .services-wheel__stage {
+    width: 100%;
+  }
+  .services-wheel-item {
+    width: 86px;
+    height: 86px;
+    margin: -43px;
+  }
+  .services-wheel-item__name {
+    font-size: 8px;
+  }
+  .services-wheel__core {
+    width: 120px;
+    height: 120px;
+    margin: -60px;
+  }
+  .services-wheel__core-label,
+  .services-wheel__core-status {
+    font-size: 7px;
+  }
+  .services-wheel__core-title {
+    font-size: 12px;
+  }
+  .services-wheel__details {
+    padding: 20px;
+  }
+  .services-wheel-detail__title {
+    font-size: 30px;
+  }
+  .services-wheel-detail__footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .services-wheel__navigation {
+    grid-template-columns: 1fr;
+  }
+  .services-wheel-nav {
+    border-right: 0;
+    border-bottom: 1px solid $text-muted;
+  }
+  .services-wheel-nav:last-child {
+    border-bottom: 0;
+  }
+  .services-partnership__flow-item {
+    grid-template-columns: 36px 1fr;
+  }
+  .services-partnership__flow-item small {
+    display: none;
+  }
+}
+@media (max-width: $breakpoint-large-small) {
+  .services-partnership__flow-item {
+    min-height: 64px;
+    padding: 0 14px;
+  }
+  .services-partnership__statement {
+    padding: 20px;
+  }
+}

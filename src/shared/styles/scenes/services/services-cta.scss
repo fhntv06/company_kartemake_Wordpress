@@ -1,0 +1,24 @@
+@use "../../variables/colors" as *;
+@use "../../variables/fonts" as *;
+@use "../../variables/offsets" as *;
+@use "../../variables/media" as *;
+@use "../../variables/root" as *;
+@use "../../system/mixins" as *;
+
+/* ========================================================
+     04 / CTA
+  ======================================================== */
+.services-cta {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 120px;
+  padding-bottom: 160px;
+}
+.services-cta .scene-header {
+  margin-bottom: 64px;
+}
+.services-cta .scene-title span {
+  color: $orange;
+}

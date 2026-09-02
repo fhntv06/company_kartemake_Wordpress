@@ -1,0 +1,79 @@
+@use "../../variables/colors" as *;
+@use "../../variables/fonts" as *;
+@use "../../variables/offsets" as *;
+@use "../../variables/media" as *;
+@use "../../variables/root" as *;
+@use "../../system/mixins" as *;
+
+.services-partnership__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(400px, 1fr);
+  gap: $middle;
+}
+/* ========================================================
+   PARTNERSHIP FLOW
+======================================================== */
+.services-partnership__system {
+  display: flex;
+  flex-direction: column;
+  gap: $middle;
+}
+.services-partnership__flow {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid $text-muted;
+  border-left: 1px solid $text-muted;
+}
+.services-partnership__flow-item {
+  display: grid;
+  grid-template-columns: 40px 1fr auto;
+  align-items: center;
+  gap: $extra-small;
+  min-height: 76px;
+  padding: $small;
+  border-right: 1px solid $text-muted;
+  border-bottom: 1px solid $text-muted;
+  transition: background-color .3s ease;
+
+  &:hover {
+    background-color: $text-secondary;
+  }
+}
+.services-partnership__flow-item {
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 12px;
+  color: $text-secondary;
+}
+/* ========================================================
+   PARTNERSHIP STATEMENT
+======================================================== */
+.services-partnership__statement {
+  display: flex;
+  align-items: flex-start;
+  gap: $extra-small;
+  padding: $small;
+  border: 1px solid $text-muted;
+}
+.services-partnership__statement-marker {
+  flex-shrink: 0;
+  width: 7px;
+  height: 7px;
+  margin-top: calc($extra-small / 2);
+  background-color: $orange;
+  border-radius: 50%;
+  animation: services-status-pulse 2s ease infinite;
+}
+.services-partnership__statement p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+}
+@media (max-width: $breakpoint-lower-middle) {
+  .services-partnership__layout {
+    grid-template-columns: 1fr;
+    gap: $middle;
+  }
+  .services-partnership__content {
+    max-width: 760px;
+  }
+}
