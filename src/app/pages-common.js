@@ -16,7 +16,7 @@ export default class PagesCommonApp {
     }
     init() {
         if (!window.App) {
-            console.warn("[HomeApp] window.App does not exist. GlobalApp may not be initialized.")
+            console.warn("[PagesCommonApp] window.App does not exist. GlobalApp may not be initialized.")
             window.App = {}
         }
 

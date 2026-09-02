@@ -29,6 +29,11 @@
   max-width: 80%;
   margin-bottom: $large; // 120px → $extra-large (128px)
 }
+.scene-title {
+  span {
+    color: $orange;
+  }
+}
 .scene-eyebrow {
   display: block;
   margin-bottom: $extra-small;
