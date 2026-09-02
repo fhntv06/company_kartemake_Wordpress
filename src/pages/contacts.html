@@ -3,649 +3,450 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Контакты технической поддержки | Связь с командой KARTEMAKE</title>
+  <title>Контакты | Свяжитесь с нами | KARTECH</title>
 
   <link rel="shortcut icon" href="../../public/images/logotypes/logo-dark.ico" type="image/x-icon">
 </head>
-<body class="preloader-lock" data-controller="modal preloader ripple-effect theme anchor scroll-progress burger-menu scroll-reveal">
-<header class="header" data-controller="header">
-  <a href="/" class="logo">
-    <span class="font-size-h3">K</span>
-    <span class="font-size-h3">·</span>
-    <span class="font-size-h4 color-accent-red">ART</span>
-    <span class="font-size-h3">·</span>
-    <span class="font-size-h5">MAKE</span>
-  </a>
-
-  <nav class="nav-links">
-    <a href="services.html">Услуги</a>
-    <a href="blog.html">Технический блог</a>
-    <a href="support.html">Техподдержка</a>
-    <a class="active" href="contacts.html">Контакты</a>
-  </nav>
-
-  <div class="header-controls">
-    <div class="social-links">
-      <a href="https://github.com/fhntv06" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="https://t.me/KArtech76" target="_blank"><i class="fab fa-telegram"></i></a>
-      <a href="https://vk.ru/kartemake" target="_blank"><i class="fab fa-vk"></i></a>
+<body>
+<!-- =================================================
+SYSTEM LOADER
+================================================= -->
+<div class="system-loader">
+  <div class="loader-terminal">
+    <span>ЗАПУСК СИСТЕМЫ K·ART·MAKE</span>
+    <div class="loader-progress">
+      <div></div>
     </div>
-
-    <div class="phone">
-      <i class="fas fa-phone"></i>
-      <span>+7 (908) 946-14-83</span>
-    </div>
-
-    <button
-            class="theme-toggle"
-            data-controller-theme="item"
-    >
-      <i class="fas fa-moon"></i>
-    </button>
-
-    <!--
-    <button
-      class="language-toggle"
-      data-controller="lang"
-      data-controller-ripple-effect="item"
-    >
-      <span data-controller-lang="item">RU</span>
-      <i class="fas fa-chevron-down"></i>
-    </button>
-    -->
-
-    <button
-            class="cta-button"
-            data-controller-modal-open="form"
-            data-controller-modal-func="open"
-            data-controller-ripple-effect="item"
-    >
-      Обсудить задачу
-      <i class="fas fa-arrow-right"></i>
-    </button>
-
-    <button class="burger-menu" id="burgerMenu" data-controller-burger-menu="item">
+  </div>
+</div>
+<!-- =================================================
+ORBIT NAVIGATION
+================================================= -->
+<div id="orbit-navigation" class="orbit-navigation">
+  <div class="orbit-circle">
+    <button class="orbit-point" data-scene=hero>
+      <span class="orbit-point__description">Начало</span>
       <span></span>
+      <strong>01</strong>
+    </button>
+    <button class="orbit-point" data-scene="contacts-channels">
+      <span class="orbit-point__description">Как с нами связаться</span>
       <span></span>
+      <strong>02</strong>
+    </button>
+    <button class="orbit-point" data-scene="contacts-request">
+      <span class="orbit-point__description">Ситуация, цель, проблема</span>
       <span></span>
+      <strong>03</strong>
+    </button>
+    <button class="orbit-point" data-scene="contacts-process">
+      <span class="orbit-point__description">Процесс</span>
+      <span></span>
+      <strong>04</strong>
+    </button>
+    <button class="orbit-point" data-scene="contacts-cta">
+      <span class="orbit-point__description">Готовы обсудить задачу?</span>
+      <span></span>
+      <strong>05</strong>
     </button>
   </div>
-</header>
-<main>
-  <section class="hero">
-    <div class="container">
-      <h1>Свяжитесь <span class="color-accent-red">с нами</span></h1>
-
-      <div class="hero-content">
-        <div class="hero-text">
-          <h4>Готовы обсудить ваш проект</h4>
-          <p>Расскажите о своей задаче — мы предложим решение и рассчитаем стоимость за 24 часа.</p>
-          <button
-                  class="button button--large button--accent"
-                  data-controller-modal-open="form"
-                  data-controller-modal-func="open"
-          >
-            Описать техническую задачу
-          </button>
-        </div>
-        <div class="hero-stats-particle stats-particle" data-controller="animation-numbers">
-          <div class="stat-item-particle">
-            <span class="particle" style="--tx: -30px; --ty: -40px;"></span>
-            <span class="particle" style="--tx: 30px; --ty: -35px;"></span>
-            <span class="particle" style="--tx: -20px; --ty: 40px;"></span>
-            <span class="stat-icon-particle"><i class="fas fa-code"></i></span>
-            <div class="stat-number-particle" data-postfix="%" data-controller-animation-numbers="item">99.9</div>
-            <div class="stat-label-particle">Проектов</div>
-          </div>
-          <div class="stat-item-particle">
-            <span class="particle" style="--tx: -35px; --ty: -30px;"></span>
-            <span class="particle" style="--tx: 25px; --ty: -45px;"></span>
-            <span class="particle" style="--tx: -25px; --ty: 35px;"></span>
-            <span class="stat-icon-particle"><i class="fas fa-users"></i></span>
-            <div class="stat-number-particle" data-postfix="ч" data-controller-animation-numbers="item">2</div>
-            <div class="stat-label-particle">Специалистов</div>
-          </div>
-        </div>
-      </div>
-
+</div>
+<!-- =================================================
+GLOBAL DASHBOARD
+================================================= -->
+<header id="header" class="global-dashboard">
+  <div class="dashboard-inner">
+    <a href="/" class="dashboard-brand">K·ART·MAKE</a>
+    <div class="dashboard-status">
+      <span class="dashboard-status-dot"></span>
+      СИСТЕМА РАБОТАЕТ
     </div>
-    <div id="scroll-hint" class="scroll-hint color-accent-red font-weight-bold">
-      Листайте вниз
-      <i class="fas fa-arrow-down"></i>
-    </div>
-  </section>
-
-  <section>
-    <div class="container">
-      <h2 class="section__title">Как с нами <span class="color-accent-red">связаться</span></h2>
-      <p class="section__description">Мы работаем удаленно по всей России. Выберите удобный способ связи для обсуждения технических вопросов.</p>
-
-      <div class="cards-grid">
-        <div class="vertical-card" data-controller-scroll-reveal="item">
-          <div class="icon">
-            <i class="fas fa-headset font-size-h5"></i>
-          </div>
-          <h4 class="title">Техническая поддержка</h4>
-          <p class="description">support@kartemake.ru</p>
-          <p class="description-small">Для срочных запросов и технических проблем</p>
-          <a href="mailto:support@kartemake.ru" class="link">
-            <span>Написать в поддержку</span>
-            <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
-
-        <div class="vertical-card" data-controller-scroll-reveal="item">
-          <div class="icon">
-            <i class="fas fa-project-diagram font-size-h5"></i>
-          </div>
-          <h4 class="title">Новые проекты</h4>
-          <p class="description">hello@kartemake.ru</p>
-          <p class="description-small">Для обсуждения разработки, миграции, аудита</p>
-          <a href="mailto:hello@kartemake.ru" class="link">
-            <span>Обсудить проект</span>
-            <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
-
-        <div class="vertical-card" data-controller-scroll-reveal="item">
-          <div class="icon">
-            <i class="fas fa-phone font-size-h5"></i>
-          </div>
-          <h4 class="title">Телефон</h4>
-          <p class="vertical-card__description">+7 (908) 946-14-83</p>
-          <p class="description-small">Пн-Пт, 9:00-18:00 по московскому времени</p>
-          <a href="tel:+79089461483" class="link">
-            <span>Позвонить</span>
-            <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
-
-        <div class="vertical-card" data-controller-scroll-reveal="item">
-          <div class="icon">
-            <i class="fas fa-clock font-size-h5"></i>
-          </div>
-          <h4 class="title">Режим работы</h4>
-          <p class="description">Пн-Пт: 9:00 - 18:00 (МСК)</p>
-          <p class="description-small">Техподдержка: 24/7 для клиентов на абонентском обслуживании</p>
-          <a href="support.html" class="link">
-            <span>Узнать об SLA</span>
-            <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Секция с картой - закомментирована -->
-  <!--
-  <section>
-    <div class="container">
-      <div class="map-container">
-        <div class="map-placeholder">
-          <i class="fas fa-network-wired font-size-h3"></i>
-          <span>Распределенная команда по всей России</span>
-          <div class="map-point" style="top: 30%; left: 40%;">
-            <div class="point-label">Москва<br>Менеджмент</div>
-          </div>
-          <div class="map-point" style="top: 45%; left: 55%;">
-            <div class="point-label">Санкт-Петербург<br>Разработка</div>
-          </div>
-          <div class="map-point" style="top: 60%; left: 65%;">
-            <div class="point-label">Новосибирск<br>DevOps</div>
-          </div>
-          <div class="map-point" style="top: 50%; left: 35%;">
-            <div class="point-label">Екатеринбург<br>Поддержка</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  -->
-
-  <section class="project-form">
-    <div class="form-container container">
-      <div class="form-header">
-        <h3>Есть техническая задача? <span class="color-accent-red">Опишите её</span></h3>
-        <p>Расскажите о проблеме или задаче — мы проведем бесплатный аудит и предложим решение в течение 24 часов</p>
-      </div>
-      <form class="contact-form" data-controller="form">
-        <div class="form-group">
-          <input type="text" class="form-input" name="name" id="name-project-form" placeholder=" " required>
-          <label for="name-project-form" class="form-label">Имя</label>
-        </div>
-
-        <div class="form-group">
-          <input type="text" class="form-input" name="company" id="company-project-form" placeholder=" ">
-          <label for="company-project-form" class="form-label">Название компании</label>
-        </div>
-
-        <div class="form-group">
-          <input type="email" class="form-input" name="email" id="email-project-form" placeholder=" ">
-          <label for="email-project-form" class="form-label">Email</label>
-        </div>
-
-        <div class="form-group">
-          <input type="tel" class="form-input" name="phone" id="phone-project-form" placeholder=" " required>
-          <label for="phone-project-form" class="form-label">Телефон</label>
-        </div>
-
-        <div class="form-group full-width">
-          <textarea class="form-input" name="message" id="message-project-form" placeholder=" " required rows="4"></textarea>
-          <label for="message-project-form" class="form-label">Опишите вашу техническую задачу или проблему</label>
-        </div>
-
-        <div class="form-group">
-          <select class="form-input" name="type" id="type-project-form">
-            <option value="">Выберите тип задачи</option>
-            <option value="support">Техническая поддержка сайта</option>
-            <option value="development">Разработка/доработка</option>
-            <option value="migration">Миграция/модернизация</option>
-            <option value="audit">Аудит безопасности/производительности</option>
-            <option value="consulting">Консультация</option>
-            <option value="other">Другое</option>
-          </select>
-          <label for="type-project-form" class="form-label">Тип задачи</label>
-        </div>
-
-        <div class="form-group">
-          <div class="checkbox-group">
-            <input type="checkbox" id="urgent-project-form" name="urgent">
-            <label for="urgent-project-form" class="checkbox-label">Срочная задача (ответ в течение 2 часов)</label>
-          </div>
-        </div>
-
-        <div class="form-button">
-          <button type="submit" class="cta-button" data-controller-ripple-effect="item">
-            Отправить задачу
-            <i class="fas fa-arrow-right"></i>
-          </button>
-        </div>
-
-        <p class="form-notice">Нажимая на кнопку, вы соглашаетесь с политикой конфиденциальности. Мы ответим в течение 24 часов.</p>
-      </form>
-    </div>
-  </section>
-</main>
-<footer class="footer">
-  <div class="container">
-    <!-- Строка 1: Лого + 3 колонки + CTA -->
-    <div class="footer__row footer__row--top">
-      <!-- Колонка 1: Логотип -->
-      <div class="footer__col footer__col--logo">
-        <a href="/" class="logo">
-          <span class="font-size-h3">K</span>
-          <span class="font-size-h3">·</span>
-          <span class="font-size-h4 color-accent-red">ART</span>
-          <span class="font-size-h3">·</span>
-          <span class="font-size-h5">MAKE</span>
+    <button class="dashboard-menu" type="button" aria-expanded="false" aria-controls="dashboard-menu-panel">
+      <span class="dashboard-menu-label">МЕНЮ</span>
+      <span class="dashboard-menu-icon">
+        <span></span>
+        <span></span>
+      </span>
+    </button>
+  </div>
+  <div id="dashboard-menu-panel" class="dashboard-menu-panel" aria-hidden="true">
+    <div class="dashboard-menu-panel-inner">
+      <!-- CONTACTS -->
+      <div class="dashboard-menu-column">
+        <span class="dashboard-menu-title">КОНТАКТЫ</span>
+        <a href="mailto:hello@kartemake.ru">
+          <span>НОВЫЕ ПРОЕКТЫ</span>
+          <strong>hello@kartemake.ru</strong>
+        </a>
+        <a href="mailto:support@kartemake.ru">
+          <span>ТЕХНИЧЕСКАЯ ПОДДЕРЖКА</span>
+          <strong>support@kartemake.ru</strong>
         </a>
       </div>
-
-      <!-- Колонка 2: Услуги -->
-      <div class="footer__col footer__col--services">
-        <h4 class="footer__title">Услуги</h4>
-        <ul class="footer__list">
-          <li><a href="services.html#web-development">Веб-разработка &amp; CMS</a></li>
-          <li><a href="services.html#migration">Техническая миграция и модернизация</a></li>
-          <li><a href="services.html#support">Техподдержка &amp; Инфраструктура</a></li>
-          <li><a href="services.html#audit">Аудит и консалтинг</a></li>
-        </ul>
+      <!-- SERVICES -->
+      <div class="dashboard-menu-column">
+        <span class="dashboard-menu-title">УСЛУГИ</span>
+        <a href="/#optimization">
+          <span>01</span>
+          <strong>Оптимизация сайта</strong>
+        </a>
+        <a href="/#modernization">
+          <span>02</span>
+          <strong>Модернизация</strong>
+        </a>
+        <a href="/#support">
+          <span>03</span>
+          <strong>Техническая поддержка</strong>
+        </a>
+        <a href="/#audit">
+          <span>04</span>
+          <strong>Аудит и консультации</strong>
+        </a>
       </div>
-
-      <!-- Колонка 3: Полезное -->
-      <div class="footer__col footer__col--links">
-        <h4 class="footer__title">Полезное</h4>
-        <ul class="footer__list">
-          <li><a href="/services">Услуги</a></li>
-          <li><a href="/blog">Технический блог</a></li>
-          <li><a href="/support">Техподдержка</a></li>
-          <li><a href="/contacts">Контакты</a></li>
-          <li class="footer__list-divider"></li>
-          <li><a href="/requisites">Реквизиты</a></li>
-          <li><a href="/privacy-policy">Политика конфиденциальности</a></li>
-          <li><a href="/offer">Публичная оферта</a></li>
-        </ul>
+      <!-- INFORMATION -->
+      <div class="dashboard-menu-column">
+        <span class="dashboard-menu-title">ИНФОРМАЦИЯ</span>
+        <a href="./about.html">О Компании</a>
+        <a href="./privacy-policy.html">Политика обработки персональных данных</a>
+        <a href="./cookie-policy.html">Политика использования Cookie</a>
       </div>
+    </div>
+  </div>
+</header>
+<main class="page contacts-page">
+  <!-- =========================================================
+  01 / HERO
+  ========================================================== -->
+  <section class="scene scene-hero" data-scene="hero" data-canvas-engine>
+    <canvas id="heroCanvas" class="hero-canvas" aria-hidden="true"></canvas>
+    <canvas id="hero-particle-canvas" class="hero-particle-canvas" aria-hidden="true"></canvas>
 
-      <!-- Колонка 4: CTA (кнопка "Начать проект") -->
-      <div class="footer__col footer__col--cta">
-        <button
-                class="cta-button"
-                data-controller-modal-open="form"
-                data-controller-modal-func="open"
-                data-controller-ripple-effect="item"
-        >
-          Начать проект
-          <i class="fas fa-arrow-right"></i>
+    <div class="scene-container">
+      <div class="hero-content contacts-hero__content reveal-item">
+        <div class="contacts-hero__meta">
+          <span class="scene-eyebrow">CONTACT / K·ART·MAKE</span>
+          <span class="contacts-hero__status">
+              <span class="contacts-hero__status-dot"></span>
+              ГОТОВЫ К НОВЫМ ЗАДАЧАМ
+          </span>
+        </div>
+        <h1 class="scene-title contacts-hero__title">Есть техническая <span>задача?</span></h1>
+        <p>Расскажите, что происходит с вашим сайтом, приложением или инфраструктурой. Разберём техническую часть и предложим оптимальный способ решения.</p>
+        <div class="hero-actions">
+          <button class="button-primary" type="button" data-modal-func="open">
+            <span>ОБСУДИТЬ ЗАДАЧУ</span>
+            <strong>↗</strong>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- =========================================================
+  02 / CONTACT CHANNELS
+  ========================================================== -->
+  <section class="scene contacts-channels" data-scene="contacts-channels">
+    <div class="scene-container">
+      <header class="scene-header reveal-item">
+        <span class="scene-eyebrow">02 / КАНАЛЫ СВЯЗИ</span>
+        <h2 class="scene-title">Как с нами <span>связаться.</span></h2>
+        <p class="scene-description">Выберите удобный канал или сразу опишите задачу. Для новых проектов и технических вопросов используйте соответствующий контакт.</p>
+      </header>
+      <div class="contacts-channels__list reveal-item">
+        <div class="contacts-channel">
+          <div class="contacts-channel__index">01</div>
+          <div class="contacts-channel__content">
+            <span class="contacts-channel__label">НОВЫЕ ПРОЕКТЫ</span>
+            <h5>
+              <a href="mailto:hello@kartemake.ru">hello@kartemake.ru</a>
+            </h5>
+            <p class="contacts-channel__description">Обсудить разработку, модернизацию, оптимизацию или новый технический проект.</p>
+          </div>
+          <span class="contacts-channel__arrow">↗</span>
+        </div>
+        <div class="contacts-channel">
+          <div class="contacts-channel__index">02</div>
+          <div class="contacts-channel__content">
+            <span class="contacts-channel__label">ТЕХНИЧЕСКАЯ ПОДДЕРЖКА</span>
+            <h5>
+              <a href="mailto:support@kartemake.ru">support@kartemake.ru</a>
+            </h5>
+            <p class="contacts-channel__description">Текущие технические задачи, сопровождение и эксплуатация.</p>
+          </div>
+          <span class="contacts-channel__arrow">↗</span>
+        </div>
+        <div class="contacts-channel">
+          <div class="contacts-channel__index">03</div>
+          <div class="contacts-channel__content">
+            <span class="contacts-channel__label">TELEGRAM</span>
+            <h5>
+              <a href="https://t.me/KArtech76" target="_blank" rel="noopener noreferrer">@KArtech76</a>
+            </h5>
+            <p class="contacts-channel__description">Быстрый способ связаться и задать предварительный вопрос.</p>
+          </div>
+          <span class="contacts-channel__arrow">↗</span>
+        </div>
+        <div class="contacts-channel">
+          <div class="contacts-channel__index">04</div>
+          <div class="contacts-channel__content">
+            <span class="contacts-channel__label">ВКОНТАКТЕ</span>
+            <h5>
+              <a href="https://vk.ru/kartemake" target="_blank" rel="noopener noreferrer">vk.ru/kartemake</a>
+            </h5>
+            <p class="contacts-channel__description">Новости и дополнительный канал связи.</p>
+          </div>
+          <span class="contacts-channel__arrow">↗</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- =========================================================
+  03 / REQUEST
+  ========================================================== -->
+  <section class="scene contacts-request" data-scene="contacts-request">
+    <div class="scene-container">
+      <div class="contacts-request__layout reveal-item">
+        <div class="contacts-request__content">
+          <span class="scene-eyebrow">03 / START A CONVERSATION</span>
+          <h2 class="scene-title">Расскажите, <span>что нужно сделать.</span></h2>
+          <p class="scene-description">Необязательно готовить подробное техническое задание. Опишите проблему своими словами — мы разберём техническую часть, зададим необходимые вопросы и определим следующий шаг.</p>
+          <div class="contacts-request__note">
+            <span class="contacts-request__note-indicator"></span>
+            <span>НЕ НУЖНО ГОТОВОЕ ТЗ</span>
+          </div>
+        </div>
+        <div class="contacts-request__panel">
+          <div class="contacts-request__panel-header">
+            <span>REQUEST / INPUT</span>
+            <span>READY</span>
+          </div>
+          <div class="contacts-request__panel-body">
+            <div class="contacts-request__terminal">
+              <span class="contacts-request__terminal-prefix">&gt;</span>
+              <span>describe_problem</span>
+              <span class="contacts-request__terminal-cursor"></span>
+            </div>
+            <p class="contacts-request__panel-description">Достаточно описать ситуацию, цель или проблему. Остальные технические детали поможем определить вместе.</p>
+            <div class="contacts-request__types">
+              <span>САЙТ</span>
+              <span>ПРИЛОЖЕНИЕ</span>
+              <span>ИНФРАСТРУКТУРА</span>
+              <span>ИНТЕГРАЦИИ</span>
+              <span>ПОДДЕРЖКА</span>
+            </div>
+          </div>
+          <div class="contacts-request__panel-footer">
+            <span>INPUT CHANNEL</span>
+            <button class="button-primary contacts-request__button" type="button" data-modal-func="open">
+              <span>ОБСУДИТЬ ЗАДАЧУ</span>
+              <strong>↗</strong>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- =========================================================
+  04 / PROCESS
+  ========================================================== -->
+  <section class="scene contacts-process" data-scene="contacts-process">
+    <div class="scene-container">
+      <header class="scene-header reveal-item">
+        <span class="scene-eyebrow">04 / PROCESS</span>
+        <h2 class="scene-title">Что происходит <span>после обращения.</span></h2>
+        <p class="scene-description">Первый контакт не требует обязательств. Сначала разбираемся в задаче, затем предлагаем подходящий вариант работы.</p>
+      </header>
+      <div class="contacts-process__grid reveal-item">
+        <article class="contacts-process-step">
+          <div class="contacts-process-step__top">
+            <span class="contacts-process-step__number">01</span>
+            <span class="contacts-process-step__status">REQUEST</span>
+          </div>
+          <div class="contacts-process-step__body">
+            <h4 class="contacts-process-step__title">Запрос</h4>
+            <p class="contacts-process-step__description">Получаем ваше сообщение и изучаем контекст задачи.</p>
+          </div>
+        </article>
+        <article class="contacts-process-step">
+          <div class="contacts-process-step__top">
+            <span class="contacts-process-step__number">02</span>
+            <span class="contacts-process-step__status">ANALYSIS</span>
+          </div>
+          <div class="contacts-process-step__body">
+            <h4 class="contacts-process-step__title">Уточнение</h4>
+            <p class="contacts-process-step__description">Задаём необходимые вопросы и определяем технические ограничения.</p>
+          </div>
+        </article>
+        <article class="contacts-process-step">
+          <div class="contacts-process-step__top">
+            <span class="contacts-process-step__number">03</span>
+            <span class="contacts-process-step__status">SOLUTION</span>
+          </div>
+          <div class="contacts-process-step__body">
+            <h4 class="contacts-process-step__title">Решение</h4>
+            <p class="contacts-process-step__description">Предлагаем способ решения, состав работ и следующий шаг.</p>
+          </div>
+        </article>
+        <article class="contacts-process-step">
+          <div class="contacts-process-step__top">
+            <span class="contacts-process-step__number">04</span>
+            <span class="contacts-process-step__status">START</span>
+          </div>
+          <div class="contacts-process-step__body">
+            <h4 class="contacts-process-step__title">Старт</h4>
+            <p class="contacts-process-step__description">После согласования приступаем к работе.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+  <!-- =========================================================
+  05 / CTA
+  ========================================================== -->
+  <section class="scene" data-scene="contacts-cta">
+    <div class="scene-container">
+      <header class="scene-header reveal-item">
+        <span class="scene-eyebrow">05 / СЛЕДУЮЩИЙ ШАГ</span>
+        <h2 class="scene-title">Готовы обсудить <span>задачу?</span></h2>
+        <p class="scene-description">Опишите проблему, проект или задачу. Мы разберём техническую часть и предложим оптимальный способ решения.</p>
+      </header>
+      <div class="cta-block reveal-item">
+        <span class="cta-block__eyebrow">ТЕХНИЧЕСКИЙ ПАРТНЁР / K·ART·MAKE</span>
+        <h3 class="cta-block__title">Передайте задачу технической команде.</h3>
+        <p class="cta-block__text">Неважно, насколько подробно вы можете описать проблему. Начнём с контекста и вместе определим, что необходимо сделать.</p>
+        <button class="button-primary cta-block__button" type="button" data-modal-func="open">
+          <span>ОБСУДИТЬ ЗАДАЧУ</span>
+          <strong>↗</strong>
         </button>
       </div>
     </div>
-
-    <!-- Строка 2: Описание -->
-    <div class="footer__row footer__row--middle">
-      <p class="footer__description">
-        Ваш внешний технический отдел. Поддержка и развитие digital-продуктов
-      </p>
+  </section>
+  <!-- =================================================
+  FOOTER
+  ================================================= -->
+  <section>
+    <div class="scene-container">
+      <!-- =================================================
+      FOOTER
+      ================================================= -->
+      <footer class="contact-footer">
+        <!-- FOOTER BRAND -->
+        <div class="contact-footer-brand">
+          <a href="/" class="contact-footer-logo" aria-label="K·ART·MAKE">K·ART·MAKE</a>
+          <p>Технический партнёр для вашего бизнеса.</p>
+        </div>
+        <!-- FOOTER NAVIGATION -->
+        <nav class="contact-footer-nav" aria-label="Навигация по сайту">
+          <div class="contact-footer-column">
+            <span class="contact-footer-title">УСЛУГИ</span>
+            <a href="/#optimization">Оптимизация сайта</a>
+            <a href="/#modernization">Модернизация</a>
+            <a href="/#support">Техническая поддержка</a>
+            <a href="/#audit">Аудит и консультации</a>
+          </div>
+          <div class="contact-footer-column">
+            <span class="contact-footer-title">ИНФОРМАЦИЯ</span>
+            <a href="./privacy-policy.html">Политика обработки персональных данных</a>
+            <a href="./cookie-policy.html">Политика использования Cookie</a>
+          </div>
+          <div class="contact-footer-column">
+            <span class="contact-footer-title">КОНТАКТЫ</span>
+            <a href="mailto:hello@kartemake.ru">hello@kartemake.ru</a>
+            <a href="mailto:support@kartemake.ru">support@kartemake.ru</a>
+            <a href="https://t.me/KArtech76">Telegram</a>
+            <a href="https://vk.ru/kartemake">VK</a>
+          </div>
+        </nav>
+        <!-- FOOTER BOTTOM -->
+        <div class="contact-footer-bottom">
+          <span>© 2026 K·ART·MAKE</span>
+          <span>ТЕХНИЧЕСКИЙ ПАРТНЁР</span>
+          <span>ВСЕ СИСТЕМЫ РАБОТАЮТ</span>
+        </div>
+      </footer>
     </div>
-
-    <!-- Строка 3: Копирайт -->
-    <div class="footer__row footer__row--bottom">
-      <div class="footer__copyright">
-        <small>KARTEMAKE © 2026. Все права защищены.</small>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<!-- Overlay для затемнения фона -->
-<div class="overlay" id="overlay"></div>
-
-<!-- Sidebar burger menu -->
-<aside class="sidebar-burger-menu" id="sidebar-burger-menu">
-  <div class="close-modal" data-controller-burger-menu="item">
-    <i class="fas fa-times"></i>
-  </div>
-  <nav>
-    <ul class="sidebar-nav">
-      <li><a href="services.html">Услуги</a></li>
-      <li><a href="blog.html">Технический блог</a></li>
-      <li><a href="support.html">Техподдержка</a></li>
-      <li><a class="active" href="contacts.html">Контакты</a></li>
-    </ul>
-  </nav>
-
-  <button
-          class="cta-button"
-          data-controller-modal-open="form"
-          data-controller-modal-func="open"
-          data-controller-ripple-effect="item"
-  >
-    Обсудить задачу
-    <i class="fas fa-arrow-right"></i>
-  </button>
-
-  <div class="sidebar-social">
-    <button class="theme-toggle" data-controller-theme="item">
-      <i class="fas fa-moon"></i>
-    </button>
-    <!--
-    <button
-      class="language-toggle"
-      data-controller="lang"
-      data-controller-ripple-effect="item"
-    >
-      <span data-controller-lang="item">RU</span>
-      <i class="fas fa-chevron-down"></i>
-    </button>
-    -->
-  </div>
-  <div class="sidebar-social">
-    <a href="https://github.com/fhntv06" target="_blank"><i class="fab fa-github"></i></a>
-    <a href="https://t.me/KArtech76" target="_blank"><i class="fab fa-telegram"></i></a>
-    <a href="https://vk.ru/kartemake" target="_blank"><i class="fab fa-vk"></i></a>
-  </div>
-</aside>
-
-<!-- modal form -->
-<div id="form" class="modal">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h3>Описать техническую задачу</h3>
-      <p>Опишите проблему или задачу — мы предложим решение и расценки в течение 24 часов</p>
-    </div>
-
-    <div class="form-container">
-      <form class="contact-form" data-controller="form">
-        <div class="form-group">
-          <input type="text" class="form-input" name="name" id="name" placeholder=" " required>
-          <label for="name" class="form-label">Имя</label>
-        </div>
-
-        <div class="form-group">
-          <input type="text" class="form-input" name="company" id="company" placeholder=" ">
-          <label for="company" class="form-label">Название компании</label>
-        </div>
-
-        <div class="form-group">
-          <input type="email" class="form-input" name="email" id="email" placeholder=" ">
-          <label for="email" class="form-label">Email</label>
-        </div>
-
-        <div class="form-group">
-          <input type="tel" class="form-input" name="phone" id="phone" placeholder=" " required>
-          <label for="phone" class="form-label">Телефон</label>
-        </div>
-
-        <div class="form-group full-width">
-          <textarea class="form-input" name="message" id="message" placeholder=" " required rows="4"></textarea>
-          <label for="message" class="form-label">Опишите вашу техническую задачу или проблему</label>
-        </div>
-
-        <div class="form-group">
-          <select class="form-input" name="type" id="type">
-            <option value="">Выберите тип задачи</option>
-            <option value="support">Техническая поддержка сайта</option>
-            <option value="development">Разработка/доработка</option>
-            <option value="migration">Миграция/модернизация</option>
-            <option value="audit">Аудит безопасности/производительности</option>
-            <option value="consulting">Консультация</option>
-            <option value="other">Другое</option>
-          </select>
-          <label for="type" class="form-label">Тип задачи</label>
-        </div>
-
-        <div class="form-button">
-          <button type="submit" class="cta-button" data-controller-ripple-effect="item">
-            Отправить задачу
-            <i class="fas fa-arrow-right"></i>
-          </button>
-        </div>
-
-        <p class="form-notice">Нажимая на кнопку, вы соглашаетесь с политикой конфиденциальности</p>
-      </form>
-    </div>
-  </div>
-  <div class="close-modal" data-controller-modal-func="close">
-    <i class="fas fa-times"></i>
-  </div>
-</div>
-<!-- decoration lines -->
-<div class="lines">
-  <div class="line line-1"></div>
-  <div class="line line-2"></div>
-  <div class="line line-3"></div>
-  <div class="line line-4"></div>
-  <div class="line line-5"></div>
-</div>
-
-<!-- preloader -->
-<div class="preloader" data-controller-preloader="item">
-  <div class="preloader__container">
-    <svg id="preloader-svg" class="preloader__svg" width="1280" height="600" viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="mainGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stop-color="#ff6b6b">
-            <animate attributeName="offset" values="-2;2" dur="3s" repeatCount="indefinite"/>
-          </stop>
-          <stop offset="33%" stop-color="#4ecdc4">
-            <animate attributeName="offset" values="-1;3" dur="3s" repeatCount="indefinite"/>
-          </stop>
-          <stop offset="66%" stop-color="#45b7d1">
-            <animate attributeName="offset" values="0;4" dur="3s" repeatCount="indefinite"/>
-          </stop>
-          <stop offset="100%" stop-color="#ff6b6b">
-            <animate attributeName="offset" values="1;5" dur="3s" repeatCount="indefinite"/>
-          </stop>
-        </linearGradient>
-
-        <linearGradient id="secondaryGradient" x1="100%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stop-color="#ffd93d">
-            <animate attributeName="offset" values="0;1" dur="2.5s" repeatCount="indefinite"/>
-          </stop>
-          <stop offset="50%" stop-color="#6c5ce7">
-            <animate attributeName="offset" values="0.5;1.5" dur="2.5s" repeatCount="indefinite"/>
-          </stop>
-          <stop offset="100%" stop-color="#ffd93d">
-            <animate attributeName="offset" values="1;2" dur="2.5s" repeatCount="indefinite"/>
-          </stop>
-        </linearGradient>
-
-        <filter id="pulseGlow" x="-50%" y="-50%" width="200%" height="200%">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
-          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -8" result="glow"/>
-          <feComposite in="SourceGraphic" in2="glow" operator="over"/>
-        </filter>
-
-        <filter id="strongGlow" x="-50%" y="-50%" width="200%" height="200%">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur"/>
-          <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 30 -7"/>
-        </filter>
-
-        <pattern id="grid" patternUnits="userSpaceOnUse" width="50" height="50">
-          <path d="M 0 0 L 50 0 50 50 0 50 Z" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
-        </pattern>
-      </defs>
-
-      <rect width="100%" height="100%" fill="url(#grid)" opacity="0.5"/>
-
-      <text x="400" y="150" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="80" fill="rgba(255,255,255,0.1)" opacity="0.5">
-        KARTEMAKE
-      </text>
-
-      <text x="400" y="150" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="80" fill="none" stroke="url(#mainGradient)" stroke-width="2" stroke-dasharray="1000" stroke-dashoffset="1000">
-        KARTEMAKE
-        <animate attributeName="stroke-dashoffset" values="1000;0;1000" dur="4s" repeatCount="indefinite"/>
-        <animate attributeName="stroke-width" values="2;3;2" dur="2s" repeatCount="indefinite"/>
-      </text>
-
-      <text x="400" y="150" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="80" fill="none" stroke="url(#secondaryGradient)" stroke-width="1" stroke-dasharray="800" stroke-dashoffset="800" opacity="0.7">
-        KARTEMAKE
-        <animate attributeName="stroke-dashoffset" values="800;1600;800" dur="3.5s" repeatCount="indefinite"/>
-      </text>
-
-      <text x="400" y="150" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="80" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="4" opacity="0">
-        KARTEMAKE
-        <animate attributeName="opacity" values="0;0.5;0" dur="2s" repeatCount="indefinite"/>
-        <animate attributeName="stroke-width" values="4;8;4" dur="2s" repeatCount="indefinite"/>
-      </text>
-
-      <g class="letter-pulses" opacity="0.8">
-        <text x="400" y="150" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="80" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1">
-          KARTEMAKE
-          <animate attributeName="stroke-width" values="1;2;1" dur="1.5s" repeatCount="indefinite"/>
-        </text>
-      </g>
-
-      <g class="particles" opacity="0.6">
-        <circle cx="100" cy="100" r="2" fill="#ff6b6b">
-          <animate attributeName="cx" values="100;500;100" dur="8s" repeatCount="indefinite"/>
-          <animate attributeName="cy" values="100;200;100" dur="6s" repeatCount="indefinite"/>
-          <animate attributeName="r" values="2;4;2" dur="3s" repeatCount="indefinite"/>
-        </circle>
-        <circle cx="700" cy="200" r="3" fill="#4ecdc4">
-          <animate attributeName="cx" values="700;300;700" dur="7s" repeatCount="indefinite"/>
-          <animate attributeName="cy" values="200;100;200" dur="5s" repeatCount="indefinite"/>
-        </circle>
-        <circle cx="300" cy="250" r="2.5" fill="#45b7d1">
-          <animate attributeName="cx" values="300;600;300" dur="9s" repeatCount="indefinite"/>
-          <animate attributeName="cy" values="250;150;250" dur="4s" repeatCount="indefinite"/>
-        </circle>
-        <circle cx="100" cy="100" r="2" fill="#ffd93d">
-          <animate attributeName="cx" values="200;350;150" dur="8s" repeatCount="indefinite"/>
-          <animate attributeName="cy" values="50;600;150" dur="6s" repeatCount="indefinite"/>
-          <animate attributeName="r" values="2;4;2" dur="3s" repeatCount="indefinite"/>
-        </circle>
-        <circle cx="700" cy="200" r="3" fill="#6c5ce7">
-          <animate attributeName="cx" values="600;450;750" dur="7s" repeatCount="indefinite"/>
-          <animate attributeName="cy" values="10;150;200" dur="5s" repeatCount="indefinite"/>
-        </circle>
-        <circle cx="300" cy="250" r="2.5" fill="#4ecdc4">
-          <animate attributeName="cx" values="700;600;100" dur="9s" repeatCount="indefinite"/>
-          <animate attributeName="cy" values="650;150;350" dur="4s" repeatCount="indefinite"/>
-        </circle>
-      </g>
-
-      <text x="400" y="150" text-anchor="middle" class="final-text" font-family="Arial Black, sans-serif" font-size="80" fill="white" filter="url(#strongGlow)" opacity="0">
-        KARTEMAKE
-      </text>
-    </svg>
-  </div>
-</div>
-<!-- scroll-progress -->
-<div class="scroll-progress color-accent-red" id="scrollProgress" data-controller-scroll-progress="item"></div>
-
-<!-- back-to-top -->
-<a href="#hero" class="to-top" data-controller-anchor="item" data-controller-ripple-effect="item">↑</a>
-
-<!-- Cookie-баннер -->
-<div id="cookie-banner" class="cookie-banner" data-controller="cookie">
+  </section>
+</main>
+<div id="cookie-banner" class="cookie-banner" aria-hidden="true">
   <div class="cookie-banner__wrapper">
+    <div class="cookie-banner__status">
+      <span class="cookie-banner__status-dot"></span>
+      <span>PRIVACY / COOKIE CONTROL</span>
+    </div>
     <div class="cookie-banner__content">
-
-      <!-- ===== ШАГ 1: ОСНОВНОЙ БАННЕР ===== -->
-      <div id="cookie-step-1" class="cookie-step">
+      <!-- STEP 1 -->
+      <section id="cookie-step-1" class="cookie-step cookie-step--active">
         <div class="cookie-banner__header">
-          <p>Мы применяем cookies, чтобы сайт работал без сбоев и постоянно становился для вас удобнее</p>
+          <p class="cookie-banner__description">Мы применяем cookies, чтобы сайт работал без сбоев и постоянно
+            становился для вас удобнее.</p>
         </div>
         <div class="cookie-banner__links">
-          <small><b>Подробнее</b>: <a class="color-accent-red" href="cookie-policy.html" target="_blank">Политика использования Cookie</a>, <a class="color-accent-red" href="privacy-policy.html" target="_blank">Политика обработки персональных данных</a></small>
+          <span>Подробнее:</span>
+          <a href="cookie-policy.html" target="_blank">использование cookie</a>
+          <a href="privacy-policy.html" target="_blank">обработка персональных данных</a>
         </div>
-
         <div class="cookie-banner__actions">
-          <button id="cookie-decline" class="button--decline">
-            Отклонить необязательные
+          <button type="button" id="cookie-decline" class="cookie-button cookie-button--outline">Отклонить
           </button>
-          <button id="cookie-settings-open" class="button--outline">
-            Настроить <i class="fas fa-arrow-right"></i>
-          </button>
-          <button id="cookie-accept" class="button--accent">
-            Принять
+          <button type="button" id="cookie-accept" class="cookie-button cookie-button--accent">Принять
           </button>
         </div>
+      </section>
+    </div>
+  </div>
+</div>
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <!-- Закрытие -->
+    <div class="close-modal no-icon" data-modal-func="close"></div>
+
+    <!-- Заголовок -->
+    <div class="modal-header">
+      <h3>Хотите чтобы мы решили <span class="color-accent">ваш кейс</span>?</h3>
+      <p>Оставьте заявку и наш специалист свяжется с вами для обсуждения деталей вашего проекта</p>
+    </div>
+
+    <!-- Контейнер с гридом -->
+    <div class="form-container">
+
+      <!-- КОЛОНКА 1: КОНТАКТЫ (как в дашборде) -->
+      <div class="contact-modal__body">
+        <a href="mailto:hello@kartemake.ru" class="contact-modal__item">
+          <span class="contact-modal__item-label">НОВЫЕ ПРОЕКТЫ</span>
+          <strong class="contact-modal__item-value">hello@kartemake.ru</strong>
+        </a>
+        <a href="mailto:support@kartemake.ru" class="contact-modal__item">
+          <span class="contact-modal__item-label">ТЕХНИЧЕСКАЯ ПОДДЕРЖКА</span>
+          <strong class="contact-modal__item-value">support@kartemake.ru</strong>
+        </a>
       </div>
 
-      <!-- ===== ШАГ 2: НАСТРОЙКИ ===== -->
-      <div id="cookie-step-2" class="cookie-step">
-        <div id="cookie-settings-back" class="cookie-step__back">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M19 12H5M12 19l-7-7 7-7"/>
-          </svg>
-          Назад
-        </div>
+      <!-- КОЛОНКА 2: СОЦСЕТИ -->
+      <div class="contact-modal__body">
+        <a href="https://t.me/KArtech76" target="_blank" class="contact-modal__item">
+          <span class="contact-modal__item-label">TELEGRAM</span>
+          <strong class="contact-modal__item-value">@KArtech76</strong>
+        </a>
+        <a href="https://vk.ru/kartemake" target="_blank" class="contact-modal__item">
+          <span class="contact-modal__item-label">ВКОНТАКТЕ</span>
+          <strong class="contact-modal__item-value">vk.com/kartemake</strong>
+        </a>
+      </div>
 
-        <div class="cookie-banner__header">
-          <p>Настройки cookie</p>
-        </div>
+      <!-- КОЛОНКА 3: ИНФОРМАЦИЯ -->
+      <div class="contact-modal__body">
+        <a href="/privacy-policy" class="contact-modal__item">
+          <span class="contact-modal__item-label">ДОКУМЕНТЫ</span>
+          <strong class="contact-modal__item-value">Политика конфиденциальности</strong>
+        </a>
+        <!--        <a href="/personal-data-consent" class="contact-modal__item">-->
+        <!--          <span class="contact-modal__item-label">СОГЛАСИЕ</span>-->
+        <!--          <strong class="contact-modal__item-value">На обработку данных</strong>-->
+        <!--        </a>-->
+      </div>
 
-        <div class="cookie-settings__body">
-          <!-- Обязательные -->
-          <div class="cookie-settings__group">
-            <div class="cookie-settings__group-header">
-              <small><b>Обязательные cookies</b>: эти файлы необходимы для корректной работы сайта.</small>
-              <label for="cookie-require" class="cookie-settings__toggle cookie-settings__toggle--disabled">
-                <input id="cookie-require" type="checkbox" checked disabled>
-                <span class="cookie-settings__toggle-slider"></span>
-              </label>
-            </div>
-          </div>
-
-          <!-- Аналитические -->
-          <div class="cookie-settings__group">
-            <div class="cookie-settings__group-header">
-              <small><b>Аналитические cookies</b>: анализ, использования сайта, для улучшения его работы.</small>
-              <label for="analytics-cookies" class="cookie-settings__toggle">
-                <input id="analytics-cookies" type="checkbox">
-                <span class="cookie-settings__toggle-slider"></span>
-              </label>
-            </div>
-          </div>
-        </div>
-
-        <div class="cookie-settings__footer">
-          <button id="cookie-settings-save" class="button--accent">
-            Сохранить настройки
-          </button>
-        </div>
+      <!-- ФУТЕР -->
+      <div class="contact-modal__footer">
+        <p class="contact-modal__footer-text">Напишите нам — мы ответим в течение 24 часов</p>
       </div>
 
     </div>
