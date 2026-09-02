@@ -1,0 +1,135 @@
+@use "../../variables/colors" as *;
+@use "../../variables/fonts" as *;
+@use "../../variables/offsets" as *;
+@use "../../variables/media" as *;
+@use "../../variables/root" as *;
+@use "../../system/mixins" as *;
+
+/* SUPPORT PLAN */
+.support-plan {
+  border: 1px solid $text-muted;
+}
+.support-plan__header {
+  display: flex;
+  justify-content: space-between;
+  padding: $extra-small;
+  border-bottom: 1px solid $text-muted;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 12px;
+  color: $text-secondary;
+}
+.support-plan__price {
+  display: flex;
+  align-items: baseline;
+  gap: $extra-small;
+  padding: $small $extra-small;
+}
+.support-plan__price span,
+.support-plan__price small {
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 12px;
+  color: $text-secondary;
+}
+.support-plan__price strong {
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1;
+  font-weight: 500;
+}
+.support-plan__divider {
+  height: 1px;
+  margin: 0 $extra-small;
+  background: $text-muted;
+}
+.support-plan__features {
+  padding: 0 $extra-small;
+}
+.support-plan__features li {
+  display: flex;
+  align-items: center;
+  gap: $extra-small;
+  min-height: 38px;
+  border-bottom: 1px solid $text-muted;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 12px;
+  color: $text-secondary;
+
+  &:hover {
+    span {
+      animation: support-status-pulse 2s ease infinite;
+      background: $orange;
+    }
+  }
+}
+.support-plan__features li:last-child {
+  border-bottom: 0;
+}
+.support-plan__features li span {
+  width: 5px;
+  height: 5px;
+  border: 1px solid $orange;
+  border-radius: 50%;
+}
+.support-plan__footer {
+  display: flex;
+  justify-content: space-between;
+  gap: $extra-small;
+  padding: $extra-small;
+  border-top: 1px solid $text-muted;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 12px;
+}
+.support-plan__footer span {
+  color: $text-muted;
+}
+.support-plan__footer strong {
+  color: $orange;
+}
+@media (max-width: $breakpoint-extra-small) {
+  .support-plan__price {
+    padding: 32px 20px 28px;
+  }
+  .support-plan__features {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .support-plan__footer {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+@media (max-width: $breakpoint-extra-small) {
+  .support-operating__step {
+    grid-template-columns: 46px 1fr;
+    gap: 16px;
+  }
+  .support-operating__step-index {
+    width: 46px;
+    height: 46px;
+  }
+  .support-operating__line {
+    left: 22px;
+  }
+  .support-operating__step-content strong {
+    font-size: 21px;
+  }
+}
+@media (max-width: $breakpoint-large-small) {
+  .support-plan__header {
+    padding: 18px;
+  }
+  .support-plan__price {
+    flex-wrap: wrap;
+    padding: 28px 18px 24px;
+  }
+  .support-plan__price strong {
+    font-size: 36px;
+  }
+  .support-plan__features {
+    padding: 16px 18px;
+  }
+  .support-plan__footer {
+    flex-direction: column;
+    padding: 18px;
+  }
+}
+

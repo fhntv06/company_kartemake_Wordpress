@@ -1,0 +1,143 @@
+@use "../../variables/colors" as *;
+@use "../../variables/fonts" as *;
+@use "../../variables/offsets" as *;
+@use "../../variables/media" as *;
+@use "../../variables/root" as *;
+@use "../../system/mixins" as *;
+
+/* ========================================================
+     03 / OPERATING MODEL
+  ======================================================== */
+.support-operating__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(440px, 1.1fr);
+  gap: $large;
+}
+.support-operating__content .scene-description + .scene-description {
+  margin-top: 20px;
+}
+/* OPERATING FLOW */
+.support-operating__line {
+  position: absolute;
+  top: 28px;
+  bottom: 28px;
+  left: 31px;
+  width: 1px;
+  background: $text-muted;
+}
+.support-operating__step {
+  position: relative;
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: $small;
+  min-height: 145px;
+  padding-bottom: $small;
+  transition:
+    background-color .3s ease,
+    color .3s ease,
+    opacity .3s ease;
+
+  &:hover {
+    .support-operating__step-index {
+      background-color: $orange;
+      color: $text-primary;
+      opacity: 1;
+    }
+  }
+  &:nth-child(1) {
+    .support-operating__step-index {
+      animation-delay: .3s;
+    }
+  }
+  &:nth-child(2) {
+    .support-operating__step-index {
+      animation-delay: .6s;
+    }
+  }
+  &:nth-child(3) {
+    .support-operating__step-index {
+      animation-delay: .9s;
+    }
+  }
+  &:nth-child(4) {
+    .support-operating__step-index {
+      animation-delay: 1.2s;
+    }
+  }
+}
+@keyframes changeState {
+  50% {
+    background-color: $orange;
+    color: $text-primary;
+    opacity: 1;
+  }
+  80% {
+    background-color: $orange;
+    color: $text-primary;
+    opacity: 1;
+  }
+  100% {
+    background-color: unset;
+    color: $text-secondary;
+    opacity: .5;
+  }
+}
+.support-operating__step:last-child {
+  padding-bottom: 0;
+}
+.support-operating__step-index {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border: 1px solid $text-muted;
+  border-radius: 50%;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 12px;
+  line-height: 1;
+  opacity: .5;
+  animation: changeState 4s ease infinite;
+}
+.support-operating__step-content p:first-child {
+  display: block;
+  margin-bottom: $small;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  color: $orange;
+}
+.support-operating__step-content h5 {
+  margin-bottom: $extra-small;
+}
+.support-operating__step-content p {
+  color: $text-secondary;
+}
+
+@media (max-width: $breakpoint-lower-middle) {
+  .support-operating__layout {
+    grid-template-columns: 1fr;
+    gap: $middle;
+  }
+  .support-operating__content {
+    max-width: 760px;
+  }
+}
+@media (max-width: $breakpoint-extra-small) {
+  .support-operating {
+    min-height: auto;
+  }
+  .support-operating__step {
+    grid-template-columns: 54px 1fr;
+    gap: $extra-small;
+    min-height: 130px;
+  }
+  .support-operating__step-index {
+    width: 54px;
+    height: 54px;
+  }
+  .support-operating__line {
+    left: 26px;
+  }
+}
+

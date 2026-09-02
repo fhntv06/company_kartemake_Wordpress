@@ -1,0 +1,106 @@
+@use "../../variables/colors" as *;
+@use "../../variables/fonts" as *;
+@use "../../variables/offsets" as *;
+@use "../../variables/media" as *;
+@use "../../variables/root" as *;
+@use "../../system/mixins" as *;
+
+/* ========================================================
+     01 / HERO
+  ======================================================== */
+.support-hero__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1200px) minmax(360px, 0.85fr);
+  gap: $middle;
+  align-items: center;
+}
+.support-panel {
+  border: 1px solid $text-muted;
+}
+.support-panel__header,
+.support-panel__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $extra-small;
+  min-height: 52px;
+  padding: 0 $extra-small;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: $text-secondary;
+}
+.support-panel__header {
+  border-bottom: 1px solid $text-muted;
+}
+.support-panel__active {
+  display: inline-flex;
+  align-items: center;
+  gap: calc($extra-small / 2);
+  color: $orange;
+  opacity: 1;
+}
+.support-panel__active i {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+}
+.support-panel__body {
+  padding: $extra-small;
+}
+.support-panel__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 54px;
+  border-bottom: 1px solid $text-muted;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 0.08em;
+}
+.support-panel__row:last-child {
+  border-bottom: 0;
+}
+.support-panel__row span {
+  opacity: 0.45;
+}
+.support-panel__row strong {
+  font-weight: 400;
+  color: $orange;
+  opacity: 0.9;
+}
+.support-panel__footer {
+  border-top: 1px solid $text-muted;
+}
+@media (max-width: $breakpoint-lower-middle) {
+  .support-hero__layout {
+    grid-template-columns: 1fr;
+    gap: $middle;
+  }
+  .support-hero__panel {
+    width: min(100%, 620px);
+  }
+}
+@media (max-width: $breakpoint-extra-small) {
+  .support-hero__meta {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 36px;
+  }
+}
+@media (max-width: $breakpoint-large-small) {
+  .support-panel__header,
+  .support-panel__footer {
+    padding-left: $extra-small;
+    padding-right: $extra-small;
+  }
+  .support-panel__body {
+    padding-left: $extra-small;
+    padding-right: $extra-small;
+  }
+  .support-panel__row {
+    min-height: 48px;
+  }
+}

@@ -1,0 +1,84 @@
+@use "../../variables/colors" as *;
+@use "../../variables/fonts" as *;
+@use "../../variables/offsets" as *;
+@use "../../variables/media" as *;
+@use "../../variables/root" as *;
+@use "../../system/mixins" as *;
+
+/* ========================================================
+     06 / SUPPORT FORMAT
+  ======================================================== */
+.support-format__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.75fr);
+  gap: $large;
+  align-items: center;
+}
+.support-format__benefits {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: $middle;
+  border-top: 1px solid $text-muted;
+  border-left: 1px solid $text-muted;
+}
+.support-format__benefits div {
+  display: flex;
+  flex-direction: column;
+  gap: $extra-small;
+  min-height: 100px;
+  padding: $extra-small;
+  border-right: 1px solid $text-muted;
+  border-bottom: 1px solid $text-muted;
+}
+.support-format__benefits span {
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 12px;
+  color: $text-secondary;
+}
+.support-format__benefits strong {
+  font-size: 12px;
+}
+.support-format__note {
+  display: flex;
+  align-items: flex-start;
+  gap: $extra-small;
+  max-width: 760px;
+  margin-top: $small;
+  padding: $extra-small;
+  border: 1px solid $text-muted;
+}
+.support-format__note > span {
+  flex-shrink: 0;
+  width: 6px;
+  height: 6px;
+  margin-top: 7px;
+  border-radius: 50%;
+  background: $orange;
+  animation: support-status-pulse 2s ease infinite;
+}
+.support-format__note p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.6;
+  opacity: 0.45;
+}
+@media (max-width: $breakpoint-lower-middle) {
+  .support-format__layout {
+    grid-template-columns: 1fr;
+    gap: 70px;
+  }
+  .support-format__plan {
+    width: min(100%, 620px);
+  }
+}
+@media (max-width: $breakpoint-extra-small) {
+  .support-format__benefits {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: $breakpoint-large-small) {
+  .support-format__note {
+    padding: 18px;
+  }
+}
+

@@ -1,0 +1,99 @@
+@use "../../variables/colors" as *;
+@use "../../variables/fonts" as *;
+@use "../../variables/offsets" as *;
+@use "../../variables/media" as *;
+@use "../../variables/root" as *;
+@use "../../system/mixins" as *;
+
+/* ========================================================
+     05 / TASK TYPES
+  ======================================================== */
+.support-task-types__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid $text-muted;
+  border-left: 1px solid $text-muted;
+}
+.support-task {
+  display: flex;
+  flex-direction: column;
+  min-height: 360px;
+  border-right: 1px solid $text-muted;
+  border-bottom: 1px solid $text-muted;
+}
+.support-task__header {
+  display: flex;
+  justify-content: space-between;
+  padding: $extra-small $small;
+  border-bottom: 1px solid $text-muted;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 16px;
+  color: $text-secondary;
+}
+.support-task__body {
+  padding: $small;
+}
+.support-task__body h3 {
+  max-width: 280px;
+  margin: 0 0 $small;
+  font-size: 24px;
+  line-height: 1.2;
+  font-weight: 500;
+}
+.support-task__body p {
+  max-width: 320px;
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.65;
+  opacity: 0.5;
+}
+.support-task__footer {
+  margin-top: auto;
+  padding: $extra-small;
+  border-top: 1px solid $text-muted;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 12px;
+  color: $orange;
+}
+.support-task-types__statement {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  max-width: 700px;
+  margin-top: 40px;
+  padding: 24px;
+  border: 1px solid $text-muted;
+}
+.support-task-types__statement > span {
+  flex-shrink: 0;
+  width: 7px;
+  height: 7px;
+  margin-top: 7px;
+  background-color: $orange;
+  border-radius: 50%;
+  animation: support-status-pulse 2s ease infinite;
+}
+.support-task-types__statement p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+@media (max-width: $breakpoint-extra-small) {
+  .support-task-types__grid {
+    grid-template-columns: 1fr;
+  }
+  .support-task {
+    min-height: 300px;
+  }
+}
+@media (max-width: $breakpoint-large-small) {
+  .support-task__body {
+    padding: 26px 20px;
+  }
+  .support-task__footer {
+    padding: 18px 20px;
+  }
+  .support-task-types__statement {
+    padding: 18px;
+  }
+}

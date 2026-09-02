@@ -1,0 +1,82 @@
+@use "../../variables/colors" as *;
+@use "../../variables/fonts" as *;
+@use "../../variables/offsets" as *;
+@use "../../variables/media" as *;
+@use "../../variables/root" as *;
+@use "../../system/mixins" as *;
+
+/* ========================================================
+     02 / SYSTEM COVERAGE
+  ======================================================== */
+.support-systems__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid $text-muted;
+  border-left: 1px solid $text-muted;
+}
+.support-system {
+  display: flex;
+  flex-direction: column;
+  min-height: 310px;
+  padding: $small;
+  border-right: 1px solid $text-muted;
+  border-bottom: 1px solid $text-muted;
+  transition: background-color 0.3s ease;
+}
+.support-system:hover {
+  background: rgba(255,255,255,0.025);
+}
+.support-system__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: $middle;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 12px;
+  color: $text-secondary;
+}
+.support-system__top i {
+  width: 7px;
+  height: 7px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+}
+.support-system__content {
+  margin-top: auto;
+}
+.support-system__label {
+  display: block;
+  margin-bottom: $extra-small;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: $orange;
+}
+.support-system h4 {
+  margin: 0 0 $extra-small;
+}
+.support-system p {
+  color: $text-secondary;
+}
+@media (max-width: $breakpoint-lower-middle) {
+  .support-systems__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: $breakpoint-extra-small) {
+  .support-system {
+    min-height: 260px;
+  }
+  .support-system__top {
+    margin-bottom: $middle;
+  }
+  .support-systems__grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: $breakpoint-extra-small) {
+  .support-system {
+    min-height: 230px;
+    padding: $extra-small;
+  }
+}
