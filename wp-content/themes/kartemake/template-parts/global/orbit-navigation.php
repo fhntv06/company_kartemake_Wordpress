@@ -55,6 +55,14 @@ ORBIT NAVIGATION
                 'contacts-cta'       => 'Готовы обсудить задачу?',
             ];
         }
+        if (is_page('services')) {
+            $scenes = [
+                'hero'       => 'Начало',
+                'services-wheel'       => 'Технические услуги',
+                'services-partnership'       => 'Партнерство',
+                'services-cta'       => 'С чего начать?',
+            ];
+        }
 
         if (empty($scenes)) return;
 
