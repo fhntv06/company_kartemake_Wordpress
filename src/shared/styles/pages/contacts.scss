@@ -1,0 +1,28 @@
+// ============================================================
+// K·ART·MAKE
+// CONTACTS PAGE
+// ============================================================
+
+@use "../variables/colors" as *;
+@use "../variables/fonts" as *;
+@use "../variables/offsets" as *;
+@use "../variables/media" as *;
+@use "../variables/root" as *;
+@use "../system/mixins" as *;
+
+// =====================================================
+// КОМПОНЕНТЫ
+// =====================================================
+@use '../components/canvas';
+@use '../components/orbit-navigation';
+@use '../components/contact-info';
+
+// =====================================================
+// СЦЕНЫ
+// =====================================================
+@use '../scenes/global/hero';
+@use '../scenes/contacts/contacts-hero';
+@use '../scenes/contacts/contacts-channels';
+@use '../scenes/contacts/contacts-request';
+@use '../scenes/contacts/contacts-process';
+
