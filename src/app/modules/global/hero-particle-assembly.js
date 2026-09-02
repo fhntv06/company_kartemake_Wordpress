@@ -733,6 +733,7 @@ export default class HeroParticleAssembly {
     };
     this.scene.addEventListener("sceneActivated", this.sceneActivatedHandler);
     this.scene.addEventListener("sceneDeactivated", this.sceneDeactivatedHandler);
+    this.scene.dispatchEvent(new CustomEvent('sceneActivated', { bubbles: false }))
     /*
     ------------------------------------------------------
     Resize
