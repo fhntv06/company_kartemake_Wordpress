@@ -46,6 +46,15 @@ ORBIT NAVIGATION
                 'calculator-contact'       => 'Готовы обсудить задачу?',
             ];
         }
+        if (is_page('contacts')) {
+            $scenes = [
+                'hero'       => 'Начало',
+                'contacts-channels'       => 'Как с нами связаться',
+                'contacts-request'       => 'Ситуация, цель, проблема',
+                'contacts-process'       => 'Процесс',
+                'contacts-cta'       => 'Готовы обсудить задачу?',
+            ];
+        }
 
         if (empty($scenes)) return;
 
