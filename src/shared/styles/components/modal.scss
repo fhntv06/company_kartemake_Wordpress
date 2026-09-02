@@ -111,7 +111,6 @@
 }
 
 .close-modal.no-icon {
-  position: absolute;
   top: $extra-small;
   right: $extra-small;
   width: $small;
@@ -275,7 +274,10 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-template-rows: max-content;
   }
-
+  .close-modal.no-icon {
+    top: 0;
+    right: 0;
+  }
   .contact-modal__body {
     grid-column: 1 / -1;
   }
