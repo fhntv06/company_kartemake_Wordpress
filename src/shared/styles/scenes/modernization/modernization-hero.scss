@@ -1,0 +1,164 @@
+@use '../../variables/colors' as *;
+@use '../../variables/offsets' as *;
+@use '../../system/mixins' as *;
+@use '../../variables/media' as *;
+/* =====================================================
+   SCENE 01 — HERO
+   ===================================================== */
+.modernization-hero__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(480px, 0.9fr);
+  align-items: center;
+  gap: $large;
+}
+.modernization-hero__copy {
+  max-width: 720px;
+}
+.modernization-hero__title {
+  max-width: 760px;
+  margin: 0;
+  font-size: clamp(52px, 6.5vw, 96px);
+  font-weight: 500;
+  line-height: 0.94;
+  letter-spacing: -0.05em;
+}
+.modernization-hero__description {
+  max-width: 580px;
+  margin: 32px 0 0;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--text-secondary);
+}
+.modernization-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 40px;
+}
+/* -----------------------------------------------------
+   HERO SYSTEM
+   ----------------------------------------------------- */
+.modernization-system {
+  position: relative;
+  border: 1px solid $text-muted;
+  background: $surface;
+}
+.modernization-system::before {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border: 1px solid $text-muted;
+  pointer-events: none;
+  opacity: 0.35;
+}
+.modernization-system__header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $extra-small;
+  padding: $extra-small;
+  border-bottom: 1px solid $text-muted;
+}
+.modernization-system__label,
+.modernization-system__status {
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.modernization-system__label {
+  color: var(--text-muted);
+}
+.modernization-system__status {
+  color: $orange;
+}
+.modernization-system__architecture {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: $extra-small;
+  padding: $small $extra-small;
+}
+.modernization-system__layer {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: $extra-small;
+  min-height: 76px;
+  padding: $extra-small;
+  border: 1px solid $text-muted;
+  transition: border-color 0.3s ease,
+  transform 0.3s ease;
+}
+.modernization-system__layer:hover {
+  border-color: $orange;
+  transform: translateX(4px);
+}
+.modernization-system__layer-index {
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.modernization-system__layer-content {
+  display: flex;
+  flex-direction: column;
+  gap: $extra-small;
+}
+.modernization-system__layer-content strong {
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 16px;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+}
+.modernization-system__layer-content span {
+  font-size: 12px;
+  line-height: 1.4;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+.modernization-system__layer-state {
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 0.1em;
+  color: $orange;
+}
+.modernization-system__footer {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid $text-muted;
+}
+.modernization-system__footer > div {
+  display: flex;
+  flex-direction: column;
+  gap: $extra-small;
+  padding: $extra-small;
+}
+.modernization-system__footer > div + div {
+  border-left: 1px solid $text-muted;
+}
+.modernization-system__footer span,
+.modernization-system__footer strong {
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 12px;
+  line-height: 1.3;
+  letter-spacing: 0.1em;
+}
+.modernization-system__footer span {
+  color: var(--text-muted);
+}
+.modernization-system__footer strong {
+  color: $orange;
+  font-weight: 500;
+}
+@media (max-width: $breakpoint-lower-middle) {
+  .modernization-hero__inner {
+    grid-template-columns: 1fr;
+  }
+}

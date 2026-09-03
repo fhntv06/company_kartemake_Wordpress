@@ -1,0 +1,167 @@
+@use '../../variables/colors' as *;
+@use '../../variables/offsets' as *;
+@use '../../system/mixins' as *;
+@use '../../variables/media' as *;
+/* =====================================================
+   SCENE 06 — PRICING
+   ===================================================== */
+.modernization-pricing__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: $extra-small;
+}
+.modernization-pricing__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 470px;
+  padding: $small;
+  border: 1px solid $text-muted;
+  background: $surface;
+  transition: border-color 0.35s ease,
+  transform 0.35s ease;
+}
+.modernization-pricing__card:hover {
+  border-color: $orange;
+  transform: translateY(-4px);
+}
+.modernization-pricing__card.is-featured {
+  border-color: $orange;
+}
+.modernization-pricing__card.is-featured::before {
+  content: "RECOMMENDED";
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  padding: calc($extra-small / 2) $extra-small;
+  border-left: 1px solid $orange;
+  border-bottom: 1px solid $orange;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 0.12em;
+  color: $orange;
+}
+.modernization-pricing__card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $extra-small;
+  padding-bottom: $small;
+  border-bottom: 1px solid $text-muted;
+}
+.modernization-pricing__card-header span,
+.modernization-pricing__card-header strong {
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 16px;
+  letter-spacing: 0.1em;
+}
+.modernization-pricing__card-header span {
+  color: var(--text-muted);
+}
+.modernization-pricing__card-header strong {
+  color: $orange;
+  font-weight: 500;
+}
+.modernization-pricing__card h3 {
+  max-width: 360px;
+  margin: $small 0 0;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+}
+.modernization-pricing__price {
+  margin-top: $extra-small;
+  font-weight: 200;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: $orange;
+}
+.modernization-pricing__card > p {
+  max-width: 420px;
+  margin: $small 0 $small;
+  color: var(--text-secondary);
+}
+.modernization-pricing__card ul {
+  display: flex;
+  flex-direction: column;
+  gap: $extra-small;
+  margin: auto 0 0;
+  padding: $small 0 0;
+  border-top: 1px solid $text-muted;
+}
+.modernization-pricing__card li {
+  position: relative;
+  padding-left: $extra-small;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 16px;
+  color: var(--text-secondary);
+}
+.modernization-pricing__card li::before {
+  content: "→";
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: $orange;
+}
+.modernization-pricing__footer {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: $small;
+  margin-top: $small;
+  padding: $small;
+  border: 1px solid $text-muted;
+}
+.modernization-pricing__footer > span {
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 16px;
+  letter-spacing: 0.12em;
+  color: $orange;
+}
+.modernization-pricing__footer p {
+  max-width: 720px;
+  color: var(--text-secondary);
+}
+@media (max-width: $breakpoint-lower-middle) {
+  .modernization-pricing__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: $breakpoint-extra-small) {
+  .modernization-pricing__grid {
+    grid-template-columns: 1fr;
+  }
+  .modernization-pricing__card ul {
+    margin-top: $small;
+  }
+  .modernization-pricing__footer {
+    grid-template-columns: 1fr;
+    gap: $extra-small;
+    padding: $small;
+  }
+}
+@media (max-width: $breakpoint-large-small) {
+  .modernization-pricing__card {
+    min-height: max-content;
+  }
+  .modernization-pricing__card-header {
+    padding-bottom: $extra-small;
+  }
+  .modernization-pricing__card h3 {
+    margin-top: $extra-small;
+  }
+  .modernization-pricing__card > p {
+    margin-bottom: 0;
+  }
+  .modernization-pricing__card {
+    padding: $small $extra-small $extra-small;
+  }
+  .modernization-pricing__footer {
+    padding: $extra-small;
+  }
+  .modernization-pricing__card ul {
+    margin-top: $extra-small;
+    padding-top: $extra-small;
+  }
+}

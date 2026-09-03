@@ -1,0 +1,142 @@
+@use '../../variables/colors' as *;
+@use '../../variables/offsets' as *;
+@use '../../system/mixins' as *;
+@use '../../variables/media' as *;
+/* =====================================================
+   SCENE 07 — RESULTS
+   ===================================================== */
+.modernization-results__comparison {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 100px minmax(0, 1fr);
+  align-items: center;
+  gap: $small;
+}
+.modernization-results__state {
+  border: 1px solid $text-muted;
+  background: $surface;
+}
+.modernization-results__state:last-child {
+  border-color: $orange;
+}
+.modernization-results__state-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $extra-small;
+  padding: $extra-small;
+  border-bottom: 1px solid $text-muted;
+}
+.modernization-results__state-header span,
+.modernization-results__state-header strong {
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 16px;
+  letter-spacing: 0.12em;
+}
+.modernization-results__state-header span {
+  color: var(--text-muted);
+}
+.modernization-results__state:last-child,
+.modernization-results__state-header span {
+  color: $orange;
+}
+.modernization-results__metrics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.modernization-results__metric {
+  display: flex;
+  flex-direction: column;
+  gap: $extra-small;
+  min-height: 110px;
+  padding: $small;
+}
+.modernization-results__metric:nth-child(2n) {
+  border-left: 1px solid $text-muted;
+}
+.modernization-results__metric:nth-child(n + 3) {
+  border-top: 1px solid $text-muted;
+}
+.modernization-results__metric span,
+.modernization-results__metric strong {
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  line-height: 1.3;
+}
+.modernization-results__metric span {
+  font-size: 20px;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+.modernization-results__metric strong {
+  letter-spacing: 0.1em;
+  font-size: 16px;
+}
+.modernization-results__state:last-child
+.modernization-results__metric strong {
+  color: $orange;
+}
+.modernization-results__transition {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: $extra-small;
+}
+.modernization-results__transition span:first-child {
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 16px;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+.modernization-results__transition span:last-child {
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 20px;
+  color: $orange;
+}
+.modernization-results__note {
+  margin-top: $small;
+  padding-top: $extra-small;
+  border-top: 1px solid $text-muted;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.03em;
+  color: var(--text-muted);
+}
+@media (max-width: $breakpoint-lower-middle) {
+  .modernization-results__comparison {
+    grid-template-columns: minmax(0, 1fr) 70px minmax(0, 1fr);
+    gap: $extra-small;
+  }
+}
+@media (max-width: 768px) {
+  .modernization-results__comparison {
+    grid-template-columns: 1fr;
+  }
+  .modernization-results__transition {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  .modernization-results__transition span:first-child {
+    writing-mode: horizontal-tb;
+    transform: none;
+  }
+  .modernization-results__transition span:last-child {
+    transform: rotate(90deg);
+  }
+}
+@media (max-width: $breakpoint-large-small) {
+  .modernization-results__metric {
+    padding: $extra-small;
+  }
+  .modernization-results__metrics {
+    grid-template-columns: 1fr;
+  }
+  .modernization-results__metric:nth-child(2n) {
+    border-left: 0;
+  }
+  .modernization-results__metric + .modernization-results__metric {
+    border-top: 1px solid $text-muted;
+  }
+}

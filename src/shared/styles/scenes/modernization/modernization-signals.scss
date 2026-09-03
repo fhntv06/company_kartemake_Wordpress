@@ -1,0 +1,75 @@
+@use '../../variables/colors' as *;
+@use '../../variables/offsets' as *;
+@use '../../system/mixins' as *;
+@use '../../variables/media' as *;
+/* =====================================================
+   SCENE 02 — SIGNALS
+   ===================================================== */
+.modernization-signals__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: $extra-small;
+}
+.modernization-signals__card {
+  position: relative;
+  min-height: 270px;
+  padding: $small;
+  border: 1px solid $text-muted;
+  background: $surface;
+  transition: border-color 0.35s ease,
+  transform 0.35s ease;
+}
+.modernization-signals__card:hover,
+.modernization-signals__card.is-active {
+  border-color: $orange;
+  transform: translateY(-4px);
+}
+.modernization-signals__card-index {
+  position: absolute;
+  top: 26px;
+  left: 26px;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 12px;
+  line-height: 1;
+  color: var(--text-muted);
+}
+.modernization-signals__card-code {
+  display: block;
+  margin-top: $small;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 0.12em;
+  color: $orange;
+}
+.modernization-signals__card h5 {
+  max-width: 340px;
+  margin: $small 0 0;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+}
+.modernization-signals__card p {
+  max-width: 380px;
+  margin: $extra-small 0 0;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+@media (max-width: $breakpoint-lower-middle) {
+  .modernization-signals__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: $breakpoint-extra-small) {
+  .modernization-signals__grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: $breakpoint-large-small) {
+  .modernization-signals__card {
+    padding: $extra-small;
+  }
+  .modernization-signals__card-index {
+    top: $extra-small;
+    left: $extra-small;
+  }
+}

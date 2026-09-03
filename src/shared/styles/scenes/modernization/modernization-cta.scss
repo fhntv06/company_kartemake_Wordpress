@@ -1,0 +1,43 @@
+@use '../../variables/colors' as *;
+@use '../../variables/offsets' as *;
+@use '../../system/mixins' as *;
+@use '../../variables/media' as *;
+/* =====================================================
+   SCENE 08 — CTA
+   ===================================================== */
+.modernization-cta__results {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: $extra-small;
+  margin-bottom: $middle;
+}
+.modernization-cta__result {
+  display: flex;
+  flex-direction: column;
+  gap: $extra-small;
+  padding: $extra-small;
+  border: 1px solid $text-muted;
+}
+.modernization-cta__result strong {
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: $orange;
+}
+.modernization-cta__result span {
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--text-muted);
+}
+@media (max-width: $breakpoint-extra-small) {
+  .modernization-cta__results {
+    grid-template-columns: 1fr;
+    max-width: 360px;
+    margin-top: $small;
+  }
+}
+@media (max-width: $breakpoint-large-small) {
+  .modernization-cta__results {
+    margin-top: $small;
+  }
+}

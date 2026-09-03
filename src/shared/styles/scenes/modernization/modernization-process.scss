@@ -1,0 +1,149 @@
+@use '../../variables/colors' as *;
+@use '../../variables/offsets' as *;
+@use '../../system/mixins' as *;
+@use '../../variables/media' as *;
+/* =====================================================
+   SCENE 04 — PROCESS
+   ===================================================== */
+.modernization-process {
+  .scene-header {
+    position: sticky;
+    top: $offset-top-from-header;
+  }
+}
+.modernization-process__layout {
+  margin-left: auto;
+}
+.modernization-process__flow {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.modernization-process__line {
+  position: absolute;
+  top: 32px;
+  bottom: 32px;
+  left: 31px;
+  width: 1px;
+  background: $text-muted;
+}
+.modernization-process__step {
+  position: relative;
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  gap: 28px;
+  min-height: 170px;
+  padding-bottom: 36px;
+
+  &:hover {
+    .modernization-process__step-index {
+      background-color: $orange;
+      color: $text-primary;
+      opacity: 1;
+    }
+  }
+  &:nth-child(1) {
+    .modernization-process__step-index {
+      animation-delay: .3s;
+    }
+  }
+  &:nth-child(2) {
+    .modernization-process__step-index {
+      animation-delay: .6s;
+    }
+  }
+  &:nth-child(3) {
+    .modernization-process__step-index {
+      animation-delay: .9s;
+    }
+  }
+  &:nth-child(4) {
+    .modernization-process__step-index {
+      animation-delay: 1.2s;
+    }
+  }
+}
+.modernization-process__step:last-child {
+  padding-bottom: 0;
+}
+.modernization-process__step-index {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border: 1px solid $text-muted;
+  border-radius: 50%;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 9px;
+  line-height: 1;
+  color: var(--text-muted);
+  opacity: 0.55;
+  transition:
+    border-color 0.3s ease,
+    color 0.3s ease,
+    opacity 0.3s ease,
+    box-shadow 0.3s ease;
+  animation: changeState 4s ease infinite;
+}
+.modernization-process__step.is-active,
+.modernization-process__step-index {
+  border-color: $orange;
+  color: $orange;
+  opacity: 1;
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.04);
+}
+.modernization-process__step-code {
+  display: block;
+  margin-bottom: $extra-small;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: $orange;
+}
+.modernization-process__step-content h3 {
+  margin: 0;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.025em;
+}
+.modernization-process__step-content p {
+  max-width: 500px;
+  margin: $extra-small 0 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+@media (max-width: $breakpoint-lower-middle) {
+  .modernization-process {
+    .scene-header {
+      position: static;
+    }
+  }
+}
+@media (max-width: $breakpoint-large-small) {
+  .modernization-process__step {
+    grid-template-columns: 52px minmax(0, 1fr);
+    gap: $extra-small;
+    min-height: 150px;
+    padding-bottom: $small;
+  }
+  .modernization-process__line {
+    top: 26px;
+    bottom: 26px;
+    left: 25px;
+  }
+  .modernization-process__step-index {
+    width: 52px;
+    height: 52px;
+    font-size: 8px;
+  }
+  .modernization-process__step-content h3 {
+    font-size: 24px;
+  }
+  .modernization-process__step-content p {
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,85 @@
+@use '../../variables/colors' as *;
+@use '../../variables/offsets' as *;
+@use '../../system/mixins' as *;
+@use '../../variables/media' as *;
+/* =====================================================
+   SCENE 05 — SCOPE
+   ===================================================== */
+.modernization-scope__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: $extra-small;
+}
+.modernization-scope__card {
+  min-height: 280px;
+  padding: $small;
+  border: 1px solid $text-muted;
+  background: $surface;
+  transition: border-color 0.35s ease,
+  transform 0.35s ease;
+}
+.modernization-scope__card:hover {
+  border-color: $orange;
+  transform: translateY(-4px);
+}
+.modernization-scope__card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: $extra-small;
+  border-bottom: 1px solid $text-muted;
+}
+.modernization-scope__card-header span,
+.modernization-scope__card-header strong {
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 0.1em;
+}
+.modernization-scope__card-header span {
+  color: var(--text-muted);
+}
+.modernization-scope__card-header strong {
+  color: $orange;
+  font-weight: 500;
+}
+.modernization-scope__card h5 {
+  margin: $small 0 0;
+  letter-spacing: -0.025em;
+}
+.modernization-scope__card ul {
+  display: flex;
+  flex-direction: column;
+  gap: $extra-small;
+  margin: $small 0 0;
+}
+.modernization-scope__card li {
+  position: relative;
+  padding-left: $extra-small;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+.modernization-scope__card li::before {
+  content: "→";
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: $orange;
+}
+@media (max-width: $breakpoint-lower-middle) {
+  .modernization-scope__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: $breakpoint-extra-small) {
+  .modernization-scope__grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: $breakpoint-large-small) {
+  .modernization-scope__card {
+    padding: $extra-small;
+  }
+}
