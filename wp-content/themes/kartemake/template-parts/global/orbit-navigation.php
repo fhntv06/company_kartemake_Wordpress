@@ -85,6 +85,18 @@ ORBIT NAVIGATION
                 'optimization-cta'       => 'Контакты',
             ];
         }
+        if (is_page('modernization')) {
+            $scenes = [
+                'hero'       => 'Начало',
+                'modernization-signals'       => 'Сигналы к диагностике',
+                'modernization-map'       => 'Карта системы',
+                'modernization-process'       => 'Процесс',
+                'modernization-scope'       => 'Области работы',
+                'modernization-pricing'       => 'Стоимость',
+                'modernization-results'       => 'Модернизация',
+                'modernization-cta'       => 'Контакты',
+            ];
+        }
 
         if (!empty($scenes)) {
             $number = 1;
