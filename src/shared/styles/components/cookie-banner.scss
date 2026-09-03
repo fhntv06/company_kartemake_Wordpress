@@ -16,7 +16,7 @@
   pointer-events: none;
   transform: translateY(24px);
   overflow: hidden;
-  border: 1px solid var(--border-color);
+  border: 1px solid $text-muted;
   background: var(--bg-primary);
   box-shadow: 0 20px 60px rgba(0,0,0,.15);
   transition-delay: 1s;
@@ -185,7 +185,7 @@
   align-items: center;
   justify-content: center;
   gap: $extra-small - 8px;
-  border: 1px solid var(--border-color);
+  border: 1px solid $text-muted;
   background: transparent;
   color: var(--text-secondary);
 }
@@ -225,7 +225,7 @@
 .cookie-settings__group {
   position: relative;
   padding-bottom: 4px;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid $text-muted;
 }
 
 .cookie-settings__group:last-child {
