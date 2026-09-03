@@ -1,0 +1,18 @@
+@use "../variables/colors" as *;
+@use "../variables/fonts" as *;
+@use "../variables/offsets" as *;
+@use "../variables/media" as *;
+@use "../variables/root" as *;
+@use "../system/mixins" as *;
+
+// =====================================================
+// СЦЕНЫ
+// =====================================================
+@use "../scenes/modernization/modernization-hero";
+@use "../scenes/modernization/modernization-signals";
+@use "../scenes/modernization/modernization-map";
+@use "../scenes/modernization/modernization-process";
+@use "../scenes/modernization/modernization-scope";
+@use "../scenes/modernization/modernization-pricing";
+@use "../scenes/modernization/modernization-results";
+@use "../scenes/modernization/modernization-cta";

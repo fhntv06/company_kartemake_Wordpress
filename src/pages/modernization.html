@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>K·ART·MAKE — Техническая поддержка без технической нагрузки</title>
+  <meta name="description" content="Техническая поддержка, модернизация и развитие цифровой инфраструктуры бизнеса. Берём на себя стабильность вашего сайта.">
+</head>
+<body>
+<!-- =================================================
+SYSTEM LOADER
+================================================= -->
+<div class="system-loader">
+  <div class="loader-terminal">
+    <span>ЗАПУСК СИСТЕМЫ K·ART·MAKE</span>
+    <div class="loader-progress">
+      <div></div>
+    </div>
+  </div>
+</div>
+<!-- =================================================
+ORBIT NAVIGATION
+================================================= -->
+<div id="orbit-navigation" class="orbit-navigation">
+  <div class="orbit-circle">
+    <button class="orbit-point" data-scene="hero">
+      <span class="orbit-point__description">Начало</span>
+      <span></span>
+      <strong>01</strong>
+    </button>
+    <button class="orbit-point" data-scene="modernization-signals">
+      <span class="orbit-point__description">Сигналы к диагностике</span>
+      <span></span>
+      <strong>02</strong>
+    </button>
+    <button class="orbit-point" data-scene="modernization-map">
+      <span class="orbit-point__description">Карта системы</span>
+      <span></span>
+      <strong>03</strong>
+    </button>
+    <button class="orbit-point" data-scene="modernization-process">
+      <span class="orbit-point__description">Процесс</span>
+      <span></span>
+      <strong>04</strong>
+    </button>
+    <button class="orbit-point" data-scene="modernization-scope">
+      <span class="orbit-point__description">Области работы</span>
+      <span></span>
+      <strong>05</strong>
+    </button>
+    <button class="orbit-point" data-scene="modernization-pricing">
+      <span class="orbit-point__description">Стоимость</span>
+      <span></span>
+      <strong>06</strong>
+    </button>
+    <button class="orbit-point" data-scene="modernization-results">
+      <span class="orbit-point__description">Модернизация</span>
+      <span></span>
+      <strong>07</strong>
+    </button>
+    <button class="orbit-point" data-scene="modernization-cta">
+      <span class="orbit-point__description">Контакты</span>
+      <span></span>
+      <strong>08</strong>
+    </button>
+  </div>
+</div>
+<!-- =================================================
+GLOBAL DASHBOARD
+================================================= -->
+<header id="header" class="global-dashboard">
+  <div class="dashboard-inner">
+    <a href="/" class="dashboard-brand">K·ART·MAKE</a>
+    <div class="dashboard-status">
+      <span class="dashboard-status-dot"></span>
+      СИСТЕМА РАБОТАЕТ
+    </div>
+    <button class="dashboard-menu" type="button" aria-expanded="false" aria-controls="dashboard-menu-panel">
+      <span class="dashboard-menu-label">МЕНЮ</span>
+      <span class="dashboard-menu-icon">
+        <span></span>
+        <span></span>
+      </span>
+    </button>
+  </div>
+  <div id="dashboard-menu-panel" class="dashboard-menu-panel" aria-hidden="true">
+    <div class="dashboard-menu-panel-inner">
+      <!-- CONTACTS -->
+      <div class="dashboard-menu-column">
+        <span class="dashboard-menu-title">КОНТАКТЫ</span>
+        <a href="mailto:hello@kartemake.ru">
+          <span>НОВЫЕ ПРОЕКТЫ</span>
+          <strong>hello@kartemake.ru</strong>
+        </a>
+        <a href="mailto:support@kartemake.ru">
+          <span>ТЕХНИЧЕСКАЯ ПОДДЕРЖКА</span>
+          <strong>support@kartemake.ru</strong>
+        </a>
+      </div>
+      <!-- SERVICES -->
+      <div class="dashboard-menu-column">
+        <span class="dashboard-menu-title">УСЛУГИ</span>
+        <a href="optimization.html">
+          <span>01</span>
+          <strong>Оптимизация сайта</strong>
+        </a>
+        <a href="modernization.html">
+          <span>02</span>
+          <strong>Модернизация</strong>
+        </a>
+        <a href="support.html">
+          <span>03</span>
+          <strong>Техническая поддержка</strong>
+        </a>
+        <a href="audit.html">
+          <span>04</span>
+          <strong>Аудит и консультации</strong>
+        </a>
+      </div>
+      <!-- INFORMATION -->
+      <div class="dashboard-menu-column">
+        <span class="dashboard-menu-title">ИНФОРМАЦИЯ</span>
+        <a href="./about.html">О Компании</a>
+        <a href="./blog.html">Блог</a>
+        <a href="./services.html">Услуги</a>
+        <a href="./privacy-policy.html">Политика обработки персональных данных</a>
+        <a href="./cookie-policy.html">Политика использования Cookie</a>
+      </div>
+    </div>
+  </div>
+</header>
+<main class="modernization-page">
+  <!-- =====================================================
+  SCENE 01 — HERO
+  ===================================================== -->
+  <section class="scene scene-hero" data-scene="hero" data-canvas-engine>
+    <canvas id="heroCanvas" class="hero-canvas" aria-hidden="true"></canvas>
+    <div class="scene-container">
+      <div class="modernization-hero__inner">
+        <div class="hero-content">
+          <div class="system-label">ТЕХНИЧЕСКАЯ МОДЕРНИЗАЦИЯ</div>
+          <h1>Старая система<br><span>не должна тормозить бизнес</span></h1>
+          <p>Модернизируем цифровые системы, когда устаревший код, инфраструктура или архитектура уже ограничивают развитие бизнеса.</p>
+          <div class="hero-note">ENGINEERING · INFRASTRUCTURE · DEVELOPMENT · SUPPORT</div>
+          <div class="hero-actions">
+            <a href="/contacts/" class="button-primary">ОБСУДИТЬ МОДЕРНИЗАЦИЮ</a>
+            <a href="#modernization-signals" class="button-secondary">НАЙТИ ОГРАНИЧЕНИЯ</a>
+          </div>
+        </div>
+        <div class="modernization-hero__system">
+            <div class="modernization-system">
+              <div class="modernization-system__header">
+                <span class="modernization-system__label">SYSTEM STATUS</span>
+                <span class="modernization-system__status">LEGACY DETECTED</span>
+              </div>
+              <div class="modernization-system__architecture">
+                <div class="modernization-system__layer">
+                  <span class="modernization-system__layer-index">01</span>
+                  <div class="modernization-system__layer-content">
+                    <strong>APPLICATION</strong>
+                    <span>Legacy codebase</span>
+                  </div>
+                  <span class="modernization-system__layer-state">LIMITED</span>
+                </div>
+                <div class="modernization-system__layer">
+                  <span class="modernization-system__layer-index">02</span>
+                  <div class="modernization-system__layer-content">
+                    <strong>DATABASE</strong>
+                    <span>Outdated structure</span>
+                  </div>
+                  <span class="modernization-system__layer-state">WARNING</span>
+                </div>
+                <div class="modernization-system__layer">
+                  <span class="modernization-system__layer-index">03</span>
+                  <div class="modernization-system__layer-content">
+                    <strong>INFRASTRUCTURE</strong>
+                    <span>Manual operations</span>
+                  </div>
+                  <span class="modernization-system__layer-state">LIMITED</span>
+                </div>
+                <div class="modernization-system__layer">
+                  <span class="modernization-system__layer-index">04</span>
+                  <div class="modernization-system__layer-content">
+                    <strong>INTEGRATIONS</strong>
+                    <span>Unstable dependencies</span>
+                  </div>
+                  <span class="modernization-system__layer-state">WARNING</span>
+                </div>
+              </div>
+              <div class="modernization-system__footer">
+                <div>
+                  <span>TECHNICAL DEBT</span>
+                  <strong>HIGH</strong>
+                </div>
+                <div>
+                  <span>SCALABILITY</span>
+                  <strong>LIMITED</strong>
+                </div>
+                <div>
+                  <span>MODERNIZATION</span>
+                  <strong>REQUIRED</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>
+  <!-- =====================================================
+  SCENE 02 — SIGNALS
+  ===================================================== -->
+  <section class="scene" data-scene="modernization-signals" id="modernization-signals">
+    <div class="scene-container">
+      <header class="scene-header reveal-item">
+        <span class="scene-eyebrow">02 / SIGNALS / DIAGNOSTICS</span>
+        <h2 class="scene-title">Когда технический долг<br><span>начинает стоить бизнесу</span></h2>
+        <p class="scene-description">Модернизация нужна не потому, что технология старая. Она нужна тогда, когда технические ограничения начинают влиять на скорость, стабильность и стоимость развития.</p>
+      </header>
+      <div class="modernization-signals__grid reveal-item">
+          <article class="modernization-signals__card" data-modernization-signal>
+            <span class="modernization-signals__card-index">01</span>
+            <span class="modernization-signals__card-code">DEVELOPMENT</span>
+            <h5>Новые функции становятся слишком дорогими</h5>
+            <p>Каждое изменение требует всё больше времени, обходных решений и ручной работы.</p>
+          </article>
+          <article class="modernization-signals__card" data-modernization-signal>
+            <span class="modernization-signals__card-index">02</span>
+            <span class="modernization-signals__card-code">LEGACY</span>
+            <h5>Код сложно поддерживать</h5>
+            <p>Архитектура накопила технический долг, а изменения в одном компоненте затрагивают другие.</p>
+          </article>
+          <article class="modernization-signals__card" data-modernization-signal>
+            <span class="modernization-signals__card-index">03</span>
+            <span class="modernization-signals__card-code">INFRASTRUCTURE</span>
+            <h5>Инфраструктура стала ограничением</h5>
+            <p>Серверы, окружения и процессы развёртывания не соответствуют текущей нагрузке и требованиям.</p>
+          </article>
+          <article class="modernization-signals__card" data-modernization-signal>
+            <span class="modernization-signals__card-index">04</span>
+            <span class="modernization-signals__card-code">STABILITY</span>
+            <h5>Система становится нестабильной</h5>
+            <p>Возникают ошибки, ручные исправления, непредсказуемые зависимости и повторяющиеся инциденты.</p>
+          </article>
+          <article class="modernization-signals__card" data-modernization-signal>
+            <span class="modernization-signals__card-index">05</span>
+            <span class="modernization-signals__card-code">SCALABILITY</span>
+            <h5>Система перестаёт масштабироваться</h5>
+            <p>Рост пользователей, данных или операций приводит к непропорциональному росту нагрузки.</p>
+          </article>
+          <article class="modernization-signals__card" data-modernization-signal>
+            <span class="modernization-signals__card-index">06</span>
+            <span class="modernization-signals__card-code">COST</span>
+            <h5>Поддержка обходится всё дороже</h5>
+            <p>Значительная часть бюджета уходит на поддержание существующей системы вместо её развития.</p>
+          </article>
+        </div>
+    </div>
+  </section>
+  <!-- =====================================================
+  SCENE 03 — MODERNIZATION MAP
+  ===================================================== -->
+  <section class="scene" data-scene="modernization-map">
+    <div class="scene-container">
+      <header class="scene-header reveal-item">
+        <span class="scene-eyebrow">03 / КАРТА СИСТЕМЫ</span>
+        <h2 class="scene-title">Меняем систему<br><span>по уровням</span></h2>
+        <p class="scene-description">Не обязательно переписывать всё целиком. Определяем критические компоненты и модернизируем их поэтапно, сохраняя работоспособность системы.</p>
+      </header>
+      <div class="modernization-map__diagram reveal-item">
+        <div class="modernization-map__node modernization-map__node--application" data-modernization-node="application">
+          <span class="modernization-map__node-index">01</span>
+          <strong>APPLICATION</strong>
+          <span>Code / Architecture / API</span>
+        </div>
+        <div class="modernization-map__node modernization-map__node--database" data-modernization-node="database">
+          <span class="modernization-map__node-index">02</span>
+          <strong>DATABASE</strong>
+          <span>Schema / Queries / Storage</span>
+        </div>
+        <div class="modernization-map__node modernization-map__node--infrastructure" data-modernization-node="infrastructure">
+          <span class="modernization-map__node-index">03</span>
+          <strong>INFRASTRUCTURE</strong>
+          <span>Server / Containers / Deployment</span>
+        </div>
+        <div class="modernization-map__node modernization-map__node--integrations" data-modernization-node="integrations">
+          <span class="modernization-map__node-index">04</span>
+          <strong>INTEGRATIONS</strong>
+          <span>APIs / Services / Dependencies</span>
+        </div>
+        <div class="modernization-map__node modernization-map__node--security" data-modernization-node="security">
+          <span class="modernization-map__node-index">05</span>
+          <strong>SECURITY</strong>
+          <span>Access / Updates / Protection</span>
+        </div>
+        <div class="modernization-map__node modernization-map__node--monitoring" data-modernization-node="monitoring">
+          <span class="modernization-map__node-index">06</span>
+          <strong>MONITORING</strong>
+          <span>Metrics / Logs / Alerts</span>
+        </div>
+        <div class="modernization-map__core">
+          <span class="modernization-map__core-label">K·ART·MAKE</span>
+          <strong>MODERNIZATION</strong>
+          <span>ONE SYSTEM / MANY LAYERS</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- =====================================================
+  SCENE 04 — PROCESS
+  ===================================================== -->
+  <section class="scene modernization-process" data-scene="modernization-process" id="modernization-process">
+    <div class="scene-container">
+      <header class="scene-header reveal-item">
+        <span class="scene-eyebrow">04 / ПРОЦЕСС</span>
+        <h2 class="scene-title">Меняем систему<br><span>по уровням</span></h2>
+        <p class="scene-description">Не обязательно переписывать всё целиком. Определяем критические компоненты и модернизируем их поэтапно, сохраняя работоспособность системы.</p>
+      </header>
+      <div class="modernization-process__layout reveal-item">
+        <div class="modernization-process__flow">
+          <article class="modernization-process__step" data-modernization-step="audit">
+            <div class="modernization-process__step-index">01</div>
+            <div class="modernization-process__step-content">
+              <span class="modernization-process__step-code">AUDIT</span>
+              <h3>Анализируем</h3>
+              <p>Изучаем текущую архитектуру, зависимости, технический долг и критические ограничения.</p>
+            </div>
+          </article>
+          <article class="modernization-process__step" data-modernization-step="plan">
+            <div class="modernization-process__step-index">02</div>
+            <div class="modernization-process__step-content">
+              <span class="modernization-process__step-code">PLAN</span>
+              <h3>Планируем</h3>
+              <p>Определяем приоритеты, этапы, зависимости и безопасный порядок технических изменений.</p>
+            </div>
+          </article>
+          <article class="modernization-process__step" data-modernization-step="migrate">
+            <div class="modernization-process__step-index">03</div>
+            <div class="modernization-process__step-content">
+              <span class="modernization-process__step-code">MIGRATE</span>
+              <h3>Модернизируем</h3>
+              <p>Переносим компоненты, обновляем архитектуру и инфраструктуру небольшими контролируемыми этапами.</p>
+            </div>
+          </article>
+          <article class="modernization-process__step" data-modernization-step="verify">
+            <div class="modernization-process__step-index">04</div>
+            <div class="modernization-process__step-content">
+              <span class="modernization-process__step-code">VERIFY</span>
+              <h3>Проверяем</h3>
+              <p>Проверяем стабильность, производительность и корректность работы после изменений.</p>
+            </div>
+          </article>
+          <div class="modernization-process__line"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- =====================================================
+  SCENE 05 — SCOPE
+  ===================================================== -->
+  <section class="scene" data-scene="modernization-scope">
+    <div class="scene-container">
+      <header class="scene-header reveal-item">
+        <span class="scene-eyebrow">05 / ОБЛАСТИ РАБОТЫ</span>
+        <h2 class="scene-title">Модернизируем то,<br>что <span>ограничивает развитие</span></h2>
+      </header>
+      <div class="modernization-scope__grid reveal-item">
+        <article class="modernization-scope__card">
+          <div class="modernization-scope__card-header">
+            <span>01</span>
+            <strong>APPLICATION</strong>
+          </div>
+          <h5>Код и архитектура</h5>
+          <ul>
+            <li>Рефакторинг legacy-кода</li>
+            <li>Обновление архитектуры</li>
+            <li>Разделение компонентов</li>
+            <li>API и backend</li>
+          </ul>
+        </article>
+        <article class="modernization-scope__card">
+          <div class="modernization-scope__card-header">
+            <span>02</span>
+            <strong>DATABASE</strong>
+          </div>
+          <h5>База данных</h5>
+          <ul>
+            <li>Изменение структуры</li>
+            <li>Миграция данных</li>
+            <li>Индексы и запросы</li>
+            <li>Кеширование</li>
+          </ul>
+        </article>
+        <article class="modernization-scope__card">
+          <div class="modernization-scope__card-header">
+            <span>03</span>
+            <strong>INFRASTRUCTURE</strong>
+          </div>
+          <h5>Инфраструктура</h5>
+          <ul>
+            <li>Серверное окружение</li>
+            <li>Docker и контейнеризация</li>
+            <li>Nginx и PHP</li>
+            <li>CI/CD и deployment</li>
+          </ul>
+        </article>
+        <article class="modernization-scope__card">
+          <div class="modernization-scope__card-header">
+            <span>04</span>
+            <strong>INTEGRATIONS</strong>
+          </div>
+          <h5>Интеграции</h5>
+          <ul>
+            <li>Внешние API</li>
+            <li>Замена устаревших сервисов</li>
+            <li>Timeouts и retries</li>
+            <li>Контроль зависимостей</li>
+          </ul>
+        </article>
+        <article class="modernization-scope__card">
+          <div class="modernization-scope__card-header">
+            <span>05</span>
+            <strong>SECURITY</strong>
+          </div>
+          <h5>Безопасность</h5>
+          <ul>
+            <li>Обновление компонентов</li>
+            <li>Управление доступом</li>
+            <li>Устаревшие зависимости</li>
+            <li>Конфигурация окружения</li>
+          </ul>
+        </article>
+        <article class="modernization-scope__card">
+          <div class="modernization-scope__card-header">
+            <span>06</span>
+            <strong>OBSERVABILITY</strong>
+          </div>
+          <h5>Наблюдаемость</h5>
+          <ul>
+            <li>Метрики</li>
+            <li>Логи</li>
+            <li>Алерты</li>
+            <li>Контроль состояния системы</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+  <!-- =====================================================
+  SCENE 06 — PRICING
+  ===================================================== -->
+  <section class="scene" data-scene="modernization-pricing">
+    <div class="scene-container">
+      <header class="scene-header reveal-item">
+        <span class="scene-eyebrow">06 / СТОИМОСТЬ</span>
+        <h2 class="scene-title">Начинаем с конкретного<br><span>технического ограничения</span></h2>
+        <p class="scene-description">Стоимость зависит от масштаба системы, её архитектуры и объёма необходимых изменений. Поэтому модернизацию можно начинать с отдельного компонента и развивать проект поэтапно.</p>
+      </header>
+      <div class="modernization-pricing__grid reveal-item">
+        <article class="modernization-pricing__card">
+          <div class="modernization-pricing__card-header">
+            <span>01</span>
+            <strong>DIAGNOSTICS</strong>
+          </div>
+          <h3>Техническая диагностика</h3>
+          <h4 class="modernization-pricing__price">от 20 000 ₽</h4>
+          <p>Определяем архитектурные ограничения, технический долг и приоритетные направления модернизации.</p>
+          <ul>
+            <li>Анализ текущей системы</li>
+            <li>Архитектурные ограничения</li>
+            <li>Технический долг</li>
+            <li>План модернизации</li>
+          </ul>
+        </article>
+        <article class="modernization-pricing__card is-featured">
+          <div class="modernization-pricing__card-header">
+            <span>02</span>
+            <strong>MODERNIZATION</strong>
+          </div>
+          <h3>Поэтапная модернизация</h3>
+          <h4 class="modernization-pricing__price">от 50 000 ₽</h4>
+          <p>Модернизируем конкретные компоненты системы с контролем каждого этапа и сохранением работоспособности проекта.</p>
+          <ul>
+            <li>Архитектура и код</li>
+            <li>База данных</li>
+            <li>Инфраструктура</li>
+            <li>Интеграции</li>
+          </ul>
+        </article>
+        <article class="modernization-pricing__card">
+          <div class="modernization-pricing__card-header">
+            <span>03</span>
+            <strong>COMPLEX</strong>
+          </div>
+          <h3>Комплексная модернизация</h3>
+          <h4 class="modernization-pricing__price">от 100 000 ₽</h4>
+          <p>Работаем с несколькими уровнями системы, когда ограничения затрагивают архитектуру, инфраструктуру и ключевые интеграции.</p>
+          <ul>
+            <li>Несколько компонентов</li>
+            <li>Архитектурные изменения</li>
+            <li>Миграция</li>
+            <li>Контроль результата</li>
+          </ul>
+        </article>
+      </div>
+      <div class="modernization-pricing__footer reveal-item">
+        <span>COST MODEL</span>
+        <p>Итоговая стоимость определяется после оценки текущей системы, количества компонентов, сложности миграции и объёма необходимых изменений.</p>
+      </div>
+    </div>
+  </section>
+  <!-- =====================================================
+  SCENE 07 — RESULTS
+  ===================================================== -->
+  <section class="scene" data-scene="modernization-results">
+    <div class="scene-container">
+      <header class="scene-header reveal-item">
+        <span class="scene-eyebrow">07 / РЕЗУЛЬТАТ</span>
+        <h2 class="scene-title">Современная система<br><span>должна давать бизнесу больше свободы</span></h2>
+        <p class="scene-description">Модернизация не заканчивается обновлением технологии. Результат — система, которую проще развивать, поддерживать и масштабировать.</p>
+      </header>
+      <div class="modernization-results__comparison reveal-item">
+        <div class="modernization-results__state">
+          <div class="modernization-results__state-header">
+            <span>BEFORE</span>
+            <strong>LEGACY SYSTEM</strong>
+          </div>
+          <div class="modernization-results__metrics">
+            <div class="modernization-results__metric">
+              <span>DEVELOPMENT</span>
+              <strong>СЛОЖНО</strong>
+            </div>
+            <div class="modernization-results__metric">
+              <span>MAINTENANCE</span>
+              <strong>ДОРОГО</strong>
+            </div>
+            <div class="modernization-results__metric">
+              <span>SCALABILITY</span>
+              <strong>ОГРАНИЧЕНА</strong>
+            </div>
+            <div class="modernization-results__metric">
+              <span>DEPENDENCIES</span>
+              <strong>ВЫСОКИЕ</strong>
+            </div>
+          </div>
+        </div>
+        <div class="modernization-results__transition">
+          <span>MODERNIZE</span>
+          <span>→</span>
+        </div>
+        <div class="modernization-results__state">
+          <div class="modernization-results__state-header">
+            <span>AFTER</span>
+            <strong>MODERN SYSTEM</strong>
+          </div>
+          <div class="modernization-results__metrics">
+            <div class="modernization-results__metric">
+              <span>DEVELOPMENT</span>
+              <strong>БЫСТРЕЕ</strong>
+            </div>
+            <div class="modernization-results__metric">
+              <span>MAINTENANCE</span>
+              <strong>ПРОЩЕ</strong>
+            </div>
+            <div class="modernization-results__metric">
+              <span>SCALABILITY</span>
+              <strong>ВЫШЕ</strong>
+            </div>
+            <div class="modernization-results__metric">
+              <span>DEPENDENCIES</span>
+              <strong>КОНТРОЛЬ</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modernization-results__note reveal-item">Результат зависит от состояния конкретной системы и определяется по итогам диагностики.</div>
+    </div>
+  </section>
+  <!-- =====================================================
+  SCENE 08 — CTA
+  ===================================================== -->
+  <section class="scene" data-scene="modernization-cta">
+    <div class="scene-container">
+      <header class="scene-header reveal-item">
+        <span class="scene-eyebrow">08 / MODERNIZATION</span>
+        <h2 class="scene-title">Уберём технические<br><span>ограничения для роста</span></h2>
+        <p class="scene-description">Покажем, что именно ограничивает вашу систему, какие изменения действительно нужны и с чего лучше начать модернизацию.</p>
+      </header>
+      <div class="modernization-cta__results reveal-item">
+          <div class="modernization-cta__result">
+            <strong>SCALABLE</strong>
+            <span>Масштабируемая</span>
+          </div>
+          <div class="modernization-cta__result">
+            <strong>STABLE</strong>
+            <span>Стабильная</span>
+          </div>
+          <div class="modernization-cta__result">
+            <strong>MAINTAINABLE</strong>
+            <span>Управляемая</span>
+          </div>
+        </div>
+      <div class="cta-block reveal-item">
+        <span class="cta-block__eyebrow">MODERNIZATION / K·ART·MAKE</span>
+        <h3 class="cta-block__title">Давайте разберём,<br>что пора изменить.</h3>
+        <p class="cta-block__text">Начнём с текущего состояния системы и определим технические изменения, которые действительно нужны бизнесу.</p>
+        <div class="cta-block__action">
+          <a href="contacts.html" class="button-primary">ОБСУДИТЬ МОДЕРНИЗАЦИЮ</a>
+        </div>
+      </div>
+      <!-- CONTACT INFORMATION -->
+      <div class="contact-info reveal-item">
+        <div class="contact-info-item">
+          <span class="contact-info-label">НОВЫЕ ПРОЕКТЫ</span>
+          <a href="mailto:hello@kartemake.ru" class="contact-info-value">hello@kartemake.ru</a>
+          <span class="contact-info-description">Обсудить новый проект, разработку или модернизацию.</span>
+        </div>
+        <div class="contact-info-item">
+          <span class="contact-info-label">ТЕХНИЧЕСКАЯ ПОДДЕРЖКА</span>
+          <a href="mailto:support@kartemake.ru" class="contact-info-value">support@kartemake.ru</a>
+          <span class="contact-info-description">Техническая поддержка и сопровождение.</span>
+        </div>
+        <div class="contact-info-item">
+          <span class="contact-info-label">ОТВЕТ</span>
+          <span class="contact-info-value">В ТЕЧЕНИЕ 1 ДНЯ</span>
+          <span class="contact-info-description">Получаем запрос и связываемся для обсуждения задачи.</span>
+        </div>
+        <div class="contact-info-item">
+          <span class="contact-info-label">TELEGRAM</span>
+          <a href="https://t.me/KArtech76" class="contact-info-value">@KArtech76</a>
+        </div>
+        <div class="contact-info-item">
+          <span class="contact-info-label">ВКОНТАКТЕ</span>
+          <a href="https://vk.ru/kartemake" class="contact-info-value">vk.com/kartemake</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================
+  FOOTER
+  ================================================= -->
+  <section>
+    <div class="scene-container">
+      <!-- =================================================
+      FOOTER
+      ================================================= -->
+      <footer class="contact-footer">
+        <!-- FOOTER BRAND -->
+        <div class="contact-footer-brand">
+          <a href="/" class="contact-footer-logo" aria-label="K·ART·MAKE">K·ART·MAKE</a>
+          <p>Технический партнёр для вашего бизнеса.</p>
+        </div>
+        <!-- FOOTER NAVIGATION -->
+        <nav class="contact-footer-nav" aria-label="Навигация по сайту">
+          <div class="contact-footer-column">
+            <span class="contact-footer-title">УСЛУГИ</span>
+            <a href="/#optimization">Оптимизация сайта</a>
+            <a href="/#modernization">Модернизация</a>
+            <a href="/#support">Техническая поддержка</a>
+            <a href="/#audit">Аудит и консультации</a>
+          </div>
+          <div class="contact-footer-column">
+            <span class="contact-footer-title">ИНФОРМАЦИЯ</span>
+            <a href="./about.html">О Компании</a>
+            <a href="./blog.html">Блог</a>
+            <a href="./services.html">Услуги</a>
+            <a href="./privacy-policy.html">Политика обработки персональных данных</a>
+            <a href="./cookie-policy.html">Политика использования Cookie</a>
+          </div>
+          <div class="contact-footer-column">
+            <span class="contact-footer-title">КОНТАКТЫ</span>
+            <a href="mailto:hello@kartemake.ru">hello@kartemake.ru</a>
+            <a href="mailto:support@kartemake.ru">support@kartemake.ru</a>
+            <a href="https://t.me/KArtech76">Telegram</a>
+            <a href="https://vk.ru/kartemake">VK</a>
+          </div>
+        </nav>
+        <!-- FOOTER BOTTOM -->
+        <div class="contact-footer-bottom">
+          <span>© 2026 K·ART·MAKE</span>
+          <span>ТЕХНИЧЕСКИЙ ПАРТНЁР</span>
+          <span>ВСЕ СИСТЕМЫ РАБОТАЮТ</span>
+        </div>
+      </footer>
+    </div>
+  </section>
+</main>
+<div id="cookie-banner" class="cookie-banner" aria-hidden="true">
+  <div class="cookie-banner__wrapper">
+    <div class="cookie-banner__status">
+      <span class="cookie-banner__status-dot"></span>
+      <span>PRIVACY / COOKIE CONTROL</span>
+    </div>
+    <div class="cookie-banner__content">
+      <!-- STEP 1 -->
+      <section id="cookie-step-1" class="cookie-step cookie-step--active">
+        <div class="cookie-banner__header">
+          <p class="cookie-banner__description">Мы применяем cookies, чтобы сайт работал без сбоев и постоянно становился для вас удобнее.</p>
+        </div>
+        <div class="cookie-banner__links">
+          <span>Подробнее:</span>
+          <a href="cookie-policy.html" target="_blank">использование cookie</a>
+          <a href="privacy-policy.html" target="_blank">обработка персональных данных</a>
+        </div>
+        <div class="cookie-banner__actions">
+          <button type="button" id="cookie-decline" class="cookie-button cookie-button--outline">Отклонить</button>
+          <button type="button" id="cookie-accept" class="cookie-button cookie-button--accent">Принять</button>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <!-- Закрытие -->
+    <div class="close-modal no-icon" data-modal-func="close"></div>
+
+    <!-- Заголовок -->
+    <div class="modal-header">
+      <h4>Хотите чтобы мы решили <span class="color-accent">ваш кейс</span>?</h4>
+      <p>Оставьте заявку и наш специалист свяжется с вами для обсуждения деталей вашего проекта</p>
+    </div>
+
+    <!-- Контейнер с гридом -->
+    <div class="form-container">
+
+      <!-- КОЛОНКА 1: КОНТАКТЫ (как в дашборде) -->
+      <div class="contact-modal__body">
+        <a href="mailto:hello@kartemake.ru" class="contact-modal__item">
+          <span class="contact-modal__item-label">НОВЫЕ ПРОЕКТЫ</span>
+          <strong class="contact-modal__item-value">hello@kartemake.ru</strong>
+        </a>
+        <a href="mailto:support@kartemake.ru" class="contact-modal__item">
+          <span class="contact-modal__item-label">ТЕХНИЧЕСКАЯ ПОДДЕРЖКА</span>
+          <strong class="contact-modal__item-value">support@kartemake.ru</strong>
+        </a>
+      </div>
+
+      <!-- КОЛОНКА 2: СОЦСЕТИ -->
+      <div class="contact-modal__body">
+        <a href="https://t.me/KArtech76" target="_blank" class="contact-modal__item">
+          <span class="contact-modal__item-label">TELEGRAM</span>
+          <strong class="contact-modal__item-value">@KArtech76</strong>
+        </a>
+        <a href="https://vk.ru/kartemake" target="_blank" class="contact-modal__item">
+          <span class="contact-modal__item-label">ВКОНТАКТЕ</span>
+          <strong class="contact-modal__item-value">vk.com/kartemake</strong>
+        </a>
+      </div>
+
+      <!-- КОЛОНКА 3: ИНФОРМАЦИЯ -->
+      <div class="contact-modal__body">
+        <a href="/privacy-policy" class="contact-modal__item">
+          <span class="contact-modal__item-label">ДОКУМЕНТЫ</span>
+          <strong class="contact-modal__item-value">Политика конфиденциальности</strong>
+        </a>
+        <!--        <a href="/personal-data-consent" class="contact-modal__item">-->
+        <!--          <span class="contact-modal__item-label">СОГЛАСИЕ</span>-->
+        <!--          <strong class="contact-modal__item-value">На обработку данных</strong>-->
+        <!--        </a>-->
+      </div>
+
+      <!-- ФУТЕР -->
+      <div class="contact-modal__footer">
+        <p class="contact-modal__footer-text">Напишите нам — мы ответим в течение 24 часов</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+</body>
+</html>
