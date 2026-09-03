@@ -24,29 +24,29 @@
                 <nav class="contact-footer-nav" aria-label="Навигация по сайту">
                     <div class="contact-footer-column">
                         <span class="contact-footer-title">УСЛУГИ</span>
-                        <a href="/#optimization">Оптимизация сайта</a>
-                        <a href="/#modernization">Модернизация</a>
-                        <a href="/#support">Техническая поддержка</a>
-                        <a href="/#audit">Аудит и консультации</a>
+                        <a href="<?= get_permalink(get_page_by_path('optimization')) ?>">Оптимизация сайта</a>
+                        <a href="<?= get_permalink(get_page_by_path('modernization')) ?>">Модернизация</a>
+                        <a href="<?= get_permalink(get_page_by_path('support')) ?>">Техническая поддержка</a>
+                        <a href="<?= get_permalink(get_page_by_path('audit')) ?>">Аудит и консультации</a>
                     </div>
                     <div class="contact-footer-column">
                         <span class="contact-footer-title">ИНФОРМАЦИЯ</span>
-                        <a href="<?php echo get_permalink(get_page_by_path('about')); ?>">
+                        <a href="<?= get_permalink(get_page_by_path('about')); ?>">
                           О Компании
                         </a>
-                        <a href="<?php echo get_permalink(get_page_by_path('blog')); ?>">
+                        <a href="<?= get_permalink(get_page_by_path('blog')); ?>">
                           Блог
                         </a>
-                        <a href="<?php echo get_permalink(get_page_by_path('calculator')); ?>">
+                        <a href="<?= get_permalink(get_page_by_path('calculator')); ?>">
                           Калькулятор стоимости
                         </a>
-                        <a href="<?php echo get_permalink(get_page_by_path('contacts')); ?>">
+                        <a href="<?= get_permalink(get_page_by_path('contacts')); ?>">
                           Контакты
                         </a>
-                        <a href="<?php echo get_permalink(get_page_by_path('privacy-policy')); ?>">
+                        <a href="<?= get_permalink(get_page_by_path('privacy-policy')); ?>">
                           Политика обработки персональных данных
                         </a>
-                        <a href="<?php echo get_permalink(get_page_by_path('cookie-policy')); ?>">
+                        <a href="<?= get_permalink(get_page_by_path('cookie-policy')); ?>">
                           Политика использования Cookie
                         </a>
                     </div>

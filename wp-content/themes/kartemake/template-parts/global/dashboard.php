@@ -3,7 +3,7 @@ GLOBAL DASHBOARD
 ================================================= -->
 <header id="header" class="global-dashboard">
     <div class="dashboard-inner">
-        <a href="<?php echo home_url('/'); ?>" class="dashboard-brand">K·ART·MAKE</a>
+        <a href="<?= home_url('/'); ?>" class="dashboard-brand">K·ART·MAKE</a>
         <div class="dashboard-status">
             <span class="dashboard-status-dot"></span>
             СИСТЕМА РАБОТАЕТ
@@ -33,19 +33,19 @@ GLOBAL DASHBOARD
             <!-- SERVICES -->
             <div class="dashboard-menu-column">
                 <span class="dashboard-menu-title">УСЛУГИ</span>
-                <a href="<?php echo home_url('/#optimization'); ?>">
+                <a href="<?= get_permalink(get_page_by_path('optimization')); ?>">
                     <span>01</span>
                     <strong>Оптимизация сайта</strong>
                 </a>
-                <a href="<?php echo home_url('/#modernization'); ?>">
+                <a href="<?= get_permalink(get_page_by_path('modernization')); ?>">
                     <span>02</span>
                     <strong>Модернизация</strong>
                 </a>
-                <a href="<?php echo home_url('/#support'); ?>">
+                <a href="<?= get_permalink(get_page_by_path('support')); ?>">
                     <span>03</span>
                     <strong>Техническая поддержка</strong>
                 </a>
-                <a href="<?php echo home_url('/#audit'); ?>">
+                <a href="<?= get_permalink(get_page_by_path('audit')); ?>">
                     <span>04</span>
                     <strong>Аудит и консультации</strong>
                 </a>
