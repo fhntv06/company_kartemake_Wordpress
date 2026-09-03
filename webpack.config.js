@@ -38,6 +38,7 @@ function getChunks() {
     contacts: [...common, 'pages-common', 'contacts'],
     services: [...common, 'pages-common', 'services'],
     support: [...common, 'pages-common', 'support'],
+    optimization: [...common, 'pages-common', 'optimization'],
   }
 }
 
@@ -63,6 +64,7 @@ module.exports = (env, argv) => {
       contacts: './src/app/pages/contacts/contacts-entry.js',
       services: './src/app/pages/services/services-entry.js',
       support: './src/app/pages/support/support-entry.js',
+      optimization: './src/app/pages/optimization/optimization-entry.js',
     },
 
     output: {
