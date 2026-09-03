@@ -36,9 +36,9 @@
 .system-label {
   display: inline-flex;
   align-items: center;
-  gap: 14px;
-  margin-bottom: 35px;
-  padding: 10px 22px;
+  gap: $extra-small;
+  margin-bottom: $small;
+  padding: $extra-small $lower-small;
   border-radius: 999px;
   border: 1px solid var(--border);
   background: rgba(255, 255, 255, 0.04);
@@ -79,7 +79,6 @@
 .hero-note {
   margin-top: $small;
   font-family: "IBM Plex Mono", "Roboto Mono", monospace;
-  @include responsive-font(9, 12);
   color: $text-muted;
   text-transform: uppercase;
 }
@@ -102,7 +101,7 @@
   min-height: 180px;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: $breakpoint-middle) {
   .hero-terminal {
     width: min(340px, 30vw);
     right: 4%;
@@ -113,11 +112,11 @@
   }
 
   .hero-content p {
-    font-size: 18px;
+    font-size: 20px;
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: $breakpoint-lower-middle) {
   .hero-content h1 {
     font-size: clamp(42px, 12vw, 70px);
   }
@@ -132,15 +131,15 @@
   }
 }
 
-@media (max-width: 520px) {
+@media (max-width: $breakpoint-large-small) {
   .scene-hero {
     align-items: flex-start;
   }
 
   .system-label {
-    margin-bottom: 12px;
-    padding: 8px 16px;
-    font-size: 10px;
+    margin-bottom: $extra-small;
+    padding: calc($extra-small / 2) $extra-small;
+    font-size: 12px;
     letter-spacing: 0.2em;
   }
 
@@ -153,20 +152,20 @@
   }
 
   .hero-content p {
-    margin-top: 28px;
+    margin-top: $small;
     font-size: 16px;
     line-height: 1.6;
   }
 
   .hero-actions {
-    margin-top: 36px;
+    margin-top: $small;
     flex-direction: column;
     align-items: stretch;
-    gap: 12px;
+    gap: $extra-small;
   }
 
   .hero-note {
-    margin-top: 12px;
+    margin-top: $extra-small;
   }
 }
 
