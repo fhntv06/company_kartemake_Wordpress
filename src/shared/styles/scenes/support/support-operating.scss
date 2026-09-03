@@ -14,7 +14,7 @@
   gap: $large;
 }
 .support-operating__content .scene-description + .scene-description {
-  margin-top: 20px;
+  margin-top: $extra-small;
 }
 /* OPERATING FLOW */
 .support-operating__line {
@@ -63,23 +63,6 @@
     .support-operating__step-index {
       animation-delay: 1.2s;
     }
-  }
-}
-@keyframes changeState {
-  50% {
-    background-color: $orange;
-    color: $text-primary;
-    opacity: 1;
-  }
-  80% {
-    background-color: $orange;
-    color: $text-primary;
-    opacity: 1;
-  }
-  100% {
-    background-color: unset;
-    color: $text-secondary;
-    opacity: .5;
   }
 }
 .support-operating__step:last-child {
