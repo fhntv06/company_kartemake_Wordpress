@@ -74,6 +74,17 @@ ORBIT NAVIGATION
                 'support-cta'       => 'Контакты',
             ];
         }
+        if (is_page('optimization')) {
+            $scenes = [
+                'hero'       => 'Начало',
+                'optimization-signals'       => 'Находим проблему',
+                'optimization-map'       => 'Система',
+                'optimization-process'       => 'Процесс',
+                'optimization-scope'       => 'С чем работаем',
+                'optimization-pricing'       => 'Стоимость',
+                'optimization-cta'       => 'Контакты',
+            ];
+        }
 
         if (!empty($scenes)) {
             $number = 1;
