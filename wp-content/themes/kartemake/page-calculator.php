@@ -9,7 +9,7 @@ get_header();
 get_template_part('template-parts/global/orbit-navigation');
 
 ?>
-<main class="experience about-page">
+<main class="experience calculator-page">
 
     <!-- CALCULATOR HERO -->
     <?php get_template_part('template-parts/sections/calculator/calculator-hero') ?>
