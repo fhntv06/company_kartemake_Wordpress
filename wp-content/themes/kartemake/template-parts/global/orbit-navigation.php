@@ -63,17 +63,29 @@ ORBIT NAVIGATION
                 'services-cta'       => 'С чего начать?',
             ];
         }
+        if (is_page('support')) {
+            $scenes = [
+                'hero'       => 'Начало',
+                'support-systems'       => 'Система поддержки',
+                'support-operating'       => 'Процесс поддержки',
+                'support-scope'       => 'Технические операции',
+                'support-task-types'       => 'Контроль проблемы',
+                'support-format'       => 'Стоимость',
+                'support-cta'       => 'Контакты',
+            ];
+        }
 
-        if (empty($scenes)) return;
-
-        $number = 1;
-        foreach ($scenes as $id => $label) : ?>
-            <button class="orbit-point" data-scene="<?= esc_attr($id); ?>">
-                <span class="orbit-point__description"><?= esc_html($label); ?></span>
-                <span></span>
-                <strong><?= sprintf('%02d', $number); ?></strong>
-            </button>
-            <?php $number++;
-        endforeach; ?>
+        if (!empty($scenes)) {
+            $number = 1;
+            foreach ($scenes as $id => $label) : ?>
+                <button class="orbit-point" data-scene="<?= esc_attr($id); ?>">
+                    <span class="orbit-point__description"><?= esc_html($label); ?></span>
+                    <span></span>
+                    <strong><?= sprintf('%02d', $number); ?></strong>
+                </button>
+                <?php $number++;
+            endforeach;
+        }
+        ?>
     </div>
 </div>
