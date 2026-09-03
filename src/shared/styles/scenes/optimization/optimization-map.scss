@@ -1,0 +1,167 @@
+@use "../../variables/colors" as *;
+@use "../../variables/fonts" as *;
+@use "../../variables/offsets" as *;
+@use "../../variables/media" as *;
+@use "../../variables/root" as *;
+@use "../../system/mixins" as *;
+
+/* =====================================================
+     SCENE 03 — OPTIMIZATION MAP
+  ===================================================== */
+.scene.scene-active .optimization-map__diagram {
+  position: relative;
+  width: min(920px, 100%);
+  min-height: 620px;
+  margin: $large auto 0;
+}
+.optimization-map__diagram::before,
+.optimization-map__diagram::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 72%;
+  height: 72%;
+  border: 1px solid $text-muted;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  opacity: 0.45;
+}
+.optimization-map__diagram::after {
+  width: 46%;
+  height: 46%;
+  opacity: 0.25;
+}
+.optimization-map__node {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  min-width: 170px;
+  padding: $extra-small;
+  border: 1px solid $text-muted;
+  transition: border-color 0.35s ease, transform 0.35s ease, background-color 0.35s ease;
+}
+.optimization-map__node:hover,
+.optimization-map__node.is-active {
+  border-color: $orange;
+  transform: translateY(-4px);
+}
+.optimization-map__node-index {
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+.optimization-map__node-label {
+  margin-top: $extra-small;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 16px;
+  letter-spacing: 0.06em;
+}
+.optimization-map__node small {
+  margin-top: calc($extra-small / 2);
+  font-size: 12px;
+  line-height: 1.3;
+  color: var(--text-secondary);
+}
+.optimization-map__node--frontend {
+  top: 4%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.optimization-map__node--frontend:hover,
+.optimization-map__node--frontend.is-active {
+  transform: translateX(-50%) translateY(-4px);
+}
+.optimization-map__node--backend {
+  top: 27%;
+  right: 2%;
+}
+.optimization-map__node--database {
+  bottom: 8%;
+  right: 15%;
+}
+.optimization-map__node--infra {
+  bottom: 8%;
+  left: 15%;
+}
+.optimization-map__node--integrations {
+  top: 27%;
+  left: 2%;
+}
+.optimization-map__node--monitoring {
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+.optimization-map__node--monitoring:hover,
+.optimization-map__node--monitoring.is-active {
+  transform: translateY(calc(-50% - 4px));
+}
+.optimization-map__core {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 190px;
+  height: 190px;
+  border: 1px solid $orange;
+  border-radius: 50%;
+  background: var(--background-color);
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 12px var(--background-color), 0 0 0 13px $text-muted;
+}
+.optimization-map__core-label {
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+}
+.optimization-map__core strong {
+  margin-top: 10px;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: $orange;
+}
+.optimization-map__core small {
+  margin-top: 12px;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 7px;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+}
+@media (max-width: $breakpoint-lower-middle) {
+  .scene.scene-active .optimization-map__diagram {
+    transform: scale(0.9);
+    transform-origin: center top;
+    margin-bottom: -60px;
+  }
+}
+@media (max-width: $breakpoint-extra-small) {
+  .scene.scene-active .optimization-map__diagram {
+    width: 760px;
+    min-height: 560px;
+    margin-left: 50%;
+    transform: translateX(-50%) scale(0.82);
+    transform-origin: center top;
+    margin-bottom: -100px;
+  }
+}
+@media (max-width: $breakpoint-large-small) {
+  .scene.scene-active .optimization-map__diagram {
+    width: 700px;
+    transform: translateX(-50%) scale(0.5);
+    margin-bottom: -180px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .optimization-map__node {
+    transition: none;
+  }
+}

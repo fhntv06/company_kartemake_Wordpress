@@ -1,0 +1,90 @@
+@use "../../variables/colors" as *;
+@use "../../variables/fonts" as *;
+@use "../../variables/offsets" as *;
+@use "../../variables/media" as *;
+@use "../../variables/root" as *;
+@use "../../system/mixins" as *;
+
+/* =====================================================
+     SCENE 02 — SIGNALS
+  ===================================================== */
+.optimization-signals {
+  padding: 160px 0;
+}
+.optimization-signals__inner {
+  width: min(1400px, calc(100% - 80px));
+  margin: 0 auto;
+}
+.optimization-signals .section-heading {
+  max-width: 820px;
+}
+.optimization-signals__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid $text-muted;
+  border-left: 1px solid $text-muted;
+}
+.optimization-signal {
+  min-height: 260px;
+  padding: $small;
+  border-right: 1px solid $text-muted;
+  border-bottom: 1px solid $text-muted;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+.optimization-signal:hover {
+  background: var(--surface-color, rgba(255,255,255,0.02));
+  border-color: color-mix(in srgb, $orange 35%, $text-muted);
+}
+.optimization-signal__index {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid $text-muted;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+.optimization-signal__content {
+  margin-top: 54px;
+}
+.optimization-signal__label {
+  display: block;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: $orange;
+}
+.optimization-signal__title {
+  margin: $extra-small 0 0;
+}
+.optimization-signal__text {
+  max-width: 360px;
+  margin: $extra-small 0 0;
+  color: var(--text-secondary);
+}
+@media (max-width: $breakpoint-lower-middle) {
+  .optimization-signals__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: $breakpoint-extra-small) {
+  .optimization-signal {
+    min-height: 220px;
+  }
+  .optimization-signal__content {
+    margin-top: 40px;
+  }
+}
+@media (max-width: $breakpoint-large-small) {
+  .optimization-signal {
+    min-height: 200px;
+    padding: 22px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .optimization-signal {
+    transition: none;
+  }
+}

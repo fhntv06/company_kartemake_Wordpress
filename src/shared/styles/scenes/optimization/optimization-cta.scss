@@ -1,0 +1,77 @@
+@use "../../variables/colors" as *;
+@use "../../variables/fonts" as *;
+@use "../../variables/offsets" as *;
+@use "../../variables/media" as *;
+@use "../../variables/root" as *;
+@use "../../system/mixins" as *;
+
+/* =====================================================
+     SCENE 07 — CTA
+  ===================================================== */
+.optimization-cta__content {
+  max-width: 850px;
+}
+.optimization-cta__title {
+  margin: 28px 0 0;
+  font-size: clamp(48px, 6vw, 88px);
+  font-weight: 500;
+  line-height: 0.95;
+  letter-spacing: -0.055em;
+}
+.optimization-cta__description {
+  max-width: 650px;
+  margin-top: $small;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--text-secondary);
+}
+.optimization-cta__results {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid $text-muted;
+  border-bottom: 1px solid $text-muted;
+  margin-bottom: $middle;
+}
+.optimization-cta__result {
+  min-height: 150px;
+  padding: $small;
+  border-right: 1px solid $text-muted;
+}
+.optimization-cta__result:last-child {
+  border-right: 0;
+}
+.optimization-cta__result strong {
+  display: block;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: $orange;
+}
+.optimization-cta__result span {
+  display: block;
+  margin-top: $extra-small;
+  font-size: 16px;
+  color: var(--text-secondary);
+}
+.optimization-cta .cta-block {
+  margin-top: 100px;
+}
+@media (max-width: $breakpoint-extra-small) {
+  .optimization-cta__results {
+    grid-template-columns: 1fr;
+    margin-top: 60px;
+  }
+  .optimization-cta__result {
+    min-height: auto;
+    padding: 22px;
+    border-right: 0;
+    border-bottom: 1px solid $text-muted;
+  }
+  .optimization-cta__result:last-child {
+    border-bottom: 0;
+  }
+  .optimization-cta .cta-block {
+    margin-top: 70px;
+  }
+}

@@ -1,0 +1,185 @@
+@use "../../variables/colors" as *;
+@use "../../variables/fonts" as *;
+@use "../../variables/offsets" as *;
+@use "../../variables/media" as *;
+@use "../../variables/root" as *;
+@use "../../system/mixins" as *;
+
+/* =====================================================
+     SCENE 04 — PROCESS
+  ===================================================== */
+.optimization-process {
+  .scene-header {
+    position: sticky;
+    top: $offset-top-from-header;
+  }
+}
+.optimization-process__intro {
+  position: sticky;
+  top: 120px;
+  align-self: start;
+}
+.optimization-process__title {
+  margin: 28px 0 0;
+  font-size: clamp(42px, 5vw, 70px);
+  font-weight: 500;
+  line-height: 0.98;
+  letter-spacing: -0.05em;
+}
+.optimization-process__description {
+  max-width: 440px;
+  margin-top: 32px;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--text-secondary);
+}
+.optimization-process__flow {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-width: max-content;
+  margin-left: auto;
+}
+.optimization-process__line {
+  position: absolute;
+  top: 30px;
+  bottom: 30px;
+  left: 31px;
+  width: 1px;
+  background: $text-muted;
+}
+.optimization-process__step {
+  position: relative;
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: $small;
+  min-height: 180px;
+  padding-bottom: $small;
+
+  &:hover {
+    .support-operating__step-index {
+      background-color: $orange;
+      color: $text-primary;
+      opacity: 1;
+    }
+  }
+  &:nth-child(1) {
+    .optimization-process__step-index {
+      animation-delay: .3s;
+    }
+  }
+  &:nth-child(2) {
+    .optimization-process__step-index {
+      animation-delay: .6s;
+    }
+  }
+  &:nth-child(3) {
+    .optimization-process__step-index {
+      animation-delay: .9s;
+    }
+  }
+  &:nth-child(4) {
+    .optimization-process__step-index {
+      animation-delay: 1.2s;
+    }
+  }
+}
+.optimization-process__step:last-child {
+  padding-bottom: 0;
+}
+.optimization-process__step-index {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border: 1px solid $text-muted;
+  border-radius: 50%;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 16px;
+  color: var(--text-secondary);
+  opacity: 0.5;
+  transition: border-color 0.35s ease, color 0.35s ease, opacity 0.35s ease, box-shadow 0.35s ease;
+  animation: changeState 4s ease infinite;
+}
+.optimization-process__step.is-active .optimization-process__step-index {
+  border-color: $orange;
+  color: $orange;
+  opacity: 1;
+  box-shadow: 0 0 18px rgba(255,255,255,0.04);
+}
+.optimization-process__step-code {
+  display: block;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: $orange;
+}
+.optimization-process__step-title {
+  margin: $extra-small 0 0;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+.optimization-process__step-text {
+  max-width: 500px;
+  margin: $extra-small 0 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+@media (max-width: $breakpoint-lower-middle) {
+  .optimization-process__intro {
+    position: static;
+  }
+  .optimization-process__step {
+    grid-template-columns: 56px 1fr;
+    gap: 20px;
+    min-height: 165px;
+  }
+  .optimization-process__step-index {
+    width: 56px;
+    height: 56px;
+  }
+  .optimization-process__line {
+    left: 27px;
+  }
+  .optimization-process__step-title {
+    font-size: 22px;
+  }
+}
+@media (max-width: $breakpoint-large-small) {
+  .optimization-process {
+    .scene-header {
+      position: static;
+    }
+  }
+  .optimization-process__step {
+    grid-template-columns: 48px 1fr;
+    gap: 16px;
+  }
+  .optimization-process__step-index {
+    width: 48px;
+    height: 48px;
+  }
+  .optimization-process__step-content {
+    padding-top: 3px;
+  }
+  .optimization-process__step-title {
+    font-size: 20px;
+  }
+  .optimization-process__step-text {
+    font-size: 13px;
+  }
+  .optimization-process__line {
+    left: 23px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .optimization-process__step-index {
+    transition: none;
+  }
+}

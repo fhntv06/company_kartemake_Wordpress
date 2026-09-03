@@ -1,0 +1,89 @@
+@use "../../variables/colors" as *;
+@use "../../variables/fonts" as *;
+@use "../../variables/offsets" as *;
+@use "../../variables/media" as *;
+@use "../../variables/root" as *;
+@use "../../system/mixins" as *;
+
+/* =====================================================
+     SCENE 05 — SCOPE
+  ===================================================== */
+.optimization-scope__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid $text-muted;
+  border-left: 1px solid $text-muted;
+}
+.optimization-scope__card {
+  min-height: 300px;
+  padding: $small;
+  border-right: 1px solid $text-muted;
+  border-bottom: 1px solid $text-muted;
+  transition: background-color 0.3s ease;
+}
+.optimization-scope__card:hover {
+  background: var(--surface-color, rgba(255,255,255,0.02));
+}
+.optimization-scope__card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 8px;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+}
+.optimization-scope__card-top p:last-child {
+  color: $orange;
+}
+.optimization-scope__card h3 {
+  margin: $middle 0 0;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+.optimization-scope__card ul {
+  display: flex;
+  flex-direction: column;
+  gap: $extra-small;
+  margin: $extra-small 0 0;
+  padding: 0;
+  list-style: none;
+}
+.optimization-scope__card li {
+  position: relative;
+  padding-left: 15px;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--text-secondary);
+}
+.optimization-scope__card li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 5px;
+  height: 1px;
+  background: $orange;
+}
+@media (max-width: $breakpoint-lower-middle) {
+  .optimization-scope__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: $breakpoint-extra-small) {
+  .optimization-scope__grid {
+    grid-template-columns: 1fr;
+    margin-top: 60px;
+  }
+}
+@media (max-width: $breakpoint-large-small) {
+  .optimization-scope__card {
+    min-height: auto;
+    padding: 22px;
+  }
+  .optimization-scope__card h3 {
+    margin-top: 40px;
+  }
+}

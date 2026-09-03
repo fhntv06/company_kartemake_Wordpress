@@ -1,0 +1,251 @@
+@use "../../variables/colors" as *;
+@use "../../variables/fonts" as *;
+@use "../../variables/offsets" as *;
+@use "../../variables/media" as *;
+@use "../../variables/root" as *;
+@use "../../system/mixins" as *;
+
+/* =====================================================
+     SCENE 01 — HERO
+  ===================================================== */
+.optimization-hero__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(480px, 0.9fr);
+  align-items: center;
+  gap: $large;
+}
+.optimization-hero__status {
+  display: inline-flex;
+  align-items: center;
+  gap: $extra-small;
+  margin-top: $small;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+.optimization-hero__status .status-indicator {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: $orange;
+  box-shadow: 0 0 12px $orange;
+}
+/* -----------------------------------------------------
+     HERO SYSTEM PANEL
+  ----------------------------------------------------- */
+.optimization-system {
+  position: relative;
+  width: 100%;
+  border: 1px solid $text-muted;
+  overflow: hidden;
+}
+.optimization-system::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent 0, transparent calc(100% - 1px), $text-muted calc(100% - 1px), $text-muted 100%);
+  opacity: 0.3;
+}
+.optimization-system__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 48px;
+  padding: 0 $extra-small;
+  border-bottom: 1px solid $text-muted;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+}
+.optimization-system__live {
+  display: inline-flex;
+  align-items: center;
+  gap: $extra-small;
+  color: $orange;
+}
+.optimization-system__live i {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+  animation: optimization-live-pulse 1.8s ease-in-out infinite;
+}
+.optimization-system__metrics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.optimization-system__metric {
+  min-height: 120px;
+  padding: $extra-small;
+  border-right: 1px solid $text-muted;
+  border-bottom: 1px solid $text-muted;
+}
+.optimization-system__metric:nth-child(2n) {
+  border-right: 0;
+}
+.optimization-system__metric:nth-last-child(-n+2) {
+  border-bottom: 0;
+}
+.optimization-system__metric-label {
+  display: block;
+  margin-bottom: $extra-small;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+}
+.optimization-system__metric-value {
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+.optimization-system__metric-unit {
+  margin-left: calc($extra-small / 2);
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 24px;
+  color: var(--text-secondary);
+}
+.optimization-system__chart {
+  position: relative;
+  min-height: 190px;
+  padding: 18px;
+  border-top: 1px solid $text-muted;
+  overflow: hidden;
+}
+.optimization-system__chart-header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+}
+.optimization-system__chart-grid {
+  position: absolute;
+  inset: 46px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.optimization-system__chart-grid span {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: $text-muted;
+  opacity: 0.5;
+}
+.optimization-system__chart-line {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 34px;
+  height: 105px;
+  overflow: hidden;
+}
+.optimization-system__chart-line::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(155deg, transparent 0 8%, $orange 8% 9%, transparent 9% 18%, $orange 18% 19%, transparent 19% 28%, $orange 28% 29%, transparent 29% 38%, $orange 38% 39%, transparent 39% 48%, $orange 48% 49%, transparent 49% 58%, $orange 58% 59%, transparent 59% 68%, $orange 68% 69%, transparent 69% 78%, $orange 78% 79%, transparent 79%);
+  opacity: 0.15;
+}
+.optimization-system__chart-line span {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 20px;
+  height: 1px;
+  background: $orange;
+  transform-origin: left center;
+  transform: rotate(-4deg);
+  box-shadow: 0 0 8px $orange;
+}
+.optimization-system__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 44px;
+  padding: 0 $extra-small;
+  border-top: 1px solid $text-muted;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+}
+.optimization-system__footer strong {
+  color: $orange;
+  font-weight: 400;
+}
+@media (max-width: $breakpoint-lower-middle) {
+  .optimization-hero__inner {
+    grid-template-columns: 1fr;
+    gap: 70px;
+  }
+  .optimization-hero__content {
+    max-width: 850px;
+  }
+}
+
+@media (max-width: $breakpoint-extra-small) {
+  .optimization-system__metric {
+    min-height: 105px;
+    padding: $extra-small;
+  }
+  .optimization-system__metric-value {
+    font-size: 28px;
+  }
+  .optimization-signals__grid {
+    grid-template-columns: 1fr;
+    margin-top: $middle;
+  }
+}
+
+@media (max-width: $breakpoint-large-small) {
+  .optimization-hero__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .optimization-hero__actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .optimization-system__header {
+    padding-inline: 13px;
+  }
+  .optimization-system__metric {
+    min-height: 92px;
+    padding: 13px;
+  }
+  .optimization-system__metric-label {
+    margin-bottom: 10px;
+    font-size: 7px;
+  }
+  .optimization-system__metric-value {
+    font-size: 23px;
+  }
+  .optimization-system__metric-unit {
+    font-size: 7px;
+  }
+  .optimization-system__chart {
+    min-height: 150px;
+    padding: 13px;
+  }
+  .optimization-system__footer {
+    padding-inline: 13px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .optimization-system__live i {
+    animation: none;
+  }
+}
