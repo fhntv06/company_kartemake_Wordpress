@@ -1,0 +1,17 @@
+@use "../variables/colors" as *;
+@use "../variables/fonts" as *;
+@use "../variables/offsets" as *;
+@use "../variables/media" as *;
+@use "../variables/root" as *;
+@use "../system/mixins" as *;
+
+// =====================================================
+// СЦЕНЫ
+// =====================================================
+@use '../scenes/optimization/optimization-hero';
+@use '../scenes/optimization/optimization-map';
+@use '../scenes/optimization/optimization-process';
+@use '../scenes/optimization/optimization-results';
+@use '../scenes/optimization/optimization-scope';
+@use '../scenes/optimization/optimization-signals';
+@use '../scenes/optimization/optimization-cta';
