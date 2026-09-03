@@ -1,15 +1,10 @@
 // =====================================================
 // КОМПОНЕНТЫ
 // =====================================================
-@use '../components/orbit-navigation';
 @use '../components/terminal';
-@use '../components/canvas';
-@use '../components/contact-info';
-
 // =====================================================
 // СЦЕНЫ
 // =====================================================
-@use '../scenes/global/hero';
 @use '../scenes/home/solutions';
 @use '../scenes/home/architecture';
 @use '../scenes/home/pipeline';

@@ -6,16 +6,8 @@
 @use "../system/mixins" as *;
 
 // =====================================================
-// КОМПОНЕНТЫ
-// =====================================================
-@use '../components/canvas';
-@use '../components/orbit-navigation';
-@use '../components/contact-info';
-
-// =====================================================
 // СЦЕНЫ
 // =====================================================
-@use '../scenes/global/hero';
 @use '../scenes/support/support-hero';
 @use '../scenes/support/support-format';
 @use '../scenes/support/support-operating';

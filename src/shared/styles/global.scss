@@ -31,8 +31,16 @@
 @use './components/buttons';
 @use './components/transition-loader';
 @use './components/cta';
+@use './components/canvas';
+@use './components/orbit-navigation';
+@use './components/contact-info';
 
 // =====================================================
 // ОВЕРЛЕИ
 // =====================================================
 @use './overlays/scene-transition';
+
+// =====================================================
+// СЦЕНЫ
+// =====================================================
+@use './scenes/global/hero';

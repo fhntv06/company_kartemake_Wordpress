@@ -11,16 +11,8 @@
 @use "../system/mixins" as *;
 
 // =====================================================
-// КОМПОНЕНТЫ
-// =====================================================
-@use '../components/canvas';
-@use '../components/orbit-navigation';
-@use '../components/contact-info';
-
-// =====================================================
 // СЦЕНЫ
 // =====================================================
-@use '../scenes/global/hero';
 @use '../scenes/contacts/contacts-hero';
 @use '../scenes/contacts/contacts-channels';
 @use '../scenes/contacts/contacts-request';

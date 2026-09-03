@@ -1,4 +1,4 @@
-import "../shared/styles/common.scss"
+import "../shared/styles/global.scss"
 
 import ScrollEngine from "./core/scroll-engine.js"
 import GSAPEngine from "./core/gsap-engine.js";

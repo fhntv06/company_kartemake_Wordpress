@@ -10,11 +10,6 @@
 @use '../variables/media' as *;
 @use '../system/mixins' as *;
 
-// =====================================================
-// КОМПОНЕНТЫ
-// =====================================================
-@use '../components/canvas';
-
 /* ----- POLICY HEADER ----- */
 .policy-header {
   margin-bottom: $middle;
