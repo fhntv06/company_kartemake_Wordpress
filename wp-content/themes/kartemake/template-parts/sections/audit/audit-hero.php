@@ -7,7 +7,7 @@
                 <h1>Понимаем, <span>что происходит с вашей системой</span></h1>
                 <p>Технический аудит помогает увидеть реальное состояние цифровой системы, найти слабые места и определить, что действительно требует изменений.</p>
                 <div class="hero-actions">
-                    <a href="contacts.html" class="button-primary">
+                    <a href="/contacts/" class="button-primary">
                         ЗАКАЗАТЬ АУДИТ
                     </a>
                     <a href="#audit-map" class="button-secondary">

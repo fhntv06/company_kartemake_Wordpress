@@ -24,7 +24,7 @@
             <h3 class="cta-block__title">Давайте разберём,<br>что пора изменить.</h3>
             <p class="cta-block__text">Начнём с текущего состояния системы и определим технические изменения, которые действительно нужны бизнесу.</p>
             <div class="cta-block__action">
-                <a href="contacts.html" class="button-primary">ОБСУДИТЬ МОДЕРНИЗАЦИЮ</a>
+                <a href="/contacts/" class="button-primary">ОБСУДИТЬ МОДЕРНИЗАЦИЮ</a>
             </div>
         </div>
         <!-- CONTACT INFORMATION -->

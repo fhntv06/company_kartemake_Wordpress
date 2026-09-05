@@ -8,7 +8,7 @@
             <p>Соберите необходимый набор услуг — от разовой задачи до комплексного технического сопровождения проекта.</p>
             <div class="hero-note">DEVELOPMENT · SUPPORT · AUDIT · INFRASTRUCTURE</div>
             <div class="hero-actions">
-                <button class="button-primary">Начать расчёт</button>
+                <a href="#calculator" class="button-primary">Начать расчёт</a>
             </div>
         </div>
     </div>

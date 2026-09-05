@@ -63,8 +63,8 @@
                 </div>
                 <div class="services-wheel-detail is-active" data-service-detail="support">
                     <span class="services-wheel-detail__eyebrow">TECHNICAL SUPPORT</span>
-                    <h4 class="services-wheel-detail__title">Техническая поддержка</h4>
-                    <p class="services-wheel-detail__description">Берём на себя постоянную эксплуатацию сайта, приложения и инфраструктуры: мониторинг, исправление ошибок, резервное копирование, серверы и текущие технические задачи.</p>
+                    <h4 class="services-wheel-detail__title">Технические услуги в одной системе</h4>
+                    <p class="services-wheel-detail__description">Мы оказываем услуги для бизнеса по четырём направлениям: техническая поддержка, оптимизация, модернизация и аудит цифровых систем.</p>
                     <div class="services-wheel-detail__footer">
                         <div class="services-wheel-detail__price">
                             <span>ОТ</span>
@@ -80,7 +80,7 @@
                 </div>
                 <div class="services-wheel-detail" data-service-detail="optimization">
                     <span class="services-wheel-detail__eyebrow">PERFORMANCE / OPTIMIZATION</span>
-                    <h4 class="services-wheel-detail__title">Оптимизация</h4>
+                    <h4 class="services-wheel-detail__title">Оптимизация сайта</h4>
                     <p class="services-wheel-detail__description">Находим технические узкие места и устраняем причины проблем с производительностью, скоростью и стабильностью системы.</p>
                     <div class="services-wheel-detail__footer">
                         <div class="services-wheel-detail__price">
@@ -96,8 +96,8 @@
                 </div>
                 <div class="services-wheel-detail" data-service-detail="modernization">
                     <span class="services-wheel-detail__eyebrow">SYSTEM / MODERNIZATION</span>
-                    <h4 class="services-wheel-detail__title">Модернизация</h4>
-                    <p class="services-wheel-detail__description">Обновляем существующие системы без необходимости переписывать всё с нуля: миграция, рефакторинг, обновление технологий и архитектуры.</p>
+                    <h4 class="services-wheel-detail__title">Технический аудит сайта и инфраструктуры</h4>
+                    <p class="services-wheel-detail__description">Исследуем архитектуру, инфраструктуру, безопасность и производительность, чтобы определить реальные проблемы и приоритетные изменения.</p>
                     <div class="services-wheel-detail__footer">
                         <div class="services-wheel-detail__price">
                             <span>ОТ</span>

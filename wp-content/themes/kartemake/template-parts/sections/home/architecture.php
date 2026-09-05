@@ -94,11 +94,17 @@
             </article>
         </div>
 
-        <!-- ARCHITECTURE RESULT -->
-        <div class="architecture-result">
-            <span>ЧТО ЭТО ДАЁТ БИЗНЕСУ</span>
-            <p>Одна техническая команда отвечает за всю цепочку — от сервера до интерфейса пользователя.</p>
-            <button class="button-primary" data-modal-func="open">Обсудить задачу</button>
-        </div>
+      <!-- ARCHITECTURE RESULT -->
+      <div class="cta-block">
+        <span class="cta-block__eyebrow">
+          ЧТО ЭТО ДАЁТ БИЗНЕСУ
+        </span>
+        <p class="cta-block__text">
+          Одна техническая команда отвечает за всю цепочку — от сервера до интерфейса пользователя.
+        </p>
+        <button class="button-primary cta-block__button" data-modal-func="open">
+          Обсудить задачу
+        </button>
+      </div>
     </div>
 </section>

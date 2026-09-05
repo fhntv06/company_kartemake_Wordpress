@@ -9,22 +9,22 @@
             </div>
             <div class="services-partnership__system reveal-item">
                 <div class="services-partnership__flow">
-                    <a href="audit.html" class="services-partnership__flow-item">
+                    <a href="/audit/" class="services-partnership__flow-item">
                         <span>01</span>
                         <strong>AUDIT</strong>
                         <small>UNDERSTAND</small>
                     </a>
-                    <a href="optimization.html" class="services-partnership__flow-item">
+                    <a href="/optimization/" class="services-partnership__flow-item">
                         <span>02</span>
                         <strong>OPTIMIZATION</strong>
                         <small>IMPROVE</small>
                     </a>
-                    <a href="modernization.html" class="services-partnership__flow-item">
+                    <a href="/modernization/" class="services-partnership__flow-item">
                         <span>03</span>
                         <strong>MODERNIZATION</strong>
                         <small>DEVELOP</small>
                     </a>
-                    <a href="support.html" class="services-partnership__flow-item">
+                    <a href="/support/" class="services-partnership__flow-item">
                         <span>04</span>
                         <strong>SUPPORT</strong>
                         <small>MAINTAIN</small>

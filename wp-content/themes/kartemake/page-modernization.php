@@ -7,7 +7,7 @@
 get_header();
 get_template_part('template-parts/global/orbit-navigation');
 ?>
-<main class="experience support-page">
+<main class="experience modernization-page">
 
   <!-- SUPPORT HERO -->
   <?php get_template_part('template-parts/sections/modernization/modernization-hero') ?>

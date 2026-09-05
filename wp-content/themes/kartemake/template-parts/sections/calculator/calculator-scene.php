@@ -1,4 +1,4 @@
-<section class="scene calculator" data-scene="calculator-scene" data-calculator>
+<section id="calculator" class="scene calculator" data-scene="calculator-scene" data-calculator>
     <div class="scene-container">
         <!-- ====================================================
         HEADER
