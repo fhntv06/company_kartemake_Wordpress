@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>K·ART·MAKE — Техническая команда для вашей цифровой инфраструктуры</title>
+  <meta name="description" content="Техническая поддержка, модернизация и развитие цифровой инфраструктуры бизнеса. Берём на себя стабильность вашего сайта.">
+</head>
+<body>
+<!-- =================================================
+SYSTEM LOADER
+================================================= -->
+<div class="system-loader">
+  <div class="loader-terminal">
+    <span>ЗАПУСК СИСТЕМЫ K·ART·MAKE</span>
+    <div class="loader-progress">
+      <div></div>
+    </div>
+  </div>
+</div>
+<!-- =================================================
+ORBIT NAVIGATION
+================================================= -->
+<div id="orbit-navigation" class="orbit-navigation">
+  <div class="orbit-circle">
+    <button class="orbit-point" data-scene="hero">
+      <span class="orbit-point__description">Начало</span>
+      <span></span>
+      <strong>01</strong>
+    </button>
+    <button class="orbit-point" data-scene="audit-signals">
+      <span class="orbit-point__description">Проблемы системы</span>
+      <span></span>
+      <strong>02</strong>
+    </button>
+    <button class="orbit-point" data-scene="audit-map">
+      <span class="orbit-point__description">Проверка системы</span>
+      <span></span>
+      <strong>03</strong>
+    </button>
+    <button class="orbit-point" data-scene="audit-process">
+      <span class="orbit-point__description">Процесс</span>
+      <span></span>
+      <strong>04</strong>
+    </button>
+    <button class="orbit-point" data-scene="audit-report">
+      <span class="orbit-point__description">Картина системы</span>
+      <span></span>
+      <strong>05</strong>
+    </button>
+    <button class="orbit-point" data-scene="audit-pricing">
+      <span class="orbit-point__description">Стоимость</span>
+      <span></span>
+      <strong>06</strong>
+    </button>
+    <button class="orbit-point" data-scene="audit-cta">
+      <span class="orbit-point__description">С чего начать?</span>
+      <span></span>
+      <strong>07</strong>
+    </button>
+  </div>
+</div>
+<!-- =================================================
+GLOBAL DASHBOARD
+================================================= -->
+<header id="header" class="global-dashboard">
+  <div class="dashboard-inner">
+    <a href="/" class="dashboard-brand">K·ART·MAKE</a>
+    <div class="dashboard-status">
+      <span class="dashboard-status-dot"></span>
+      СИСТЕМА РАБОТАЕТ
+    </div>
+    <button class="dashboard-menu" type="button" aria-expanded="false" aria-controls="dashboard-menu-panel">
+      <span class="dashboard-menu-label">МЕНЮ</span>
+      <span class="dashboard-menu-icon">
+        <span></span>
+        <span></span>
+      </span>
+    </button>
+  </div>
+  <div id="dashboard-menu-panel" class="dashboard-menu-panel" aria-hidden="true">
+    <div class="dashboard-menu-panel-inner">
+      <!-- CONTACTS -->
+      <div class="dashboard-menu-column">
+        <span class="dashboard-menu-title">КОНТАКТЫ</span>
+        <a href="mailto:hello@kartemake.ru">
+          <span>НОВЫЕ ПРОЕКТЫ</span>
+          <strong>hello@kartemake.ru</strong>
+        </a>
+        <a href="mailto:support@kartemake.ru">
+          <span>ТЕХНИЧЕСКАЯ ПОДДЕРЖКА</span>
+          <strong>support@kartemake.ru</strong>
+        </a>
+      </div>
+      <!-- SERVICES -->
+      <div class="dashboard-menu-column">
+        <span class="dashboard-menu-title">УСЛУГИ</span>
+        <a href="./optimization.html">
+          <span>01</span>
+          <strong>Оптимизация сайта</strong>
+        </a>
+        <a href="./modernization.html">
+          <span>02</span>
+          <strong>Модернизация</strong>
+        </a>
+        <a href="./support.html">
+          <span>03</span>
+          <strong>Техническая поддержка</strong>
+        </a>
+        <a href="./audit.html">
+          <span>04</span>
+          <strong>Аудит и консультации</strong>
+        </a>
+      </div>
+      <!-- INFORMATION -->
+      <div class="dashboard-menu-column">
+        <span class="dashboard-menu-title">ИНФОРМАЦИЯ</span>
+        <a href="./about.html">О Компании</a>
+        <a href="./privacy-policy.html">Политика обработки персональных данных</a>
+        <a href="./cookie-policy.html">Политика использования Cookie</a>
+      </div>
+    </div>
+  </div>
+</header>
+<main class="audit-page">
+  <!-- =========================================================
+       01 / AUDIT — HERO
+  ========================================================== -->
+  <section class="scene scene-hero" data-scene="hero" data-canvas-engine>
+    <canvas id="heroCanvas" class="hero-canvas" aria-hidden="true"></canvas>
+    <div class="scene-container">
+      <div class="audit-hero__content reveal-item">
+        <div class="hero-content">
+          <div class="system-label">K·ART·MAKE / AUDIT</div>
+          <h1>Понимаем, <span>что происходит с вашей системой</span></h1>
+          <p>Технический аудит помогает увидеть реальное состояние цифровой системы, найти слабые места и определить, что действительно требует изменений.</p>
+          <div class="hero-actions">
+            <a href="contacts.html" class="button-primary">
+              ЗАКАЗАТЬ АУДИТ
+            </a>
+            <a href="#audit-map" class="button-secondary">
+              ЧТО МЫ ПРОВЕРЯЕМ
+            </a>
+          </div>
+        </div>
+        <div class="audit-dashboard reveal-item">
+            <div class="audit-dashboard__header">
+              <span class="audit-dashboard__label">
+                  SYSTEM AUDIT
+              </span>
+              <span class="audit-dashboard__status">
+                ANALYSIS
+              </span>
+            </div>
+            <div class="audit-dashboard__grid">
+              <div class="audit-dashboard__item">
+              <span class="audit-dashboard__item-label">
+                APPLICATION
+              </span>
+                <strong class="audit-dashboard__item-value">
+                  ANALYZING
+                </strong>
+              </div>
+              <div class="audit-dashboard__item">
+                <span class="audit-dashboard__item-label">
+                  INFRASTRUCTURE
+                </span>
+                <strong class="audit-dashboard__item-value">
+                  CHECKING
+                </strong>
+              </div>
+              <div class="audit-dashboard__item">
+                <span class="audit-dashboard__item-label">
+                  DATABASE
+                </span>
+                <strong class="audit-dashboard__item-value">
+                  SCANNING
+                </strong>
+              </div>
+              <div class="audit-dashboard__item">
+                <span class="audit-dashboard__item-label">
+                  SECURITY
+                </span>
+                <strong class="audit-dashboard__item-value">
+                  REVIEW
+                </strong>
+              </div>
+            </div>
+            <div class="audit-dashboard__progress">
+              <div class="audit-dashboard__progress-bar">
+                <span></span>
+              </div>
+              <div class="audit-dashboard__progress-meta">
+                <span>TECHNICAL ANALYSIS</span>
+                <span>IN PROGRESS</span>
+              </div>
+            </div>
+            <div class="audit-dashboard__footer">
+              <span>
+                ISSUES DETECTED
+                <strong>—</strong>
+              </span>
+              <span>
+                RISK LEVEL
+                <strong>UNKNOWN</strong>
+              </span>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>
+  <!-- =========================================================
+       02 / SIGNALS — PROBLEM
+  ========================================================== -->
+  <section class="scene" data-scene="audit-signals">
+    <div class="scene-container">
+      <header class="scene-header reveal-item">
+        <span class="scene-eyebrow">02 / SIGNALS</span>
+        <h2 class="scene-title">
+          Проблемы системы <span>не всегда очевидны</span>
+        </h2>
+        <p class="scene-description">
+          Система может продолжать работать, пока технические проблемы постепенно увеличивают стоимость разработки, поддержки и изменений.
+        </p>
+      </header>
+      <div class="audit-signals__grid reveal-item">
+        <article class="audit-signal">
+          <span class="audit-signal__index">01</span>
+          <div class="audit-signal__body">
+            <span class="audit-signal__label">
+              PERFORMANCE
+            </span>
+            <h5 class="audit-signal__title">
+              Система работает медленнее, чем должна.
+            </h5>
+            <p class="audit-signal__description">
+              Долгие ответы сервера, тяжёлые запросы, неоптимальный frontend или инфраструктура.
+            </p>
+          </div>
+        </article>
+        <article class="audit-signal">
+          <span class="audit-signal__index">02</span>
+          <div class="audit-signal__body">
+            <span class="audit-signal__label">
+              STABILITY
+            </span>
+            <h5 class="audit-signal__title">
+              Ошибки появляются без понятной причины.
+            </h5>
+            <p class="audit-signal__description">
+              Сбои, нестабильная работа сервисов и отсутствие прозрачной диагностики.
+            </p>
+          </div>
+        </article>
+        <article class="audit-signal">
+          <span class="audit-signal__index">03</span>
+          <div class="audit-signal__body">
+            <span class="audit-signal__label">
+              LEGACY
+            </span>
+            <h5 class="audit-signal__title">
+              Старые решения начинают мешать развитию.
+            </h5>
+            <p class="audit-signal__description">
+              Устаревший код, зависимости и архитектурные решения усложняют дальнейшие изменения.
+            </p>
+          </div>
+        </article>
+        <article class="audit-signal">
+          <span class="audit-signal__index">04</span>
+          <div class="audit-signal__body">
+            <span class="audit-signal__label">
+              SECURITY
+            </span>
+            <h5 class="audit-signal__title">
+              Риски существуют, но никто их не измерял.
+            </h5>
+            <p class="audit-signal__description">
+              Уязвимые компоненты, неправильные настройки, доступы и потенциальные точки отказа.
+            </p>
+          </div>
+        </article>
+        <article class="audit-signal">
+          <span class="audit-signal__index">05</span>
+          <div class="audit-signal__body">
+            <span class="audit-signal__label">
+              INFRASTRUCTURE
+            </span>
+            <h5 class="audit-signal__title">
+              Инфраструктура работает, но непонятно насколько эффективно.
+            </h5>
+            <p class="audit-signal__description">
+              Серверы, сеть, deployment и окружения требуют системной оценки.
+            </p>
+          </div>
+        </article>
+        <article class="audit-signal">
+          <span class="audit-signal__index">06</span>
+          <div class="audit-signal__body">
+            <span class="audit-signal__label">
+              TECH DEBT
+            </span>
+            <h5 class="audit-signal__title">
+              Технический долг становится бизнес-проблемой.
+            </h5>
+            <p class="audit-signal__description">
+              Каждое следующее изменение требует всё больше времени, ресурсов и осторожности.
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+  <!-- =========================================================
+       03 / AUDIT MAP — WHAT WE CHECK
+  ========================================================== -->
+  <section id="audit-map" class="scene audit-map" data-scene="audit-map">
+    <div class="scene-container">
+      <header class="scene-header reveal-item">
+        <span class="scene-eyebrow">03 / AUDIT MAP</span>
+        <h2 class="scene-title">
+          Проверяем систему <span>целиком</span>
+        </h2>
+        <p class="scene-description">
+          Смотрим не только на отдельный сайт или приложение, а на технический контур, от которого зависит его работа.
+        </p>
+      </header>
+      <div class="audit-map__content reveal-item">
+        <div class="audit-map__nodes">
+          <article class="audit-map__node audit-map__node--application reveal-item">
+            <span class="audit-map__node-number">01</span>
+            <div>
+                            <span class="audit-map__node-label">
+                                APPLICATION
+                            </span>
+              <p>
+                Архитектура, код, зависимости,
+                модули и точки отказа.
+              </p>
+            </div>
+          </article>
+          <article class="audit-map__node audit-map__node--infrastructure reveal-item">
+            <span class="audit-map__node-number">02</span>
+            <div>
+                            <span class="audit-map__node-label">
+                                INFRASTRUCTURE
+                            </span>
+              <p>
+                Серверы, окружения, deployment,
+                сеть и ресурсы.
+              </p>
+            </div>
+          </article>
+          <article class="audit-map__node audit-map__node--database reveal-item">
+            <span class="audit-map__node-number">03</span>
+            <div>
+                            <span class="audit-map__node-label">
+                                DATABASE
+                            </span>
+              <p>
+                Структура данных, запросы,
+                индексы и нагрузка.
+              </p>
+            </div>
+          </article>
+          <article class="audit-map__node audit-map__node--security reveal-item">
+            <span class="audit-map__node-number">04</span>
+            <div>
+                            <span class="audit-map__node-label">
+                                SECURITY
+                            </span>
+              <p>
+                Доступы, конфигурация,
+                уязвимости и риски.
+              </p>
+            </div>
+          </article>
+          <article class="audit-map__node audit-map__node--integrations reveal-item">
+            <span class="audit-map__node-number">05</span>
+            <div>
+                            <span class="audit-map__node-label">
+                                INTEGRATIONS
+                            </span>
+              <p>
+                Внешние сервисы, API,
+                обмен данными и зависимости.
+              </p>
+            </div>
+          </article>
+          <article class="audit-map__node audit-map__node--performance reveal-item">
+            <span class="audit-map__node-number">06</span>
+            <div>
+                            <span class="audit-map__node-label">
+                                PERFORMANCE
+                            </span>
+              <p>
+                Скорость, нагрузка,
+                узкие места и стабильность.
+              </p>
+            </div>
+          </article>
+        </div>
+        <div class="audit-map__core">
+          <div class="audit-map__core-ring"></div>
+          <div class="audit-map__core-content">
+            <span class="audit-map__core-label">
+              SYSTEM
+            </span>
+            <strong>
+              K·ART·MAKE
+            </strong>
+            <span class="audit-map__core-status">
+              TECHNICAL ANALYSIS
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- =========================================================
+       04 / PROCESS
+  ========================================================== -->
+  <section class="scene audit-process" data-scene="audit-process">
+    <div class="scene-container">
+      <header class="scene-header reveal-item">
+        <span class="scene-eyebrow">04 / PROCESS</span>
+        <h2 class="scene-title">
+          Сначала разбираемся. <span>Потом предлагаем решения</span>
+        </h2>
+        <p class="scene-description">
+          Аудит превращает набор технических проблем в понятную картину состояния системы и конкретный план действий.
+        </p>
+      </header>
+      <div class="audit-process__flow reveal-item">
+        <article class="audit-process__step">
+          <span class="audit-process__step-number">01</span>
+          <div class="audit-process__step-marker">
+            AUDIT
+          </div>
+          <h5>Собираем данные</h5>
+          <p>
+            Изучаем архитектуру, код, инфраструктуру, настройки, зависимости и текущие процессы.
+          </p>
+        </article>
+        <div class="audit-process__arrow">
+          ↓
+        </div>
+        <article class="audit-process__step">
+          <span class="audit-process__step-number">02</span>
+          <div class="audit-process__step-marker">
+            ANALYZE
+          </div>
+          <h5>Находим причины</h5>
+          <p>
+            Отделяем реальные проблемы от симптомов и определяем технические и бизнес-риски.
+          </p>
+        </article>
+        <div class="audit-process__arrow">
+          ↓
+        </div>
+        <article class="audit-process__step">
+          <span class="audit-process__step-number">03</span>
+          <div class="audit-process__step-marker">
+            REPORT
+          </div>
+          <h5>Формируем отчёт</h5>
+          <p>
+            Фиксируем состояние системы, найденные проблемы, риски и приоритеты.
+          </p>
+        </article>
+        <div class="audit-process__arrow">
+          ↓
+        </div>
+        <article class="audit-process__step">
+          <span class="audit-process__step-number">04</span>
+          <div class="audit-process__step-marker">
+            PLAN
+          </div>
+          <h5>
+            Определяем следующий шаг
+          </h5>
+          <p>
+            Формируем последовательность изменений и предлагаем оптимальный вариант дальнейшей работы.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+  <!-- =========================================================
+       05 / REPORT — RESULT
+  ========================================================== -->
+  <section class="scene audit-report" data-scene="audit-report">
+    <div class="scene-container">
+      <header class="scene-header reveal-item">
+        <span class="scene-eyebrow">05 / REPORT</span>
+        <h2 class="scene-title">
+          На выходе — <span>понятная картина системы</span>
+        </h2>
+        <p class="scene-description">
+          Вместо набора технических терминов вы получаете структурированное состояние системы и понимание, что делать дальше.
+        </p>
+      </header>
+      <div class="audit-report__grid reveal-item">
+        <article class="audit-report__item">
+          <span class="audit-report__number">01</span>
+          <div>
+            <span class="audit-report__label">
+              CURRENT STATE
+            </span>
+            <h5>
+              Что происходит сейчас
+            </h5>
+            <p>
+              Архитектура, инфраструктура, зависимости
+              и ключевые технические характеристики системы.
+            </p>
+          </div>
+        </article>
+        <article class="audit-report__item">
+          <span class="audit-report__number">02</span>
+          <div>
+            <span class="audit-report__label">
+              PROBLEMS
+            </span>
+            <h5>
+              Что работает неправильно
+            </h5>
+            <p>
+              Конкретные технические проблемы, их причины и потенциальные последствия.
+            </p>
+          </div>
+        </article>
+        <article class="audit-report__item">
+          <span class="audit-report__number">03</span>
+          <div>
+            <span class="audit-report__label">
+              RISKS
+            </span>
+            <h5>
+              Что может стать проблемой
+            </h5>
+            <p>
+              Риски отказов, роста нагрузки, безопасности и дальнейшего развития.
+            </p>
+          </div>
+        </article>
+        <article class="audit-report__item">
+          <span class="audit-report__number">04</span>
+          <div>
+            <span class="audit-report__label">
+              PRIORITIES
+            </span>
+            <h5>
+              Что нужно делать первым
+            </h5>
+            <p>
+              Приоритеты изменений с учётом влияния на стабильность, стоимость и развитие системы.
+            </p>
+          </div>
+        </article>
+        <article class="audit-report__item">
+          <span class="audit-report__number">05</span>
+          <div>
+            <span class="audit-report__label">
+              RECOMMENDATIONS
+            </span>
+            <h5>
+              Как это исправить
+            </h5>
+            <p>
+              Практические рекомендации по оптимизации, модернизации или дальнейшей эксплуатации.
+            </p>
+          </div>
+        </article>
+        <article class="audit-report__item">
+          <span class="audit-report__number">06</span>
+          <div>
+            <span class="audit-report__label">
+              NEXT STEP
+            </span>
+            <h5>
+              Куда двигаться дальше
+            </h5>
+            <p>
+              Понятный план следующих технических действий без необоснованной перестройки системы.
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+  <!-- =========================================================
+       06 / PRICING
+  ========================================================== -->
+  <section class="scene audit-pricing" data-scene="audit-pricing">
+    <div class="scene-container">
+      <header class="scene-header reveal-item">
+        <span class="scene-eyebrow">06 / PRICING</span>
+        <h2 class="scene-title">
+          Сначала понимаем проблему. <span>Потом определяем объём</span>
+        </h2>
+        <p class="scene-description">
+          Стоимость зависит от размера системы, количества компонентов и глубины необходимого анализа.
+        </p>
+      </header>
+      <div class="audit-pricing__grid reveal-item">
+        <article class="audit-price">
+          <div class="audit-price__header">
+            <span class="audit-price__index">01</span>
+            <span class="audit-price__type">
+              EXPRESS AUDIT
+            </span>
+          </div>
+          <div class="audit-price__price">
+            от 15 000 ₽
+          </div>
+          <p class="audit-price__description">
+            Быстрая техническая оценка конкретной проблемы или ограниченного участка системы.
+          </p>
+          <ul class="audit-price__list">
+            <li>Анализ конкретной проблемы</li>
+            <li>Поиск вероятной причины</li>
+            <li>Рекомендации по исправлению</li>
+          </ul>
+        </article>
+        <article class="audit-price audit-price--featured">
+          <div class="audit-price__header">
+            <span class="audit-price__index">02</span>
+            <span class="audit-price__type">
+              TECHNICAL AUDIT
+            </span>
+          </div>
+          <div class="audit-price__price">
+            от 30 000 ₽
+          </div>
+          <p class="audit-price__description">
+            Комплексный анализ технического состояния
+            цифровой системы.
+          </p>
+          <ul class="audit-price__list">
+            <li>Архитектура и код</li>
+            <li>Инфраструктура</li>
+            <li>База данных</li>
+            <li>Интеграции</li>
+            <li>Производительность</li>
+            <li>Технические риски</li>
+          </ul>
+        </article>
+        <article class="audit-price">
+          <div class="audit-price__header">
+            <span class="audit-price__index">03</span>
+            <span class="audit-price__type">
+              AUDIT + PLAN
+            </span>
+          </div>
+          <div class="audit-price__price">
+            от 45 000 ₽
+          </div>
+          <p class="audit-price__description">
+            Аудит системы с разработкой плана
+            модернизации или дальнейшего развития.
+          </p>
+          <ul class="audit-price__list">
+            <li>Полный технический аудит</li>
+            <li>Приоритизация проблем</li>
+            <li>План изменений</li>
+            <li>Оценка этапов работ</li>
+          </ul>
+        </article>
+      </div>
+      <p class="audit-pricing__note reveal-item">
+        Итоговая стоимость определяется после оценки масштаба
+        системы и необходимой глубины аудита.
+      </p>
+    </div>
+  </section>
+  <!-- =========================================================
+       07 / NEXT STEP — CTA
+  ========================================================== -->
+  <section class="scene audit-cta" data-scene="audit-cta">
+    <div class="scene-container">
+      <header class="scene-header reveal-item">
+        <span class="scene-eyebrow">07 / NEXT STEP</span>
+        <h2 class="scene-title">
+          Не знаете, <span>с чего начать?</span>
+        </h2>
+        <p class="scene-description">
+          Опишите задачу своими словами. Разберём текущее состояние проекта и подскажем, какое направление будет оптимальным.
+        </p>
+      </header>
+      <div class="audit-cta__metrics reveal-item">
+          <div class="audit-cta__metric">
+            <strong>01</strong>
+            <span>UNDERSTAND</span>
+            <small>Понимаем систему</small>
+          </div>
+          <div class="audit-cta__metric">
+            <strong>02</strong>
+            <span>IDENTIFY</span>
+            <small>Находим проблемы</small>
+          </div>
+          <div class="audit-cta__metric">
+            <strong>03</strong>
+            <span>PLAN</span>
+            <small>Определяем действия</small>
+          </div>
+        </div>
+      <div class="cta-block reveal-item">
+        <span class="cta-block__eyebrow">AUDIT / K·ART·MAKE</span>
+        <h3 class="cta-block__title">Найдём, что тормозит вашу систему.</h3>
+        <p class="cta-block__text">Расскажите, что сейчас работает медленно, нестабильно или слишком дорого — разберём техническую причину и предложим следующий шаг.</p>
+        <button class="button-primary cta-block__button" data-modal-func="open">
+          <span>ОБСУДИТЬ АУДИТ</span>
+          <strong>↗</strong>
+        </button>
+      </div>
+      <!-- CONTACT INFORMATION -->
+      <div class="contact-info">
+        <div class="contact-info-item">
+          <span class="contact-info-label">НОВЫЕ ПРОЕКТЫ</span>
+          <a href="mailto:hello@kartemake.ru" class="contact-info-value">hello@kartemake.ru</a>
+          <span class="contact-info-description">Обсудить новый проект, разработку или модернизацию.</span>
+        </div>
+        <div class="contact-info-item">
+          <span class="contact-info-label">ТЕХНИЧЕСКАЯ ПОДДЕРЖКА</span>
+          <a href="mailto:support@kartemake.ru" class="contact-info-value">support@kartemake.ru</a>
+          <span class="contact-info-description">Техническая поддержка и сопровождение.</span>
+        </div>
+        <div class="contact-info-item">
+          <span class="contact-info-label">ОТВЕТ</span>
+          <span class="contact-info-value">В ТЕЧЕНИЕ 1 ДНЯ</span>
+          <span class="contact-info-description">Получаем запрос и связываемся для обсуждения задачи.</span>
+        </div>
+        <div class="contact-info-item">
+          <span class="contact-info-label">TELEGRAM</span>
+          <a href="https://t.me/KArtech76" class="contact-info-value">@KArtech76</a>
+        </div>
+        <div class="contact-info-item">
+          <span class="contact-info-label">ВКОНТАКТЕ</span>
+          <a href="https://vk.ru/kartemake" class="contact-info-value">vk.com/kartemake</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================
+  FOOTER
+  ================================================= -->
+  <section>
+  <div class="scene-container">
+  <!-- =================================================
+  FOOTER
+  ================================================= -->
+  <footer class="contact-footer">
+    <!-- FOOTER BRAND -->
+    <div class="contact-footer-brand">
+      <a href="/" class="contact-footer-logo" aria-label="K·ART·MAKE">K·ART·MAKE</a>
+      <p>Технический партнёр для вашего бизнеса.</p>
+    </div>
+    <!-- FOOTER NAVIGATION -->
+    <nav class="contact-footer-nav" aria-label="Навигация по сайту">
+      <div class="contact-footer-column">
+        <span class="contact-footer-title">УСЛУГИ</span>
+        <a href="optimization.html">Оптимизация сайта</a>
+        <a href="modernization.html">Модернизация</a>
+        <a href="support.html">Техническая поддержка</a>
+        <a href="audit.html">Аудит и консультации</a>
+      </div>
+      <div class="contact-footer-column">
+        <span class="contact-footer-title">ИНФОРМАЦИЯ</span>
+        <a href="./privacy-policy.html">Политика обработки персональных данных</a>
+        <a href="./cookie-policy.html">Политика использования Cookie</a>
+      </div>
+      <div class="contact-footer-column">
+        <span class="contact-footer-title">КОНТАКТЫ</span>
+        <a href="mailto:hello@kartemake.ru">hello@kartemake.ru</a>
+        <a href="mailto:support@kartemake.ru">support@kartemake.ru</a>
+        <a href="https://t.me/KArtech76">Telegram</a>
+        <a href="https://vk.ru/kartemake">VK</a>
+      </div>
+    </nav>
+    <!-- FOOTER BOTTOM -->
+    <div class="contact-footer-bottom">
+      <span>© 2026 K·ART·MAKE</span>
+      <span>ТЕХНИЧЕСКИЙ ПАРТНЁР</span>
+      <span>ВСЕ СИСТЕМЫ РАБОТАЮТ</span>
+    </div>
+  </footer>
+  </div>
+  </section>
+</main>
+<div id="cookie-banner" class="cookie-banner">
+  <div class="cookie-banner__wrapper">
+    <div class="cookie-banner__status">
+      <span class="cookie-banner__status-dot"></span>
+      <span>PRIVACY / COOKIE CONTROL</span>
+    </div>
+    <div class="cookie-banner__content">
+      <!-- STEP 1 -->
+      <section id="cookie-step-1" class="cookie-step cookie-step--active">
+        <div class="cookie-banner__header">
+          <p class="cookie-banner__description">Мы применяем cookies, чтобы сайт работал без сбоев и постоянно
+            становился для вас удобнее.</p>
+        </div>
+        <div class="cookie-banner__links">
+          <span>Подробнее:</span>
+          <a href="cookie-policy.html" target="_blank">использование cookie</a>
+          <a href="privacy-policy.html" target="_blank">обработка персональных данных</a>
+        </div>
+        <div class="cookie-banner__actions">
+          <button type="button" id="cookie-decline" class="cookie-button cookie-button--outline">Отклонить
+          </button>
+          <button type="button" id="cookie-accept" class="cookie-button cookie-button--accent">Принять
+          </button>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <!-- Закрытие -->
+    <div class="close-modal no-icon" data-modal-func="close"></div>
+
+    <!-- Заголовок -->
+    <div class="modal-header">
+      <h4>Хотите чтобы мы решили <span class="color-accent">ваш кейс</span>?</h4>
+      <p>Оставьте заявку и наш специалист свяжется с вами для обсуждения деталей вашего проекта</p>
+    </div>
+
+    <!-- Контейнер с гридом -->
+    <div class="form-container">
+
+      <!-- КОЛОНКА 1: КОНТАКТЫ (как в дашборде) -->
+      <div class="contact-modal__body">
+        <a href="mailto:hello@kartemake.ru" class="contact-modal__item">
+          <span class="contact-modal__item-label">НОВЫЕ ПРОЕКТЫ</span>
+          <strong class="contact-modal__item-value">hello@kartemake.ru</strong>
+        </a>
+        <a href="mailto:support@kartemake.ru" class="contact-modal__item">
+          <span class="contact-modal__item-label">ТЕХНИЧЕСКАЯ ПОДДЕРЖКА</span>
+          <strong class="contact-modal__item-value">support@kartemake.ru</strong>
+        </a>
+      </div>
+
+      <!-- КОЛОНКА 2: СОЦСЕТИ -->
+      <div class="contact-modal__body">
+        <a href="https://t.me/KArtech76" target="_blank" class="contact-modal__item">
+          <span class="contact-modal__item-label">TELEGRAM</span>
+          <strong class="contact-modal__item-value">@KArtech76</strong>
+        </a>
+        <a href="https://vk.ru/kartemake" target="_blank" class="contact-modal__item">
+          <span class="contact-modal__item-label">ВКОНТАКТЕ</span>
+          <strong class="contact-modal__item-value">vk.com/kartemake</strong>
+        </a>
+      </div>
+
+      <!-- КОЛОНКА 3: ИНФОРМАЦИЯ -->
+      <div class="contact-modal__body">
+        <a href="/privacy-policy" class="contact-modal__item">
+          <span class="contact-modal__item-label">ДОКУМЕНТЫ</span>
+          <strong class="contact-modal__item-value">Политика конфиденциальности</strong>
+        </a>
+        <!--        <a href="/personal-data-consent" class="contact-modal__item">-->
+        <!--          <span class="contact-modal__item-label">СОГЛАСИЕ</span>-->
+        <!--          <strong class="contact-modal__item-value">На обработку данных</strong>-->
+        <!--        </a>-->
+      </div>
+
+      <!-- ФУТЕР -->
+      <div class="contact-modal__footer">
+        <p class="contact-modal__footer-text">Напишите нам — мы ответим в течение 24 часов</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+</body>
+</html>

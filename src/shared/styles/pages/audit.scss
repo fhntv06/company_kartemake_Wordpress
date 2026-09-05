@@ -1,0 +1,22 @@
+// ============================================================
+// K·ART·MAKE
+// AUDIT PAGE
+// ============================================================
+
+@use "../variables/colors" as *;
+@use "../variables/fonts" as *;
+@use "../variables/offsets" as *;
+@use "../variables/media" as *;
+@use "../variables/root" as *;
+@use "../system/mixins" as *;
+
+// =====================================================
+// СЦЕНЫ
+// =====================================================
+@use '../scenes/audit/audit-hero';
+@use '../scenes/audit/audit-map';
+@use '../scenes/audit/audit-pricing';
+@use '../scenes/audit/audit-process';
+@use '../scenes/audit/audit-report';
+@use '../scenes/audit/audit-signals';
+@use '../scenes/audit/audit-cta';
