@@ -11,20 +11,6 @@
 .optimization-cta__content {
   max-width: 850px;
 }
-.optimization-cta__title {
-  margin: 28px 0 0;
-  font-size: clamp(48px, 6vw, 88px);
-  font-weight: 500;
-  line-height: 0.95;
-  letter-spacing: -0.055em;
-}
-.optimization-cta__description {
-  max-width: 650px;
-  margin-top: $small;
-  font-size: 16px;
-  line-height: 1.65;
-  color: var(--text-secondary);
-}
 .optimization-cta__results {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

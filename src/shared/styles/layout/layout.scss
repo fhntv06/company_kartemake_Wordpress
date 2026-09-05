@@ -38,11 +38,10 @@
   display: block;
   margin-bottom: $extra-small;
   font-family: "IBM Plex Mono", "Roboto Mono", monospace;
-  font-size: 11px;
-  line-height: 1;
+  font-size: 12px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  opacity: 0.55;
+  color: $text-secondary;
 }
 
 .scene-description {

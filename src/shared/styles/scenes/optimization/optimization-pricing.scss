@@ -44,6 +44,10 @@
 
 .optimization-pricing__card.is-featured {
   border-color: $orange;
+
+  .optimization-pricing__price-value {
+    color: $orange;
+  }
 }
 
 .optimization-pricing__card.is-featured::before {
@@ -51,7 +55,7 @@
   position: absolute;
   top: -1px;
   right: -1px;
-  padding: 7px 10px;
+  padding: calc($extra-small / 2);
   border-left: 1px solid $orange;
   border-bottom: 1px solid $orange;
   font-family: "IBM Plex Mono", "Roboto Mono", monospace;
@@ -110,10 +114,7 @@
 .optimization-pricing__price-value {
   display: inline-block;
   font-size: 44px;
-  font-weight: 500;
-  line-height: 1;
   letter-spacing: -0.03em;
-  color: $orange;
 }
 
 /* ---------------------------------------------------------
