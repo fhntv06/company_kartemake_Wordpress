@@ -116,6 +116,7 @@ function kartemake_enqueue_scripts() {
         || is_page('support') // TODO: уже уперся в проблему с разделением модулей
         || is_page('optimization')
         || is_page('modernization')
+        || is_page('audit')
     ) {
         wp_enqueue_script(
             'kartemake-js-pages-common',
@@ -298,6 +299,23 @@ function kartemake_enqueue_scripts() {
         wp_enqueue_style(
             'kartemake-style-optimization',
             get_template_directory_uri() . '/assets/css/modernization.build.css',
+            [],
+            wp_get_theme()->get('Version')
+        );
+    }
+    // Страница услуг
+    // modernization
+    if (is_page('audit') || is_page_template('page-audit.php')) {
+        wp_enqueue_script(
+            'kartemake-js-audit',
+            get_template_directory_uri() . '/assets/js/audit.build.js',
+            array('kartemake-js-global'),
+            wp_get_theme()->get('Version'),
+            true
+        );
+        wp_enqueue_style(
+            'kartemake-style-audit',
+            get_template_directory_uri() . '/assets/css/audit.build.css',
             [],
             wp_get_theme()->get('Version')
         );
