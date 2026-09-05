@@ -235,6 +235,24 @@ function kartemake_enqueue_scripts() {
         );
     }
 
+    // Страница Услуги
+    // services
+    if (is_page('services') || is_page_template('page-services.php')) {
+        wp_enqueue_script(
+            'kartemake-js-services',
+            get_template_directory_uri() . '/assets/js/services.build.js',
+            array('kartemake-js-global'),
+            wp_get_theme()->get('Version'),
+            true
+        );
+        wp_enqueue_style(
+            'kartemake-style-services',
+            get_template_directory_uri() . '/assets/css/services.build.css',
+            [],
+            wp_get_theme()->get('Version')
+        );
+    }
+
     // Отдельная запись
     if (is_single()) {
         wp_enqueue_script(
@@ -269,6 +287,7 @@ function kartemake_enqueue_scripts() {
             wp_get_theme()->get('Version')
         );
     }
+
     // Страница услуг
     // optimization
     if (is_page('optimization') || is_page_template('page-optimization.php')) {
@@ -286,6 +305,7 @@ function kartemake_enqueue_scripts() {
             wp_get_theme()->get('Version')
         );
     }
+
     // Страница услуг
     // modernization
     if (is_page('modernization') || is_page_template('page-modernization.php')) {
@@ -303,6 +323,7 @@ function kartemake_enqueue_scripts() {
             wp_get_theme()->get('Version')
         );
     }
+
     // Страница услуг
     // modernization
     if (is_page('audit') || is_page_template('page-audit.php')) {
