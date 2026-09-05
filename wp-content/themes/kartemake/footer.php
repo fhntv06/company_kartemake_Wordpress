@@ -66,6 +66,7 @@
                     <span>© 2026 K·ART·MAKE</span>
                     <span>ТЕХНИЧЕСКИЙ ПАРТНЁР</span>
                     <span>ВСЕ СИСТЕМЫ РАБОТАЮТ</span>
+                    <a href="https://webmaster.yandex.ru/siteinfo/?site=kartemake.ru"><img width="88" height="31" alt="" border="0" border-radius="8" src="https://yandex.ru/cycounter?kartemake.ru&theme=light&lang=ru"/></a>
                 </div>
             </footer>
         </div>
