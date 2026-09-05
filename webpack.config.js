@@ -40,6 +40,7 @@ function getChunks() {
     support: [...common, 'pages-common', 'support'],
     optimization: [...common, 'pages-common', 'optimization'],
     modernization: [...common, 'pages-common', 'modernization'],
+    audit: [...common, 'pages-common', 'audit'],
   }
 }
 
@@ -67,6 +68,7 @@ module.exports = (env, argv) => {
       support: './src/app/pages/support/support-entry.js',
       optimization: './src/app/pages/optimization/optimization-entry.js',
       modernization: './src/app/pages/modernization/modernization-entry.js',
+      audit: './src/app/pages/audit/audit-entry.js',
     },
 
     output: {
