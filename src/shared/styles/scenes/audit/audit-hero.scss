@@ -1,0 +1,154 @@
+@use '../../variables/colors' as *;
+@use '../../variables/offsets' as *;
+@use '../../system/mixins' as *;
+@use '../../variables/media' as *;
+
+.audit-hero__content {
+  align-items: center;
+  display: grid;
+  grid-template-columns: minmax(0, 1200px) minmax(360px, 0.85fr);
+  gap: $middle;
+}
+.audit-dashboard {
+  position: relative;
+  width: 100%;
+  padding: $extra-small;
+  border: 1px solid $text-muted;
+  background: $surface;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  &__header,
+  &__footer,
+  &__progress-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $extra-small;
+  }
+  &__header {
+    padding-bottom: $extra-small;
+    border-bottom: 1px solid $text-muted;
+  }
+  &__label {
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    color: $text-secondary;
+  }
+  &__status {
+    display: inline-flex;
+    align-items: center;
+    gap: $extra-small;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    color: $orange;
+
+    &::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: currentColor;
+      box-shadow: 0 0 10px currentColor;
+    }
+  }
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: $small;
+    border-top: 1px solid $text-muted;
+    border-left: 1px solid $text-muted;
+  }
+  &__item {
+    min-height: 120px;
+    padding: $extra-small;
+    border-right: 1px solid $text-muted;
+    border-bottom: 1px solid $text-muted;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: $small;
+  }
+  &__item-label {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    color: $text-muted;
+  }
+  &__item-value {
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: $orange;
+  }
+  &__progress {
+    margin-top: $small;
+  }
+  &__progress-bar {
+    width: 100%;
+    height: 2px;
+    overflow: hidden;
+    background: $text-muted;
+    span {
+      display: block;
+      width: 35%;
+      height: 100%;
+      background: $orange;
+    }
+  }
+  &__progress-meta {
+    margin-top: $extra-small;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: $text-muted;
+  }
+  &__footer {
+    margin-top: $small;
+    padding-top: $extra-small;
+    border-top: 1px solid $text-muted;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: $text-muted;
+
+    strong {
+      margin-left: $extra-small;
+      color: $text-secondary;
+      font-weight: 400;
+    }
+  }
+}
+@media (max-width: $breakpoint-lower-middle) {
+  .audit-hero {
+    &__content {
+      grid-template-columns: 1fr;
+    }
+    &__copy {
+      gap: $small;
+    }
+  }
+  .audit-dashboard {
+    max-width: 700px;
+  }
+}
+@media (max-width: $breakpoint-large-small) {
+  .audit-hero {
+    &__actions {
+      width: 100%;
+
+      .button {
+        width: 100%;
+      }
+    }
+  }
+  .audit-dashboard {
+    padding: $extra-small;
+
+    &__grid {
+      grid-template-columns: 1fr;
+    }
+    &__item {
+      min-height: 100px;
+    }
+    &__footer {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+}

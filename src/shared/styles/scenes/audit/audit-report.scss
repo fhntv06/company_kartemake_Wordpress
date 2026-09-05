@@ -1,0 +1,74 @@
+@use '../../variables/colors' as *;
+@use '../../variables/offsets' as *;
+@use '../../system/mixins' as *;
+@use '../../variables/media' as *;
+
+.audit-report__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid $text-muted;
+  border-left: 1px solid $text-muted;
+}
+.audit-report__item {
+  display: grid;
+  grid-template-columns: 50px minmax(0, 1fr);
+  gap: $small;
+  min-height: 230px;
+  padding: $small;
+  border-right: 1px solid $text-muted;
+  border-bottom: 1px solid $text-muted;
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
+
+  &:hover {
+    background: $surface;
+    border-color: $text-muted;
+
+    .audit-report__number {
+      color: $orange;
+    }
+  }
+
+  h5 {
+    line-height: 1.25;
+  }
+  p {
+    max-width: 480px;
+    margin: $extra-small 0 0;
+    line-height: 1.65;
+    color: $text-muted;
+  }
+}
+.audit-report__number {
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 16px;
+  color: $text-muted;
+  transition: color 0.3s ease;
+}
+.audit-report__label {
+    display: block;
+    margin-bottom: $extra-small;
+    font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+    font-size: 16px;
+    letter-spacing: 0.13em;
+    color: $orange;
+  }
+@media (max-width: $breakpoint-extra-small) {
+  .audit-report__grid {
+    grid-template-columns: 1fr;
+  }
+  .audit-report__item {
+    min-height: auto;
+  }
+}
+@media (max-width: $breakpoint-large-small) {
+  .audit-report__item {
+    grid-template-columns: 36px minmax(0, 1fr);
+    gap: $extra-small;
+    padding: $small;
+  }
+  .audit-report__item {
+    padding: $extra-small;
+  }
+}

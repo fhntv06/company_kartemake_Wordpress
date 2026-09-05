@@ -1,0 +1,141 @@
+@use '../../variables/colors' as *;
+@use '../../variables/offsets' as *;
+@use '../../system/mixins' as *;
+@use '../../variables/media' as *;
+
+.audit-map__content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 650px;
+}
+.audit-map__nodes {
+  position: relative;
+  z-index: 2;
+  width: min(920px, 100%);
+  height: 620px;
+}
+.audit-map__node {
+  position: absolute;
+  display: flex;
+  gap: $small;
+  width: min(280px, 24vw);
+  padding: $extra-small;
+  border: 1px solid $text-muted;
+  background: $surface;
+  transition:
+    border-color 0.3s ease,
+    transform 0.3s ease;
+
+  &:hover {
+    border-color: $orange;
+    transform: translateY(-4px);
+  }
+  &-number {
+    flex: 0 0 auto;
+    font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+    font-size: 16px;
+    color: $orange;
+  }
+  &-label {
+    display: block;
+    font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+    font-size: 16px;
+    letter-spacing: 0.12em;
+    color: $orange;
+  }
+  p {
+    margin: $extra-small 0 0;
+    line-height: 1.55;
+    color: $text-muted;
+  }
+  &--application {
+    top: 0;
+    left: 5%;
+  }
+  &--infrastructure {
+    top: 0;
+    right: 5%;
+  }
+  &--database {
+    top: 42%;
+    left: 0;
+  }
+  &--security {
+    top: 42%;
+    right: 0;
+  }
+  &--integrations {
+    bottom: 0;
+    left: 5%;
+  }
+  &--performance {
+    bottom: 0;
+    right: 5%;
+  }
+}
+.audit-map__core {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 300px;
+  border: 1px solid $orange;
+  border-radius: 50%;
+}
+.audit-map__core-ring {
+  position: absolute;
+  inset: 14px;
+  border: 1px dashed $text-muted;
+  border-radius: 50%;
+}
+.audit-map__core-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $extra-small;
+  text-align: center;
+}
+.audit-map__core-label,
+.audit-map__core-status {
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 16px;
+  letter-spacing: 0.12em;
+  color: $text-muted;
+}
+.audit-map__core-content strong {
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: $orange;
+}
+.audit-map__core-status {
+  color: $orange;
+}
+@media (max-width: $breakpoint-lower-middle) {
+  .audit-map__nodes {
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: $extra-small;
+  }
+  .audit-map__node {
+    position: relative;
+    inset: auto !important;
+    width: auto;
+  }
+  .audit-map__core {
+    display: none;
+  }
+}
+@media (max-width: $breakpoint-large-small) {
+  .audit-map__nodes {
+    grid-template-columns: 1fr;
+  }
+}

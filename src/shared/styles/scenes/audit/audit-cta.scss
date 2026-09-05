@@ -1,0 +1,95 @@
+@use '../../variables/colors' as *;
+@use '../../variables/offsets' as *;
+@use '../../system/mixins' as *;
+@use '../../variables/media' as *;
+
+.audit-cta__metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  margin-bottom: $middle;
+  border: 1px solid $text-muted;
+}
+.audit-cta__metric {
+  min-height: 160px;
+  padding: $small;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-right: 1px solid rgba(255, 255, 255, 0.4);
+
+  &:last-child {
+    border-right: unset;
+  }
+  strong {
+    margin-bottom: $small;
+    font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+    font-size: 20px;
+    font-weight: 400;
+    color: $text-muted;
+  }
+  span {
+    font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+    font-size: 20px;
+    letter-spacing: 0.12em;
+    color: $orange;
+  }
+  small {
+    margin-top: $extra-small;
+    font-size: 16px;
+    line-height: 1.4;
+    color: $text-muted;
+  }
+}
+.audit-cta__action {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    .button {
+      min-width: 220px;
+    }
+    p {
+      max-width: 360px;
+      margin: 0;
+      font-size: 12px;
+      line-height: 1.6;
+      color: $text-muted;
+    }
+  }
+@media (max-width: $breakpoint-lower-middle) {
+  .audit-cta {
+    &__content {
+      grid-template-columns: 1fr;
+    }
+    &__action {
+      align-items: flex-start;
+    }
+  }
+}
+@media (max-width: $breakpoint-extra-small) {
+  .audit-cta__metrics {
+    grid-template-columns: 1fr;
+  }
+  .audit-cta__metric {
+    min-height: 120px;
+  }
+  .audit-cta__action {
+    width: 100%;
+    .button {
+      width: 100%;
+    }
+  }
+}
+@media (max-width: $breakpoint-large-small) {
+  .audit-cta__metric {
+    padding: $extra-small;
+
+    strong {
+      margin-bottom: $extra-small;
+    }
+    &:not(:last-child) {
+      border-bottom: 1px solid $text-muted;
+    }
+  }
+}

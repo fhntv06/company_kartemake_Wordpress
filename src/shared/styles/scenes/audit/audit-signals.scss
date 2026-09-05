@@ -1,0 +1,81 @@
+@use '../../variables/colors' as *;
+@use '../../variables/offsets' as *;
+@use '../../system/mixins' as *;
+@use '../../variables/media' as *;
+
+.audit-signals__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid $text-muted;
+  border-left: 1px solid $text-muted;
+}
+.audit-signal {
+  display: grid;
+  grid-template-columns: 50px minmax(0, 1fr);
+  gap: $small;
+  min-height: 250px;
+  padding: $small;
+  border-right: 1px solid $text-muted;
+  border-bottom: 1px solid $text-muted;
+  transition:
+          background-color 0.3s ease,
+          border-color 0.3s ease;
+  &:hover {
+    background: $surface;
+
+    .audit-signal__index {
+      color: $orange;
+    }
+  }
+  &__index {
+    font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+    font-size: 16px;
+    color: $text-muted;
+    transition: color 0.3s ease;
+  }
+  &__body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  &__label {
+    margin-bottom: $extra-small;
+    font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+    font-size: 16px;
+    letter-spacing: 0.14em;
+    color: $orange;
+  }
+  &__title {
+    max-width: 420px;
+  }
+  &__description {
+    max-width: 480px;
+    margin: $extra-small 0 0;
+    line-height: 1.65;
+    color: $text-muted;
+  }
+}
+@media (max-width: $breakpoint-lower-middle) {
+  .audit-signal {
+    padding: $extra-small;
+  }
+  .audit-map__content {
+    min-height: max-content;
+  }
+}
+@media (max-width: $breakpoint-extra-small) {
+  .audit-signals__grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: $breakpoint-large-small) {
+  .audit-signal {
+    grid-template-columns: 36px minmax(0, 1fr);
+    gap: $extra-small;
+    padding: $extra-small;
+    min-height: 200px;
+  }
+  .audit-signal__description {
+    margin-top: auto;
+  }
+}
