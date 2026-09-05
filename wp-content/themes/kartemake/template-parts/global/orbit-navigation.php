@@ -97,6 +97,17 @@ ORBIT NAVIGATION
                 'modernization-cta'       => 'Контакты',
             ];
         }
+        if (is_page('audit')) {
+            $scenes = [
+                'hero'       => 'Начало',
+                'audit-signals'       => 'Проблемы системы',
+                'audit-map'       => 'Проверка системы',
+                'audit-process'       => 'Процесс',
+                'audit-report'       => 'Картина системы',
+                'audit-pricing'       => 'Стоимость',
+                'audit-cta'       => 'С чего начать?',
+            ];
+        }
 
         if (!empty($scenes)) {
             $number = 1;
