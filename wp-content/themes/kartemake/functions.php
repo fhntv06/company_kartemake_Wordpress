@@ -10,6 +10,12 @@
 // ============================================
 
 /**
+ * Подключение файла отключения эмодзи
+ */
+
+require_once get_template_directory() . '/inc/disabled-wp-emoji.php';
+
+/**
  * Регистрация меню
  */
 register_nav_menus([
