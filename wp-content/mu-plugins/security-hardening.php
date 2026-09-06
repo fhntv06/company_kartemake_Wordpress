@@ -14,3 +14,11 @@ add_filter('rest_endpoints', function ($endpoints) {
 
     return $endpoints;
 });
+
+/**
+ * Security Headers
+ */
+
+add_action('send_headers', function () {
+    header('X-Content-Type-Options: nosniff');
+});
