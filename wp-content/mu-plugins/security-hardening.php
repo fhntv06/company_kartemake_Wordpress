@@ -25,3 +25,12 @@ add_action('send_headers', function () {
     header('Referrer-Policy: strict-origin-when-cross-origin');
     header('Permissions-Policy: camera=(), microphone=(), geolocation=()');
 });
+
+/**
+ * Полное отключение XML-RPC.
+ */
+add_filter('xmlrpc_enabled', '__return_false');
+
+add_filter('xmlrpc_methods', function ($methods) {
+    return [];
+});
