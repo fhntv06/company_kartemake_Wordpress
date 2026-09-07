@@ -1,7 +1,7 @@
 {
-  "name": "company-kartech-site",
+  "name": "company-kartmake-site",
   "version": "1.0.0",
-  "description": "Site is kartech company",
+  "description": "Site is K·ART·MAKE company",
   "main": "index.js",
   "scripts": {
     "start": "webpack serve --mode development",
@@ -11,19 +11,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fhntv06/company-kartech-site.git"
+    "url": "git+https://github.com/fhntv06/company_kartemake_Wordpress.git"
   },
   "keywords": [
     "site",
-    "kartech",
+    "K·ART·MAKE",
     "company"
   ],
   "author": "K.Artem",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/fhntv06/company-kartech-site/issues"
+    "url": "https://github.com/fhntv06/company_kartemake_Wordpress/issues"
   },
-  "homepage": "https://fhntv06.github.io/company_kartech-site_Wordpress",
+  "homepage": "https://fhntv06.github.io/company_kartemake_Wordpress",
   "devDependencies": {
     "@babel/core": "^7.28.3",
     "@babel/preset-env": "^7.28.3",
