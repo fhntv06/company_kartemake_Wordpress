@@ -59,20 +59,20 @@
   }
 }
 @media (max-width: $breakpoint-lower-middle) {
-  .audit-process__flow {
+  .pricing-intro__flow {
     grid-template-columns: 1fr;
     gap: 0;
   }
-  .audit-process__step {
+  .pricing-intro__step {
     min-height: auto;
   }
-  .audit-process__arrow {
+  .pricing-intro__arrow {
     width: 100%;
     height: 40px;
   }
 }
 @media (max-width: $breakpoint-large-small) {
-  .audit-process__step {
+  .pricing-intro__step {
     padding: $extra-small;
   }
 }

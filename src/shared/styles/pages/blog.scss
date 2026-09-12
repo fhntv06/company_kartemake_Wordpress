@@ -2,32 +2,10 @@
 // K·ART·MAKE
 // BLOG PAGE
 // ============================================================
-//
-// BLOG-ONLY STYLES
-//
-// Global styles are intentionally NOT duplicated here:
-// - .scene
-// - .scene-container
-// - .scene-header
-// - .scene-eyebrow
-// - .scene-title
-// - .scene-description
-// - .reveal-item
-// - .global-cta
-// - .contact-footer
-//
-// ============================================================
-@use "../variables/colors" as *;
-@use "../variables/fonts" as *;
-@use "../variables/offsets" as *;
-@use "../variables/media" as *;
-@use "../variables/root" as *;
-@use "../system/mixins" as *;
 
 // =====================================================
 // СЦЕНЫ
 // =====================================================
-@use '../scenes/global/hero';
 @use '../scenes/blog/blog-hero';
 @use '../scenes/blog/blog-intro';
 @use '../scenes/blog/blog-featured';

@@ -9,6 +9,10 @@
   min-height: 100dvh;
   width: 100%;
   overflow: clip;
+
+  &:hover {
+    background-color: $surface;
+  }
 }
 /* =================================================
    SCENE CONTAINER
@@ -47,7 +51,7 @@
 .scene-description {
   margin-top: $small; // 28px → $small (32px)
   max-width: 700px;
-  opacity: .7;
+  color: $text-secondary;
 }
 
 /* =================================================
