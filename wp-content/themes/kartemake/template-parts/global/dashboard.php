@@ -59,6 +59,9 @@ GLOBAL DASHBOARD
                 <a href="<?php echo get_permalink(get_page_by_path('services')); ?>">
                     Услуги
                 </a>
+                <a href="<?php echo get_permalink(get_page_by_path('pricing')); ?>">
+                    Форматы работы
+                </a>
                 <a href="<?php echo get_permalink(get_page_by_path('blog')); ?>">
                     Блог
                 </a>
