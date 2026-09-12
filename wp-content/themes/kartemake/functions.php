@@ -347,6 +347,24 @@ function kartemake_enqueue_scripts() {
             wp_get_theme()->get('Version')
         );
     }
+
+    // Страница услуг
+    // pricing
+    if (is_page('pricing') || is_page_template('page-pricing.php')) {
+        wp_enqueue_script(
+                'kartemake-js-pricing',
+                get_template_directory_uri() . '/assets/js/pricing.build.js',
+                array('kartemake-js-global'),
+                wp_get_theme()->get('Version'),
+                true
+        );
+        wp_enqueue_style(
+                'kartemake-style-pricing',
+                get_template_directory_uri() . '/assets/css/pricing.build.css',
+                [],
+                wp_get_theme()->get('Version')
+        );
+    }
 }
 add_action('wp_enqueue_scripts', 'kartemake_enqueue_scripts');
 
