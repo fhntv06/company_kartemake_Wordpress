@@ -29,30 +29,35 @@ ORBIT NAVIGATION
             <span></span>
             <strong>01</strong>
         </button>
-        <button class="orbit-point" data-scene="about-intro">
-            <span class="orbit-point__description">Мы</span>
+        <button class="orbit-point" data-scene="pricing-intro">
+            <span class="orbit-point__description">Интро</span>
             <span></span>
             <strong>02</strong>
         </button>
-        <button class="orbit-point" data-scene="about-model">
-            <span class="orbit-point__description">Модель</span>
+        <button class="orbit-point" data-scene="pricing-services">
+            <span class="orbit-point__description">Услуги</span>
             <span></span>
             <strong>03</strong>
         </button>
-        <button class="orbit-point" data-scene="about-team">
-            <span class="orbit-point__description">Команда</span>
+        <button class="orbit-point" data-scene="pricing-audit">
+            <span class="orbit-point__description">Аудит</span>
             <span></span>
             <strong>04</strong>
         </button>
-        <button class="orbit-point" data-scene="about-philosophy">
-            <span class="orbit-point__description">Философия</span>
+        <button class="orbit-point" data-scene="pricing-advanced">
+            <span class="orbit-point__description">Оптимизаци и модернизация</span>
             <span></span>
             <strong>05</strong>
         </button>
-        <button class="orbit-point" data-scene="about-contact">
-            <span class="orbit-point__description">Контакты</span>
+        <button class="orbit-point" data-scene="pricing-scope">
+            <span class="orbit-point__description">Инжиниринг</span>
             <span></span>
             <strong>06</strong>
+        </button>
+        <button class="orbit-point" data-scene="pricing-decision">
+            <span class="orbit-point__description">Контакты</span>
+            <span></span>
+            <strong>07</strong>
         </button>
     </div>
 </div>
@@ -120,23 +125,11 @@ GLOBAL DASHBOARD
 </header>
 <main id="pricing-page" class="page pricing-page">
     <!-- =========================================================
-         SCENE 01 — HERO
-         ========================================================= -->
-    <section
-            class="scene scene-hero pricing-hero"
-            data-scene="hero"
-            data-canvas-engine
-    >
-        <canvas
-                id="heroCanvas"
-                class="hero-canvas"
-                aria-hidden="true"
-        ></canvas>
-        <canvas
-                id="hero-particle-canvas"
-                class="hero-particle-canvas"
-                aria-hidden="true"
-        ></canvas>
+    SCENE 01 — HERO
+    ========================================================= -->
+    <section class="scene scene-hero pricing-hero" data-scene="hero" data-canvas-engine>
+        <canvas id="heroCanvas" class="hero-canvas" aria-hidden="true"></canvas>
+        <canvas id="hero-particle-canvas" class="hero-particle-canvas" aria-hidden="true"></canvas>
         <div class="scene-container">
             <div class="hero-content">
                 <div class="system-label">
@@ -165,14 +158,11 @@ GLOBAL DASHBOARD
         </div>
     </section>
     <!-- =========================================================
-         SCENE 02 — INTRO / LOGIC
-         ========================================================= -->
-    <section
-            class="scene pricing-intro"
-            data-scene="pricing-intro"
-    >
+    SCENE 02 — INTRO / LOGIC
+    ========================================================= -->
+    <section class="scene pricing-intro" data-scene="pricing-intro">
         <div class="scene-container">
-            <div class="pricing-intro__header">
+            <header class="scene-header reveal-item">
                 <div class="scene-eyebrow">
                     КАК МЫ РАБОТАЕМ
                 </div>
@@ -185,258 +175,171 @@ GLOBAL DASHBOARD
                     её масштаба и объёма задачи. Сначала определяем,
                     что действительно требуется сделать.
                 </p>
-            </div>
-            <div class="pricing-intro__flow">
-                <div class="pricing-intro__step">
-                    <span class="pricing-intro__number">01</span>
-                    <strong>Разбираемся</strong>
+            </header>
+            <div class="pricing-intro__flow reveal-item">
+                <article class="pricing-intro__step">
+                    <span class="pricing-intro__step-number">01</span>
+                    <h5>Разбираемся</h5>
                     <p>Понимаем проблему и состояние системы.</p>
-                </div>
-                <div class="pricing-intro__connector" aria-hidden="true">
+                </article>
+                <div class="pricing-intro__arrow">
                     →
                 </div>
-                <div class="pricing-intro__step">
-                    <span class="pricing-intro__number">02</span>
-                    <strong>Определяем объём</strong>
+                <article class="pricing-intro__step">
+                    <span class="pricing-intro__step-number">02</span>
+                    <h5>Определяем объём</h5>
                     <p>Формируем конкретный состав технических работ.</p>
-                </div>
-                <div class="pricing-intro__connector" aria-hidden="true">
+                </article>
+                <div class="pricing-intro__arrow">
                     →
                 </div>
-                <div class="pricing-intro__step">
-                    <span class="pricing-intro__number">03</span>
-                    <strong>Фиксируем стоимость</strong>
+                <article class="pricing-intro__step">
+                    <span class="pricing-intro__step-number">03</span>
+                    <h5>Фиксируем стоимость</h5>
                     <p>Стоимость согласовывается до начала работ.</p>
-                </div>
+                </article>
             </div>
         </div>
     </section>
     <!-- =========================================================
-         SCENE 03 — SERVICES
-         ========================================================= -->
-    <section
-            class="scene pricing-services"
-            data-scene="pricing-services"
-    >
+    SCENE 03 — SERVICES
+    ========================================================= -->
+    <section class="scene pricing-services" data-scene="pricing-services">
         <div class="scene-container">
-            <div class="pricing-services__header">
+            <header class="scene-header reveal-item">
                 <div class="scene-eyebrow">
                     УСЛУГИ / 05 НАПРАВЛЕНИЙ
                 </div>
                 <h2 class="scene-title">
-                    От проблемы<br>
-                    <span>к решению.</span>
+                    От проблемы <span>к решению.</span>
                 </h2>
                 <p class="scene-description">
                     Выберите формат работы в зависимости от того,
                     что происходит с вашей системой сейчас.
                 </p>
-            </div>
-            <div class="pricing-services__grid">
-                <!-- DIAGNOSTICS -->
-                <article
-                        class="pricing-card pricing-card--diagnostics"
-                        data-service="diagnostics"
-                >
-                    <div class="pricing-card__top">
-                        <span class="pricing-card__index">01</span>
-                        <span class="pricing-card__status">
-              РАЗОБРАТЬСЯ
-            </span>
+            </header>
+            <div class="pricing-services__grid reveal-item">
+                <article class="pricing-services-price">
+                    <div class="pricing-services-price__header">
+                        <span class="pricing-services-price__index">01</span>
+                        <span class="pricing-services-price__type">ДИАГНОСТИКА / РАЗОБРАТЬСЯ</span>
                     </div>
-                    <div class="pricing-card__content">
-                        <h3 class="pricing-card__title">
-                            Диагностика
-                        </h3>
-                        <p class="pricing-card__question">
-                            Есть проблема,<br>
-                            но причина неизвестна?
-                        </p>
-                        <p class="pricing-card__description">
-                            Исследуем конкретную техническую проблему,
-                            определяем её причину и следующие шаги.
-                        </p>
+                    <div class="pricing-services-price__price">
+                        от 15 000 ₽
                     </div>
-                    <div class="pricing-card__bottom">
-                        <div class="pricing-card__price">
-                            <span>от</span>
-                            <strong>15 000 ₽</strong>
-                        </div>
-                        <button
-                                class="pricing-card__action"
-                                data-modal-func="open"
-                                data-service="diagnostics"
-                        >
-                            Разобрать проблему
-                        </button>
-                    </div>
+                    <p class="pricing-services-price__description">
+                        Есть проблема,<br>
+                        но причина неизвестна?
+                    </p>
+                    <ul class="pricing-services-price__list">
+                        <li>исследуем конкретную техническую проблему</li>
+                        <li>определяем её причину и следующие шаги</li>
+                    </ul>
+                    <button class="pricing-card__action" data-modal-func="open" data-service="diagnostics">
+                        Разобрать проблему
+                    </button>
                 </article>
+
                 <!-- AUDIT -->
-                <article
-                        class="pricing-card pricing-card--audit"
-                        data-service="audit"
-                >
-                    <div class="pricing-card__top">
-                        <span class="pricing-card__index">02</span>
-                        <span class="pricing-card__status">
-              ПОНЯТЬ
-            </span>
+                <article class="pricing-services-price pricing-services-price--featured">
+                    <div class="pricing-services-price__header">
+                        <span class="pricing-services-price__index">02</span>
+                        <span class="pricing-services-price__type">ТЕХНИЧЕСКИЙ АУДИТ / ПОНЯТЬ</span>
                     </div>
-                    <div class="pricing-card__content">
-                        <h3 class="pricing-card__title">
-                            Технический аудит
-                        </h3>
-                        <p class="pricing-card__question">
-                            Нужно понять,<br>
-                            в каком состоянии система?
-                        </p>
-                        <p class="pricing-card__description">
-                            Анализируем архитектуру, инфраструктуру,
-                            базу данных, безопасность, производительность
-                            и интеграции.
-                        </p>
+                    <div class="pricing-services-price__price">
+                        от 30 000 ₽
                     </div>
-                    <div class="pricing-card__bottom">
-                        <div class="pricing-card__price">
-                            <span>от</span>
-                            <strong>30 000 ₽</strong>
-                        </div>
-                        <button
-                                class="pricing-card__action"
-                                data-modal-func="open"
-                                data-service="audit"
-                        >
-                            Заказать аудит
-                        </button>
-                    </div>
+                    <p class="pricing-services-price__description">
+                        Нужно понять,<br>
+                        в каком состоянии система?
+                    </p>
+                    <ul class="pricing-services-price__list">
+                        <li>анализ архитектуры</li>
+                        <li>анализ инфраструктуры</li>
+                        <li>анализ базы данных, безопасность, производительность и интеграции</li>
+                    </ul>
+                    <button class="pricing-card__action" data-modal-func="open" data-service="audit"
+                    >
+                        Заказать аудит
+                    </button>
                 </article>
+
                 <!-- OPTIMIZATION -->
-                <article
-                        class="pricing-card pricing-card--optimization"
-                        data-service="optimization"
-                >
-                    <div class="pricing-card__top">
-                        <span class="pricing-card__index">03</span>
-                        <span class="pricing-card__status">
-              УЛУЧШИТЬ
-            </span>
+                <article class="pricing-services-price">
+                    <div class="pricing-services-price__header">
+                        <span class="pricing-services-price__index">03</span>
+                        <span class="pricing-services-price__type">ОПТИМИЗАЦИЯ / УЛУЧШИТЬ</span>
                     </div>
-                    <div class="pricing-card__content">
-                        <h3 class="pricing-card__title">
-                            Оптимизация
-                        </h3>
-                        <p class="pricing-card__question">
-                            Система работает,<br>
-                            но может работать лучше?
-                        </p>
-                        <p class="pricing-card__description">
-                            Находим узкие места, оптимизируем существующую
-                            систему и проверяем результат изменений.
-                        </p>
+                    <div class="pricing-services-price__price">
+                        от 35 000 ₽
                     </div>
-                    <div class="pricing-card__bottom">
-                        <div class="pricing-card__price">
-                            <span>от</span>
-                            <strong>35 000 ₽</strong>
-                        </div>
-                        <button
-                                class="pricing-card__action"
-                                data-modal-func="open"
-                                data-service="optimization"
-                        >
-                            Обсудить оптимизацию
-                        </button>
-                    </div>
+                    <p class="pricing-services-price__description">
+                        Система работает,<br>
+                        но может работать лучше?
+                    </p>
+                    <ul class="pricing-services-price__list">
+                        <li>Находим узкие места</li>
+                        <li>оптимизируем существующую систему</li>
+                        <li>проверяем результат изменений</li>
+                    </ul>
+                    <button class="pricing-card__action" data-modal-func="open" data-service="optimization">
+                        Обсудить оптимизацию
+                    </button>
                 </article>
+
                 <!-- MODERNIZATION -->
-                <article
-                        class="pricing-card pricing-card--modernization"
-                        data-service="modernization"
-                >
-                    <div class="pricing-card__top">
-                        <span class="pricing-card__index">04</span>
-                        <span class="pricing-card__status">
-              ИЗМЕНИТЬ
-            </span>
+                <article class="pricing-services-price">
+                    <div class="pricing-services-price__header">
+                        <span class="pricing-services-price__index">04</span>
+                        <span class="pricing-services-price__type">МОДЕРНИЗАЦИЯ / ИЗМЕНИТЬ</span>
                     </div>
-                    <div class="pricing-card__content">
-                        <h3 class="pricing-card__title">
-                            Модернизация
-                        </h3>
-                        <p class="pricing-card__question">
-                            Старая система<br>
-                            мешает развитию?
-                        </p>
-                        <p class="pricing-card__description">
-                            Обновляем техническую основу поэтапно,
-                            сохраняя работающие части системы
-                            там, где это имеет смысл.
-                        </p>
+                    <div class="pricing-services-price__price">
+                        от 50 000 ₽
                     </div>
-                    <div class="pricing-card__bottom">
-                        <div class="pricing-card__price">
-                            <span>от</span>
-                            <strong>50 000 ₽</strong>
-                        </div>
-                        <button
-                                class="pricing-card__action"
-                                data-modal-func="open"
-                                data-service="modernization"
-                        >
-                            Оценить модернизацию
-                        </button>
-                    </div>
+                    <p class="pricing-services-price__description">
+                        Старая система<br>
+                        мешает развитию?
+                    </p>
+                    <ul class="pricing-services-price__list">
+                        <li>обновляем техническую основу поэтапно</li>
+                        <li>сохраняем работающие части системы</li>
+                        <li>обновлеение только там, где это имеет смысл</li>
+                    </ul>
+                    <button class="pricing-card__action" data-modal-func="open" data-service="optimization">
+                        Обсудить модернизацию
+                    </button>
                 </article>
+
                 <!-- SUPPORT -->
-                <article
-                        class="pricing-card pricing-card--support"
-                        data-service="support"
-                >
-                    <div class="pricing-card__top">
-                        <span class="pricing-card__index">05</span>
-                        <span class="pricing-card__status">
-              ОБСЛУЖИВАТЬ
-            </span>
+                <article class="pricing-services-price pricing-services-price--featured">
+                    <div class="pricing-services-price__header">
+                        <span class="pricing-services-price__index">05</span>
+                        <span class="pricing-services-price__type">ТЕХНИЧЕСКАЯ ПОДДЕРЖКА / ОБСЛУЖИВАТЬ</span>
                     </div>
-                    <div class="pricing-card__content">
-                        <h3 class="pricing-card__title">
-                            Техническая поддержка
-                        </h3>
-                        <p class="pricing-card__question">
-                            Нужна постоянная<br>
-                            техническая команда?
-                        </p>
-                        <p class="pricing-card__description">
-                            Берём на себя текущие технические задачи,
-                            развитие и эксплуатацию цифровой инфраструктуры.
-                        </p>
+                    <div class="pricing-services-price__price">
+                        от 25 000 ₽
                     </div>
-                    <div class="pricing-card__bottom">
-                        <div class="pricing-card__price">
-                            <span>от</span>
-                            <strong>25 000 ₽ / мес.</strong>
-                        </div>
-                        <button
-                                class="pricing-card__action"
-                                data-modal-func="open"
-                                data-service="support"
-                        >
-                            Подобрать поддержку
-                        </button>
-                    </div>
+                    <p class="pricing-services-price__description">
+                        Нужна постоянная<br>
+                        техническая команда?
+                    </p>
+                    <ul class="pricing-services-price__list">
+                        <li>берём на себя текущие технические задачи</li>
+                        <li>отвечаем за развитие и эксплуатацию цифровой инфраструктуры</li>
+                    </ul>
+                    <button class="pricing-card__action" data-modal-func="open" data-service="optimization">
+                        Подобрать поддержку
+                    </button>
                 </article>
             </div>
         </div>
     </section>
     <!-- =========================================================
-         SCENE 04 — AUDIT OPTIONS
-         ========================================================= -->
-    <section
-            class="scene pricing-options pricing-options--audit"
-            data-scene="pricing-audit"
-    >
+    SCENE 04 — AUDIT OPTIONS
+    ========================================================= -->
+    <section class="scene pricing-services" data-scene="pricing-audit">
         <div class="scene-container">
-            <div class="pricing-options__header">
+            <header class="scene-header reveal-item">
                 <div class="scene-eyebrow">
                     AUDIT / ФОРМАТЫ
                 </div>
@@ -448,54 +351,58 @@ GLOBAL DASHBOARD
                     Выбираем глубину анализа в зависимости
                     от задачи и масштаба системы.
                 </p>
-            </div>
-            <div class="pricing-options__grid">
-                <article class="pricing-option">
-                    <span class="pricing-option__index">A01</span>
-                    <h3>Express Audit</h3>
-                    <p>
+            </header>
+            <div class="pricing-services__grid reveal-item">
+                <!-- AUDIT -->
+                <article class="pricing-services-price">
+                    <div class="pricing-services-price__header">
+                        <span class="pricing-services-price__index">A01</span>
+                        <span class="pricing-services-price__type">Express Audit</span>
+                    </div>
+                    <div class="pricing-services-price__price">
+                        от 15 000 ₽
+                    </div>
+                    <p class="pricing-services-price__description">
                         Быстрая техническая оценка системы
                         и ключевых проблемных зон.
                     </p>
-                    <div class="pricing-option__price">
-                        от 15 000 ₽
-                    </div>
                 </article>
-                <article class="pricing-option pricing-option--featured">
-                    <span class="pricing-option__index">A02</span>
-                    <h3>Technical Audit</h3>
-                    <p>
+                <article class="pricing-services-price">
+                    <div class="pricing-services-price__header">
+                        <span class="pricing-services-price__index">A02</span>
+                        <span class="pricing-services-price__type">Technical Audit</span>
+                    </div>
+                    <div class="pricing-services-price__price">
+                        от 30 000 ₽
+                    </div>
+                    <p class="pricing-services-price__description">
                         Подробный анализ архитектуры, БД,
                         инфраструктуры, безопасности,
                         производительности и интеграций.
                     </p>
-                    <div class="pricing-option__price">
-                        от 30 000 ₽
-                    </div>
                 </article>
-                <article class="pricing-option">
-                    <span class="pricing-option__index">A03</span>
-                    <h3>Audit + Plan</h3>
-                    <p>
+                <article class="pricing-services-price">
+                    <div class="pricing-services-price__header">
+                        <span class="pricing-services-price__index">A03</span>
+                        <span class="pricing-services-price__type">Audit + Plan</span>
+                    </div>
+                    <div class="pricing-services-price__price">
+                        от 45 000 ₽
+                    </div>
+                    <p class="pricing-services-price__description">
                         Аудит системы с формированием
                         последовательного плана технических изменений.
                     </p>
-                    <div class="pricing-option__price">
-                        от 45 000 ₽
-                    </div>
                 </article>
             </div>
         </div>
     </section>
     <!-- =========================================================
-         SCENE 05 — OPTIMIZATION / MODERNIZATION OPTIONS
-         ========================================================= -->
-    <section
-            class="scene pricing-options pricing-options--advanced"
-            data-scene="pricing-advanced"
-    >
+    SCENE 05 — OPTIMIZATION / MODERNIZATION OPTIONS
+    ========================================================= -->
+    <section class="scene pricing-options pricing-options--advanced" data-scene="pricing-advanced">
         <div class="scene-container">
-            <div class="pricing-options__header">
+            <header class="scene-header reveal-item">
                 <div class="scene-eyebrow">
                     SCALE / ФОРМАТЫ РАБОТ
                 </div>
@@ -507,266 +414,242 @@ GLOBAL DASHBOARD
                     Масштаб работы определяется состоянием системы,
                     количеством затронутых компонентов и объёмом изменений.
                 </p>
-            </div>
-            <div class="pricing-options__matrix">
-                <div class="pricing-matrix__group">
-                    <div class="pricing-matrix__label">
-                        OPTIMIZATION
-                    </div>
-                    <div class="pricing-matrix__items">
-                        <div class="pricing-matrix__item">
-                            <span>Optimization</span>
-                            <strong>от 35 000 ₽</strong>
+            </header>
+            <div class="pricing-map__content reveal-item">
+                <div class="pricing-map__nodes">
+                    <article class="pricing-map__node pricing-map__node--application reveal-item">
+                        <span class="pricing-map__node-number">01</span>
+                        <div>
+                            <span class="pricing-map__node-label">Оптимизация</span>
+                            <p>от 35 000 ₽</p>
                         </div>
-                        <div class="pricing-matrix__item">
-                            <span>Complex Optimization</span>
-                            <strong>от 60 000 ₽</strong>
+                    </article>
+                    <article class="pricing-map__node pricing-map__node--infrastructure reveal-item">
+                        <span class="pricing-map__node-number">02</span>
+                        <div>
+                            <span class="pricing-map__node-label">Модернизация</span>
+                            <p>от 50 000 ₽</p>
                         </div>
-                        <div class="pricing-matrix__item">
-                            <span>System Optimization</span>
-                            <strong>от 90 000 ₽</strong>
+                    </article>
+                    <article class="pricing-map__node pricing-map__node--database reveal-item">
+                        <span class="pricing-map__node-number">03</span>
+                        <div>
+                            <span class="pricing-map__node-label">Комплексная оптимизация</span>
+                            <p>от 60 000 ₽</p>
                         </div>
-                    </div>
+                    </article>
+                    <article class="pricing-map__node pricing-map__node--security reveal-item">
+                        <span class="pricing-map__node-number">04</span>
+                        <div>
+                            <span class="pricing-map__node-label">Комплексная модернизация</span>
+                            <p>от 100 000 ₽</p>
+                        </div>
+                    </article>
+                    <article class="pricing-map__node pricing-map__node--integrations reveal-item">
+                        <span class="pricing-map__node-number">05</span>
+                        <div>
+                            <span class="pricing-map__node-label">Оптимизация системы</span>
+                            <p>от 90 000 ₽</p>
+                        </div>
+                    </article>
+                    <article class="pricing-map__node pricing-map__node--performance reveal-item">
+                        <span class="pricing-map__node-number">06</span>
+                        <div>
+                            <span class="pricing-map__node-label">Модернизация системы</span>
+                            <p>от 150 000 ₽</p>
+                        </div>
+                    </article>
                 </div>
-                <div class="pricing-matrix__group">
-                    <div class="pricing-matrix__label">
-                        MODERNIZATION
-                    </div>
-                    <div class="pricing-matrix__items">
-                        <div class="pricing-matrix__item">
-                            <span>Modernization</span>
-                            <strong>от 50 000 ₽</strong>
-                        </div>
-                        <div class="pricing-matrix__item">
-                            <span>Complex Modernization</span>
-                            <strong>от 100 000 ₽</strong>
-                        </div>
-                        <div class="pricing-matrix__item">
-                            <span>System Modernization</span>
-                            <strong>от 150 000 ₽</strong>
-                        </div>
+                <div class="pricing-map__core">
+                    <div class="pricing-map__core-ring"></div>
+                    <div class="pricing-map__core-content">
+                        <span class="pricing-map__core-label">
+                          SYSTEM
+                        </span>
+                        <strong>
+                            K·ART·MAKE
+                        </strong>
+                        <span class="pricing-map__core-status">
+                          TECHNICAL ANALYSIS
+                        </span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <!-- =========================================================
-         SCENE 06 — WHAT IS INCLUDED
-         ========================================================= -->
-    <section
-            class="scene pricing-scope"
-            data-scene="pricing-scope"
-    >
+    SCENE 06 — WHAT IS INCLUDED
+    ========================================================= -->
+    <section class="scene pricing-scope" data-scene="pricing-scope">
         <div class="scene-container">
-            <div class="pricing-scope__header">
+            <header class="scene-header reveal-item">
                 <div class="scene-eyebrow">
                     ENGINEERING / SCOPE
-                </div>
-                <h2 class="scene-title">
-                    Работаем<br>
-                    <span>с системой целиком.</span>
-                </h2>
-                <p class="scene-description">
-                    Техническая проблема редко находится только
-                    в одном месте. Поэтому рассматриваем взаимосвязь
-                    приложения, данных и инфраструктуры.
-                </p>
-            </div>
-            <div class="pricing-scope__grid">
-                <div class="pricing-scope__item">
-                    <span>01</span>
-                    <strong>Application</strong>
-                    <p>Код, архитектура, backend, frontend, legacy.</p>
-                </div>
-                <div class="pricing-scope__item">
-                    <span>02</span>
-                    <strong>Database</strong>
-                    <p>Структура данных, запросы, индексы, нагрузка.</p>
-                </div>
-                <div class="pricing-scope__item">
-                    <span>03</span>
-                    <strong>Infrastructure</strong>
-                    <p>Серверы, deployment, Docker, Nginx, ресурсы.</p>
-                </div>
-                <div class="pricing-scope__item">
-                    <span>04</span>
-                    <strong>Security</strong>
-                    <p>Доступы, зависимости, конфигурация и риски.</p>
-                </div>
-                <div class="pricing-scope__item">
-                    <span>05</span>
-                    <strong>Performance</strong>
-                    <p>Скорость, нагрузка, узкие места и ресурсы.</p>
-                </div>
-                <div class="pricing-scope__item">
-                    <span>06</span>
-                    <strong>Integrations</strong>
-                    <p>API, CRM, 1С, платежи и внешние сервисы.</p>
-                </div>
-                <div class="pricing-scope__item">
-                    <span>07</span>
-                    <strong>Monitoring</strong>
-                    <p>Метрики, логи, uptime, backup и контроль.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- =========================================================
-         SCENE 07 — PRICE LOGIC
-         ========================================================= -->
-    <section
-            class="scene pricing-price-logic"
-            data-scene="pricing-price-logic"
-    >
-        <div class="scene-container">
-            <div class="pricing-price-logic__content">
-                <div class="scene-eyebrow">
-                    COST / TRANSPARENCY
-                </div>
-                <h2 class="scene-title">
-                    Стоимость известна<br>
-                    <span>до начала работ.</span>
-                </h2>
-                <p class="scene-description">
-                    Базовая цена показывает точку входа.
-                    После определения состояния системы,
-                    масштаба и объёма работ стоимость фиксируется
-                    до начала выполнения задачи.
-                </p>
-            </div>
-            <div class="pricing-price-logic__formula">
-                <div class="pricing-formula__item">
-                    <span>01</span>
-                    <strong>Состояние системы</strong>
-                </div>
-                <div class="pricing-formula__operator">+</div>
-                <div class="pricing-formula__item">
-                    <span>02</span>
-                    <strong>Масштаб</strong>
-                </div>
-                <div class="pricing-formula__operator">+</div>
-                <div class="pricing-formula__item">
-                    <span>03</span>
-                    <strong>Объём работ</strong>
-                </div>
-                <div class="pricing-formula__operator">=</div>
-                <div class="pricing-formula__result">
-                    <span>FINAL SCOPE</span>
-                    <strong>Фиксированная стоимость</strong>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- =========================================================
-         SCENE 08 — SUPPORT
-         ========================================================= -->
-    <section
-            class="scene pricing-support"
-            data-scene="pricing-support"
-    >
-        <div class="scene-container">
-            <div class="pricing-support__header">
-                <div class="scene-eyebrow">
-                    SUPPORT / TECHNICAL PARTNER
                 </div>
                 <h2 class="scene-title">
                     Один технический партнёр<br>
                     <span>вместо нескольких подрядчиков.</span>
                 </h2>
                 <p class="scene-description">
-                    Если технические задачи возникают постоянно,
-                    подключаемся как внешняя техническая команда
-                    и постепенно накапливаем контекст вашей системы.
+                    Техническая проблема редко находится только
+                    в одном месте. Поэтому рассматриваем взаимосвязь
+                    приложения, данных и инфраструктуры.
                 </p>
-            </div>
-            <div class="pricing-support__offer">
-                <div class="pricing-support__price">
-                    <span>от</span>
-                    <strong>25 000 ₽</strong>
-                    <small>в месяц</small>
-                </div>
-                <div class="pricing-support__tasks">
-                    <span>Сайты</span>
-                    <span>Серверы</span>
-                    <span>Интеграции</span>
-                    <span>Базы данных</span>
-                    <span>Инфраструктура</span>
-                    <span>Текущие задачи</span>
-                </div>
-                <button
-                        class="button-primary"
-                        data-modal-func="open"
-                        data-service="support"
-                >
+                <h4 class="scene-description">
+                    от 25 000 ₽  в месяц
+                </h4>
+                <button class="button-primary scene-description" data-modal-func="open" data-service="support">
                     Подобрать формат поддержки
                 </button>
+            </header>
+            <div class="pricing-scope__grid reveal-item">
+                <article class="pricing-scope__item">
+                    <span class="pricing-scope__number">01</span>
+                    <div>
+                        <span class="pricing-scope__label">Application</span>
+                        <p>Код, архитектура, backend, frontend, legacy.</p>
+                    </div>
+                </article>
+                <article class="pricing-scope__item">
+                    <span class="pricing-scope__number">02</span>
+                    <div>
+                        <span class="pricing-scope__label">Database</span>
+                        <p>Структура данных, запросы, индексы, нагрузка.</p>
+                    </div>
+                </article>
+                <article class="pricing-scope__item">
+                    <span class="pricing-scope__number">03</span>
+                    <div>
+                        <span class="pricing-scope__label">Infrastructure</span>
+                        <p>Серверы, deployment, Docker, Nginx, ресурсы.</p>
+                    </div>
+                </article>
+                <article class="pricing-scope__item">
+                    <span class="pricing-scope__number">04</span>
+                    <div>
+                        <span class="pricing-scope__label">Security</span>
+                        <p>Доступы, зависимости, конфигурация и риски.</p>
+                    </div>
+                </article>
+                <article class="pricing-scope__item">
+                    <span class="pricing-scope__number">05</span>
+                    <div>
+                        <span class="pricing-scope__label">Performance</span>
+                        <p>Скорость, нагрузка, узкие места и ресурсы.</p>
+                    </div>
+                </article>
+                <article class="pricing-scope__item">
+                    <span class="pricing-scope__number">06</span>
+                    <div>
+                        <span class="pricing-scope__label">Integrations</span>
+                        <p>API, CRM, 1С, платежи и внешние сервисы.</p>
+                    </div>
+                </article>
+                <article class="pricing-scope__item">
+                    <span class="pricing-scope__number">07</span>
+                    <div>
+                        <span class="pricing-scope__label">Monitoring</span>
+                        <p>Метрики, логи, uptime, backup и контроль.</p>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
     <!-- =========================================================
-         SCENE 09 — DECISION
-         ========================================================= -->
-    <section
-            class="scene pricing-decision"
-        data-scene="pricing-decision"
-    >
+    SCENE 07 — DECISION
+    ========================================================= -->
+    <section class="scene pricing-decision" data-scene="pricing-decision">
         <div class="scene-container">
-            <div class="pricing-decision__header">
-                <div class="scene-eyebrow">
-                    НЕ ЗНАЕТЕ, С ЧЕГО НАЧАТЬ?
-                </div>
-                <h2 class="scene-title">
-                    Не обязательно сразу<br>
-                    <span>выбирать услугу.</span>
-                </h2>
+            <header class="scene-header reveal-item">
+                <span class="scene-eyebrow">06 / НЕ ЗНАЕТЕ, С ЧЕГО НАЧАТЬ?</span>
+                <h2 class="scene-title">Не обязательно сразу<br><span>выбирать услугу.</span></h2>
                 <p class="scene-description">
                     Опишите техническую проблему или задачу.
                     Мы поможем определить подходящий формат работы,
                     необходимый объём и следующий шаг.
                 </p>
-            </div>
-            <div class="pricing-decision__actions">
-                <button
-                    class="button-primary"
-                    data-modal-func="open"
-                >
-                    Обсудить задачу
+            </header>
+            <div class="cta-block reveal-item">
+                <span class="cta-block__eyebrow">ТЕХНИЧЕСКАЯ КОМАНДА / ГОТОВЫ ПОДКЛЮЧИТЬСЯ</span>
+                <h3 class="cta-block__title">Есть техническая задача?</h3>
+                <p class="cta-block__text">Оптимизация, модернизация, перенос, интеграция, исправление ошибок или постоянная техническая поддержка.</p>
+                <button class="button-primary cta-block__button" data-modal-func="open">
+                    <span>ОБСУДИТЬ ЗАДАЧУ</span>
+                    <strong>↗</strong>
                 </button>
-                <a
-                    href="/calculator/"
-                    class="button-secondary"
-                >
-                    Рассчитать стоимость
-                </a>
+            </div>
+            <!-- CONTACT INFORMATION -->
+            <div class="contact-info reveal-item">
+                <div class="contact-info-item">
+                    <span class="contact-info-label">НОВЫЕ ПРОЕКТЫ</span>
+                    <a href="mailto:hello@kartemake.ru" class="contact-info-value">hello@kartemake.ru</a>
+                    <span class="contact-info-description">Обсудить новый проект, разработку или модернизацию.</span>
+                </div>
+                <div class="contact-info-item">
+                    <span class="contact-info-label">ТЕХНИЧЕСКАЯ ПОДДЕРЖКА</span>
+                    <a href="mailto:support@kartemake.ru" class="contact-info-value">support@kartemake.ru</a>
+                    <span class="contact-info-description">Техническая поддержка и сопровождение.</span>
+                </div>
+                <div class="contact-info-item">
+                    <span class="contact-info-label">ОТВЕТ</span>
+                    <span class="contact-info-value">В ТЕЧЕНИЕ 1 ДНЯ</span>
+                    <span class="contact-info-description">Получаем запрос и связываемся для обсуждения задачи.</span>
+                </div>
+                <div class="contact-info-item">
+                    <span class="contact-info-label">TELEGRAM</span>
+                    <a href="https://t.me/KArtech76" class="contact-info-value">@KArtech76</a>
+                </div>
+                <div class="contact-info-item">
+                    <span class="contact-info-label">ВКОНТАКТЕ</span>
+                    <a href="https://vk.ru/kartemake" class="contact-info-value">vk.com/kartemake</a>
+                </div>
             </div>
         </div>
     </section>
-    <!-- =========================================================
-         SCENE 10 — CTA
-         ========================================================= -->
-    <section
-        class="scene pricing-cta"
-        data-scene="pricing-cta"
-    >
+
+    <!-- =================================================
+    FOOTER
+    ================================================= -->
+    <section>
         <div class="scene-container">
-            <div class="cta-block">
-        <span>
-          K·ART·MAKE / TECHNICAL PARTNER
-        </span>
-                <h2 class="cta-block__title">
-                    Есть техническая задача?
-                </h2>
-                <p class="cta-block__text">
-                    Расскажите, что происходит с вашей системой.
-                    Определим, с чего начать и какой формат работы подходит.
-                </p>
-                <button
-                    class="button-primary"
-                    data-modal-func="open"
-                >
-                    Обсудить задачу
-                </button>
-            </div>
+            <!-- =================================================
+            FOOTER
+            ================================================= -->
+            <footer class="contact-footer">
+                <!-- FOOTER BRAND -->
+                <div class="contact-footer-brand">
+                    <a href="/" class="contact-footer-logo" aria-label="K·ART·MAKE">K·ART·MAKE</a>
+                    <p>Технический партнёр для вашего бизнеса.</p>
+                </div>
+                <!-- FOOTER NAVIGATION -->
+                <nav class="contact-footer-nav" aria-label="Навигация по сайту">
+                    <div class="contact-footer-column">
+                        <span class="contact-footer-title">УСЛУГИ</span>
+                        <a href="optimization.html">Оптимизация сайта</a>
+                        <a href="modernization.html">Модернизация</a>
+                        <a href="support.html">Техническая поддержка</a>
+                        <a href="audit.html">Аудит и консультации</a>
+                    </div>
+                    <div class="contact-footer-column">
+                        <span class="contact-footer-title">ИНФОРМАЦИЯ</span>
+                        <a href="./privacy-policy.html">Политика обработки персональных данных</a>
+                        <a href="./cookie-policy.html">Политика использования Cookie</a>
+                    </div>
+                    <div class="contact-footer-column">
+                        <span class="contact-footer-title">КОНТАКТЫ</span>
+                        <a href="mailto:hello@kartemake.ru">hello@kartemake.ru</a>
+                        <a href="mailto:support@kartemake.ru">support@kartemake.ru</a>
+                        <a href="https://t.me/KArtech76">Telegram</a>
+                        <a href="https://vk.ru/kartemake">VK</a>
+                    </div>
+                </nav>
+                <!-- FOOTER BOTTOM -->
+                <div class="contact-footer-bottom">
+                    <span>© 2026 K·ART·MAKE</span>
+                    <span>ТЕХНИЧЕСКИЙ ПАРТНЁР</span>
+                    <span>ВСЕ СИСТЕМЫ РАБОТАЮТ</span>
+                </div>
+            </footer>
         </div>
     </section>
 </main>
