@@ -108,6 +108,17 @@ ORBIT NAVIGATION
                 'audit-cta'       => 'С чего начать?',
             ];
         }
+        if (is_page('pricing')) {
+            $scenes = [
+                    'hero'       => 'Начало',
+                    'pricing-intro'       => 'Интро',
+                    'pricing-services'       => 'Услуги',
+                    'pricing-audit'       => 'Аудит',
+                    'pricing-advanced'       => 'Оптимизация и модернизация',
+                    'pricing-scope'       => 'Инжиниринг',
+                    'pricing-decision'       => 'Контакты',
+            ];
+        }
 
         if (!empty($scenes)) {
             $number = 1;
