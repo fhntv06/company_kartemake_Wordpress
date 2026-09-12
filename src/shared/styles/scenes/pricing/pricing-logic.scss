@@ -1,0 +1,28 @@
+@use '../../variables/colors' as *;
+@use '../../variables/offsets' as *;
+@use '../../system/mixins' as *;
+@use '../../variables/media' as *;
+
+.pricing-logic__flow {
+  display: flex;
+  max-width: 80%;
+}
+.pricing-logic__step {
+  display: flex;
+  flex-direction: column;
+  padding: $extra-small;
+  max-width: 300px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+.pricing-logic__step-number {
+  margin-bottom: $small;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  color: rgba(255, 255, 255, 0.4);
+}
+.pricing-logic__arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $orange;
+  margin: 0 $extra-small;
+}

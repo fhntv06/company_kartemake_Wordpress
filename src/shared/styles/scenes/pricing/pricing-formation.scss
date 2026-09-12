@@ -1,0 +1,82 @@
+@use "../../variables/colors" as *;
+@use "../../variables/fonts" as *;
+@use "../../variables/offsets" as *;
+@use "../../variables/media" as *;
+@use "../../variables/root" as *;
+@use "../../system/mixins" as *;
+
+// PRICING / PRICE FORMATION
+
+.pricing-intro {
+  &__flow {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: stretch;
+  }
+  &__step {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 310px;
+    padding: $small;
+    border: 1px solid $text-muted;
+    transition:
+            border-color 0.3s ease,
+            background-color 0.3s ease;
+    &:hover {
+      border-color: $orange;
+      background: $surface;
+    }
+    &-number {
+      margin-bottom: $small;
+      font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+      font-size: 16px;
+      color: $text-muted;
+    }
+    &-marker {
+      margin-bottom: $extra-small;
+      font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+      font-size: 16px;
+      letter-spacing: 0.14em;
+      color: $orange;
+    }
+    h3 {
+      line-height: 1.25;
+      font-weight: 400;
+    }
+    p {
+      margin: $extra-small 0 0;
+      line-height: 1.6;
+      color: $text-muted;
+    }
+  }
+  &__arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+    font-size: 20px;
+    color: $orange;
+    opacity: 0.7;
+  }
+}
+@media (max-width: $breakpoint-lower-middle) {
+  .pricing-intro__flow {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .pricing-intro__step {
+    min-height: auto;
+  }
+  .pricing-intro__arrow {
+    width: 100%;
+    height: 40px;
+    transform: rotateZ(90deg);
+  }
+}
+@media (max-width: $breakpoint-large-small) {
+  .pricing-intro__step {
+    padding: $extra-small;
+  }
+}
