@@ -446,7 +446,7 @@ add_action('customize_register', function($wp_customize) {
 
     // Telegram
     $wp_customize->add_setting('contact_telegram', [
-        'default'           => 'https://t.me/KArtech76',
+        'default'           => 'https://t.me/kartemake',
         'sanitize_callback' => 'esc_url_raw',
     ]);
     $wp_customize->add_control('contact_telegram', [

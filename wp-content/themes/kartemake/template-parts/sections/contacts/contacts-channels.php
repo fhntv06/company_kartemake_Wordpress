@@ -33,7 +33,7 @@
                 <div class="contacts-channel__content">
                     <span class="contacts-channel__label">TELEGRAM</span>
                     <h5>
-                        <a href="https://t.me/KArtech76" target="_blank" rel="noopener noreferrer">@KArtech76</a>
+                        <a href="https://t.me/kartemake" target="_blank" rel="noopener noreferrer">https://t.me/kartemake</a>
                     </h5>
                     <p class="contacts-channel__description">Быстрый способ связаться и задать предварительный вопрос.</p>
                 </div>

@@ -29,9 +29,9 @@ MODAL
 
             <!-- КОЛОНКА 2: СОЦСЕТИ -->
             <div class="contact-modal__body">
-                <a href="https://t.me/KArtech76" target="_blank" class="contact-modal__item">
+                <a href="https://t.me/kartemake" target="_blank" class="contact-modal__item">
                     <span class="contact-modal__item-label">TELEGRAM</span>
-                    <strong class="contact-modal__item-value">@KArtech76</strong>
+                    <strong class="contact-modal__item-value">https://t.me/kartemake</strong>
                 </a>
                 <a href="https://vk.ru/kartemake" target="_blank" class="contact-modal__item">
                     <span class="contact-modal__item-label">ВКОНТАКТЕ</span>
