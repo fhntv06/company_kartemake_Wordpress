@@ -709,138 +709,7 @@ function kartmake_get_policy_url($type = 'privacy-policy') {
 }
 
 // ============================================
-// 8. КАСТОМНЫЙ ТИП ПОСТОВ "УСЛУГИ"
-// ============================================
-
-/**
- * Регистрация кастомного типа постов "Услуги"
- */
-add_action('init', 'kartemake_register_services_post_type');
-
-function kartemake_register_services_post_type() {
-    register_post_type('services', [
-        'labels' => [
-            'name'               => 'Услуги',
-            'singular_name'      => 'Услуга',
-            'add_new'            => 'Добавить услугу',
-            'add_new_item'       => 'Добавить новую услугу',
-            'edit_item'          => 'Редактировать услугу',
-            'new_item'           => 'Новая услуга',
-            'view_item'          => 'Просмотр услуги',
-            'search_items'       => 'Поиск услуг',
-            'not_found'          => 'Услуг не найдено',
-            'not_found_in_trash' => 'Услуг в корзине не найдено',
-        ],
-        'public'        => true,
-        'has_archive'   => false,
-        'rewrite'       => ['slug' => 'services'],
-        'menu_icon'     => 'dashicons-hammer',
-        'supports'      => ['title', 'editor', 'excerpt', 'thumbnail', 'page-attributes'],
-        'show_in_rest'  => true,
-    ]);
-
-    // Регистрация мета-полей для услуг
-    register_post_meta('services', 'service_price', [
-        'type'          => 'string',
-        'single'        => true,
-        'show_in_rest'  => true,
-    ]);
-
-    register_post_meta('services', 'service_time', [
-        'type'          => 'string',
-        'single'        => true,
-        'show_in_rest'  => true,
-    ]);
-
-    register_post_meta('services', 'service_features', [
-        'type'          => 'string',
-        'single'        => true,
-        'show_in_rest'  => true,
-    ]);
-
-    register_post_meta('services', 'service_icon', [
-        'type'          => 'string',
-        'single'        => true,
-        'show_in_rest'  => true,
-    ]);
-}
-
-/**
- * Мета-боксы для услуг
- */
-add_action('add_meta_boxes', 'kartemake_services_meta_boxes');
-
-function kartemake_services_meta_boxes() {
-    add_meta_box(
-        'kartemake_services_meta',
-        'Дополнительные параметры услуги',
-        'kartemake_services_meta_callback',
-        'services',
-        'normal',
-        'default'
-    );
-}
-
-function kartemake_services_meta_callback($post) {
-    wp_nonce_field('kartemake_services_meta', 'kartemake_services_meta_nonce');
-
-    $price    = get_post_meta($post->ID, 'service_price', true);
-    $time     = get_post_meta($post->ID, 'service_time', true);
-    $features = get_post_meta($post->ID, 'service_features', true);
-    $icon     = get_post_meta($post->ID, 'service_icon', true);
-    ?>
-    <p>
-        <label for="service_price">Стоимость:</label>
-        <input type="text" id="service_price" name="service_price" value="<?php echo esc_attr($price); ?>" style="width: 100%;">
-        <span class="description">Например: от 200 000 ₽</span>
-    </p>
-    <p>
-        <label for="service_time">Срок/период:</label>
-        <input type="text" id="service_time" name="service_time" value="<?php echo esc_attr($time); ?>" style="width: 100%;">
-        <span class="description">Например: Проектная работа или от 25 000 ₽/мес</span>
-    </p>
-    <p>
-        <label for="service_features">Особенности (через запятую):</label>
-        <input type="text" id="service_features" name="service_features" value="<?php echo esc_attr($features); ?>" style="width: 100%;">
-        <span class="description">Например: 1С-Битрикс, WordPress, Интернет-магазины</span>
-    </p>
-    <p>
-        <label for="service_icon">CSS класс иконки:</label>
-        <input type="text" id="service_icon" name="service_icon" value="<?php echo esc_attr($icon); ?>" style="width: 100%;">
-        <span class="description">Например: icon-server, icon-database, icon-code</span>
-    </p>
-    <?php
-}
-
-/**
- * Сохранение мета-полей услуг
- */
-add_action('save_post', 'kartemake_save_services_meta');
-
-function kartemake_save_services_meta($post_id) {
-    if (!isset($_POST['kartemake_services_meta_nonce']) ||
-        !wp_verify_nonce($_POST['kartemake_services_meta_nonce'], 'kartemake_services_meta')) {
-        return;
-    }
-
-    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
-        return;
-    }
-
-    if (!current_user_can('edit_post', $post_id)) {
-        return;
-    }
-
-    $fields = ['service_price', 'service_time', 'service_features', 'service_icon'];
-    foreach ($fields as $field) {
-        if (isset($_POST[$field])) {
-            update_post_meta($post_id, $field, sanitize_text_field($_POST[$field]));
-        }
-    }
-}
-
-// ============================================
-// 9. МЕТА-ПОЛЯ ДЛЯ ЗАПИСЕЙ БЛОГА
+// 8. МЕТА-ПОЛЯ ДЛЯ ЗАПИСЕЙ БЛОГА
 // ============================================
 
 /**
@@ -905,7 +774,7 @@ function kartemake_save_post_meta($post_id) {
 }
 
 // ============================================
-// 10. ПОЛЯ ДЛЯ АВТОРА
+// 9. ПОЛЯ ДЛЯ АВТОРА
 // ============================================
 
 /**
