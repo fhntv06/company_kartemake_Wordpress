@@ -60,7 +60,7 @@
                         <span class="contact-footer-title">КОНТАКТЫ</span>
                         <a href="mailto:hello@kartemake.ru">hello@kartemake.ru</a>
                         <a href="mailto:support@kartemake.ru">support@kartemake.ru</a>
-                        <a href="https://t.me/kartemake">Telegram</a>
+                        <a href="https://t.me/KArtech76">Telegram</a>
                         <a href="https://vk.ru/kartemake">VK</a>
                     </div>
                 </nav>

@@ -47,7 +47,7 @@
             </div>
             <div class="contact-info-item">
                 <span class="contact-info-label">TELEGRAM</span>
-                <a href="https://t.me/kartemake" class="contact-info-value">https://t.me/kartemake</a>
+                <a href="https://t.me/KArtech76" class="contact-info-value">@KArtech76</a>
             </div>
             <div class="contact-info-item">
                 <span class="contact-info-label">ВКОНТАКТЕ</span>
