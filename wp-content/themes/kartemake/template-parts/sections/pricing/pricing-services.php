@@ -29,9 +29,6 @@
                     <li>исследуем конкретную техническую проблему</li>
                     <li>определяем её причину и следующие шаги</li>
                 </ul>
-                <button class="pricing-card__action" data-modal-func="open" data-service="diagnostics">
-                    Разобрать проблему
-                </button>
             </article>
 
             <!-- AUDIT -->
@@ -52,10 +49,6 @@
                     <li>анализ инфраструктуры</li>
                     <li>анализ базы данных, безопасность, производительность и интеграции</li>
                 </ul>
-                <button class="pricing-card__action" data-modal-func="open" data-service="audit"
-                >
-                    Заказать аудит
-                </button>
             </article>
 
             <!-- OPTIMIZATION -->
@@ -76,9 +69,6 @@
                     <li>оптимизируем существующую систему</li>
                     <li>проверяем результат изменений</li>
                 </ul>
-                <button class="pricing-card__action" data-modal-func="open" data-service="optimization">
-                    Обсудить оптимизацию
-                </button>
             </article>
 
             <!-- MODERNIZATION -->
@@ -99,9 +89,6 @@
                     <li>сохраняем работающие части системы</li>
                     <li>обновлеение только там, где это имеет смысл</li>
                 </ul>
-                <button class="pricing-card__action" data-modal-func="open" data-service="optimization">
-                    Обсудить модернизацию
-                </button>
             </article>
 
             <!-- SUPPORT -->
@@ -121,9 +108,6 @@
                     <li>берём на себя текущие технические задачи</li>
                     <li>отвечаем за развитие и эксплуатацию цифровой инфраструктуры</li>
                 </ul>
-                <button class="pricing-card__action" data-modal-func="open" data-service="optimization">
-                    Подобрать поддержку
-                </button>
             </article>
         </div>
     </div>
