@@ -123,6 +123,7 @@ function kartemake_enqueue_scripts() {
         || is_page('optimization')
         || is_page('modernization')
         || is_page('audit')
+        || is_page('pricing')
     ) {
         wp_enqueue_script(
             'kartemake-js-pages-common',
@@ -446,7 +447,7 @@ add_action('customize_register', function($wp_customize) {
 
     // Telegram
     $wp_customize->add_setting('contact_telegram', [
-        'default'           => 'https://t.me/kartemake',
+        'default'           => '@KArtech76',
         'sanitize_callback' => 'esc_url_raw',
     ]);
     $wp_customize->add_control('contact_telegram', [
