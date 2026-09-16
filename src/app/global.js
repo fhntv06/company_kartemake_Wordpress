@@ -10,6 +10,7 @@ import TransitionLoader from "./modules/global/transition-loader.js"
 import CookieController from "./modules/global/cookie-controller.js"
 import ModalController from "./modules/global/modal.js"
 import GlobalVariables from "./modules/global/variables";
+import CostCalculator from "./modules/global/cost-calculator";
 export default class GlobalApp {
     constructor() {
         this.modules = {}
@@ -25,7 +26,8 @@ export default class GlobalApp {
             DashboardMenu,
             TransitionLoader,
             CookieController,
-            ModalController
+            ModalController,
+            CostCalculator,
         }
 
         window.App = {}

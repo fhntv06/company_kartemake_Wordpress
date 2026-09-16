@@ -36,7 +36,6 @@ import Terminal from "../../modules/home/terminal.js"
 import PipelineScroll from "../../modules/home/pipeline-scroll.js"
 import SolutionsEngine from "../../modules/home/solutions-engine.js"
 import SceneRegistry from "../../modules/home/scene-registry.js"
-import CostCalculator from "../../modules/home/cost-calculator.js";
 
 export default class HomeApp {
     constructor() {
@@ -53,7 +52,6 @@ export default class HomeApp {
             PipelineScroll,
             SolutionsEngine,
             SceneRegistry,
-            CostCalculator,
         }
         this.init()
     }
