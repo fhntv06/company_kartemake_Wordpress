@@ -20,11 +20,9 @@ Home:
 - ArchitectureBuilder
 - AuditEngine
 - Terminal
-- MonitoringScroll
 - PipelineScroll
 - SolutionsEngine
 - SceneRegistry
-- ContactScroll
 
 =====================================================
 */

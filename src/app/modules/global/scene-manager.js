@@ -14,18 +14,6 @@ Responsibilities:
 - Navigation positions
 - Preloader-safe startup
 
-IMPORTANT:
-
-MonitoringScroll owns the monitoring ScrollTrigger.
-
-Therefore SceneManager does NOT create a second
-ScrollTrigger for:
-
-- monitoring
-
-✅ Contact теперь самостоятельная сцена и имеет
-   свой собственный ScrollTrigger
-
 ==========================================================
 */
 export default class SceneManager {
@@ -182,9 +170,6 @@ export default class SceneManager {
       Если позиция зарегистрирована специализированным
       engine — SceneManager НЕ имеет права её перезаписывать.
 
-      Например:
-
-      MonitoringScroll → monitoring
       ------------------------------------------------------
       */
       if (this.customPositions.has(sceneName)) {
@@ -224,16 +209,6 @@ export default class SceneManager {
 
   Used by engines which have their own
   internal scroll system.
-
-  Example:
-
-  MonitoringScroll:
-
-  sceneManager.registerScenePosition(
-    "monitoring",
-    monitoringStart,
-    monitoringEnd
-  );
 
   This overrides the physical DOM position.
   ==========================================================

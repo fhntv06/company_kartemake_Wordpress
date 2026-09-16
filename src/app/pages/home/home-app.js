@@ -22,12 +22,10 @@ Home:
 - ArchitectureBuilder
 - AuditEngine
 - Terminal
-- MonitoringScroll
 - OrbitNavigation
 - PipelineScroll
 - SolutionsEngine
 - SceneRegistry
-- ContactScroll
 - HeroParticleAssembly
 
 =====================================================
@@ -35,11 +33,10 @@ Home:
 import ArchitectureBuilder from "../../modules/home/architecture-builder.js"
 import AuditEngine from "../../modules/home/audit-engine.js"
 import Terminal from "../../modules/home/terminal.js"
-import MonitoringScroll from "../../modules/home/monitoring-scroll.js"
 import PipelineScroll from "../../modules/home/pipeline-scroll.js"
 import SolutionsEngine from "../../modules/home/solutions-engine.js"
 import SceneRegistry from "../../modules/home/scene-registry.js"
-import ContactScroll from "../../modules/home/contact-scroll.js"
+import CostCalculator from "../../modules/home/cost-calculator.js";
 
 export default class HomeApp {
     constructor() {
@@ -53,11 +50,10 @@ export default class HomeApp {
             ArchitectureBuilder,
             AuditEngine,
             Terminal,
-            MonitoringScroll,
             PipelineScroll,
             SolutionsEngine,
             SceneRegistry,
-            ContactScroll,
+            CostCalculator,
         }
         this.init()
     }
@@ -138,18 +134,6 @@ export default class HomeApp {
         -----------------------------------------------------
         */
         sceneManager.register("pipeline", this.modules.PipelineScroll)
-        /*
-        -----------------------------------------------------
-        MONITORING
-        -----------------------------------------------------
-        */
-        sceneManager.register("monitoring", this.modules.MonitoringScroll)
-        /*
-        -----------------------------------------------------
-        CONTACT
-        -----------------------------------------------------
-        */
-        sceneManager.register("contact", this.modules.ContactScroll)
         console.log("[HomeApp] scenes registered")
     }
 }

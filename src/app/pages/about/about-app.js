@@ -20,16 +20,15 @@ Home:
 - ArchitectureBuilder
 - AuditEngine
 - Terminal
-- MonitoringScroll
 - PipelineScroll
 - SolutionsEngine
 - SceneRegistry
-- ContactScroll
 
 =====================================================
 */
 
 import AboutIntro from "../../modules/about/about-intro";
+import CostCalculator from "../../modules/home/cost-calculator";
 
 export default class AboutApp {
     constructor() {
@@ -41,6 +40,7 @@ export default class AboutApp {
         */
         this.registry = {
             AboutIntro,
+            CostCalculator
         }
         this.init()
     }
