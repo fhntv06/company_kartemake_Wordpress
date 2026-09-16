@@ -34,6 +34,7 @@
 @use './components/canvas';
 @use './components/orbit-navigation';
 @use './components/contact-info';
+@use './components/cost-calculator-widget';
 
 // =====================================================
 // ОВЕРЛЕИ
@@ -44,3 +45,4 @@
 // СЦЕНЫ
 // =====================================================
 @use './scenes/global/hero';
+@use './scenes/global/cost-calculator';
