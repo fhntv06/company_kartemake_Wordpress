@@ -1,0 +1,525 @@
+@use '../../variables/colors' as *;
+@use '../../variables/offsets' as *;
+@use '../../system/mixins' as *;
+@use '../../variables/media' as *;
+
+.cost-calculator {
+  --price-intensity: 0;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  isolation: isolate;
+  
+  &__stage {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: $extra-small;
+    min-height: 680px;
+    transition:
+      opacity 0.4s ease,
+      visibility 0.4s ease,
+      transform 0.4s ease;
+  }
+
+  &__actions {
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-end;
+    gap: $extra-small;
+    width: max-content;
+  }
+
+  button {
+    &:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+  }
+
+  /* ==========================================================
+     ORBIT
+  ========================================================== */
+  &__orbit {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: min(650px, 62vw);
+    aspect-ratio: 1;
+    transform: translate(-50%, -50%);
+    border: 1px solid $surface-hover;
+    border-radius: 50%;
+    pointer-events: none;
+    animation-delay: 2s;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      border: 1px solid $surface;
+      border-radius: 50%;
+      animation: cost-orbit-pulse 5s ease infinite;
+    }
+    &::before {
+      inset: 55px;
+      animation-delay: .5s;
+    }
+    &::after {
+      inset: 145px;
+      animation-delay: 1s;
+    }
+  }
+  /* ==========================================================
+     FLOW
+  ========================================================== */
+  &__flows {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    pointer-events: none;
+    z-index: 2;
+  }
+  &__flow {
+    fill: none;
+    stroke: $orange;
+    stroke-width: 1;
+    stroke-opacity: 0.22;
+    transition: stroke-opacity 0.3s ease, stroke-width 0.3s ease;
+  }
+  &__particle {
+    fill: $orange;
+    filter: drop-shadow( 0 0 5px rgba(255,107,0,0.75));
+  }
+  /* ==========================================================
+     SERVICE NODE
+  ========================================================== */
+  &__services {
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+  }
+  .cost-service {
+    position: absolute;
+    width: 165px;
+    min-height: 82px;
+    padding: $extra-small;
+    border: 1px solid $text-muted;
+    background: rgba(20,20,20,0.92);
+    text-align: left;
+    cursor: pointer;
+    transition:
+      border-color 0.3s ease,
+      box-shadow 0.3s ease,
+      transform 0.3s ease,
+      background 0.3s ease;
+    &:hover {
+      border-color: $orange;
+      transform: translateY(-2px);
+      box-shadow: 0 0 25px rgba(255,107,0,0.08);
+    }
+    &--selected {
+      border-color: $orange;
+      background: rgba(255,107,0,0.045);
+      box-shadow: 0 0 28px rgba(255,107,0,0.13);
+      
+      .cost-service__price {
+        color: $orange;
+      }
+    }
+    &__index {
+      display: block;
+      color: $text-gray;
+    }
+    &__title {
+      display: block;
+      margin-top: $extra-small;
+      font-size: 12px;
+      line-height: 1.3;
+      letter-spacing: 0.06em;
+      color: $text-primary;
+    }
+    &__price {
+      display: block;
+      margin-top: $extra-small;
+      font-size: 12px;
+      color: $text-gray;
+      transition: color 0.3s ease;
+    }
+    &--diagnostics {
+      left: 8%;
+      top: 40%;
+    }
+    &--audit {
+      left: 26%;
+      top: 15%;
+    }
+    &--optimization {
+      right: 26%;
+      top: 15%;
+    }
+    &--modernization {
+      right: 8%;
+      top: 40%;
+    }
+    &--support {
+      left: 50%;
+      bottom: 15%;
+    }
+  }
+  /* ==========================================================
+     CENTER
+  ========================================================== */
+  &__center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: clamp(190px,20vw,250px);
+    aspect-ratio: 1;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid rgba( 255, 107, 0, calc( 0.35 + var(--price-intensity) * 0.5 ));
+    background: radial-gradient( circle, rgba( 255, 107, 0, calc( 0.04 + var(--price-intensity) * 0.08 )), rgba( 15, 15, 15, 0.98 ) 68%);
+    box-shadow:
+      0 0 calc( 45px + var(--price-intensity) * 90px ) rgba( 255, 107, 0, calc( 0.07 + var(--price-intensity) * 0.16 ) ),
+      inset 0 0 calc(45px + var(--price-intensity)* 45px)rgba(255,107,0,calc(0.02 + var(--price-intensity) * 0.05));
+    transition:
+      border-color 0.45s ease,
+      box-shadow 0.45s ease,
+      background 0.45s ease;
+    &--pulse {
+      animation: cost-calculator-pulse 0.5s ease;
+    }
+  }
+  &__center-label {
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    color: $text-secondary;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  &__center-price {
+    margin-top: $extra-small;
+    color: $orange;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+  }
+  &__center-currency {
+    margin-top: $extra-small;
+    font-size: 12px;
+    color: $text-secondary;
+    text-transform: uppercase;
+  }
+  &__center-meta {
+    margin-top: $extra-small;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    color: $text-secondary;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  /* ==========================================================
+     RESULT
+  ========================================================== */
+  &__result {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(15px);
+    transition:
+      opacity 0.4s ease,
+      visibility 0.4s ease,
+      transform 0.4s ease;
+
+    &--visible {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+  }
+  &__result-inner {
+    width: min(560px,100%)
+  }
+  &__result-label {
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    color: $text-gray;
+    text-transform: uppercase;
+  }
+  &__result-price {
+    margin-top: $extra-small;
+    font-size: clamp(42px,7vw,76px);
+    line-height: 1;
+  }
+  &__result-services {
+    margin: $small 0;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid $text-muted;
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      gap: $extra-small;
+      padding: $extra-small 0;
+      border-bottom: 1px solid $text-muted;
+      color: $text-gray;
+
+      strong {
+        font-weight: 400;
+      }
+    }
+  }
+}
+.cost-calculator--result {
+  .cost-calculator__stage {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+/* ==============================================================
+   WIDGET
+============================================================== */
+.cost-calculator-widget {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  z-index: 9990;
+  display: flex;
+  align-items: center;
+  transform: translateY(-50%);
+  transition: width 1s ease-in, height 1s ease-in;
+
+  &__trigger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    min-height: 150px;
+    padding: $extra-small;
+    border: 1px solid $text-muted;
+    border-left: 0;
+    background: $bg-secondary;
+    color: $text-primary;
+    cursor: pointer;
+    writing-mode: vertical-rl;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-size: 12px;
+    transition: border-color 0.3s ease, color 0.3s ease;
+    overflow: hidden;
+
+    &:hover {
+      border-color: $orange;
+      color: $orange;
+    }
+  }
+  &__modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: $small;
+    background:rgba(5,5,5,0.82);
+    backdrop-filter:blur(8px);
+    transform: scale(0);
+    transform-origin: center left;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+      opacity .5s ease,
+      transform .5s ease,
+      visibility .35s ease;
+
+    .cost-calculator {
+      width: min(1100px,100%);
+      height: min(760px,90vh);
+      padding: 0;
+      border: 1px solid $text-muted;
+      background: $bg-primary;
+      box-shadow: 0 30px 100px rgba(0, 0, 0, 0.55);
+    }
+  }
+  &--open {
+    width: 100dvw;
+    height: 100dvh;
+
+    .cost-calculator-widget__modal {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: scale(1);
+    }
+  }
+  &__close {
+    z-index: 20;
+    position: absolute;
+    top: $small;
+    right: $small;
+    width: 36px;
+    height: 36px;
+    border: 1px solid $text-muted;
+    background: transparent;
+    color: $text-gray;
+    cursor: pointer;
+
+    &:hover {
+      color: $orange;
+      border-color: $orange;
+    }
+  }
+}
+
+/* ==============================================================
+   TABLET
+============================================================== */
+@media (max-width: $breakpoint-lower-middle) {
+  .cost-calculator {
+    &__stage {
+      min-height: 620px;
+    }
+    &__orbit {
+      width: 560px;
+    }
+    .cost-service {
+      width: 145px;
+
+      &--diagnostics {
+        left: 4%;
+      }
+      &--modernization {
+        right: 4%;
+      }
+      &--audit {
+        left: 21%;
+      }
+      &--optimization {
+        right: 21%;
+      }
+    }
+  }
+}
+/* ==============================================================
+   MOBILE
+============================================================== */
+@media (max-width: $breakpoint-large-small) {
+  .cost-calculator {
+    &__stage {
+      min-height: 500px;
+    }
+    &__orbit {
+      width: 310px;
+      top: 45%;
+      &::before {
+        inset: 35px;
+      }
+      &::after {
+        inset: 80px;
+      }
+    }
+    &__center {
+      width: 60%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    &__center-price {
+      font-size: 29px;
+    }
+    .cost-service {
+      padding: calc($extra-small / 2);
+
+      &__index {
+        font-size: 10px;
+      }
+      &__title {
+        font-size: 12px;
+        margin-top: calc($extra-small / 2);
+      }
+      &__price {
+        font-size: 12px;
+        margin-top: calc($extra-small / 2);
+      }
+      &--diagnostics {
+        top: 0;
+        left: 0;
+      }
+      &--audit {
+        top: calc(82px + 8px);
+        left: 0;
+      }
+      &--optimization {
+        top: calc(82px * 2 + 8px * 2);
+        left: 0;
+      }
+      &--modernization {
+        top: calc(82px * 3 + 8px * 3);
+        left: 0;
+      }
+      &--support {
+        top: calc(82px * 4 + 8px * 4);
+        left: 0;
+        bottom: unset;
+      }
+    }
+    &__actions {
+      width: 100%;
+      justify-content: flex-end;
+    }
+  }
+  .cost-calculator-widget {
+    &__trigger {
+      padding: calc($extra-small / 2);
+      font-size: 10px;
+      width: max-content;
+    }
+    &__modal {
+      padding: $extra-small;
+
+      .cost-calculator {
+        width: 100%;
+        height: 100%;
+        max-height: none;
+        border: 0;
+      }
+    }
+    &__close {
+      top: 15px;
+      right: 15px;
+    }
+  }
+}
+/* ==============================================================
+   REDUCED MOTION
+============================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .cost-calculator *,
+  .cost-calculator-widget * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
