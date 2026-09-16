@@ -13,7 +13,7 @@ ORBIT NAVIGATION
                 'solutions'  => 'Решения',
                 'architecture' => 'Инфраструктура',
                 'pipeline'   => 'Процесс',
-                'monitoring' => 'Контроль',
+                'cost-calculator' => 'Калькулятор стоимости',
                 'contact'    => 'Контакты',
             ];
         }
