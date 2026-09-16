@@ -11,7 +11,7 @@ import GlobalVariables from "../global/variables";
  */
 export default class CalculatorController {
     constructor() {
-        this.scene = document.querySelector('.scene[data-scene="calculator"]');
+        this.scene = document.querySelector('.scene[data-scene="calculator-scene"]');
 
         if (!this.scene) {
             console.warn("[CalculatorController] Scene not found");
@@ -616,7 +616,6 @@ export default class CalculatorController {
      * ============================================================
      */
     validate() {
-        console.log(this.currentStep)
         if (this.currentStep === 'options') {
             if (!this.state.task) {
                 this.focus('input[name="calculator_task"]');
