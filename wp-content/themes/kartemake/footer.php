@@ -86,6 +86,12 @@ MODAL
 ================================================= -->
 <?php get_template_part('template-parts/components/modal'); ?>
 
+<?php if (!is_front_page()): ?>
+<!-- =================================================
+COST CALCULATOR
+================================================= -->
+  <?php get_template_part('template-parts/components/cost-calculator-widget'); ?>
+<?php endif; ?>
 <?php wp_footer(); ?>
 </body>
 </html>
