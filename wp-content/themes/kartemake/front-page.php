@@ -25,8 +25,8 @@ get_template_part('template-parts/global/orbit-navigation');
         <!-- PIPELINE -->
         <?php get_template_part('template-parts/sections/home/pipeline'); ?>
 
-        <!-- MONITORING -->
-        <?php get_template_part('template-parts/sections/home/monitoring'); ?>
+        <!-- COST CALCULATOR -->
+        <?php get_template_part('template-parts/sections/home/cost-calculator'); ?>
 
         <!-- CONTACT -->
         <?php get_template_part('template-parts/sections/home/contact'); ?>
