@@ -42,6 +42,7 @@ function getChunks() {
     modernization: [...common, 'pages-common', 'modernization'],
     audit: [...common, 'pages-common', 'audit'],
     pricing: [...common, 'pages-common', 'pricing'],
+    'blog-detail': [...common, 'pages-common', 'blog-detail'],
   }
 }
 
@@ -71,6 +72,7 @@ module.exports = (env, argv) => {
       modernization: './src/app/pages/modernization/modernization-entry.js',
       audit: './src/app/pages/audit/audit-entry.js',
       pricing: './src/app/pages/pricing/pricing-entry.js',
+      'blog-detail': './src/app/pages/blog-detail/blog-detail-entry.js',
     },
 
     output: {
