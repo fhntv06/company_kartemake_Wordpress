@@ -2,27 +2,12 @@
 =====================================================
 K·ART·MAKE V5.2
 
-HOME APP
-
-Home page application bootstrap.
-
-GLOBAL MODULES ARE NOT INITIALIZED HERE.
-
-Global:
-- ScrollEngine
-- DashboardMenu
-- TransitionLoader
-- AnchorNavigation
-- CookieController
-- ModalController
-
-Home:
-- CanvasEngine
-- SceneManager
-- HeroParticleAssembly
+POLICY APP
 
 =====================================================
 */
+
+import Sidebar from "../../modules/global/sidebar";
 
 export default class PolicyApp {
     constructor() {
@@ -32,7 +17,10 @@ export default class PolicyApp {
         HOME MODULE REGISTRY
         =====================================================
         */
-        this.registry = {}
+
+        this.registry = {
+            Sidebar
+        }
         this.init()
     }
 
