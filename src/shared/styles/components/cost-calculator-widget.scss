@@ -9,11 +9,10 @@
 .cost-calculator-widget {
   position: fixed;
   left: 0;
-  top: 50%;
+  bottom: $extra-small;
   z-index: 9990;
   display: flex;
   align-items: center;
-  transform: translateY(-50%);
   transition: width 1s ease-in, height 1s ease-in;
 
   &__trigger {
@@ -56,9 +55,9 @@
     visibility: hidden;
     pointer-events: none;
     transition:
-            opacity .5s ease,
-            transform .5s ease,
-            visibility .35s ease;
+      opacity .5s ease,
+      transform .5s ease,
+      visibility .35s ease;
 
     .cost-calculator {
       width: min(1100px,100%);
@@ -73,6 +72,10 @@
     width: 100dvw;
     height: 100dvh;
 
+    .cost-calculator-widget__trigger {
+      opacity: 0;
+      pointer-events: none;
+    }
     .cost-calculator-widget__modal {
       opacity: 1;
       visibility: visible;
@@ -113,7 +116,7 @@
   .cost-calculator-widget {
     &__trigger {
       padding: calc($extra-small / 2);
-      font-size: 10px;
+      font-size: 12px;
       width: max-content;
     }
     &__modal {

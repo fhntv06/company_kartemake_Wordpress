@@ -40,11 +40,12 @@
   margin-bottom: $small;
   padding: $extra-small $lower-small;
   border-radius: 999px;
-  border: 1px solid var(--border);
+  border: 1px solid $border;
   background: rgba(255, 255, 255, 0.04);
-  color: var(--orange);
+  color: $orange;
   font-size: 12px;
   letter-spacing: 0.3em;
+  text-transform: uppercase;
 }
 
 .hero-content h2 {

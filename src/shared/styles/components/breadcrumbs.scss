@@ -11,7 +11,7 @@
   align-items: center;
   flex-wrap: wrap;
   gap: $extra-small;
-  margin-bottom: $small;
+  margin-bottom: $middle;
   font-family: "IBM Plex Mono", "Roboto Mono", monospace;
   @include responsive-font(9, 11);
   letter-spacing: 0.05em;
@@ -25,7 +25,7 @@
   color: $orange;
 }
 .breadcrumbs__separator {
-  color: rgba(255,255,255,0.2);
+  color: $text-secondary;
 }
 .breadcrumbs__current {
   color: $orange;

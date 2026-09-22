@@ -6,7 +6,7 @@
 
 .cookie-banner {
   position: fixed;
-  left: $small;
+  left: $middle;
   bottom: $extra-small;
   width: 100%;
   max-width: max-content;
@@ -351,10 +351,10 @@
   transform: translateX(18px);
 }
 
-@media (max-width: 576px) {
+@media (max-width: $breakpoint-large-small) {
   .cookie-banner {
-    left: $extra-small;
-    width: calc(100% - $extra-small * 2);
+    left: $small;
+    width: calc(100% - $small * 2);
   }
 
   .cookie-banner__actions {

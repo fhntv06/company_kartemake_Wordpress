@@ -347,6 +347,7 @@
       }
     }
     &__center {
+      z-index: 10;
       width: 60%;
       top: 50%;
       transform: translateY(-50%);
