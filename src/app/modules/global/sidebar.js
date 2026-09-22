@@ -14,15 +14,9 @@ export default class Sidebar {
             return
         }
         
-        this.tocContainer = this.sidebar.querySelector('.toc')
+        this.tocContainer = this.sidebar.querySelector('[data-toc-links]')
         if (!this.tocContainer) {
             console.warn("[Sidebar] tocContainer element not found")
-            return
-        }
-
-        this.tocLinks = Array.from(this.tocContainer.querySelectorAll('.toc-link'))
-        if (!this.tocLinks.length) {
-            console.warn("[Sidebar] tocLinks elements not found")
             return
         }
 
@@ -32,6 +26,7 @@ export default class Sidebar {
             return
         }
 
+        this.tocLinks = []
         this.attrName = 'section'
         this.classActive = 'active'
 
@@ -50,9 +45,16 @@ export default class Sidebar {
             this.tocContainer.classList.toggle('is-open')
         })
 
-        this.bindEvents()
-        this.createHrefAttr()
-        this.createIdsAttr()
+        this.tocHeadings.forEach((heading, index) => {
+            heading.id = `${this.attrName}-${index}`
+
+            const link = this.createLinks(heading, index)
+
+            this.tocLinks.push(link)
+            this.tocContainer.insertAdjacentElement('beforeend', link)
+
+            this.bindEvents(link)
+        })
 
         // При изменении размера окна — сбрасываем состояние
         let resizeTimeout
@@ -65,20 +67,21 @@ export default class Sidebar {
             }, 250)
         })
     }
-    bindEvents = () => {
-        this.tocLinks.forEach((link) => {
-            link.addEventListener('click', this.activatedLink)
-        })
+    createLinks = (heading, index) => {
+        const link = document.createElement('A')
+
+        link.classList.add('toc-link')
+
+        if (index === 0) link.classList.add('active')
+
+        link.href = `#${this.attrName}-${index}`
+
+        link.textContent = `0${index + 1}. ${heading.textContent}`
+
+        return link
     }
-    createHrefAttr = () => {
-        this.tocLinks.forEach((link, index) => {
-            link.href = `#${this.attrName}-${index}`
-        })
-    }
-    createIdsAttr = () => {
-        this.tocHeadings.forEach((heading, index) => {
-            heading.id = `${this.attrName}-${index}`
-        })
+    bindEvents = (link) => {
+        link.addEventListener('click', this.activatedLink)
     }
     activatedLink = (event) => {
         this.resetActivatedLink()
