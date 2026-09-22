@@ -5,78 +5,123 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
+const MODULES = require('./src/app/modules/manifest.js');
+const PAGES   = require('./src/app/pages/manifest.js');
+
+// ── 1. Собираем список entry: страницы + модульные бандлы ─────────
+function buildEntries() {
+  const entries = {};
+
+  // 1a. Страницы (каждая — свой entry)
+  for (const page of Object.keys(PAGES)) {
+    entries[page] = `./src/app/pages/${page}/${page}-entry.js`;
+  }
+
+  // 1b. Модульные бандлы (global, home, ...)
+  //     Извлекаем уникальные entry-имена из манифеста модулей.
+  //     Создаём для каждого виртуальный entry-файл-агрегатор.
+  const moduleEntries = new Set();
+  for (const mod of Object.values(MODULES)) {
+    moduleEntries.add(mod.entry);
+  }
+
+  // Эти entry-точки не файлы, а виртуальные: мы их сгенерируем на лету.
+  for (const name of moduleEntries) {
+    entries[name] = path.resolve(__dirname, `.webpack/modules/${name}.js`);
+  }
+
+  return entries;
+}
+
+// ── 2. Генерируем виртуальные файлы-агрегаторы ───────────────────
+// Для каждого entry-имени модуля создаём файл, который импортирует
+// все модули, помеченные этим entry-именем.
+function generateModuleAggregators() {
+  const fs = require('fs');
+  const dir = path.resolve(__dirname, '.webpack/modules');
+  fs.mkdirSync(dir, { recursive: true });
+
+  // Группируем модули по entry
+  const groups = {};
+  for (const [key, mod] of Object.entries(MODULES)) {
+    (groups[mod.entry] ??= []).push({ key, path: mod.path });
+  }
+
+  for (const [entryName, mods] of Object.entries(groups)) {
+    const imports = mods.map((m, i) =>
+        `import ${m.key} from '${path.resolve(__dirname, m.path).replace(/\\/g, '/')}';`
+    ).join('\n');
+
+    const registrations = mods.map(m =>
+        `  ${m.key},`
+    ).join('\n');
+
+    const content = `
+// AUTO-GENERATED. Do not edit.
+${imports}
+
+export const registry = {
+${registrations}
+};
+`;
+    fs.writeFileSync(path.join(dir, `${entryName}.js`), content);
+  }
+}
+
+// ── 3. Определяем, какие чанки подключать к каждой странице ──────
+// Для страницы: все модульные entry, к которым относятся её модули,
+// + сама страница. Порядок: global → ... → страница.
+const ENTRY_ORDER = ['runtime', 'vendors', 'npm', 'global',];
+
+function getPageChunks(pageName) {
+  const moduleKeys = PAGES[pageName] ?? [];
+  const usedEntries = new Set(
+      moduleKeys.map(k => MODULES[k]?.entry).filter(Boolean)
+  );
+
+  // Сортируем по ENTRY_ORDER, всё что не в списке — в конец перед страницей
+  const ordered = [];
+  for (const name of ENTRY_ORDER) {
+    if (name === 'runtime' || name === 'vendors' || name === 'npm') {
+      ordered.push(name); // эти чанки создаст сам webpack
+    } else if (usedEntries.has(name)) {
+      ordered.push(name);
+    }
+  }
+  // Остальные модульные entry (home, calculator, ...) — в алфавитном порядке
+  for (const name of [...usedEntries].sort()) {
+    if (!ordered.includes(name)) ordered.push(name);
+  }
+  // И сама страница в самом конце
+  ordered.push(pageName);
+
+  return ordered;
+}
+
+// ── 4. Страницы для HtmlWebpackPlugin ────────────────────────────
 function getPageEntries() {
   const pages = glob.sync('./src/pages/*.html');
   return pages.map(page => {
     const name = path.basename(page, '.html');
     const route = page.replace('./src/pages', '').replace('.html', '');
-    return {
-      name,
-      path: page,
-      route: route === '/index' ? '/' : route
-    };
+    return { name, path: page, route: route === '/index' ? '/' : route };
   });
 }
 
-function getChunks() {
-  const common = ['runtime', 'vendors', 'global']
-
-  // регулировка подключения в html
-  // последовательность common -> pages-common -> global
-  // TODO нужно более гибкое управление global модулями.
-  //  т.к. уже pages-common был сформирован из-за не гибкости
-  //  а что если HeroParticle не нужен будет на какой то странице,
-  //  то придется ещё раз дробить и так далее.
-  //  поэтому нужно сделать так, чтобы можно был легко для кажой страницы
-  //  включать и выключать модули
-  return {
-    index: [...common, 'pages-common', 'home'],
-    policy: [...common, 'policy'],
-    about: [...common, 'pages-common', 'about'],
-    blog: [...common, 'pages-common', 'blog'],
-    calculator: [...common, 'pages-common', 'calculator'],
-    contacts: [...common, 'pages-common', 'contacts'],
-    services: [...common, 'pages-common', 'services'],
-    support: [...common, 'pages-common', 'support'],
-    optimization: [...common, 'pages-common', 'optimization'],
-    modernization: [...common, 'pages-common', 'modernization'],
-    audit: [...common, 'pages-common', 'audit'],
-    pricing: [...common, 'pages-common', 'pricing'],
-    'blog-detail': [...common, 'pages-common', 'blog-detail'],
-  }
-}
-
-const pages = getPageEntries();
-const chunks = getChunks()
-
+// ── Точка входа конфига ──────────────────────────────────────────
 module.exports = (env, argv) => {
   const isProduction = argv.mode === 'production';
-  const isDebug = process.env.DEBUG_MODE === 'true';
+
+  generateModuleAggregators();
+
+  const entries = buildEntries();
+  const pages = getPageEntries();
 
   return {
     mode: isProduction ? 'production' : 'development',
-
-    // Оставляем только main, vendor будет собран через splitChunks
-    entry: {
-      global: './src/app/global.js',
-      'pages-common': './src/app/pages-common.js',
-      home: './src/app/pages/home/home-entry.js',
-      policy: './src/app/pages/policy/policy-entry.js',
-      about: './src/app/pages/about/about-entry.js',
-      blog: './src/app/pages/blog/blog-entry.js',
-      calculator: './src/app/pages/calculator/calculator-entry.js',
-      contacts: './src/app/pages/contacts/contacts-entry.js',
-      services: './src/app/pages/services/services-entry.js',
-      support: './src/app/pages/support/support-entry.js',
-      optimization: './src/app/pages/optimization/optimization-entry.js',
-      modernization: './src/app/pages/modernization/modernization-entry.js',
-      audit: './src/app/pages/audit/audit-entry.js',
-      pricing: './src/app/pages/pricing/pricing-entry.js',
-      'blog-detail': './src/app/pages/blog-detail/blog-detail-entry.js',
-    },
+    entry: entries,
 
     output: {
-      // Все JS файлы в assets/js
       filename: 'assets/js/[name].build.js',
       chunkFilename: 'assets/js/[name].build.chunk.js',
       path: path.resolve(__dirname, 'build'),
@@ -87,19 +132,14 @@ module.exports = (env, argv) => {
 
     module: {
       rules: [
-        {
-          test: /\.html$/,
-          loader: 'html-loader'
-        },
+        { test: /\.html$/, loader: 'html-loader' },
         {
           test: /\.js$/,
           exclude: /node_modules/,
           use: {
             loader: 'babel-loader',
-            options: {
-              presets: ['@babel/preset-env']
-            }
-          }
+            options: { presets: ['@babel/preset-env'] },
+          },
         },
         {
           test: /\.s[ac]ss$/i,
@@ -109,34 +149,13 @@ module.exports = (env, argv) => {
             'sass-loader',
           ],
         },
-        {
-          test: /\.css$/,
-          use: [
-            isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
-            'css-loader'
-          ]
-        },
-        {
-          test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
-          type: 'asset/resource',
-          generator: {
-            filename: 'assets/images/[name].[hash][ext]'
-          }
-        },
-        {
-          test: /\.(woff|woff2|eot|ttf|otf)$/i,
-          type: 'asset/resource',
-          generator: {
-            filename: 'assets/fonts/[name].[hash][ext]'
-          }
-        },
-        {
-          test: /\.(mp4|webm|ogg|mp3|wav)$/i,
-          type: 'asset/resource',
-          generator: {
-            filename: 'assets/media/[name].[hash][ext]'
-          }
-        },
+        { test: /\.css$/, use: [isProduction ? MiniCssExtractPlugin.loader : 'style-loader', 'css-loader'] },
+        { test: /\.(png|svg|jpg|jpeg|gif|webp)$/i, type: 'asset/resource',
+          generator: { filename: 'assets/images/[name].[hash][ext]' } },
+        { test: /\.(woff|woff2|eot|ttf|otf)$/i, type: 'asset/resource',
+          generator: { filename: 'assets/fonts/[name].[hash][ext]' } },
+        { test: /\.(mp4|webm|ogg|mp3|wav)$/i, type: 'asset/resource',
+          generator: { filename: 'assets/media/[name].[hash][ext]' } },
       ],
     },
 
@@ -151,24 +170,20 @@ module.exports = (env, argv) => {
       ...pages.map(page => new HtmlWebpackPlugin({
         template: page.path,
         filename: `${page.name}.html`,
-        // Указываем все нужные чанки
-        chunks: chunks[page.name],
+        chunks: getPageChunks(page.name),
         chunksSortMode: 'manual',
         inject: 'body',
-      }))
+      })),
     ],
 
     optimization: {
       minimize: isProduction,
-      runtimeChunk: {
-        name: 'runtime'
-      },
+      runtimeChunk: { name: 'runtime' },
       splitChunks: {
         chunks: 'all',
         maxInitialRequests: 10,
         minSize: 0,
         cacheGroups: {
-          // Все библиотеки в vendors
           vendors: {
             test: /[\\/]lib[\\/]/,
             name: 'vendors',
@@ -177,7 +192,6 @@ module.exports = (env, argv) => {
             enforce: true,
             reuseExistingChunk: true,
           },
-          // Библиотеки из node_modules
           npm: {
             test: /[\\/]node_modules[\\/]/,
             name: 'npm',
@@ -185,17 +199,23 @@ module.exports = (env, argv) => {
             priority: 10,
             reuseExistingChunk: true,
           },
-        }
+          // ВАЖНО: не даём webpack выносить модули приложения
+          // в безымянные чанки — иначе получите 385.bundle.js
+          appModules: {
+            test: /[\\/]src[\\/]app[\\/]modules[\\/]/,
+            name: false,
+            chunks: 'all',
+            priority: 30,
+            enforce: true,
+            reuseExistingChunk: false,
+          },
+        },
       },
       minimizer: [
         new TerserPlugin({
           terserOptions: {
-            compress: {
-              drop_console: false,
-            },
-            output: {
-              comments: false
-            },
+            compress: { drop_console: false },
+            output: { comments: false },
           },
           extractComments: false,
         }),
@@ -207,12 +227,10 @@ module.exports = (env, argv) => {
       static: './build',
       port: 3000,
       historyApiFallback: {
-        rewrites: [
-          ...pages.map(page => ({
-            from: new RegExp(`^${page.route}$`),
-            to: `/${page.name}.html`
-          }))
-        ]
+        rewrites: pages.map(page => ({
+          from: new RegExp(`^${page.route}$`),
+          to: `/${page.name}.html`,
+        })),
       },
       open: true,
       hot: true,
