@@ -1,0 +1,106 @@
+@use '../variables/colors' as *;
+@use '../variables/fonts' as *;
+@use '../variables/offsets' as *;
+@use '../variables/media' as *;
+@use '../system/mixins' as *;
+
+/* ----- POLICY SIDEBAR ----- */
+.sidebar {
+  z-index: 1;
+  position: sticky;
+  top: calc(#{$header-height-desctop} + #{$offset-header});
+  height: fit-content;
+}
+
+.toc {
+  display: flex;
+  flex-direction: column;
+  gap: calc($extra-small / 2);
+  padding: $extra-small;
+  border: 1px solid $border;
+  background-color: $surface;
+  transition: all 3s ease-out;
+}
+
+.toc-title {
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  @include responsive-font($min-small-font-size, $max-small-font-size);
+  letter-spacing: .12em;
+  margin-bottom: $extra-small;
+  opacity: .4;
+  text-transform: uppercase;
+}
+
+.toc-link {
+  border-left: 2px solid transparent;
+  display: block;
+  line-height: 1.4;
+  opacity: .6;
+  white-space: nowrap;
+  transition: $transition;
+}
+
+.toc-link:hover,
+.toc-link.active {
+  padding-left: 8px;
+  border-left-color: $orange;
+  opacity: 1;
+}
+
+.sidebar-actions {
+  margin-top: $small;
+  padding-top: $small;
+  border-top: 1px solid $border;
+}
+@media (max-width: $breakpoint-lower-middle) {
+  .sidebar {
+    position: relative;
+    top: 0;
+    margin-bottom: 24px;
+  }
+  .toc {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: calc($extra-small / 2);
+    padding: calc($extra-small / 2);
+    max-width: 80%;
+  }
+  .toc-title {
+    display: flex;
+    width: 100%;
+    margin-bottom: calc($extra-small / 2);
+  }
+  .toc-link {
+    padding: 4px 0;
+  }
+  .sidebar-actions {
+    display: none;
+  }
+}
+@media (max-width: $breakpoint-large-small) {
+  .sidebar {
+    position: sticky;
+    top: 72px;
+    background-color: $bg-secondary;
+    margin-bottom: 0;
+  }
+  .toc {
+    max-width: 100%;
+    max-height: 32px;
+    overflow: hidden;
+    transition: all .3s ease-in;
+
+    &.is-open {
+      max-height: 500px;
+    }
+  }
+  .toc-title {
+    &::after {
+      content: "▾";
+      display: block;
+      transition: transform 0.3s ease;
+      font-size: 12px;
+      margin-left: auto;
+    }
+  }
+}
