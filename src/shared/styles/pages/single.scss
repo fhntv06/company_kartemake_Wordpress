@@ -1,6 +1,6 @@
 // ============================================================
 // K·ART·MAKE
-// BLOG DETAIL PAGE
+// SINGLE PAGE
 // ============================================================
 
 // =====================================================
@@ -12,9 +12,9 @@
 // =====================================================
 // СЦЕНЫ
 // =====================================================
-@use '../scenes/blog-detail/blog-detail-header';
-@use '../scenes/blog-detail/blog-detail-intro';
-@use '../scenes/blog-detail/blog-detail-cover';
-@use '../scenes/blog-detail/blog-detail-content';
-@use '../scenes/blog-detail/blog-detail-article';
+@use '../scenes/single/single-header';
+@use '../scenes/single/single-intro';
+@use '../scenes/single/single-cover';
+@use '../scenes/single/single-content';
+@use '../scenes/single/single-article';
 @use "../scenes/blog/blog-articles";
