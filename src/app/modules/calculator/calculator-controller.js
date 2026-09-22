@@ -1,5 +1,3 @@
-import GlobalVariables from "../global/variables";
-
 /**
  * ============================================================
  * CALCULATOR
