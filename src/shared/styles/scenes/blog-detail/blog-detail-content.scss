@@ -1,0 +1,34 @@
+@use "../../variables/colors" as *;
+@use "../../variables/fonts" as *;
+@use "../../variables/offsets" as *;
+@use "../../variables/media" as *;
+@use "../../variables/root" as *;
+@use "../../system/mixins" as *;
+
+/* =========================================================
+   BLOG DETAIL — CONTENT LAYOUT
+   ========================================================= */
+.blog-detail-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  justify-content: space-between;
+  margin-top: $large;
+  align-items: start;
+  gap: $middle;
+}
+.blog-detail-sidebar {
+  min-width: 0;
+}
+.blog-detail-body {
+  min-width: 0;
+}
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: $breakpoint-lower-middle) {
+  .blog-detail-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    margin-top: $middle;
+  }
+}

@@ -1,0 +1,381 @@
+@use "../../variables/colors" as *;
+@use "../../variables/fonts" as *;
+@use "../../variables/offsets" as *;
+@use "../../variables/media" as *;
+@use "../../variables/root" as *;
+@use "../../system/mixins" as *;
+
+/* =========================================================
+   ARTICLE CONTENT
+   WordPress / Gutenberg compatible
+   ========================================================= */
+.blog-detail-body {
+  p {
+    margin: 0 0 $small;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  /* =======================================================
+     HEADINGS
+     ======================================================= */
+  h2,
+  h3,
+  h4 {
+    margin: $middle 0 $small;
+    font-weight: 500;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  /* =======================================================
+     LINKS
+     ======================================================= */
+  a {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: rgba(255, 255, 255, .3);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    transition: $transition;
+
+    &:hover {
+      color: $orange;
+      text-decoration-color: $orange;
+    }
+  }
+  /* =======================================================
+     TEXT EMPHASIS
+     ======================================================= */
+  strong,
+  b {
+    font-weight: 600;
+  }
+  /* =======================================================
+     LISTS
+     ======================================================= */
+  ul {
+    margin: 0 0 $small;
+    padding: 0;
+    list-style: none;
+  }
+
+  ul li {
+    position: relative;
+    margin-bottom: calc($extra-small / 2);
+    padding-left: $extra-small;
+
+    &::before {
+      content: "-";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: $orange;
+      font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+      font-weight: 400;
+      opacity: .8;
+    }
+  }
+
+  ol {
+    list-style: none; /* Убираем стандартные маркеры */
+    counter-reset: my-counter; /* Создаем и сбрасываем счетчик */
+    margin: 0 0 $small;
+
+    li {
+      counter-increment: my-counter; /* Увеличиваем значение на 1 для каждого li */
+      margin-bottom: calc($extra-small / 2);
+
+      &:before {
+        content: counter(my-counter) ". "; /* Выводим номер и добавляем точку */
+        color: $orange; /* Цвет цифры */
+        font-weight: bold;
+      }
+    }
+  }
+
+  ul ul,
+  ul ol,
+  ol ul,
+  ol ol {
+    margin: calc($extra-small / 2) 0;
+  }
+  /* =======================================================
+     BLOCKQUOTE
+     ======================================================= */
+  blockquote,
+  .wp-block-quote {
+    position: relative;
+    margin: $small 0;
+    padding: $small $extra-small;
+    border-left: 2px solid $orange;
+    background: rgba(255, 255, 255, .025);
+
+    p {
+      margin-bottom: calc($extra-small / 2);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    cite {
+      display: block;
+      margin-top: 1em;
+      font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+      font-size: .7em;
+      font-style: normal;
+      letter-spacing: .06em;
+      opacity: .45;
+    }
+  }
+  /* =======================================================
+     IMAGES
+     ======================================================= */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  .wp-block-image {
+    margin: $small 0;
+
+    img {
+      display: block;
+      width: 100%;
+    }
+    figcaption {
+      margin-top: $extra-small;
+      font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+      font-size: 12px;
+      color: $text-muted;
+    }
+    &.is-style-rounded {
+      img {
+        border-radius: $border-radius;
+      }
+    }
+  }
+  /* =======================================================
+     VIDEO
+     ======================================================= */
+  .wp-block-video {
+    margin: $small 0;
+
+    video {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16/9;
+    }
+    figcaption {
+      margin-top: $extra-small;
+      font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+      font-size: 12px;
+      color: $text-muted;
+    }
+  }
+  /* =======================================================
+     EMBEDS
+     ======================================================= */
+  .wp-block-embed {
+    margin: $small 0;
+
+    .wp-block-embed__wrapper {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 16 / 9;
+      background: $bg-primary;
+
+      iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+    }
+    figcaption {
+      margin-top: $extra-small;
+      font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+      font-size: 12px;
+      color: $text-muted;
+    }
+  }
+  /* =======================================================
+     TABLE
+     ======================================================= */
+  .wp-block-table {
+    width: 100%;
+    margin: $small 0;
+    overflow-x: auto;
+
+    table {
+      width: 100%;
+      min-width: 560px;
+      border-collapse: collapse;
+    }
+    th,
+    td {
+      padding: $extra-small;
+      border: 1px solid rgba(255, 255, 255, .1);
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+      text-transform: uppercase;
+      background-color: $text-muted;
+    }
+    td {
+      background-color: $surface;
+    }
+    figcaption {
+      margin-top: $extra-small;
+      font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+      font-size: 12px;
+      color: $text-muted;
+    }
+  }
+  /* =======================================================
+     CODE
+     ======================================================= */
+  code {
+    padding: $extra-small;
+    border: 1px solid $surface-hover;
+    font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+    font-size: 12px;
+    background-color: $surface;
+  }
+  pre,
+  .wp-block-code {
+    margin: $small 0;
+    padding: $small;
+    overflow-x: auto;
+    border: 1px solid $surface-hover;
+    font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+    background-color: $text-muted;
+
+    code {
+      padding: 0;
+      border: 0;
+      background: transparent;
+    }
+  }
+  /* =======================================================
+     SEPARATOR
+     ======================================================= */
+  .wp-block-separator {
+    margin: $small 0;
+    border: 0;
+    border-top: 1px solid $border;
+    opacity: 1;
+
+    &.is-style-wide {
+      width: 100%;
+    }
+  }
+  /* =======================================================
+     GALLERY
+     ======================================================= */
+  .wp-block-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: $extra-small;
+    margin: $small 0;
+
+    .wp-block-image {
+      margin: 0;
+
+      img {
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+      }
+    }
+  }
+  /* =======================================================
+     COLUMNS
+     ======================================================= */
+  .wp-block-columns {
+    display: flex;
+    gap: $middle;
+    margin: $small 0;
+  }
+  .wp-block-column {
+    min-width: 0;
+    flex: 1;
+  }
+  /* =======================================================
+     ALIGNMENTS
+     ======================================================= */
+  .alignwide {
+    width: calc(100% + 120px);
+    max-width: none;
+    margin-left: -60px;
+  }
+  .alignfull {
+    width: 100vw;
+    max-width: none;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+  }
+  /* =======================================================
+     CAPTIONS
+     ======================================================= */
+  .wp-element-caption,
+  figcaption {
+    font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+    color: $text-muted;
+  }
+}
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: $breakpoint-lower-middle) {
+  .blog-detail-body {
+    .alignwide {
+      width: 100%;
+      margin-left: 0;
+    }
+    .alignfull {
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}
+@media (max-width: $breakpoint-extra-small) {
+  .blog-detail-body {
+    .wp-block-gallery {
+      grid-template-columns: 1fr;
+    }
+    .wp-block-columns {
+      flex-direction: column;
+      gap: $small;
+    }
+    .wp-block-table {
+      margin-left: 0;
+      margin-right: 0;
+    }
+    blockquote,
+    .wp-block-quote {
+      margin-left: 0;
+      margin-right: 0;
+      padding: $extra-small;
+    }
+  }
+}
+@media (max-width: $breakpoint-large-small) {
+  .blog-detail-body {
+    pre,
+    .wp-block-code {
+      margin-left: -12px;
+      margin-right: -12px;
+      border-right: 0;
+      border-left: 0;
+    }
+    .wp-block-gallery {
+      gap: 8px;
+    }
+  }
+}

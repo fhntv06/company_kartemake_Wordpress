@@ -1,0 +1,78 @@
+@use "../../variables/colors" as *;
+@use "../../variables/fonts" as *;
+@use "../../variables/offsets" as *;
+@use "../../variables/media" as *;
+@use "../../variables/root" as *;
+@use "../../system/mixins" as *;
+
+/* =========================================================
+   BLOG DETAIL — HEADER
+   ========================================================= */
+.blog-detail-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: $extra-small;
+  margin: $small 0;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+}
+.blog-detail-meta__item {
+  display: inline-flex;
+  align-items: baseline;
+  gap: $extra-small;
+  opacity: .65;
+}
+.blog-detail-meta__label {
+  color: $text-secondary;
+  letter-spacing: .08em;
+}
+.blog-detail-meta__separator {
+  color: $text-muted;
+}
+.blog-detail-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $extra-small;
+}
+.blog-detail-tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: calc($extra-small / 2) $extra-small;
+  border: 1px solid $border;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  @include responsive-font($min-small-font-size, $max-small-font-size);
+  letter-spacing: .04em;
+  color: inherit;
+  text-decoration: none;
+  background-color: $surface-hover;
+  transition: $transition;
+
+  &:hover {
+    border-color: $orange;
+    color: $orange;
+    background-color: $bg-secondary;
+  }
+}
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: $breakpoint-extra-small) {
+  .blog-detail-meta {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: calc($extra-small / 2);
+  }
+  .blog-detail-meta__separator {
+    display: none;
+  }
+}
+@media (max-width: 480px) {
+  .blog-detail-tags {
+    gap: calc($extra-small / 2);
+  }
+  .blog-detail-tag {
+    min-height: 28px;
+    padding: calc($extra-small / 2);
+  }
+}

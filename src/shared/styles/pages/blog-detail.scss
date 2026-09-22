@@ -1,0 +1,20 @@
+// ============================================================
+// K·ART·MAKE
+// BLOG DETAIL PAGE
+// ============================================================
+
+// =====================================================
+// КОМПОНЕНТЫ
+// =====================================================
+@use '../components/sidebar';
+@use '../components/breadcrumbs';
+
+// =====================================================
+// СЦЕНЫ
+// =====================================================
+@use '../scenes/blog-detail/blog-detail-header';
+@use '../scenes/blog-detail/blog-detail-intro';
+@use '../scenes/blog-detail/blog-detail-cover';
+@use '../scenes/blog-detail/blog-detail-content';
+@use '../scenes/blog-detail/blog-detail-article';
+@use "../scenes/blog/blog-articles";
