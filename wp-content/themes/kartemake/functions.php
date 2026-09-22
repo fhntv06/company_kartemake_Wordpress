@@ -72,7 +72,6 @@ function kartemake_enqueue_scripts() {
     // Порядок подключения скриптов
     // - runtime.build.js
     // - vendors.build.js
-    // - pages-common.build.js
     // - global.build.js
     // - other pages sceripts
 
@@ -110,29 +109,6 @@ function kartemake_enqueue_scripts() {
         [],
         wp_get_theme()->get('Version')
     );
-
-    // pages-common
-    if (
-        is_front_page()
-        || is_page('about')
-        || is_page('calculator')
-        || is_page('contacts')
-        || is_page('services')
-        || is_page('blog') || is_home()
-        || is_page('support') // TODO: уже уперся в проблему с разделением модулей
-        || is_page('optimization')
-        || is_page('modernization')
-        || is_page('audit')
-        || is_page('pricing')
-    ) {
-        wp_enqueue_script(
-            'kartemake-js-pages-common',
-            get_template_directory_uri() . '/assets/js/pages-common.build.js',
-            array('kartemake-js-vendors'),
-            wp_get_theme()->get('Version'),
-            true
-        );
-    }
 
     // Главная страница
     if (is_front_page()) {
@@ -737,11 +713,11 @@ function kartemake_post_meta_callback($post) {
     ?>
     <p>
         <label for="reading_time">Время чтения (минут):</label>
-        <input type="number" id="reading_time" name="reading_time" value="<?php echo esc_attr($reading_time); ?>" style="width: 100%;">
+        <input type="number" id="reading_time" name="reading_time" value="<?= esc_attr($reading_time); ?>" style="width: 100%;">
     </p>
     <p>
         <label for="post_views">Количество просмотров:</label>
-        <input type="number" id="post_views" name="post_views" value="<?php echo esc_attr($views); ?>" style="width: 100%;">
+        <input type="number" id="post_views" name="post_views" value="<?= esc_attr($views); ?>" style="width: 100%;">
     </p>
     <?php
 }
@@ -749,66 +725,81 @@ function kartemake_post_meta_callback($post) {
 /**
  * Сохранение мета-полей постов
  */
-add_action('save_post', 'kartemake_save_post_meta');
-
 function kartemake_save_post_meta($post_id) {
-    if (!isset($_POST['kartemake_post_meta_nonce']) ||
-        !wp_verify_nonce($_POST['kartemake_post_meta_nonce'], 'kartemake_post_meta')) {
-        return;
-    }
+  if (
+    !isset($_POST['kartemake_post_meta_nonce']) ||
+    !wp_verify_nonce($_POST['kartemake_post_meta_nonce'], 'kartemake_post_meta')
+  ) {
+    return;
+  }
 
-    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
-        return;
-    }
+  if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+    return;
+  }
 
-    if (!current_user_can('edit_post', $post_id)) {
-        return;
-    }
+  if (!current_user_can('edit_post',$post_id)) {
+    return;
+  }
 
-    if (isset($_POST['reading_time'])) {
-        update_post_meta($post_id, 'reading_time', intval($_POST['reading_time']));
-    }
+  if (isset($_POST['reading_time'])) {
+    update_post_meta($post_id,'reading_time',absint($_POST['reading_time']));
+  }
 
-    if (isset($_POST['post_views'])) {
-        update_post_meta($post_id, 'post_views', intval($_POST['post_views']));
-    }
+  if (isset($_POST['post_views'])) {
+    update_post_meta($post_id,'post_views',absint($_POST['post_views']));
+  }
 }
+
+add_action('save_post_post','kartemake_save_post_meta');
 
 // ============================================
 // 9. ПОЛЯ ДЛЯ АВТОРА
 // ============================================
 
 /**
- * Добавляем поле "Должность" для автора
+ * Получить время чтения записи.
+ *
+ * @param int|null $post_id ID записи.
+ * @return string
  */
-add_action('show_user_profile', 'kartemake_extra_user_fields');
-add_action('edit_user_profile', 'kartemake_extra_user_fields');
+function kartemake_get_reading_time($post_id = null) {
+  $post_id = $post_id ?: get_the_ID();
 
-function kartemake_extra_user_fields($user) {
-    ?>
-    <h3>Дополнительная информация</h3>
-    <table class="form-table">
-        <tr>
-            <th><label for="position">Должность</label></th>
-            <td>
-                <input type="text" name="position" id="position"
-                       value="<?php echo esc_attr(get_user_meta($user->ID, 'position', true)); ?>"
-                       class="regular-text" />
-                <p class="description">Например: Senior Developer, DevOps Engineer</p>
-            </td>
-        </tr>
-    </table>
-    <?php
+  $reading_time = get_post_meta($post_id, 'reading_time', true);
+
+  if ($reading_time === '') {
+    return '';
+  }
+
+  return (string) absint($reading_time) . ' мин';
 }
 
-/**
- * Сохранение поля "Должность"
- */
-add_action('personal_options_update', 'kartemake_save_extra_user_fields');
-add_action('edit_user_profile_update', 'kartemake_save_extra_user_fields');
 
-function kartemake_save_extra_user_fields($user_id) {
-    if (current_user_can('edit_user', $user_id)) {
-        update_user_meta($user_id, 'position', sanitize_text_field($_POST['position']));
-    }
+/**
+ * Получить количество просмотров записи.
+ *
+ * @param int|null $post_id ID записи.
+ * @return int
+ */
+function kartemake_get_post_views($post_id = null) {
+  $post_id = $post_id ?: get_the_ID();
+
+  return absint(get_post_meta($post_id, 'post_views', true));
+}
+
+
+/**
+ * Получить должность автора.
+ *
+ * @param int|null $user_id ID пользователя.
+ * @return string
+ */
+function kartemake_get_author_position($user_id = null) {
+  $user_id = $user_id ?: get_the_author_meta('ID');
+
+  return (string) get_user_meta(
+    $user_id,
+    'position',
+    true
+  );
 }
