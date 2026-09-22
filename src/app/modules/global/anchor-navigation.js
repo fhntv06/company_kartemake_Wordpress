@@ -50,6 +50,7 @@ export default class AnchorNavigation {
 
     if (!header) {
       console.warn("[AnchorNavigation] Header not found!")
+      return
     }
 
     const headerHeight = header.offsetHeight
@@ -60,7 +61,6 @@ export default class AnchorNavigation {
       refreshFrames: 3
     };
 
-    this.links = Array.from(document.querySelectorAll('a[href^="#"]'));
     this.init();
   }
 
@@ -70,49 +70,58 @@ export default class AnchorNavigation {
   ========================================================
   */
   init() {
-    this.links.forEach((link) => {
-      link.addEventListener("click", (event) => {
-        const href = link.getAttribute("href");
-        if (!href || href === "#") {
-          return;
-        }
-        /*
-        ----------------------------------------------------
-        Не вмешиваемся в модифицированные клики
-        ----------------------------------------------------
-        */
-        if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) {
-          return;
-        }
-        /*
-        ----------------------------------------------------
-        Получаем ID
-        ----------------------------------------------------
-        */
-        const id = href.slice(1);
-        if (!id) {
-          return;
-        }
-        /*
-        ----------------------------------------------------
-        Ищем target
-        ----------------------------------------------------
-        */
-        const target = document.getElementById(id);
-        if (!target) {
-          return;
-        }
-        /*
-        ----------------------------------------------------
-        Перехватываем стандартный anchor
-        ----------------------------------------------------
-        */
-        event.preventDefault();
-        this.goTo(target);
-      });
-    })
+    this.bindEvents()
+  }
+  bindEvents = () => {
+    document.addEventListener('click', this.handleClick.bind(this));
   }
 
+  handleClick = (event) => {
+    /*
+    ----------------------------------------------------
+    Перехватываем стандартный anchor
+    ----------------------------------------------------
+    */
+    event.preventDefault();
+
+    const link = event.target.closest('a[href^="#"]');
+    if (!link) {
+      return;
+    }
+
+    const href = event.target.getAttribute("href");
+    if (!href || href === "#") {
+      return;
+    }
+    /*
+    ----------------------------------------------------
+    Не вмешиваемся в модифицированные клики
+    ----------------------------------------------------
+    */
+    if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) {
+      return;
+    }
+    /*
+    ----------------------------------------------------
+    Получаем ID
+    ----------------------------------------------------
+    */
+    const id = href.slice(1);
+    if (!id) {
+      return;
+    }
+    /*
+    ----------------------------------------------------
+    Ищем target
+    ----------------------------------------------------
+    */
+    const target = document.getElementById(id);
+    if (!target) {
+      return;
+    }
+
+    this.goTo(target);
+  }
   /*
   ========================================================
   GO TO
