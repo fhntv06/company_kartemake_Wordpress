@@ -76,7 +76,7 @@ export default class Sidebar {
 
         link.href = `#${this.attrName}-${index}`
 
-        link.textContent = `0${index + 1}. ${heading.textContent}`
+        link.textContent = `${heading.textContent}`
 
         return link
     }

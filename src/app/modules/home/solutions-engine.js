@@ -14,13 +14,11 @@ export default class SolutionsEngine {
     this.cards = document.querySelectorAll(".solution-card");
 
     this.classActive = 'reveal-item'
+
+    this.start();
   }
 
-  start() {
-    this.init();
-  }
-
-  init(){
+  start(){
     this.cards.forEach(card=>{
       ScrollTrigger.create({
         trigger:card,

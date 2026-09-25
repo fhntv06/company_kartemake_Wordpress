@@ -5,16 +5,14 @@ export default class AuditEngine {
     this.section = document.querySelector('[data-scene="audit"]');
     this.started = false;
     this.initialized = false;
+
+    this.start()
   }
 
   start() {
     if (this.started) return;
     this.started = true;
     console.log("[AuditEngine] started");
-    this.run();
-  }
-
-  run() {
     /*
      * Здесь запускается сама
      * анимация / анализатор audit-сцены.

@@ -12,13 +12,10 @@ export default class PipelineScroll {
     this.progress = 0;
 
     this.scrollTrigger = window?.App?.SceneManager.scrollTrigger
+    this.start()
   }
 
   start() {
-    this.init()
-  }
-
-  init() {
     if (!this.scene) {
       console.warn("[PipelineScroll] Scene not found");
       return;

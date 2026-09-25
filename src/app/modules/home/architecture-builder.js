@@ -27,13 +27,11 @@ export default class ArchitectureBuilder {
     if (!this.nodes.length) {
       console.warn("Architecture nodes not found");
     }
+
+    this.start()
   }
 
-  start() {
-    this.init();
-  }
-
-  init(){
+  start(){
     const length = this.progress.getTotalLength();
     console.log("Architecture line length:", length);
     this.progress.style.strokeDasharray = length;
