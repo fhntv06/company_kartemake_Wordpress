@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Кейс — K·ART·MAKE</title>
+  <meta name="description" content="Разбор проекта K·ART·MAKE: задача, подход, технические решения и результат.">
+</head>
+<body>
+<!-- =================================================
+SYSTEM LOADER
+================================================= -->
+<div class="system-loader">
+  <div class="loader-terminal">
+    <span>ЗАПУСК СИСТЕМЫ K·ART·MAKE</span>
+    <div class="loader-progress">
+      <div></div>
+    </div>
+  </div>
+</div>
+<!-- =================================================
+ORBIT NAVIGATION
+================================================= -->
+<div id="orbit-navigation" class="orbit-navigation">
+  <div class="orbit-circle">
+    <button class="orbit-point" data-scene="hero">
+      <span class="orbit-point__description">Начало</span>
+      <span></span>
+      <strong>01</strong>
+    </button>
+    <button class="orbit-point" data-scene="case-overview">
+      <span class="orbit-point__description">Контекст</span>
+      <span></span>
+      <strong>02</strong>
+    </button>
+    <button class="orbit-point" data-scene="case-approach">
+      <span class="orbit-point__description">Подход</span>
+      <span></span>
+      <strong>03</strong>
+    </button>
+    <button class="orbit-point" data-scene="case-solutions">
+      <span class="orbit-point__description">Решения</span>
+      <span></span>
+      <strong>04</strong>
+    </button>
+    <button class="orbit-point" data-scene="case-showcase">
+      <span class="orbit-point__description">Продукт</span>
+      <span></span>
+      <strong>05</strong>
+    </button>
+    <button class="orbit-point" data-scene="case-result">
+      <span class="orbit-point__description">Результат</span>
+      <span></span>
+      <strong>06</strong>
+    </button>
+    <button class="orbit-point" data-scene="case-quote">
+      <span class="orbit-point__description">Отзыв</span>
+      <span></span>
+      <strong>07</strong>
+    </button>
+    <button class="orbit-point" data-scene="case-details">
+      <span class="orbit-point__description">Данные о проекте</span>
+      <span></span>
+      <strong>08</strong>
+    </button>
+    <button class="orbit-point" data-scene="case-related">
+      <span class="orbit-point__description">Другие кейсы</span>
+      <span></span>
+      <strong>09</strong>
+    </button>
+  </div>
+</div>
+<!-- =================================================
+GLOBAL DASHBOARD
+================================================= -->
+<header id="header" class="global-dashboard">
+  <div class="dashboard-inner">
+    <a href="/" class="dashboard-brand">K·ART·MAKE</a>
+    <div class="dashboard-status">
+      <span class="dashboard-status-dot"></span>
+      СИСТЕМА РАБОТАЕТ
+    </div>
+    <button class="dashboard-menu" type="button" aria-expanded="false" aria-controls="dashboard-menu-panel">
+      <span class="dashboard-menu-label">МЕНЮ</span>
+      <span class="dashboard-menu-icon">
+        <span></span>
+        <span></span>
+      </span>
+    </button>
+  </div>
+  <div id="dashboard-menu-panel" class="dashboard-menu-panel" aria-hidden="true">
+    <div class="dashboard-menu-panel-inner">
+      <!-- CONTACTS -->
+      <div class="dashboard-menu-column">
+        <span class="dashboard-menu-title">КОНТАКТЫ</span>
+        <a href="mailto:hello@kartemake.ru">
+          <span>НОВЫЕ ПРОЕКТЫ</span>
+          <strong>hello@kartemake.ru</strong>
+        </a>
+        <a href="mailto:support@kartemake.ru">
+          <span>ТЕХНИЧЕСКАЯ ПОДДЕРЖКА</span>
+          <strong>support@kartemake.ru</strong>
+        </a>
+      </div>
+      <!-- SERVICES -->
+      <div class="dashboard-menu-column">
+        <span class="dashboard-menu-title">УСЛУГИ</span>
+        <a href="/#optimization">
+          <span>01</span>
+          <strong>Оптимизация сайта</strong>
+        </a>
+        <a href="/#modernization">
+          <span>02</span>
+          <strong>Модернизация</strong>
+        </a>
+        <a href="/#support">
+          <span>03</span>
+          <strong>Техническая поддержка</strong>
+        </a>
+        <a href="/#audit">
+          <span>04</span>
+          <strong>Аудит и консультации</strong>
+        </a>
+      </div>
+      <!-- INFORMATION -->
+      <div class="dashboard-menu-column">
+        <span class="dashboard-menu-title">ИНФОРМАЦИЯ</span>
+        <a href="./about.html">О Компании</a>
+        <a href="./privacy-policy.html">Политика обработки персональных данных</a>
+        <a href="./cookie-policy.html">Политика использования Cookie</a>
+      </div>
+    </div>
+  </div>
+</header>
+<main class="experience about-page">
+  <!-- =========================================================
+       CASE HERO
+  ========================================================= -->
+  <section class="scene scene-hero case-hero" data-scene="hero" data-canvas-engine>
+    <canvas id="heroCanvas" class="hero-canvas" aria-hidden="true"></canvas>
+    <canvas id="hero-particle-canvas" class="hero-particle-canvas" aria-hidden="true"></canvas>
+    <div class="scene-container">
+      <div class="hero-content">
+        <div class="system-label">
+          K·ART·MAKE / CASE STUDY
+        </div>
+        <h1> Портал геймификации <span>для RDP.</span></h1>
+        <p>
+          Digital-продукт для развития корпоративной культуры, onboarding, мотивации сотрудников и внутренних рабочих процессов.
+        </p>
+        <div class="hero-note">
+          DIGITAL PRODUCT · DEVELOPMENT · INTEGRATIONS
+        </div>
+        <div class="hero-meta">
+          <span>
+            CLIENT
+          </span>
+          <span>
+            <strong>RDP</strong>
+          </span>
+          <span>
+            SERVICE
+          </span>
+          <span>
+            <strong>РАЗРАБОТКА</strong>
+          </span>
+          <span>
+            STATUS
+          </span>
+          <span>
+            <strong>COMPLETED</strong>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- =========================================================
+       CASE OVERVIEW
+  ========================================================= -->
+  <section class="scene case-overview" data-scene="case-overview">
+    <div class="scene-container">
+      <header class="scene-header reveal-item">
+        <span class="scene-eyebrow">
+          02 / КОНТЕКСТ
+        </span>
+        <h2 class="scene-title">
+          Задача, с которой
+          <span>начался проект.</span>
+        </h2>
+        <p class="scene-description">
+          Перед началом работы важно понять не только то,
+          что нужно разработать, но и какую задачу бизнеса
+          должна решать система.
+        </p>
+      </header>
+      <div class="case-overview-grid reveal-item">
+        <article class="case-overview-block">
+          <span class="case-overview-label">
+            КЛИЕНТ
+          </span>
+          <h3>
+            RDP
+          </h3>
+          <p>
+            Компания, для которой требовался единый digital-продукт
+            для развития корпоративной культуры и взаимодействия
+            сотрудников.
+          </p>
+        </article>
+        <article class="case-overview-block">
+          <span class="case-overview-label">
+            ЗАДАЧА
+          </span>
+          <h3>
+            Объединить рабочие
+            процессы в одной системе.
+          </h3>
+          <p>
+            Необходимо было создать среду, которая одновременно
+            поддерживает onboarding, мотивацию, корпоративную культуру,
+            достижения и внутреннюю активность сотрудников.
+          </p>
+        </article>
+        <article class="case-overview-block">
+          <span class="case-overview-label">
+            КОНТЕКСТ
+          </span>
+          <h3>
+            Не отдельный сайт,
+            а полноценный продукт.
+          </h3>
+          <p>
+            Проект требовал собственной логики, административной панели,
+            системы механик, интеграций и дальнейшего развития.
+          </p>
+        </article>
+        <article class="case-overview-block">
+          <span class="case-overview-label">
+            ЦЕЛЬ
+          </span>
+          <h3>
+            Сделать систему,
+            которой пользуются.
+          </h3>
+          <p>
+            Digital-продукт должен был стать частью повседневного
+            взаимодействия сотрудников с компанией.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+  <!-- =========================================================
+       CASE APPROACH
+  ========================================================= -->
+  <section class="scene case-approach" data-scene="case-approach">
+    <div class="scene-container">
+      <header class="scene-header reveal-item">
+        <span class="scene-eyebrow">
+          03 / ПОДХОД
+        </span>
+        <h2 class="scene-title">
+          Сначала разобраться.
+          <span>Потом строить.</span>
+        </h2>
+        <p class="scene-description">
+          Решение начиналось не с интерфейса.
+          Сначала необходимо было понять пользователей,
+          процессы и задачи бизнеса.
+        </p>
+      </header>
+      <div class="case-approach-layout reveal-item">
+        <div class="case-approach-intro">
+          <h3>
+            Исследование
+          </h3>
+          <p>
+            Чтобы понять реальные сценарии использования,
+            были проведены интервью с руководителями,
+            опытными сотрудниками и новичками.
+          </p>
+        </div>
+        <div class="case-approach-list">
+          <article class="case-approach-item">
+            <span>01</span>
+            <div>
+              <h4>
+                Руководители
+              </h4>
+              <p>
+                Понимание бизнес-задач, корпоративной культуры
+                и требований к системе.
+              </p>
+            </div>
+          </article>
+          <article class="case-approach-item">
+            <span>02</span>
+            <div>
+              <h4>
+                Опытные сотрудники
+              </h4>
+              <p>
+                Анализ существующих рабочих сценариев
+                и точек взаимодействия.
+              </p>
+            </div>
+          </article>
+          <article class="case-approach-item">
+            <span>03</span>
+            <div>
+              <h4>
+                Новые сотрудники
+              </h4>
+              <p>
+                Понимание процесса адаптации и первых
+                шагов внутри компании.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- =========================================================
+       CASE SOLUTIONS
+  ========================================================= -->
+  <section class="scene case-solutions" data-scene="case-solutions">
+    <div class="scene-container">
+      <header class="scene-header reveal-item">
+        <span class="scene-eyebrow">
+          04 / РЕШЕНИЯ
+        </span>
+        <h2 class="scene-title">
+          Не набор функций.
+          <span>Единая система.</span>
+        </h2>
+        <p class="scene-description">
+          Каждый модуль решал конкретную задачу,
+          но все части продукта были связаны между собой.
+        </p>
+      </header>
+      <div class="case-solutions-grid reveal-item">
+        <article class="case-solution">
+          <div class="case-solution-number">
+            01
+          </div>
+          <div class="case-solution-content">
+            <span class="case-solution-label">
+              GAMIFICATION
+            </span>
+            <h3>
+              Миссии и достижения
+            </h3>
+            <p>
+              Система заданий, достижений, баллов и рейтингов,
+              которая связывает активность сотрудников
+              с внутренними процессами компании.
+            </p>
+          </div>
+        </article>
+        <article class="case-solution">
+          <div class="case-solution-number">
+            02
+          </div>
+          <div class="case-solution-content">
+                        <span class="case-solution-label">
+                            CORPORATE CULTURE
+                        </span>
+            <h3>
+              Корпоративная культура
+            </h3>
+            <p>
+              Механики, которые позволяют вовлекать сотрудников
+              в жизнь компании и делать внутренние активности
+              частью единой системы.
+            </p>
+          </div>
+        </article>
+        <article class="case-solution">
+          <div class="case-solution-number">
+            03
+          </div>
+          <div class="case-solution-content">
+                        <span class="case-solution-label">
+                            ONBOARDING
+                        </span>
+            <h3>
+              Адаптация сотрудников
+            </h3>
+            <p>
+              Инструменты для сопровождения новых сотрудников
+              и последовательного прохождения этапов onboarding.
+            </p>
+          </div>
+        </article>
+        <article class="case-solution">
+          <div class="case-solution-number">
+            04
+          </div>
+          <div class="case-solution-content">
+                        <span class="case-solution-label">
+                            ADMIN PANEL
+                        </span>
+            <h3>
+              Самостоятельное управление
+            </h3>
+            <p>
+              Административная панель позволяет управлять миссиями,
+              достижениями, статистикой, товарами, аватарами,
+              бронированиями и другими элементами продукта.
+            </p>
+          </div>
+        </article>
+        <article class="case-solution">
+          <div class="case-solution-number">
+            05
+          </div>
+          <div class="case-solution-content">
+                        <span class="case-solution-label">
+                            INTERNAL BLOG
+                        </span>
+            <h3>
+              Внутренний блог
+            </h3>
+            <p>
+              Публикации, реакции, комментарии и внутренняя
+              активность были встроены непосредственно
+              в экосистему продукта.
+            </p>
+          </div>
+        </article>
+        <article class="case-solution">
+          <div class="case-solution-number">
+            06
+          </div>
+          <div class="case-solution-content">
+                        <span class="case-solution-label">
+                            INTEGRATIONS
+                        </span>
+            <h3>
+              Единая экосистема
+            </h3>
+            <p>
+              Портал был связан с другими элементами
+              digital-экосистемы компании и существующими
+              внутренними проектами.
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+  <!-- =========================================================
+       CASE VISUAL / PROJECT
+  ========================================================= -->
+  <section class="scene case-showcase" data-scene="case-showcase">
+    <div class="scene-container">
+      <header class="scene-header reveal-item">
+        <span class="scene-eyebrow">
+          05 / ПРОДУКТ
+        </span>
+        <h2 class="scene-title">
+          Система,
+          <span>а не набор экранов.</span>
+        </h2>
+        <p class="scene-description">
+          Внутри проекта отдельные функции объединены
+          общей логикой продукта.
+        </p>
+      </header>
+      <div class="case-showcase-main reveal-item">
+        <figure class="case-showcase-image">
+          <img src="../../public/images/cases/rdp/rdp-main.jpeg" srcset="
+                            ../../public/images/cases/rdp/rdp-main.jpeg 1200w
+                        " alt="Интерфейс портала RDP" loading="lazy">
+          <figcaption>
+            RDP / DIGITAL PRODUCT
+          </figcaption>
+        </figure>
+      </div>
+      <div class="case-showcase-grid reveal-item">
+        <figure class="case-showcase-item">
+          <img src="../../public/images/cases/rdp/rdp-main.jpeg" alt="Dashboard портала RDP" loading="lazy">
+          <figcaption>
+            DASHBOARD
+          </figcaption>
+        </figure>
+        <figure class="case-showcase-item">
+          <img src="../../public/images/cases/rdp/rdp-main.jpeg" alt="Геймификация портала RDP" loading="lazy">
+          <figcaption>
+            GAMIFICATION
+          </figcaption>
+        </figure>
+        <figure class="case-showcase-item">
+          <img src="../../public/images/cases/rdp/rdp-main.jpeg" alt="Профиль пользователя портала RDP" loading="lazy">
+          <figcaption>
+            USER PROFILE
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+  <!-- =========================================================
+       CASE RESULT
+  ========================================================= -->
+  <section class="scene case-result" data-scene="case-result">
+    <div class="scene-container">
+      <header class="scene-header reveal-item">
+        <span class="scene-eyebrow">
+          06 / РЕЗУЛЬТАТ
+        </span>
+        <h2 class="scene-title">
+          Что получилось
+          <span>в итоге.</span>
+        </h2>
+        <p class="scene-description">
+          Результат проекта — не отдельный интерфейс,
+          а работающая система, объединяющая несколько
+          внутренних процессов.
+        </p>
+      </header>
+      <div class="case-result-grid reveal-item">
+        <article class="case-result-card">
+          <span class="case-result-index">
+            01
+          </span>
+          <h3>
+            Единый digital-продукт
+          </h3>
+          <p>
+            Разрозненные механики корпоративной культуры,
+            мотивации, onboarding и активности сотрудников
+            объединены в одной системе.
+          </p>
+        </article>
+        <article class="case-result-card">
+          <span class="case-result-index">
+            02
+          </span>
+          <h3>
+            Самостоятельное управление
+          </h3>
+          <p>
+            Внутренняя команда получила инструменты для управления
+            содержанием и механиками продукта без постоянного
+            участия разработчиков.
+          </p>
+        </article>
+        <article class="case-result-card">
+          <span class="case-result-index">
+            03
+          </span>
+          <h3>
+            Основа для развития
+          </h3>
+          <p>
+            Архитектура продукта позволяет добавлять новые механики,
+            сценарии и интеграции по мере развития системы.
+          </p>
+        </article>
+      </div>
+      <div class="case-result-conclusion reveal-item">
+        <span class="case-result-conclusion-label">
+          CONCLUSION
+        </span>
+        <p>
+          Проект превратился из набора отдельных внутренних
+          инструментов в единую digital-среду, которая связывает
+          сотрудников, рабочие процессы и корпоративную культуру.
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- =========================================================
+       CASE QUOTE
+  ========================================================= -->
+  <section class="scene case-quote" data-scene="case-quote">
+    <div class="scene-container">
+      <div class="case-quote-layout reveal-item">
+        <div class="case-quote-label">
+          07 / Отзыв
+        </div>
+        <blockquote class="case-quote-content">
+          <p>
+            «Нам было важно создать не просто отдельный сервис,
+            а среду, которая улучшает опыт сотрудника
+            на разных этапах его взаимодействия с компанией».
+          </p>
+          <footer>
+            <strong>
+              Ростислав Меликов
+            </strong>
+            <span>
+              Руководитель проекта / RDP
+            </span>
+          </footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+  <!-- =========================================================
+       CASE DETAILS
+  ========================================================= -->
+  <section class="scene case-details" data-scene="case-details">
+    <div class="scene-container">
+      <header class="scene-header reveal-item">
+        <span class="scene-eyebrow">
+          08 / Данные о проекте
+        </span>
+        <h2 class="scene-title">
+          Проект
+          <span>в цифрах и фактах.</span>
+        </h2>
+      </header>
+      <div class="case-details-grid reveal-item">
+        <div class="case-detail">
+          <span class="case-detail-label">
+            CLIENT
+          </span>
+          <strong>
+            RDP
+          </strong>
+        </div>
+        <div class="case-detail">
+          <span class="case-detail-label">
+            SERVICE
+          </span>
+          <strong>
+            DEVELOPMENT
+          </strong>
+        </div>
+        <div class="case-detail">
+          <span class="case-detail-label">
+            TYPE
+          </span>
+          <strong>
+            DIGITAL PRODUCT
+          </strong>
+        </div>
+        <div class="case-detail">
+          <span class="case-detail-label">
+            YEAR
+          </span>
+          <strong>
+            2026
+          </strong>
+        </div>
+        <div class="case-detail">
+          <span class="case-detail-label">
+            SCOPE
+          </span>
+          <strong>
+            DESIGN / DEVELOPMENT / INTEGRATIONS
+          </strong>
+        </div>
+        <div class="case-detail">
+          <span class="case-detail-label">
+            STATUS
+          </span>
+          <strong>
+            COMPLETED
+          </strong>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- =========================================================
+       RELATED CASES
+  ========================================================= -->
+  <section class="scene case-related" data-scene="case-related">
+    <div class="scene-container">
+      <header class="scene-header reveal-item">
+        <span class="scene-eyebrow">
+          09 / Другие кейсы
+        </span>
+        <h2 class="scene-title">
+          Другие
+          <span>проекты.</span>
+        </h2>
+        <p class="scene-description">
+          Другие проекты K·ART·MAKE,
+          в которых технические задачи решались
+          под конкретный контекст бизнеса.
+        </p>
+      </header>
+      
+      <div class="card-articles-grid reveal-item">
+        <!-- CASE CARD -->
+        <article class="card-article" data-case-type="optimization">
+          <span class="card-article__number">
+            01
+          </span>
+          <figure class="card-article__image">
+            <figcaption class="card-article__type">
+              CASE
+            </figcaption>
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80" alt="Оптимизация производительности сайта" loading="lazy">
+          </figure>
+          <div class="card-article__content">
+            <div class="card-article__meta">
+            <span>
+              OPTIMIZATION
+            </span>
+              <span>
+              05 feb 2026
+            </span>
+            </div>
+            <h4 class="card-article__title">
+              <a href="#">
+                Оптимизация производительности сайта
+              </a>
+            </h4>
+            <p class="card-article__description">
+              Разбор узких мест, оптимизация загрузки и технической инфраструктуры проекта.
+            </p>
+            <div class="card-article__tags">
+              <a href="#" class="card-article__tag">
+                Performance
+              </a>
+              <a href="#" class="card-article__tag">
+                WordPress
+              </a>
+              <a href="#" class="card-article__tag">
+                Optimization
+              </a>
+            </div>
+            <a href="./case-detail.html" class="card-article__link" aria-label="Подробнее о кейсе">
+              <p>
+                Читать кейс
+              </p>
+              <span class="card-article__link-arrow">
+              ↗
+            </span>
+            </a>
+          </div>
+        </article>
+        <!-- CASE card-article -->
+        <article class="card-article">
+          <div class="card-article__number">
+            02
+          </div>
+          <figure class="card-article__image">
+            <figcaption class="card-article__type">
+              AUDIT
+            </figcaption>
+            <img src="../../public/images/cases/rdp/rdp-main.jpeg" alt="Кейс K·ART·MAKE" loading="lazy">
+          </figure>
+          <div class="card-article__content">
+            <div class="card-article__meta">
+              <span>
+                TECHNICAL AUDIT
+              </span>
+              <span>
+                2026
+              </span>
+            </div>
+            <h4 class="card-article__title">
+              <a href="#">
+                Технический аудит digital-продукта
+              </a>
+            </h4>
+            <p class="card-article__description">
+              Комплексная диагностика проекта, поиск технических рисков и формирование плана дальнейших работ.
+            </p>
+            <div class="card-article__tags">
+              <a href="#" class="card-article__tag">audit</a>
+              <a href="#" class="card-article__tag">architecture</a>
+              <a href="#" class="card-article__tag">security</a>
+            </div>
+            <a href="#" class="card-article__link" aria-label="Подробнее о кейсе">
+              <p>
+                Читать кейс
+              </p>
+              <span class="card-article__link-arrow">
+                ↗
+              </span>
+            </a>
+          </div>
+        </article>
+      </div>
+      <!-- CTA -->
+      <div class="cta-block reveal-item">
+        <span>
+          TECHNICAL PARTNER / K·ART·MAKE
+        </span>
+        <h5 class="cta-block__title">
+          Есть техническая задача?
+        </h5>
+        <p class="cta-block__text">
+          Опишите проблему, проект или задачу.
+          Мы разберём техническую часть и предложим
+          оптимальный способ решения.
+        </p>
+        <button class="button-primary" type="button" data-modal-func="open">
+          Обсудить задачу
+        </button>
+      </div>
+    </div>
+  </section>
+  <!-- =================================================
+  FOOTER
+  ================================================= -->
+  <section>
+    <div class="scene-container">
+      <!-- =================================================
+      FOOTER
+      ================================================= -->
+      <footer class="contact-footer">
+        <!-- FOOTER BRAND -->
+        <div class="contact-footer-brand">
+          <a href="/" class="contact-footer-logo" aria-label="K·ART·MAKE">K·ART·MAKE</a>
+          <p>Технический партнёр для вашего бизнеса.</p>
+        </div>
+        <!-- FOOTER NAVIGATION -->
+        <nav class="contact-footer-nav" aria-label="Навигация по сайту">
+          <div class="contact-footer-column">
+            <span class="contact-footer-title">УСЛУГИ</span>
+            <a href="/#optimization">Оптимизация сайта</a>
+            <a href="/#modernization">Модернизация</a>
+            <a href="/#support">Техническая поддержка</a>
+            <a href="/#audit">Аудит и консультации</a>
+          </div>
+          <div class="contact-footer-column">
+            <span class="contact-footer-title">ИНФОРМАЦИЯ</span>
+            <a href="./privacy-policy.html">Политика обработки персональных данных</a>
+            <a href="./cookie-policy.html">Политика использования Cookie</a>
+          </div>
+          <div class="contact-footer-column">
+            <span class="contact-footer-title">КОНТАКТЫ</span>
+            <a href="mailto:hello@kartemake.ru">hello@kartemake.ru</a>
+            <a href="mailto:support@kartemake.ru">support@kartemake.ru</a>
+            <a href="https://t.me/KArtech76">Telegram</a>
+            <a href="https://vk.ru/kartemake">VK</a>
+          </div>
+        </nav>
+        <!-- FOOTER BOTTOM -->
+        <div class="contact-footer-bottom">
+          <span>© 2026 K·ART·MAKE</span>
+          <span>ТЕХНИЧЕСКИЙ ПАРТНЁР</span>
+          <span>ВСЕ СИСТЕМЫ РАБОТАЮТ</span>
+        </div>
+      </footer>
+    </div>
+  </section>
+</main>
+<div id="cookie-banner" class="cookie-banner" aria-hidden="true">
+  <div class="cookie-banner__wrapper">
+    <div class="cookie-banner__status">
+      <span class="cookie-banner__status-dot"></span>
+      <span>PRIVACY / COOKIE CONTROL</span>
+    </div>
+    <div class="cookie-banner__content">
+      <!-- STEP 1 -->
+      <section id="cookie-step-1" class="cookie-step cookie-step--active">
+        <div class="cookie-banner__header">
+          <p class="cookie-banner__description">Мы применяем cookies, чтобы сайт работал без сбоев и постоянно
+            становился для вас удобнее.</p>
+        </div>
+        <div class="cookie-banner__links">
+          <span>Подробнее:</span>
+          <a href="cookie-policy.html" target="_blank">использование cookie</a>
+          <a href="privacy-policy.html" target="_blank">обработка персональных данных</a>
+        </div>
+        <div class="cookie-banner__actions">
+          <button type="button" id="cookie-decline" class="cookie-button cookie-button--outline">Отклонить</button>
+          <button type="button" id="cookie-accept" class="cookie-button cookie-button--accent">Принять</button>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <!-- Закрытие -->
+    <div class="close-modal no-icon" data-modal-func="close"></div>
+
+    <!-- Заголовок -->
+    <div class="modal-header">
+      <h4>Хотите чтобы мы решили <span class="color-accent">ваш кейс</span>?</h4>
+      <p>Оставьте заявку и наш специалист свяжется с вами для обсуждения деталей вашего проекта</p>
+    </div>
+
+    <!-- Контейнер с гридом -->
+    <div class="form-container">
+
+      <!-- КОЛОНКА 1: КОНТАКТЫ (как в дашборде) -->
+      <div class="contact-modal__body">
+        <a href="mailto:hello@kartemake.ru" class="contact-modal__item">
+          <span class="contact-modal__item-label">НОВЫЕ ПРОЕКТЫ</span>
+          <strong class="contact-modal__item-value">hello@kartemake.ru</strong>
+        </a>
+        <a href="mailto:support@kartemake.ru" class="contact-modal__item">
+          <span class="contact-modal__item-label">ТЕХНИЧЕСКАЯ ПОДДЕРЖКА</span>
+          <strong class="contact-modal__item-value">support@kartemake.ru</strong>
+        </a>
+      </div>
+
+      <!-- КОЛОНКА 2: СОЦСЕТИ -->
+      <div class="contact-modal__body">
+        <a href="https://t.me/KArtech76" target="_blank" class="contact-modal__item">
+          <span class="contact-modal__item-label">TELEGRAM</span>
+          <strong class="contact-modal__item-value">@KArtech76</strong>
+        </a>
+        <a href="https://vk.ru/kartemake" target="_blank" class="contact-modal__item">
+          <span class="contact-modal__item-label">ВКОНТАКТЕ</span>
+          <strong class="contact-modal__item-value">vk.com/kartemake</strong>
+        </a>
+      </div>
+
+      <!-- КОЛОНКА 3: ИНФОРМАЦИЯ -->
+      <div class="contact-modal__body">
+        <a href="/privacy-policy" class="contact-modal__item">
+          <span class="contact-modal__item-label">ДОКУМЕНТЫ</span>
+          <strong class="contact-modal__item-value">Политика конфиденциальности</strong>
+        </a>
+        <!--        <a href="/personal-data-consent" class="contact-modal__item">-->
+        <!--          <span class="contact-modal__item-label">СОГЛАСИЕ</span>-->
+        <!--          <strong class="contact-modal__item-value">На обработку данных</strong>-->
+        <!--        </a>-->
+      </div>
+
+      <!-- ФУТЕР -->
+      <div class="contact-modal__footer">
+        <p class="contact-modal__footer-text">Напишите нам — мы ответим в течение 24 часов</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+<div class="cost-calculator-widget" data-cost-calculator>
+  <button type="button" class="cost-calculator-widget__trigger" data-calculator-trigger>
+    <span>Рассчитать стоимость</span>
+  </button>
+  <div class="cost-calculator-widget__modal" data-calculator-backdrop>
+    <button type="button" class="cost-calculator-widget__close" data-calculator-close aria-label="Закрыть калькулятор">
+      ×
+    </button>
+    <!-- ВНУТРИ ТОТ ЖЕ CALCULATOR -->
+    <div class="cost-calculator" data-cost-calculator data-mode="widget">
+      <div class="cost-calculator__stage" data-calculator-stage>
+        <div class="cost-calculator__orbit" aria-hidden="true"></div>
+        <svg class="cost-calculator__flows" data-calculator-flows preserveAspectRatio="none" aria-hidden="true"></svg>
+        <div class="cost-calculator__services">
+          <button type="button" class="cost-service cost-service--diagnostics" data-cost-service="diagnostics"
+                  data-title="Диагностика" data-price="15000">
+            <span class="cost-service__index">
+              01 / DIAGNOSTICS
+            </span>
+            <span class="cost-service__title" data-service-title>
+              Понять проблему
+            </span>
+            <span class="cost-service__price">
+              от 15 000 ₽
+            </span>
+          </button>
+          <button type="button" class="cost-service cost-service--audit" data-cost-service="audit"
+                  data-title="Технический аудит" data-price="30000">
+            <span class="cost-service__index">
+              02 / AUDIT
+            </span>
+            <span class="cost-service__title" data-service-title>
+              Оценить состояние
+            </span>
+            <span class="cost-service__price">
+              от 30 000 ₽
+            </span>
+          </button>
+          <button type="button" class="cost-service cost-service--optimization" data-cost-service="optimization"
+                  data-title="Оптимизация" data-price="35000">
+            <span class="cost-service__index">
+              03 / OPTIMIZATION
+            </span>
+            <span class="cost-service__title" data-service-title>
+              Улучшить систему
+            </span>
+            <span class="cost-service__price">
+              от 35 000 ₽
+            </span>
+          </button>
+          <button type="button" class="cost-service cost-service--modernization" data-cost-service="modernization"
+                  data-title="Модернизация" data-price="50000">
+            <span class="cost-service__index">
+              04 / MODERNIZATION
+            </span>
+            <span class="cost-service__title" data-service-title>
+              Изменить основу
+            </span>
+            <span class="cost-service__price">
+              от 50 000 ₽
+            </span>
+          </button>
+          <button type="button" class="cost-service cost-service--support" data-cost-service="support"
+                  data-title="Техническая поддержка" data-price="25000">
+            <span class="cost-service__index">
+              05 / SUPPORT
+            </span>
+            <span class="cost-service__title" data-service-title>
+              Постоянная команда
+            </span>
+            <span class="cost-service__price">
+              от 25 000 ₽ / МЕС
+            </span>
+          </button>
+        </div>
+        <div class="cost-calculator__center" data-calculator-center>
+          <span class="cost-calculator__center-label">
+            текущая конфигурация
+          </span>
+          <h4 class="cost-calculator__center-price" data-calculator-price>
+            0
+          </h4>
+          <span class="cost-calculator__center-currency">
+            ₽
+          </span>
+          <span class="cost-calculator__center-meta" data-calculator-meta>
+            0 услуг выбрано
+          </span>
+        </div>
+        <div class="cost-calculator__actions" data-calculator-actions>
+          <button type="button" class="button-primary" data-calculator-next disabled>
+            Далее →
+          </button>
+        </div>
+      </div>
+      <div class="cost-calculator__result" data-calculator-result>
+        <div class="cost-calculator__result-inner">
+          <span class="cost-calculator__result-label">
+              настройка завершена
+          </span>
+          <div class="cost-calculator__result-price" data-calculator-result-price>
+            0 ₽
+          </div>
+          <ul class="cost-calculator__result-services" data-calculator-result-services></ul>
+          <div class="cost-calculator__actions">
+            <button type="button" class="button-primary" data-calculator-back>
+              ← Назад
+            </button>
+            <button type="button" class="button-primary" data-modal-func="open">
+              Обсудить задачу →
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
