@@ -1,0 +1,74 @@
+@use "../variables/colors" as *;
+@use "../variables/fonts" as *;
+@use "../variables/offsets" as *;
+@use "../variables/media" as *;
+@use "../variables/root" as *;
+@use "../system/mixins" as *;
+ 
+  /* =========================================================
+     CARDS FILTER
+     ========================================================= */
+.filter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: $extra-small;
+  margin-bottom: $small;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid $text-muted;
+}
+/* =========================================================
+   FILTER ITEM
+   ========================================================= */
+.filter__item {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 0.6rem 0.9rem;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: transparent;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  text-transform: uppercase;
+  color: $text-primary;
+  cursor: pointer;
+  transition:
+    background-color 200ms ease,
+    color 200ms ease,
+    border-color 200ms ease;
+}
+/* =========================================================
+   HOVER
+   ========================================================= */
+/* =========================================================
+   ACTIVE
+   ========================================================= */
+.filter__item {
+  &:hover,
+  &.is-active {
+    background: rgba(0,0,0,0.72);
+    border: 1px solid rgba(255,46,46,0.35);
+    color: $orange;
+  }
+}
+/* =========================================================
+   FOCUS
+   ========================================================= */
+.filter__item:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+/* =========================================================
+   MOBILE
+   ========================================================= */
+@media (max-width: 600px) {
+  .filter {
+    gap: 0.4rem;
+  }
+  .filter__item {
+    min-height: 34px;
+    padding: 0.5rem 0.7rem;
+    font-size: 0.6rem;
+  }
+}
