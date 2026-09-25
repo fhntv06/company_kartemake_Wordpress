@@ -235,9 +235,6 @@ GLOBAL DASHBOARD
                         <li>исследуем конкретную техническую проблему</li>
                         <li>определяем её причину и следующие шаги</li>
                     </ul>
-                    <button class="pricing-card__action" data-modal-func="open" data-service="diagnostics">
-                        Разобрать проблему
-                    </button>
                 </article>
 
                 <!-- AUDIT -->
@@ -258,10 +255,6 @@ GLOBAL DASHBOARD
                         <li>анализ инфраструктуры</li>
                         <li>анализ базы данных, безопасность, производительность и интеграции</li>
                     </ul>
-                    <button class="pricing-card__action" data-modal-func="open" data-service="audit"
-                    >
-                        Заказать аудит
-                    </button>
                 </article>
 
                 <!-- OPTIMIZATION -->
@@ -282,9 +275,6 @@ GLOBAL DASHBOARD
                         <li>оптимизируем существующую систему</li>
                         <li>проверяем результат изменений</li>
                     </ul>
-                    <button class="pricing-card__action" data-modal-func="open" data-service="optimization">
-                        Обсудить оптимизацию
-                    </button>
                 </article>
 
                 <!-- MODERNIZATION -->
@@ -305,9 +295,6 @@ GLOBAL DASHBOARD
                         <li>сохраняем работающие части системы</li>
                         <li>обновлеение только там, где это имеет смысл</li>
                     </ul>
-                    <button class="pricing-card__action" data-modal-func="open" data-service="optimization">
-                        Обсудить модернизацию
-                    </button>
                 </article>
 
                 <!-- SUPPORT -->
@@ -327,9 +314,6 @@ GLOBAL DASHBOARD
                         <li>берём на себя текущие технические задачи</li>
                         <li>отвечаем за развитие и эксплуатацию цифровой инфраструктуры</li>
                     </ul>
-                    <button class="pricing-card__action" data-modal-func="open" data-service="optimization">
-                        Подобрать поддержку
-                    </button>
                 </article>
             </div>
         </div>
@@ -496,7 +480,7 @@ GLOBAL DASHBOARD
                     приложения, данных и инфраструктуры.
                 </p>
                 <h4 class="scene-description">
-                    от 25 000 ₽  в месяц
+                    от 25 000 ₽ в месяц
                 </h4>
                 <button class="button-primary scene-description" data-modal-func="open" data-service="support">
                     Подобрать формат поддержки
@@ -572,7 +556,8 @@ GLOBAL DASHBOARD
             <div class="cta-block reveal-item">
                 <span class="cta-block__eyebrow">ТЕХНИЧЕСКАЯ КОМАНДА / ГОТОВЫ ПОДКЛЮЧИТЬСЯ</span>
                 <h3 class="cta-block__title">Есть техническая задача?</h3>
-                <p class="cta-block__text">Оптимизация, модернизация, перенос, интеграция, исправление ошибок или постоянная техническая поддержка.</p>
+                <p class="cta-block__text">Оптимизация, модернизация, перенос, интеграция, исправление ошибок или
+                    постоянная техническая поддержка.</p>
                 <button class="button-primary cta-block__button" data-modal-func="open">
                     <span>ОБСУДИТЬ ЗАДАЧУ</span>
                     <strong>↗</strong>
@@ -744,16 +729,19 @@ GLOBAL DASHBOARD
         <span>Рассчитать стоимость</span>
     </button>
     <div class="cost-calculator-widget__modal" data-calculator-backdrop>
-        <button type="button" class="cost-calculator-widget__close" data-calculator-close aria-label="Закрыть калькулятор">
+        <button type="button" class="cost-calculator-widget__close" data-calculator-close
+                aria-label="Закрыть калькулятор">
             ×
         </button>
         <!-- ВНУТРИ ТОТ ЖЕ CALCULATOR -->
         <div class="cost-calculator" data-cost-calculator data-mode="widget">
             <div class="cost-calculator__stage" data-calculator-stage>
                 <div class="cost-calculator__orbit" aria-hidden="true"></div>
-                <svg class="cost-calculator__flows" data-calculator-flows preserveAspectRatio="none" aria-hidden="true"></svg>
+                <svg class="cost-calculator__flows" data-calculator-flows preserveAspectRatio="none"
+                     aria-hidden="true"></svg>
                 <div class="cost-calculator__services">
-                    <button type="button" class="cost-service cost-service--diagnostics" data-cost-service="diagnostics" data-title="Диагностика" data-price="15000">
+                    <button type="button" class="cost-service cost-service--diagnostics" data-cost-service="diagnostics"
+                            data-title="Диагностика" data-price="15000">
             <span class="cost-service__index">
               01 / DIAGNOSTICS
             </span>
@@ -764,7 +752,8 @@ GLOBAL DASHBOARD
               от 15 000 ₽
             </span>
                     </button>
-                    <button type="button" class="cost-service cost-service--audit" data-cost-service="audit" data-title="Технический аудит" data-price="30000">
+                    <button type="button" class="cost-service cost-service--audit" data-cost-service="audit"
+                            data-title="Технический аудит" data-price="30000">
             <span class="cost-service__index">
               02 / AUDIT
             </span>
@@ -775,7 +764,8 @@ GLOBAL DASHBOARD
               от 30 000 ₽
             </span>
                     </button>
-                    <button type="button" class="cost-service cost-service--optimization" data-cost-service="optimization" data-title="Оптимизация" data-price="35000">
+                    <button type="button" class="cost-service cost-service--optimization"
+                            data-cost-service="optimization" data-title="Оптимизация" data-price="35000">
             <span class="cost-service__index">
               03 / OPTIMIZATION
             </span>
@@ -786,7 +776,8 @@ GLOBAL DASHBOARD
               от 35 000 ₽
             </span>
                     </button>
-                    <button type="button" class="cost-service cost-service--modernization" data-cost-service="modernization" data-title="Модернизация" data-price="50000">
+                    <button type="button" class="cost-service cost-service--modernization"
+                            data-cost-service="modernization" data-title="Модернизация" data-price="50000">
             <span class="cost-service__index">
               04 / MODERNIZATION
             </span>
@@ -797,7 +788,8 @@ GLOBAL DASHBOARD
               от 50 000 ₽
             </span>
                     </button>
-                    <button type="button" class="cost-service cost-service--support" data-cost-service="support" data-title="Техническая поддержка" data-price="25000">
+                    <button type="button" class="cost-service cost-service--support" data-cost-service="support"
+                            data-title="Техническая поддержка" data-price="25000">
             <span class="cost-service__index">
               05 / SUPPORT
             </span>
