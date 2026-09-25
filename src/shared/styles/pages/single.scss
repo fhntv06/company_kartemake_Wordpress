@@ -9,6 +9,12 @@
 @use '../components/sidebar';
 @use '../components/breadcrumbs';
 
+
+// =====================================================
+// КОМПОНЕНТЫ
+// =====================================================
+@use "../components/cards";
+
 // =====================================================
 // СЦЕНЫ
 // =====================================================
@@ -17,4 +23,3 @@
 @use '../scenes/single/single-cover';
 @use '../scenes/single/single-content';
 @use '../scenes/single/single-article';
-@use "../scenes/blog/blog-articles";
