@@ -57,21 +57,21 @@
 /* =================================================
    МЕДИА-ЗАПРОСЫ с использованием старых брейкпоинтов
 ================================================= */
-@media (max-width: #{$breakpoint-lower-middle}) { // 1024px
+@media (max-width: $breakpoint-lower-middle) { // 1024px
   .scene-container {
     padding-left: $small;
     padding-right: $small;
   }
 }
 
-@media (max-width: #{$breakpoint-extra-small}) { // 768px
+@media (max-width: $breakpoint-extra-small) { // 768px
   .scene-header {
     max-width: 80%;
     margin-bottom: $middle; // 64px → $middle
   }
 }
 
-@media (max-width: #{$breakpoint-large-small}) { // 576px
+@media (max-width: $breakpoint-large-small) { // 576px
   .scene-header {
     max-width: 100%;
   }
