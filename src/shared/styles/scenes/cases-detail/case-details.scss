@@ -1,0 +1,55 @@
+@use '../../variables/colors' as *;
+@use '../../variables/offsets' as *;
+@use '../../variables/media' as *;
+@use '../../system/mixins' as *;
+
+/* =========================================================
+   CASE DETAIL — PROJECT DETAILS
+========================================================= */
+.case-details-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 4rem;
+  border-top: 1px solid $text-muted;
+  border-left: 1px solid $text-muted;
+}
+.case-detail {
+  min-height: 150px;
+  padding: 1.75rem 2rem;
+  border-right: 1px solid $text-muted;
+  border-bottom: 1px solid $text-muted;
+
+  &:hover {
+    background-color: rgba(255,46,46,0.018);
+  }
+}
+.case-detail-label {
+  display: block;
+  margin-bottom: 1.25rem;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: $orange;
+}
+.case-detail strong {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+@media (max-width: 900px) {
+  .case-details-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 600px) {
+  .case-details-grid {
+    grid-template-columns: 1fr;
+    margin-top: 3rem;
+  }
+  .case-detail {
+    min-height: auto;
+    padding: 1.5rem 1.75rem;
+  }
+}

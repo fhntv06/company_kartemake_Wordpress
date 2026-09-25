@@ -1,0 +1,73 @@
+@use '../../variables/colors' as *;
+@use '../../variables/offsets' as *;
+@use '../../variables/media' as *;
+@use '../../system/mixins' as *;
+
+/* =========================================================
+   CASE DETAIL — SHOWCASE
+========================================================= */
+.case-showcase {
+  overflow: hidden;
+}
+.case-showcase-main {
+  margin-top: 5rem;
+}
+.case-showcase-image {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  background-color: $surface;
+}
+.case-showcase-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.case-showcase-image:hover img {
+  transform: scale(1.025);
+}
+.case-showcase-image figcaption,
+.case-showcase-item figcaption {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.85rem 0;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $text-secondary;
+}
+.case-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 1px;
+}
+.case-showcase-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.case-showcase-item:hover img {
+  transform: scale(1.035);
+}
+@media (max-width: 900px) {
+  .case-showcase-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 600px) {
+  .case-showcase-main {
+    margin-top: 3rem;
+  }
+  .case-showcase-grid {
+    grid-template-columns: 1fr;
+  }
+}

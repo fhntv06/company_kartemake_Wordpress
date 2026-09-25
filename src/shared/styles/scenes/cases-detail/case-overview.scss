@@ -1,0 +1,67 @@
+@use '../../variables/colors' as *;
+@use '../../variables/offsets' as *;
+@use '../../variables/media' as *;
+@use '../../system/mixins' as *;
+
+/* =========================================================
+   CASE DETAIL — OVERVIEW
+========================================================= */
+.case-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 4rem;
+  border-top: 1px solid $text-muted;
+  border-left: 1px solid $text-muted;
+}
+.case-overview-block {
+  min-height: 280px;
+  padding: 2.5rem;
+  border-right: 1px solid $text-muted;
+  border-bottom: 1px solid $text-muted;
+  transition:
+  background-color 0.3s ease,
+  transform 0.3s ease;
+
+  &:hover {
+    background-color: rgba(255,46,46,0.018);
+  }
+}
+.case-overview-label {
+  display: block;
+  margin-bottom: 2rem;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 0.68rem;
+  line-height: 1.4;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $orange;
+}
+.case-overview-block h3 {
+  max-width: 620px;
+  margin: 0 0 1.25rem;
+  font-size: clamp(1.35rem, 2vw, 2rem);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+.case-overview-block p {
+  max-width: 600px;
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: $text-secondary;
+}
+@media (max-width: 900px) {
+  .case-overview-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .case-overview-grid {
+    margin-top: 3rem;
+  }
+  .case-overview-block {
+    min-height: auto;
+    padding: 1.75rem;
+  }
+}

@@ -1,0 +1,77 @@
+@use '../../variables/colors' as *;
+@use '../../variables/offsets' as *;
+@use '../../variables/media' as *;
+@use '../../system/mixins' as *;
+
+/* =========================================================
+   CASE DETAIL — APPROACH
+========================================================= */
+.case-approach-layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(3rem, 7vw, 8rem);
+  margin-top: 5rem;
+}
+.case-approach-intro {
+  position: relative;
+  padding-right: 2rem;
+}
+.case-approach-intro h3 {
+  margin: 0 0 1.5rem;
+  font-size: clamp(2rem, 4vw, 3.75rem);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.045em;
+}
+.case-approach-intro p {
+  max-width: 500px;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: $text-secondary;
+}
+.case-approach-list {
+  border-top: 1px solid $text-muted;
+}
+.case-approach-item {
+  display: grid;
+  grid-template-columns: 60px minmax(0, 1fr);
+  gap: 1.5rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid $text-muted;
+  span {
+    font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+    font-size: 0.7rem;
+    color: $orange;
+  }
+  h4 {
+    margin: 0 0 0.65rem;
+    font-size: 1.15rem;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+  p {
+    max-width: 620px;
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: $text-secondary;
+  }
+}
+@media (max-width: 900px) {
+  .case-approach-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    margin-top: 4rem;
+  }
+  .case-approach-intro {
+    padding-right: 0;
+  }
+}
+@media (max-width: 600px) {
+  .case-approach-item {
+    grid-template-columns: 40px minmax(0, 1fr);
+    gap: 1rem;
+    padding: 1.5rem 0;
+  }
+}

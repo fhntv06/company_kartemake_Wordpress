@@ -1,0 +1,59 @@
+@use '../../variables/colors' as *;
+@use '../../variables/offsets' as *;
+@use '../../variables/media' as *;
+@use '../../system/mixins' as *;
+
+/* =========================================================
+   CASE DETAIL — CLIENT QUOTE
+========================================================= */
+.case-quote-layout {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 2rem;
+  max-width: 1250px;
+  margin: 0 auto;
+}
+.case-quote-label {
+  padding-top: 0.5rem;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  color: $text-secondary;
+  text-transform: uppercase;
+}
+.case-quote-content {
+  margin: 0;
+}
+.case-quote-content > p {
+  max-width: 1000px;
+  margin: 0;
+  font-size: clamp(1.8rem, 4vw, 4rem);
+  line-height: 1.1;
+  letter-spacing: -0.045em;
+}
+.case-quote-content footer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+  font-style: normal;
+}
+.case-quote-content footer strong {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+.case-quote-content footer span {
+  margin-top: 0.35rem;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: $text-secondary;
+}
+@media (max-width: 700px) {
+  .case-quote-layout {
+    grid-template-columns: 1fr;
+  }
+  .case-quote-content > p {
+    font-size: clamp(1.6rem, 7vw, 2.5rem);
+  }
+}

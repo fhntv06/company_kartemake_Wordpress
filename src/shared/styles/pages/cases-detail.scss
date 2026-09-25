@@ -1,0 +1,21 @@
+// ============================================================
+// K·ART·MAKE
+// CASES-DETAIL PAGE
+// ============================================================
+
+// =====================================================
+// КОМПОНЕНТЫ
+// =====================================================
+@use '../components/cards';
+
+// =====================================================
+// СЦЕНЫ
+// =====================================================
+@use '../scenes/cases-detail/case-approach';
+@use '../scenes/cases-detail/case-details';
+@use '../scenes/cases-detail/case-overview';
+@use '../scenes/cases-detail/case-quote';
+@use '../scenes/cases-detail/case-related';
+@use '../scenes/cases-detail/case-result';
+@use '../scenes/cases-detail/case-showcase';
+@use '../scenes/cases-detail/case-solutions';
