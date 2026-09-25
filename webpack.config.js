@@ -1,4 +1,5 @@
 const path = require('path');
+const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const glob = require('glob');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -6,99 +7,85 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
 const MODULES = require('./src/app/modules/manifest.js');
-const PAGES   = require('./src/app/pages/manifest.js');
+const PAGES   = require('./src/app/pages-manifest.js');
 
-// ── 1. Собираем список entry: страницы + модульные бандлы ─────────
-function buildEntries() {
-  const entries = {};
+// ── Утилиты ──────────────────────────────────────────────────────
+const toPosix = (p) => p.replace(/\\/g, '/');
+const capitalize = (s) => s.charAt(0).toUpperCase() + s.slice(1);
+const resolveFromRoot = (...parts) => toPosix(path.resolve(__dirname, ...parts));
 
-  // 1a. Страницы (каждая — свой entry)
-  for (const page of Object.keys(PAGES)) {
-    entries[page] = `./src/app/pages/${page}/${page}-entry.js`;
-  }
+// ── Генерация файлов страниц ─────────────────────────────────────
+// Один файл на страницу: scss + imports + app-класс + boot.
+const PAGES_DIR = path.resolve(__dirname, '.webpack/pages');
 
-  // 1b. Модульные бандлы (global, home, ...)
-  //     Извлекаем уникальные entry-имена из манифеста модулей.
-  //     Создаём для каждого виртуальный entry-файл-агрегатор.
-  const moduleEntries = new Set();
-  for (const mod of Object.values(MODULES)) {
-    moduleEntries.add(mod.entry);
-  }
+function generatePages() {
+  fs.rmSync(PAGES_DIR, { recursive: true, force: true });
+  fs.mkdirSync(PAGES_DIR, { recursive: true });
 
-  // Эти entry-точки не файлы, а виртуальные: мы их сгенерируем на лету.
-  for (const name of moduleEntries) {
-    entries[name] = path.resolve(__dirname, `.webpack/modules/${name}.js`);
-  }
+  for (const [page, config] of Object.entries(PAGES)) {
+    const scssPath = resolveFromRoot('src/shared/styles/pages', config.scss);
+    const appClass = `${capitalize(page)}App`;
 
-  return entries;
-}
+    // Импорты модулей
+    const imports = (config.modules || []).map(name => {
+      const mod = MODULES[name];
+      if (!mod) {
+        throw new Error(`[pages-manifest] Page "${page}" references unknown module "${name}"`);
+      }
+      return `import ${name} from '${resolveFromRoot(mod.path)}';`;
+    }).join('\n');
 
-// ── 2. Генерируем виртуальные файлы-агрегаторы ───────────────────
-// Для каждого entry-имени модуля создаём файл, который импортирует
-// все модули, помеченные этим entry-именем.
-function generateModuleAggregators() {
-  const fs = require('fs');
-  const dir = path.resolve(__dirname, '.webpack/modules');
-  fs.mkdirSync(dir, { recursive: true });
+    // Тело registry
+    const registry = (config.modules || []).join(',\n    ');
 
-  // Группируем модули по entry
-  const groups = {};
-  for (const [key, mod] of Object.entries(MODULES)) {
-    (groups[mod.entry] ??= []).push({ key, path: mod.path });
-  }
+    // Один файл — всё внутри
+    const content = `// AUTO-GENERATED from pages-manifest.js. Do not edit.
+import '${scssPath}';
 
-  for (const [entryName, mods] of Object.entries(groups)) {
-    const imports = mods.map((m, i) =>
-        `import ${m.key} from '${path.resolve(__dirname, m.path).replace(/\\/g, '/')}';`
-    ).join('\n');
-
-    const registrations = mods.map(m =>
-        `  ${m.key},`
-    ).join('\n');
-
-    const content = `
-// AUTO-GENERATED. Do not edit.
+import BaseApp from '${resolveFromRoot('src/app/core/base-app.js')}';
 ${imports}
 
-export const registry = {
-${registrations}
-};
+class ${appClass} extends BaseApp {
+  constructor() {
+    super({
+      ${registry}
+    }, '${appClass}');
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  new ${appClass}();
+  console.log('[${page}] initialized');
+});
 `;
-    fs.writeFileSync(path.join(dir, `${entryName}.js`), content);
+
+    fs.writeFileSync(path.join(PAGES_DIR, `${page}.js`), content);
   }
 }
 
-// ── 3. Определяем, какие чанки подключать к каждой странице ──────
-// Для страницы: все модульные entry, к которым относятся её модули,
-// + сама страница. Порядок: global → ... → страница.
-const ENTRY_ORDER = ['runtime', 'vendors', 'npm', 'global',];
-
-function getPageChunks(pageName) {
-  const moduleKeys = PAGES[pageName] ?? [];
-  const usedEntries = new Set(
-      moduleKeys.map(k => MODULES[k]?.entry).filter(Boolean)
-  );
-
-  // Сортируем по ENTRY_ORDER, всё что не в списке — в конец перед страницей
-  const ordered = [];
-  for (const name of ENTRY_ORDER) {
-    if (name === 'runtime' || name === 'vendors' || name === 'npm') {
-      ordered.push(name); // эти чанки создаст сам webpack
-    } else if (usedEntries.has(name)) {
-      ordered.push(name);
-    }
-  }
-  // Остальные модульные entry (home, calculator, ...) — в алфавитном порядке
-  for (const name of [...usedEntries].sort()) {
-    if (!ordered.includes(name)) ordered.push(name);
-  }
-  // И сама страница в самом конце
-  ordered.push(pageName);
-
-  return ordered;
+// ── Entry ────────────────────────────────────────────────────────
+// global — особый, руками. Остальные — сгенерированные.
+function buildEntries() {
+  return {
+    global: './src/app/entries/global.entry.js',
+    ...Object.fromEntries(
+        Object.keys(PAGES).map(page => [
+          page,
+          path.join(PAGES_DIR, `${page}.js`),
+        ])
+    ),
+  };
 }
 
-// ── 4. Страницы для HtmlWebpackPlugin ────────────────────────────
+// ── Карта: имя HTML → имя entry ──────────────────────────────────
+// index.html собирается из home.entry (ключ home в pages-manifest.js).
+const HTML_TO_ENTRY = {
+  index: 'home',
+  'privacy-policy': 'policy',
+  'cookie-policy': 'policy',
+}
+
+// ── Страницы для HtmlWebpackPlugin ───────────────────────────────
 function getPageEntries() {
   const pages = glob.sync('./src/pages/*.html');
   return pages.map(page => {
@@ -108,11 +95,17 @@ function getPageEntries() {
   });
 }
 
+// ── Chunks для страницы ──────────────────────────────────────────
+function getPageChunks(pageName) {
+  const entryName = HTML_TO_ENTRY[pageName] ?? pageName;
+  return ['runtime', 'vendors', 'npm', 'global', entryName];
+}
+
 // ── Точка входа конфига ──────────────────────────────────────────
 module.exports = (env, argv) => {
   const isProduction = argv.mode === 'production';
 
-  generateModuleAggregators();
+  generatePages();
 
   const entries = buildEntries();
   const pages = getPageEntries();
@@ -123,7 +116,7 @@ module.exports = (env, argv) => {
 
     output: {
       filename: 'assets/js/[name].build.js',
-      chunkFilename: 'assets/js/[name].build.chunk.js',
+      chunkFilename: 'assets/js/[name].chunk.js',
       path: path.resolve(__dirname, 'build'),
       clean: true,
       publicPath: '/',
@@ -149,13 +142,28 @@ module.exports = (env, argv) => {
             'sass-loader',
           ],
         },
-        { test: /\.css$/, use: [isProduction ? MiniCssExtractPlugin.loader : 'style-loader', 'css-loader'] },
-        { test: /\.(png|svg|jpg|jpeg|gif|webp)$/i, type: 'asset/resource',
-          generator: { filename: 'assets/images/[name].[hash][ext]' } },
-        { test: /\.(woff|woff2|eot|ttf|otf)$/i, type: 'asset/resource',
-          generator: { filename: 'assets/fonts/[name].[hash][ext]' } },
-        { test: /\.(mp4|webm|ogg|mp3|wav)$/i, type: 'asset/resource',
-          generator: { filename: 'assets/media/[name].[hash][ext]' } },
+        {
+          test: /\.css$/,
+          use: [
+            isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
+            'css-loader',
+          ],
+        },
+        {
+          test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
+          type: 'asset/resource',
+          generator: { filename: 'assets/images/[name].[hash][ext]' },
+        },
+        {
+          test: /\.(woff|woff2|eot|ttf|otf)$/i,
+          type: 'asset/resource',
+          generator: { filename: 'assets/fonts/[name].[hash][ext]' },
+        },
+        {
+          test: /\.(mp4|webm|ogg|mp3|wav)$/i,
+          type: 'asset/resource',
+          generator: { filename: 'assets/media/[name].[hash][ext]' },
+        },
       ],
     },
 
@@ -199,10 +207,10 @@ module.exports = (env, argv) => {
             priority: 10,
             reuseExistingChunk: true,
           },
-          // ВАЖНО: не даём webpack выносить модули приложения
-          // в безымянные чанки — иначе получите 385.bundle.js
+          // Модули приложения НЕ выносим в отдельные чанки.
+          // Sidebar дублируется в policy.build.js и single.build.js.
           appModules: {
-            test: /[\\/]src[\\/]app[\\/]modules[\\/]/,
+            test: /[\\/]src[\\/]app[\\/](modules|core)[\\/]/,
             name: false,
             chunks: 'all',
             priority: 30,
@@ -214,10 +222,10 @@ module.exports = (env, argv) => {
       minimizer: [
         new TerserPlugin({
           terserOptions: {
-            compress: { drop_console: false },
-            output: { comments: false },
+            compress: { drop_console: isProduction },
+            output: { comments: !isProduction },
           },
-          extractComments: false,
+          extractComments: isProduction,
         }),
         new CssMinimizerPlugin(),
       ],
