@@ -23,8 +23,8 @@ $author_avatar = get_avatar_url(
   ]
 );
 $author_name = get_the_author();
-$author_role = function_exists('kartmake_get_author_role')
-  ? kartmake_get_author_role($author_id)
+$author_role = function_exists('kartemake_get_author_role')
+  ? kartemake_get_author_role($author_id)
   : '';
 $excerpt = get_the_excerpt();
 ?>
