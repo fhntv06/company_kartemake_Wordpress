@@ -31,75 +31,14 @@ get_header();
             <div class="policy-grid">
 
                 <!-- SIDEBAR NAV -->
-                <aside class="policy-sidebar">
-                    <nav class="policy-toc">
+                <aside id="sidebar" class="sidebar">
+                    <nav class="toc" data-toc-links>
                         <span class="toc-title">СОДЕРЖАНИЕ</span>
-                        <a href="#section-1" class="toc-link">1. Общие положения</a>
-                        <a href="#section-2" class="toc-link">2. Цели обработки</a>
-                        <a href="#section-3" class="toc-link">3. Правовые основания</a>
-                        <a href="#section-4" class="toc-link">4. Категории и состав данных</a>
-                        <a href="#section-5" class="toc-link">5. Порядок и условия обработки</a>
-                        <a href="#section-6" class="toc-link">6. Сроки хранения</a>
-                        <a href="#section-7" class="toc-link">7. Права субъектов</a>
-                        <a href="#section-8" class="toc-link">8. Меры безопасности</a>
-                        <a href="#section-9" class="toc-link">9. Заключительные положения</a>
-                        <a href="#section-10" class="toc-link">10. Контактная информация</a>
                     </nav>
-                    <div class="policy-sidebar-actions">
+                    <div class="sidebar-actions">
                         <a href="/" class="button-secondary">← На главную</a>
                     </div>
                 </aside>
-                <script>
-                    /**
-                     * Policy Toggle — аккордеон для оглавления на мобильных устройствах
-                     */
-                    (function() {
-                        'use strict';
-
-                        const initPolicyTocToggle = () => {
-                            const tocToggle = document.querySelector('.toc-title');
-                            const policyToc = document.querySelector('.policy-toc');
-
-                            if (!tocToggle || !policyToc) {
-                                return;
-                            }
-
-                            // Состояние: открыто по умолчанию на десктопе, закрыто на мобилке
-                            const isMobile = window.innerWidth <= 1024;
-
-                            if (isMobile) {
-                                policyToc.classList.remove('is-open');
-                            } else {
-                                policyToc.classList.add('is-open');
-                            }
-
-                            // Обработчик клика
-                            tocToggle.addEventListener('click', function(e) {
-                                e.preventDefault();
-                                policyToc.classList.toggle('is-open');
-                            });
-
-                            // При изменении размера окна — сбрасываем состояние
-                            let resizeTimeout;
-                            window.addEventListener('resize', function() {
-                                clearTimeout(resizeTimeout);
-                                resizeTimeout = setTimeout(function() {
-                                    const width = window.innerWidth;
-                                    if (width > 1024) {
-                                        policyToc.classList.add('is-open');
-                                    }
-                                }, 250);
-                            });
-                        };
-
-                        // Запускаем после загрузки DOM
-                        if (document.readyState === 'loading') {
-                            document.addEventListener('DOMContentLoaded', initPolicyTocToggle);
-                        } else {
-                            initPolicyTocToggle();
-                        }
-                    })();
-                </script>
 
                 <!-- MAIN TEXT -->
                 <div class="policy-body">
