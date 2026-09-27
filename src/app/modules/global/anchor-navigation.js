@@ -77,49 +77,29 @@ export default class AnchorNavigation {
   }
 
   handleClick = (event) => {
-    /*
-    ----------------------------------------------------
-    Перехватываем стандартный anchor
-    ----------------------------------------------------
-    */
-    event.preventDefault();
+    // 1. Сначала находим саму ссылку
+    const link = event.target.closest('a');
+    if (!link) return;
 
-    const link = event.target.closest('a[href^="#"]');
-    if (!link) {
-      return;
-    }
+    // 2. Не вмешиваемся в модифицированные клики
+    if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    if (event.button !== 0) return; // только левая кнопка
 
-    const href = event.target.getAttribute("href");
-    if (!href || href === "#") {
-      return;
-    }
-    /*
-    ----------------------------------------------------
-    Не вмешиваемся в модифицированные клики
-    ----------------------------------------------------
-    */
-    if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) {
-      return;
-    }
-    /*
-    ----------------------------------------------------
-    Получаем ID
-    ----------------------------------------------------
-    */
+    const href = link.getAttribute("href");
+    if (!href) return;
+
+    // 3. Пропускаем всё, что не является внутренним якорем
+    if (!href.startsWith("#")) return;      // обычные ссылки, tel:, mailto:, http...
+    if (href === "#") return;
+
+    // 4. Только теперь блокируем стандартное поведение
     const id = href.slice(1);
-    if (!id) {
-      return;
-    }
-    /*
-    ----------------------------------------------------
-    Ищем target
-    ----------------------------------------------------
-    */
-    const target = document.getElementById(id);
-    if (!target) {
-      return;
-    }
+    if (!id) return;
 
+    const target = document.getElementById(id);
+    if (!target) return;
+
+    event.preventDefault();
     this.goTo(target);
   }
   /*
