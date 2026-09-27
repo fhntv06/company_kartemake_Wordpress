@@ -8,6 +8,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 
 const MODULES = require('./src/app/modules/manifest.js');
 const PAGES   = require('./src/app/pages-manifest.js');
+const {WebpackAssetsManifest} = require("webpack-assets-manifest");
 
 // ── Утилиты ──────────────────────────────────────────────────────
 const toPosix = (p) => p.replace(/\\/g, '/');
@@ -175,16 +176,36 @@ module.exports = (env, argv) => {
         })
       ] : []),
 
-      ...pages.map(page => new HtmlWebpackPlugin({
+      new WebpackAssetsManifest({
+        output: 'manifest.json',
+        publicPath: '',   // ← с build/
+        entrypoints: true,
+        integrity: false,
+        writeToDisk: true,
+        transform: (assets) => {
+          const filtered = { entrypoints: assets.entrypoints }
+          for (const [key, value] of Object.entries(assets)) {
+            if (key === 'entrypoints') continue
+            if (typeof value !== 'string') continue
+            if (value.endsWith('.LICENSE.txt')) continue
+            if (value.endsWith('.html')) continue
+            filtered[key] = value
+          }
+          return filtered
+        },
+      }),
+
+      ...(!isProduction ? pages.map(page => new HtmlWebpackPlugin({
         template: page.path,
         filename: `${page.name}.html`,
         chunks: getPageChunks(page.name),
         chunksSortMode: 'manual',
         inject: 'body',
-      })),
+      })) : []),
     ],
 
     optimization: {
+      chunkIds: 'deterministic',
       minimize: isProduction,
       runtimeChunk: { name: 'runtime' },
       splitChunks: {
@@ -206,16 +227,6 @@ module.exports = (env, argv) => {
             chunks: 'all',
             priority: 10,
             reuseExistingChunk: true,
-          },
-          // Модули приложения НЕ выносим в отдельные чанки.
-          // Sidebar дублируется в policy.build.js и single.build.js.
-          appModules: {
-            test: /[\\/]src[\\/]app[\\/](modules|core)[\\/]/,
-            name: false,
-            chunks: 'all',
-            priority: 30,
-            enforce: true,
-            reuseExistingChunk: false,
           },
         },
       },
