@@ -54,3 +54,4 @@ wp-config.php
 /.vscode
 .env
 /.webpack/
+/wp-content/themes/kartemake/build/
