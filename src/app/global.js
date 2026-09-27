@@ -54,7 +54,3 @@ export default class GlobalApp {
         ScrollTrigger.refresh()
     }
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-    new GlobalApp()
-})

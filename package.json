@@ -1,5 +1,5 @@
 {
-  "name": "company-kartmake-site",
+  "name": "company-kartemake-site",
   "version": "1.0.0",
   "description": "Site is K·ART·MAKE company",
   "main": "index.js",
@@ -40,6 +40,7 @@
     "terser-webpack-plugin": "^5.3.14",
     "url-loader": "^4.1.1",
     "webpack": "^5.101.3",
+    "webpack-assets-manifest": "^6.5.4",
     "webpack-bundle-analyzer": "^4.10.2",
     "webpack-cli": "^6.0.1",
     "webpack-dev-server": "^5.2.2"

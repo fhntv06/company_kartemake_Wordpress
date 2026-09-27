@@ -1,11 +1,23 @@
 export default class DashboardMenu {
   constructor() {
     console.log("[DashboardMenu] ready")
+
     this.dashboard = document.querySelector(".global-dashboard");
+    if (!this.dashboard) {
+      console.warn("[DashboardMenu] Dashboard not found!")
+      return
+    }
+
     this.button = document.querySelector(".dashboard-menu");
+    if (!this.button) {
+      console.warn("[DashboardMenu] dashboard-menu button not found!")
+      return
+    }
+
     this.panel = document.querySelector(".dashboard-menu-panel");
-    if (!this.dashboard || !this.button || !this.panel) {
-      return;
+    if (!this.panel) {
+      console.warn("[DashboardMenu] dashboard-menu-panel not found!")
+      return
     }
     this.init();
   }
