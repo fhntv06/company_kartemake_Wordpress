@@ -1,0 +1,206 @@
+{
+  "entrypoints": {
+    "global": {
+      "assets": {
+        "js": [
+          "assets/js/runtime.build.js",
+          "assets/js/vendors.build.js",
+          "assets/js/global.build.js"
+        ],
+        "css": [
+          "assets/css/global.build.css"
+        ]
+      }
+    },
+    "home": {
+      "assets": {
+        "js": [
+          "assets/js/runtime.build.js",
+          "assets/js/996.build.js",
+          "assets/js/home.build.js"
+        ],
+        "css": [
+          "assets/css/home.build.css"
+        ]
+      }
+    },
+    "policy": {
+      "assets": {
+        "js": [
+          "assets/js/runtime.build.js",
+          "assets/js/996.build.js",
+          "assets/js/385.build.js",
+          "assets/js/policy.build.js"
+        ],
+        "css": [
+          "assets/css/policy.build.css"
+        ]
+      }
+    },
+    "single": {
+      "assets": {
+        "js": [
+          "assets/js/runtime.build.js",
+          "assets/js/996.build.js",
+          "assets/js/385.build.js",
+          "assets/js/single.build.js"
+        ],
+        "css": [
+          "assets/css/single.build.css"
+        ]
+      }
+    },
+    "about": {
+      "assets": {
+        "js": [
+          "assets/js/runtime.build.js",
+          "assets/js/996.build.js",
+          "assets/js/about.build.js"
+        ],
+        "css": [
+          "assets/css/about.build.css"
+        ]
+      }
+    },
+    "services": {
+      "assets": {
+        "js": [
+          "assets/js/runtime.build.js",
+          "assets/js/996.build.js",
+          "assets/js/services.build.js"
+        ],
+        "css": [
+          "assets/css/services.build.css"
+        ]
+      }
+    },
+    "calculator": {
+      "assets": {
+        "js": [
+          "assets/js/runtime.build.js",
+          "assets/js/996.build.js",
+          "assets/js/calculator.build.js"
+        ],
+        "css": [
+          "assets/css/calculator.build.css"
+        ]
+      }
+    },
+    "blog": {
+      "assets": {
+        "js": [
+          "assets/js/runtime.build.js",
+          "assets/js/996.build.js",
+          "assets/js/blog.build.js"
+        ],
+        "css": [
+          "assets/css/blog.build.css"
+        ]
+      }
+    },
+    "contacts": {
+      "assets": {
+        "js": [
+          "assets/js/runtime.build.js",
+          "assets/js/996.build.js",
+          "assets/js/contacts.build.js"
+        ],
+        "css": [
+          "assets/css/contacts.build.css"
+        ]
+      }
+    },
+    "support": {
+      "assets": {
+        "js": [
+          "assets/js/runtime.build.js",
+          "assets/js/996.build.js",
+          "assets/js/support.build.js"
+        ],
+        "css": [
+          "assets/css/support.build.css"
+        ]
+      }
+    },
+    "optimization": {
+      "assets": {
+        "js": [
+          "assets/js/runtime.build.js",
+          "assets/js/996.build.js",
+          "assets/js/optimization.build.js"
+        ],
+        "css": [
+          "assets/css/optimization.build.css"
+        ]
+      }
+    },
+    "modernization": {
+      "assets": {
+        "js": [
+          "assets/js/runtime.build.js",
+          "assets/js/996.build.js",
+          "assets/js/modernization.build.js"
+        ],
+        "css": [
+          "assets/css/modernization.build.css"
+        ]
+      }
+    },
+    "audit": {
+      "assets": {
+        "js": [
+          "assets/js/runtime.build.js",
+          "assets/js/996.build.js",
+          "assets/js/audit.build.js"
+        ],
+        "css": [
+          "assets/css/audit.build.css"
+        ]
+      }
+    },
+    "pricing": {
+      "assets": {
+        "js": [
+          "assets/js/runtime.build.js",
+          "assets/js/996.build.js",
+          "assets/js/pricing.build.js"
+        ],
+        "css": [
+          "assets/css/pricing.build.css"
+        ]
+      }
+    }
+  },
+  "about.css": "assets/css/about.build.css",
+  "about.js": "assets/js/about.build.js",
+  "assets/js/385.build.js": "assets/js/385.build.js",
+  "assets/js/996.build.js": "assets/js/996.build.js",
+  "audit.css": "assets/css/audit.build.css",
+  "audit.js": "assets/js/audit.build.js",
+  "blog.css": "assets/css/blog.build.css",
+  "blog.js": "assets/js/blog.build.js",
+  "calculator.css": "assets/css/calculator.build.css",
+  "calculator.js": "assets/js/calculator.build.js",
+  "contacts.css": "assets/css/contacts.build.css",
+  "contacts.js": "assets/js/contacts.build.js",
+  "global.css": "assets/css/global.build.css",
+  "global.js": "assets/js/global.build.js",
+  "home.css": "assets/css/home.build.css",
+  "home.js": "assets/js/home.build.js",
+  "modernization.css": "assets/css/modernization.build.css",
+  "modernization.js": "assets/js/modernization.build.js",
+  "optimization.css": "assets/css/optimization.build.css",
+  "optimization.js": "assets/js/optimization.build.js",
+  "policy.css": "assets/css/policy.build.css",
+  "policy.js": "assets/js/policy.build.js",
+  "pricing.css": "assets/css/pricing.build.css",
+  "pricing.js": "assets/js/pricing.build.js",
+  "runtime.js": "assets/js/runtime.build.js",
+  "services.css": "assets/css/services.build.css",
+  "services.js": "assets/js/services.build.js",
+  "single.css": "assets/css/single.build.css",
+  "single.js": "assets/js/single.build.js",
+  "support.css": "assets/css/support.build.css",
+  "support.js": "assets/js/support.build.js",
+  "vendors.js": "assets/js/vendors.build.js"
+}

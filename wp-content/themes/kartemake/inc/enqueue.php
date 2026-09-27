@@ -1,189 +1,175 @@
 <?php
 /**
- * K·ART·MAKE — подключение скриптов и стилей
- *
- * Единый источник истины — kartemake_get_pages_map().
- *
- * Порядок загрузки:
- *   runtime → vendors → npm → global → <page>
- *
- * Дефолтное правило для страницы:
- *   is_page('<slug>') || is_page_template('page-<slug>.php')
- *
- * Особые случаи задаются явно:
- *   ['type' => 'front']   → is_front_page()
- *   ['type' => 'home']    → is_home()
- *   ['type' => 'single']  → is_single()
- *
- * Переопределение дефолта:
- *   ['pages' => [...], 'templates' => [...], 'extra' => fn]
+ * K·ART·MAKE — подключение скриптов и стилей.
  *
  * @package KARTMAKE
  */
 
 if (!defined('ABSPATH')) {
-  exit;
+    exit;
+}
+
+define('KARTEMAKE_MANIFEST_PATH', '/build/manifest.json');
+
+/**
+ * Прочитать манифест.
+ */
+function kartemake_get_manifest() {
+    static $manifest = null;
+
+    if ($manifest !== null) {
+        return $manifest;
+    }
+
+    $path = get_template_directory() . KARTEMAKE_MANIFEST_PATH;
+
+    if (!file_exists($path)) {
+        error_log('[kartemake] manifest.json not found: ' . $path);
+        $manifest = [];
+        return $manifest;
+    }
+
+    $data = json_decode(file_get_contents($path), true);
+
+    if (!is_array($data) || empty($data['entrypoints'])) {
+        error_log('[kartemake] manifest.json has no entrypoints');
+        $manifest = [];
+        return $manifest;
+    }
+
+    $manifest = $data['entrypoints'];
+    return $manifest;
+}
+
+/**
+ * Преобразовать относительный путь из манифеста в URL.
+ */
+function kartemake_asset_url($relative) {
+    if (preg_match('#^(https?:)?//#', $relative) || str_starts_with($relative, '/')) {
+        return $relative;
+    }
+    return get_template_directory_uri() . '/build/' . ltrim($relative, '/');
+}
+
+/**
+ * Получить массив ассетов для entry.
+ */
+function kartemake_get_entry_assets($entry) {
+    $manifest = kartemake_get_manifest();
+    $assets = $manifest[$entry]['assets'] ?? [];
+
+    return [
+        'js'  => array_map('kartemake_asset_url', $assets['js']  ?? []),
+        'css' => array_map('kartemake_asset_url', $assets['css'] ?? []),
+    ];
 }
 
 /**
  * Карта страниц.
- *
- * Ключ  — имя чанка (совпадает с entry в webpack.config.js).
- * Значение:
- *   null                            → дефолт (is_page + is_page_template)
- *   ['type' => 'front'|'home'|'single'] → особый случай
- *   ['pages' => [...], 'templates' => [...], 'extra' => callable]
- *                                    → переопределение
- *
- * Порядок в массиве = порядок проверки.
  */
 function kartemake_get_pages_map() {
-  return [
-    // ── Особые случаи ──────────────────────────────────
-    'home'         => ['type' => 'front'],
-    'blog'         => ['type' => 'home'],
-    'single'       => ['type' => 'single'],
-
-    // ── Дефолт: is_page(slug) || is_page_template(page-slug.php) ──
-    'about'        => null,
-    'contacts'     => null,
-    'calculator'   => null,
-    'services'     => null,
-    'support'      => null,
-    'optimization' => null,
-    'modernization'=> null,
-    'audit'        => null,
-    'pricing'      => null,
-
-    // ── Переопределения ────────────────────────────────
-    // policy: один чанк на две страницы
-    'policy' => [
-      'pages' => ['privacy-policy', 'cookie-policy'],
-    ],
-  ];
+    return [
+        'home'         => ['type' => 'front'],
+        'blog'         => ['type' => 'home'],
+        'single'       => ['type' => 'single'],
+        'about'        => null,
+        'contacts'     => null,
+        'calculator'   => null,
+        'services'     => null,
+        'support'      => null,
+        'optimization' => null,
+        'modernization'=> null,
+        'audit'        => null,
+        'pricing'      => null,
+        'policy'       => ['pages' => ['privacy-policy', 'cookie-policy']],
+    ];
 }
 
 /**
- * Проверяет, подходит ли текущая страница под правило.
- *
- * @param string $slug  Имя чанка (= ключ в карте).
- * @param mixed  $rule  null | array с 'type' | array с 'pages'/'templates'/'extra'
- * @return bool
+ * Проверка правила.
  */
 function kartemake_match_page($slug, $rule) {
-  // ── Особый тип ────────────────────────────────────────
-  if (is_array($rule) && isset($rule['type'])) {
-    switch ($rule['type']) {
-      case 'front':  return is_front_page();
-      case 'home':   return is_home();
-      case 'single': return is_single();
+    if (is_array($rule) && isset($rule['type'])) {
+        switch ($rule['type']) {
+            case 'front':  return is_front_page();
+            case 'home':   return is_home();
+            case 'single': return is_single();
+        }
+        return false;
     }
-    return false;
-  }
 
-  // ── Переопределение: pages / templates / extra ────────
-  if (is_array($rule)) {
-    if (!empty($rule['pages'])) {
-      foreach ($rule['pages'] as $page_slug) {
-        if (is_page($page_slug)) return true;
-      }
+    if (is_array($rule)) {
+        if (!empty($rule['pages'])) {
+            foreach ($rule['pages'] as $s) {
+                if (is_page($s)) return true;
+            }
+        }
+        if (!empty($rule['templates'])) {
+            foreach ($rule['templates'] as $tpl) {
+                if (is_page_template($tpl)) return true;
+            }
+        }
+        if (!empty($rule['extra']) && is_callable($rule['extra'])) {
+            if (call_user_func($rule['extra'])) return true;
+        }
+        return false;
     }
-    if (!empty($rule['templates'])) {
-      foreach ($rule['templates'] as $tpl) {
-        if (is_page_template($tpl)) return true;
-      }
-    }
-    if (!empty($rule['extra']) && is_callable($rule['extra'])) {
-      if (call_user_func($rule['extra'])) return true;
-    }
-    return false;
-  }
 
-  // ── Дефолт ────────────────────────────────────────────
-  return is_page($slug) || is_page_template("page-{$slug}.php");
+    return is_page($slug) || is_page_template("page-{$slug}.php");
 }
 
 /**
- * Подключение общих и страничных чанков.
+ * JS-цепочка с порядком.
+ */
+function kartemake_enqueue_js_chain($prefix, $urls, $version, $skip = []) {
+    $prev = null;
+    $i = 0;
+
+    foreach ($urls as $url) {
+        if (in_array($url, $skip, true)) continue;
+
+        $handle = "{$prefix}-js-{$i}";
+        wp_enqueue_script($handle, $url, $prev ? [$prev] : [], $version, true);
+        $prev = $handle;
+        $i++;
+    }
+}
+
+/**
+ * CSS-цепочка.
+ */
+function kartemake_enqueue_css_chain($prefix, $urls, $version, $skip = []) {
+    $i = 0;
+
+    foreach ($urls as $url) {
+        if (in_array($url, $skip, true)) continue;
+
+        wp_enqueue_style("{$prefix}-css-{$i}", $url, [], $version);
+        $i++;
+    }
+}
+
+/**
+ * Основная функция.
  */
 function kartemake_enqueue_scripts() {
-  $theme_uri = get_template_directory_uri();
-  $theme_dir = get_template_directory();
-  $version   = wp_get_theme()->get('Version');
+    $version = wp_get_theme()->get('Version');
 
-  // ── 1. Общие чанки ────────────────────────────────────
-  wp_enqueue_script(
-    'kartemake-js-runtime',
-    $theme_uri . '/assets/js/runtime.build.js',
-    [],
-    $version,
-    true
-  );
+    // ── 1. Global ────────────────────────────────────────
+    $global = kartemake_get_entry_assets('global');
+    kartemake_enqueue_js_chain('kartemake-global', $global['js'], $version);
+    kartemake_enqueue_css_chain('kartemake-global', $global['css'], $version);
 
-  wp_enqueue_script(
-    'kartemake-js-vendors',
-    $theme_uri . '/assets/js/vendors.build.js',
-    ['kartemake-js-runtime'],
-    $version,
-    true
-  );
+    // ── 2. Страничный entry ──────────────────────────────
+    foreach (kartemake_get_pages_map() as $entry => $rule) {
+        if (!kartemake_match_page($entry, $rule)) continue;
 
-  // npm — подключаем только если файл реально собран
-  if (file_exists($theme_dir . '/assets/js/npm.build.js')) {
-    wp_enqueue_script(
-      'kartemake-js-npm',
-      $theme_uri . '/assets/js/npm.build.js',
-      ['kartemake-js-runtime'],
-      $version,
-      true
-    );
-  }
+        $assets = kartemake_get_entry_assets($entry);
 
-  wp_enqueue_script(
-    'kartemake-js-global',
-    $theme_uri . '/assets/js/global.build.js',
-    ['kartemake-js-vendors'],
-    $version,
-    true
-  );
+        kartemake_enqueue_js_chain("kartemake-{$entry}", $assets['js'], $version, $global['js']);
+        kartemake_enqueue_css_chain("kartemake-{$entry}", $assets['css'], $version, $global['css']);
 
-  wp_enqueue_style(
-    'kartemake-style-global',
-    $theme_uri . '/assets/css/global.build.css',
-    [],
-    $version
-  );
-
-  // ── 2. Страничный чанк ────────────────────────────────
-  foreach (kartemake_get_pages_map() as $slug => $rule) {
-    if (!kartemake_match_page($slug, $rule)) {
-      continue;
+        break;
     }
-
-    $js  = $theme_dir . "/assets/js/{$slug}.build.js";
-    $css = $theme_dir . "/assets/css/{$slug}.build.css";
-
-    if (file_exists($js)) {
-      wp_enqueue_script(
-        "kartemake-js-{$slug}",
-        $theme_uri . "/assets/js/{$slug}.build.js",
-        ['kartemake-js-global'],
-        $version,
-        true
-      );
-    }
-
-    if (file_exists($css)) {
-      wp_enqueue_style(
-        "kartemake-style-{$slug}",
-        $theme_uri . "/assets/css/{$slug}.build.css",
-        [],
-        $version
-      );
-    }
-
-    break; // первое совпадение — выходим.
-    // Если нужно несколько чанков на страницу — уберите break.
-  }
 }
 add_action('wp_enqueue_scripts', 'kartemake_enqueue_scripts');
