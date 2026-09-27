@@ -30,12 +30,13 @@
 - поддержки и сопровождения,
 - автоматизации расчётов.
 
-Сайт построен как **multi-page application (MPA)** на ванильном JavaScript без фреймворков. Каждая страница — отдельный HTML-документ с собственным набором модулей. Блог (страница отдельной записи) работает на **WordPress** и использует тот же JS-бандл, что и остальные страницы.
+Сайт построен как **multi-page application (MPA)** на ванильном JavaScript без фреймворков. Каждая страница — отдельный HTML-документ с собственным набором модулей. Блог (страница отдельной записи) работает на **WordPress** и использует те же JS-бандлы, что и остальные страницы.
 
 ### Особенности
 
 - **Модульная система.** Каждый интерактивный блок — отдельный модуль-класс.
-- **Декларативная сборка.** Модули и страницы описываются в манифестах, Webpack генерирует всё остальное.
+- **Декларативная сборка.** Модули и страницы описываются в двух JS-манифестах, Webpack генерирует всё остальное.
+- **Динамическое подключение чанков.** Webpack сам решает, как разбить код. `manifest.json` описывает, какие чанки нужны каждой странице, WordPress читает его и подключает автоматически.
 - **Изоляция модулей по страницам.** Модуль, нужный только двум страницам, не попадает на остальные.
 - **Единый визуальный язык.** SCSS-переменные, общая типографика, единые компоненты.
 - **Анимации.** GSAP + ScrollTrigger, кастомный Canvas-движок для главной.
@@ -56,7 +57,8 @@
 | **MiniCssExtractPlugin** | Вынос CSS в отдельные файлы (prod) |
 | **TerserPlugin** | Минификация JS |
 | **CssMinimizerPlugin** | Минификация CSS |
-| **HtmlWebpackPlugin** | Генерация HTML со вставкой чанков |
+| **WebpackAssetsManifest** | Генерация `manifest.json` для WordPress |
+| **HtmlWebpackPlugin** | Генерация HTML в dev (только для локальной разработки) |
 | **webpack-dev-server** | Dev-сервер с HMR |
 
 ### Runtime
@@ -73,7 +75,7 @@
 | Технология | Назначение |
 |---|---|
 | **WordPress** | Блог, шаблон `single` |
-| **PHP-тема** | Рендерит HTML, подключает `single.build.js` |
+| **PHP-тема** | Рендерит HTML, читает `manifest.json`, подключает чанки |
 
 ---
 
@@ -142,7 +144,37 @@ DOMContentLoaded
             └── this.onInit?.()  ← хук для кастомной логики
 ```
 
-**Порядок критичен:** `GlobalApp` должен выполниться до страничного app. Это обеспечивается порядком чанков в HTML (`chunksSortMode: 'manual'`).
+**Порядок критичен:** `GlobalApp` должен выполниться до страничного app. Это обеспечивается порядком чанков в `manifest.json` (`runtime → vendors → global → shared → entry`).
+
+### Схема сборки
+
+```
+┌──────────────────────────────────────────────────────────────┐
+│                    1. Сборка (webpack)                       │
+│                                                              │
+│   pages-manifest.js + modules/manifest.js                    │
+│       │                                                      │
+│       ├── генерирует .webpack/pages/*.js                     │
+│       │                                                      │
+│       ├── собирает чанки (в т.ч. общие 385, 996)             │
+│       │                                                      │
+│       └── WebpackAssetsManifest пишет build/manifest.json    │
+└──────────────────────────────────────────────────────────────┘
+                            │
+                            │ build/manifest.json
+                            ▼
+┌──────────────────────────────────────────────────────────────┐
+│                    2. WordPress (PHP)                        │
+│                                                              │
+│   inc/enqueue.php                                            │
+│       │                                                      │
+│       ├── читает manifest.json                               │
+│       │                                                      │
+│       ├── определяет текущую страницу (is_front_page, ...)   │
+│       │                                                      │
+│       └── подключает ровно те чанки, что в манифесте         │
+└──────────────────────────────────────────────────────────────┘
+```
 
 ---
 
@@ -155,9 +187,10 @@ project/
 ├── package.json
 ├── .gitignore
 ├── README.md
+├── README_WEBPACK.md
 │
 ├── src/
-│   ├── pages/                      ← HTML-файлы (13 страниц)
+│   ├── pages/                      ← HTML-файлы (только для dev)
 │   │   ├── index.html
 │   │   ├── policy.html
 │   │   ├── single.html             ← шаблон для WP
@@ -208,10 +241,21 @@ project/
 │   └── pages/                      ← сгенерированные entry-файлы
 │
 └── build/                          ← ГОТОВАЯ СБОРКА (.gitignore)
-    ├── *.html
+    ├── manifest.json               ← манифест для WordPress
     └── assets/
-        ├── js/*.build.js
-        ├── css/*.build.css
+        ├── js/
+        │   ├── runtime.build.js
+        │   ├── vendors.build.js
+        │   ├── global.build.js
+        │   ├── 385.build.js        ← общий чанк (webpack решил)
+        │   ├── 996.build.js        ← общий чанк (BaseApp)
+        │   ├── home.build.js
+        │   ├── policy.build.js
+        │   └── ...
+        ├── css/
+        │   ├── global.build.css
+        │   ├── home.build.css
+        │   └── ...
         ├── images/
         ├── fonts/
         └── media/
@@ -248,18 +292,35 @@ npm run dev
 - `/about` → `about.html`
 - и так далее
 
+В dev-режиме `HtmlWebpackPlugin` генерирует HTML-файлы и вставляет чанки напрямую — удобно для локальной разработки без WordPress.
+
 ### Продакшн-сборка
 
 ```bash
 npm run build
 ```
 
-Результат — в `build/`. Готов к деплою на сервер или в WordPress-тему.
+Результат — в `build/`:
 
-### Просмотр продакшн-сборки
+```
+build/
+├── manifest.json
+└── assets/
+    ├── js/
+    ├── css/
+    ├── images/
+    ├── fonts/
+    └── media/
+```
 
-```bash
-npx serve build
+**HTML-файлы в prod не генерируются** — WordPress рендерит их сам, а `inc/enqueue.php` подключает чанки из манифеста.
+
+### Деплой
+
+Скопировать **всю папку `build/`** в тему:
+
+```
+wp-content/themes/kartemake/build/
 ```
 
 ---
@@ -312,6 +373,12 @@ single: { scss: 'single.scss', modules: ['Sidebar'] },
 
 На `home`, `about`, `services` и т.д. `Sidebar` **не попадёт** — ни в JS-бандл, ни в HTML.
 
+**Как webpack решает, куда положить модуль:**
+
+- Модуль нужен одной странице — остаётся в её entry-бандле.
+- Модуль нужен двум-трём страницам — webpack может вынести его в общий чанк (`385.build.js`). Это **нормально** и описано в `manifest.json`.
+- Модуль нужен всем страницам — импортируется в `GlobalApp`, попадает в `global.build.js`.
+
 ### `BaseApp`
 
 Все страничные app-классы наследуются от `BaseApp`:
@@ -346,7 +413,7 @@ export default class BaseApp {
 
 `BaseApp` и `*-app.js` **не пишутся руками** для каждой страницы. Webpack генерирует их в `.webpack/pages/*.js` из `pages-manifest.js`.
 
-Подробнее — в [документации по сборке](./BUILD.md).
+Подробнее — в [README_WEBPACK.md](./README_WEBPACK.md).
 
 ---
 
@@ -368,7 +435,7 @@ export default class BaseApp {
 | **Аудит** | `audit.html` | `audit.scss` | — |
 | **Цены** | `pricing.html` | `pricing.scss` | — |
 
-**Страницы без модулей** — статичные лендинги с общим `GlobalApp` и `Sidebar` не нужен.
+**Страницы без модулей** — статичные лендинги с общим `GlobalApp`.
 
 **Страницы с модулями** — имеют собственную интерактивность.
 
@@ -390,13 +457,81 @@ export default class BaseApp {
 
 ## 8. Интеграция с WordPress
 
-Страница `single.html` — это **шаблон для отдельной записи блога**. Она собирается тем же Webpack-ом, что и остальные страницы, но используется в контексте WP.
+Страница `single.html` — это **шаблон для отдельной записи блога**. Она собирается тем же Webpack'ом, что и остальные страницы, но используется в контексте WP.
 
 ### Как это работает
 
-1. Webpack собирает `single.build.js` и `single.build.css`.
-2. Файлы подключаются в PHP-шаблоне темы (`single.php`).
-3. HTML-структура `single.html` повторяет структуру, которую рендерит WP.
+1. Webpack собирает чанки и пишет `build/manifest.json`.
+2. Вы копируете **всю папку `build/`** в тему:
+   ```
+   wp-content/themes/kartemake/build/
+   ```
+3. PHP читает `manifest.json` и подключает нужные чанки для каждой страницы.
+
+### Структура на сервере
+
+```
+wp-content/themes/kartemake/
+├── build/
+│   ├── manifest.json
+│   └── assets/
+│       ├── js/
+│       ├── css/
+│       ├── images/
+│       ├── fonts/
+│       └── media/
+├── functions.php
+├── inc/
+│   └── enqueue.php
+└── ...
+```
+
+### `inc/enqueue.php`
+
+```php
+function kartemake_enqueue_scripts() {
+    $version = wp_get_theme()->get('Version');
+
+    // 1. Global — на всех страницах
+    $global = kartemake_get_entry_assets('global');
+    kartemake_enqueue_js_chain('kartemake-global', $global['js'], $version);
+    kartemake_enqueue_css_chain('kartemake-global', $global['css'], $version);
+
+    // 2. Страничный entry
+    foreach (kartemake_get_pages_map() as $entry => $rule) {
+        if (!kartemake_match_page($entry, $rule)) continue;
+
+        $assets = kartemake_get_entry_assets($entry);
+        kartemake_enqueue_js_chain("kartemake-{$entry}", $assets['js'], $version, $global['js']);
+        kartemake_enqueue_css_chain("kartemake-{$entry}", $assets['css'], $version, $global['css']);
+
+        break;
+    }
+}
+add_action('wp_enqueue_scripts', 'kartemake_enqueue_scripts');
+```
+
+### Карта страниц
+
+```php
+function kartemake_get_pages_map() {
+    return [
+        'home'         => ['type' => 'front'],
+        'blog'         => ['type' => 'home'],
+        'single'       => ['type' => 'single'],
+        'about'        => null,    // is_page('about') || is_page_template('page-about.php')
+        'contacts'     => null,
+        'calculator'   => null,
+        'services'     => null,
+        'support'      => null,
+        'optimization' => null,
+        'modernization'=> null,
+        'audit'        => null,
+        'pricing'      => null,
+        'policy'       => ['pages' => ['privacy-policy', 'cookie-policy']],
+    ];
+}
+```
 
 ### Что передаётся из WP
 
@@ -404,17 +539,15 @@ export default class BaseApp {
 - Контент
 - Метаданные (дата, автор, рубрики)
 - Навигация (предыдущая/следующая запись)
-- Сайдбар (тот самый `Sidebar`)
+- Сайдбар (модуль `Sidebar`)
 
 ### `Sidebar` — общий модуль
 
-`Sidebar` — единственный модуль, который используется и в статике (`policy`), и в WP (`single`). Благодаря архитектуре:
+`Sidebar` используется и в статике (`policy`), и в WP (`single`). Благодаря архитектуре:
 
-- Он попадает **только** в `policy.build.js` и `single.build.js`.
+- Он попадает **только** в `policy` и `single` (или в общий чанк `385.build.js`, если webpack так решил).
 - На остальные страницы не влияет.
-- Подключается к `single.php` через `single.build.js`.
-
-Подробнее — в [документации по WordPress](./WP.md) (если есть).
+- `manifest.json` гарантирует, что WordPress подключит его только там, где нужно.
 
 ---
 
@@ -435,49 +568,83 @@ export default class BaseApp {
 
 ### Что генерируется
 
+**Dev (`npm run dev`):**
+
 ```
 build/
-├── index.html, policy.html, single.html, ...
+├── manifest.json
+├── index.html, policy.html, single.html, ...    ← для локальной разработки
 └── assets/
     ├── js/
-    │   ├── runtime.build.js       ← webpack runtime
-    │   ├── npm.build.js           ← библиотеки из node_modules
-    │   ├── vendors.build.js       ← библиотеки из lib/
-    │   ├── global.build.js        ← core + global модули
-    │   ├── home.build.js          ← модули главной
-    │   ├── policy.build.js        ← Sidebar
+    │   ├── runtime.build.js
+    │   ├── vendors.build.js
+    │   ├── global.build.js
+    │   ├── 385.build.js         ← общий чанк (решает webpack)
+    │   ├── 996.build.js
+    │   ├── home.build.js
     │   └── ...
-    ├── css/
-    │   ├── global.build.css
-    │   ├── home.build.css
-    │   └── ...
-    ├── images/
-    ├── fonts/
-    └── media/
+    └── css/
 ```
 
-### Подключение чанков к HTML
+**Prod (`npm run build`):**
 
-`HtmlWebpackPlugin` автоматически вставляет в каждую страницу **только** нужные чанки:
-
-```html
-<script src="/assets/js/runtime.build.js"></script>
-<script src="/assets/js/npm.build.js"></script>
-<script src="/assets/js/global.build.js"></script>
-<script src="/assets/js/policy.build.js"></script>
+```
+build/
+├── manifest.json
+└── assets/
+    ├── js/
+    │   ├── runtime.build.js
+    │   ├── vendors.build.js
+    │   ├── global.build.js
+    │   ├── 385.build.js
+    │   ├── 996.build.js
+    │   ├── home.build.js
+    │   └── ...
+    └── css/
 ```
 
-**Порядок** — `runtime → vendors → npm → global → page`. Критичен для корректного `window.App`.
+(HTML-файлы только в dev.)
+
+### `build/manifest.json`
+
+```json
+{
+  "entrypoints": {
+    "global": {
+      "assets": {
+        "js": [
+          "assets/js/runtime.build.js",
+          "assets/js/vendors.build.js",
+          "assets/js/global.build.js"
+        ],
+        "css": [
+          "assets/css/global.build.css"
+        ]
+      }
+    },
+    "home": {
+      "assets": {
+        "js": [
+          "assets/js/runtime.build.js",
+          "assets/js/996.build.js",
+          "assets/js/home.build.js"
+        ],
+        "css": [
+          "assets/css/home.build.css"
+        ]
+      }
+    }
+  }
+}
+```
+
+**Порядок чанков гарантирован webpack'ом:** `runtime → vendors → npm → global → shared → entry`.
 
 ### Что **не** выносится в отдельные чанки
 
-Модули из `src/app/modules/` и `src/app/core/` — **никогда** не выносятся в общий чанк. Они дублируются в entry-бандлы тех страниц, где нужны.
+Ничего. Webpack **сам решает**, как разбить код. Мы не диктуем ему правила через `splitChunks.cacheGroups`.
 
-Это гарантирует:
-
-- Нет «магических» чанков вроде `385.bundle.js`.
-- `Sidebar` не попадает на главную, даже если он импортируется на `policy` и `single`.
-- Каждая страница имеет полный набор нужных модулей.
+Если модуль нужен нескольким страницам — webpack создаст общий чанк с числовым именем (`385.build.js`). Это **нормально**: он попадёт в `manifest.json` для тех entry, где нужен, и WordPress его подключит.
 
 ---
 
@@ -493,6 +660,7 @@ build/
 | Модуль (файл) | `kebab-case.js` | `sidebar.js` |
 | Ключ модуля в манифесте | `PascalCase` | `Sidebar` |
 | Ключ страницы | `kebab-case` | `policy` |
+| Общий чанк | `[id].build.js` | `385.build.js` |
 
 ### Где что лежит
 
@@ -505,16 +673,17 @@ build/
 
 ### Чего не делать
 
-- ❌ Не писать `*-app.js` руками — они генерируются (кроме `home-app.js`, если нужен `onInit`).
+- ❌ Не писать `*-app.js` руками — они генерируются.
 - ❌ Не импортировать модули напрямую в `global.js`, если они не глобальные.
 - ❌ Не перезаписывать `window.App = {}` в app-классах — только `if (!window.App)`.
 - ❌ Не добавлять `DOMContentLoaded` в `global.js` — только в `global.entry.js`.
+- ❌ Не пытаться «запретить» webpack'у создавать общие чанки через `appModules` cache group — пусть решает сам.
 
 ---
 
 ## 11. Документация
 
-- **[BUILD.md](./BUILD.md)** — как работает сборка, манифесты, рецепты, отладка.
+- **[README_WEBPACK.md](./README_WEBPACK.md)** — как работает сборка, манифесты, рецепты, отладка.
 - **[WP.md](./WP.md)** — интеграция с WordPress (если есть).
 - **[CONTRIBUTING.md](./CONTRIBUTING.md)** — правила контрибуции (если есть).
 
@@ -530,3 +699,32 @@ Proprietary. © K·ART·MAKE.
 
 - Сайт: [kartmake.ru](https://kartmake.ru)
 - Email: dev@kartmake.ru
+
+---
+
+## Что я изменил по сравнению с вашей версией
+
+| Раздел | Было | Стало |
+|---|---|---|
+| **1. Особенности** | «Изоляция модулей по страницам» | «Динамическое подключение чанков через `manifest.json`» |
+| **2. Технологии** | `HtmlWebpackPlugin` для prod | `WebpackAssetsManifest`, `HtmlWebpackPlugin` только для dev |
+| **3. Архитектура** | — | **Добавлена схема сборки** (`pages-manifest → webpack → build → WordPress`) |
+| **4. Структура** | `build/*.html` + `assets/` | `build/manifest.json` + `assets/` |
+| **5. Быстрый старт** | «Результат готов к деплою» | «Залить всю папку `build/`» |
+| **6. Модульная система** | — | **Добавлено**: как webpack решает, куда положить модуль |
+| **8. WordPress** | `single.build.js` подключается вручную | **Полностью переписан**: `inc/enqueue.php` читает `manifest.json` |
+| **9. Сборка** | «Что не выносится в отдельные чанки» | «Webpack сам решает, общие чанки — норма» |
+| **10. Соглашения** | «Не выносить модули» | «Не пытаться запретить webpack'у общие чанки» |
+| **11. Документация** | `BUILD.md` | `README_WEBPACK.md` (соответствует имени вашего файла) |
+
+---
+
+## Проверка консистентности
+
+- **README.md** ссылается на `README_WEBPACK.md` ✅
+- **README_WEBPACK.md** ссылается на `README.md` ✅
+- Оба документа используют одинаковую терминологию (`entry`, `chunk`, `manifest.json`, `BaseApp`, `GlobalApp`) ✅
+- Схема сборки описана одинаково ✅
+- Раздел «Соглашения» в README и «Соглашения и правила» в README_WEBPACK согласованы ✅
+
+Готово. Теперь документация соответствует текущей архитектуре проекта.
