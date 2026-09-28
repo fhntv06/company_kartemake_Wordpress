@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>K·ART·MAKE — Технический партнёр для вашего сайта</title>
+  <meta name="description"
+        content="Техническая поддержка, модернизация и развитие цифровой инфраструктуры бизнеса. Берём на себя стабильность вашего сайта.">
+</head>
+<body>
+<!-- =================================================
+SYSTEM LOADER
+================================================= -->
+<div class="system-loader">
+  <div class="loader-terminal">
+    <span>ЗАПУСК СИСТЕМЫ K·ART·MAKE</span>
+    <div class="loader-progress">
+      <div></div>
+    </div>
+  </div>
+</div>
+<!-- =================================================
+ORBIT NAVIGATION
+================================================= -->
+<div id="orbit-navigation" class="orbit-navigation">
+  <div class="orbit-circle">
+    <button class="orbit-point" data-scene="hero">
+      <span class="orbit-point__description">Начало</span>
+      <span></span>
+      <strong>01</strong>
+    </button>
+    <button class="orbit-point" data-scene="articles">
+      <span class="orbit-point__description">Статьи</span>
+      <span></span>
+      <strong>02</strong>
+    </button>
+    <button class="orbit-point" data-scene="cta">
+      <span class="orbit-point__description">Контакты</span>
+      <span></span>
+      <strong>03</strong>
+    </button>
+  </div>
+</div>
+<!-- =================================================
+GLOBAL DASHBOARD
+================================================= -->
+<header id="header" class="global-dashboard">
+  <div class="dashboard-inner">
+    <a href="/" class="dashboard-brand">K·ART·MAKE</a>
+    <div class="dashboard-status">
+      <span class="dashboard-status-dot"></span>
+      СИСТЕМА РАБОТАЕТ
+    </div>
+    <button class="dashboard-menu" type="button" aria-expanded="false" aria-controls="dashboard-menu-panel">
+      <span class="dashboard-menu-label">МЕНЮ</span>
+      <span class="dashboard-menu-icon">
+        <span></span>
+        <span></span>
+      </span>
+    </button>
+  </div>
+  <div id="dashboard-menu-panel" class="dashboard-menu-panel" aria-hidden="true">
+    <div class="dashboard-menu-panel-inner">
+      <!-- CONTACTS -->
+      <div class="dashboard-menu-column">
+        <span class="dashboard-menu-title">КОНТАКТЫ</span>
+        <a href="mailto:hello@kartemake.ru">
+          <span>НОВЫЕ ПРОЕКТЫ</span>
+          <strong>hello@kartemake.ru</strong>
+        </a>
+        <a href="mailto:support@kartemake.ru">
+          <span>ТЕХНИЧЕСКАЯ ПОДДЕРЖКА</span>
+          <strong>support@kartemake.ru</strong>
+        </a>
+      </div>
+      <!-- SERVICES -->
+      <div class="dashboard-menu-column">
+        <span class="dashboard-menu-title">УСЛУГИ</span>
+        <a href="/#optimization">
+          <span>01</span>
+          <strong>Оптимизация сайта</strong>
+        </a>
+        <a href="/#modernization">
+          <span>02</span>
+          <strong>Модернизация</strong>
+        </a>
+        <a href="/#support">
+          <span>03</span>
+          <strong>Техническая поддержка</strong>
+        </a>
+        <a href="/#audit">
+          <span>04</span>
+          <strong>Аудит и консультации</strong>
+        </a>
+      </div>
+      <!-- INFORMATION -->
+      <div class="dashboard-menu-column">
+        <span class="dashboard-menu-title">ИНФОРМАЦИЯ</span>
+        <a href="./about.html">О Компании</a>
+        <a href="./privacy-policy.html">Политика обработки персональных данных</a>
+        <a href="./cookie-policy.html">Политика использования Cookie</a>
+      </div>
+    </div>
+  </div>
+</header>
+<main class="tag-page">
+  <!-- =====================================================
+       HERO
+  ====================================================== -->
+  <section
+    class="scene scene-hero tag-hero"
+    data-scene="hero"
+    data-canvas-engine
+  >
+    <canvas
+      id="heroCanvas"
+      class="hero-canvas"
+      aria-hidden="true"
+    ></canvas>
+    <div class="scene-container">
+      <div class="breadcrumbs">
+        <a href="/">
+          Главная
+        </a>
+        <span class="breadcrumbs__separator">/</span>
+        <a href="/blog/">
+          Технический блог
+        </a>
+        <span class="breadcrumbs__separator">/</span>
+        <span class="breadcrumbs__current">
+          WordPress
+        </span>
+      </div>
+      <div class="hero-content">
+        <div class="system-label">
+          K·ART·MAKE / МЕТКА
+        </div>
+        <h1>
+          WordPress
+        </h1>
+        <p>
+          Практические материалы о разработке,
+          оптимизации, миграции и сопровождении
+          сайтов на WordPress.
+        </p>
+        <div class="hero-note">
+          WORDPRESS · DEVELOPMENT · OPTIMIZATION · SUPPORT
+        </div>
+        <div class="hero-meta">
+          <span>publications</span>
+          <span>
+            <strong>4</strong>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- =====================================================
+       ARCHIVE
+  ====================================================== -->
+  <section class="scene tag-articles" data-scene="articles">
+    <div class="scene-container">
+      <div class="scene-header">
+        <div class="scene-eyebrow">
+          TAG / WORDPRESS
+        </div>
+        <h2>
+          Материалы по теме
+        </h2>
+        <p class="scene-description">
+          Техническая практика K·ART·MAKE:
+          разработка, поддержка, производительность
+          и развитие WordPress-проектов.
+        </p>
+      </div>
+      <div class="card-articles-grid">
+        <!-- =================================================
+             ARTICLE 01
+        ================================================== -->
+        <article class="card-article">
+          <span class="card-article__number">
+            01
+          </span>
+          <div class="card-article__image">
+            <span class="card-article__type">
+              ПОДДЕРЖКА
+            </span>
+            <img
+              src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=1200&q=80"
+              alt="Поддержка WordPress-сайта"
+              loading="lazy"
+            >
+          </div>
+          <div class="card-article__content">
+            <div class="card-article__meta">
+              <span class="card-article__meta-item">
+                7 MIN
+              </span>
+              <span class="card-article__meta-item">
+                                18 SEP 2026
+                            </span>
+            </div>
+            <h4 class="card-article__title">
+              <a href="/blog/wordpress-support/">
+                Как устроить техническую поддержку
+                WordPress-сайта
+              </a>
+            </h4>
+            <p class="card-article__description">
+              Разбираем структуру регулярной поддержки,
+              контроль обновлений, резервное копирование
+              и работу с техническими инцидентами.
+            </p>
+            <div class="card-article__tags">
+              <a
+                href="/tag/wordpress/"
+                class="card-article__tag"
+              >
+                WordPress
+              </a>
+              <a
+                href="/tag/php/"
+                class="card-article__tag"
+              >
+                PHP
+              </a>
+              <a
+                href="/tag/support/"
+                class="card-article__tag"
+              >
+                Support
+              </a>
+            </div>
+            <a
+              href="/blog/wordpress-support/"
+              class="card-article__link"
+            >
+              <p>
+                Читать статью
+              </p>
+              <span class="card-article__link-arrow">
+                                ↗
+                            </span>
+            </a>
+          </div>
+        </article>
+        <!-- =================================================
+             ARTICLE 02
+        ================================================== -->
+        <article class="card-article">
+                    <span class="card-article__number">
+                        02
+                    </span>
+          <div class="card-article__image">
+                        <span class="card-article__type">
+                            ОПТИМИЗАЦИЯ
+                        </span>
+            <img
+              src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&q=80"
+              alt="Оптимизация WordPress"
+              loading="lazy"
+            >
+          </div>
+          <div class="card-article__content">
+            <div class="card-article__meta">
+                            <span class="card-article__meta-item">
+                                9 MIN
+                            </span>
+              <span class="card-article__meta-item">
+                                04 SEP 2026
+                            </span>
+            </div>
+            <h4 class="card-article__title">
+              <a href="/blog/wordpress-performance/">
+                Оптимизация WordPress:
+                где действительно теряется скорость
+              </a>
+            </h4>
+            <p class="card-article__description">
+              Разбираем типичные узкие места WordPress:
+              плагины, запросы к базе, изображения,
+              JavaScript и серверную часть.
+            </p>
+            <div class="card-article__tags">
+              <a
+                href="/tag/wordpress/"
+                class="card-article__tag"
+              >
+                WordPress
+              </a>
+              <a
+                href="/tag/performance/"
+                class="card-article__tag"
+              >
+                Performance
+              </a>
+            </div>
+            <a
+              href="/blog/wordpress-performance/"
+              class="card-article__link"
+            >
+              <p>
+                Читать статью
+              </p>
+              <span class="card-article__link-arrow">
+                                ↗
+                            </span>
+            </a>
+          </div>
+        </article>
+        <!-- =================================================
+             ARTICLE 03
+        ================================================== -->
+        <article class="card-article">
+                    <span class="card-article__number">
+                        03
+                    </span>
+          <div class="card-article__image">
+                        <span class="card-article__type">
+                            МИГРАЦИЯ
+                        </span>
+            <img
+              src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
+              alt="Миграция WordPress-сайта"
+              loading="lazy"
+            >
+          </div>
+          <div class="card-article__content">
+            <div class="card-article__meta">
+                            <span class="card-article__meta-item">
+                                11 MIN
+                            </span>
+              <span class="card-article__meta-item">
+                                21 AUG 2026
+                            </span>
+            </div>
+            <h4 class="card-article__title">
+              <a href="/blog/wordpress-migration/">
+                Миграция WordPress без остановки
+                работающего сайта
+              </a>
+            </h4>
+            <p class="card-article__description">
+              Как подготовить перенос проекта,
+              сохранить данные, проверить окружение
+              и минимизировать простой.
+            </p>
+            <div class="card-article__tags">
+              <a
+                href="/tag/wordpress/"
+                class="card-article__tag"
+              >
+                WordPress
+              </a>
+              <a
+                href="/tag/migration/"
+                class="card-article__tag"
+              >
+                Migration
+              </a>
+              <a
+                href="/tag/docker/"
+                class="card-article__tag"
+              >
+                Docker
+              </a>
+            </div>
+            <a
+              href="/blog/wordpress-migration/"
+              class="card-article__link"
+            >
+              <p>
+                Читать статью
+              </p>
+              <span class="card-article__link-arrow">
+                                ↗
+                            </span>
+            </a>
+          </div>
+        </article>
+        <!-- =================================================
+             ARTICLE 04
+        ================================================== -->
+        <article class="card-article">
+                    <span class="card-article__number">
+                        04
+                    </span>
+          <div class="card-article__image">
+                        <span class="card-article__type">
+                            РАЗРАБОТКА
+                        </span>
+            <img
+              src="https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=1200&q=80"
+              alt="Разработка WordPress"
+              loading="lazy"
+            >
+          </div>
+          <div class="card-article__content">
+            <div class="card-article__meta">
+                            <span class="card-article__meta-item">
+                                8 MIN
+                            </span>
+              <span class="card-article__meta-item">
+                                07 AUG 2026
+                            </span>
+            </div>
+            <h4 class="card-article__title">
+              <a href="/blog/wordpress-development/">
+                WordPress как основа
+                digital-продукта
+              </a>
+            </h4>
+            <p class="card-article__description">
+              Когда WordPress подходит для бизнеса,
+              где заканчивается CMS и начинается
+              полноценная инженерная система.
+            </p>
+            <div class="card-article__tags">
+              <a
+                href="/tag/wordpress/"
+                class="card-article__tag"
+              >
+                WordPress
+              </a>
+              <a
+                href="/tag/php/"
+                class="card-article__tag"
+              >
+                PHP
+              </a>
+              <a
+                href="/tag/development/"
+                class="card-article__tag"
+              >
+                Development
+              </a>
+            </div>
+            <a
+              href="/blog/wordpress-development/"
+              class="card-article__link"
+            >
+              <p>
+                Читать статью
+              </p>
+              <span class="card-article__link-arrow">
+                                ↗
+                            </span>
+            </a>
+          </div>
+        </article>
+
+        <!-- =====================================================
+         PAGINATION
+        ====================================================== -->
+        <nav class="tag-pagination" aria-label="Навигация по страницам">
+          <a href="#" class="page-numbers current" aria-current="page">01</a>
+          <a href="#" class="page-numbers">02</a>
+          <a href="#" class="page-numbers">→</a>
+        </nav>
+      </div>
+
+      <!-- ============================================================
+      CTA BLOCK
+      ============================================================ -->
+      <div class="cta-block reveal-item">
+        <span>TECHNICAL PARTNER / K·ART·MAKE</span>
+        <h5 class="cta-block__title">Есть техническая задача?</h5>
+        <p class="cta-block__text">Опишите проблему, проект или задачу. Мы разберём техническую часть и предложим оптимальный способ решения.</p>
+        <button class="button-primary" type="button" data-modal-func="open">Обсудить задачу</button>
+      </div>
+    </div>
+  </section>
+  <!-- =================================================
+  FOOTER
+  ================================================= -->
+  <section>
+    <div class="scene-container">
+      <!-- =================================================
+      FOOTER
+      ================================================= -->
+      <footer class="contact-footer">
+        <!-- FOOTER BRAND -->
+        <div class="contact-footer-brand">
+          <a href="/" class="contact-footer-logo" aria-label="K·ART·MAKE">K·ART·MAKE</a>
+          <p>Технический партнёр для вашего бизнеса.</p>
+        </div>
+        <!-- FOOTER NAVIGATION -->
+        <nav class="contact-footer-nav" aria-label="Навигация по сайту">
+          <div class="contact-footer-column">
+            <span class="contact-footer-title">УСЛУГИ</span>
+            <a href="/#optimization">Оптимизация сайта</a>
+            <a href="/#modernization">Модернизация</a>
+            <a href="/#support">Техническая поддержка</a>
+            <a href="/#audit">Аудит и консультации</a>
+          </div>
+          <div class="contact-footer-column">
+            <span class="contact-footer-title">ИНФОРМАЦИЯ</span>
+            <a href="./privacy-policy.html">Политика обработки персональных данных</a>
+            <a href="./cookie-policy.html">Политика использования Cookie</a>
+          </div>
+          <div class="contact-footer-column">
+            <span class="contact-footer-title">КОНТАКТЫ</span>
+            <a href="mailto:hello@kartemake.ru">hello@kartemake.ru</a>
+            <a href="mailto:support@kartemake.ru">support@kartemake.ru</a>
+            <a href="https://t.me/KArtech76">Telegram</a>
+            <a href="https://vk.ru/kartemake">VK</a>
+          </div>
+        </nav>
+        <!-- FOOTER BOTTOM -->
+        <div class="contact-footer-bottom">
+          <span>© 2026 K·ART·MAKE</span>
+          <span>ТЕХНИЧЕСКИЙ ПАРТНЁР</span>
+          <span>ВСЕ СИСТЕМЫ РАБОТАЮТ</span>
+        </div>
+      </footer>
+    </div>
+  </section>
+</main>
+<div id="cookie-banner" class="cookie-banner" aria-hidden="true">
+  <div class="cookie-banner__wrapper">
+    <div class="cookie-banner__status">
+      <span class="cookie-banner__status-dot"></span>
+      <span>PRIVACY / COOKIE CONTROL</span>
+    </div>
+    <div class="cookie-banner__content">
+      <!-- STEP 1 -->
+      <section id="cookie-step-1" class="cookie-step cookie-step--active">
+        <div class="cookie-banner__header">
+          <p class="cookie-banner__description">Мы применяем cookies, чтобы сайт работал без сбоев и постоянно
+            становился для вас удобнее.</p>
+        </div>
+        <div class="cookie-banner__links">
+          <span>Подробнее:</span>
+          <a href="cookie-policy.html" target="_blank">использование cookie</a>
+          <a href="privacy-policy.html" target="_blank">обработка персональных данных</a>
+        </div>
+        <div class="cookie-banner__actions">
+          <button type="button" id="cookie-decline" class="cookie-button cookie-button--outline">Отклонить
+          </button>
+          <button type="button" id="cookie-accept" class="cookie-button cookie-button--accent">Принять
+          </button>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <!-- Закрытие -->
+    <div class="close-modal no-icon" data-modal-func="close"></div>
+
+    <!-- Заголовок -->
+    <div class="modal-header">
+      <h4>Хотите чтобы мы решили <span class="color-accent">ваш кейс</span>?</h4>
+      <p>Оставьте заявку и наш специалист свяжется с вами для обсуждения деталей вашего проекта</p>
+    </div>
+
+    <!-- Контейнер с гридом -->
+    <div class="form-container">
+
+      <!-- КОЛОНКА 1: КОНТАКТЫ (как в дашборде) -->
+      <div class="contact-modal__body">
+        <a href="mailto:hello@kartemake.ru" class="contact-modal__item">
+          <span class="contact-modal__item-label">НОВЫЕ ПРОЕКТЫ</span>
+          <strong class="contact-modal__item-value">hello@kartemake.ru</strong>
+        </a>
+        <a href="mailto:support@kartemake.ru" class="contact-modal__item">
+          <span class="contact-modal__item-label">ТЕХНИЧЕСКАЯ ПОДДЕРЖКА</span>
+          <strong class="contact-modal__item-value">support@kartemake.ru</strong>
+        </a>
+      </div>
+
+      <!-- КОЛОНКА 2: СОЦСЕТИ -->
+      <div class="contact-modal__body">
+        <a href="https://t.me/KArtech76" target="_blank" class="contact-modal__item">
+          <span class="contact-modal__item-label">TELEGRAM</span>
+          <strong class="contact-modal__item-value">@KArtech76</strong>
+        </a>
+        <a href="https://vk.ru/kartemake" target="_blank" class="contact-modal__item">
+          <span class="contact-modal__item-label">ВКОНТАКТЕ</span>
+          <strong class="contact-modal__item-value">vk.com/kartemake</strong>
+        </a>
+      </div>
+
+      <!-- КОЛОНКА 3: ИНФОРМАЦИЯ -->
+      <div class="contact-modal__body">
+        <a href="/privacy-policy" class="contact-modal__item">
+          <span class="contact-modal__item-label">ДОКУМЕНТЫ</span>
+          <strong class="contact-modal__item-value">Политика конфиденциальности</strong>
+        </a>
+        <!--        <a href="/personal-data-consent" class="contact-modal__item">-->
+        <!--          <span class="contact-modal__item-label">СОГЛАСИЕ</span>-->
+        <!--          <strong class="contact-modal__item-value">На обработку данных</strong>-->
+        <!--        </a>-->
+      </div>
+
+      <!-- ФУТЕР -->
+      <div class="contact-modal__footer">
+        <p class="contact-modal__footer-text">Напишите нам — мы ответим в течение 24 часов</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+<div class="cost-calculator-widget" data-cost-calculator>
+  <button type="button" class="cost-calculator-widget__trigger" data-calculator-trigger>
+    <span>Рассчитать стоимость</span>
+  </button>
+  <div class="cost-calculator-widget__modal" data-calculator-backdrop>
+    <button type="button" class="cost-calculator-widget__close" data-calculator-close aria-label="Закрыть калькулятор">
+      ×
+    </button>
+    <!-- ВНУТРИ ТОТ ЖЕ CALCULATOR -->
+    <div class="cost-calculator" data-cost-calculator data-mode="widget">
+      <div class="cost-calculator__stage" data-calculator-stage>
+        <div class="cost-calculator__orbit" aria-hidden="true"></div>
+        <svg class="cost-calculator__flows" data-calculator-flows preserveAspectRatio="none" aria-hidden="true"></svg>
+        <div class="cost-calculator__services">
+          <button type="button" class="cost-service cost-service--diagnostics" data-cost-service="diagnostics" data-title="Диагностика" data-price="15000">
+            <span class="cost-service__index">
+              01 / DIAGNOSTICS
+            </span>
+            <span class="cost-service__title" data-service-title>
+              Понять проблему
+            </span>
+            <span class="cost-service__price">
+              от 15 000 ₽
+            </span>
+          </button>
+          <button type="button" class="cost-service cost-service--audit" data-cost-service="audit" data-title="Технический аудит" data-price="30000">
+            <span class="cost-service__index">
+              02 / AUDIT
+            </span>
+            <span class="cost-service__title" data-service-title>
+              Оценить состояние
+            </span>
+            <span class="cost-service__price">
+              от 30 000 ₽
+            </span>
+          </button>
+          <button type="button" class="cost-service cost-service--optimization" data-cost-service="optimization" data-title="Оптимизация" data-price="35000">
+            <span class="cost-service__index">
+              03 / OPTIMIZATION
+            </span>
+            <span class="cost-service__title" data-service-title>
+              Улучшить систему
+            </span>
+            <span class="cost-service__price">
+              от 35 000 ₽
+            </span>
+          </button>
+          <button type="button" class="cost-service cost-service--modernization" data-cost-service="modernization" data-title="Модернизация" data-price="50000">
+            <span class="cost-service__index">
+              04 / MODERNIZATION
+            </span>
+            <span class="cost-service__title" data-service-title>
+              Изменить основу
+            </span>
+            <span class="cost-service__price">
+              от 50 000 ₽
+            </span>
+          </button>
+          <button type="button" class="cost-service cost-service--support" data-cost-service="support" data-title="Техническая поддержка" data-price="25000">
+            <span class="cost-service__index">
+              05 / SUPPORT
+            </span>
+            <span class="cost-service__title" data-service-title>
+              Постоянная команда
+            </span>
+            <span class="cost-service__price">
+              от 25 000 ₽ / МЕС
+            </span>
+          </button>
+        </div>
+        <div class="cost-calculator__center" data-calculator-center>
+          <span class="cost-calculator__center-label">
+            текущая конфигурация
+          </span>
+          <h4 class="cost-calculator__center-price" data-calculator-price>
+            0
+          </h4>
+          <span class="cost-calculator__center-currency">
+            ₽
+          </span>
+          <span class="cost-calculator__center-meta" data-calculator-meta>
+            0 услуг выбрано
+          </span>
+        </div>
+        <div class="cost-calculator__actions" data-calculator-actions>
+          <button type="button" class="button-primary" data-calculator-next disabled>
+            Далее →
+          </button>
+        </div>
+      </div>
+      <div class="cost-calculator__result" data-calculator-result>
+        <div class="cost-calculator__result-inner">
+          <span class="cost-calculator__result-label">
+              настройка завершена
+          </span>
+          <div class="cost-calculator__result-price" data-calculator-result-price>
+            0 ₽
+          </div>
+          <ul class="cost-calculator__result-services" data-calculator-result-services></ul>
+          <div class="cost-calculator__actions">
+            <button type="button" class="button-primary" data-calculator-back>
+              ← Назад
+            </button>
+            <button type="button" class="button-primary" data-modal-func="open">
+              Обсудить задачу →
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
