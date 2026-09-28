@@ -41,5 +41,6 @@ module.exports = {
     optimization: { scss: 'optimization.scss', modules: [] },
     modernization:{ scss: 'modernization.scss', modules: [] },
     audit:        { scss: 'audit.scss',        modules: [] },
-    pricing:      { scss: 'pricing.scss',      modules: [] },
+    cases:      { scss: 'cases.scss',      modules: [] },
+    casesDetail:      { scss: 'cases-detail.scss',      modules: [] },
 }
