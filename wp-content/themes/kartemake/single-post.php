@@ -13,7 +13,7 @@ $front_page_url  = esc_url(home_url('/'));
 $thumbnail_id = get_post_thumbnail_id($post_id);
 $reading_time = kartemake_get_reading_time();
 $author_id = get_the_author_meta('ID');
-$views = kartemake_get_post_views();
+$views = kartemake_get_post_views($post_id);
 $author_position = kartemake_get_author_position($author_id);
 
 $author_avatar = get_avatar_url(
@@ -32,7 +32,9 @@ $excerpt = get_the_excerpt();
   <!-- ============================================================
        HERO
        ============================================================ -->
-    <section class="scene scene-hero" data-scene="hero">
+    <section class="scene scene-hero" data-scene="hero" data-canvas-engine>
+      <canvas id="heroCanvas" class="hero-canvas"></canvas>
+
       <div class="scene-container">
         <div class="breadcrumbs">
           <a href="<?= $front_page_url ?>">
@@ -107,7 +109,7 @@ $excerpt = get_the_excerpt();
     <!-- ============================================================
          ARTICLE
          ============================================================ -->
-    <section class="scene" data-scene="blog-article">
+    <section class="scene" data-scene="card-article">
       <div class="scene-container reveal-item">
         <!-- ========================================================
              INTRO
@@ -166,33 +168,12 @@ $excerpt = get_the_excerpt();
           <!-- ====================================================
                TABLE OF CONTENTS
                ==================================================== -->
-          <aside
-            id="sidebar"
-            class="toc-sidebar blog-detail-sidebar"
-            data-controller="toc"
-            data-toc-content="blog-detail-body"
-          >
-            <nav class="toc" aria-label="Содержание статьи">
-              <button
-                class="toc__title"
-                type="button"
-                aria-expanded="true"
-                data-toc-toggle
-              >
-                <span>СОДЕРЖАНИЕ</span>
-                <span class="toc__indicator" aria-hidden="true">
-                  +
-                </span>
-              </button>
-              <div class="toc__links" data-toc-links></div>
+          <aside id="sidebar" class="sidebar" data-controller="toc" data-toc-content="blog-detail-body">
+            <nav class="toc" aria-label="Содержание статьи" data-toc-links>
+              <span class="toc-title">СОДЕРЖАНИЕ</span>
             </nav>
             <div class="sidebar-actions">
-              <a href="<?= $blog_url ?>" class="button-secondary">
-                ← К блогу
-              </a>
-              <a href="<?= $front_page_url ?>" class="button-secondary">
-                ← На главную
-              </a>
+              <a href="/" class="button-secondary">← На главную</a>
             </div>
           </aside>
           <!-- ====================================================
@@ -239,7 +220,7 @@ $excerpt = get_the_excerpt();
               в цифровой среде.
             </p>
           </header>
-          <div class="blog-articles-grid reveal-item">
+          <div class="card-articles-grid reveal-item">
             <?php
             $related_number = 1;
             while ($related_query->have_posts()) :
@@ -248,12 +229,12 @@ $excerpt = get_the_excerpt();
               $related_thumbnail = get_post_thumbnail_id($related_id);
               $related_tags = get_the_tags($related_id);
               ?>
-              <article class="blog-article">
-                <span class="blog-article__number">
+              <article class="card-article">
+                <span class="card-article__number">
                   <?= esc_html(str_pad($related_number,2,'0',STR_PAD_LEFT)) ?>
                 </span>
-                <div class="blog-article__image">
-                  <span class="blog-article__type">
+                <div class="card-article__image">
+                  <span class="card-article__type">
                     <?php
                     $categories = get_the_category();
                     echo $categories ? esc_html($categories[0]->name) : 'ARTICLE';
@@ -265,29 +246,29 @@ $excerpt = get_the_excerpt();
                     ?>
                   <?php endif ?>
                 </div>
-                <div class="blog-article__content">
-                  <div class="blog-article__meta">
-                    <span class="blog-article__meta-item">
+                <div class="card-article__content">
+                  <div class="card-article__meta">
+                    <span class="card-article__meta-item">
                       <?= esc_html(function_exists('kartemake_get_reading_time') ? kartemake_get_reading_time(get_the_content()) : '') ?>
                     </span>
-                    <span class="blog-article__meta-item">
+                    <span class="card-article__meta-item">
                       <?= esc_html(get_the_date('j M Y')); ?>
                     </span>
                   </div>
-                  <h4 class="blog-article__title">
+                  <h4 class="card-article__title">
                     <a href="<?php the_permalink() ?>">
                       <?php the_title() ?>
                     </a>
                   </h4>
-                  <p class="blog-article__description">
+                  <p class="card-article__description">
                     <?= esc_html(get_the_excerpt()) ?>
                   </p>
                   <?php if ($related_tags) : ?>
-                    <div class="blog-article__tags">
+                    <div class="card-article__tags">
                       <?php foreach ($related_tags as $related_tag) : ?>
                         <a
                           href="<?= esc_url(get_tag_link($related_tag->term_id)) ?>"
-                          class="blog-article__tag"
+                          class="card-article__tag"
                         >
                           <?= esc_html($related_tag->name) ?>
                         </a>
@@ -296,10 +277,10 @@ $excerpt = get_the_excerpt();
                   <?php endif ?>
                   <a
                     href="<?php the_permalink() ?>"
-                    class="blog-article__link"
+                    class="card-article__link"
                   >
                     <p>Читать статью</p>
-                    <span class="blog-article__link-arrow">
+                    <span class="card-article__link-arrow">
                       ↗
                     </span>
                   </a>
