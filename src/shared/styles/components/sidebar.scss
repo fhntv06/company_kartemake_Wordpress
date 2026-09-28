@@ -53,6 +53,10 @@
   margin-top: $small;
   padding-top: $small;
   border-top: 1px solid $border;
+
+  a:not(:first-child) {
+    margin-top: $extra-small;
+  }
 }
 @media (max-width: $breakpoint-lower-middle) {
   .sidebar {
@@ -84,7 +88,6 @@
     position: sticky;
     top: 72px;
     background-color: $bg-secondary;
-    margin-bottom: 0;
   }
   .toc {
     max-width: 100%;
