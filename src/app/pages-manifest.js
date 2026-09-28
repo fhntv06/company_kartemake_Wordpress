@@ -43,4 +43,5 @@ module.exports = {
     audit:        { scss: 'audit.scss',        modules: [] },
     cases:      { scss: 'cases.scss',      modules: [] },
     casesDetail:      { scss: 'cases-detail.scss',      modules: [] },
+    tag:      { scss: 'tag.scss',      modules: [] },
 }
