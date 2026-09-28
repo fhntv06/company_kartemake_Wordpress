@@ -28,7 +28,9 @@ function kartemake_post_meta_callback($post) {
   wp_nonce_field('kartemake_post_meta', 'kartemake_post_meta_nonce');
 
   $reading_time = get_post_meta($post->ID, 'reading_time', true);
+  $reading_time = $reading_time === '0' ? 1 : $reading_time;
   $views = get_post_meta($post->ID, 'post_views', true);
+  $views = $views === '0' ? 1 : $views;
   ?>
   <p>
     <label for="reading_time">Время чтения (минут):</label>
@@ -62,10 +64,12 @@ function kartemake_save_post_meta($post_id) {
   }
 
   if (isset($_POST['reading_time'])) {
-    update_post_meta($post_id, 'reading_time', absint($_POST['reading_time']));
+    $reading_time = $_POST['reading_time'];
+    update_post_meta($post_id, 'reading_time', absint($reading_time === '0' ? 1 : $reading_time));
   }
 
   if (isset($_POST['post_views'])) {
-    update_post_meta($post_id, 'post_views', absint($_POST['post_views']));
+    $post_views = $_POST['reading_time'];
+    update_post_meta($post_id, 'post_views', absint($post_views === '0' ? 1 : $post_views));
   }
 }
