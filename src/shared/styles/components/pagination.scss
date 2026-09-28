@@ -1,0 +1,27 @@
+@use '../variables/colors' as *;
+@use '../variables/offsets' as *;
+@use '../system/mixins' as *;
+@use '../variables/media' as *;
+
+.tag-pagination {
+  grid-column: 1/-1;
+  display: flex;
+  gap: $extra-small;
+  justify-content: center;
+
+  .page-numbers {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    border: 1px solid $border;
+    transition: border-color 3s ease, background-color .3s ease;
+
+    &:hover,
+    &.current {
+      border-color: $orange;
+      background-color: rgba(255,46,46,0.018);
+    }
+  }
+}
