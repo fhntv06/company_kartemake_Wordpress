@@ -12,177 +12,92 @@ BLOG ARTICLES
         <!-- ============================================================
         REGULAR ARTICLES
         ============================================================ -->
-        <div class="blog-articles-grid reveal-item">
-            <article class="blog-article">
-                <span class="blog-article__number">01</span>
-                <div class="blog-article__image">
-                    <span class="blog-article__type">CASE</span>
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80" alt="Рефакторинг legacy-кода">
+      <div class="card-articles-grid reveal-item">
+        <?php
+        $featured_id = get_the_ID();
+        $blog_query = new WP_Query([
+          'post_type'      => 'post',
+          'posts_per_page' => 7,
+          'post_status'    => 'publish',
+          'post__not_in'   => [$featured_id],
+        ]);
+        if ($blog_query->have_posts()) :
+          $article_number = 1;
+          while ($blog_query->have_posts()) :
+            $blog_query->the_post();
+            $reading_time = get_post_meta(get_the_ID(), 'reading_time', true);
+            $terms = get_the_category();
+            $category_name = !empty($terms)
+              ? $terms[0]->name
+              : 'ARTICLE';
+            ?>
+            <article class="card-article">
+                <span class="card-article__number">
+                    <?= str_pad($article_number, 2, '0', STR_PAD_LEFT); ?>
+                </span>
+              <div class="card-article__image">
+                    <span class="card-article__type">
+                        <?= esc_html(strtoupper($category_name)); ?>
+                    </span>
+                <?php if (has_post_thumbnail()) : ?>
+                  <?php
+                  the_post_thumbnail(
+                    'large',
+                    [
+                      'loading' => 'lazy',
+                      'alt'     => esc_attr(get_the_title()),
+                    ]
+                  );
+                  ?>
+                <?php endif; ?>
+              </div>
+              <div class="card-article__content">
+                <div class="card-article__meta">
+                  <?php if ($reading_time) : ?>
+                    <span class="card-article__meta-item">
+                                <?= esc_html($reading_time); ?> MIN
+                            </span>
+                  <?php endif; ?>
+                  <span class="card-article__meta-item">
+                            <?= esc_html(get_the_date('d M Y')); ?>
+                        </span>
                 </div>
-                <div class="blog-article__content">
-                    <div class="blog-article__meta">
-                        <span class="blog-article__meta-item">08 min</span>
-                        <span class="blog-article__meta-item">05 feb 2026</span>
-                    </div>
-                    <h4 class="blog-article__title"><a href="#">Рефакторинг legacy-кода: как мы ускорили сайт в 3 раза</a></h4>
-                    <p class="blog-article__description">Работа с 10-летним кодом интернет-магазина: анализ архитектурных ошибок, устранение узких мест, оптимизация запросов к БД и внедрение кэширования.</p>
-                    <div class="blog-article__tags">
-                        <a href="#" class="blog-article__tag">Рефакторинг</a>
-                        <a href="#" class="blog-article__tag">Оптимизация</a>
-                        <a href="#" class="blog-article__tag">Performance</a>
-                    </div>
-                    <a href="#" class="blog-article__link">
-                        <p>Читать кейс</p>
-                        <span class="blog-article__link-arrow">↗</span>
-                    </a>
-                </div>
+                <h4 class="card-article__title">
+                  <a href="<?= esc_url(get_permalink()); ?>">
+                    <?= esc_html(get_the_title()); ?>
+                  </a>
+                </h4>
+                <p class="card-article__description">
+                  <?= esc_html(get_the_excerpt()); ?>
+                </p>
+                <?php if (!empty($terms)) : ?>
+                  <div class="card-article__tags">
+                    <?php foreach ($terms as $term) : ?>
+                      <a
+                        href="<?= esc_url(get_category_link($term->term_id)); ?>"
+                        class="card-article__tag"
+                      >
+                        <?= esc_html($term->name); ?>
+                      </a>
+                    <?php endforeach; ?>
+                  </div>
+                <?php endif; ?>
+                <a
+                  href="<?= esc_url(get_permalink()); ?>"
+                  class="card-article__link"
+                >
+                  <p>Читать статью</p>
+                  <span class="card-article__link-arrow">↗</span>
+                </a>
+              </div>
             </article>
-            <article class="blog-article">
-                <span class="blog-article__number">02</span>
-                <div class="blog-article__image">
-                    <span class="blog-article__type">ARTICLE</span>
-                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1600&q=80" alt="Абонентское техническое обслуживание">
-                </div>
-                <div class="blog-article__content">
-                    <div class="blog-article__meta">
-                        <span class="blog-article__meta-item">06 MIN</span>
-                        <span class="blog-article__meta-item">01 MAR 2026</span>
-                    </div>
-                    <h4 class="blog-article__title"><a href="#">Абонентское обслуживание: почему это дешевле штатного программиста</a></h4>
-                    <p class="blog-article__description">Сравниваем фиксированную абонентскую модель с наймом штатного разработчика. Реальные цифры, зоны ответственности и экономика технического сопровождения.</p>
-                    <div class="blog-article__tags">
-                        <a href="#" class="blog-article__tag">Поддержка</a>
-                        <a href="#" class="blog-article__tag">B2B</a>
-                        <a href="#" class="blog-article__tag">IT Economics</a>
-                    </div>
-                    <a href="#" class="blog-article__link">
-                        <p>Читать статью</p>
-                        <span class="blog-article__link-arrow">↗</span>
-                    </a>
-                </div>
-            </article>
-            <article class="blog-article">
-                <span class="blog-article__number">03</span>
-                <div class="blog-article__image">
-                    <span class="blog-article__type">CASE</span>
-                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1600&q=80" alt="Интеграция Битрикс24, 1С и WordPress">
-                </div>
-                <div class="blog-article__content">
-                    <div class="blog-article__meta">
-                        <span class="blog-article__meta-item">10 MIN</span>
-                        <span class="blog-article__meta-item">25 MAR 2026</span>
-                    </div>
-                    <h4 class="blog-article__title"><a href="#">Сложная интеграция: Битрикс24 + 1С + WordPress + платежные системы</a></h4>
-                    <p class="blog-article__description">Технический разбор сквозной интеграции: автоматизация заказов, синхронизация остатков, обработка платежей и передача данных в CRM.</p>
-                    <div class="blog-article__tags">
-                        <a href="#" class="blog-article__tag">Интеграции</a>
-                        <a href="#" class="blog-article__tag">API</a>
-                        <a href="#" class="blog-article__tag">WordPress</a>
-                        <a href="#" class="blog-article__tag">1С</a>
-                    </div>
-                    <a href="#" class="blog-article__link">
-                        <p>Читать кейс</p>
-                        <span class="blog-article__link-arrow">↗</span>
-                    </a>
-                </div>
-            </article>
-            <article class="blog-article">
-                <span class="blog-article__number">04</span>
-                <div class="blog-article__image">
-                    <span class="blog-article__type">AUDIT</span>
-                    <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?auto=format&fit=crop&w=1600&q=80" alt="Технический аудит безопасности">
-                </div>
-                <div class="blog-article__content">
-                    <div class="blog-article__meta">
-                        <span class="blog-article__meta-item">07 MIN</span>
-                        <span class="blog-article__meta-item">15 APR 2026</span>
-                    </div>
-                    <h4 class="blog-article__title"><a href="#">Технический аудит безопасности: как мы нашли 15 уязвимостей за 3 дня</a></h4>
-                    <p class="blog-article__description">Проверка кода, конфигурации сервера, CMS и прав доступа. Показываем, как проходит технический аудит и какие проблемы чаще всего остаются незамеченными.</p>
-                    <div class="blog-article__tags">
-                        <a href="#" class="blog-article__tag">Безопасность</a>
-                        <a href="#" class="blog-article__tag">Аудит</a>
-                        <a href="#" class="blog-article__tag">DevOps</a>
-                    </div>
-                    <a href="#" class="blog-article__link">
-                        <p>Читать руководство</p>
-                        <span class="blog-article__link-arrow">↗</span>
-                    </a>
-                </div>
-            </article>
-            <article class="blog-article">
-                <span class="blog-article__number">05</span>
-                <div class="blog-article__image">
-                    <span class="blog-article__type">PARTNER</span>
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80" alt="Технический партнер для digital-агентств">
-                </div>
-                <div class="blog-article__content">
-                    <div class="blog-article__meta">
-                        <span class="blog-article__meta-item">05 MIN</span>
-                        <span class="blog-article__meta-item">10 MAY 2026</span>
-                    </div>
-                    <h4 class="blog-article__title"><a href="#">Технический партнер для digital-агентств: кейс совместной работы</a></h4>
-                    <p class="blog-article__description">Как агентство передало нам техническую часть проектов и сосредоточилось на стратегии и клиентах. Модель взаимодействия, процессы и распределение ответственности.</p>
-                    <div class="blog-article__tags">
-                        <a href="#" class="blog-article__tag">Партнерство</a>
-                        <a href="#" class="blog-article__tag">Outsource</a>
-                        <a href="#" class="blog-article__tag">Agencies</a>
-                    </div>
-                    <a href="#" class="blog-article__link">
-                        <p>Читать кейс</p>
-                        <span class="blog-article__link-arrow">↗</span>
-                    </a>
-                </div>
-            </article>
-            <article class="blog-article">
-                <span class="blog-article__number">06</span>
-                <div class="blog-article__image">
-                    <span class="blog-article__type">ENGINEERING</span>
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80" alt="Разработка MVP">
-                </div>
-                <div class="blog-article__content">
-                    <div class="blog-article__meta">
-                        <span class="blog-article__meta-item">09 MIN</span>
-                        <span class="blog-article__meta-item">05 JUN 2026</span>
-                    </div>
-                    <h4 class="blog-article__title"><a href="#">Разработка MVP за 6 недель: технологический стек и архитектурные решения</a></h4>
-                    <p class="blog-article__description">Разбор создания SaaS-продукта: выбор технологий, архитектура, CI/CD, мониторинг и подготовка проекта к дальнейшему масштабированию.</p>
-                    <div class="blog-article__tags">
-                        <a href="#" class="blog-article__tag">MVP</a>
-                        <a href="#" class="blog-article__tag">Architecture</a>
-                        <a href="#" class="blog-article__tag">DevOps</a>
-                    </div>
-                    <a href="#" class="blog-article__link">
-                        <p>Читать разбор</p>
-                        <span class="blog-article__link-arrow">↗</span>
-                    </a>
-                </div>
-            </article>
-            <article class="blog-article">
-                <span class="blog-article__number">07</span>
-                <div class="blog-article__image">
-                    <span class="blog-article__type">INTEGRATION</span>
-                    <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?auto=format&fit=crop&w=1600&q=80" alt="Интеграция Chatplace, Instagram и Telegram">
-                </div>
-                <div class="blog-article__content">
-                    <div class="blog-article__meta">
-                        <span class="blog-article__meta-item">08 MIN</span>
-                        <span class="blog-article__meta-item">27 JUN 2026</span>
-                    </div>
-                    <h4 class="blog-article__title"><a href="#">Chatplace + Instagram + Telegram: интеграция для экскурсоводов</a></h4>
-                    <p class="blog-article__description">Как объединить несколько каналов коммуникации, централизовать обращения клиентов и автоматизировать обработку заявок.</p>
-                    <div class="blog-article__tags">
-                        <a href="#" class="blog-article__tag">Интеграции</a>
-                        <a href="#" class="blog-article__tag">Telegram</a>
-                        <a href="#" class="blog-article__tag">Instagram</a>
-                    </div>
-                    <a href="#" class="blog-article__link">
-                        <p>Читать статью</p>
-                        <span class="blog-article__link-arrow">↗</span>
-                    </a>
-                </div>
-            </article>
-        </div>
+            <?php
+            $article_number++;
+          endwhile;
+          wp_reset_postdata();
+        endif;
+        ?>
+      </div>
 
         <!-- ============================================================
         CTA BLOCK
