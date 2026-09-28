@@ -82,6 +82,9 @@ function kartemake_get_pages_map() {
         'audit'        => null,
         'pricing'      => null,
         'policy'       => ['pages' => ['privacy-policy', 'cookie-policy']],
+        'tag'          => ['type' => 'tag'],          // ← добавили
+        'category'     => ['type' => 'category'],     // ← если нужно
+        'archive'      => ['type' => 'archive'],      // ← если нужно
     ];
 }
 
@@ -94,6 +97,9 @@ function kartemake_match_page($slug, $rule) {
             case 'front':  return is_front_page();
             case 'home':   return is_home();
             case 'single': return is_single();
+            case 'tag':    return is_tag();
+            case 'category': return is_category();
+            case 'archive':  return is_archive();
         }
         return false;
     }
