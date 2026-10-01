@@ -5,7 +5,6 @@
  */
 
 get_header();
-get_template_part('template-parts/global/orbit-navigation');
 ?>`
 <main class="experience audit-page">
 

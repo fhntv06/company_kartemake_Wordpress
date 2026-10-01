@@ -33,3 +33,6 @@ require_once $kartemake_inc . 'excerpt.php';
 
 // Посты и авторы
 require_once $kartemake_inc . 'post-meta.php';
+
+// Компонент orbit
+require get_template_directory() . '/inc/orbit-navigation.php';
