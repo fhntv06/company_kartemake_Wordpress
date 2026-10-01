@@ -96,6 +96,7 @@
   line-height: 1.4;
   opacity: .35;
 }
+
 /* ============================================================
    STEP CONTENT
    ============================================================ */
@@ -107,6 +108,7 @@
     display: none;
   }
 }
+
 /* ============================================================
    LAYOUTS
    ============================================================ */
@@ -126,6 +128,7 @@
   gap: $lower-small;
   align-items: start;
 }
+
 /* ============================================================
    COMMON PANEL
    ============================================================ */
@@ -158,6 +161,7 @@
   line-height: 1;
   opacity: .4;
 }
+
 /* ============================================================
    GROUP
    ============================================================ */
@@ -197,6 +201,7 @@
   letter-spacing: .08em;
   opacity: .32;
 }
+
 /* ============================================================
    OPTION GRID
    ============================================================ */
@@ -205,6 +210,7 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: $extra-small;
 }
+
 /* ============================================================
    OPTION
    ============================================================ */
@@ -237,17 +243,8 @@
   }
 }
 .calculator-option__indicator {
-  display: block;
-  width: 12px;
-  height: 12px;
+  @include checkbox-indicator(12px);
   margin-bottom: $small;
-  border: 1px solid currentColor;
-  opacity: .45;
-  transition: background-color 180ms ease, opacity 180ms ease;
-  .calculator-option input:checked + & {
-    background: currentColor;
-    opacity: 1;
-  }
 }
 .calculator-option__title {
   margin-bottom: $extra-small;
@@ -272,6 +269,7 @@
     opacity: 1;
   }
 }
+
 /* ============================================================
    PANEL FOOTER
    ============================================================ */
@@ -290,6 +288,7 @@
   line-height: 1.5;
   opacity: .4;
 }
+
 /* ============================================================
    BUILDER
    ============================================================ */
@@ -376,6 +375,7 @@
   white-space: nowrap;
   opacity: .6;
 }
+
 /* ============================================================
    SUMMARY
    ============================================================ */
@@ -450,6 +450,7 @@
   line-height: 1.55;
   opacity: .35;
 }
+
 /* ============================================================
    RESULT
    ============================================================ */
@@ -529,7 +530,6 @@
   display: flex;
   flex-direction: column;
   border-top: 1px solid $surface-hover;
-
 }
 .calculator-result__work {
   display: grid;
@@ -559,6 +559,7 @@
   white-space: nowrap;
   opacity: .55;
 }
+
 /* ============================================================
    RESULT ASIDE
    ============================================================ */
@@ -591,19 +592,18 @@
   line-height: 1.55;
   color: $text-muted;
 }
+
 /* ============================================================
-   FORM
+   FORM (calculator-specific)
+   Базовая форма — form.scss (.form__*).
+   Здесь только переопределения габаритов и типографики.
    ============================================================ */
 .calculator-result__form {
-  display: flex;
-  flex-direction: column;
-  gap: $lower-small;
+  /* форма сама по себе flex-колонка из form.scss,
+     здесь можно менять только gap, если нужно */
 }
-.calculator-result__field {
-  display: flex;
-  flex-direction: column;
-  gap: calc($extra-small / 2);
 
+.calculator-result__field {
   label {
     font-family: "IBM Plex Mono", "Roboto Mono", monospace;
     font-size: 12px;
@@ -611,30 +611,22 @@
     color: $text-muted;
   }
 
-  input {
-    width: 100%;
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"] {
     height: 44px;
     padding: 0 13px;
-    border: 1px solid $surface-hover;
-    outline: 0;
-    background: $surface;
-    color: inherit;
-    font-family: inherit;
     font-size: 12px;
-    &:focus {
-      border-color: $text-muted;
-    }
-    &::placeholder {
-      color: $text-muted;
-    }
   }
 }
+
 .calculator-result__legal {
   margin: $extra-small 0 0;
   font-size: 12px;
   line-height: 1.5;
   opacity: .28;
 }
+
 /* ============================================================
    ENGINEERING NOTE
    ============================================================ */
@@ -663,6 +655,7 @@
   letter-spacing: .08em;
   opacity: .32;
 }
+
 /* ============================================================
    BUTTON FALLBACK
    ============================================================ */
@@ -680,10 +673,11 @@
     background: rgba(255,255,255,.035);
   }
 }
+
 /* ============================================================
    RESPONSIVE
    ============================================================ */
-@media (max-width: 1100px) {
+@media (max-width: $breakpoint-lower-middle) {
   .calculator-builder__layout,
   .calculator-result__layout {
     grid-template-columns: 1fr;
@@ -703,7 +697,8 @@
     border-right: 1px solid $surface-hover;
   }
 }
-@media (max-width: 760px) {
+
+@media (max-width: $breakpoint-extra-small) {
   .calculator {
     .scene-container {
       width: min(100% - 32px, 640px);

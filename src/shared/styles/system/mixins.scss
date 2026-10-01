@@ -98,3 +98,28 @@
     }
   }
 }
+/* ============================================================
+   CHECKBOX INDICATOR
+   Единый визуальный паттерн квадратного индикатора
+   с состоянием "выбрано" для скрытого input.
+   Использование:
+     .my-indicator { @include checkbox-indicator(12px); }
+   ============================================================ */
+@mixin checkbox-indicator($size: 12px, $border-width: 1px) {
+  display: block;
+  width: $size;
+  height: $size;
+  border: $border-width solid currentColor;
+  opacity: .45;
+  transition: background-color 180ms ease, opacity 180ms ease;
+
+  input:checked + & {
+    background: currentColor;
+    opacity: 1;
+  }
+
+  input:focus-visible + & {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+}
