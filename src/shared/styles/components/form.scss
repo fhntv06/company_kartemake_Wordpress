@@ -1,0 +1,419 @@
+@use '../variables/colors' as *;
+@use '../variables/offsets' as *;
+@use '../system/mixins' as *;
+@use '../variables/media' as *;
+
+/* ============================================================
+   FORM COMPONENT
+   ============================================================ */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 0;
+  margin-bottom: $middle;
+}
+
+/* ------------------------------------------------------------
+   HEADER
+   ------------------------------------------------------------ */
+.form__header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: $small;
+}
+
+.form__label {
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  text-transform: uppercase;
+  color: $text-muted;
+  margin-bottom: $extra-small;
+}
+
+.form__title {
+  margin-bottom: $extra-small;
+}
+
+.form__description {
+  color: $text-secondary;
+}
+
+/* ------------------------------------------------------------
+   FIELDS
+   ------------------------------------------------------------ */
+.form__fields {
+  display: flex;
+  flex-direction: column;
+  gap: $lower-small;
+}
+
+.form__field {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+    font-size: 12px;
+    letter-spacing: .06em;
+    color: $text-muted;
+    margin-bottom: calc($extra-small / 2);
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    min-width: 0;
+    padding: 0 13px;
+    border: 1px solid $surface-hover;
+    outline: 0;
+    background: $surface;
+    color: inherit;
+    font-family: inherit;
+    font-size: 12px;
+    transition: border-color 180ms ease, background-color 180ms ease;
+
+    &::placeholder {
+      color: $text-muted;
+      opacity: .55;
+    }
+
+    &:focus {
+      border-color: $text-muted;
+    }
+
+    &:disabled {
+      opacity: .45;
+      cursor: not-allowed;
+    }
+  }
+
+  input {
+    height: 44px;
+  }
+
+  textarea {
+    min-height: 96px;
+    padding: 12px 13px;
+    resize: vertical;
+    line-height: 1.5;
+  }
+}
+
+/* Ошибка у текстовых полей */
+.form__field--error {
+  input,
+  textarea {
+    border-color: rgba(255, 80, 80, .6);
+  }
+
+  .form__error {
+    opacity: 1;
+  }
+}
+
+.form__error {
+  font-size: 11px;
+  line-height: 1.4;
+  color: rgba(255, 120, 120, .85);
+  opacity: 0;
+  transition: opacity 180ms ease;
+}
+
+/* ------------------------------------------------------------
+   CHECKBOX (согласие) — на общем миксине
+   ------------------------------------------------------------ */
+.form__checkbox {
+  position: relative;
+  display: grid;
+  grid-template-columns: 14px minmax(0, 1fr);
+  gap: $extra-small;
+  align-items: start;
+  cursor: pointer;
+  user-select: none;
+
+  input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+}
+
+.form__checkbox-indicator {
+  @include checkbox-indicator(12px);
+  margin-top: 2px;
+}
+
+.form__checkbox-text {
+  font-size: 12px;
+  line-height: 1.5;
+  color: $text-muted;
+  opacity: .85;
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    opacity: .9;
+    transition: opacity 180ms ease;
+
+    &:hover { opacity: 1; }
+  }
+}
+
+/* Ошибка у чекбокса */
+.form__field--checkbox.form__field--error .form__checkbox-indicator {
+  border-color: rgba(255, 80, 80, .7);
+}
+
+/* ------------------------------------------------------------
+   ROW (поля в строку)
+   ------------------------------------------------------------ */
+.form__row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: $lower-small;
+}
+
+/* ------------------------------------------------------------
+   FOOTER / ACTIONS
+   ------------------------------------------------------------ */
+.form__footer {
+  display: flex;
+  flex-direction: column;
+  gap: $extra-small;
+  margin-top: $extra-small;
+}
+
+.form__actions {
+  display: flex;
+  align-items: center;
+  gap: $extra-small;
+  flex-wrap: wrap;
+}
+
+.form__legal {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.5;
+  opacity: .3;
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    opacity: .8;
+    transition: opacity 180ms ease;
+
+    &:hover { opacity: 1; }
+  }
+}
+
+/* ------------------------------------------------------------
+   STATUS
+   ------------------------------------------------------------ */
+.form__status {
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 11px;
+  line-height: 1.4;
+  letter-spacing: .04em;
+  opacity: .5;
+
+  &--success {
+    color: rgba(120, 220, 150, .9);
+    opacity: 1;
+  }
+
+  &--error {
+    color: rgba(255, 120, 120, .9);
+    opacity: 1;
+  }
+
+  &:empty { display: none; }
+}
+/* ------------------------------------------------------------
+   FILES (dropzone + список)
+   ------------------------------------------------------------ */
+.form__field--files {
+  gap: $extra-small;
+}
+
+.form__file-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: $extra-small;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 12px;
+  letter-spacing: .06em;
+  color: $text-muted;
+}
+
+.form__file-hint {
+  font-size: 10px;
+  opacity: .55;
+  letter-spacing: .04em;
+  text-align: right;
+}
+
+.form__dropzone {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: calc($extra-small / 2);
+  padding: $small $extra-small;
+  min-height: 96px;
+  border: 1px dashed $surface-hover;
+  background: rgba(255, 255, 255, .012);
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 180ms ease, background-color 180ms ease, opacity 180ms ease;
+
+  input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  &:hover {
+    border-color: rgba(255, 255, 255, .28);
+    background: rgba(255, 255, 255, .035);
+  }
+
+  &.is-dragover {
+    border-color: currentColor;
+    background: rgba(255, 255, 255, .05);
+  }
+
+  &.is-disabled {
+    opacity: .45;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+.form__dropzone-icon {
+  display: block;
+  font-size: 18px;
+  line-height: 1;
+  opacity: .5;
+}
+
+.form__dropzone-text {
+  font-size: 12px;
+  line-height: 1.5;
+  color: $text-muted;
+  opacity: .75;
+
+  strong {
+    font-weight: 500;
+    color: inherit;
+    opacity: 1;
+  }
+}
+
+.form__dropzone-link {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  opacity: .9;
+}
+
+/* Список выбранных файлов */
+.form__file-list {
+  display: flex;
+  flex-direction: column;
+  gap: calc($extra-small / 2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  &:empty { display: none; }
+}
+
+.form__file-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: $extra-small;
+  padding: 8px 10px;
+  border: 1px solid $surface-hover;
+  background: rgba(255, 255, 255, .012);
+  font-size: 12px;
+}
+
+.form__file-name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: inherit;
+  opacity: .85;
+}
+
+.form__file-size {
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 10px;
+  opacity: .45;
+  white-space: nowrap;
+}
+
+.form__file-remove {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: 1px solid $surface-hover;
+  background: transparent;
+  color: inherit;
+  font-size: 12px;
+  line-height: 1;
+  cursor: pointer;
+  transition: border-color 180ms ease, background-color 180ms ease, opacity 180ms ease;
+  opacity: .55;
+
+  &:hover {
+    border-color: rgba(255, 255, 255, .3);
+    background: rgba(255, 255, 255, .035);
+    opacity: 1;
+  }
+}
+
+.form__file-item--error {
+  border-color: rgba(255, 80, 80, .6);
+
+  .form__file-size {
+    color: rgba(255, 120, 120, .9);
+    opacity: 1;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 760px) {
+  .form__row {
+    grid-template-columns: 1fr;
+  }
+
+  .form__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .form__actions .button-primary,
+  .form__actions .button-secondary {
+    width: 100%;
+  }
+}
