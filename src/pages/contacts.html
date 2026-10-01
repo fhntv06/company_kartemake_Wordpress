@@ -146,6 +146,94 @@ GLOBAL DASHBOARD
         <h2 class="scene-title">Как с нами <span>связаться.</span></h2>
         <p class="scene-description">Выберите удобный канал или сразу опишите задачу. Для новых проектов и технических вопросов используйте соответствующий контакт.</p>
       </header>
+
+      <form class="form" data-form data-endpoint="/wp-json/my/v1/lead" novalidate>
+        <header class="form__header">
+          <span class="form__label">Заявка / Конфигурация</span>
+          <h3 class="form__title">Отправить конфигурацию</h3>
+          <p class="form__description">
+            Опишите задачу или прикрепите конфигурацию — мы свяжемся с вами для уточнения деталей.
+          </p>
+        </header>
+
+        <div class="form__fields">
+          <div class="form__row">
+            <div class="form__field">
+              <label for="form-name">Имя</label>
+              <input type="text" id="form-name" name="name" autocomplete="name"
+                     placeholder="Как к вам обращаться?" required>
+              <span class="form__error" data-form-error="name"></span>
+            </div>
+
+            <div class="form__field">
+              <label for="form-contact">Контакт</label>
+              <input type="text" id="form-contact" name="contact"
+                     placeholder="Email или телефон" required>
+              <span class="form__error" data-form-error="contact"></span>
+            </div>
+          </div>
+
+          <div class="form__field">
+            <label for="form-message">Сообщение</label>
+            <textarea id="form-message" name="message"
+                      placeholder="Кратко опишите задачу или пожелания"></textarea>
+            <span class="form__error" data-form-error="message"></span>
+          </div>
+
+          <div class="form__field form__field--files">
+            <label class="form__file-label" for="form-files">
+              Прикрепить файлы
+              <span class="form__file-hint">DOC, DOCX, PDF, RTF · до 5 МБ · максимум 3 файла</span>
+            </label>
+
+            <label class="form__dropzone" for="form-files" data-form-dropzone>
+              <input
+                type="file"
+                id="form-files"
+                name="files[]"
+                multiple
+                accept=".doc,.docx,.pdf,.rtf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/pdf,application/rtf"
+                data-form-files
+              >
+              <span class="form__dropzone-icon" aria-hidden="true">↑</span>
+              <span class="form__dropzone-text">
+                <strong>Перетащите файлы</strong> или <span class="form__dropzone-link">выберите на устройстве</span>
+              </span>
+            </label>
+
+            <ul class="form__file-list" data-form-file-list></ul>
+
+            <span class="form__error" data-form-error="files"></span>
+          </div>
+
+          <!-- ЧЕКБОКС СОГЛАСИЯ -->
+          <div class="form__field form__field--checkbox">
+            <label class="form__checkbox">
+              <input type="checkbox" name="consent" value="1" required data-form-consent>
+              <span class="form__checkbox-indicator" aria-hidden="true"></span>
+              <span class="form__checkbox-text">
+          Я согласен с
+          <a href="/privacy-policy" target="_blank" rel="noopener noreferrer">политикой конфиденциальности</a>
+          и даю согласие на
+          <a href="/personal-data-consent" target="_blank" rel="noopener noreferrer">обработку персональных данных</a>.
+        </span>
+            </label>
+            <span class="form__error" data-form-error="consent"></span>
+          </div>
+
+          <!-- honeypot -->
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off"
+                 style="position:absolute;left:-9999px;opacity:0;">
+        </div>
+
+        <div class="form__footer">
+          <div class="form__actions">
+            <button type="submit" class="button-primary">Отправить</button>
+            <span class="form__status" data-form-status aria-live="polite"></span>
+          </div>
+        </div>
+      </form>
+
       <div class="contacts-channels__list reveal-item">
         <div class="contacts-channel">
           <div class="contacts-channel__index">01</div>
