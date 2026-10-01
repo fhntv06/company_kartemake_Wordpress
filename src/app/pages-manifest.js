@@ -34,7 +34,7 @@ module.exports = {
     single:       { scss: 'single.scss',       modules: ['Sidebar'] },
     about:        { scss: 'about.scss',        modules: ['AboutIntro'] },
     services:     { scss: 'services.scss',     modules: ['ServicesWheel'] },
-    calculator:   { scss: 'calculator.scss',   modules: ['CalculatorController'] },
+    calculator:   { scss: 'calculator.scss',   modules: ['CalculatorController', 'FormHandler'] },
     blog:         { scss: 'blog.scss',         modules: [] },
     contacts:     { scss: 'contacts.scss',     modules: ['FormHandler'] },
     support:      { scss: 'support.scss',      modules: [] },
