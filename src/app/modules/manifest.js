@@ -46,4 +46,7 @@ module.exports = {
 
     // ── CALCULATOR ──────────────────────────────────────
     CalculatorController: { path: './src/app/modules/calculator/calculator-controller.js' },
+
+    // ── CONTACTS ──────────────────────────────────────
+    FormHandler: { path: './src/app/modules/contacts/form-handler.js' },
 }

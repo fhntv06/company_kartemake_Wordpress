@@ -36,7 +36,7 @@ module.exports = {
     services:     { scss: 'services.scss',     modules: ['ServicesWheel'] },
     calculator:   { scss: 'calculator.scss',   modules: ['CalculatorController'] },
     blog:         { scss: 'blog.scss',         modules: [] },
-    contacts:     { scss: 'contacts.scss',     modules: [] },
+    contacts:     { scss: 'contacts.scss',     modules: ['FormHandler'] },
     support:      { scss: 'support.scss',      modules: [] },
     optimization: { scss: 'optimization.scss', modules: [] },
     modernization:{ scss: 'modernization.scss', modules: [] },
