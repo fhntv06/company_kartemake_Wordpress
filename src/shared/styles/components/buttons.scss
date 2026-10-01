@@ -42,3 +42,11 @@
   background: var(--surface);
   border-color: rgba(255, 255, 255, 0.25);
 }
+
+button {
+  &:disabled {
+    opacity: .4;
+    pointer-events: none;
+    color: $text-secondary;
+  }
+}
