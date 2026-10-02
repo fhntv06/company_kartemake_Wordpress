@@ -180,9 +180,13 @@ export default class Filter {
 
     _getFilteredCards() {
         if (this.state.filter === 'all') return this.allCards;
-        return this.allCards.filter(
-            card => card.dataset.filterType === this.state.filter
-        );
+
+        return this.allCards.filter(card => {
+            const types = (card.dataset.filterType || '')
+                .split(/\s+/)
+                .filter(Boolean);
+            return types.includes(this.state.filter);
+        });
     }
 
     _getTotalPages(cards) {
