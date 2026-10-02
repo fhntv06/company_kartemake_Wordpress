@@ -45,5 +45,5 @@ module.exports = {
     casesDetail:      { scss: 'cases-detail.scss',      modules: [] },
     tag:      { scss: 'tag.scss',      modules: ['Filter'] },
     pricing:      { scss: 'pricing.scss',      modules: [] },
-    error404:      { scss: 'error-404.scss',      modules: [] },
+    error404:      { scss: 'error-404.scss',      modules: ['Filter'] },
 }
