@@ -7,8 +7,6 @@
    STEP NAVIGATION
    ============================================================ */
 .calculator-steps {
-  position: sticky;
-  top: $offset-top-from-header;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   margin-bottom: $small;
@@ -24,23 +22,22 @@
   padding: $extra-small;
   border: 0;
   border-right: 1px solid $surface-hover;
-  background: transparent;
   color: inherit;
   text-align: left;
   cursor: pointer;
   transition: background-color 200ms ease, opacity 200ms ease;
+  background-color: $bg-primary;
+
   &:last-child {
     border-right: 0;
   }
   &:not(:disabled):hover {
-    background: $surface;
+    //background-color: $surface-hover;
   }
   &:disabled {
     cursor: default;
-    opacity: .35;
   }
   &.is-active {
-    background: $surface;
     &::after {
       transform: scaleX(1);
       opacity: 1;
@@ -53,7 +50,6 @@
     }
   }
   &.is-completed {
-    opacity: .7;
     &::after {
       transform: scaleX(1);
       opacity: .35;
@@ -381,7 +377,7 @@
    ============================================================ */
 .calculator-summary {
   position: sticky;
-  top: 30px;
+  top: $offset-top-from-header;
   border: 1px solid $surface-hover;
   background: $surface;
 }
@@ -699,14 +695,6 @@
 }
 
 @media (max-width: $breakpoint-extra-small) {
-  .calculator {
-    .scene-container {
-      width: min(100% - 32px, 640px);
-    }
-    .scene-header {
-      margin-bottom: 42px;
-    }
-  }
   .calculator-steps {
     grid-template-columns: 1fr;
   }
@@ -748,6 +736,9 @@
   .calculator-panel__footer .button-secondary {
     width: 100%;
   }
+  .calculator-panel__footer {
+    gap: $extra-small;
+  }
   .calculator-summary {
     display: block;
   }
@@ -783,5 +774,10 @@
   }
   .calculator-result__cta {
     padding: 22px;
+  }
+}
+@media (max-width: $breakpoint-large-small) {
+  .calculator-steps__item {
+    padding: calc($extra-small / 2) $extra-small;
   }
 }
