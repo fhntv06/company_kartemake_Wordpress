@@ -1,83 +1,140 @@
 /**
+ * ============================================================
  * FormHandler — универсальный обработчик форм.
  *
- * Поддержка:
- *  - HTML5-валидация + кастомные правила
- *  - чекбокс согласия на обработку ПД (data-form-consent)
- *  - загрузка файлов (dropzone + drag&drop + список с удалением)
- *  - honeypot (_honey)
- *  - JSON или FormData (авто-переключение при наличии файлов)
- *  - колбэки: onBeforeSubmit, onSuccess, onError, onFinally
- *  - статус формы, блокировка кнопки, состояние загрузки
+ * Конструктор без аргументов: сам находит все <form data-form>
+ * и включает логику. Один виджет SmartCaptcha используется
+ * для всех форм на странице.
+ *
+ *   import { FormHandler } from './form-handler.js';
+ *   new FormHandler();
  *
  * Разметка:
- *   <form class="form" data-form data-endpoint="/wp-json/my/v1/lead" novalidate>
- *     <div class="form__field">
- *       <label for="f-name">Имя</label>
- *       <input id="f-name" name="name" required>
- *       <span class="form__error" data-form-error="name"></span>
- *     </div>
- *
- *     <div class="form__field form__field--checkbox">
- *       <label class="form__checkbox">
- *         <input type="checkbox" name="consent" value="1" required data-form-consent>
- *         <span class="form__checkbox-indicator"></span>
- *         <span class="form__checkbox-text">...</span>
- *       </label>
- *       <span class="form__error" data-form-error="consent"></span>
- *     </div>
- *
- *     <div class="form__field form__field--files">
- *       <label class="form__dropzone" for="f-files" data-form-dropzone>
- *         <input type="file" id="f-files" name="files[]" multiple
- *                accept=".doc,.docx,.pdf,.rtf" data-form-files>
- *         ...
- *       </label>
- *       <ul class="form__file-list" data-form-file-list></ul>
- *       <span class="form__error" data-form-error="files"></span>
- *     </div>
- *
- *     <div class="form__footer">
- *       <button type="submit" class="button-primary">Отправить</button>
- *       <span class="form__status" data-form-status aria-live="polite"></span>
- *     </div>
+ *   <form class="form" data-form action="/wp-json/my/v1/lead" novalidate>
+ *     <input type="hidden" name="form_source" value="calculator">
+ *     ...
  *   </form>
  *
- * Инициализация:
- *   FormHandler.initAll();
- *   // или
- *   new FormHandler(formEl, { endpoint: '/wp-json/my/v1/lead' });
+ *   <!-- один раз на странице, вне формы -->
+ *   <div id="smartcaptcha-container"
+ *        data-sitekey="ysc1_ТВОЙ_КЛИЕНТСКИЙ_КЛЮЧ"
+ *        data-robustness="medium"></div>
+ *
+ *   <script src="https://smartcaptcha.cloud.yandex.ru/captcha.js" defer></script>
+ * ============================================================
  */
 export default class FormHandler {
-    /** @type {WeakMap<HTMLFormElement, FormHandler>} */
-    static instances = new WeakMap();
-
-    /* ============================================================
-       CONSTRUCTOR
-       ============================================================ */
     constructor() {
-
         this.instances = new Map();
+        this.captchaWidgetId = null;
+        this.captchaToken = null;
+        this.captchaReady = false;
 
-        const forms = document.querySelectorAll('form[data-form]');
-        forms.forEach((form) => this._setupForm(form));
+        // 1. Находим все формы
+        document.querySelectorAll('form[data-form]').forEach((form) => {
+            this._setup(form);
+        });
+
+        // 2. Инициализируем SmartCaptcha (один раз на страницу)
+        this._initSmartCaptcha();
     }
 
     /* ============================================================
-       SETUP — настройка одной формы
+       SMART CAPTCHA
        ============================================================ */
-    _setupForm(form) {
+
+    _initSmartCaptcha() {
+        const container = document.getElementById('smartcaptcha-container');
+        if (!container) return;
+
+        const clientKey = container.dataset.sitekey;
+        if (!clientKey) {
+            console.warn('[FormHandler] SmartCaptcha: нет data-sitekey');
+            return;
+        }
+
+        const tryInit = () => {
+            if (typeof window.smartCaptcha === 'undefined') return false;
+
+            if (this.captchaWidgetId !== null) return true; // уже инициализирован
+
+            try {
+                this.captchaWidgetId = window.smartCaptcha.render(container, {
+                    sitekey: clientKey,
+                    invisible: true,
+                    shield: container.dataset.robustness || 'medium',
+                    callback: (token) => {
+                        this.captchaToken = token;
+                    },
+                    'error-callback': (err) => {
+                        console.error('[FormHandler] SmartCaptcha error:', err);
+                        this.captchaToken = null;
+                    },
+                });
+                this.captchaReady = true;
+                return true;
+            } catch (err) {
+                console.error('[FormHandler] SmartCaptcha render failed:', err);
+                return false;
+            }
+        };
+
+        // Если скрипт уже загружен — инициализируем сразу
+        if (tryInit()) return;
+
+        // Иначе ждём загрузки скрипта (defer)
+        const waitForCaptcha = setInterval(() => {
+            if (tryInit()) clearInterval(waitForCaptcha);
+        }, 200);
+
+        // Защита от бесконечного ожидания
+        setTimeout(() => clearInterval(waitForCaptcha), 10000);
+    }
+
+    /**
+     * Получить свежий токен SmartCaptcha.
+     * Токен живёт 2 минуты, поэтому получаем прямо перед отправкой.
+     */
+    async _getCaptchaToken() {
+        if (!this.captchaReady || this.captchaWidgetId === null) {
+            return null;
+        }
+
+        return new Promise((resolve) => {
+            const timeout = setTimeout(() => {
+                resolve(null);
+            }, 10000);
+
+            this.captchaToken = null;
+            window.smartCaptcha.execute(this.captchaWidgetId);
+
+            const check = setInterval(() => {
+                if (this.captchaToken) {
+                    clearInterval(check);
+                    clearTimeout(timeout);
+                    resolve(this.captchaToken);
+                }
+            }, 100);
+        });
+    }
+
+    /* ============================================================
+       SETUP
+       ============================================================ */
+
+    _setup(form) {
         if (!(form instanceof HTMLFormElement)) return;
+        if (this.instances.has(form)) return;
 
         const options = {
-            endpoint: form.dataset.endpoint || form.action || '',
-            method: (form.dataset.method || 'POST').toUpperCase(),
-            bodyMode: form.dataset.bodyMode || 'json',
+            endpoint: form.action || form.dataset.endpoint || '',
+            method: (form.method || 'POST').toUpperCase(),
+            bodyMode: form.dataset.bodyMode || 'formdata',
 
             rules: {},
 
             files: {
-                maxSize: 3 * 1024 * 1024,
+                maxSize: 5 * 1024 * 1024,
                 maxCount: 3,
                 accept: ['.doc', '.docx', '.pdf', '.rtf'],
                 acceptMime: [
@@ -88,14 +145,14 @@ export default class FormHandler {
                 ],
             },
 
-            statusSelector: '[data-form-status]',
-            fieldSelector: '.form__field',
-            fieldErrorClass: 'form__field--error',
-            errorSelector: '[data-form-error]',
-            consentSelector: '[data-form-consent]',
+            statusSelector:    '[data-form-status]',
+            fieldSelector:     '.form__field, .calculator-result__field',
+            fieldErrorClass:   'form__field--error',
+            errorSelector:     '[data-form-error]',
+            consentSelector:   '[data-form-consent]',
             fileInputSelector: '[data-form-files]',
-            fileListSelector: '[data-form-file-list]',
-            dropzoneSelector: '[data-form-dropzone]',
+            fileListSelector:  '[data-form-file-list]',
+            dropzoneSelector:  '[data-form-dropzone]',
 
             onBeforeSubmit: null,
             onSuccess: null,
@@ -114,34 +171,32 @@ export default class FormHandler {
             dropzoneEl: form.querySelector(options.dropzoneSelector),
             files: [],
             isSubmitting: false,
+            handler: this,
         };
 
-        ctx._onSubmit = this._onSubmit.bind(ctx);
-        form.addEventListener('submit', ctx._onSubmit);
-        form.setAttribute('novalidate', 'novalidate');
+        // Привязываем методы к контексту формы
+        const methods = [
+            '_onSubmit',
+            '_initConsent',
+            '_initFiles',
+            '_addFiles',
+            '_removeFile',
+            '_renderFiles',
+            '_validateFile',
+            '_formatSize',
+            'getData',
+            'validate',
+            'resetErrors',
+            'setFieldError',
+            '_clearFieldError',
+            'setStatus',
+            '_nativeMessage',
+            '_send',
+            '_setLoading',
+        ];
+        methods.forEach((m) => (ctx[m] = this[m].bind(ctx)));
 
-        this._initConsent(ctx);
-        this._initFiles(ctx);
-
-        // привязываем методы класса к контексту формы
-        ctx.getData        = this.getData.bind(ctx);
-        ctx.validate       = this.validate.bind(ctx);
-        ctx.resetErrors    = this.resetErrors.bind(ctx);
-        ctx.setFieldError  = this.setFieldError.bind(ctx);
-        ctx._clearFieldError = this._clearFieldError.bind(ctx);
-        ctx.setStatus      = this.setStatus.bind(ctx);
-        ctx._nativeMessage = this._nativeMessage.bind(ctx);
-        ctx._send          = this._send.bind(ctx);
-        ctx._setLoading    = this._setLoading.bind(ctx);
-        ctx._addFiles      = this._addFiles.bind(ctx);
-        ctx._removeFile    = this._removeFile.bind(ctx);
-        ctx._renderFiles   = this._renderFiles.bind(ctx);
-        ctx._validateFile  = this._validateFile.bind(ctx);
-        ctx._formatSize    = this._formatSize.bind(ctx);
-        ctx._initConsent   = this._initConsent.bind(ctx);
-        ctx._initFiles     = this._initFiles.bind(ctx);
-
-
+        // Включаем
         form.setAttribute('novalidate', 'novalidate');
         form.addEventListener('submit', ctx._onSubmit);
 
@@ -151,22 +206,29 @@ export default class FormHandler {
         this.instances.set(form, ctx);
     }
 
-    /** Инициализация всех форм на странице */
-    static initAll(root = document, options = {}) {
-        root.querySelectorAll('form[data-form]').forEach((form) => {
-            if (!FormHandler.instances.has(form)) new FormHandler(form, options);
-        });
+    /* ============================================================
+       PUBLIC API
+       ============================================================ */
+
+    get(form) {
+        return this.instances.get(form) || null;
     }
 
-    /** Уничтожение обработчика */
-    destroy() {
-        this.form.removeEventListener('submit', this._onSubmit);
-        FormHandler.instances.delete(this.form);
+    destroy(form) {
+        const ctx = this.instances.get(form);
+        if (!ctx) return;
+        form.removeEventListener('submit', ctx._onSubmit);
+        this.instances.delete(form);
+    }
+
+    destroyAll() {
+        for (const form of [...this.instances.keys()]) this.destroy(form);
     }
 
     /* ============================================================
        CONSENT
        ============================================================ */
+
     _initConsent() {
         if (!this.consentEl || !this.submitBtn) return;
 
@@ -180,6 +242,7 @@ export default class FormHandler {
     /* ============================================================
        FILES
        ============================================================ */
+
     _initFiles() {
         if (!this.fileInput || !this.dropzoneEl) return;
 
@@ -294,8 +357,9 @@ export default class FormHandler {
     }
 
     /* ============================================================
-       PUBLIC HELPERS
+       HELPERS
        ============================================================ */
+
     getData() {
         const data = {};
         const fd = new FormData(this.form);
@@ -350,6 +414,7 @@ export default class FormHandler {
     /* ============================================================
        VALIDATION
        ============================================================ */
+
     validate() {
         this.resetErrors();
         const data = this.getData();
@@ -411,15 +476,16 @@ export default class FormHandler {
     /* ============================================================
        SUBMIT
        ============================================================ */
+
     async _onSubmit(e) {
         e.preventDefault();
         if (this.isSubmitting) return;
 
         if (!this.validate()) {
             this.setStatus('Проверьте выделенные поля', 'error');
-            this.form.querySelector(
-                `.${this.options.fieldErrorClass} input, .${this.options.fieldErrorClass} textarea`
-            )?.focus();
+            this.form
+                .querySelector(`.${this.options.fieldErrorClass} input, .${this.options.fieldErrorClass} textarea`)
+                ?.focus();
             return;
         }
 
@@ -435,6 +501,14 @@ export default class FormHandler {
         this.setStatus('Отправка…');
 
         try {
+            // SmartCaptcha — получаем свежий токен прямо перед отправкой
+            const token = await this.handler._getCaptchaToken();
+            if (token) {
+                data['smart-token'] = token;
+            } else if (this.handler.captchaReady) {
+                console.warn('[FormHandler] SmartCaptcha: токен не получен, отправляем без него');
+            }
+
             const response = await this._send(data);
 
             if (!response.ok) {
@@ -481,6 +555,7 @@ export default class FormHandler {
             const fd = new FormData();
             for (const [k, v] of Object.entries(data)) {
                 if (Array.isArray(v)) v.forEach((x) => fd.append(k, x));
+                else if (v && typeof v === 'object') fd.append(k, JSON.stringify(v));
                 else fd.append(k, v);
             }
             this.files.forEach((file) => fd.append('files[]', file, file.name));
