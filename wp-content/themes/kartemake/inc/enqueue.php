@@ -86,6 +86,7 @@ function kartemake_get_pages_map() {
         'category'     => ['type' => 'category'],     // ← если нужно
         'archive'      => ['type' => 'archive'],      // ← если нужно
         'cases'      => null,
+        'error404'      => ['type' => '404'],
     ];
 }
 
@@ -101,6 +102,7 @@ function kartemake_match_page($slug, $rule) {
             case 'tag':    return is_tag();
             case 'category': return is_category();
             case 'archive':  return is_archive();
+            case '404':  return is_404();
         }
         return false;
     }
