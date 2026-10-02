@@ -54,6 +54,12 @@
   color: $text-secondary;
 }
 
+.tag-empty {
+  display: flex;
+  flex-direction: column;
+  gap: $extra-small;
+  margin-bottom: $middle;
+}
 /* =================================================
    МЕДИА-ЗАПРОСЫ с использованием старых брейкпоинтов
 ================================================= */
