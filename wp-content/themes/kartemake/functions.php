@@ -35,4 +35,10 @@ require_once $kartemake_inc . 'excerpt.php';
 require_once $kartemake_inc . 'post-meta.php';
 
 // Компонент orbit
-require get_template_directory() . '/inc/orbit-navigation.php';
+require $kartemake_inc . 'orbit-navigation.php';
+
+// Обработка форм
+require_once $kartemake_inc . 'forms.php';
+
+// Включение json save point
+require_once $kartemake_inc . 'acf.php';
