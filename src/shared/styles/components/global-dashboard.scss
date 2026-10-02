@@ -27,14 +27,14 @@
   align-items: center;
   justify-content: space-between;
   gap: $small;
-  border: 1px solid rgba(255, 255, 255, 0.09);
+  border: 1px solid $border;
   background: rgba(8, 8, 8, 0.72);
   z-index: 1001;
 }
 
 .dashboard-brand {
   color: inherit;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
   letter-spacing: -0.035em;
   text-decoration: none;
@@ -47,7 +47,7 @@
   gap: $extra-small - 8px;
   margin-left: auto;
   font-family: "IBM Plex Mono", "Roboto Mono", monospace;
-  font-size: 8px;
+  font-size: 12px;
   line-height: 1;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -74,22 +74,37 @@
   align-items: center;
   justify-content: center;
   gap: $extra-small - 6px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid $border;
   background: transparent;
   color: inherit;
   cursor: pointer;
   font-family: inherit;
   transition: background 0.25s ease, border-color 0.25s ease;
-}
 
-.dashboard-menu:hover {
-  border-color: rgba(255, 255, 255, 0.24);
-  background: rgba(255, 255, 255, 0.035);
+  &[aria-expanded="true"] {
+    border-color: rgba(255, 255, 255, 0.24);
+    background-color: $surface;
+
+    .dashboard-menu-icon span:first-child {
+      top: 5px;
+      transform: rotate(45deg);
+    }
+
+    .dashboard-menu-icon span:last-child {
+      top: 5px;
+      transform: rotate(-45deg);
+    }
+  }
+
+  &:hover {
+    border-color: rgba(255, 255, 255, 0.24);
+    background-color: $surface;
+  }
 }
 
 .dashboard-menu-label {
   font-family: "IBM Plex Mono", "Roboto Mono", monospace;
-  font-size: 8px;
+  font-size: 12px;
   line-height: 1;
   letter-spacing: 0.13em;
   opacity: 0.65;
@@ -118,16 +133,6 @@
 
 .dashboard-menu-icon span:last-child {
   top: 7px;
-}
-
-.dashboard-menu[aria-expanded="true"] .dashboard-menu-icon span:first-child {
-  top: 5px;
-  transform: rotate(45deg);
-}
-
-.dashboard-menu[aria-expanded="true"] .dashboard-menu-icon span:last-child {
-  top: 5px;
-  transform: rotate(-45deg);
 }
 
 .dashboard-menu-panel {
@@ -175,17 +180,18 @@
 .dashboard-menu-title {
   display: block;
   font-family: "IBM Plex Mono", "Roboto Mono", monospace;
-  font-size: 8px;
+  font-size: 12px;
   line-height: 1;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  opacity: 0.38;
+  //opacity: 0.38;
+  color: $text-secondary;
 }
 
 .dashboard-menu-column > a {
   position: relative;
   min-height: $extra-large + $extra-small - 8px;
-  padding: $extra-small 18px;
+  padding: $extra-small;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -204,7 +210,7 @@
 
 .dashboard-menu-column > a span {
   font-family: "IBM Plex Mono", "Roboto Mono", monospace;
-  font-size: 8px;
+  font-size: 12px;
   line-height: 1;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -213,7 +219,7 @@
 
 .dashboard-menu-column > a strong {
   font-family: "IBM Plex Mono", "Roboto Mono", monospace;
-  font-size: clamp(11px, 0.85vw, 14px);
+  font-size: 16px;
   font-weight: 500;
   letter-spacing: -0.01em;
   line-height: 1.35;
@@ -221,10 +227,10 @@
 
 .dashboard-menu-column:last-child > a {
   min-height: auto;
-  padding: 14px 16px;
-  font-size: 10px;
+  padding: $extra-small;
+  font-size: 12px;
   line-height: 1.45;
-  opacity: 0.65;
+  color: $text-secondary;
 }
 
 .dashboard-menu-column:last-child > a:hover {
@@ -292,8 +298,24 @@
     grid-template-rows: max-content max-content max-content;
   }
 
-  .dashboard-menu-column:first-child {
-    grid-column: 1 / -1;
+  .dashboard-menu-column {
+    &:first-child {
+      grid-column: auto;
+    }
+    &:last-child {
+      grid-column: 1/-1;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      .dashboard-menu-title {
+        width: 100%;
+      }
+      & > a {
+        max-width: calc(50% - 8px);
+        flex-basis: calc(50% - 8px);
+        flex-grow: 1;
+      }
+    }
   }
 
   .global-dashboard {
@@ -303,7 +325,7 @@
 
   .dashboard-inner {
     min-height: 54px;
-    padding: 0 14px;
+    padding: 0 $extra-small;
   }
 
   .dashboard-status {
@@ -314,8 +336,8 @@
     top: calc(100% + 6px);
   }
 
-  .dashboard-menu-column:first-child {
-    grid-column: auto;
+  .dashboard-menu-column > a {
+    padding: calc($extra-small / 2);
   }
 }
 
@@ -326,7 +348,7 @@
   }
 
   .dashboard-menu-panel-inner {
-    grid-template-columns: 1fr;
+    //grid-template-columns: 1fr;
     height: 100dvh;
   }
 
@@ -357,9 +379,19 @@
     padding: $extra-small - 8px $extra-small - 4px;
     min-height: max-content;
   }
+  .dashboard-menu-column {
+    & > a strong {
+      font-size: 12px;
+    }
+  }
 
   .dashboard-menu-column:not(:first-child) > a {
     flex-direction: row;
+
+    strong {
+      width: 100%;
+      text-align: center;
+    }
   }
 }
 
