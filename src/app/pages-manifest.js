@@ -44,4 +44,5 @@ module.exports = {
     cases:      { scss: 'cases.scss',      modules: [] },
     casesDetail:      { scss: 'cases-detail.scss',      modules: [] },
     tag:      { scss: 'tag.scss',      modules: [] },
+    pricing:      { scss: 'pricing.scss',      modules: [] },
 }

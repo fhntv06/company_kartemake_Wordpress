@@ -6,6 +6,8 @@
   <title>Контакты | Свяжитесь с нами | KARTECH</title>
 
   <link rel="shortcut icon" href="../../public/images/logotypes/logo-dark.ico" type="image/x-icon">
+
+  <script src="https://smartcaptcha.cloud.yandex.ru/captcha.js" defer></script>
 </head>
 <body>
 <!-- =================================================
@@ -147,7 +149,7 @@ GLOBAL DASHBOARD
         <p class="scene-description">Выберите удобный канал или сразу опишите задачу. Для новых проектов и технических вопросов используйте соответствующий контакт.</p>
       </header>
 
-      <form class="form" data-form data-endpoint="/wp-json/my/v1/lead" novalidate>
+      <form class="form reveal-item" data-form data-endpoint="/wp-json/my/v1/lead" novalidate>
         <header class="form__header">
           <span class="form__label">Заявка / Конфигурация</span>
           <h3 class="form__title">Отправить конфигурацию</h3>
@@ -673,5 +675,6 @@ GLOBAL DASHBOARD
     </div>
   </div>
 </div>
+<div id="smartcaptcha-container" data-sitekey="ysc1_yAhCPBuqzGJUbw35gYSijWJMaaNQw05qlloNmeGdc5907d5c" style="display:none;"></div>
 </body>
 </html>
