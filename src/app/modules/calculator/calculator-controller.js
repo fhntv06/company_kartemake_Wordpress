@@ -457,10 +457,6 @@ export default class CalculatorController {
             const input = option.querySelector('input')
             if (!input?.checked) return
 
-            /*
-             * Instead of creating new content,
-             * clone the existing HTML option.
-             */
             const clone = option.cloneNode(true)
             clone.classList.remove('calculator-option')
             clone.classList.add('calculator-builder-item')
@@ -469,20 +465,48 @@ export default class CalculatorController {
             clone.dataset.workId = option.dataset.value
             clone.dataset.task = 'additional'
 
-            clone.querySelector('input').type = 'checkbox'
-            clone.querySelector('input').checked = true
+            const cloneInput = clone.querySelector('input')
+            cloneInput.type = 'checkbox'
+            cloneInput.checked = true
+            cloneInput.name = 'calculator_builder_additional'
 
-            clone.querySelector('span.calculator-option__title')
-                ?.classList.replace('calculator-option__title', 'calculator-builder-item__title')
-            clone.querySelector('span.calculator-option__description')
-                ?.classList.replace('calculator-option__description', 'calculator-builder-item__description')
             clone.querySelector('span.calculator-option__indicator')
                 ?.classList.replace('calculator-option__indicator', 'calculator-builder-item__indicator')
             clone.querySelector('span.calculator-option__price')
                 ?.classList.replace('calculator-option__price', 'calculator-builder-item__price')
 
-            const cloneInput = clone.querySelector('input')
-            cloneInput.name = 'calculator_builder_additional'
+            /*
+             * Оборачиваем title + description в content
+             */
+            const titleEl = clone.querySelector('span.calculator-option__title')
+            const descriptionEl = clone.querySelector('span.calculator-option__description')
+
+            if (titleEl || descriptionEl) {
+                const content = document.createElement('span')
+                content.className = 'calculator-builder-item__content'
+
+                if (titleEl) {
+                    titleEl.classList.replace('calculator-option__title', 'calculator-builder-item__title')
+                    content.appendChild(titleEl)
+                }
+                if (descriptionEl) {
+                    descriptionEl.classList.replace('calculator-option__description', 'calculator-builder-item__description')
+                    content.appendChild(descriptionEl)
+                }
+
+                /*
+                 * Вставляем content туда, где раньше был title (перед price/indicator — как в разметке),
+                 * либо просто после indicator.
+                 */
+                const indicator = clone.querySelector('.calculator-builder-item__indicator')
+                if (indicator && indicator.nextSibling) {
+                    clone.insertBefore(content, indicator.nextSibling)
+                } else if (indicator) {
+                    indicator.after(content)
+                } else {
+                    cloneInput.after(content)
+                }
+            }
 
             cloneInput.addEventListener('change', () => {
                 const sourceInput = option.querySelector('input')
