@@ -14,6 +14,11 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: $small;
   margin-bottom: $middle;
+
+  & + .pagination {
+    margin-top: calc($small * -1);
+    margin-bottom: $middle;
+  }
 }
 
 // ============================================================
@@ -195,7 +200,7 @@
   flex-wrap: wrap;
   gap: calc($extra-small / 2);
   margin-top: auto;
-  padding-top: $small;
+  padding: $small 0;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 .card-article__tag {
@@ -225,7 +230,7 @@
   align-items: center;
   justify-content: space-between;
   gap: $small;
-  margin-top: $small;
+  margin-top: auto;
   padding-top: $small;
   border-top: 1px solid rgba(255,255,255,0.1);
   font-family: "IBM Plex Mono", "Roboto Mono", monospace;
@@ -458,5 +463,110 @@
   }
   .card-article__link-arrow {
     transition: none;
+  }
+}
+
+/* =========================================================
+   CASES GRID — анимация фильтрации
+   ========================================================= */
+
+.card-articles-grid {
+  /* Чтобы карточки не прыгали при перестроении */
+  position: relative;
+}
+
+.card-article {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition:
+          opacity 0.32s ease,
+          transform 0.32s ease;
+  will-change: opacity, transform;
+}
+
+/* Скрытая карточка — физически не занимает место */
+.card-article.is-hidden {
+  display: none;
+}
+
+/* Анимация исчезновения — «уходит внутрь страницы» */
+.card-article.is-hiding {
+  opacity: 0;
+  transform: translateY(12px) scale(0.96);
+  pointer-events: none;
+}
+
+/* Анимация появления — «выходит изнутри страницы» */
+.card-article.is-showing {
+  animation: caseShowIn 0.32s ease forwards;
+}
+
+@keyframes caseShowIn {
+  0% {
+    opacity: 0;
+    transform: translateY(12px) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* =========================================================
+   PAGINATION
+   ========================================================= */
+
+.cases-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 48px;
+  flex-wrap: wrap;
+}
+
+.cases-pagination__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  height: 44px;
+  padding: 0 14px;
+
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: inherit;
+  font-size: 14px;
+  font-family: inherit;
+  cursor: pointer;
+
+  transition:
+          background-color 0.2s ease,
+          border-color 0.2s ease,
+          color 0.2s ease,
+          transform 0.2s ease;
+}
+
+.cases-pagination__btn:hover:not(:disabled) {
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-1px);
+}
+
+.cases-pagination__btn.is-active {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+}
+
+.cases-pagination__btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+@media (prefers-reduced-motion: reduce) {
+  .card-article,
+  .card-article.is-hiding,
+  .card-article.is-showing {
+    transition: none;
+    animation: none;
   }
 }

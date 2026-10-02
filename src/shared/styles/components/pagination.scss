@@ -3,11 +3,12 @@
 @use '../system/mixins' as *;
 @use '../variables/media' as *;
 
-.tag-pagination {
+.pagination {
   grid-column: 1/-1;
   display: flex;
   gap: $extra-small;
   justify-content: center;
+  margin-bottom: $middle;
 
   .page-numbers {
     display: flex;
@@ -16,12 +17,28 @@
     height: 50px;
     width: 50px;
     border: 1px solid $border;
-    transition: border-color 3s ease, background-color .3s ease;
+    transition: border-color .3s ease, background-color .3s ease;
+
+    // сброс дефолтного вида <button>
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    padding: 0;
+    cursor: pointer;
 
     &:hover,
     &.current {
       border-color: $orange;
-      background-color: rgba(255,46,46,0.018);
+      background-color: rgba(255, 46, 46, 0.018);
+    }
+
+    &.current {
+      cursor: default;
+    }
+
+    &:disabled {
+      opacity: .4;
+      cursor: not-allowed;
     }
   }
 }
