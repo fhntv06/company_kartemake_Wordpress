@@ -49,4 +49,7 @@ module.exports = {
 
     // ── CONTACTS ──────────────────────────────────────
     FormHandler: { path: './src/app/modules/contacts/form-handler.js' },
+
+    // ── FILTER for CARDS ──────────────────────────────────────
+    Filter: { path: './src/app/modules/cases/filter.js' },
 }
