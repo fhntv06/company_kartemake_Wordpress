@@ -63,7 +63,7 @@
                 </div>
                 <div class="services-wheel-detail is-active" data-service-detail="support">
                     <span class="services-wheel-detail__eyebrow">TECHNICAL SUPPORT</span>
-                    <h4 class="services-wheel-detail__title">Технические услуги в одной системе</h4>
+                    <h4 class="services-wheel-detail__title">Техническая поддержка</h4>
                     <p class="services-wheel-detail__description">Мы оказываем услуги для бизнеса по четырём направлениям: техническая поддержка, оптимизация, модернизация и аудит цифровых систем.</p>
                     <div class="services-wheel-detail__footer">
                         <div class="services-wheel-detail__price">
@@ -72,7 +72,7 @@
                             <small>/ МЕС.</small>
                         </div>
                         <span class="services-wheel-detail__type">ABONEMENT</span>
-                        <a href="/services/support/" class="services-wheel-detail__link">
+                        <a href="<?= get_permalink(get_page_by_path('support')) ?>" class="services-wheel-detail__link">
                             <span>ПОДРОБНЕЕ</span>
                             <strong>↗</strong>
                         </a>
@@ -88,7 +88,7 @@
                             <strong>20 000 ₽</strong>
                         </div>
                         <span class="services-wheel-detail__type">PROJECT WORK</span>
-                        <a href="/services/optimization/" class="services-wheel-detail__link">
+                        <a href="<?= get_permalink(get_page_by_path('optimization')) ?>" class="services-wheel-detail__link">
                             <span>ПОДРОБНЕЕ</span>
                             <strong>↗</strong>
                         </a>
@@ -96,7 +96,7 @@
                 </div>
                 <div class="services-wheel-detail" data-service-detail="modernization">
                     <span class="services-wheel-detail__eyebrow">SYSTEM / MODERNIZATION</span>
-                    <h4 class="services-wheel-detail__title">Технический аудит сайта и инфраструктуры</h4>
+                    <h4 class="services-wheel-detail__title">Модернизация и развитие систем</h4>
                     <p class="services-wheel-detail__description">Исследуем архитектуру, инфраструктуру, безопасность и производительность, чтобы определить реальные проблемы и приоритетные изменения.</p>
                     <div class="services-wheel-detail__footer">
                         <div class="services-wheel-detail__price">
@@ -104,7 +104,7 @@
                             <strong>120 000 ₽</strong>
                         </div>
                         <span class="services-wheel-detail__type">PROJECT WORK</span>
-                        <a href="/services/modernization/" class="services-wheel-detail__link">
+                        <a href="<?= get_permalink(get_page_by_path('modernization')) ?>" class="services-wheel-detail__link">
                             <span>ПОДРОБНЕЕ</span>
                             <strong>↗</strong>
                         </a>
@@ -120,7 +120,7 @@
                             <strong>15 000 ₽</strong>
                         </div>
                         <span class="services-wheel-detail__type">AUDIT</span>
-                        <a href="/services/audit/" class="services-wheel-detail__link">
+                        <a href="<?= get_permalink(get_page_by_path('audit')) ?>" class="services-wheel-detail__link">
                             <span>ПОДРОБНЕЕ</span>
                             <strong>↗</strong>
                         </a>

@@ -35,10 +35,12 @@
         <div class="contact-info-item">
             <span class="contact-info-label">TELEGRAM</span>
             <a href="https://t.me/KArtech76" class="contact-info-value">@KArtech76</a>
+            <span class="contact-info-description">Быстрая связь и оперативные вопросы.</span>
         </div>
         <div class="contact-info-item">
             <span class="contact-info-label">ВКОНТАКТЕ</span>
             <a href="https://vk.ru/kartemake" class="contact-info-value">vk.com/kartemake</a>
+            <span class="contact-info-description">Новости, кейсы и обновления компании.</span>
         </div>
     </div>
 </section>
