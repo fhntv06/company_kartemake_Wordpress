@@ -158,13 +158,13 @@ GLOBAL DASHBOARD
   <!-- =====================================================
        ARCHIVE
   ====================================================== -->
-  <section class="scene tag-articles" data-scene="articles">
+  <section class="scene tag-articles" data-scene="articles" data-filter-cards>
     <div class="scene-container">
-      <div class="scene-header">
+      <header class="scene-header">
         <div class="scene-eyebrow">
           TAG / WORDPRESS
         </div>
-        <h2>
+        <h2 class="scene-title">
           Материалы по теме
         </h2>
         <p class="scene-description">
@@ -172,33 +172,48 @@ GLOBAL DASHBOARD
           разработка, поддержка, производительность
           и развитие WordPress-проектов.
         </p>
+      </header>
+
+      <!-- =================================================
+     FILTER
+     ================================================== -->
+      <div class="filter reveal-item" role="navigation" aria-label="Фильтр кейсов">
+        <button class="filter__item is-active" type="button" data-filter="all" aria-pressed="true">
+          Все
+        </button>
+        <button class="filter__item" type="button" data-filter="audit" aria-pressed="false">
+          Аудит
+        </button>
+        <button class="filter__item" type="button" data-filter="optimization" aria-pressed="false">
+          Оптимизация
+        </button>
+        <button class="filter__item" type="button" data-filter="modernization" aria-pressed="false">
+          Модернизация
+        </button>
+        <button class="filter__item" type="button" data-filter="development" aria-pressed="false">
+          Разработка
+        </button>
+        <button class="filter__item" type="button" data-filter="support" aria-pressed="false">
+          Поддержка
+        </button>
       </div>
-      <div class="card-articles-grid">
+      <div class="card-articles-grid" data-filter-grid>
+
         <!-- =================================================
              ARTICLE 01
         ================================================== -->
-        <article class="card-article">
-          <span class="card-article__number">
-            01
-          </span>
+        <article class="card-article" data-filter-type="support" data-case-index="1">
+          <span class="card-article__number">01</span>
           <div class="card-article__image">
-            <span class="card-article__type">
-              ПОДДЕРЖКА
-            </span>
-            <img
-              src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=1200&q=80"
-              alt="Поддержка WordPress-сайта"
-              loading="lazy"
-            >
+            <span class="card-article__type">ПОДДЕРЖКА</span>
+            <img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=1200&q=80"
+                 alt="Поддержка WordPress-сайта"
+                 loading="lazy">
           </div>
           <div class="card-article__content">
             <div class="card-article__meta">
-              <span class="card-article__meta-item">
-                7 MIN
-              </span>
-              <span class="card-article__meta-item">
-                                18 SEP 2026
-                            </span>
+              <span class="card-article__meta-item">7 MIN</span>
+              <span class="card-article__meta-item">18 SEP 2026</span>
             </div>
             <h4 class="card-article__title">
               <a href="/blog/wordpress-support/">
@@ -212,63 +227,32 @@ GLOBAL DASHBOARD
               и работу с техническими инцидентами.
             </p>
             <div class="card-article__tags">
-              <a
-                href="/tag/wordpress/"
-                class="card-article__tag"
-              >
-                WordPress
-              </a>
-              <a
-                href="/tag/php/"
-                class="card-article__tag"
-              >
-                PHP
-              </a>
-              <a
-                href="/tag/support/"
-                class="card-article__tag"
-              >
-                Support
-              </a>
+              <a href="/tag/wordpress/" class="card-article__tag">WordPress</a>
+              <a href="/tag/php/" class="card-article__tag">PHP</a>
+              <a href="/tag/support/" class="card-article__tag">Support</a>
             </div>
-            <a
-              href="/blog/wordpress-support/"
-              class="card-article__link"
-            >
-              <p>
-                Читать статью
-              </p>
-              <span class="card-article__link-arrow">
-                                ↗
-                            </span>
+            <a href="/blog/wordpress-support/" class="card-article__link">
+              <p>Читать статью</p>
+              <span class="card-article__link-arrow">↗</span>
             </a>
           </div>
         </article>
+
         <!-- =================================================
              ARTICLE 02
         ================================================== -->
-        <article class="card-article">
-                    <span class="card-article__number">
-                        02
-                    </span>
+        <article class="card-article" data-filter-type="optimization" data-case-index="2">
+          <span class="card-article__number">02</span>
           <div class="card-article__image">
-                        <span class="card-article__type">
-                            ОПТИМИЗАЦИЯ
-                        </span>
-            <img
-              src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&q=80"
-              alt="Оптимизация WordPress"
-              loading="lazy"
-            >
+            <span class="card-article__type">ОПТИМИЗАЦИЯ</span>
+            <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&q=80"
+                 alt="Оптимизация WordPress"
+                 loading="lazy">
           </div>
           <div class="card-article__content">
             <div class="card-article__meta">
-                            <span class="card-article__meta-item">
-                                9 MIN
-                            </span>
-              <span class="card-article__meta-item">
-                                04 SEP 2026
-                            </span>
+              <span class="card-article__meta-item">9 MIN</span>
+              <span class="card-article__meta-item">04 SEP 2026</span>
             </div>
             <h4 class="card-article__title">
               <a href="/blog/wordpress-performance/">
@@ -282,57 +266,31 @@ GLOBAL DASHBOARD
               JavaScript и серверную часть.
             </p>
             <div class="card-article__tags">
-              <a
-                href="/tag/wordpress/"
-                class="card-article__tag"
-              >
-                WordPress
-              </a>
-              <a
-                href="/tag/performance/"
-                class="card-article__tag"
-              >
-                Performance
-              </a>
+              <a href="/tag/wordpress/" class="card-article__tag">WordPress</a>
+              <a href="/tag/performance/" class="card-article__tag">Performance</a>
             </div>
-            <a
-              href="/blog/wordpress-performance/"
-              class="card-article__link"
-            >
-              <p>
-                Читать статью
-              </p>
-              <span class="card-article__link-arrow">
-                                ↗
-                            </span>
+            <a href="/blog/wordpress-performance/" class="card-article__link">
+              <p>Читать статью</p>
+              <span class="card-article__link-arrow">↗</span>
             </a>
           </div>
         </article>
+
         <!-- =================================================
              ARTICLE 03
         ================================================== -->
-        <article class="card-article">
-                    <span class="card-article__number">
-                        03
-                    </span>
+        <article class="card-article" data-filter-type="migration" data-case-index="3">
+          <span class="card-article__number">03</span>
           <div class="card-article__image">
-                        <span class="card-article__type">
-                            МИГРАЦИЯ
-                        </span>
-            <img
-              src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
-              alt="Миграция WordPress-сайта"
-              loading="lazy"
-            >
+            <span class="card-article__type">МИГРАЦИЯ</span>
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
+                 alt="Миграция WordPress-сайта"
+                 loading="lazy">
           </div>
           <div class="card-article__content">
             <div class="card-article__meta">
-                            <span class="card-article__meta-item">
-                                11 MIN
-                            </span>
-              <span class="card-article__meta-item">
-                                21 AUG 2026
-                            </span>
+              <span class="card-article__meta-item">11 MIN</span>
+              <span class="card-article__meta-item">21 AUG 2026</span>
             </div>
             <h4 class="card-article__title">
               <a href="/blog/wordpress-migration/">
@@ -346,63 +304,32 @@ GLOBAL DASHBOARD
               и минимизировать простой.
             </p>
             <div class="card-article__tags">
-              <a
-                href="/tag/wordpress/"
-                class="card-article__tag"
-              >
-                WordPress
-              </a>
-              <a
-                href="/tag/migration/"
-                class="card-article__tag"
-              >
-                Migration
-              </a>
-              <a
-                href="/tag/docker/"
-                class="card-article__tag"
-              >
-                Docker
-              </a>
+              <a href="/tag/wordpress/" class="card-article__tag">WordPress</a>
+              <a href="/tag/migration/" class="card-article__tag">Migration</a>
+              <a href="/tag/docker/" class="card-article__tag">Docker</a>
             </div>
-            <a
-              href="/blog/wordpress-migration/"
-              class="card-article__link"
-            >
-              <p>
-                Читать статью
-              </p>
-              <span class="card-article__link-arrow">
-                                ↗
-                            </span>
+            <a href="/blog/wordpress-migration/" class="card-article__link">
+              <p>Читать статью</p>
+              <span class="card-article__link-arrow">↗</span>
             </a>
           </div>
         </article>
+
         <!-- =================================================
              ARTICLE 04
         ================================================== -->
-        <article class="card-article">
-                    <span class="card-article__number">
-                        04
-                    </span>
+        <article class="card-article" data-filter-type="development" data-case-index="4">
+          <span class="card-article__number">04</span>
           <div class="card-article__image">
-                        <span class="card-article__type">
-                            РАЗРАБОТКА
-                        </span>
-            <img
-              src="https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=1200&q=80"
-              alt="Разработка WordPress"
-              loading="lazy"
-            >
+            <span class="card-article__type">РАЗРАБОТКА</span>
+            <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=1200&q=80"
+                 alt="Разработка WordPress"
+                 loading="lazy">
           </div>
           <div class="card-article__content">
             <div class="card-article__meta">
-                            <span class="card-article__meta-item">
-                                8 MIN
-                            </span>
-              <span class="card-article__meta-item">
-                                07 AUG 2026
-                            </span>
+              <span class="card-article__meta-item">8 MIN</span>
+              <span class="card-article__meta-item">07 AUG 2026</span>
             </div>
             <h4 class="card-article__title">
               <a href="/blog/wordpress-development/">
@@ -416,48 +343,27 @@ GLOBAL DASHBOARD
               полноценная инженерная система.
             </p>
             <div class="card-article__tags">
-              <a
-                href="/tag/wordpress/"
-                class="card-article__tag"
-              >
-                WordPress
-              </a>
-              <a
-                href="/tag/php/"
-                class="card-article__tag"
-              >
-                PHP
-              </a>
-              <a
-                href="/tag/development/"
-                class="card-article__tag"
-              >
-                Development
-              </a>
+              <a href="/tag/wordpress/" class="card-article__tag">WordPress</a>
+              <a href="/tag/php/" class="card-article__tag">PHP</a>
+              <a href="/tag/development/" class="card-article__tag">Development</a>
             </div>
-            <a
-              href="/blog/wordpress-development/"
-              class="card-article__link"
-            >
-              <p>
-                Читать статью
-              </p>
-              <span class="card-article__link-arrow">
-                                ↗
-                            </span>
+            <a href="/blog/wordpress-development/" class="card-article__link">
+              <p>Читать статью</p>
+              <span class="card-article__link-arrow">↗</span>
             </a>
           </div>
         </article>
 
-        <!-- =====================================================
-         PAGINATION
-        ====================================================== -->
-        <nav class="tag-pagination" aria-label="Навигация по страницам">
-          <a href="#" class="page-numbers current" aria-current="page">01</a>
-          <a href="#" class="page-numbers">02</a>
-          <a href="#" class="page-numbers">→</a>
-        </nav>
       </div>
+
+      <!-- =====================================================
+           PAGINATION (рендерится из Filter)
+      ====================================================== -->
+      <nav class="pagination tag-pagination"
+           data-filter-pagination
+           aria-label="Навигация по страницам"
+      >
+      </nav>
 
       <!-- ============================================================
       CTA BLOCK
@@ -465,8 +371,14 @@ GLOBAL DASHBOARD
       <div class="cta-block reveal-item">
         <span>TECHNICAL PARTNER / K·ART·MAKE</span>
         <h5 class="cta-block__title">Есть техническая задача?</h5>
-        <p class="cta-block__text">Опишите проблему, проект или задачу. Мы разберём техническую часть и предложим оптимальный способ решения.</p>
-        <button class="button-primary" type="button" data-modal-func="open">Обсудить задачу</button>
+        <p class="cta-block__text">
+          Опишите проблему, проект или задачу.
+          Мы разберём техническую часть и предложим
+          оптимальный способ решения.
+        </p>
+        <button class="button-primary" type="button" data-modal-func="open">
+          Обсудить задачу
+        </button>
       </div>
     </div>
   </section>

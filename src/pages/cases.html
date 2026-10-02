@@ -206,7 +206,7 @@ GLOBAL DASHBOARD
   <!-- =====================================================
   CASES ARCHIVE
   ====================================================== -->
-  <section class="scene cases-archive" data-scene="cases-archive">
+  <section class="scene cases-archive" data-scene="cases-archive" data-filter-cards>
     <div class="scene-container">
       <header class="scene-header reveal-item">
         <div class="scene-eyebrow">
@@ -223,8 +223,8 @@ GLOBAL DASHBOARD
         </p>
       </header>
       <!-- =================================================
-      FILTER
-      ================================================== -->
+     FILTER
+     ================================================== -->
       <div class="filter reveal-item" role="navigation" aria-label="Фильтр кейсов">
         <button class="filter__item is-active" type="button" data-filter="all" aria-pressed="true">
           Все
@@ -245,340 +245,329 @@ GLOBAL DASHBOARD
           Поддержка
         </button>
       </div>
+
       <!-- =================================================
-      CASES GRID
-      ================================================== -->
-      <div class="card-articles-grid reveal-item">
+           CASES GRID
+           ================================================== -->
+      <div class="card-articles-grid reveal-item" data-filter-grid>
+
         <!-- =====================================================
              CASE 01
         ====================================================== -->
-        <article class="card-article" data-case-type="optimization">
-          <span class="card-article__number">
-            01
-          </span>
+        <article class="card-article" data-filter-type="optimization" data-case-index="1">
+          <span class="card-article__number">01</span>
           <div class="card-article__image">
-          <span class="card-article__type">
-            CASE
-          </span>
+            <span class="card-article__type">CASE</span>
             <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80" alt="Оптимизация производительности сайта" loading="lazy">
           </div>
           <div class="card-article__content">
             <div class="card-article__meta">
-            <span class="card-article__meta-item">
-              OPTIMIZATION
-            </span>
-            <span class="card-article__meta-item">
-              05 feb 2026
-            </span>
+              <span class="card-article__meta-item">OPTIMIZATION</span>
+              <span class="card-article__meta-item">05 feb 2026</span>
             </div>
             <h4 class="card-article__title">
-              <a href="./casesDetail.html">
-                Оптимизация производительности
-                сайта
-              </a>
+              <a href="./casesDetail.html">Оптимизация производительности сайта</a>
             </h4>
             <p class="card-article__description">
-              Анализ технических узких мест,
-              оптимизация загрузки страниц,
-              работа с JavaScript, изображениями,
-              запросами и кэшированием.
+              Анализ технических узких мест, оптимизация загрузки страниц,
+              работа с JavaScript, изображениями, запросами и кэшированием.
             </p>
             <div class="card-article__tags">
-              <a href="category/performance" class="card-article__tag">
-                Performance
-              </a>
-              <a href="category/wordpress" class="card-article__tag">
-                WordPress
-              </a>
-              <a href="category/optimization" class="card-article__tag">
-                Optimization
-              </a>
+              <a href="category/performance" class="card-article__tag">Performance</a>
+              <a href="category/wordpress" class="card-article__tag">WordPress</a>
+              <a href="category/optimization" class="card-article__tag">Optimization</a>
             </div>
             <a href="./casesDetail.html" class="card-article__link">
-              <p>
-                Читать кейс
-              </p>
-              <span class="card-article__link-arrow">
-              ↗
-            </span>
+              <p>Читать кейс</p>
+              <span class="card-article__link-arrow">↗</span>
             </a>
           </div>
         </article>
+
         <!-- =====================================================
              CASE 02
         ====================================================== -->
-        <article class="card-article" data-case-type="audit">
-          <span class="card-article__number">
-            02
-          </span>
+        <article class="card-article" data-filter-type="audit" data-case-index="2">
+          <span class="card-article__number">02</span>
           <div class="card-article__image">
-          <span class="card-article__type">
-            CASE
-          </span>
+            <span class="card-article__type">CASE</span>
             <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1600&q=80" alt="Технический аудит digital-продукта" loading="lazy">
           </div>
           <div class="card-article__content">
             <div class="card-article__meta">
-            <span class="card-article__meta-item">
-              AUDIT
-            </span>
-              <span class="card-article__meta-item">
-              18 jan 2026
-            </span>
+              <span class="card-article__meta-item">AUDIT</span>
+              <span class="card-article__meta-item">18 jan 2026</span>
             </div>
             <h4 class="card-article__title">
-              <a href="./casesDetail.html">
-                Технический аудит
-                digital-продукта
-              </a>
+              <a href="./casesDetail.html">Технический аудит digital-продукта</a>
             </h4>
             <p class="card-article__description">
-              Комплексная диагностика проекта:
-              архитектура, производительность,
-              безопасность, инфраструктура
-              и технический долг.
+              Комплексная диагностика проекта: архитектура, производительность,
+              безопасность, инфраструктура и технический долг.
             </p>
             <div class="card-article__tags">
-              <a href="category/audit" class="card-article__tag">
-                Audit
-              </a>
-              <a href="category/architecture" class="card-article__tag">
-                Architecture
-              </a>
-              <a href="category/security" class="card-article__tag">
-                Security
-              </a>
+              <a href="category/audit" class="card-article__tag">Audit</a>
+              <a href="category/architecture" class="card-article__tag">Architecture</a>
+              <a href="category/security" class="card-article__tag">Security</a>
             </div>
             <a href="./casesDetail.html" class="card-article__link">
-              <p>
-                Читать кейс
-              </p>
-              <span class="card-article__link-arrow">
-              ↗
-            </span>
+              <p>Читать кейс</p>
+              <span class="card-article__link-arrow">↗</span>
+            </a>
+          </div>
+        </article>
+        <article class="card-article" data-filter-type="audit" data-case-index="2">
+          <span class="card-article__number">02</span>
+          <div class="card-article__image">
+            <span class="card-article__type">CASE</span>
+            <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1600&q=80" alt="Технический аудит digital-продукта" loading="lazy">
+          </div>
+          <div class="card-article__content">
+            <div class="card-article__meta">
+              <span class="card-article__meta-item">AUDIT</span>
+              <span class="card-article__meta-item">18 jan 2026</span>
+            </div>
+            <h4 class="card-article__title">
+              <a href="./casesDetail.html">Технический аудит digital-продукта</a>
+            </h4>
+            <p class="card-article__description">
+              Комплексная диагностика проекта: архитектура, производительность,
+              безопасность, инфраструктура и технический долг.
+            </p>
+            <div class="card-article__tags">
+              <a href="category/audit" class="card-article__tag">Audit</a>
+              <a href="category/architecture" class="card-article__tag">Architecture</a>
+              <a href="category/security" class="card-article__tag">Security</a>
+            </div>
+            <a href="./casesDetail.html" class="card-article__link">
+              <p>Читать кейс</p>
+              <span class="card-article__link-arrow">↗</span>
+            </a>
+          </div>
+        </article>
+        <article class="card-article" data-filter-type="audit" data-case-index="2">
+          <span class="card-article__number">02</span>
+          <div class="card-article__image">
+            <span class="card-article__type">CASE</span>
+            <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1600&q=80" alt="Технический аудит digital-продукта" loading="lazy">
+          </div>
+          <div class="card-article__content">
+            <div class="card-article__meta">
+              <span class="card-article__meta-item">AUDIT</span>
+              <span class="card-article__meta-item">18 jan 2026</span>
+            </div>
+            <h4 class="card-article__title">
+              <a href="./casesDetail.html">Технический аудит digital-продукта</a>
+            </h4>
+            <p class="card-article__description">
+              Комплексная диагностика проекта: архитектура, производительность,
+              безопасность, инфраструктура и технический долг.
+            </p>
+            <div class="card-article__tags">
+              <a href="category/audit" class="card-article__tag">Audit</a>
+              <a href="category/architecture" class="card-article__tag">Architecture</a>
+              <a href="category/security" class="card-article__tag">Security</a>
+            </div>
+            <a href="./casesDetail.html" class="card-article__link">
+              <p>Читать кейс</p>
+              <span class="card-article__link-arrow">↗</span>
+            </a>
+          </div>
+        </article>
+        <article class="card-article" data-filter-type="audit" data-case-index="2">
+          <span class="card-article__number">02</span>
+          <div class="card-article__image">
+            <span class="card-article__type">CASE</span>
+            <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1600&q=80" alt="Технический аудит digital-продукта" loading="lazy">
+          </div>
+          <div class="card-article__content">
+            <div class="card-article__meta">
+              <span class="card-article__meta-item">AUDIT</span>
+              <span class="card-article__meta-item">18 jan 2026</span>
+            </div>
+            <h4 class="card-article__title">
+              <a href="./casesDetail.html">Технический аудит digital-продукта</a>
+            </h4>
+            <p class="card-article__description">
+              Комплексная диагностика проекта: архитектура, производительность,
+              безопасность, инфраструктура и технический долг.
+            </p>
+            <div class="card-article__tags">
+              <a href="category/audit" class="card-article__tag">Audit</a>
+              <a href="category/architecture" class="card-article__tag">Architecture</a>
+              <a href="category/security" class="card-article__tag">Security</a>
+            </div>
+            <a href="./casesDetail.html" class="card-article__link">
+              <p>Читать кейс</p>
+              <span class="card-article__link-arrow">↗</span>
+            </a>
+          </div>
+        </article>
+        <article class="card-article" data-filter-type="audit" data-case-index="2">
+          <span class="card-article__number">02</span>
+          <div class="card-article__image">
+            <span class="card-article__type">CASE</span>
+            <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1600&q=80" alt="Технический аудит digital-продукта" loading="lazy">
+          </div>
+          <div class="card-article__content">
+            <div class="card-article__meta">
+              <span class="card-article__meta-item">AUDIT</span>
+              <span class="card-article__meta-item">18 jan 2026</span>
+            </div>
+            <h4 class="card-article__title">
+              <a href="./casesDetail.html">Технический аудит digital-продукта</a>
+            </h4>
+            <p class="card-article__description">
+              Комплексная диагностика проекта: архитектура, производительность,
+              безопасность, инфраструктура и технический долг.
+            </p>
+            <div class="card-article__tags">
+              <a href="category/audit" class="card-article__tag">Audit</a>
+              <a href="category/architecture" class="card-article__tag">Architecture</a>
+              <a href="category/security" class="card-article__tag">Security</a>
+            </div>
+            <a href="./casesDetail.html" class="card-article__link">
+              <p>Читать кейс</p>
+              <span class="card-article__link-arrow">↗</span>
             </a>
           </div>
         </article>
         <!-- =====================================================
              CASE 03
         ====================================================== -->
-        <article class="card-article" data-case-type="modernization">
-          <span class="card-article__number">
-            03
-          </span>
+        <article class="card-article" data-filter-type="modernization" data-case-index="3">
+          <span class="card-article__number">03</span>
           <div class="card-article__image">
-          <span class="card-article__type">
-            CASE
-          </span>
+            <span class="card-article__type">CASE</span>
             <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80" alt="Модернизация технической архитектуры" loading="lazy">
           </div>
           <div class="card-article__content">
             <div class="card-article__meta">
-            <span class="card-article__meta-item">
-              MODERNIZATION
-            </span>
-              <span class="card-article__meta-item">
-              12 dec 2025
-            </span>
+              <span class="card-article__meta-item">MODERNIZATION</span>
+              <span class="card-article__meta-item">12 dec 2025</span>
             </div>
             <h4 class="card-article__title">
-              <a href="./casesDetail.html">
-                Модернизация устаревшей
-                технической архитектуры
-              </a>
+              <a href="./casesDetail.html">Модернизация устаревшей технической архитектуры</a>
             </h4>
             <p class="card-article__description">
-              Поэтапная работа с legacy-системой:
-              анализ архитектуры, рефакторинг,
-              обновление компонентов и подготовка
-              инфраструктуры к дальнейшему развитию.
+              Поэтапная работа с legacy-системой: анализ архитектуры, рефакторинг,
+              обновление компонентов и подготовка инфраструктуры к дальнейшему развитию.
             </p>
             <div class="card-article__tags">
-              <a href="category/modernization" class="card-article__tag">
-                Modernization
-              </a>
-              <a href="category/legacy" class="card-article__tag">
-                Legacy
-              </a>
-              <a href="category/architecture" class="card-article__tag">
-                Architecture
-              </a>
+              <a href="category/modernization" class="card-article__tag">Modernization</a>
+              <a href="category/legacy" class="card-article__tag">Legacy</a>
+              <a href="category/architecture" class="card-article__tag">Architecture</a>
             </div>
             <a href="./casesDetail.html" class="card-article__link">
-              <p>
-                Читать кейс
-              </p>
-              <span class="card-article__link-arrow">
-              ↗
-            </span>
+              <p>Читать кейс</p>
+              <span class="card-article__link-arrow">↗</span>
             </a>
           </div>
         </article>
+
         <!-- =====================================================
              CASE 04
         ====================================================== -->
-        <article class="card-article" data-case-type="support">
-          <span class="card-article__number">
-            04
-          </span>
+        <article class="card-article" data-filter-type="support" data-case-index="4">
+          <span class="card-article__number">04</span>
           <div class="card-article__image">
-          <span class="card-article__type">
-            CASE
-          </span>
+            <span class="card-article__type">CASE</span>
             <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1600&q=80" alt="Техническая поддержка и мониторинг" loading="lazy">
           </div>
           <div class="card-article__content">
             <div class="card-article__meta">
-            <span class="card-article__meta-item">
-              SUPPORT
-            </span>
-              <span class="card-article__meta-item">
-              24 nov 2025
-            </span>
+              <span class="card-article__meta-item">SUPPORT</span>
+              <span class="card-article__meta-item">24 nov 2025</span>
             </div>
             <h4 class="card-article__title">
-              <a href="./casesDetail.html">
-                Постоянная техническая
-                поддержка digital-проекта
-              </a>
+              <a href="./casesDetail.html">Постоянная техническая поддержка digital-проекта</a>
             </h4>
             <p class="card-article__description">
-              Мониторинг инфраструктуры, устранение
-              инцидентов, обновления, резервное
-              копирование и регулярные технические работы.
+              Мониторинг инфраструктуры, устранение инцидентов, обновления,
+              резервное копирование и регулярные технические работы.
             </p>
             <div class="card-article__tags">
-              <a href="category/support" class="card-article__tag">
-                Support
-              </a>
-              <a href="category/monitoring" class="card-article__tag">
-                Monitoring
-              </a>
-              <a href="category/infrastructure" class="card-article__tag">
-                Infrastructure
-              </a>
+              <a href="category/support" class="card-article__tag">Support</a>
+              <a href="category/monitoring" class="card-article__tag">Monitoring</a>
+              <a href="category/infrastructure" class="card-article__tag">Infrastructure</a>
             </div>
             <a href="./casesDetail.html" class="card-article__link">
-              <p>
-                Читать кейс
-              </p>
-              <span class="card-article__link-arrow">
-              ↗
-            </span>
+              <p>Читать кейс</p>
+              <span class="card-article__link-arrow">↗</span>
             </a>
           </div>
         </article>
+
         <!-- =====================================================
              CASE 05
         ====================================================== -->
-        <article class="card-article" data-case-type="development">
-          <span class="card-article__number">
-            05
-          </span>
+        <article class="card-article" data-filter-type="development" data-case-index="5">
+          <span class="card-article__number">05</span>
           <div class="card-article__image">
-          <span class="card-article__type">
-            CASE
-          </span>
+            <span class="card-article__type">CASE</span>
             <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1600&q=80" alt="Разработка digital-продукта" loading="lazy">
           </div>
           <div class="card-article__content">
             <div class="card-article__meta">
-            <span class="card-article__meta-item">
-              DEVELOPMENT
-            </span>
-              <span class="card-article__meta-item">
-              03 oct 2025
-            </span>
+              <span class="card-article__meta-item">DEVELOPMENT</span>
+              <span class="card-article__meta-item">03 oct 2025</span>
             </div>
             <h4 class="card-article__title">
-              <a href="./casesDetail.html">
-                Разработка digital-продукта
-                с нуля
-              </a>
+              <a href="./casesDetail.html">Разработка digital-продукта с нуля</a>
             </h4>
             <p class="card-article__description">
-              Проектирование архитектуры,
-              разработка интерфейса, backend,
-              интеграции и запуск продукта
-              в рабочую инфраструктуру.
+              Проектирование архитектуры, разработка интерфейса, backend,
+              интеграции и запуск продукта в рабочую инфраструктуру.
             </p>
             <div class="card-article__tags">
-              <a href="category/development" class="card-article__tag">
-                Development
-              </a>
-              <a href="category/fullstack" class="card-article__tag">
-                Fullstack
-              </a>
-              <a href="category/devops" class="card-article__tag">
-                DevOps
-              </a>
+              <a href="category/development" class="card-article__tag">Development</a>
+              <a href="category/fullstack" class="card-article__tag">Fullstack</a>
+              <a href="category/devops" class="card-article__tag">DevOps</a>
             </div>
             <a href="./casesDetail.html" class="card-article__link">
-              <p>
-                Читать кейс
-              </p>
-              <span class="card-article__link-arrow">
-              ↗
-            </span>
+              <p>Читать кейс</p>
+              <span class="card-article__link-arrow">↗</span>
             </a>
           </div>
         </article>
+
         <!-- =====================================================
              CASE 06
         ====================================================== -->
-        <article class="card-article" data-case-type="optimization">
-          <span class="card-article__number">
-            06
-          </span>
+        <article class="card-article" data-filter-type="optimization" data-case-index="6">
+          <span class="card-article__number">06</span>
           <div class="card-article__image">
-          <span class="card-article__type">
-            CASE
-          </span>
+            <span class="card-article__type">CASE</span>
             <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=80" alt="Оптимизация digital-продукта" loading="lazy">
           </div>
           <div class="card-article__content">
             <div class="card-article__meta">
-            <span class="card-article__meta-item">
-              OPTIMIZATION
-            </span>
-              <span class="card-article__meta-item">
-              19 sep 2025
-            </span>
+              <span class="card-article__meta-item">OPTIMIZATION</span>
+              <span class="card-article__meta-item">19 sep 2025</span>
             </div>
             <h4 class="card-article__title">
-              <a href="./casesDetail.html">
-                Оптимизация digital-продукта
-                и инфраструктуры
-              </a>
+              <a href="./casesDetail.html">Оптимизация digital-продукта и инфраструктуры</a>
             </h4>
             <p class="card-article__description">
-              Поиск узких мест в приложении,
-              оптимизация серверной части,
-              базы данных и процессов доставки
-              изменений.
+              Поиск узких мест в приложении, оптимизация серверной части,
+              базы данных и процессов доставки изменений.
             </p>
             <div class="card-article__tags">
-              <a href="category/performance" class="card-article__tag">
-                Performance
-              </a>
-              <a href="category/backend" class="card-article__tag">
-                Backend
-              </a>
-              <a href="category/devops" class="card-article__tag">
-                DevOps
-              </a>
+              <a href="category/performance" class="card-article__tag">Performance</a>
+              <a href="category/backend" class="card-article__tag">Backend</a>
+              <a href="category/devops" class="card-article__tag">DevOps</a>
             </div>
             <a href="./casesDetail.html" class="card-article__link">
-              <p>
-                Читать кейс
-              </p>
-              <span class="card-article__link-arrow">
-              ↗
-            </span>
+              <p>Читать кейс</p>
+              <span class="card-article__link-arrow">↗</span>
             </a>
           </div>
         </article>
       </div>
+      <!-- =================================================
+      PAGINATION
+      ================================================== -->
+      <nav class="pagination" data-filter-pagination aria-label="Пагинация кейсов"></nav>
       <!-- =====================================================
            CTA
       ====================================================== -->
