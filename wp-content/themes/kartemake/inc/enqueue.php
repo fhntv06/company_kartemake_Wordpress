@@ -85,6 +85,7 @@ function kartemake_get_pages_map() {
         'tag'          => ['type' => 'tag'],          // ← добавили
         'category'     => ['type' => 'category'],     // ← если нужно
         'archive'      => ['type' => 'archive'],      // ← если нужно
+        'cases'      => null,
     ];
 }
 
