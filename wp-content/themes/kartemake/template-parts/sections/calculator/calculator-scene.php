@@ -425,16 +425,90 @@
                             <span class="calculator-result__cta-label">NEXT STEP</span>
                             <h5 class="calculator-result__cta-title">Обсудим задачу?</h5>
                             <p class="calculator-result__cta-description">Отправьте конфигурацию. Мы изучим задачу, уточним технические детали и подготовим точное предложение.</p>
-                            <form class="calculator-result__form" data-calculator-form>
-                                <div class="calculator-result__field">
-                                    <label for="calculator-name">Имя</label>
-                                    <input type="text" id="calculator-name" name="name" autocomplete="name" placeholder="Как к вам обращаться?" required>
+                            <form
+                                class="form calculator-result__form"
+                                data-form
+                                data-calculator-form
+                                action="/wp-json/my/v1/lead"
+                                method="POST"
+                                enctype="multipart/form-data"
+                                novalidate
+                            >
+                                <input type="hidden" name="calculator_task"       value="">
+                                <input type="hidden" name="calculator_scale"      value="">
+                                <input type="hidden" name="calculator_additional" value="">
+                                <input type="hidden" name="calculator_works"      value="">
+                                <input type="hidden" name="calculator_total"      value="">
+
+                                <input type="hidden" name="form_source" value="calculator">
+                                <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true"
+                                   style="position:absolute;left:-9999px;opacity:0;pointer-events:none;">
+
+                                <div class="form__fields">
+                                    <div class="form__row">
+                                        <div class="form__field calculator-result__field">
+                                            <label for="calculator-name">Имя</label>
+                                            <input type="text" id="calculator-name" name="name" autocomplete="name"
+                                                   placeholder="Как к вам обращаться?" required>
+                                          <span class="form__error" data-form-error="name"></span>
+                                        </div>
+
+                                        <div class="form__field calculator-result__field">
+                                            <label for="calculator-contact">Контакт</label>
+                                            <input type="text" id="calculator-contact" name="contact"
+                                                   placeholder="Email или телефон" required>
+                                            <span class="form__error" data-form-error="contact"></span>
+                                        </div>
+                                      </div>
+
+                                    <div class="form__field calculator-result__field">
+                                        <label for="calculator-message">Комментарий</label>
+                                        <textarea id="calculator-message" name="message" rows="3"
+                                                placeholder="Кратко опишите задачу"></textarea>
+                                        <span class="form__error" data-form-error="message"></span>
+                                    </div>
+
+                                    <div class="form__field form__field--files">
+                                        <label class="form__file-label" for="calculator-files">
+                                          Прикрепить файлы
+                                          <span class="form__file-hint">DOC, DOCX, PDF, RTF · до 5 МБ · максимум 3</span>
+                                        </label>
+
+                                        <label class="form__dropzone" for="calculator-files" data-form-dropzone>
+                                            <input type="file" id="calculator-files" name="files[]" multiple
+                                                   accept=".doc,.docx,.pdf,.rtf" data-form-files>
+                                            <span class="form__dropzone-icon" aria-hidden="true">↑</span>
+                                            <span class="form__dropzone-text">
+                                               <strong>Перетащите файлы</strong> или
+                                                <span class="form__dropzone-link">выберите на устройстве</span>
+                                            </span>
+                                        </label>
+
+                                      <ul class="form__file-list" data-form-file-list></ul>
+                                      <span class="form__error" data-form-error="files"></span>
+                                    </div>
+
+                                    <div class="form__field form__field--checkbox">
+                                        <label class="form__checkbox">
+                                            <input type="checkbox" name="consent" value="1" required data-form-consent>
+                                            <span class="form__checkbox-indicator" aria-hidden="true"></span>
+                                            <span class="form__checkbox-text">
+                                                Я согласен с
+                                                <a href="/privacy-policy" target="_blank" rel="noopener noreferrer">политикой конфиденциальности</a>
+                                                и даю согласие на
+                                                <a href="/personal-data-consent" target="_blank" rel="noopener noreferrer">обработку персональных данных</a>.
+                                            </span>
+                                        </label>
+                                        <span class="form__error" data-form-error="consent"></span>
+                                    </div>
                                 </div>
-                                <div class="calculator-result__field">
-                                    <label for="calculator-contact">Контакт</label>
-                                    <input type="text" id="calculator-contact" name="contact" placeholder="Email или телефон" required>
+
+                                <div class="form__footer">
+                                    <div class="form__actions">
+                                        <button type="submit" class="button-primary">Отправить конфигурацию</button>
+                                        <span class="form__status" data-form-status aria-live="polite"></span>
+                                    </div>
                                 </div>
-                                <button type="submit" class="button-primary">Отправить конфигурацию</button>
                             </form>
                             <p class="calculator-result__legal">Отправляя форму, вы соглашаетесь с условиями обработки предоставленных данных.</p>
                         </div>

@@ -92,6 +92,12 @@ COST CALCULATOR
 ================================================= -->
   <?php get_template_part('template-parts/components/cost-calculator-widget'); ?>
 <?php endif; ?>
+
+<?php if (is_page(['calculator', 'contacts'])): ?>
+  <!-- smartcaptcha -->
+  <?php get_template_part('template-parts/components/smartcaptcha'); ?>
+<?php endif; ?>
+
 <?php wp_footer(); ?>
 </body>
 </html>
