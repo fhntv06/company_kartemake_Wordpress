@@ -46,4 +46,5 @@ module.exports = {
     tag:      { scss: 'tag.scss',      modules: ['Filter'] },
     pricing:      { scss: 'pricing.scss',      modules: [] },
     error404:      { scss: 'error-404.scss',      modules: ['Filter'] },
+    category:      { scss: 'category.scss',      modules: ['Filter'] },
 }
