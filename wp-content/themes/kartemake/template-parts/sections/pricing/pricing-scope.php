@@ -13,9 +13,9 @@
                 в одном месте. Поэтому рассматриваем взаимосвязь
                 приложения, данных и инфраструктуры.
             </p>
-            <h4 class="scene-description">
-                от 25 000 ₽  в месяц
-            </h4>
+            <p class="scene-description font-size-h4">
+                от 25 000 ₽ в месяц
+            </p>
             <button class="button-primary scene-description" data-modal-func="open" data-service="support">
                 Подобрать формат поддержки
             </button>
