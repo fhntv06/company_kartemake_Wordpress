@@ -4,55 +4,65 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f436328a-f833-435e-b59f-dc03317a5ed7" name="Changes" comment="frontend / обновление стилей списков">
-      <change afterPath="$PROJECT_DIR$/TODO.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/kartemake/assets/js/swiper-bundle.min.js" afterDir="false" />
+    <list default="true" id="f436328a-f833-435e-b59f-dc03317a5ed7" name="Changes" comment="back-end / добавлено подключение модулей для 404, pages map">
+      <change afterPath="$PROJECT_DIR$/wp-content/themes/kartemake/single-cases.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sshConfigs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sshConfigs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/AnchorController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/AnchorController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/FormController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/FormController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/ScrollRevealController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ScrollRevealController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/SpecialistWidgetController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/SpecialistWidgetController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/TabsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/TabsController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/blog.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/contacts.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/contacts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/services.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/services.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/support.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/support.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/styles/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/styles/index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/styles/sections/benefits.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/styles/sections/benefits.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/styles/sections/cta.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/styles/sections/cta.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/styles/sections/last-works.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/styles/sections/last-works.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/styles/sections/section.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/styles/sections/section.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/styles/sections/service-card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/styles/sections/service-card.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/styles/sections/services-support.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/styles/sections/services-support.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/styles/sections/sidebar-burger-menu.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/styles/sections/sidebar-burger-menu.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/styles/sections/tabs.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/styles/sections/tabs.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/styles/ui/accordion.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/styles/ui/accordion.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/styles/ui/form.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/styles/ui/form.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/styles/ui/modal.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/styles/ui/modal.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/styles/ui/specialist-widget.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/styles/ui/specialist-widget.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/styles/variables/offsets.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/styles/variables/offsets.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/kartemake/assets/js/bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/kartemake/assets/js/bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/styles/components/footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/styles/components/footer.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/styles/scenes/single/single-article.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/styles/scenes/single/single-article.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/styles/scenes/single/single-cover.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/styles/scenes/single/single-cover.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/styles/variables/fonts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/styles/variables/fonts.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wp-content/themes/kartemake/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/kartemake/footer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/kartemake/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/kartemake/functions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/kartemake/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/kartemake/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/kartemake/inc/controllers.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/kartemake/inc/controllers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/kartemake/page-templates/page-contacts.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/kartemake/page-templates/page-contacts.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/kartemake/page-templates/page-support.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/kartemake/page-templates/page-support.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/kartemake/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/kartemake/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/kartemake/template-parts/modal-form.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/kartemake/template-parts/modal-form.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/kartemake/template-parts/specialist-widget.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/kartemake/template-parts/specialist-widget.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+      <option value="repository" />
+    </option>
+  </component>
   <component name="ComposerSettings">
-    <execution />
+    <execution>
+      <execution>
+        <execution>
+          <execution>
+            <execution>
+              <execution>
+                <execution>
+                  <execution>
+                    <execution>
+                      <execution>
+                        <execution>
+                          <execution>
+                            <execution>
+                              <execution>
+                                <execution>
+                                  <execution>
+                                    <execution>
+                                      <execution />
+                                    </execution>
+                                  </execution>
+                                </execution>
+                              </execution>
+                            </execution>
+                          </execution>
+                        </execution>
+                      </execution>
+                    </execution>
+                  </execution>
+                </execution>
+              </execution>
+            </execution>
+          </execution>
+        </execution>
+      </execution>
+    </execution>
   </component>
   <component name="CopilotPersistence">
     <persistenceIdMap>
@@ -65,6 +75,8 @@
         <option value="CSS File" />
         <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="SCSS File" />
+        <option value="PHP File" />
       </list>
     </option>
   </component>
@@ -90,62 +102,78 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;JavaScript Debug.blog.html.executor&quot;: &quot;Run&quot;,
-    &quot;JavaScript Debug.index.html.executor&quot;: &quot;Run&quot;,
-    &quot;Node.js.webpack.config.js.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowPanel.toolwindow.highlight.mappings&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowPanel.toolwindow.highlight.symlinks&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowPanel.toolwindow.show.date&quot;: &quot;false&quot;,
-    &quot;WebServerToolWindowPanel.toolwindow.show.permissions&quot;: &quot;false&quot;,
-    &quot;WebServerToolWindowPanel.toolwindow.show.size&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/CifronPro/projects/work/company_kartemake_Wordpress/wp-content/themes/kartemake&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.build.executor&quot;: &quot;Run&quot;,
-    &quot;npm.start.executor&quot;: &quot;Run&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.Mappings&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\PhpStorm 2024.2.4\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "JavaScript Debug.blog.html.executor": "Run",
+    "JavaScript Debug.index.html.executor": "Run",
+    "Node.js.webpack.config.js.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "WebServerToolWindowPanel.toolwindow.highlight.mappings": "true",
+    "WebServerToolWindowPanel.toolwindow.highlight.symlinks": "true",
+    "WebServerToolWindowPanel.toolwindow.show.date": "false",
+    "WebServerToolWindowPanel.toolwindow.show.permissions": "false",
+    "WebServerToolWindowPanel.toolwindow.show.size": "false",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Home/projects/my/company_kartemake_Wordpress/wp-content/themes/kartemake/build/assets/css",
+    "list.type.of.created.stylesheet": "SCSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.jshint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.jshint": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.build.executor": "Run",
+    "npm.build:dev.executor": "Run",
+    "npm.start.executor": "Run",
+    "settings.editor.selected.configurable": "configurable.group.LaravelIdea.Settings.Languages",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\PhpStorm 2026.2.2\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;GitStage.ChangesTree.GroupingKeys&quot;: [
-      &quot;directory&quot;,
-      &quot;module&quot;,
-      &quot;repository&quot;
+  "keyToStringList": {
+    "GitStage.ChangesTree.GroupingKeys": [
+      "directory",
+      "module",
+      "repository"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\CifronPro\projects\work\company_kartemake_Wordpress\wp-content\themes\kartemake" />
-      <recent name="C:\Users\CifronPro\projects\work\company_kartemake_Wordpress\wp-content\themes\kartemake\assets\js" />
-      <recent name="C:\Users\CifronPro\projects\work\company_kartemake_Wordpress\wp-content\themes\kartemake\assets\webfonts" />
-      <recent name="C:\Users\CifronPro\projects\work\landing-kartech.site\src" />
-      <recent name="C:\Users\CifronPro\projects\work\landing-kartech.site\src\controllers" />
+      <recent name="C:\Home\projects\my\company_kartemake_Wordpress\wp-content\themes\kartemake" />
+      <recent name="C:\Home\projects\my\company_kartemake_Wordpress\wp-content\themes\kartemake\build\assets\js" />
+      <recent name="C:\Home\projects\my\company_kartemake_Wordpress\wp-content\themes\kartemake\build\assets\css" />
+      <recent name="C:\Home\projects\my\company_kartemake_Wordpress\wp-content\themes\kartemake\build\assets" />
+      <recent name="C:\Home\projects\my\company_kartemake_Wordpress\wp-content\themes\kartemake\build" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\CifronPro\projects\work\landing-kartech.site\src\controllers" />
-      <recent name="C:\Users\CifronPro\projects\work\landing-kartech.site\src\pages" />
-      <recent name="C:\Users\CifronPro\projects\work\landing-kartech.site\src\pages\blog" />
-      <recent name="C:\Users\CifronPro\projects\work\landing-kartech.site\src\shared\styles\fonts" />
-      <recent name="C:\Users\CifronPro\projects\work\landing-kartech.site\src\shared\styles\ui" />
+      <recent name="C:\Home\projects\my\company_kartemake_Wordpress\wp-content\themes\kartemake\inc" />
+      <recent name="C:\Home\projects\my\company_kartemake_Wordpress\docs\Generate_posts\01.start-company" />
+      <recent name="C:\Home\projects\my\company_kartemake_Wordpress\src\app\modules\global" />
+      <recent name="C:\Home\projects\my\company_kartemake_Wordpress\src\shared\styles\scenes\global" />
+      <recent name="C:\Home\projects\my\company_kartemake_Wordpress\src\shared\styles\scenes\home" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.start">
+  <component name="RunManager" selected="npm.build">
     <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
         <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="build:dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build:dev" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -163,10 +191,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.start" />
         <item itemvalue="npm.build" />
         <item itemvalue="npm.start" />
-        <item itemvalue="npm.build" />
+        <item itemvalue="npm.build:dev" />
+        <item itemvalue="npm.start" />
         <item itemvalue="npm.build" />
       </list>
     </recent_temporary>
@@ -174,8 +202,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-PS-242.23726.107" />
-        <option value="bundled-php-predefined-a98d8de5180a-90914f2295cb-com.jetbrains.php.sharedIndexes-PS-242.23726.107" />
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-PS-262.10315.130" />
+        <option value="bundled-php-predefined-a98d8de5180a-9522f28f0b20-com.jetbrains.php.sharedIndexes-PS-262.10315.130" />
       </set>
     </attachedChunks>
   </component>
@@ -217,400 +245,417 @@
       <workItem from="1784190113894" duration="27134000" />
       <workItem from="1784278271115" duration="114000" />
       <workItem from="1784305067069" duration="9450000" />
+      <workItem from="1789202109398" duration="8708000" />
+      <workItem from="1789266954738" duration="14056000" />
+      <workItem from="1789354908545" duration="4747000" />
+      <workItem from="1789377657897" duration="1962000" />
+      <workItem from="1789441752652" duration="101000" />
+      <workItem from="1789471114767" duration="12227000" />
+      <workItem from="1789969940741" duration="6990000" />
+      <workItem from="1790046201386" duration="29445000" />
+      <workItem from="1790572934727" duration="790000" />
+      <workItem from="1790575909840" duration="19326000" />
+      <workItem from="1790648706163" duration="5771000" />
+      <workItem from="1790736070556" duration="28000" />
+      <workItem from="1790738448554" duration="5325000" />
+      <workItem from="1790821276149" duration="909000" />
+      <workItem from="1790829894007" duration="22628000" />
+      <workItem from="1790906880474" duration="30853000" />
+      <workItem from="1790994683806" duration="733000" />
     </task>
-    <task id="LOCAL-00021" summary="added media for theme-toggle items">
+    <task id="LOCAL-00120" summary="front-end / создана страница tag">
       <option name="closed" value="true" />
-      <created>1767707952444</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
+      <created>1790604156796</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
       <option name="project" value="LOCAL" />
-      <updated>1767707952444</updated>
+      <updated>1790604156796</updated>
     </task>
-    <task id="LOCAL-00022" summary="refactor offsets vars">
+    <task id="LOCAL-00121" summary="front-end / запись tag добавлена в pages-manifest.js">
       <option name="closed" value="true" />
-      <created>1767707971479</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
+      <created>1790604185677</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
       <option name="project" value="LOCAL" />
-      <updated>1767707971479</updated>
+      <updated>1790604185677</updated>
     </task>
-    <task id="LOCAL-00023" summary="changes in .idea">
+    <task id="LOCAL-00122" summary="front-end / корректировка">
       <option name="closed" value="true" />
-      <created>1767707996794</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
+      <created>1790604208179</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
       <option name="project" value="LOCAL" />
-      <updated>1767707996794</updated>
+      <updated>1790604208179</updated>
     </task>
-    <task id="LOCAL-00024" summary="correct imports sections and ui">
+    <task id="LOCAL-00123" summary="back-end / создана страница tag.php">
       <option name="closed" value="true" />
-      <created>1767708071144</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
+      <created>1790604240161</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
       <option name="project" value="LOCAL" />
-      <updated>1767708071144</updated>
+      <updated>1790604240161</updated>
     </task>
-    <task id="LOCAL-00025" summary="correct root index styles file">
+    <task id="LOCAL-00124" summary="back-end / добавлена запись подключения scripts для страницы tag">
       <option name="closed" value="true" />
-      <created>1767708089253</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
+      <created>1790604339214</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
       <option name="project" value="LOCAL" />
-      <updated>1767708089253</updated>
+      <updated>1790604339214</updated>
     </task>
-    <task id="LOCAL-00026" summary="correct for work CalculatorController">
+    <task id="LOCAL-00125" summary="back-end / коррекция формирования значения по-умолчанию для полей reading_time и views">
       <option name="closed" value="true" />
-      <created>1767714426931</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
+      <created>1790604374464</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
       <option name="project" value="LOCAL" />
-      <updated>1767714426931</updated>
+      <updated>1790604374464</updated>
     </task>
-    <task id="LOCAL-00027" summary="correct all pages: changes links, some changes">
+    <task id="LOCAL-00126" summary="back-end / добавлен вывод данных для страницы blog">
       <option name="closed" value="true" />
-      <created>1767715369703</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
+      <created>1790604397210</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
       <option name="project" value="LOCAL" />
-      <updated>1767715369703</updated>
+      <updated>1790604397210</updated>
     </task>
-    <task id="LOCAL-00028" summary="added media in about section">
+    <task id="LOCAL-00127" summary="back-end / корректировка детальной страницы blog - single-post.php">
       <option name="closed" value="true" />
-      <created>1767715401477</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
+      <created>1790604433559</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
       <option name="project" value="LOCAL" />
-      <updated>1767715401477</updated>
+      <updated>1790604433559</updated>
     </task>
-    <task id="LOCAL-00029" summary="added media in calculator section">
+    <task id="LOCAL-00128" summary="back-end / wip страницы blog">
       <option name="closed" value="true" />
-      <created>1767715417910</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
+      <created>1790604447949</created>
+      <option name="number" value="00128" />
+      <option name="presentableId" value="LOCAL-00128" />
       <option name="project" value="LOCAL" />
-      <updated>1767715417910</updated>
+      <updated>1790604447950</updated>
     </task>
-    <task id="LOCAL-00030" summary="added media in cards section">
+    <task id="LOCAL-00129" summary="back-end / логика компоннета Orbit вынесена в отдельный файл">
       <option name="closed" value="true" />
-      <created>1767715433373</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
+      <created>1790831985016</created>
+      <option name="number" value="00129" />
+      <option name="presentableId" value="LOCAL-00129" />
       <option name="project" value="LOCAL" />
-      <updated>1767715433373</updated>
+      <updated>1790831985016</updated>
     </task>
-    <task id="LOCAL-00031" summary="added media in feature-card section">
+    <task id="LOCAL-00130" summary="front-end / создан компонент формы">
       <option name="closed" value="true" />
-      <created>1767715448612</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
+      <created>1790834157879</created>
+      <option name="number" value="00130" />
+      <option name="presentableId" value="LOCAL-00130" />
       <option name="project" value="LOCAL" />
-      <updated>1767715448612</updated>
+      <updated>1790834157879</updated>
     </task>
-    <task id="LOCAL-00032" summary="added media in last-work section">
+    <task id="LOCAL-00131" summary="front-end / компонент формы добавлен на страницу Contacts">
       <option name="closed" value="true" />
-      <created>1767715460509</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
+      <created>1790834175767</created>
+      <option name="number" value="00131" />
+      <option name="presentableId" value="LOCAL-00131" />
       <option name="project" value="LOCAL" />
-      <updated>1767715460509</updated>
+      <updated>1790834175767</updated>
     </task>
-    <task id="LOCAL-00033" summary="added media in regular-card section">
+    <task id="LOCAL-00132" summary="front-end / компонент формы добавлен на страницу Contacts">
       <option name="closed" value="true" />
-      <created>1767715471263</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
+      <created>1790834195022</created>
+      <option name="number" value="00132" />
+      <option name="presentableId" value="LOCAL-00132" />
       <option name="project" value="LOCAL" />
-      <updated>1767715471263</updated>
+      <updated>1790834195022</updated>
     </task>
-    <task id="LOCAL-00034" summary="added media in main section styles file">
+    <task id="LOCAL-00133" summary="front-end / создан модуль FormHandler для обработки форм">
       <option name="closed" value="true" />
-      <created>1767715485982</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
+      <created>1790834344053</created>
+      <option name="number" value="00133" />
+      <option name="presentableId" value="LOCAL-00133" />
       <option name="project" value="LOCAL" />
-      <updated>1767715485982</updated>
+      <updated>1790834344054</updated>
     </task>
-    <task id="LOCAL-00035" summary="added media in service-card section">
+    <task id="LOCAL-00134" summary="front-end / рефакторинг / добален компонент form на страницу calculator">
       <option name="closed" value="true" />
-      <created>1767715501752</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
+      <created>1790835925783</created>
+      <option name="number" value="00134" />
+      <option name="presentableId" value="LOCAL-00134" />
       <option name="project" value="LOCAL" />
-      <updated>1767715501752</updated>
+      <updated>1790835925783</updated>
     </task>
-    <task id="LOCAL-00036" summary="added media in services-support section">
+    <task id="LOCAL-00135" summary="front-end / добавлен стиль disabled для кнопки">
       <option name="closed" value="true" />
-      <created>1767715513449</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
+      <created>1790835944393</created>
+      <option name="number" value="00135" />
+      <option name="presentableId" value="LOCAL-00135" />
       <option name="project" value="LOCAL" />
-      <updated>1767715513449</updated>
+      <updated>1790835944393</updated>
     </task>
-    <task id="LOCAL-00037" summary="correct box-shadow in sidebar-burger-menu">
+    <task id="LOCAL-00136" summary="front-end / изменен html для формы на странице Calculator">
       <option name="closed" value="true" />
-      <created>1767715559389</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
+      <created>1790835977268</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
       <option name="project" value="LOCAL" />
-      <updated>1767715559389</updated>
+      <updated>1790835977268</updated>
     </task>
-    <task id="LOCAL-00038" summary="correct figure ui">
+    <task id="LOCAL-00137" summary="front-end / рефакторинг модуля calculator-controller под новый компонент формы">
       <option name="closed" value="true" />
-      <created>1767715572861</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
+      <created>1790836025315</created>
+      <option name="number" value="00137" />
+      <option name="presentableId" value="LOCAL-00137" />
       <option name="project" value="LOCAL" />
-      <updated>1767715572861</updated>
+      <updated>1790836025315</updated>
     </task>
-    <task id="LOCAL-00039" summary="added media in footer ui">
+    <task id="LOCAL-00138" summary="front-end / добавлено в документацию промпты для первого поста">
       <option name="closed" value="true" />
-      <created>1767715587410</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
+      <created>1790927338114</created>
+      <option name="number" value="00138" />
+      <option name="presentableId" value="LOCAL-00138" />
       <option name="project" value="LOCAL" />
-      <updated>1767715587410</updated>
+      <updated>1790927338115</updated>
     </task>
-    <task id="LOCAL-00040" summary="added media in form ui">
+    <task id="LOCAL-00139" summary="front-end / внесены изменения модуль calculator-controller">
       <option name="closed" value="true" />
-      <created>1767715600149</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
+      <created>1790927416294</created>
+      <option name="number" value="00139" />
+      <option name="presentableId" value="LOCAL-00139" />
       <option name="project" value="LOCAL" />
-      <updated>1767715600150</updated>
+      <updated>1790927416294</updated>
     </task>
-    <task id="LOCAL-00041" summary="correct active styles for accent link">
+    <task id="LOCAL-00140" summary="front-end / создан модуль form-handler">
       <option name="closed" value="true" />
-      <created>1767715638263</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
+      <created>1790927436518</created>
+      <option name="number" value="00140" />
+      <option name="presentableId" value="LOCAL-00140" />
       <option name="project" value="LOCAL" />
-      <updated>1767715638263</updated>
+      <updated>1790927436518</updated>
     </task>
-    <task id="LOCAL-00042" summary="correct variables files: colors and offsets">
+    <task id="LOCAL-00141" summary="front-end / добавлена обработка форм на страницы Calculator и Contacts">
       <option name="closed" value="true" />
-      <created>1767715715637</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
+      <created>1790927533818</created>
+      <option name="number" value="00141" />
+      <option name="presentableId" value="LOCAL-00141" />
       <option name="project" value="LOCAL" />
-      <updated>1767715715637</updated>
+      <updated>1790927533818</updated>
     </task>
-    <task id="LOCAL-00043" summary="refactor theme controller">
+    <task id="LOCAL-00142" summary="front-end / редактирование стилей компонента dashboard">
       <option name="closed" value="true" />
-      <created>1767779904743</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
+      <created>1790927556122</created>
+      <option name="number" value="00142" />
+      <option name="presentableId" value="LOCAL-00142" />
       <option name="project" value="LOCAL" />
-      <updated>1767779904743</updated>
+      <updated>1790927556122</updated>
     </task>
-    <task id="LOCAL-00044" summary="refactor cursor controller">
+    <task id="LOCAL-00143" summary="front-end / редактирование стилей корректировака стилей старницы Кальтулятор">
       <option name="closed" value="true" />
-      <created>1767779911902</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
+      <created>1790927585085</created>
+      <option name="number" value="00143" />
+      <option name="presentableId" value="LOCAL-00143" />
       <option name="project" value="LOCAL" />
-      <updated>1767779911902</updated>
+      <updated>1790927585085</updated>
     </task>
-    <task id="LOCAL-00045" summary="correct burger menu for theme dark">
+    <task id="LOCAL-00144" summary="back-end / добавлена верстка для smartcaptcha">
       <option name="closed" value="true" />
-      <created>1767779933875</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
+      <created>1790927740778</created>
+      <option name="number" value="00144" />
+      <option name="presentableId" value="LOCAL-00144" />
       <option name="project" value="LOCAL" />
-      <updated>1767779933875</updated>
+      <updated>1790927740778</updated>
     </task>
-    <task id="LOCAL-00046" summary="correct symbols">
+    <task id="LOCAL-00145" summary="back-end / создан контроллер обработки форм">
       <option name="closed" value="true" />
-      <created>1767782967210</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
+      <created>1790927786496</created>
+      <option name="number" value="00145" />
+      <option name="presentableId" value="LOCAL-00145" />
       <option name="project" value="LOCAL" />
-      <updated>1767782967210</updated>
+      <updated>1790927786496</updated>
     </task>
-    <task id="LOCAL-00047" summary="build">
+    <task id="LOCAL-00146" summary="back-end / коррекция ссылок, текстов в секциях Services">
       <option name="closed" value="true" />
-      <created>1767783039652</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
+      <created>1790927823375</created>
+      <option name="number" value="00146" />
+      <option name="presentableId" value="LOCAL-00146" />
       <option name="project" value="LOCAL" />
-      <updated>1767783039652</updated>
+      <updated>1790927823375</updated>
     </task>
-    <task id="LOCAL-00048" summary="create workflow">
+    <task id="LOCAL-00147" summary="back-end / добавлен вывод smartcaptcha-container">
       <option name="closed" value="true" />
-      <created>1767783976676</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
+      <created>1790927867918</created>
+      <option name="number" value="00147" />
+      <option name="presentableId" value="LOCAL-00147" />
       <option name="project" value="LOCAL" />
-      <updated>1767783976676</updated>
+      <updated>1790927867918</updated>
     </task>
-    <task id="LOCAL-00049" summary="create logo.svg">
+    <task id="LOCAL-00148" summary="back-end / добавлена обработка json save point">
       <option name="closed" value="true" />
-      <created>1767939363042</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
+      <created>1790927889813</created>
+      <option name="number" value="00148" />
+      <option name="presentableId" value="LOCAL-00148" />
       <option name="project" value="LOCAL" />
-      <updated>1767939363042</updated>
+      <updated>1790927889813</updated>
     </task>
-    <task id="LOCAL-00050" summary="create logo.svg">
+    <task id="LOCAL-00149" summary="back-end / добавлена страница Cases в map страниц">
       <option name="closed" value="true" />
-      <created>1767939385634</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
+      <created>1790927994872</created>
+      <option name="number" value="00149" />
+      <option name="presentableId" value="LOCAL-00149" />
       <option name="project" value="LOCAL" />
-      <updated>1767939385635</updated>
+      <updated>1790927994872</updated>
     </task>
-    <task id="LOCAL-00051" summary="correct play-button in detail page">
+    <task id="LOCAL-00150" summary="back-end / добавлены карточки на страницу 404">
       <option name="closed" value="true" />
-      <created>1767939407446</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
+      <created>1790934431397</created>
+      <option name="number" value="00150" />
+      <option name="presentableId" value="LOCAL-00150" />
       <option name="project" value="LOCAL" />
-      <updated>1767939407446</updated>
+      <updated>1790934431397</updated>
     </task>
-    <task id="LOCAL-00052" summary="change props homepage in package.json">
+    <task id="LOCAL-00151" summary="back-end / создан компонент Filter">
       <option name="closed" value="true" />
-      <created>1767940764659</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
+      <created>1790943373597</created>
+      <option name="number" value="00151" />
+      <option name="presentableId" value="LOCAL-00151" />
       <option name="project" value="LOCAL" />
-      <updated>1767940764659</updated>
+      <updated>1790943373597</updated>
     </task>
-    <task id="LOCAL-00053" summary="change workflow">
+    <task id="LOCAL-00152" summary="front-end / компонент Filter добавлен к страницам">
       <option name="closed" value="true" />
-      <created>1767940777250</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
+      <created>1790943417747</created>
+      <option name="number" value="00152" />
+      <option name="presentableId" value="LOCAL-00152" />
       <option name="project" value="LOCAL" />
-      <updated>1767940777250</updated>
+      <updated>1790943417747</updated>
     </task>
-    <task id="LOCAL-00054" summary="change texts and correct pages for new target project">
+    <task id="LOCAL-00153" summary="front-end / создан комопнента Filter">
       <option name="closed" value="true" />
-      <created>1768557816395</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
+      <created>1790943429077</created>
+      <option name="number" value="00153" />
+      <option name="presentableId" value="LOCAL-00153" />
       <option name="project" value="LOCAL" />
-      <updated>1768557816395</updated>
+      <updated>1790943429077</updated>
     </task>
-    <task id="LOCAL-00055" summary="update workflow">
+    <task id="LOCAL-00154" summary="front-end / добавлены компоненты Filter и Pagination на страницы blog tag cases">
       <option name="closed" value="true" />
-      <created>1768567281211</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
+      <created>1790943504931</created>
+      <option name="number" value="00154" />
+      <option name="presentableId" value="LOCAL-00154" />
       <option name="project" value="LOCAL" />
-      <updated>1768567281212</updated>
+      <updated>1790943504931</updated>
     </task>
-    <task id="LOCAL-00056" summary="wip">
+    <task id="LOCAL-00155" summary="front-end / добавлены компоненты Filter и Pagination на страницы blog tag cases">
       <option name="closed" value="true" />
-      <created>1784193717130</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
+      <created>1790943539508</created>
+      <option name="number" value="00155" />
+      <option name="presentableId" value="LOCAL-00155" />
       <option name="project" value="LOCAL" />
-      <updated>1784193717131</updated>
+      <updated>1790943539508</updated>
     </task>
-    <task id="LOCAL-00057" summary="update webpack.config.js">
+    <task id="LOCAL-00156" summary="front-end / коррекция отступов cards-grid + pagination">
       <option name="closed" value="true" />
-      <created>1784193736501</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
+      <created>1790943571925</created>
+      <option name="number" value="00156" />
+      <option name="presentableId" value="LOCAL-00156" />
       <option name="project" value="LOCAL" />
-      <updated>1784193736501</updated>
+      <updated>1790943571925</updated>
     </task>
-    <task id="LOCAL-00058" summary="backend / fix fonts in stat-number-particle text">
+    <task id="LOCAL-00157" summary="front-end / wip">
       <option name="closed" value="true" />
-      <created>1784193768276</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
+      <created>1790951566583</created>
+      <option name="number" value="00157" />
+      <option name="presentableId" value="LOCAL-00157" />
       <option name="project" value="LOCAL" />
-      <updated>1784193768276</updated>
+      <updated>1790951566583</updated>
     </task>
-    <task id="LOCAL-00059" summary="backend / added new fonts files">
+    <task id="LOCAL-00158" summary="front-end / на 404 подключен компонент Filter">
       <option name="closed" value="true" />
-      <created>1784218158575</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
+      <created>1790951601696</created>
+      <option name="number" value="00158" />
+      <option name="presentableId" value="LOCAL-00158" />
       <option name="project" value="LOCAL" />
-      <updated>1784218158575</updated>
+      <updated>1790951601696</updated>
     </task>
-    <task id="LOCAL-00060" summary="backend / приведены в порядок контроллеры">
+    <task id="LOCAL-00159" summary="front-end / изменена логика Filter для сортировки по несокльким type в cards">
       <option name="closed" value="true" />
-      <created>1784218204740</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
+      <created>1790951647737</created>
+      <option name="number" value="00159" />
+      <option name="presentableId" value="LOCAL-00159" />
       <option name="project" value="LOCAL" />
-      <updated>1784218204740</updated>
+      <updated>1790951647737</updated>
     </task>
-    <task id="LOCAL-00061" summary="frontend / добавлена обработка исключения для AccordionController.js">
+    <task id="LOCAL-00160" summary="front-end / добавлен стиль для tag-empty">
       <option name="closed" value="true" />
-      <created>1784218248700</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
+      <created>1790951675068</created>
+      <option name="number" value="00160" />
+      <option name="presentableId" value="LOCAL-00160" />
       <option name="project" value="LOCAL" />
-      <updated>1784218248700</updated>
+      <updated>1790951675068</updated>
     </task>
-    <task id="LOCAL-00062" summary="frontend / изменены цены на специалистов в виджете">
+    <task id="LOCAL-00161" summary="front-end / создана страница Cases">
       <option name="closed" value="true" />
-      <created>1784218307988</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
+      <created>1790951702070</created>
+      <option name="number" value="00161" />
+      <option name="presentableId" value="LOCAL-00161" />
       <option name="project" value="LOCAL" />
-      <updated>1784218307989</updated>
+      <updated>1790951702070</updated>
     </task>
-    <task id="LOCAL-00063" summary="frontend / добавлено событие reset-form">
+    <task id="LOCAL-00162" summary="front-end / созданы секции для страницы Cases">
       <option name="closed" value="true" />
-      <created>1784218327309</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
+      <created>1790951721818</created>
+      <option name="number" value="00162" />
+      <option name="presentableId" value="LOCAL-00162" />
       <option name="project" value="LOCAL" />
-      <updated>1784218327309</updated>
+      <updated>1790951721818</updated>
     </task>
-    <task id="LOCAL-00064" summary="frontend / обновление стилей кнопок">
+    <task id="LOCAL-00163" summary="back-end / созданы секции для страницы Cases">
       <option name="closed" value="true" />
-      <created>1784219995159</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
+      <created>1790951743203</created>
+      <option name="number" value="00163" />
+      <option name="presentableId" value="LOCAL-00163" />
       <option name="project" value="LOCAL" />
-      <updated>1784219995159</updated>
+      <updated>1790951743203</updated>
     </task>
-    <task id="LOCAL-00065" summary="frontend / добавлена функция reveal">
+    <task id="LOCAL-00164" summary="back-end / создана страница Cases">
       <option name="closed" value="true" />
-      <created>1784220032623</created>
-      <option name="number" value="00065" />
-      <option name="presentableId" value="LOCAL-00065" />
+      <created>1790951768426</created>
+      <option name="number" value="00164" />
+      <option name="presentableId" value="LOCAL-00164" />
       <option name="project" value="LOCAL" />
-      <updated>1784220032623</updated>
+      <updated>1790951768426</updated>
     </task>
-    <task id="LOCAL-00066" summary="frontend / обновление стилей форм">
+    <task id="LOCAL-00165" summary="back-end / пересобрана страница Tag">
       <option name="closed" value="true" />
-      <created>1784220051070</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
+      <created>1790951790003</created>
+      <option name="number" value="00165" />
+      <option name="presentableId" value="LOCAL-00165" />
       <option name="project" value="LOCAL" />
-      <updated>1784220051070</updated>
+      <updated>1790951790003</updated>
     </task>
-    <task id="LOCAL-00067" summary="frontend / обновление стилей modal">
+    <task id="LOCAL-00166" summary="back-end / пересобрана секция blog-articles.php">
       <option name="closed" value="true" />
-      <created>1784220068148</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
+      <created>1790951813922</created>
+      <option name="number" value="00166" />
+      <option name="presentableId" value="LOCAL-00166" />
       <option name="project" value="LOCAL" />
-      <updated>1784220068148</updated>
+      <updated>1790951813922</updated>
     </task>
-    <task id="LOCAL-00068" summary="frontend / обновление стилей specialist-widget.scss">
+    <task id="LOCAL-00167" summary="back-end / пересобрана страница 404">
       <option name="closed" value="true" />
-      <created>1784220161275</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
+      <created>1790951825104</created>
+      <option name="number" value="00167" />
+      <option name="presentableId" value="LOCAL-00167" />
       <option name="project" value="LOCAL" />
-      <updated>1784220161275</updated>
+      <updated>1790951825104</updated>
     </task>
-    <task id="LOCAL-00069" summary="frontend / обновление стилей списков">
+    <task id="LOCAL-00168" summary="back-end / добавлено подключение модулей для 404, pages map">
       <option name="closed" value="true" />
-      <created>1784220178528</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
+      <created>1790951848274</created>
+      <option name="number" value="00168" />
+      <option name="presentableId" value="LOCAL-00168" />
       <option name="project" value="LOCAL" />
-      <updated>1784220178528</updated>
+      <updated>1790951848274</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <option name="localTasksCounter" value="169" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -655,32 +700,36 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="correct burger menu for theme dark" />
-    <MESSAGE value="correct symbols" />
-    <MESSAGE value="build" />
-    <MESSAGE value="create workflow" />
-    <MESSAGE value="create logo.svg" />
-    <MESSAGE value="correct play-button in detail page" />
-    <MESSAGE value="change props homepage in package.json" />
-    <MESSAGE value="change workflow" />
-    <MESSAGE value="change texts and correct pages for new target project" />
-    <MESSAGE value="update workflow" />
-    <MESSAGE value="update .gitignore" />
-    <MESSAGE value="wip" />
-    <MESSAGE value="update webpack.config.js" />
-    <MESSAGE value="backend / fix fonts in stat-number-particle text" />
-    <MESSAGE value="backend / added new fonts files" />
-    <MESSAGE value="backend / приведены в порядок контроллеры" />
-    <MESSAGE value="frontend / добавлена обработка исключения для AccordionController.js" />
-    <MESSAGE value="frontend / изменены цены на специалистов в виджете" />
-    <MESSAGE value="frontend / добавлено событие reset-form" />
-    <MESSAGE value="frontend / обновление стилей кнопок" />
-    <MESSAGE value="frontend / добавлена функция reveal" />
-    <MESSAGE value="frontend / обновление стилей форм" />
-    <MESSAGE value="frontend / обновление стилей modal" />
-    <MESSAGE value="frontend / обновление стилей specialist-widget.scss" />
-    <MESSAGE value="frontend / обновление стилей списков" />
-    <option name="LAST_COMMIT_MESSAGE" value="frontend / обновление стилей списков" />
+    <MESSAGE value="front-end / редактирование стилей корректировака стилей старницы Кальтулятор" />
+    <MESSAGE value="back-end / добавлена верстка для smartcaptcha" />
+    <MESSAGE value="back-end / создан контроллер обработки форм" />
+    <MESSAGE value="back-end / коррекция ссылок, текстов в секциях Services" />
+    <MESSAGE value="back-end / добавлен вывод smartcaptcha-container" />
+    <MESSAGE value="back-end / добавлена обработка json save point" />
+    <MESSAGE value="back-end / добавлена страница Cases в map страниц" />
+    <MESSAGE value="back-end / добавлены карточки на страницу 404" />
+    <MESSAGE value="back-end / создан компонент Filter" />
+    <MESSAGE value="front-end / компонент Filter добавлен к страницам" />
+    <MESSAGE value="front-end / создан комопнента Filter" />
+    <MESSAGE value="front-end / добавлены компоненты Filter и Pagination на страницы blog tag cases" />
+    <MESSAGE value="front-end / коррекция отступов cards-grid + pagination" />
+    <MESSAGE value="front-end / wip" />
+    <MESSAGE value="front-end / на 404 подключен компонент Filter" />
+    <MESSAGE value="front-end / изменена логика Filter для сортировки по несокльким type в cards" />
+    <MESSAGE value="front-end / добавлен стиль для tag-empty" />
+    <MESSAGE value="front-end / создана страница Cases" />
+    <MESSAGE value="front-end / созданы секции для страницы Cases" />
+    <MESSAGE value="back-end / созданы секции для страницы Cases" />
+    <MESSAGE value="back-end / создана страница Cases" />
+    <MESSAGE value="back-end / пересобрана страница Tag" />
+    <MESSAGE value="back-end / пересобрана секция blog-articles.php" />
+    <MESSAGE value="back-end / пересобрана страница 404" />
+    <MESSAGE value="back-end / добавлено подключение модулей для 404, pages map" />
+    <option name="LAST_COMMIT_MESSAGE" value="back-end / добавлено подключение модулей для 404, pages map" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

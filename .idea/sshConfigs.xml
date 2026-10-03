@@ -2,7 +2,7 @@
 <project version="4">
   <component name="SshConfigs">
     <configs>
-      <sshConfig authType="PASSWORD" host="vh276.timeweb.ru" id="42da25a8-8a7c-4f1d-9fda-094e04045286" port="21" nameFormat="DESCRIPTIVE" username="cu49721_kartem" useOpenSSHConfig="true" />
+      <sshConfig authType="PASSWORD" host="vh464.timeweb.ru" id="42da25a8-8a7c-4f1d-9fda-094e04045286" port="21" nameFormat="DESCRIPTIVE" username="cu49721_kartem" useOpenSSHConfig="true" />
     </configs>
   </component>
 </project>

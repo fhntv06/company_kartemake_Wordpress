@@ -15,7 +15,7 @@
   margin-top: auto;
   width: 100%;
   display: grid;
-  grid-template-columns: minmax(220px, 0.75fr) minmax(0, 1.8fr);
+  grid-template-columns: minmax(220px, 0.5fr) minmax(0, 1.8fr);
   column-gap: clamp(40px, 8vw, 140px);
   row-gap: 30px;
   flex-shrink: 0;
@@ -45,7 +45,7 @@
 
 .contact-footer-nav {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 30px;
 }
 
