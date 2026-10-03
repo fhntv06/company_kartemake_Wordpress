@@ -57,6 +57,18 @@
                         </a>
                     </div>
                     <div class="contact-footer-column">
+                        <span class="contact-footer-title">Публикации</span>
+                        <?php
+                        $categories = get_categories( array(
+                          'orderby' => 'name',
+                          'order'   => 'ASC'
+                        ));
+                        foreach( $categories as $category ) :
+                        ?>
+                          <a href="<?= get_category_link( $category->term_id ) ?>"><?= $category->name ?></a>
+                        <?php endforeach; ?>
+                    </div>
+                    <div class="contact-footer-column">
                         <span class="contact-footer-title">КОНТАКТЫ</span>
                         <a href="mailto:hello@kartemake.ru">hello@kartemake.ru</a>
                         <a href="mailto:support@kartemake.ru">support@kartemake.ru</a>
