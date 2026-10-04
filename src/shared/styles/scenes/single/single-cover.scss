@@ -18,7 +18,7 @@
     display: block;
     width: 100%;
     height: auto;
-    aspect-ratio: 21 / 9;
+    aspect-ratio: 16 / 9;
     object-fit: cover;
   }
   figcaption {
@@ -26,6 +26,7 @@
     font-family: "IBM Plex Mono", "Roboto Mono", monospace;
     @include responsive-font($min-small-font-size, $max-small-font-size);
     color: $text-muted;
+    text-align: center;
   }
 }
 @media (max-width: $breakpoint-extra-small) {
