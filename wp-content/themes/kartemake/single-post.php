@@ -8,24 +8,40 @@ get_header();
 
 $post_id = get_the_ID();
 $blog_page = get_page_by_path('blog');
-$blog_url  = esc_url($blog_page ? get_permalink($blog_page) : home_url('/blog/'));
-$front_page_url  = esc_url(home_url('/'));
+$blog_url = esc_url(
+  $blog_page
+    ? get_permalink($blog_page)
+    : home_url('/blog/')
+);
+$front_page_url = esc_url(home_url('/'));
 $thumbnail_id = get_post_thumbnail_id($post_id);
 $reading_time = kartemake_get_reading_time();
 $author_id = get_the_author_meta('ID');
 $views = kartemake_get_post_views($post_id);
-$author_position = kartemake_get_author_position($author_id);
 
+/**
+ * Автор
+ */
 $author_avatar = get_avatar_url(
   $author_id,
   [
     'size' => 120,
   ]
 );
-$author_name = get_the_author();
-$author_role = function_exists('kartemake_get_author_role')
-  ? kartemake_get_author_role($author_id)
-  : '';
+
+$author_name = trim(
+  get_the_author_meta('first_name', $author_id) . ' ' .
+  get_the_author_meta('last_name', $author_id)
+);
+
+if (!$author_name) {
+  $author_name = get_the_author_meta(
+    'display_name',
+    $author_id
+  );
+}
+
+$author_position = kartemake_get_author_position($author_id);
 $excerpt = get_the_excerpt();
 ?>
   <main class="blog-detail-page">
@@ -128,7 +144,7 @@ $excerpt = get_the_excerpt();
                   alt="<?= esc_attr($author_name) ?>"
                   loading="eager"
                 >
-              <?php endif ?>
+              <?php endif; ?>
             </div>
             <div class="blog-detail-author__info">
               <span class="blog-detail-author__label">
@@ -137,11 +153,11 @@ $excerpt = get_the_excerpt();
               <strong>
                 <?= esc_html($author_name) ?>
               </strong>
-              <?php if ($author_role) : ?>
+              <?php if ($author_position) : ?>
               <span>
-                <?= esc_html($author_role) ?>
+                <?= esc_html($author_position) ?>
               </span>
-              <?php endif ?>
+              <?php endif; ?>
             </div>
           </div>
         </div>

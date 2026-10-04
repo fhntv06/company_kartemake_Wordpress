@@ -73,3 +73,34 @@ function kartemake_save_post_meta($post_id) {
     update_post_meta($post_id, 'post_views', absint($post_views === '0' ? 1 : $post_views));
   }
 }
+// ─── Сохранение ───────────────────────────────────────────
+add_action( 'show_user_profile', 'extra_user_profile_fields' );
+add_action( 'edit_user_profile', 'extra_user_profile_fields' );
+
+function extra_user_profile_fields( $user ) {
+?>
+  <h3>Дополнительная информация</h3>
+  <table class="form-table">
+    <tr>
+      <th><label for="position">Должность</label></th>
+      <td>
+        <input type="text" name="position" id="position" value="<?= esc_attr( get_the_author_meta( 'position', $user->ID ) ); ?>" class="regular-text" /><br />
+        <span class="description">Введите должность</span>
+      </td>
+    </tr>
+  </table>
+<?php
+}
+
+add_action( 'personal_options_update', 'save_extra_user_profile_fields' );
+add_action( 'edit_user_profile_update', 'save_extra_user_profile_fields' );
+
+function save_extra_user_profile_fields( $user_id ) {
+  if ( ! current_user_can( 'edit_user', $user_id ) ) {
+    return false;
+  }
+  update_user_meta( $user_id, 'position', sanitize_text_field( $_POST['position'] ) );
+}
+
+
+
