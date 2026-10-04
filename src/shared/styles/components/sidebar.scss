@@ -10,6 +10,7 @@
   position: sticky;
   top: calc(#{$header-height-desctop} + #{$offset-header});
   height: fit-content;
+  overflow: hidden;
 }
 
 .toc {
@@ -20,6 +21,9 @@
   border: 1px solid $border;
   background-color: $surface;
   transition: all 3s ease-out;
+}
+.toc-links {
+  display: contents;
 }
 
 .toc-title {
@@ -65,9 +69,6 @@
     margin-bottom: 24px;
   }
   .toc {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: calc($extra-small / 2);
     padding: calc($extra-small / 2);
     max-width: 80%;
   }
@@ -85,9 +86,12 @@
 }
 @media (max-width: $breakpoint-large-small) {
   .sidebar {
-    position: sticky;
+    position: fixed;
     top: 72px;
+    left: $small;
+    right: $small;
     background-color: $bg-secondary;
+    overflow: hidden;
   }
   .toc {
     max-width: 100%;
