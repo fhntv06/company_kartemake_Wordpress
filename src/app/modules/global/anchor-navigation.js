@@ -46,18 +46,9 @@ export default class AnchorNavigation {
     console.log("[AnchorNavigation] ready")
     this.isNavigating = false;
 
-    const header = document.getElementById('header')
-
-    if (!header) {
-      console.warn("[AnchorNavigation] Header not found!")
-      return
-    }
-
-    const headerHeight = header.offsetHeight
-
     this.config = {
       duration: 1.8,
-      offset: headerHeight * (window.innerWidth < 768 ? 3 : 7), // чтобы сцена активировалась раньше, чем якорь достигнет верха окна
+      offset: window?.App?.GlobalVariables?.getSectionOffset(), // чтобы сцена активировалась раньше, чем якорь достигнет верха окна
       refreshFrames: 3
     };
 
