@@ -98,7 +98,7 @@ MODAL
 ================================================= -->
 <?php get_template_part('template-parts/components/modal'); ?>
 
-<?php if (!is_front_page()): ?>
+<?php if (! (is_front_page() || is_page('calculator'))): ?>
 <!-- =================================================
 COST CALCULATOR
 ================================================= -->
