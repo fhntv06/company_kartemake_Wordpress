@@ -5,7 +5,7 @@
  */
 
 get_header();
-?>`
+?>
 <main class="experience audit-page">
 
   <!-- AUDIT HERO -->
