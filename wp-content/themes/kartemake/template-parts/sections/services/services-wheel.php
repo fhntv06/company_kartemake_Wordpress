@@ -68,7 +68,7 @@
                     <div class="services-wheel-detail__footer">
                         <div class="services-wheel-detail__price">
                             <span>ОТ</span>
-                            <strong>25 000 ₽</strong>
+                            <strong>15 000 ₽</strong>
                             <small>/ МЕС.</small>
                         </div>
                         <span class="services-wheel-detail__type">ABONEMENT</span>
@@ -85,7 +85,7 @@
                     <div class="services-wheel-detail__footer">
                         <div class="services-wheel-detail__price">
                             <span>ОТ</span>
-                            <strong>20 000 ₽</strong>
+                            <strong>15 000 ₽</strong>
                         </div>
                         <span class="services-wheel-detail__type">PROJECT WORK</span>
                         <a href="<?= get_permalink(get_page_by_path('optimization')) ?>" class="services-wheel-detail__link">
@@ -101,7 +101,7 @@
                     <div class="services-wheel-detail__footer">
                         <div class="services-wheel-detail__price">
                             <span>ОТ</span>
-                            <strong>120 000 ₽</strong>
+                            <strong>15 000 ₽</strong>
                         </div>
                         <span class="services-wheel-detail__type">PROJECT WORK</span>
                         <a href="<?= get_permalink(get_page_by_path('modernization')) ?>" class="services-wheel-detail__link">

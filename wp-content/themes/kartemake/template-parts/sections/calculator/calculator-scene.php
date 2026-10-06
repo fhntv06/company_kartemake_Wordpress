@@ -81,12 +81,12 @@
                                     <span class="calculator-option__price">от <strong>15 000 ₽ / мес.</strong></span>
                                 </label>
                                 <!-- OPTIMIZATION -->
-                                <label class="calculator-option" data-calculator-option data-option-group="task" data-value="optimization" data-price="20000">
+                                <label class="calculator-option" data-calculator-option data-option-group="task" data-value="optimization" data-price="15000">
                                     <input type="radio" name="calculator_task" value="optimization">
                                     <span class="calculator-option__indicator"></span>
                                     <span class="calculator-option__title">Оптимизация</span>
                                     <span class="calculator-option__description">Поиск узких мест и повышение производительности системы.</span>
-                                    <span class="calculator-option__price">от <strong>20 000 ₽</strong></span>
+                                    <span class="calculator-option__price">от <strong>15 000 ₽</strong></span>
                                 </label>
                                 <!-- AUDIT -->
                                 <label class="calculator-option" data-calculator-option data-option-group="task" data-value="audit" data-price="15000">

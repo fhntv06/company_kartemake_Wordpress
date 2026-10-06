@@ -12,7 +12,7 @@
                     <strong>DIAGNOSTICS</strong>
                 </div>
                 <h3>Техническая диагностика</h3>
-                <h4 class="modernization-pricing__price">от 20 000 ₽</h4>
+                <h4 class="modernization-pricing__price">от 15 000 ₽</h4>
                 <p>Определяем архитектурные ограничения, технический долг и приоритетные направления модернизации.</p>
                 <ul>
                     <li>Анализ текущей системы</li>
