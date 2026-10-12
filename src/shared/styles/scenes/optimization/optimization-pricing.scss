@@ -1,177 +1,27 @@
+// ============================================================
+// K·ART·MAKE
+// OPTIMIZATION PRICING — секция
+// Стили карточек — в components/card-pricing
+// ============================================================
 @use "../../variables/colors" as *;
-@use "../../variables/fonts" as *;
 @use "../../variables/offsets" as *;
 @use "../../variables/media" as *;
-@use "../../variables/root" as *;
-@use "../../system/mixins" as *;
 
-/* =========================================================
-   SCENE 06 — PRICING
-   ========================================================= */
-/* ---------------------------------------------------------
-   HEADER
-   --------------------------------------------------------- */
-
-/* ---------------------------------------------------------
-   PRICING GRID
-   --------------------------------------------------------- */
-
-.optimization-pricing__grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: $extra-small;
-}
-
-.optimization-pricing__card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  min-height: 480px;
-  padding: $small;
-  border: 1px solid $text-muted;
-  transition:
-    border-color 0.35s ease,
-    transform 0.35s ease,
-    background-color 0.35s ease;
-}
-
-.optimization-pricing__card:hover {
-  border-color: $orange;
-  transform: translateY(-4px);
-}
-
-/* Featured card */
-
-.optimization-pricing__card.is-featured {
-  border-color: $orange;
-
-  .optimization-pricing__price-value {
-    color: $orange;
-  }
-}
-
-.optimization-pricing__card.is-featured::before {
-  content: "RECOMMENDED";
-  position: absolute;
-  top: -1px;
-  right: -1px;
-  padding: calc($extra-small / 2);
-  border-left: 1px solid $orange;
-  border-bottom: 1px solid $orange;
-  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
-  font-size: 12px;
-  line-height: 1;
-  letter-spacing: 0.12em;
-  color: $orange;
-}
-
-/* ---------------------------------------------------------
-   CARD HEADER
-   --------------------------------------------------------- */
-
-.optimization-pricing__card-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: $extra-small;
-  padding-bottom: $small;
-  border-bottom: 1px solid $text-muted;
-}
-
-.optimization-pricing__card-index,
-.optimization-pricing__card-label {
-  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
-  font-size: 16px;
-  line-height: 1;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.optimization-pricing__card-index {
-  color: var(--text-muted);
-}
-
-.optimization-pricing__card-label {
-  color: var(--text-secondary);
-}
-
-/* ---------------------------------------------------------
-   CARD TITLE
-   --------------------------------------------------------- */
-
-.optimization-pricing__card-title {
-  margin: $small 0 0;
-}
-
-/* ---------------------------------------------------------
-   PRICE
-   --------------------------------------------------------- */
-
-.optimization-pricing__price {
-  margin-top: $small;
-}
-
-.optimization-pricing__price-value {
-  display: inline-block;
-  font-size: 44px;
-  letter-spacing: -0.03em;
-}
-
-/* ---------------------------------------------------------
-   CARD DESCRIPTION
-   --------------------------------------------------------- */
-
-.optimization-pricing__card-description {
-  margin: $small 0 $small;
-  color: var(--text-secondary);
-}
-
-/* ---------------------------------------------------------
-   CARD LIST
-   --------------------------------------------------------- */
-
-.optimization-pricing__list {
-  display: flex;
-  flex-direction: column;
-  gap: $extra-small;
-  margin: auto 0 0;
-  padding: $small 0 0;
-  border-top: 1px solid $text-muted;
-}
-
-.optimization-pricing__list li {
-  position: relative;
-  padding-left: $extra-small;
-  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
-  line-height: 1.5;
-  letter-spacing: 0.04em;
-  color: var(--text-secondary);
-}
-
-.optimization-pricing__list li::before {
-  content: "→";
-  position: absolute;
-  top: 0;
-  left: 0;
-  color: $orange;
-}
-
-/* ---------------------------------------------------------
-   FOOTER
-   --------------------------------------------------------- */
-
+// ------------------------------------------------------------
+// FOOTER
+// ------------------------------------------------------------
 .optimization-pricing__footer {
   display: grid;
   grid-template-columns: 180px minmax(0, 1fr);
-  gap: 32px;
-  margin-top: 24px;
-  padding: 24px 28px;
+  gap: $small;
+  margin-top: $small;
+  padding: $small;
   border: 1px solid $text-muted;
 }
 
 .optimization-pricing__footer-label {
   font-family: "IBM Plex Mono", "Roboto Mono", monospace;
-  font-size: 9px;
+  font-size: 12px;
   line-height: 1.4;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -180,168 +30,28 @@
 
 .optimization-pricing__footer-text {
   max-width: 720px;
-  font-size: 12px;
+  font-size: 16px;
   line-height: 1.6;
-  color: var(--text-secondary);
+  color: $text-secondary;
 }
 
-/* =========================================================
-   RESPONSIVE — 1100px
-   ========================================================= */
-
-@media (max-width: 1100px) {
-  .optimization-pricing__inner {
-    width: min(100% - 48px, 960px);
-  }
-
-  .optimization-pricing__header {
-    margin-top: $middle;
-  }
-
-  .optimization-pricing__card {
-    min-height: 460px;
-    padding: 24px;
-  }
-
-  .optimization-pricing__card-title {
-    font-size: 26px;
-  }
-
-  .optimization-pricing__price-value {
-    font-size: 34px;
-  }
-}
-
-/* =========================================================
-   RESPONSIVE — 768px
-   ========================================================= */
-
-@media (max-width: 768px) {
-  .optimization-pricing__inner {
-    width: calc(100% - 32px);
-  }
-
-  .optimization-pricing__header {
-    margin: 56px 0 40px;
-  }
-
-  .optimization-pricing__title {
-    font-size: clamp(38px, 10vw, 56px);
-  }
-
-  .optimization-pricing__description {
-    margin-top: $lower-small;
-    font-size: 14px;
-  }
-
-  .optimization-pricing__grid {
+// ------------------------------------------------------------
+// ADAPTIVE
+// ------------------------------------------------------------
+@media (max-width: $breakpoint-extra-small) {
+  .optimization-pricing__footer {
     grid-template-columns: 1fr;
     gap: $extra-small;
-  }
-
-  .optimization-pricing__card {
-    min-height: 0;
     padding: $small;
   }
-
-  .optimization-pricing__card-title {
-    font-size: 28px;
-  }
-
-  .optimization-pricing__price-value {
-    font-size: 36px;
-  }
-
-  .optimization-pricing__list {
-    margin-top: $small;
-  }
-
-  .optimization-pricing__footer {
-    grid-template-columns: 1fr;
-    gap: $extra-small;
-    padding: $lower-small;
-  }
 }
 
-/* =========================================================
-   RESPONSIVE — 480px
-   ========================================================= */
-
-@media (max-width: 480px) {
-
-  .optimization-pricing {
-    padding: 64px 0;
-  }
-
-  .optimization-pricing__inner {
-    width: calc(100% - 24px);
-  }
-
-  .optimization-pricing__header {
-    margin-top: 48px;
-    margin-bottom: 32px;
-  }
-
-  .optimization-pricing__title {
-    font-size: 36px;
-  }
-
-  .optimization-pricing__description {
-    font-size: 13px;
-    line-height: 1.55;
-  }
-
-  .optimization-pricing__card {
-    padding: 20px;
-  }
-
-  .optimization-pricing__card-title {
-    margin-top: 26px;
-    font-size: 25px;
-  }
-
-  .optimization-pricing__price {
-    margin-top: 16px;
-  }
-
-  .optimization-pricing__price-value {
-    font-size: 32px;
-  }
-
-  .optimization-pricing__card-description {
-    font-size: 13px;
-    line-height: 1.55;
-  }
-
-  .optimization-pricing__list {
-    gap: 8px;
-    padding-top: 24px;
-  }
-
-  .optimization-pricing__list li {
-    font-size: 9px;
-  }
-
+@media (max-width: $breakpoint-large-small) {
   .optimization-pricing__footer {
-    padding: 18px 20px;
+    padding: $extra-small;
   }
 
   .optimization-pricing__footer-text {
-    font-size: 12px;
-  }
-}
-
-/* =========================================================
-   REDUCED MOTION
-   ========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-  .optimization-pricing__card {
-    transition: none;
-  }
-
-  .optimization-pricing__card:hover {
-    transform: none;
+    font-size: 14px;
   }
 }

@@ -1,0 +1,363 @@
+// ============================================================
+// K·ART·MAKE
+// CARD PRICING
+// ============================================================
+@use "../variables/colors" as *;
+@use "../variables/fonts" as *;
+@use "../variables/offsets" as *;
+@use "../variables/media" as *;
+@use "../variables/root" as *;
+@use "../system/mixins" as *;
+
+// ------------------------------------------------------------
+// GRID (обычная сетка карточек)
+// ------------------------------------------------------------
+.card-pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid $text-muted;
+  border-left: 1px solid $text-muted;
+}
+
+.card-pricing-grid__note {
+  max-width: 700px;
+  margin: $small 0 0;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  color: $text-muted;
+}
+
+// ------------------------------------------------------------
+// CARD — базовая
+// ------------------------------------------------------------
+.card-pricing {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: $small;
+  border-right: 1px solid $text-muted;
+  border-bottom: 1px solid $text-muted;
+  transition:
+          background-color 0.3s ease,
+          border-color 0.3s ease;
+
+  &:hover {
+    background: $surface;
+  }
+}
+
+// ------------------------------------------------------------
+// HEADER
+// ------------------------------------------------------------
+.card-pricing__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $small;
+}
+
+.card-pricing__index {
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 16px;
+  line-height: 1;
+  color: $text-muted;
+}
+
+.card-pricing__type {
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 16px;
+  line-height: 1;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: $text-secondary;
+}
+
+// ------------------------------------------------------------
+// BADGE
+// ------------------------------------------------------------
+.card-pricing__badge {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  padding: calc($extra-small / 2) $extra-small;
+  border-left: 1px solid $orange;
+  border-bottom: 1px solid $orange;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: $orange;
+}
+
+// ------------------------------------------------------------
+// PRICE
+// ------------------------------------------------------------
+.card-pricing__price {
+  display: flex;
+  align-items: baseline;
+  gap: $extra-small;
+  margin-top: $small;
+  font-size: 44px;
+  letter-spacing: -0.03em;
+}
+
+.card-pricing__price-prefix {
+  color: $text-muted;
+}
+
+.card-pricing__price-value {
+  font-weight: 500;
+}
+
+.card-pricing__price-period {
+  color: $text-muted;
+  font-size: 16px;
+}
+
+// ------------------------------------------------------------
+// TITLE
+// ------------------------------------------------------------
+.card-pricing__title {
+  max-width: 360px;
+  margin: $small 0 0;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+}
+
+// ------------------------------------------------------------
+// DESCRIPTION
+// ------------------------------------------------------------
+.card-pricing__description {
+  max-width: 360px;
+  margin: $small 0 0;
+  line-height: 1.6;
+  color: $text-muted;
+}
+
+// ------------------------------------------------------------
+// LIST
+// ------------------------------------------------------------
+.card-pricing__list {
+  display: flex;
+  flex-direction: column;
+  gap: $extra-small;
+  margin: auto 0 0;
+  padding: $small 0 0;
+  list-style: none;
+  border-top: 1px solid $text-muted;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 16px;
+  line-height: 1.5;
+  color: $text-muted;
+}
+
+.card-pricing__list-item {
+  position: relative;
+  padding-left: $extra-small;
+
+  &::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: $orange;
+  }
+}
+
+// ------------------------------------------------------------
+// FEATURED
+// ------------------------------------------------------------
+.card-pricing--featured {
+  border-color: $orange;
+
+  .card-pricing__type,
+  .card-pricing__price-value {
+    color: $orange;
+  }
+}
+
+// ============================================================
+// LAYOUT — MAP (радиальная карта вокруг ядра)
+// ============================================================
+.card-pricing-grid--map {
+  position: relative;
+  display: block;
+  min-height: 720px;
+  border: 0;
+
+  // Локальный сброс базовой карточки под MAP
+  .card-pricing {
+    position: absolute;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: $extra-small;
+    width: max-content;
+    max-width: 320px;
+    padding: $extra-small;
+    background: $bg-primary;
+    border: 1px solid $text-muted;
+
+    &:hover {
+      background: $bg-primary;
+      border-color: $orange;
+    }
+  }
+
+  .card-pricing__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: calc($extra-small / 2);
+  }
+
+  .card-pricing__type {
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: 0.08em;
+  }
+
+  .card-pricing__price {
+    margin-top: 0;
+    font-size: 20px;
+    letter-spacing: -0.02em;
+  }
+
+  // Позиции 6 узлов
+  .card-pricing:nth-child(1) { top: 0;      left: 50%;  transform: translateX(-50%); }
+  .card-pricing:nth-child(2) { top: 25%;    right: 0; }
+  .card-pricing:nth-child(3) { bottom: 25%; right: 0; }
+  .card-pricing:nth-child(4) { bottom: 0;   left: 50%;  transform: translateX(-50%); }
+  .card-pricing:nth-child(5) { bottom: 25%; left: 0; }
+  .card-pricing:nth-child(6) { top: 25%;    left: 0; }
+}
+
+// ------------------------------------------------------------
+// CORE — ядро в центре MAP
+// ------------------------------------------------------------
+.card-pricing-grid__core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  place-items: center;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  border: 1px solid $border-orange;
+  background: $bg-secondary;
+}
+
+.card-pricing-grid__core-ring {
+  position: absolute;
+  inset: $extra-small;
+  border-radius: 50%;
+  border: 1px solid $text-muted;
+  pointer-events: none;
+}
+
+.card-pricing-grid__core-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc($extra-small / 2);
+  text-align: center;
+}
+
+.card-pricing-grid__core-type,
+.card-pricing-grid__core-note {
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: $text-muted;
+}
+
+.card-pricing-grid__core-name {
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: $orange;
+}
+
+// ============================================================
+// АДАПТИВ
+// ============================================================
+@media (max-width: $breakpoint-lower-middle) {
+  .card-pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  // MAP → обычная сетка 2 колонки, ядро сверху
+  .card-pricing-grid--map {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: $extra-small;
+    min-height: 0;
+
+    .card-pricing {
+      position: static;
+      transform: none;
+      flex-direction: column;
+      width: auto;
+      max-width: none;
+    }
+  }
+
+  .card-pricing-grid__core {
+    position: static;
+    transform: none;
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: 200px;
+    height: 200px;
+    margin-bottom: $small;
+  }
+}
+
+@media (max-width: $breakpoint-large-small) {
+  .card-pricing {
+    padding: $extra-small;
+  }
+
+  .card-pricing__price {
+    margin-top: $extra-small;
+  }
+
+  .card-pricing__description {
+    margin-top: $extra-small;
+  }
+
+  .card-pricing__list {
+    margin-top: $extra-small;
+    padding-top: $extra-small;
+  }
+
+  .card-pricing-grid--map {
+    grid-template-columns: 1fr;
+
+    .card-pricing {
+      padding: $extra-small;
+    }
+  }
+
+  .card-pricing-grid__core {
+    width: 180px;
+    height: 180px;
+  }
+
+  .card-pricing-grid__core-name {
+    font-size: 20px;
+  }
+}
+
+// ============================================================
+// REDUCED MOTION
+// ============================================================
+@media (prefers-reduced-motion: reduce) {
+  .card-pricing,
+  .card-pricing--hover-lift {
+    transition: none;
+  }
+}
