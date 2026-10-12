@@ -19,42 +19,42 @@
                     <span class="pricing-map__node-number">01</span>
                     <div>
                         <span class="pricing-map__node-label">Оптимизация</span>
-                        <p>от 35 000 ₽</p>
+                        <p>от 15 000 ₽</p>
                     </div>
                 </article>
                 <article class="pricing-map__node pricing-map__node--infrastructure reveal-item">
                     <span class="pricing-map__node-number">02</span>
                     <div>
                         <span class="pricing-map__node-label">Модернизация</span>
-                        <p>от 50 000 ₽</p>
+                        <p>от 15 000 ₽</p>
                     </div>
                 </article>
                 <article class="pricing-map__node pricing-map__node--database reveal-item">
                     <span class="pricing-map__node-number">03</span>
                     <div>
                         <span class="pricing-map__node-label">Комплексная оптимизация</span>
-                        <p>от 60 000 ₽</p>
+                        <p>от 50 000 ₽</p>
                     </div>
                 </article>
                 <article class="pricing-map__node pricing-map__node--security reveal-item">
                     <span class="pricing-map__node-number">04</span>
                     <div>
-                        <span class="pricing-map__node-label">Комплексная модернизация</span>
-                        <p>от 100 000 ₽</p>
+                        <span class="pricing-map__node-label">Поэтапная модернизация</span>
+                        <p>от 50 000 ₽</p>
                     </div>
                 </article>
                 <article class="pricing-map__node pricing-map__node--integrations reveal-item">
                     <span class="pricing-map__node-number">05</span>
                     <div>
                         <span class="pricing-map__node-label">Оптимизация системы</span>
-                        <p>от 90 000 ₽</p>
+                        <p>от 60 000 ₽</p>
                     </div>
                 </article>
                 <article class="pricing-map__node pricing-map__node--performance reveal-item">
                     <span class="pricing-map__node-number">06</span>
                     <div>
-                        <span class="pricing-map__node-label">Модернизация системы</span>
-                        <p>от 150 000 ₽</p>
+                        <span class="pricing-map__node-label">Комплексная модернизация</span>
+                        <p>от 100 000 ₽</p>
                     </div>
                 </article>
             </div>

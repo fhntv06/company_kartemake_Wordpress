@@ -30,7 +30,7 @@
                 от 15 000 ₽
             </span>
           </button>
-          <button type="button" class="cost-service cost-service--audit" data-cost-service="audit" data-title="Технический аудит" data-price="30000">
+          <button type="button" class="cost-service cost-service--audit" data-cost-service="audit" data-title="Технический аудит" data-price="15000">
               <span class="cost-service__index">
                 02 / AUDIT
               </span>
@@ -38,10 +38,10 @@
                 Оценить состояние
               </span>
             <span class="cost-service__price">
-                от 30 000 ₽
+                от 15 000 ₽
               </span>
           </button>
-          <button type="button" class="cost-service cost-service--optimization" data-cost-service="optimization" data-title="Оптимизация" data-price="35000">
+          <button type="button" class="cost-service cost-service--optimization" data-cost-service="optimization" data-title="Оптимизация" data-price="15000">
               <span class="cost-service__index">
                 03 / OPTIMIZATION
               </span>
@@ -49,10 +49,10 @@
                 Улучшить систему
               </span>
             <span class="cost-service__price">
-                от 35 000 ₽
+                от 15 000 ₽
               </span>
           </button>
-          <button type="button" class="cost-service cost-service--modernization" data-cost-service="modernization" data-title="Модернизация" data-price="50000">
+          <button type="button" class="cost-service cost-service--modernization" data-cost-service="modernization" data-title="Модернизация" data-price="15000">
               <span class="cost-service__index">
                 04 / MODERNIZATION
               </span>
@@ -60,10 +60,10 @@
                 Изменить основу
               </span>
             <span class="cost-service__price">
-                от 50 000 ₽
+                от 15 000 ₽
               </span>
           </button>
-          <button type="button" class="cost-service cost-service--support" data-cost-service="support" data-title="Техническая поддержка" data-price="25000">
+          <button type="button" class="cost-service cost-service--support" data-cost-service="support" data-title="Техническая поддержка" data-price="15000">
               <span class="cost-service__index">
                 05 / SUPPORT
               </span>
@@ -71,7 +71,7 @@
                 Постоянная команда
               </span>
             <span class="cost-service__price">
-                от 25 000 ₽ / МЕС
+                от 15 000 ₽ / МЕС
               </span>
           </button>
         </div>

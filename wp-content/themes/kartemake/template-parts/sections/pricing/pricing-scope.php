@@ -14,7 +14,7 @@
                 приложения, данных и инфраструктуры.
             </p>
             <p class="scene-description font-size-h4">
-                от 25 000 ₽ в месяц
+                от 15 000 ₽ в месяц
             </p>
             <button class="button-primary scene-description" data-modal-func="open" data-service="support">
                 Подобрать формат поддержки

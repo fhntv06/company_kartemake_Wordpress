@@ -38,7 +38,7 @@
                     <span class="pricing-services-price__type">ТЕХНИЧЕСКИЙ АУДИТ / ПОНЯТЬ</span>
                 </div>
                 <div class="pricing-services-price__price">
-                    от 30 000 ₽
+                    от 15 000 ₽
                 </div>
                 <p class="pricing-services-price__description">
                     Нужно понять,<br>
@@ -58,7 +58,7 @@
                     <span class="pricing-services-price__type">ОПТИМИЗАЦИЯ / УЛУЧШИТЬ</span>
                 </div>
                 <div class="pricing-services-price__price">
-                    от 35 000 ₽
+                    от 15 000 ₽
                 </div>
                 <p class="pricing-services-price__description">
                     Система работает,<br>
@@ -78,7 +78,7 @@
                     <span class="pricing-services-price__type">МОДЕРНИЗАЦИЯ / ИЗМЕНИТЬ</span>
                 </div>
                 <div class="pricing-services-price__price">
-                    от 50 000 ₽
+                    от 15 000 ₽
                 </div>
                 <p class="pricing-services-price__description">
                     Старая система<br>
@@ -98,7 +98,7 @@
                     <span class="pricing-services-price__type">ТЕХНИЧЕСКАЯ ПОДДЕРЖКА / ОБСЛУЖИВАТЬ</span>
                 </div>
                 <div class="pricing-services-price__price">
-                    от 25 000 ₽
+                    от 15 000 ₽
                 </div>
                 <p class="pricing-services-price__description">
                     Нужна постоянная<br>
