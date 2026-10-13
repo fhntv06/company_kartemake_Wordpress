@@ -5,59 +5,68 @@
             <h2 class="scene-title">Понимаем проблему.<br>Определяем объём.<br><span>Фиксируем стоимость.</span></h2>
             <p class="scene-description">Стоимость зависит не от количества часов, а от масштаба системы и объёма необходимых изменений. Поэтому сначала определяем техническое состояние, затем предлагаем конкретный объём работ.</p>
         </header>
-        <div class="optimization-pricing__grid reveal-item">
+        <div class="card-pricing-grid reveal-item">
             <!-- DIAGNOSTICS -->
-            <article class="optimization-pricing__card">
-                <div class="optimization-pricing__card-header">
-                    <span class="optimization-pricing__card-index">01</span>
-                    <span class="optimization-pricing__card-label">DIAGNOSTICS</span>
+            <article class="card-pricing">
+                <div class="card-pricing__header">
+                    <span class="card-pricing__index">01</span>
                 </div>
-                <h4 class="optimization-pricing__card-title">Диагностика</h4>
-                <div class="optimization-pricing__price">
-                    <span class="optimization-pricing__price-value">от 15 000 ₽</span>
+                <div class="card-pricing__price">
+                    <span class="card-pricing__price-prefix">от</span>
+                    <span class="card-pricing__price-value">15 000 ₽</span>
                 </div>
-                <p class="optimization-pricing__card-description">Находим технические узкие места, определяем причины проблем и формируем приоритетный план оптимизации.</p>
-                <ul class="optimization-pricing__list">
-                    <li>Анализ производительности</li>
-                    <li>Поиск узких мест</li>
-                    <li>Анализ инфраструктуры</li>
-                    <li>Приоритеты изменений</li>
+                <h3 class="card-pricing__title">Диагностика</h3>
+                <p class="card-pricing__description">
+                    Находим технические узкие места, определяем причины проблем и формируем приоритетный план оптимизации.
+                </p>
+                <ul class="card-pricing__list">
+                    <li class="card-pricing__list-item">Анализ производительности</li>
+                    <li class="card-pricing__list-item">Поиск узких мест</li>
+                    <li class="card-pricing__list-item">Анализ инфраструктуры</li>
+                    <li class="card-pricing__list-item">Приоритеты изменений</li>
                 </ul>
             </article>
+
             <!-- OPTIMIZATION -->
-            <article class="optimization-pricing__card is-featured">
-                <div class="optimization-pricing__card-header">
-                    <span class="optimization-pricing__card-index">02</span>
-                    <span class="optimization-pricing__card-label">OPTIMIZATION</span>
+            <article class="card-pricing card-pricing--featured">
+                <div class="card-pricing__header">
+                    <span class="card-pricing__index">02</span>
+                    <span class="card-pricing__badge">Recommended</span>
                 </div>
-                <h4 class="optimization-pricing__card-title">Оптимизация</h4>
-                <div class="optimization-pricing__price">
-                    <span class="optimization-pricing__price-value">от 35 000 ₽</span>
+                <div class="card-pricing__price">
+                    <span class="card-pricing__price-prefix">от</span>
+                    <span class="card-pricing__price-value">35 000 ₽</span>
                 </div>
-                <p class="optimization-pricing__card-description">Проводим технические изменения в проблемных компонентах и проверяем, что система действительно стала работать лучше.</p>
-                <ul class="optimization-pricing__list">
-                    <li>Оптимизация кода</li>
-                    <li>Оптимизация базы данных</li>
-                    <li>Настройка инфраструктуры</li>
-                    <li>Проверка результата</li>
+                <h3 class="card-pricing__title">Оптимизация</h3>
+                <p class="card-pricing__description">
+                    Проводим технические изменения в проблемных компонентах и проверяем, что система действительно стала работать лучше.
+                </p>
+                <ul class="card-pricing__list">
+                    <li class="card-pricing__list-item">Оптимизация кода</li>
+                    <li class="card-pricing__list-item">Оптимизация базы данных</li>
+                    <li class="card-pricing__list-item">Настройка инфраструктуры</li>
+                    <li class="card-pricing__list-item">Проверка результата</li>
                 </ul>
             </article>
+
             <!-- COMPLEX -->
-            <article class="optimization-pricing__card">
-                <div class="optimization-pricing__card-header">
-                    <span class="optimization-pricing__card-index">03</span>
-                    <span class="optimization-pricing__card-label">COMPLEX</span>
+            <article class="card-pricing">
+                <div class="card-pricing__header">
+                    <span class="card-pricing__index">03</span>
                 </div>
-                <h4 class="optimization-pricing__card-title">Комплексная</h4>
-                <div class="optimization-pricing__price">
-                    <span class="optimization-pricing__price-value">от 60 000 ₽</span>
+                <div class="card-pricing__price">
+                    <span class="card-pricing__price-prefix">от</span>
+                    <span class="card-pricing__price-value">60 000 ₽</span>
                 </div>
-                <p class="optimization-pricing__card-description">Оптимизируем несколько уровней системы, когда проблема затрагивает код, базу данных, инфраструктуру и интеграции одновременно.</p>
-                <ul class="optimization-pricing__list">
-                    <li>Несколько компонентов</li>
-                    <li>Комплексный анализ</li>
-                    <li>Системные изменения</li>
-                    <li>Контроль результата</li>
+                <h3 class="card-pricing__title">Комплексная</h3>
+                <p class="card-pricing__description">
+                    Оптимизируем несколько уровней системы, когда проблема затрагивает код, базу данных, инфраструктуру и интеграции одновременно.
+                </p>
+                <ul class="card-pricing__list">
+                    <li class="card-pricing__list-item">Несколько компонентов</li>
+                    <li class="card-pricing__list-item">Комплексный анализ</li>
+                    <li class="card-pricing__list-item">Системные изменения</li>
+                    <li class="card-pricing__list-item">Контроль результата</li>
                 </ul>
             </article>
         </div>

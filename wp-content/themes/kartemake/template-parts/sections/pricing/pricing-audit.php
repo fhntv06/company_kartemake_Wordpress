@@ -13,47 +13,110 @@
                 от задачи и масштаба системы.
             </p>
         </header>
-        <div class="pricing-services__grid reveal-item">
+        <div class="card-pricing-grid reveal-item">
+            <!-- DIAGNOSTICS -->
+            <article class="card-pricing">
+                <div class="card-pricing__header">
+                    <span class="card-pricing__index">01</span>
+                    <span class="card-pricing__type">Диагностика / Разобраться</span>
+                </div>
+                <div class="card-pricing__price">
+                    <span class="card-pricing__price-prefix">от</span>
+                    <span class="card-pricing__price-value">15 000 ₽</span>
+                </div>
+                <h3 class="card-pricing__title">Диагностика</h3>
+                <p class="card-pricing__description">
+                    Есть проблема, но причина неизвестна?
+                </p>
+                <ul class="card-pricing__list">
+                    <li class="card-pricing__list-item">исследуем конкретную техническую проблему</li>
+                    <li class="card-pricing__list-item">определяем её причину и следующие шаги</li>
+                </ul>
+            </article>
+
             <!-- AUDIT -->
-            <article class="pricing-services-price">
-                <div class="pricing-services-price__header">
-                    <span class="pricing-services-price__index">A01</span>
-                    <span class="pricing-services-price__type">Express Audit</span>
+            <article class="card-pricing card-pricing--featured">
+                <span class="card-pricing__badge">Recommended</span>
+                <div class="card-pricing__header">
+                    <span class="card-pricing__index">02</span>
+                    <span class="card-pricing__type">Технический аудит / Понять</span>
                 </div>
-                <div class="pricing-services-price__price">
-                    от 15 000 ₽
+                <div class="card-pricing__price">
+                    <span class="card-pricing__price-prefix">от</span>
+                    <span class="card-pricing__price-value">30 000 ₽</span>
                 </div>
-                <p class="pricing-services-price__description">
-                    Быстрая техническая оценка системы
-                    и ключевых проблемных зон.
+                <h3 class="card-pricing__title">Технический аудит</h3>
+                <p class="card-pricing__description">
+                    Нужно понять, в каком состоянии система?
                 </p>
+                <ul class="card-pricing__list">
+                    <li class="card-pricing__list-item">анализ архитектуры</li>
+                    <li class="card-pricing__list-item">анализ инфраструктуры</li>
+                    <li class="card-pricing__list-item">анализ базы данных, безопасность, производительность и интеграции</li>
+                </ul>
             </article>
-            <article class="pricing-services-price">
-                <div class="pricing-services-price__header">
-                    <span class="pricing-services-price__index">A02</span>
-                    <span class="pricing-services-price__type">Technical Audit</span>
+
+            <!-- OPTIMIZATION -->
+            <article class="card-pricing">
+                <div class="card-pricing__header">
+                    <span class="card-pricing__index">03</span>
+                    <span class="card-pricing__type">Оптимизация / Улучшить</span>
                 </div>
-                <div class="pricing-services-price__price">
-                    от 30 000 ₽
+                <div class="card-pricing__price">
+                    <span class="card-pricing__price-prefix">от</span>
+                    <span class="card-pricing__price-value">35 000 ₽</span>
                 </div>
-                <p class="pricing-services-price__description">
-                    Подробный анализ архитектуры, БД,
-                    инфраструктуры, безопасности,
-                    производительности и интеграций.
+                <h3 class="card-pricing__title">Оптимизация</h3>
+                <p class="card-pricing__description">
+                    Система работает, но может работать лучше?
                 </p>
+                <ul class="card-pricing__list">
+                    <li class="card-pricing__list-item">находим узкие места</li>
+                    <li class="card-pricing__list-item">оптимизируем существующую систему</li>
+                    <li class="card-pricing__list-item">проверяем результат изменений</li>
+                </ul>
             </article>
-            <article class="pricing-services-price">
-                <div class="pricing-services-price__header">
-                    <span class="pricing-services-price__index">A03</span>
-                    <span class="pricing-services-price__type">Audit + Plan</span>
+
+            <!-- MODERNIZATION -->
+            <article class="card-pricing">
+                <div class="card-pricing__header">
+                    <span class="card-pricing__index">04</span>
+                    <span class="card-pricing__type">Модернизация / Изменить</span>
                 </div>
-                <div class="pricing-services-price__price">
-                    от 45 000 ₽
+                <div class="card-pricing__price">
+                    <span class="card-pricing__price-prefix">от</span>
+                    <span class="card-pricing__price-value">50 000 ₽</span>
                 </div>
-                <p class="pricing-services-price__description">
-                    Аудит системы с формированием
-                    последовательного плана технических изменений.
+                <h3 class="card-pricing__title">Модернизация</h3>
+                <p class="card-pricing__description">
+                    Старая система мешает развитию?
                 </p>
+                <ul class="card-pricing__list">
+                    <li class="card-pricing__list-item">обновляем техническую основу поэтапно</li>
+                    <li class="card-pricing__list-item">сохраняем работающие части системы</li>
+                    <li class="card-pricing__list-item">обновление только там, где это имеет смысл</li>
+                </ul>
+            </article>
+
+            <!-- SUPPORT -->
+            <article class="card-pricing card-pricing--featured">
+                <span class="card-pricing__badge">Recommended</span>
+                <div class="card-pricing__header">
+                    <span class="card-pricing__index">05</span>
+                    <span class="card-pricing__type">Техническая поддержка / Обслуживать</span>
+                </div>
+                <div class="card-pricing__price">
+                    <span class="card-pricing__price-prefix">от</span>
+                    <span class="card-pricing__price-value">25 000 ₽</span>
+                </div>
+                <h3 class="card-pricing__title">Техническая поддержка</h3>
+                <p class="card-pricing__description">
+                    Нужна постоянная техническая команда?
+                </p>
+                <ul class="card-pricing__list">
+                    <li class="card-pricing__list-item">берём на себя текущие технические задачи</li>
+                    <li class="card-pricing__list-item">отвечаем за развитие и эксплуатацию цифровой инфраструктуры</li>
+                </ul>
             </article>
         </div>
     </div>

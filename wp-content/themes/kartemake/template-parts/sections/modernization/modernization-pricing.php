@@ -5,50 +5,65 @@
             <h2 class="scene-title">Начинаем с конкретного<br><span>технического ограничения</span></h2>
             <p class="scene-description">Стоимость зависит от масштаба системы, её архитектуры и объёма необходимых изменений. Поэтому модернизацию можно начинать с отдельного компонента и развивать проект поэтапно.</p>
         </header>
-        <div class="modernization-pricing__grid reveal-item">
-            <article class="modernization-pricing__card">
-                <div class="modernization-pricing__card-header">
-                    <span>01</span>
-                    <strong>DIAGNOSTICS</strong>
+        <div class="card-pricing-grid reveal-item">
+            <article class="card-pricing">
+                <div class="card-pricing__header">
+                    <span class="card-pricing__index">01</span>
                 </div>
-                <h3>Техническая диагностика</h3>
-                <h4 class="modernization-pricing__price">от 15 000 ₽</h4>
-                <p>Определяем архитектурные ограничения, технический долг и приоритетные направления модернизации.</p>
-                <ul>
-                    <li>Анализ текущей системы</li>
-                    <li>Архитектурные ограничения</li>
-                    <li>Технический долг</li>
-                    <li>План модернизации</li>
+                <div class="card-pricing__price">
+                    <span class="card-pricing__price-prefix">от</span>
+                    <span class="card-pricing__price-value">20 000 ₽</span>
+                </div>
+                <h3 class="card-pricing__title">Техническая диагностика</h3>
+                <p class="card-pricing__description">
+                    Определяем архитектурные ограничения, технический долг и приоритетные направления модернизации.
+                </p>
+                <ul class="card-pricing__list">
+                    <li class="card-pricing__list-item">Анализ текущей системы</li>
+                    <li class="card-pricing__list-item">Архитектурные ограничения</li>
+                    <li class="card-pricing__list-item">Технический долг</li>
+                    <li class="card-pricing__list-item">План модернизации</li>
                 </ul>
             </article>
-            <article class="modernization-pricing__card is-featured">
-                <div class="modernization-pricing__card-header">
-                    <span>02</span>
-                    <strong>MODERNIZATION</strong>
+
+            <article class="card-pricing card-pricing--featured">
+                <div class="card-pricing__header">
+                    <span class="card-pricing__index">02</span>
+                    <span class="card-pricing__badge">Recommended</span>
                 </div>
-                <h3>Поэтапная модернизация</h3>
-                <h4 class="modernization-pricing__price">от 50 000 ₽</h4>
-                <p>Модернизируем конкретные компоненты системы с контролем каждого этапа и сохранением работоспособности проекта.</p>
-                <ul>
-                    <li>Архитектура и код</li>
-                    <li>База данных</li>
-                    <li>Инфраструктура</li>
-                    <li>Интеграции</li>
+                <div class="card-pricing__price">
+                    <span class="card-pricing__price-prefix">от</span>
+                    <span class="card-pricing__price-value">50 000 ₽</span>
+                </div>
+                <h3 class="card-pricing__title">Поэтапная модернизация</h3>
+                <p class="card-pricing__description">
+                    Модернизируем конкретные компоненты системы с контролем каждого этапа и сохранением работоспособности проекта.
+                </p>
+                <ul class="card-pricing__list">
+                    <li class="card-pricing__list-item">Архитектура и код</li>
+                    <li class="card-pricing__list-item">База данных</li>
+                    <li class="card-pricing__list-item">Инфраструктура</li>
+                    <li class="card-pricing__list-item">Интеграции</li>
                 </ul>
             </article>
-            <article class="modernization-pricing__card">
-                <div class="modernization-pricing__card-header">
-                    <span>03</span>
-                    <strong>COMPLEX</strong>
+
+            <article class="card-pricing">
+                <div class="card-pricing__header">
+                    <span class="card-pricing__index">03</span>
                 </div>
-                <h3>Комплексная модернизация</h3>
-                <h4 class="modernization-pricing__price">от 100 000 ₽</h4>
-                <p>Работаем с несколькими уровнями системы, когда ограничения затрагивают архитектуру, инфраструктуру и ключевые интеграции.</p>
-                <ul>
-                    <li>Несколько компонентов</li>
-                    <li>Архитектурные изменения</li>
-                    <li>Миграция</li>
-                    <li>Контроль результата</li>
+                <div class="card-pricing__price">
+                    <span class="card-pricing__price-prefix">от</span>
+                    <span class="card-pricing__price-value">100 000 ₽</span>
+                </div>
+                <h3 class="card-pricing__title">Комплексная модернизация</h3>
+                <p class="card-pricing__description">
+                    Работаем с несколькими уровнями системы, когда ограничения затрагивают архитектуру, инфраструктуру и ключевые интеграции.
+                </p>
+                <ul class="card-pricing__list">
+                    <li class="card-pricing__list-item">Несколько компонентов</li>
+                    <li class="card-pricing__list-item">Архитектурные изменения</li>
+                    <li class="card-pricing__list-item">Миграция</li>
+                    <li class="card-pricing__list-item">Контроль результата</li>
                 </ul>
             </article>
         </div>
