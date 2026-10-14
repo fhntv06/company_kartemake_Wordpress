@@ -9,68 +9,66 @@
                 Стоимость зависит от размера системы, количества компонентов и глубины необходимого анализа.
             </p>
         </header>
-        <div class="audit-pricing__grid reveal-item">
-            <article class="audit-price">
-                <div class="audit-price__header">
-                    <span class="audit-price__index">01</span>
-                    <span class="audit-price__type">
-              EXPRESS AUDIT
-            </span>
+        <div class="card-pricing-grid reveal-item">
+            <article class="card-pricing">
+                <div class="card-pricing__header">
+                    <span class="card-pricing__index">01</span>
                 </div>
-                <div class="audit-price__price">
-                    от 15 000 ₽
+                <div class="card-pricing__price">
+                    <span class="card-pricing__price-prefix">от</span>
+                    <span class="card-pricing__price-value">15 000 ₽</span>
                 </div>
-                <p class="audit-price__description">
+                <h3 class="card-pricing__title">Экспресс-аудит</h3>
+                <p class="card-pricing__description">
                     Быстрая техническая оценка конкретной проблемы или ограниченного участка системы.
                 </p>
-                <ul class="audit-price__list">
-                    <li>Анализ конкретной проблемы</li>
-                    <li>Поиск вероятной причины</li>
-                    <li>Рекомендации по исправлению</li>
+                <ul class="card-pricing__list">
+                    <li class="card-pricing__list-item">Анализ конкретной проблемы</li>
+                    <li class="card-pricing__list-item">Поиск вероятной причины</li>
+                    <li class="card-pricing__list-item">Рекомендации по исправлению</li>
                 </ul>
             </article>
-            <article class="audit-price audit-price--featured">
-                <div class="audit-price__header">
-                    <span class="audit-price__index">02</span>
-                    <span class="audit-price__type">
-              TECHNICAL AUDIT
-            </span>
+
+            <article class="card-pricing card-pricing--featured">
+                <div class="card-pricing__header">
+                    <span class="card-pricing__index">02</span>
+                    <span class="card-pricing__badge">Recommended</span>
                 </div>
-                <div class="audit-price__price">
-                    от 30 000 ₽
+                <div class="card-pricing__price">
+                    <span class="card-pricing__price-prefix">от</span>
+                    <span class="card-pricing__price-value">30 000 ₽</span>
                 </div>
-                <p class="audit-price__description">
-                    Комплексный анализ технического состояния
-                    цифровой системы.
+                <h3 class="card-pricing__title">Расширенный аудит</h3>
+                <p class="card-pricing__description">
+                    Комплексный анализ технического состояния цифровой системы.
                 </p>
-                <ul class="audit-price__list">
-                    <li>Архитектура и код</li>
-                    <li>Инфраструктура</li>
-                    <li>База данных</li>
-                    <li>Интеграции</li>
-                    <li>Производительность</li>
-                    <li>Технические риски</li>
+                <ul class="card-pricing__list">
+                    <li class="card-pricing__list-item">Архитектура и код</li>
+                    <li class="card-pricing__list-item">Инфраструктура</li>
+                    <li class="card-pricing__list-item">База данных</li>
+                    <li class="card-pricing__list-item">Интеграции</li>
+                    <li class="card-pricing__list-item">Производительность</li>
+                    <li class="card-pricing__list-item">Технические риски</li>
                 </ul>
             </article>
-            <article class="audit-price">
-                <div class="audit-price__header">
-                    <span class="audit-price__index">03</span>
-                    <span class="audit-price__type">
-              AUDIT + PLAN
-            </span>
+
+            <article class="card-pricing">
+                <div class="card-pricing__header">
+                    <span class="card-pricing__index">03</span>
                 </div>
-                <div class="audit-price__price">
-                    от 45 000 ₽
+                <div class="card-pricing__price">
+                    <span class="card-pricing__price-prefix">от</span>
+                    <span class="card-pricing__price-value">45 000 ₽</span>
                 </div>
-                <p class="audit-price__description">
-                    Аудит системы с разработкой плана
-                    модернизации или дальнейшего развития.
+                <h3 class="card-pricing__title">Комплексный аудит</h3>
+                <p class="card-pricing__description">
+                    Аудит системы с разработкой плана модернизации или дальнейшего развития.
                 </p>
-                <ul class="audit-price__list">
-                    <li>Полный технический аудит</li>
-                    <li>Приоритизация проблем</li>
-                    <li>План изменений</li>
-                    <li>Оценка этапов работ</li>
+                <ul class="card-pricing__list">
+                    <li class="card-pricing__list-item">Полный технический аудит</li>
+                    <li class="card-pricing__list-item">Приоритизация проблем</li>
+                    <li class="card-pricing__list-item">План изменений</li>
+                    <li class="card-pricing__list-item">Оценка этапов работ</li>
                 </ul>
             </article>
         </div>
