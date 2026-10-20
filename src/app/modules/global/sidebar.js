@@ -76,7 +76,7 @@ export default class Sidebar {
 
         this.sections = this.tocHeadings.map((heading, index) => {
             const id = `${this.attrName}-${index}`
-            heading.closest('section').id = id
+            heading.id = id
 
             const link = document.createElement('A')
             link.classList.add('toc-link')
