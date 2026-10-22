@@ -51,7 +51,7 @@ get_header();
                 <!-- MAIN TEXT -->
                 <div class="policy-body">
                     <!-- SECTION 1 -->
-                    <section id="section-1" class="policy-section">
+                    <section class="policy-section">
                         <h2>1. Общие положения</h2>
 
                         <h3>1.1. Назначение Политики</h3>
@@ -107,7 +107,7 @@ get_header();
                     </section>
 
                     <!-- SECTION 2 -->
-                    <section id="section-2" class="policy-section">
+                    <section class="policy-section">
                         <h2>2. Цели обработки персональных данных</h2>
 
                         <h3>2.1. Общие положения</h3>
@@ -158,7 +158,7 @@ get_header();
                     </section>
 
                     <!-- SECTION 3 -->
-                    <section id="section-3" class="policy-section">
+                    <section class="policy-section">
                         <h2>3. Правовые основания обработки персональных данных</h2>
 
                         <h3>3.1. Общие положения</h3>
@@ -181,7 +181,7 @@ get_header();
                     </section>
 
                     <!-- SECTION 4 -->
-                    <section id="section-4" class="policy-section">
+                    <section class="policy-section">
                         <h2>4. Категории субъектов персональных данных и состав обрабатываемых персональных данных</h2>
 
                         <h3>4.1. Категории субъектов персональных данных</h3>
@@ -235,7 +235,7 @@ get_header();
                     </section>
 
                     <!-- SECTION 5 -->
-                    <section id="section-5" class="policy-section">
+                    <section class="policy-section">
                         <h2>5. Порядок и условия обработки персональных данных</h2>
 
                         <h3>5.1. Общие условия обработки персональных данных</h3>
@@ -278,7 +278,7 @@ get_header();
                     </section>
 
                     <!-- SECTION 6 -->
-                    <section id="section-6" class="policy-section">
+                    <section class="policy-section">
                         <h2>6. Сроки хранения персональных данных, порядок хранения и уничтожения</h2>
 
                         <h3>6.1. Общие положения о хранении персональных данных</h3>
@@ -305,7 +305,7 @@ get_header();
                     </section>
 
                     <!-- SECTION 7 -->
-                    <section id="section-7" class="policy-section">
+                    <section class="policy-section">
                         <h2>7. Права субъектов персональных данных</h2>
 
                         <h3>7.1. Права субъекта персональных данных</h3>
@@ -328,7 +328,7 @@ get_header();
                     </section>
 
                     <!-- SECTION 8 -->
-                    <section id="section-8" class="policy-section">
+                    <section class="policy-section">
                         <h2>8. Меры по обеспечению безопасности персональных данных</h2>
 
                         <h3>8.1. Общие положения</h3>
@@ -354,7 +354,7 @@ get_header();
                     </section>
 
                     <!-- SECTION 9 -->
-                    <section id="section-9" class="policy-section">
+                    <section class="policy-section">
                         <h2>9. Заключительные положения</h2>
 
                         <h3>9.1. Вступление Политики в силу</h3>
@@ -377,7 +377,7 @@ get_header();
                     </section>
 
                     <!-- SECTION 10 -->
-                    <section id="section-10" class="policy-section">
+                    <section class="policy-section">
                         <h2>10. Контактная информация Оператора</h2>
 
                         <h3>10.1. Сведения об Операторе</h3>
