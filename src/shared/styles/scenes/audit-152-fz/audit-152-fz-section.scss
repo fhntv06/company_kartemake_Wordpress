@@ -17,10 +17,6 @@
 
     h2 {
       margin: $extra-small 0;
-      @include responsive-font($min-h2-font-size, $max-h2-font-size);
-      line-height: 1.05;
-      letter-spacing: -.045em;
-      font-weight: 500;
       span { color: $orange; }
     }
     > p:last-child {
