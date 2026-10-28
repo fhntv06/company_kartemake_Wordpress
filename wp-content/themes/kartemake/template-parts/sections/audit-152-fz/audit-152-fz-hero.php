@@ -10,8 +10,8 @@
       <div class="audit-hero__content reveal-item">
         <div class="hero-content">
           <div class="system-label">K·ART·MAKE / 152-ФЗ</div>
-          <h1>Аудит сайта клиники<br><span>по 152-ФЗ</span></h1>
-          <p>Проверяем, как сайт медицинской организации собирает и передаёт персональные данные: формы, согласия, cookie, сторонние сервисы и документы.</p>
+          <h1>Аудит сайта<br><span>на соответствие 152-ФЗ</span></h1>
+          <p>Проверяем, как сайт собирает и передаёт персональные данные: формы, согласия, cookie, сторонние сервисы и документы.</p>
           <div class="hero-actions">
             <a href="<?php echo esc_url(get_permalink(get_page_by_path('contacts'))); ?>" class="button-primary">ОБСУДИТЬ АУДИТ</a>
             <a href="#audit-map" class="button-secondary">ЧТО ПРОВЕРЯЕМ</a>
