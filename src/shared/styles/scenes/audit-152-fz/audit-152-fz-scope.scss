@@ -27,8 +27,8 @@
     color: $orange;
     font: #{$min-small-font-size}px/1.5 "IBM Plex Mono", "Roboto Mono", monospace;
   }
-  h3 { margin: 0 0 $extra-small; font-size: #{$min-h4-font-size}px; line-height: 1.25; font-weight: 500; }
-  p { margin: 0; color: $text-secondary; font-size: #{$min-small-font-size}px; line-height: 1.75; }
+  h3 { margin: 0 0 $extra-small; line-height: 1.25; font-weight: 500; }
+  p { margin: 0; color: $text-secondary; line-height: 1.75; }
 }
 
 .audit152-tag {
