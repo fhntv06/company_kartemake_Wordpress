@@ -50,8 +50,6 @@ module.exports = {
     // ── CONTACTS ──────────────────────────────────────
     FormHandler: { path: './src/app/modules/contacts/form-handler.js' },
 
-    // ── AUDIT 152-FZ ───────────────────────────────────
-    Audit152FormPreview: { path: './src/app/modules/audit-152-fz/form-preview.js' },
 
     // ── FILTER for CARDS ──────────────────────────────────────
     Filter: { path: './src/app/modules/cases/filter.js' },
