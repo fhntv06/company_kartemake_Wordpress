@@ -16,7 +16,6 @@
         <form
               class="form reveal-item"
               data-form
-              data-calculator-form
               action="/wp-json/my/v1/lead"
               method="POST"
               enctype="multipart/form-data"
