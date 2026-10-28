@@ -13,6 +13,7 @@
 @use '../scenes/audit-152-fz/audit-152-fz-checklist';
 @use '../scenes/audit-152-fz/audit-152-fz-faq';
 @use '../scenes/audit-152-fz/audit-152-fz-request';
+@use '../scenes/audit-152-fz/audit-152-fz-section';
 
 .audit152-page {
   --audit152-line: rgba(255, 255, 255, .13);
@@ -61,33 +62,7 @@
   background: $bg-primary;
 }
 
-.audit152-section {
-  padding: $large 0;
-  border-bottom: 1px solid rgba(255, 255, 255, .06);
 
-  &--muted { background: #0d0f13; }
-
-  &__head {
-    max-width: 850px;
-    margin-bottom: $middle;
-
-    h2 {
-      margin: $extra-small 0;
-      @include responsive-font($min-h2-font-size, $max-h2-font-size);
-      line-height: 1.05;
-      letter-spacing: -.045em;
-      font-weight: 500;
-      span { color: $orange; }
-    }
-    > p:last-child {
-      max-width: 760px;
-      margin: 0;
-      color: $text-secondary;
-      font-size: #{$min-h5-font-size}px;
-      line-height: 1.75;
-    }
-  }
-}
 
 .audit152-footer {
   padding: $small $middle $lower-small;
