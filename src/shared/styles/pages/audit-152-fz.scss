@@ -22,40 +22,6 @@
   color: $text-primary;
   background: $bg-primary;
   overflow: clip;
-
-.button-primary,
-  .button-secondary {
-    min-height: 54px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: $extra-small;
-    padding: $extra-small $lower-small;
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: .07em;
-    font-size: #{$min-small-font-size}px;
-    line-height: 1.3;
-    border: 1px solid $orange;
-    transition: background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease;
-
-    &:hover { transform: translateY(-2px); }
-    &:focus-visible { outline: 2px solid $white; outline-offset: $extra-small; }
-  }
-
-  .button-primary {
-    background: $orange;
-    color: #08090c;
-    font-weight: 700;
-    &:hover { background: $orange-light; border-color: $orange-light; }
-  }
-
-  .button-secondary {
-    background: transparent;
-    color: $text-primary;
-    border-color: var(--audit152-line);
-    &:hover { border-color: $orange; color: $orange-light; }
-  }
 }
 
 .audit152-document {
