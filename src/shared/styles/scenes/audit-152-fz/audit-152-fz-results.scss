@@ -5,8 +5,7 @@
 @use '../../variables/media' as *;
 @use '../../system/mixins' as *;
 
-.audit152-result__content,
-.audit152-request__content {
+.audit152-result__content {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: $small;
