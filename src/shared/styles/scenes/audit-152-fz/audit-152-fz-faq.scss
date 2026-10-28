@@ -19,7 +19,6 @@
     padding: $lower-small $small $lower-small 0;
     list-style: none;
     cursor: pointer;
-    font-size: #{$min-h5-font-size}px;
     line-height: 1.5;
     &::-webkit-details-marker { display: none; }
     &::after {
@@ -28,7 +27,6 @@
       top: $lower-small;
       right: $extra-small;
       color: $orange;
-      font-size: #{$min-h4-font-size}px;
       font-weight: 300;
     }
     &:focus-visible { outline: 2px solid $orange; outline-offset: $extra-small; }
