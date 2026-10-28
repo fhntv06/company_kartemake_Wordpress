@@ -41,7 +41,6 @@ module.exports = {
     optimization: { scss: 'optimization.scss', modules: [] },
     modernization:{ scss: 'modernization.scss', modules: [] },
     audit:        { scss: 'audit.scss',        modules: [] },
-    audit152fz:   { scss: 'audit-152-fz.scss', modules: ['Audit152FormPreview'] },
     cases:        { scss: 'cases.scss',        modules: ['Filter'] },
     casesDetail:  { scss: 'cases-detail.scss', modules: [] },
     tag:          { scss: 'tag.scss',          modules: ['Filter'] },
