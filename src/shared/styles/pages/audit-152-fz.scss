@@ -13,7 +13,6 @@
 @use '../scenes/audit-152-fz/audit-152-fz-checklist';
 @use '../scenes/audit-152-fz/audit-152-fz-faq';
 @use '../scenes/audit-152-fz/audit-152-fz-request';
-@use '../scenes/audit-152-fz/audit-152-fz-section';
 
 .audit152-page {
   --audit152-line: rgba(255, 255, 255, .13);
@@ -28,7 +27,15 @@
   background: $bg-primary;
 }
 
+.audit152-page > .scene[data-scene='audit152-risks'],
+.audit152-page > .scene[data-scene='audit152-pricing'],
+.audit152-page > .scene[data-scene='audit152-faq'] {
+  background: #0d0f13;
+}
 
+.audit152-page > .scene:not(.scene-hero) {
+  border-bottom: 1px solid rgba(255, 255, 255, .06);
+}
 
 .audit152-footer {
   padding: $small $middle $lower-small;
