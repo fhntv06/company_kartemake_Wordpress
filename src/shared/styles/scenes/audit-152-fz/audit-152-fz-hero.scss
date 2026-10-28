@@ -121,8 +121,8 @@
 
 .audit152-scroll-hint {
   position: absolute;
-  bottom: 28px;
-  left: clamp(22px, 5vw, 78px);
+  bottom: $lower-small;
+  left: $middle;
   display: flex;
   align-items: center;
   gap: $extra-small;
