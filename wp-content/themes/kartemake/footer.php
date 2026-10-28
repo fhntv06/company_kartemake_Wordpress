@@ -28,6 +28,7 @@
                         <a href="<?= get_permalink(get_page_by_path('modernization')) ?>">Модернизация</a>
                         <a href="<?= get_permalink(get_page_by_path('support')) ?>">Техническая поддержка</a>
                         <a href="<?= get_permalink(get_page_by_path('audit')) ?>">Аудит и консультации</a>
+                        <a href="<?= get_permalink(get_page_by_path('audit-compliance-152-fz')) ?>">Аудит сайта на соответствие 152&nbsp;-&nbsp;ФЗ</a>
                     </div>
                     <div class="contact-footer-column">
                         <span class="contact-footer-title">ИНФОРМАЦИЯ</span>

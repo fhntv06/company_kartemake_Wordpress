@@ -17,28 +17,34 @@
                 <!-- =============================================
                      SERVICE ITEMS
                 ============================================== -->
-                <div class="services-wheel-item is-active" data-service="support" data-index="01" data-position="0" data-href="/services/support/">
+                <div class="services-wheel-item is-active" data-service="support" data-index="01" data-position="0" data-href="/support/">
                     <button type="button" class="services-wheel-item__trigger" data-service-select="support" aria-label="Выбрать техническую поддержку">
                         <span class="services-wheel-item__index">01</span>
-                        <span class="services-wheel-item__name">SUPPORT</span>
+                        <span class="services-wheel-item__name">Поддержка</span>
                     </button>
                 </div>
-                <div class="services-wheel-item" data-service="optimization" data-index="02" data-position="1" data-href="/services/optimization/">
+                <div class="services-wheel-item" data-service="optimization" data-index="02" data-position="1" data-href="/optimization/">
                     <button type="button" class="services-wheel-item__trigger" data-service-select="optimization" aria-label="Выбрать оптимизацию">
                         <span class="services-wheel-item__index">02</span>
-                        <span class="services-wheel-item__name">OPTIMIZATION</span>
+                        <span class="services-wheel-item__name">Оптимизация</span>
                     </button>
                 </div>
-                <div class="services-wheel-item" data-service="modernization" data-index="03" data-position="2" data-href="/services/modernization/">
+                <div class="services-wheel-item" data-service="modernization" data-index="03" data-position="2" data-href="/modernization/">
                     <button type="button" class="services-wheel-item__trigger" data-service-select="modernization" aria-label="Выбрать модернизацию">
                         <span class="services-wheel-item__index">03</span>
-                        <span class="services-wheel-item__name">MODERNIZATION</span>
+                        <span class="services-wheel-item__name">Модернизация</span>
                     </button>
                 </div>
-                <div class="services-wheel-item" data-service="audit" data-index="04" data-position="3" data-href="/services/audit/">
+                <div class="services-wheel-item" data-service="audit" data-index="04" data-position="3" data-href="/audit/">
                     <button type="button" class="services-wheel-item__trigger" data-service-select="audit" aria-label="Выбрать аудит и консультации">
                         <span class="services-wheel-item__index">04</span>
-                        <span class="services-wheel-item__name">AUDIT</span>
+                        <span class="services-wheel-item__name">Аудит и консультации</span>
+                    </button>
+                </div>
+                <div class="services-wheel-item" data-service="audit-152-fz" data-index="04" data-position="3" data-href="/audit-152-fz/">
+                    <button type="button" class="services-wheel-item__trigger" data-service-select="audit" aria-label="Выбрать аудит сайта на соответствие 152-ФЗ">
+                        <span class="services-wheel-item__index">04</span>
+                        <span class="services-wheel-item__name">Аудит сайта на соответствие 152&nbsp;-&nbsp;ФЗ</span>
                     </button>
                 </div>
                 <!-- =============================================
@@ -121,6 +127,22 @@
                         </div>
                         <span class="services-wheel-detail__type">AUDIT</span>
                         <a href="<?= get_permalink(get_page_by_path('audit')) ?>" class="services-wheel-detail__link">
+                            <span>ПОДРОБНЕЕ</span>
+                            <strong>↗</strong>
+                        </a>
+                    </div>
+                </div>
+                <div class="services-wheel-detail" data-service-detail="audit">
+                    <span class="services-wheel-detail__eyebrow">AUDIT / 152 ФЗ</span>
+                    <h4 class="services-wheel-detail__title">Аудит сайта на соответствие 152&nbsp;-&nbsp;ФЗ</h4>
+                    <p class="services-wheel-detail__description">Проверяем, как сайт собирает и передаёт персональные данные: формы, согласия, cookie, сторонние сервисы и документы.</p>
+                    <div class="services-wheel-detail__footer">
+                        <div class="services-wheel-detail__price">
+                            <span>ОТ</span>
+                            <strong>15 000 ₽</strong>
+                        </div>
+                        <span class="services-wheel-detail__type">COMPLIANCE</span>
+                        <a href="<?= get_permalink(get_page_by_path('audit-compliance-152-fz')) ?>" class="services-wheel-detail__link">
                             <span>ПОДРОБНЕЕ</span>
                             <strong>↗</strong>
                         </a>

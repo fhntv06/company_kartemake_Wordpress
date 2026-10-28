@@ -115,7 +115,7 @@ function get_orbit_scenes_map(): array {
             'audit-pricing'  => 'Стоимость',
             'audit-cta'      => 'С чего начать?',
         ],
-        'audit-152-fz' => [
+        'audit-compliance-152-fz' => [
             'hero'          => 'Начало',
             'audit-signals' => 'Что проверяем',
             'audit-map'     => 'Карта рисков',
