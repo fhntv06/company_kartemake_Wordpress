@@ -25,8 +25,8 @@
     &::after {
       content: '+';
       position: absolute;
-      top: 20px;
-      right: 3px;
+      top: $lower-small;
+      right: $extra-small;
       color: $orange;
       font-size: #{$min-h4-font-size}px;
       font-weight: 300;
