@@ -306,6 +306,7 @@
   &--featured { border-color: $orange; background: rgba(255, 107, 0, .055); }
   &__index { margin: 0 0 28px; color: $orange; font: 10px/1.5 "IBM Plex Mono", "Roboto Mono", monospace; letter-spacing: .12em; }
   h3 { min-height: 58px; margin: 0 0 12px; font-size: clamp(20px, 2.1vw, 27px); line-height: 1.2; font-weight: 500; }
+  &__price { margin: 0 0 12px; color: $orange-light; font: 11px/1.5 "IBM Plex Mono", "Roboto Mono", monospace; }
   &__summary { min-height: 76px; margin: 0; color: $text-secondary; font-size: 13px; line-height: 1.7; }
   ul { display: grid; gap: 13px; margin: 24px 0 32px; padding: 22px 0 0; width: 100%; border-top: 1px solid var(--audit152-line); list-style: none; }
   li { position: relative; padding-left: 17px; color: $text-secondary; font-size: 13px; line-height: 1.55; }
