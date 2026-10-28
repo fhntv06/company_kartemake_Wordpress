@@ -9,7 +9,7 @@
       <header class="scene-header reveal-item">
         <span class="scene-eyebrow">07 / NEXT STEP</span>
         <h2 class="scene-title">Проверим, <span>с чего начать</span></h2>
-        <p class="scene-description">Расскажите о сайте клиники — уточним задачу и предложим подходящий объём проверки.</p>
+        <p class="scene-description">Расскажите о вашем сайте — уточним задачу и предложим подходящий объём проверки.</p>
       </header>
       <div class="audit-cta__metrics reveal-item">
         <div class="audit-cta__metric"><strong>01</strong><span>REVIEW</span><small>Изучаем сайт</small></div>
@@ -19,7 +19,7 @@
       <div class="cta-block reveal-item">
         <span class="cta-block__eyebrow">152-ФЗ / K·ART·MAKE</span>
         <h3 class="cta-block__title">Начнём с вашего сайта.</h3>
-        <p class="cta-block__text">Напишите адрес сайта клиники и кратко опишите вопрос. Мы уточним объём работ и следующий шаг.</p>
+        <p class="cta-block__text">Напишите адрес сайта и кратко опишите задачу. Мы уточним объём работ и предложим следующий шаг.</p>
         <button class="button-primary cta-block__button" data-modal-func="open">
           <span>ОБСУДИТЬ АУДИТ</span>
           <strong>↗</strong>
