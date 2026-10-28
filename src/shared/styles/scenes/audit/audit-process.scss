@@ -55,10 +55,17 @@
     font-family: "IBM Plex Mono", "Roboto Mono", monospace;
     font-size: 20px;
     color: $orange;
+    transform: rotate(-90deg);
     opacity: 0.7;
   }
 }
 @media (max-width: $breakpoint-lower-middle) {
+  .audit-process__flow {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+  .audit-process__arrow {
+    display: none;
+  }
   .pricing-intro__flow {
     grid-template-columns: 1fr;
     gap: 0;
@@ -72,6 +79,9 @@
   }
 }
 @media (max-width: $breakpoint-large-small) {
+  .audit-process__flow {
+    grid-template-columns: minmax(0, 1fr);
+  }
   .pricing-intro__step {
     padding: $extra-small;
   }
