@@ -3,232 +3,500 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#08090c">
-  <title>Аудит сайта клиники по 152-ФЗ — K·ART·MAKE</title>
-  <meta name="description" content="Проверим сайт клиники на риски при обработке персональных данных: формы, согласия, cookie, сторонние сервисы и документы.">
+  <title>K·ART·MAKE — Техническая команда для вашей цифровой инфраструктуры</title>
+  <meta name="description" content="Техническая поддержка, модернизация и развитие цифровой инфраструктуры бизнеса. Берём на себя стабильность вашего сайта.">
 </head>
-<body class="audit152-document">
-<div class="system-loader" aria-hidden="true">
+<body>
+<!-- =================================================
+SYSTEM LOADER
+================================================= -->
+<div class="system-loader">
   <div class="loader-terminal">
-    <span>ЗАПУСК ПРОВЕРКИ K·ART·MAKE</span>
-    <div class="loader-progress"><div></div></div>
+    <span>ЗАПУСК СИСТЕМЫ K·ART·MAKE</span>
+    <div class="loader-progress">
+      <div></div>
+    </div>
   </div>
 </div>
-
+<!-- =================================================
+ORBIT NAVIGATION
+================================================= -->
+<div id="orbit-navigation" class="orbit-navigation">
+  <div class="orbit-circle">
+    <button class="orbit-point" data-scene="hero">
+      <span class="orbit-point__description">Начало</span>
+      <span></span>
+      <strong>01</strong>
+    </button>
+    <button class="orbit-point" data-scene="audit-signals">
+      <span class="orbit-point__description">Проблемы системы</span>
+      <span></span>
+      <strong>02</strong>
+    </button>
+    <button class="orbit-point" data-scene="audit-map">
+      <span class="orbit-point__description">Проверка системы</span>
+      <span></span>
+      <strong>03</strong>
+    </button>
+    <button class="orbit-point" data-scene="audit-process">
+      <span class="orbit-point__description">Процесс</span>
+      <span></span>
+      <strong>04</strong>
+    </button>
+    <button class="orbit-point" data-scene="audit-report">
+      <span class="orbit-point__description">Картина системы</span>
+      <span></span>
+      <strong>05</strong>
+    </button>
+    <button class="orbit-point" data-scene="audit-pricing">
+      <span class="orbit-point__description">Стоимость</span>
+      <span></span>
+      <strong>06</strong>
+    </button>
+    <button class="orbit-point" data-scene="audit-cta">
+      <span class="orbit-point__description">С чего начать?</span>
+      <span></span>
+      <strong>07</strong>
+    </button>
+  </div>
+</div>
+<!-- =================================================
+GLOBAL DASHBOARD
+================================================= -->
 <header id="header" class="global-dashboard">
   <div class="dashboard-inner">
-    <a href="/" class="dashboard-brand" aria-label="K·ART·MAKE — главная">K·ART·MAKE</a>
-    <div class="dashboard-status"><span class="dashboard-status-dot"></span> ПРАВОВОЙ И ТЕХНИЧЕСКИЙ АУДИТ</div>
+    <a href="/" class="dashboard-brand">K·ART·MAKE</a>
+    <div class="dashboard-status">
+      <span class="dashboard-status-dot"></span>
+      СИСТЕМА РАБОТАЕТ
+    </div>
     <button class="dashboard-menu" type="button" aria-expanded="false" aria-controls="dashboard-menu-panel">
       <span class="dashboard-menu-label">МЕНЮ</span>
-      <span class="dashboard-menu-icon"><span></span><span></span></span>
+      <span class="dashboard-menu-icon">
+        <span></span>
+        <span></span>
+      </span>
     </button>
   </div>
   <div id="dashboard-menu-panel" class="dashboard-menu-panel" aria-hidden="true">
     <div class="dashboard-menu-panel-inner">
+      <!-- CONTACTS -->
       <div class="dashboard-menu-column">
         <span class="dashboard-menu-title">КОНТАКТЫ</span>
-        <a href="mailto:hello@kartemake.ru"><span>НОВЫЕ ПРОЕКТЫ</span><strong>hello@kartemake.ru</strong></a>
+        <a href="mailto:hello@kartemake.ru">
+          <span>НОВЫЕ ПРОЕКТЫ</span>
+          <strong>hello@kartemake.ru</strong>
+        </a>
+        <a href="mailto:support@kartemake.ru">
+          <span>ТЕХНИЧЕСКАЯ ПОДДЕРЖКА</span>
+          <strong>support@kartemake.ru</strong>
+        </a>
       </div>
+      <!-- SERVICES -->
       <div class="dashboard-menu-column">
         <span class="dashboard-menu-title">УСЛУГИ</span>
-        <a href="/optimization/"><span>01</span><strong>Оптимизация сайта</strong></a>
-        <a href="/modernization/"><span>02</span><strong>Модернизация</strong></a>
-        <a href="/audit/"><span>03</span><strong>Технический аудит</strong></a>
-        <a href="/audit-152-fz/"><span>04</span><strong>Аудит по 152-ФЗ</strong></a>
+        <a href="./optimization.html">
+          <span>01</span>
+          <strong>Оптимизация сайта</strong>
+        </a>
+        <a href="./modernization.html">
+          <span>02</span>
+          <strong>Модернизация</strong>
+        </a>
+        <a href="./support.html">
+          <span>03</span>
+          <strong>Техническая поддержка</strong>
+        </a>
+        <a href="./audit.html">
+          <span>04</span>
+          <strong>Аудит и консультации</strong>
+        </a>
       </div>
+      <!-- INFORMATION -->
       <div class="dashboard-menu-column">
         <span class="dashboard-menu-title">ИНФОРМАЦИЯ</span>
-        <a href="/about/">О компании</a>
-        <a href="/privacy-policy/">Политика обработки персональных данных</a>
-        <a href="/cookie-policy/">Политика использования cookie</a>
+        <a href="./about.html">О Компании</a>
+        <a href="./privacy-policy.html">Политика обработки персональных данных</a>
+        <a href="./cookie-policy.html">Политика использования Cookie</a>
       </div>
     </div>
   </div>
 </header>
-
-<main class="audit152-page">
-  <section class="scene scene-hero" data-scene="hero">
+<main class="audit-page">
+  <!-- 01 / HERO -->
+  <section class="scene scene-hero" data-scene="hero" data-canvas-engine>
+    <canvas id="heroCanvas" class="hero-canvas" aria-hidden="true"></canvas>
     <div class="scene-container">
-      <div class="audit152-hero__content reveal-item">
+      <div class="audit-hero__content reveal-item">
         <div class="hero-content">
-          <p class="audit152-kicker">K·ART·MAKE / COMPLIANCE AUDIT</p>
+          <div class="system-label">K·ART·MAKE / 152-ФЗ</div>
           <h1>Аудит сайта клиники <span>по 152-ФЗ</span></h1>
-          <p class="audit152-lead">Находим технические и документальные пробелы в обработке персональных данных на сайте медицинской организации — до того, как они станут причиной претензий и проверок Роскомнадзора.</p>
-          <div class="hero-actions audit152-actions">
-            <a class="button-primary" href="#audit152-request">Проверить мой сайт <span aria-hidden="true">↗</span></a>
-            <a class="button-secondary" href="#audit152-check">Что проверяем</a>
+          <p>Проверяем, как сайт медицинской организации собирает и передаёт персональные данные: формы, согласия, cookie, сторонние сервисы и документы.</p>
+          <div class="hero-actions">
+            <a href="#audit-cta" class="button-primary">ОБСУДИТЬ АУДИТ</a>
+            <a href="#audit-map" class="button-secondary">ЧТО ПРОВЕРЯЕМ</a>
           </div>
-          <p class="audit152-hero__note">Практический аудит сайта и процессов обработки данных. Не заменяет индивидуальное юридическое заключение.</p>
         </div>
-        <aside class="audit152-console reveal-item" aria-label="Состав проверки">
-          <div class="audit152-console__top"><span>COMPLIANCE SCAN</span><span class="audit152-status"><i></i> READY</span></div>
-          <div class="audit152-console__title">ПОВЕРХНОСТЬ ПРОВЕРКИ</div>
-          <div class="audit152-console__row"><span>01 / FORMS & CONSENTS</span><b>CHECK</b></div>
-          <div class="audit152-console__row"><span>02 / COOKIES & SERVICES</span><b>CHECK</b></div>
-          <div class="audit152-console__row"><span>03 / DOCUMENTS</span><b>CHECK</b></div>
-          <div class="audit152-console__row"><span>04 / DATA FLOWS</span><b>CHECK</b></div>
-          <div class="audit152-console__meter"><span></span></div>
-          <p>Результат: список рисков, приоритеты исправлений и рекомендации по следующему шагу.</p>
-        </aside>
+        <div class="audit-dashboard reveal-item">
+          <div class="audit-dashboard__header">
+            <span class="audit-dashboard__label">COMPLIANCE AUDIT</span>
+            <span class="audit-dashboard__status">READY TO CHECK</span>
+          </div>
+          <div class="audit-dashboard__grid">
+            <div class="audit-dashboard__item"><span class="audit-dashboard__item-label">FORMS</span><strong class="audit-dashboard__item-value">REVIEW</strong></div>
+            <div class="audit-dashboard__item"><span class="audit-dashboard__item-label">CONSENTS</span><strong class="audit-dashboard__item-value">REVIEW</strong></div>
+            <div class="audit-dashboard__item"><span class="audit-dashboard__item-label">COOKIES</span><strong class="audit-dashboard__item-value">REVIEW</strong></div>
+            <div class="audit-dashboard__item"><span class="audit-dashboard__item-label">DOCUMENTS</span><strong class="audit-dashboard__item-value">REVIEW</strong></div>
+          </div>
+          <div class="audit-dashboard__progress">
+            <div class="audit-dashboard__progress-bar"><span></span></div>
+            <div class="audit-dashboard__progress-meta"><span>WEBSITE COMPLIANCE</span><span>ANALYSIS</span></div>
+          </div>
+          <div class="audit-dashboard__footer">
+            <span>RISK PROFILE <strong>TO BE DEFINED</strong></span>
+            <span>RESULT <strong>REPORT</strong></span>
+          </div>
+        </div>
       </div>
-      <div class="audit152-scroll-hint" aria-hidden="true">ПРОВЕРКА ПО ЭТАПАМ <span>↓</span></div>
     </div>
   </section>
 
-  <section class="scene" data-scene="audit152-check">
-    <div class="scene-container">
-      <header class="scene-header reveal-item" id="audit152-check">
-        <p class="scene-eyebrow">01 / SCOPE</p>
-        <h2 class="scene-title">Что проверяем <span>на сайте клиники</span></h2>
-        <p class="scene-description">Смотрим не только на наличие текста в подвале, но и на то, как сайт собирает, передаёт и использует данные посетителей.</p>
-      </header>
-      
-        <div class="audit152-check-grid">
-        <article class="audit152-card reveal-item"><span class="audit152-card__num">01</span><div><h3>Политика обработки данных</h3><p>Доступность, содержание, соответствие фактическим сценариям сайта и сведения об операторе персональных данных.</p><span class="audit152-tag">ДОКУМЕНТЫ</span></div></article>
-        <article class="audit152-card reveal-item"><span class="audit152-card__num">02</span><div><h3>Формы и согласия</h3><p>Запись на приём, обратный звонок, заявки и подписки: цели, тексты согласий, обязательность чекбокса и состояние по умолчанию.</p><span class="audit152-tag">ФОРМЫ</span></div></article>
-        <article class="audit152-card reveal-item"><span class="audit152-card__num">03</span><div><h3>Cookie и сторонние сервисы</h3><p>Счётчики, карты, виджеты, встроенные видео и другие компоненты, которые могут передавать данные третьим сторонам.</p><span class="audit152-tag">ИНТЕГРАЦИИ</span></div></article>
-        <article class="audit152-card reveal-item"><span class="audit152-card__num">04</span><div><h3>Отзывы и фотографии</h3><p>Публикация отзывов пациентов, изображений и сведений о врачах: проверяем наличие необходимых оснований и согласий.</p><span class="audit152-tag">ПУБЛИКАЦИИ</span></div></article>
-        <article class="audit152-card reveal-item"><span class="audit152-card__num">05</span><div><h3>Сведения об операторе и уведомление</h3><p>Проверяем размещение обязательной информации и предварительно оцениваем, требуется ли уведомление Роскомнадзора с учётом ваших процессов.</p><span class="audit152-tag">ОПЕРАТОР</span></div></article>
-      </div>
-      
-    </div>
-  </section>
-
-  <section class="scene" data-scene="audit152-risks">
+  <!-- 02 / SCOPE -->
+  <section class="scene" data-scene="audit-signals">
     <div class="scene-container">
       <header class="scene-header reveal-item">
-        <p class="scene-eyebrow">02 / COMMON ISSUES</p>
-        <h2 class="scene-title">Типичные нарушения <span>и зоны риска</span></h2>
-        <p class="scene-description">Ни один пункт сам по себе не означает автоматическое нарушение во всех ситуациях. Оцениваем контекст, цели обработки и применимые требования.</p>
+        <span class="scene-eyebrow">02 / SCOPE</span>
+        <h2 class="scene-title">Проверяем сайт <span>по ключевым точкам</span></h2>
+        <p class="scene-description">Оцениваем не только тексты документов, но и реальные сценарии сбора, использования и передачи данных посетителей.</p>
       </header>
-      
-        <div class="audit152-risk-list">
-        <article class="audit152-risk reveal-item"><span>01</span><div><h3>Форма записи без отдельного согласия</h3><p>Посетитель отправляет имя и телефон, но не видит понятного текста согласия и сведений о цели обработки.</p></div><b>ФОРМЫ</b></article>
-        <article class="audit152-risk reveal-item"><span>02</span><div><h3>Чекбокс уже отмечен</h3><p>Предустановленная отметка не подтверждает самостоятельное действие пользователя.</p></div><b>СОГЛАСИЯ</b></article>
-        <article class="audit152-risk reveal-item"><span>03</span><div><h3>Зарубежные и сторонние сервисы</h3><p>Подключённые скрипты и виджеты могут передавать технические идентификаторы или иные данные без достаточной оценки.</p></div><b>ИНТЕГРАЦИИ</b></article>
-        <article class="audit152-risk reveal-item"><span>04</span><div><h3>Cookie и аналитика запускаются до выбора</h3><p>Механика уведомления не соответствует фактическому поведению подключённых компонентов и настройкам пользователя.</p></div><b>COOKIE</b></article>
-        <article class="audit152-risk reveal-item"><span>05</span><div><h3>Отзывы опубликованы без проверки оснований</h3><p>В отзыве могут быть имя, фотография, сведения о посещении или состоянии здоровья.</p></div><b>КОНТЕНТ</b></article>
-        <article class="audit152-risk reveal-item"><span>06</span><div><h3>Фото врачей размещены без оформленных прав</h3><p>Проверяем согласия и другие необходимые основания для публикации изображения и сопутствующих сведений.</p></div><b>ИЗОБРАЖЕНИЯ</b></article>
-        <article class="audit152-risk reveal-item"><span>07</span><div><h3>Не раскрыты сведения об операторе</h3><p>На сайте отсутствуют или неполны сведения о владельце сайта и порядок обращения по вопросам персональных данных.</p></div><b>ДОКУМЕНТЫ</b></article>
+      <div class="audit-signals__grid reveal-item">
+        <article class="audit-signal"><span class="audit-signal__index">01</span><div class="audit-signal__body"><span class="audit-signal__label">DOCUMENTS</span><h5 class="audit-signal__title">Политика обработки персональных данных</h5><p class="audit-signal__description">Доступность документов, сведения об операторе и соответствие заявленных целей фактическим сценариям сайта.</p></div></article>
+        <article class="audit-signal"><span class="audit-signal__index">02</span><div class="audit-signal__body"><span class="audit-signal__label">FORMS</span><h5 class="audit-signal__title">Формы и поля ввода</h5><p class="audit-signal__description">Запись на приём, обратный звонок и заявки: какие данные собираются и зачем они нужны.</p></div></article>
+        <article class="audit-signal"><span class="audit-signal__index">03</span><div class="audit-signal__body"><span class="audit-signal__label">CONSENTS</span><h5 class="audit-signal__title">Согласия и чекбоксы</h5><p class="audit-signal__description">Тексты согласий, обязательность подтверждения и отсутствие заранее установленных отметок.</p></div></article>
+        <article class="audit-signal"><span class="audit-signal__index">04</span><div class="audit-signal__body"><span class="audit-signal__label">COOKIES</span><h5 class="audit-signal__title">Cookie и аналитика</h5><p class="audit-signal__description">Счётчики, карты, виджеты и сторонние компоненты, которые могут передавать технические данные.</p></div></article>
+        <article class="audit-signal"><span class="audit-signal__index">05</span><div class="audit-signal__body"><span class="audit-signal__label">PUBLICATIONS</span><h5 class="audit-signal__title">Отзывы и фотографии</h5><p class="audit-signal__description">Публикация отзывов, изображений и сведений, которые могут относиться к конкретному человеку.</p></div></article>
+        <article class="audit-signal"><span class="audit-signal__index">06</span><div class="audit-signal__body"><span class="audit-signal__label">OPERATOR</span><h5 class="audit-signal__title">Сведения об операторе</h5><p class="audit-signal__description">Размещение необходимой информации и предварительная оценка вопроса об уведомлении Роскомнадзора.</p></div></article>
       </div>
-      
     </div>
   </section>
 
-  <section class="scene" data-scene="audit152-result">
+  <!-- 03 / RISK MAP -->
+  <section id="audit-map" class="scene audit-map" data-scene="audit-map">
     <div class="scene-container">
       <header class="scene-header reveal-item">
-        <p class="scene-eyebrow">03 / DELIVERABLES</p>
+        <span class="scene-eyebrow">03 / RISK MAP</span>
+        <h2 class="scene-title">Где возникают <span>риски</span></h2>
+        <p class="scene-description">Проверяем связанные элементы сайта, поскольку проблема часто возникает не в одном документе, а на стыке формы, интеграции и процесса обработки.</p>
+      </header>
+      <div class="audit-map__content reveal-item">
+        <div class="audit-map__nodes">
+          <article class="audit-map__node audit-map__node--application reveal-item"><span class="audit-map__node-number">01</span><div><span class="audit-map__node-label">FORMS</span><p>Какие данные посетитель вводит и куда отправляется заявка.</p></div></article>
+          <article class="audit-map__node audit-map__node--infrastructure reveal-item"><span class="audit-map__node-number">02</span><div><span class="audit-map__node-label">CONSENTS</span><p>Как оформлены согласия и можно ли отправить форму без них.</p></div></article>
+          <article class="audit-map__node audit-map__node--database reveal-item"><span class="audit-map__node-number">03</span><div><span class="audit-map__node-label">COOKIES</span><p>Какие сторонние сервисы загружаются и когда они активируются.</p></div></article>
+          <article class="audit-map__node audit-map__node--security reveal-item"><span class="audit-map__node-number">04</span><div><span class="audit-map__node-label">DOCUMENTS</span><p>Соответствуют ли опубликованные документы фактической работе сайта.</p></div></article>
+          <article class="audit-map__node audit-map__node--integrations reveal-item"><span class="audit-map__node-number">05</span><div><span class="audit-map__node-label">DATA FLOWS</span><p>Какие данные передаются почте, CRM, аналитике и другим сервисам.</p></div></article>
+          <article class="audit-map__node audit-map__node--performance reveal-item"><span class="audit-map__node-number">06</span><div><span class="audit-map__node-label">OPERATOR</span><p>Какая организация выступает оператором и какие обязанности применимы.</p></div></article>
+        </div>
+        <div class="audit-map__core"><div class="audit-map__core-ring"></div><div class="audit-map__core-content"><span class="audit-map__core-label">WEBSITE</span><strong>152-ФЗ</strong><span class="audit-map__core-status">COMPLIANCE REVIEW</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 / RESULT -->
+  <section class="scene audit-report" data-scene="audit-report">
+    <div class="scene-container">
+      <header class="scene-header reveal-item">
+        <span class="scene-eyebrow">04 / RESULT</span>
         <h2 class="scene-title">Что вы получите <span>по итогам аудита</span></h2>
-        <p class="scene-description">Не абстрактный список замечаний, а понятный маршрут от выявленных проблем к их устранению.</p>
+        <p class="scene-description">Результат — перечень наблюдений, рисков и конкретных шагов для команды сайта, а не абстрактная оценка соответствия.</p>
       </header>
-      
-        <div class="audit152-deliverables">
-        <article class="audit152-deliverable reveal-item"><span>01</span><div><h3>Отчёт с рисками</h3><p>Что найдено, где это проявляется и почему требует внимания.</p></div></article>
-        <article class="audit152-deliverable reveal-item"><span>02</span><div><h3>План исправлений</h3><p>Приоритеты: что исправить сначала, что зависит от процессов клиники и что требует отдельной юридической оценки.</p></div></article>
-        <article class="audit152-deliverable reveal-item"><span>03</span><div><h3>Технические правки</h3><p>В выбранном тарифе — исправление согласованных элементов сайта и проверка результата.</p></div></article>
-        <article class="audit152-deliverable reveal-item"><span>04</span><div><h3>Документы и рекомендации</h3><p>Список необходимых документов и технических изменений; подготовка или актуализация документов — в соответствующем тарифе.</p></div></article>
+      <div class="audit-report__grid reveal-item">
+        <article class="audit-report__item"><span class="audit-report__number">01</span><div><span class="audit-report__label">FINDINGS</span><h5>Список обнаруженных проблем</h5><p>Недочёты в формах, документах, настройках и интеграциях.</p></div></article>
+        <article class="audit-report__item"><span class="audit-report__number">02</span><div><span class="audit-report__label">RISK LEVEL</span><h5>Приоритеты исправлений</h5><p>Разделение вопросов по значимости и срочности, чтобы понимать, с чего начать.</p></div></article>
+        <article class="audit-report__item"><span class="audit-report__number">03</span><div><span class="audit-report__label">EVIDENCE</span><h5>Пояснения по каждому пункту</h5><p>Что обнаружено, где это проявляется и почему требует внимания.</p></div></article>
+        <article class="audit-report__item"><span class="audit-report__number">04</span><div><span class="audit-report__label">ACTION PLAN</span><h5>Рекомендации по исправлению</h5><p>Практический список дальнейших действий для владельца сайта или разработчика.</p></div></article>
       </div>
-      
     </div>
   </section>
 
-  <section class="scene" data-scene="audit152-pricing">
+  <!-- 05 / PROCESS -->
+  <section class="scene audit-process" data-scene="audit-process">
     <div class="scene-container">
       <header class="scene-header reveal-item">
-        <p class="scene-eyebrow">04 / SERVICE OPTIONS</p>
-        <h2 class="scene-title">Выберите объём <span>работ</span></h2>
-        <p class="scene-description">Стартовые цены вынесены в единый блок и будут согласованы до публикации коммерческого предложения.</p>
+        <span class="scene-eyebrow">05 / PROCESS</span>
+        <h2 class="scene-title">Понятный процесс <span>без лишних этапов</span></h2>
+        <p class="scene-description">Сначала изучаем текущую реализацию, затем фиксируем наблюдения и согласуем дальнейшие действия.</p>
       </header>
-      
-        <div class="audit152-pricing-grid">
-        <article class="audit152-price-card reveal-item"><p class="audit152-price-card__index">ПАКЕТ 01</p><h3>Экспресс-аудит</h3><p class="audit152-price-card__price">Стоимость после оценки сайта</p><p class="audit152-price-card__summary">Проверка основных точек сбора данных на сайте.</p><ul><li>Ключевые страницы и формы</li><li>Политика и видимые согласия</li><li>Список критичных замечаний</li><li>Рекомендации по приоритетам</li></ul><a href="#audit152-request" class="button-secondary">Обсудить пакет <span aria-hidden="true">↗</span></a></article>
-        <article class="audit152-price-card audit152-price-card--featured reveal-item"><p class="audit152-price-card__index">ПАКЕТ 02 / ПОПУЛЯРНЫЙ</p><h3>Аудит + исправления</h3><p class="audit152-price-card__price">Стоимость после оценки сайта</p><p class="audit152-price-card__summary">Проверка и исправление согласованных технических проблем.</p><ul><li>Полный аудит страниц и форм</li><li>Анализ сторонних сервисов</li><li>Приоритизированный отчёт</li><li>Технические правки и повторная проверка</li></ul><a href="#audit152-request" class="button-primary">Обсудить пакет <span aria-hidden="true">↗</span></a></article>
-        <article class="audit152-price-card reveal-item"><p class="audit152-price-card__index">ПАКЕТ 03</p><h3>Аудит + правки + документы</h3><p class="audit152-price-card__price">Стоимость после оценки сайта</p><p class="audit152-price-card__summary">Комплексная работа с технической частью и комплектом документов.</p><ul><li>Всё из второго пакета</li><li>Подготовка или актуализация документов</li><li>Рекомендации по процессам обработки</li><li>Список дальнейших действий</li></ul><a href="#audit152-request" class="button-secondary">Обсудить пакет <span aria-hidden="true">↗</span></a></article>
+      <div class="audit-process__flow reveal-item">
+        <article class="audit-process__step"><span class="audit-process__step-number">01</span><div class="audit-process__step-marker">REVIEW</div><h5>Изучаем сайт</h5><p>Проверяем доступные страницы, формы, документы и подключённые сервисы.</p></article>
+        <div class="audit-process__arrow">↓</div>
+        <article class="audit-process__step"><span class="audit-process__step-number">02</span><div class="audit-process__step-marker">ANALYZE</div><h5>Фиксируем риски</h5><p>Сопоставляем наблюдаемую работу сайта с применимыми требованиями и контекстом.</p></article>
+        <div class="audit-process__arrow">↓</div>
+        <article class="audit-process__step"><span class="audit-process__step-number">03</span><div class="audit-process__step-marker">REPORT</div><h5>Готовим отчёт</h5><p>Описываем найденные вопросы, их приоритеты и возможные способы исправления.</p></article>
+        <div class="audit-process__arrow">↓</div>
+        <article class="audit-process__step"><span class="audit-process__step-number">04</span><div class="audit-process__step-marker">NEXT STEP</div><h5>Обсуждаем действия</h5><p>Определяем технические задачи и вопросы, требующие отдельной юридической оценки.</p></article>
       </div>
-        <p class="audit152-price-note">Стоимость и состав работ подтверждаются после изучения сайта и объёма обработки данных. Юридические документы требуют согласования с ответственным за правовые вопросы специалистом.</p>
-      
     </div>
   </section>
 
-  <section class="scene" data-scene="audit152-checklist">
+  <!-- 06 / SCOPE & PRICE -->
+  <section class="scene audit-pricing" data-scene="audit-pricing">
     <div class="scene-container">
       <header class="scene-header reveal-item">
-        <p class="scene-eyebrow">05 / FREE RESOURCE</p><h2 class="scene-title">Начните с чек-листа <span>для сайта клиники</span></h2><p class="scene-description">Короткий список контрольных вопросов, который поможет самостоятельно пройтись по основным элементам сайта до аудита.</p></header>
-      
-        <div class="audit152-checklist__panel"><a class="button-primary" href="/wp-content/uploads/2026/10/chek-list-152fz-sajt-kliniki.pdf" target="_blank" rel="noopener">Открыть PDF-чек-лист <span aria-hidden="true">↗</span></a></div>
-      
+        <span class="scene-eyebrow">06 / SCOPE & PRICE</span>
+        <h2 class="scene-title">Объём аудита <span>зависит от сайта</span></h2>
+        <p class="scene-description">Количество страниц, форм, интеграций и сценариев обработки данных различается. Объём и стоимость определяются после первичного знакомства с сайтом.</p>
+      </header>
+      <div class="card-pricing-grid reveal-item">
+        <article class="card-pricing">
+          <div class="card-pricing__header"><span class="card-pricing__index">01</span></div>
+          <div class="card-pricing__price"><span class="card-pricing__price-value">Экспресс-проверка</span></div>
+          <h3 class="card-pricing__title">Основные точки риска</h3>
+          <p class="card-pricing__description">Первичный обзор ключевых страниц, документов и основных сценариев сбора данных.</p>
+          <ul class="card-pricing__list"><li class="card-pricing__list-item">Основные страницы и документы</li><li class="card-pricing__list-item">Ключевые формы</li><li class="card-pricing__list-item">Список первичных замечаний</li></ul>
+        </article>
+        <article class="card-pricing card-pricing--featured">
+          <div class="card-pricing__header"><span class="card-pricing__index">02</span><span class="card-pricing__badge">Основной формат</span></div>
+          <div class="card-pricing__price"><span class="card-pricing__price-value">Комплексный аудит</span></div>
+          <h3 class="card-pricing__title">Подробный разбор сайта</h3>
+          <p class="card-pricing__description">Проверка форм, согласий, cookie, документов и внешних интеграций.</p>
+          <ul class="card-pricing__list"><li class="card-pricing__list-item">Ключевые сценарии</li><li class="card-pricing__list-item">Сторонние сервисы</li><li class="card-pricing__list-item">Приоритеты исправлений</li><li class="card-pricing__list-item">Рекомендации для разработчика</li></ul>
+        </article>
+        <article class="card-pricing">
+          <div class="card-pricing__header"><span class="card-pricing__index">03</span></div>
+          <div class="card-pricing__price"><span class="card-pricing__price-value">Аудит с сопровождением</span></div>
+          <h3 class="card-pricing__title">Проверка после исправлений</h3>
+          <p class="card-pricing__description">Проверка внесённых изменений и закрытие согласованного перечня технических замечаний.</p>
+          <ul class="card-pricing__list"><li class="card-pricing__list-item">Повторная проверка</li><li class="card-pricing__list-item">Уточнение замечаний</li><li class="card-pricing__list-item">Список оставшихся вопросов</li></ul>
+        </article>
+      </div>
+      <p class="audit-pricing__note reveal-item">Стоимость и сроки подтверждаем после оценки сайта. Аудит не является юридическим заключением и не гарантирует отсутствие претензий со стороны надзорных органов.</p>
     </div>
   </section>
 
-  <section class="scene" data-scene="audit152-faq">
+  <!-- 07 / CONTACT -->
+  <section class="scene audit-cta" data-scene="audit-cta">
     <div class="scene-container">
       <header class="scene-header reveal-item">
-        <p class="scene-eyebrow">06 / FAQ</p><h2 class="scene-title">Частые <span>вопросы</span></h2><p class="scene-description">Коротко о составе работ и границах аудита.</p></header>
-      
-        <div class="audit152-faq-list">
-        <details class="audit152-faq-item"><summary>Аудит гарантирует отсутствие штрафов?</summary><div><p>Нет. Аудит выявляет риски в пределах согласованного объёма проверки и помогает определить необходимые действия, но не гарантирует решение контролирующего органа или отсутствие претензий.</p></div></details>
-        <details class="audit152-faq-item"><summary>Вы проверяете только сайт или процессы клиники тоже?</summary><div><p>Базовый объём сосредоточен на сайте и видимых технических сценариях. Для оценки внутренних процессов, договоров и фактической модели обработки данных потребуется отдельное согласование.</p></div></details>
-        <details class="audit152-faq-item"><summary>Нужно ли уведомлять Роскомнадзор?</summary><div><p>Это зависит от обстоятельств обработки и применимых исключений. Мы проверим опубликованные сведения и обозначим вопрос для отдельной оценки; окончательное решение принимается после анализа процессов оператора.</p></div></details>
-        <details class="audit152-faq-item"><summary>Вы подготовите политику и согласия?</summary><div><p>Подготовка или актуализация документов предусмотрена третьим пакетом. Тексты должны отражать реальные процессы клиники и при необходимости согласовываться с юристом.</p></div></details>
-        <details class="audit152-faq-item"><summary>Можно ли исправить найденные ошибки без переноса сайта?</summary><div><p>В большинстве случаев можно начать с текущей системы. Возможность и объём правок зависят от CMS, подключённых сервисов и доступа к исходному коду.</p></div></details>
-        <details class="audit152-faq-item"><summary>Сколько времени занимает аудит?</summary><div><p>Срок зависит от количества страниц, форм, интеграций и выбранного пакета. Точный срок подтвердим после первичного знакомства с сайтом.</p></div></details>
-      </div>
-      
-    </div>
-  </section>
-
-  <section class="scene" data-scene="audit152-request">
-    <div class="scene-container">
-      <header class="scene-header reveal-item" id="audit152-request">
-        <p class="scene-eyebrow">07 / START HERE</p>
+        <span class="scene-eyebrow">07 / NEXT STEP</span>
         <h2 class="scene-title">Проверим, <span>с чего начать</span></h2>
-        <p class="scene-description">Оставьте контакты и адрес сайта. Мы уточним задачу и предложим следующий шаг.</p>
-        
+        <p class="scene-description">Расскажите о сайте клиники — уточним задачу и предложим подходящий объём проверки.</p>
       </header>
-      
-        <div class="audit152-request__contact"><span>ПРЯМОЙ КОНТАКТ</span><a href="mailto:hello@kartemake.ru">hello@kartemake.ru</a></div>
-        <form class="audit152-form reveal-item" id="audit152-form" action="#" method="post" novalidate>
-        <div class="audit152-form__grid">
-          <label>Ваше имя <span>*</span><input name="name" type="text" autocomplete="name" maxlength="120" required></label>
-          <label>Название клиники <span>*</span><input name="clinic" type="text" maxlength="180" required></label>
-          <label class="audit152-form__wide">Адрес сайта <span>*</span><input name="site_url" type="url" inputmode="url" placeholder="https://clinic.ru" maxlength="2048" required></label>
-          <label>Телефон<input name="phone" type="tel" autocomplete="tel" maxlength="40"></label>
-          <label>Email<input name="email" type="email" autocomplete="email" maxlength="254"></label>
-          <label class="audit152-form__wide">Комментарий <textarea name="comment" rows="3" maxlength="2000" placeholder="Что вызывает вопросы? (необязательно)"></textarea></label>
-        </div>
-        <label class="audit152-consent"><input type="checkbox" name="consent" required><span>Я даю согласие на обработку персональных данных в соответствии с <a href="/privacy-policy/" target="_blank" rel="noopener">Политикой обработки персональных данных</a>. <span>*</span></span></label>
-        <p class="audit152-form__hint">Укажите хотя бы один способ связи: телефон или email.</p>
-        <button class="button-primary" type="submit">Отправить заявку <span aria-hidden="true">↗</span></button>
-        <p class="audit152-form__status" id="audit152-form-status" role="status" aria-live="polite"></p>
-        <p class="audit152-form__demo">Предварительный интерфейс: отправка заявки будет подключена на этапе интеграции с WordPress.</p>
-      </form>
-      
+      <div class="audit-cta__metrics reveal-item">
+        <div class="audit-cta__metric"><strong>01</strong><span>REVIEW</span><small>Изучаем сайт</small></div>
+        <div class="audit-cta__metric"><strong>02</strong><span>REPORT</span><small>Фиксируем риски</small></div>
+        <div class="audit-cta__metric"><strong>03</strong><span>PLAN</span><small>Предлагаем действия</small></div>
+      </div>
+      <div class="cta-block reveal-item">
+        <span class="cta-block__eyebrow">152-ФЗ / K·ART·MAKE</span>
+        <h3 class="cta-block__title">Начнём с вашего сайта.</h3>
+        <p class="cta-block__text">Напишите адрес сайта клиники и кратко опишите вопрос. Мы уточним объём работ и следующий шаг.</p>
+        <a class="button-primary cta-block__button" href="mailto:hello@kartemake.ru?subject=%D0%90%D1%83%D0%B4%D0%B8%D1%82%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20%D0%BA%D0%BB%D0%B8%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%BF%D0%BE%20152-%D0%A4%D0%97"><span>ОБСУДИТЬ АУДИТ</span><strong>↗</strong></a>
+      </div>
+      <div class="contact-info">
+        <div class="contact-info-item"><span class="contact-info-label">НОВЫЕ ПРОЕКТЫ</span><a href="mailto:hello@kartemake.ru" class="contact-info-value">hello@kartemake.ru</a><span class="contact-info-description">Обсудить аудит и согласовать объём проверки.</span></div>
+        <div class="contact-info-item"><span class="contact-info-label">СЛЕДУЮЩИЙ ШАГ</span><span class="contact-info-value">ПЕРВИЧНОЕ ОБСУЖДЕНИЕ</span><span class="contact-info-description">Уточним задачу, состав сайта и сроки.</span></div>
+      </div>
     </div>
   </section>
 </main>
-
-<footer class="contact-footer audit152-footer">
-  <div class="contact-footer-inner">
-    <div class="contact-footer-brand"><a href="/" class="dashboard-brand">K·ART·MAKE</a><p>Технический партнёр цифровых проектов.</p></div>
-    <nav aria-label="Ссылки в подвале"><a href="/services/">Услуги</a><a href="/privacy-policy/">Персональные данные</a><a href="/cookie-policy/">Cookie</a><a href="mailto:hello@kartemake.ru">Связаться</a></nav>
-    <div class="contact-footer-bottom"><span>© 2026 K·ART·MAKE</span><span>АУДИТ САЙТА КЛИНИКИ</span><span>ПРОВЕРКА ПО 152-ФЗ</span></div>
-  </div>
-</footer>
-
 <div id="cookie-banner" class="cookie-banner">
   <div class="cookie-banner__wrapper">
-    <div class="cookie-banner__status"><span class="cookie-banner__status-dot"></span><span>PRIVACY / COOKIE CONTROL</span></div>
+    <div class="cookie-banner__status">
+      <span class="cookie-banner__status-dot"></span>
+      <span>PRIVACY / COOKIE CONTROL</span>
+    </div>
     <div class="cookie-banner__content">
+      <!-- STEP 1 -->
       <section id="cookie-step-1" class="cookie-step cookie-step--active">
-        <div class="cookie-banner__header"><p class="cookie-banner__description">Мы используем технические cookie, необходимые для работы сайта. Дополнительные технологии должны подключаться с учётом выбора пользователя.</p></div>
-        <div class="cookie-banner__links"><span>Подробнее:</span><a href="/cookie-policy/" target="_blank" rel="noopener">использование cookie</a><a href="/privacy-policy/" target="_blank" rel="noopener">персональные данные</a></div>
-        <div class="cookie-banner__actions"><button type="button" id="cookie-decline" class="cookie-button cookie-button--outline">Отклонить</button><button type="button" id="cookie-accept" class="cookie-button cookie-button--accent">Принять</button></div>
+        <div class="cookie-banner__header">
+          <p class="cookie-banner__description">Мы применяем cookies, чтобы сайт работал без сбоев и постоянно
+            становился для вас удобнее.</p>
+        </div>
+        <div class="cookie-banner__links">
+          <span>Подробнее:</span>
+          <a href="cookie-policy.html" target="_blank">использование cookie</a>
+          <a href="privacy-policy.html" target="_blank">обработка персональных данных</a>
+        </div>
+        <div class="cookie-banner__actions">
+          <button type="button" id="cookie-decline" class="cookie-button cookie-button--outline">Отклонить
+          </button>
+          <button type="button" id="cookie-accept" class="cookie-button cookie-button--accent">Принять
+          </button>
+        </div>
       </section>
     </div>
   </div>
 </div>
-<div id="modal" class="modal" aria-hidden="true"><div class="modal-content"><button type="button" class="close-modal no-icon" data-modal-func="close" aria-label="Закрыть"></button></div></div>
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <!-- Закрытие -->
+    <div class="close-modal no-icon" data-modal-func="close"></div>
+
+    <!-- Заголовок -->
+    <div class="modal-header">
+      <h4>Хотите чтобы мы решили <span class="color-accent">ваш кейс</span>?</h4>
+      <p>Оставьте заявку и наш специалист свяжется с вами для обсуждения деталей вашего проекта</p>
+    </div>
+
+    <!-- Контейнер с гридом -->
+    <div class="form-container">
+
+      <!-- КОЛОНКА 1: КОНТАКТЫ (как в дашборде) -->
+      <div class="contact-modal__body">
+        <a href="mailto:hello@kartemake.ru" class="contact-modal__item">
+          <span class="contact-modal__item-label">НОВЫЕ ПРОЕКТЫ</span>
+          <strong class="contact-modal__item-value">hello@kartemake.ru</strong>
+        </a>
+        <a href="mailto:support@kartemake.ru" class="contact-modal__item">
+          <span class="contact-modal__item-label">ТЕХНИЧЕСКАЯ ПОДДЕРЖКА</span>
+          <strong class="contact-modal__item-value">support@kartemake.ru</strong>
+        </a>
+      </div>
+
+      <!-- КОЛОНКА 2: СОЦСЕТИ -->
+      <div class="contact-modal__body">
+        <a href="https://t.me/KArtech76" target="_blank" class="contact-modal__item">
+          <span class="contact-modal__item-label">TELEGRAM</span>
+          <strong class="contact-modal__item-value">@KArtech76</strong>
+        </a>
+        <a href="https://vk.ru/kartemake" target="_blank" class="contact-modal__item">
+          <span class="contact-modal__item-label">ВКОНТАКТЕ</span>
+          <strong class="contact-modal__item-value">vk.com/kartemake</strong>
+        </a>
+      </div>
+
+      <!-- КОЛОНКА 3: ИНФОРМАЦИЯ -->
+      <div class="contact-modal__body">
+        <a href="/privacy-policy" class="contact-modal__item">
+          <span class="contact-modal__item-label">ДОКУМЕНТЫ</span>
+          <strong class="contact-modal__item-value">Политика конфиденциальности</strong>
+        </a>
+        <!--        <a href="/personal-data-consent" class="contact-modal__item">-->
+        <!--          <span class="contact-modal__item-label">СОГЛАСИЕ</span>-->
+        <!--          <strong class="contact-modal__item-value">На обработку данных</strong>-->
+        <!--        </a>-->
+      </div>
+
+      <!-- ФУТЕР -->
+      <div class="contact-modal__footer">
+        <p class="contact-modal__footer-text">Напишите нам — мы ответим в течение 24 часов</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+<div class="cost-calculator-widget" data-cost-calculator>
+  <button type="button" class="cost-calculator-widget__trigger" data-calculator-trigger>
+    <span>Рассчитать стоимость</span>
+  </button>
+  <div class="cost-calculator-widget__modal" data-calculator-backdrop>
+    <button type="button" class="cost-calculator-widget__close" data-calculator-close aria-label="Закрыть калькулятор">
+      ×
+    </button>
+    <!-- ВНУТРИ ТОТ ЖЕ CALCULATOR -->
+    <div class="cost-calculator" data-cost-calculator data-mode="widget">
+      <div class="cost-calculator__stage" data-calculator-stage>
+        <div class="cost-calculator__orbit" aria-hidden="true"></div>
+        <svg class="cost-calculator__flows" data-calculator-flows preserveAspectRatio="none" aria-hidden="true"></svg>
+        <div class="cost-calculator__services">
+          <button type="button" class="cost-service cost-service--diagnostics" data-cost-service="diagnostics" data-title="Диагностика" data-price="15000">
+            <span class="cost-service__index">
+              01 / DIAGNOSTICS
+            </span>
+            <span class="cost-service__title" data-service-title>
+              Понять проблему
+            </span>
+            <span class="cost-service__price">
+              от 15 000 ₽
+            </span>
+          </button>
+          <button type="button" class="cost-service cost-service--audit" data-cost-service="audit" data-title="Технический аудит" data-price="30000">
+            <span class="cost-service__index">
+              02 / AUDIT
+            </span>
+            <span class="cost-service__title" data-service-title>
+              Оценить состояние
+            </span>
+            <span class="cost-service__price">
+              от 30 000 ₽
+            </span>
+          </button>
+          <button type="button" class="cost-service cost-service--optimization" data-cost-service="optimization" data-title="Оптимизация" data-price="35000">
+            <span class="cost-service__index">
+              03 / OPTIMIZATION
+            </span>
+            <span class="cost-service__title" data-service-title>
+              Улучшить систему
+            </span>
+            <span class="cost-service__price">
+              от 35 000 ₽
+            </span>
+          </button>
+          <button type="button" class="cost-service cost-service--modernization" data-cost-service="modernization" data-title="Модернизация" data-price="50000">
+            <span class="cost-service__index">
+              04 / MODERNIZATION
+            </span>
+            <span class="cost-service__title" data-service-title>
+              Изменить основу
+            </span>
+            <span class="cost-service__price">
+              от 50 000 ₽
+            </span>
+          </button>
+          <button type="button" class="cost-service cost-service--support" data-cost-service="support" data-title="Техническая поддержка" data-price="25000">
+            <span class="cost-service__index">
+              05 / SUPPORT
+            </span>
+            <span class="cost-service__title" data-service-title>
+              Постоянная команда
+            </span>
+            <span class="cost-service__price">
+              от 25 000 ₽ / МЕС
+            </span>
+          </button>
+        </div>
+        <div class="cost-calculator__center" data-calculator-center>
+          <span class="cost-calculator__center-label">
+            текущая конфигурация
+          </span>
+          <h4 class="cost-calculator__center-price" data-calculator-price>
+            0
+          </h4>
+          <span class="cost-calculator__center-currency">
+            ₽
+          </span>
+          <span class="cost-calculator__center-meta" data-calculator-meta>
+            0 услуг выбрано
+          </span>
+        </div>
+        <div class="cost-calculator__actions" data-calculator-actions>
+          <button type="button" class="button-primary" data-calculator-next disabled>
+            Далее →
+          </button>
+        </div>
+      </div>
+      <div class="cost-calculator__result" data-calculator-result>
+        <div class="cost-calculator__result-inner">
+          <span class="cost-calculator__result-label">
+              настройка завершена
+          </span>
+          <div class="cost-calculator__result-price" data-calculator-result-price>
+            0 ₽
+          </div>
+          <ul class="cost-calculator__result-services" data-calculator-result-services></ul>
+          <div class="cost-calculator__actions">
+            <button type="button" class="button-primary" data-calculator-back>
+              ← Назад
+            </button>
+            <button type="button" class="button-primary" data-modal-func="open">
+              Обсудить задачу →
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>
