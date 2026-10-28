@@ -24,10 +24,6 @@
   h1 {
     max-width: 900px;
     margin: $lower-small 0 $lower-small;
-    @include responsive-font($min-h1-font-size, $max-h1-font-size);
-    line-height: .99;
-    letter-spacing: -.055em;
-    font-weight: 500;
     span { color: $orange; }
   }
   &__note {
@@ -139,7 +135,6 @@
 }
 @media (max-width: $breakpoint-large-small) {
   .audit152-hero { padding: $large 0 $middle; }
-  .audit152-hero h1 { @include responsive-font($min-h2-font-size, $max-h1-font-size); }
   .audit152-actions { align-items: stretch; flex-direction: column; }
   .audit152-actions a { width: 100%; }
   .audit152-scroll-hint { bottom: $extra-small; font-size: #{$min-small-font-size}px; }
