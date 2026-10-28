@@ -80,9 +80,7 @@
               <span class="form__checkbox-indicator" aria-hidden="true"></span>
               <span class="form__checkbox-text">
                 Я согласен с
-                <a href="/privacy-policy" target="_blank" rel="noopener noreferrer">политикой конфиденциальности</a>
-                и даю согласие на
-                <a href="/personal-data-consent" target="_blank" rel="noopener noreferrer">обработку персональных данных</a>.
+                <a href="<?= get_permalink(get_page_by_path('privacy-policy')); ?>" target="_blank" rel="noopener noreferrer">политикой конфиденциальности</a> и даю согласие на обработку персональных данных.
               </span>
             </label>
             <span class="form__error" data-form-error="consent"></span>

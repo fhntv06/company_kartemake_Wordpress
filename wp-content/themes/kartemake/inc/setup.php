@@ -51,7 +51,7 @@ add_filter('theme_page_templates', 'kartemake_page_templates');
 
 // Подключение smartcaptcha
 add_action('wp_footer', function () {
-    if (!is_page(['calculator', 'contacts'])) return; // укажи свои слаги
+    if (!is_page(['calculator', 'contacts', 'audit-compliance-152-fz'])) return; // укажи свои слаги
     if (!defined('KM_SMARTCAPTCHA_CLIENT_KEY')) return;
 
     printf(

@@ -106,7 +106,7 @@ COST CALCULATOR
   <?php get_template_part('template-parts/components/cost-calculator-widget'); ?>
 <?php endif; ?>
 
-<?php if (is_page(['calculator', 'contacts'])): ?>
+<?php if (is_page(['calculator', 'contacts', 'audit-compliance-152-fz'])): ?>
   <!-- smartcaptcha -->
   <?php get_template_part('template-parts/components/smartcaptcha'); ?>
 <?php endif; ?>
