@@ -62,6 +62,13 @@
   &__demo { margin: $extra-small 0 0; }
 }
 
+
+.audit152-request__content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: $small;
+}
+
 @media (max-width: $breakpoint-large-small) {
   .audit152-form { padding: $small; }
   .audit152-form__grid { grid-template-columns: 1fr; }
