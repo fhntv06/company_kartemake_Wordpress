@@ -49,6 +49,10 @@ GLOBAL DASHBOARD
                     <span>04</span>
                     <strong>Аудит и консультации</strong>
                 </a>
+                <a href="<?= get_permalink(get_page_by_path('audit-compliance-152-fz')); ?>">
+                    <span>05</span>
+                    <strong>Аудит сайта на соответствие 152&nbsp;-&nbsp;ФЗ</strong>
+                </a>
             </div>
             <!-- INFORMATION -->
             <div class="dashboard-menu-column">

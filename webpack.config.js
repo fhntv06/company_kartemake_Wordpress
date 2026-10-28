@@ -84,6 +84,7 @@ const HTML_TO_ENTRY = {
   index: 'home',
   'privacy-policy': 'policy',
   'cookie-policy': 'policy',
+  'audit-compliance-152-fz': 'auditCompliance152fz',
 }
 
 // ── Страницы для HtmlWebpackPlugin ───────────────────────────────

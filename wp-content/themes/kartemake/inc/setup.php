@@ -58,3 +58,6 @@ add_action('wp_footer', function () {
         '<script src="https://smartcaptcha.cloud.yandex.ru/captcha.js" defer></script>',
     );
 });
+add_action('init', function() {
+    remove_action('wp_head', 'wp_generator');
+});

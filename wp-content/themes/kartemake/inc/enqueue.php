@@ -80,6 +80,7 @@ function kartemake_get_pages_map() {
         'optimization' => null,
         'modernization'=> null,
         'audit'        => null,
+        'auditCompliance152fz'   => ['pages' => ['audit-compliance-152-fz'], 'templates' => ['page-audit-compliance-152-fz.php']],
         'pricing'      => null,
         'policy'       => ['pages' => ['privacy-policy', 'cookie-policy']],
         'tag'          => ['type' => 'tag'],          // ← добавили
