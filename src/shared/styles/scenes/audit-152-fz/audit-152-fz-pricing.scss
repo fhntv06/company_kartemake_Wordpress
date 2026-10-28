@@ -27,7 +27,7 @@
   ul { display: grid; gap: $extra-small; margin: $lower-small 0 $small; padding: $lower-small 0 0; width: 100%; border-top: 1px solid var(--audit152-line); list-style: none; }
   li { position: relative; padding-left: $extra-small; color: $text-secondary; font-size: #{$min-small-font-size}px; line-height: 1.55; }
   li::before { content: ''; position: absolute; top: .55em; left: 0; width: 5px; height: 5px; background: $orange; }
-  .button-primary, .button-secondary { margin-top: auto; width: 100%; font-size: #{$min-small-font-size}px; }
+  .button-primary, .button-secondary { margin-top: auto; width: 100%; }
 }
 
 .audit152-price-note {
