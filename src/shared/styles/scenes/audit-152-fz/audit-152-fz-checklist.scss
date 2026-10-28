@@ -1,0 +1,22 @@
+// K·ART·MAKE — 152-ФЗ audit scene styles
+@use '../../variables/colors' as *;
+@use '../../variables/offsets' as *;
+@use '../../variables/fonts' as *;
+@use '../../variables/media' as *;
+@use '../../system/mixins' as *;
+
+.audit152-checklist__panel {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: $small;
+  padding: $small;
+  border: 1px solid rgba(255, 107, 0, .45);
+  background: linear-gradient(115deg, rgba(255, 107, 0, .08), rgba(255, 255, 255, .015));
+
+  .button-primary { flex: 0 0 auto; }
+}
+
+@media (max-width: $breakpoint-large-small) {
+  .audit152-checklist__panel { align-items: flex-start; flex-direction: column; }
+}
