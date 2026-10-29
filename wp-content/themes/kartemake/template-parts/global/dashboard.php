@@ -6,7 +6,7 @@ GLOBAL DASHBOARD
         <a href="<?= home_url('/'); ?>" class="dashboard-brand">K·ART·MAKE</a>
         <div class="dashboard-status">
             <span class="dashboard-status-dot"></span>
-            СИСТЕМА РАБОТАЕТ
+            <?= esc_html(kartemake_get_page_labels()['status']) ?>
         </div>
         <button class="dashboard-menu" type="button" aria-expanded="false" aria-controls="dashboard-menu-panel">
             <span class="dashboard-menu-label">МЕНЮ</span>

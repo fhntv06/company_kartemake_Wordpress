@@ -42,3 +42,6 @@ require_once $kartemake_inc . 'forms.php';
 
 // Включение json save point
 require_once $kartemake_inc . 'acf.php';
+
+// Формирование подписей
+require_once $kartemake_inc . 'page-labels.php';
