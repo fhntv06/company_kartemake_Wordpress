@@ -11,7 +11,7 @@
 <?php get_template_part('template-parts/global/loader'); ?>
 <?php get_template_part('template-parts/global/dashboard'); ?>
 <?php
-  if ( ! (is_page('privacy-policy') || is_page('cookie-policy') || is_404()) ) {
-    render_orbit_navigation();
-  }
+    if ( ! (is_page(['privacy-policy', 'cookie-policy', 'agreement-policy']) || is_404()) ) {
+        render_orbit_navigation();
+    }
 ?>

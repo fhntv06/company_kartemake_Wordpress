@@ -15,7 +15,7 @@ function kartemake_body_class($classes) {
   if (is_front_page()) {
     $classes[] = 'page-home';
   }
-  if (is_page('privacy-policy') || is_page('cookie-policy')) {
+  if (is_page(['privacy-policy', 'cookie-policy', 'agreement-policy'])) {
     $classes[] = 'privacy-policy';
   }
   if (is_home() || is_page('blog') || is_page_template('page-blog.php')) {
