@@ -117,6 +117,7 @@ GLOBAL DASHBOARD
       <div class="dashboard-menu-column">
         <span class="dashboard-menu-title">ИНФОРМАЦИЯ</span>
         <a href="./about.html">О Компании</a>
+        <a href="./cases.html">Кейсы</a>
         <a href="./privacy-policy.html">Политика обработки персональных данных</a>
         <a href="./cookie-policy.html">Политика использования Cookie</a>
       </div>
@@ -671,6 +672,115 @@ GLOBAL DASHBOARD
     </div>
   </section>
   <!-- =================================================
+  CASES / ИЗБРАННЫЙ КЕЙС И ПОСЛЕДНИЕ ПРОЕКТЫ
+  В WordPress featured-кейс выбирается по ACF case_featured.
+  Две следующие карточки — последние опубликованные кейсы,
+  исключая featured-кейс.
+  ================================================= -->
+  <section class="scene scene-cases" data-scene="cases">
+    <div class="scene-container">
+      <header class="scene-header reveal-item">
+        <span class="scene-eyebrow">ПРАКТИКА / РЕАЛЬНЫЕ ПРОЕКТЫ</span>
+        <h2 class="scene-title">Результат инженерной работы</h2>
+        <p class="scene-description">
+          Избранные проекты и последние кейсы K·ART·MAKE:
+          задачи, технические решения и результат для бизнеса.
+        </p>
+      </header>
+
+      <!-- FEATURED CASE: WordPress query by case_featured = 1 -->
+      <div class="blog-featured-layout reveal-item" data-case-featured>
+        <article class="blog-featured-visual">
+          <div class="blog-featured-image">
+            <img src="../../public/images/team/team-five.jpg" alt="Избранный проект K·ART·MAKE" loading="lazy">
+          </div>
+          <div class="blog-featured-status">FEATURED / CASE</div>
+          <div class="blog-featured-visual-content">
+            <span class="blog-featured-category">ИЗБРАННЫЙ ПРОЕКТ</span>
+            <h3><a href="./casesDetail.html">Избранный кейс K·ART·MAKE</a></h3>
+          </div>
+        </article>
+        <div class="blog-featured-content">
+          <div class="blog-featured-meta">
+            <div class="blog-featured-meta-item">
+              <span class="blog-featured-meta-label">TYPE</span>
+              <span class="blog-featured-meta-value">FEATURED</span>
+            </div>
+            <div class="blog-featured-meta-item">
+              <span class="blog-featured-meta-label">FORMAT</span>
+              <span class="blog-featured-meta-value">CASE STUDY</span>
+            </div>
+          </div>
+          <p class="blog-featured-description">
+            Здесь выводится краткое описание избранного проекта из карточки кейса.
+            В рабочей интеграции содержимое и ссылка подставляются из записи,
+            отмеченной полем ACF case_featured.
+          </p>
+          <a href="./casesDetail.html" class="blog-featured-link">
+            <span>Читать кейс</span>
+            <span class="blog-featured-link-arrow">↗</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- TWO LATEST CASES: exclude the featured post, order by date DESC -->
+      <div class="card-articles-grid reveal-item" data-case-latest>
+        <article class="card-article">
+          <span class="card-article__number">01</span>
+          <div class="card-article__image">
+            <span class="card-article__type">CASE</span>
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80" alt="Кейс K·ART·MAKE" loading="lazy">
+          </div>
+          <div class="card-article__content">
+            <div class="card-article__meta">
+              <span class="card-article__meta-item">ПОСЛЕДНИЙ КЕЙС</span>
+            </div>
+            <h4 class="card-article__title">
+              <a href="./casesDetail.html">Название последнего кейса</a>
+            </h4>
+            <p class="card-article__description">
+              Краткое описание задачи и выполненных технических работ.
+            </p>
+            <a href="./casesDetail.html" class="card-article__link">
+              <p>Читать кейс</p>
+              <span class="card-article__link-arrow">↗</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="card-article">
+          <span class="card-article__number">02</span>
+          <div class="card-article__image">
+            <span class="card-article__type">CASE</span>
+            <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1600&q=80" alt="Кейс K·ART·MAKE" loading="lazy">
+          </div>
+          <div class="card-article__content">
+            <div class="card-article__meta">
+              <span class="card-article__meta-item">ПОСЛЕДНИЙ КЕЙС</span>
+            </div>
+            <h4 class="card-article__title">
+              <a href="./casesDetail.html">Название ещё одного кейса</a>
+            </h4>
+            <p class="card-article__description">
+              Краткое описание задачи и выполненных технических работ.
+            </p>
+            <a href="./casesDetail.html" class="card-article__link">
+              <p>Читать кейс</p>
+              <span class="card-article__link-arrow">↗</span>
+            </a>
+          </div>
+        </article>
+      </div>
+
+      <div class="reveal-item">
+        <a href="./cases.html" class="blog-featured-link">
+          <span>Все кейсы</span>
+          <span class="blog-featured-link-arrow">↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- =================================================
   COST CALCULATOR
   ================================================= -->
   <section class="scene pricing-calculator" data-scene="cost-calculator" data-cost-calculator data-mode="scene">
@@ -934,6 +1044,7 @@ GLOBAL DASHBOARD
           </div>
           <div class="contact-footer-column">
             <span class="contact-footer-title">ИНФОРМАЦИЯ</span>
+            <a href="./cases.html">Кейсы</a>
             <a href="./privacy-policy.html">Политика обработки персональных данных</a>
             <a href="./cookie-policy.html">Политика использования Cookie</a>
           </div>
