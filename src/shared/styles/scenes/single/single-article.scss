@@ -110,143 +110,11 @@
     margin: calc($extra-small / 2) 0;
   }
   /* =======================================================
-     BLOCKQUOTE
-     ======================================================= */
-  blockquote,
-  .wp-block-quote {
-    position: relative;
-    margin: $small 0;
-    padding: $small $extra-small;
-    border-left: 2px solid $orange;
-    background: rgba(255, 255, 255, .025);
-
-    p {
-      margin-bottom: calc($extra-small / 2);
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-    cite {
-      display: block;
-      margin-top: 1em;
-      font-family: "IBM Plex Mono", "Roboto Mono", monospace;
-      font-size: .7em;
-      font-style: normal;
-      letter-spacing: .06em;
-      opacity: .45;
-    }
-  }
-  /* =======================================================
      IMAGES
      ======================================================= */
   img {
     max-width: 100%;
     height: auto;
-  }
-  .wp-block-image {
-    margin: $small 0;
-
-    img {
-      display: block;
-      width: 100%;
-    }
-    figcaption {
-      margin-top: $extra-small;
-      font-family: "IBM Plex Mono", "Roboto Mono", monospace;
-      font-size: 12px;
-      color: $text-muted;
-      text-align: center;
-    }
-    &.is-style-rounded {
-      img {
-        border-radius: $border-radius;
-      }
-    }
-  }
-  /* =======================================================
-     VIDEO
-     ======================================================= */
-  .wp-block-video {
-    margin: $small 0;
-
-    video {
-      display: block;
-      width: 100%;
-      height: auto;
-      aspect-ratio: 16/9;
-    }
-    figcaption {
-      margin-top: $extra-small;
-      font-family: "IBM Plex Mono", "Roboto Mono", monospace;
-      font-size: 12px;
-      color: $text-muted;
-      text-align: center;
-    }
-  }
-  /* =======================================================
-     EMBEDS
-     ======================================================= */
-  .wp-block-embed {
-    margin: $small 0;
-
-    .wp-block-embed__wrapper {
-      position: relative;
-      overflow: hidden;
-      aspect-ratio: 16 / 9;
-      background: $bg-primary;
-
-      iframe {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        border: 0;
-      }
-    }
-    figcaption {
-      margin-top: $extra-small;
-      font-family: "IBM Plex Mono", "Roboto Mono", monospace;
-      font-size: 12px;
-      color: $text-muted;
-      text-align: center;
-    }
-  }
-  /* =======================================================
-     TABLE
-     ======================================================= */
-  .wp-block-table {
-    width: 100%;
-    margin: $small 0;
-    overflow-x: auto;
-
-    table {
-      width: 100%;
-      min-width: 560px;
-      border-collapse: collapse;
-    }
-    th,
-    td {
-      padding: $extra-small;
-      border: 1px solid rgba(255, 255, 255, .1);
-      text-align: left;
-      vertical-align: top;
-    }
-    th {
-      font-family: "IBM Plex Mono", "Roboto Mono", monospace;
-      text-transform: uppercase;
-      background-color: $text-muted;
-    }
-    td {
-      background-color: $surface;
-    }
-    figcaption {
-      margin-top: $extra-small;
-      font-family: "IBM Plex Mono", "Roboto Mono", monospace;
-      font-size: 12px;
-      color: $text-muted;
-      text-align: center;
-    }
   }
   /* =======================================================
      CODE
@@ -257,64 +125,6 @@
     font-family: "IBM Plex Mono", "Roboto Mono", monospace;
     font-size: 12px;
     background-color: $surface;
-  }
-  pre,
-  .wp-block-code {
-    margin: $small 0;
-    padding: $small;
-    overflow-x: auto;
-    border: 1px solid $surface-hover;
-    font-family: "IBM Plex Mono", "Roboto Mono", monospace;
-    background-color: $text-muted;
-
-    code {
-      padding: 0;
-      border: 0;
-      background: transparent;
-    }
-  }
-  /* =======================================================
-     SEPARATOR
-     ======================================================= */
-  .wp-block-separator {
-    margin: $small 0;
-    border: 0;
-    border-top: 1px solid $border;
-    opacity: 1;
-
-    &.is-style-wide {
-      width: 100%;
-    }
-  }
-  /* =======================================================
-     GALLERY
-     ======================================================= */
-  .wp-block-gallery {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: $extra-small;
-    margin: $small 0;
-
-    .wp-block-image {
-      margin: 0;
-
-      img {
-        aspect-ratio: 4 / 3;
-        object-fit: cover;
-      }
-    }
-  }
-  /* =======================================================
-     COLUMNS
-     ======================================================= */
-  .wp-block-columns {
-    display: flex;
-    gap: $middle;
-    margin: $small 0;
-  }
-  .wp-block-column {
-    min-width: 0;
-    flex: 1;
   }
   /* =======================================================
      ALIGNMENTS
@@ -330,16 +140,207 @@
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
   }
-  /* =======================================================
-     CAPTIONS
-     ======================================================= */
-  .wp-element-caption,
+}
+.wp-block-image {
+  margin: $small 0;
+
+  img {
+    display: block;
+    width: 100%;
+  }
   figcaption {
+    margin-top: $extra-small;
     font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+    font-size: 12px;
+    color: $text-muted;
+    text-align: center;
+  }
+  &.is-style-rounded {
+    img {
+      border-radius: $border-radius;
+    }
+  }
+}
+/* =======================================================
+   VIDEO
+   ======================================================= */
+.wp-block-video {
+  margin: $small 0;
+
+  video {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+  }
+  figcaption {
+    margin-top: $extra-small;
+    font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+    font-size: 12px;
     color: $text-muted;
     text-align: center;
   }
 }
+/* =======================================================
+   EMBEDS
+   ======================================================= */
+.wp-block-embed {
+  margin: $small 0;
+
+  .wp-block-embed__wrapper {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+    background: $bg-primary;
+
+    iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  }
+  figcaption {
+    margin-top: $extra-small;
+    font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+    font-size: 12px;
+    color: $text-muted;
+    text-align: center;
+  }
+}
+/* =======================================================
+   TABLE
+   ======================================================= */
+.wp-block-table {
+  width: 100%;
+  margin: $small 0;
+  overflow-x: auto;
+
+  table {
+    width: 100%;
+    min-width: 560px;
+    border-collapse: collapse;
+  }
+  th,
+  td {
+    padding: $extra-small;
+    border: 1px solid rgba(255, 255, 255, .1);
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+    text-transform: uppercase;
+    background-color: $text-muted;
+  }
+  td {
+    background-color: $surface;
+  }
+  figcaption {
+    margin-top: $extra-small;
+    font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+    font-size: 12px;
+    color: $text-muted;
+    text-align: center;
+  }
+}
+pre,
+.wp-block-code {
+  margin: $small 0;
+  padding: $small;
+  overflow-x: auto;
+  border: 1px solid $surface-hover;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  background-color: $text-muted;
+
+  code {
+    padding: 0;
+    border: 0;
+    background: transparent;
+  }
+}
+/* =======================================================
+   SEPARATOR
+   ======================================================= */
+.wp-block-separator {
+  margin: $small 0;
+  border: 0;
+  border-top: 1px solid $border;
+  opacity: 1;
+
+  &.is-style-wide {
+    width: 100%;
+  }
+}
+/* =======================================================
+   GALLERY
+   ======================================================= */
+.wp-block-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: $extra-small;
+  margin: $small 0;
+
+  .wp-block-image {
+    margin: 0;
+
+    img {
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+  }
+}
+/* =======================================================
+   COLUMNS
+   ======================================================= */
+.wp-block-columns {
+  display: flex;
+  gap: $middle;
+  margin: $small 0;
+}
+.wp-block-column {
+  min-width: 0;
+  flex: 1;
+}
+/* =======================================================
+   CAPTIONS
+   ======================================================= */
+.wp-element-caption,
+figcaption {
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  color: $text-muted;
+  text-align: center;
+}
+/* =======================================================
+   BLOCKQUOTE
+   ======================================================= */
+blockquote,
+.wp-block-quote {
+  position: relative;
+  margin: $small 0;
+  padding: $small $extra-small;
+  border-left: 2px solid $orange;
+  background: rgba(255, 255, 255, .025);
+
+  p {
+    margin-bottom: calc($extra-small / 2);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  cite {
+    display: block;
+    margin-top: 1em;
+    font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+    font-size: .7em;
+    font-style: normal;
+    letter-spacing: .06em;
+    opacity: .45;
+  }
+}
+
 /* =========================================================
    RESPONSIVE
    ========================================================= */

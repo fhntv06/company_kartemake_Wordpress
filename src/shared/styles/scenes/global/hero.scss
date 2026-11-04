@@ -2,6 +2,7 @@
 // HERO SCENE
 // =====================================================
 @use 'sass:color';
+@use 'sass:math';
 @use '../../variables/colors' as *;
 @use '../../variables/offsets' as *;
 @use '../../system/mixins' as *;
@@ -57,6 +58,7 @@
   display: inline-flex;
   align-items: center;
   gap: $extra-small;
+  width: max-content;
   margin-bottom: $small;
   padding: $extra-small $lower-small;
   border-radius: 999px;
@@ -89,7 +91,8 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: $small;
+  column-gap: $small;
+  row-gap: math.div($extra-small, 2);
   margin-top: $middle;
   padding-top: $small;
   border-top: 1px solid rgba(255,255,255,0.1);
