@@ -38,6 +38,9 @@
                         <a href="<?php echo get_permalink(get_page_by_path('services')); ?>">
                           Услуги
                         </a>
+                        <a href="<?php echo get_permalink(get_page_by_path('cases')); ?>">
+                            Кейсы
+                        </a>
                         <a href="<?php echo get_permalink(get_page_by_path('pricing')); ?>">
                             Форматы работы
                         </a>
