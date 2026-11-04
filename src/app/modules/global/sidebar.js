@@ -26,7 +26,7 @@ export default class Sidebar {
             return
         }
 
-        const main = document.querySelector('main')
+        const main = document.querySelector('[data-toc-main]') || document.querySelector('main')
         this.tocHeadings = main ? Array.from(main.querySelectorAll('h2')) : []
         if (!this.tocHeadings.length) {
             console.warn("[Sidebar] tocHeadings elements not found")
