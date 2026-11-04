@@ -42,7 +42,7 @@ function get_orbit_scenes_map(): array {
             'solutions'        => 'Решения',
             'architecture'     => 'Инфраструктура',
             'pipeline'         => 'Процесс',
-            'cases'         => 'Кейсы',
+//            'cases'         => 'Кейсы',
             'cost-calculator'  => 'Калькулятор стоимости',
             'contact'          => 'Контакты',
         ],
