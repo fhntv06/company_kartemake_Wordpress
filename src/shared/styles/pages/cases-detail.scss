@@ -8,6 +8,7 @@
 // =====================================================
 @use '../components/cards';
 @use '../components/breadcrumbs';
+@use '../components/sidebar';
 
 // =====================================================
 // СЦЕНЫ
@@ -19,4 +20,6 @@
 @use '../scenes/cases-detail/case-related';
 @use '../scenes/cases-detail/case-result';
 @use '../scenes/cases-detail/case-showcase';
-@use '../scenes/cases-detail/case-solutions';
+
+@use '../scenes/single/single-content';
+@use '../scenes/single/single-article';
