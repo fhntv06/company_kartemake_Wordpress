@@ -23,6 +23,9 @@ get_header();
         <!-- PIPELINE -->
         <?php get_template_part('template-parts/sections/home/pipeline'); ?>
 
+        <!-- CASES -->
+        <?php get_template_part('template-parts/sections/home/cases'); ?>
+
         <!-- COST CALCULATOR -->
         <?php get_template_part('template-parts/sections/home/cost-calculator'); ?>
 
