@@ -38,12 +38,12 @@ if (!$cases_archive_url) {
       <?php if (!$featured_query->have_posts()) : ?>
 
         <div class="tag-empty reveal-item">
-          <span class="system-label">NO PUBLICATIONS</span>
-          <h3>Материалов пока нет.</h3>
-          <p>Избранного кейса ещё нет.</p>
-          <a href="<?= esc_url($cases_archive_url); ?>" class="button-primary">
-            На страницу кейсов
-          </a>
+            <span class="system-label">NO PUBLICATIONS</span>
+            <h3>Материалов пока нет.</h3>
+            <p>Избранного кейса ещё нет.</p>
+            <a href="<?= esc_url($cases_archive_url); ?>" class="button-primary">
+                На страницу кейсов
+            </a>
         </div>
 
       <?php else : ?>
