@@ -71,6 +71,11 @@ function kartemake_get_pages_map() {
     return [
         'home'         => ['type' => 'front'],
         'blog'         => ['type' => 'home'],
+        'casesDetail' => [ // детальный single кастопного типа поста выше, чем прсто single
+            'extra' => static function () {
+                return is_singular('cases');
+            },
+        ],
         'single'       => ['type' => 'single'],
         'about'        => null,
         'contacts'     => null,
@@ -87,6 +92,7 @@ function kartemake_get_pages_map() {
         'category'     => ['type' => 'category'],     // ← если нужно
         'archive'      => ['type' => 'archive'],      // ← если нужно
         'cases'      => null,
+
         'error404'      => ['type' => '404'],
     ];
 }
